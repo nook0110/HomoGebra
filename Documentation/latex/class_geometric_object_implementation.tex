@@ -1,0 +1,96 @@
+\hypertarget{class_geometric_object_implementation}{}\doxysection{Geometric\+Object\+Implementation Class Reference}
+\label{class_geometric_object_implementation}\index{GeometricObjectImplementation@{GeometricObjectImplementation}}
+
+
+{\ttfamily \#include $<$Geometric\+Object\+Implementation.\+h$>$}
+
+
+
+Inheritance diagram for Geometric\+Object\+Implementation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_geometric_object_implementation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Geometric\+Object\+Implementation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{class_geometric_object_implementation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometric_object_implementation_ac88fa84f2272d2110350b04756f12add}{$\sim$\+Geometric\+Object\+Implementation}} () override=default
+\item 
+void \mbox{\hyperlink{class_geometric_object_implementation_a201486cca4f8f131b841f2d9a9843de4}{Attach}} (const \mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$observer) override
+\item 
+void \mbox{\hyperlink{class_geometric_object_implementation_a5aac6474c1ebcc0ac049f28824520647}{Detach}} (const \mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$observer) override
+\item 
+void \mbox{\hyperlink{class_geometric_object_implementation_ad3984adb0765a7ad41aa47dd5bc9a8ae}{Notify}} () const override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_subject}{ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_subject_ae7264a3f132816d45581a1b31845ecac}{$\sim$\+ISubject}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a2c6637387737ccabbdaa610541bbc2c7}{Attach}} (const \mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$observer)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a13509581a03848d9782812545b408273}{Detach}} (const \mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$observer)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_abce09fd771a2e59b145af1f70f3a3aca}{Notify}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometric_object_implementation_ac88fa84f2272d2110350b04756f12add}\label{class_geometric_object_implementation_ac88fa84f2272d2110350b04756f12add}} 
+\index{GeometricObjectImplementation@{GeometricObjectImplementation}!````~GeometricObjectImplementation@{$\sim$GeometricObjectImplementation}}
+\index{````~GeometricObjectImplementation@{$\sim$GeometricObjectImplementation}!GeometricObjectImplementation@{GeometricObjectImplementation}}
+\doxysubsubsection{\texorpdfstring{$\sim$GeometricObjectImplementation()}{~GeometricObjectImplementation()}}
+{\footnotesize\ttfamily Geometric\+Object\+Implementation\+::$\sim$\+Geometric\+Object\+Implementation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometric_object_implementation_a201486cca4f8f131b841f2d9a9843de4}\label{class_geometric_object_implementation_a201486cca4f8f131b841f2d9a9843de4}} 
+\index{GeometricObjectImplementation@{GeometricObjectImplementation}!Attach@{Attach}}
+\index{Attach@{Attach}!GeometricObjectImplementation@{GeometricObjectImplementation}}
+\doxysubsubsection{\texorpdfstring{Attach()}{Attach()}}
+{\footnotesize\ttfamily void Geometric\+Object\+Implementation\+::\+Attach (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_subject_a2c6637387737ccabbdaa610541bbc2c7}{ISubject}}.
+
+\mbox{\Hypertarget{class_geometric_object_implementation_a5aac6474c1ebcc0ac049f28824520647}\label{class_geometric_object_implementation_a5aac6474c1ebcc0ac049f28824520647}} 
+\index{GeometricObjectImplementation@{GeometricObjectImplementation}!Detach@{Detach}}
+\index{Detach@{Detach}!GeometricObjectImplementation@{GeometricObjectImplementation}}
+\doxysubsubsection{\texorpdfstring{Detach()}{Detach()}}
+{\footnotesize\ttfamily void Geometric\+Object\+Implementation\+::\+Detach (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_subject_a13509581a03848d9782812545b408273}{ISubject}}.
+
+\mbox{\Hypertarget{class_geometric_object_implementation_ad3984adb0765a7ad41aa47dd5bc9a8ae}\label{class_geometric_object_implementation_ad3984adb0765a7ad41aa47dd5bc9a8ae}} 
+\index{GeometricObjectImplementation@{GeometricObjectImplementation}!Notify@{Notify}}
+\index{Notify@{Notify}!GeometricObjectImplementation@{GeometricObjectImplementation}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily void Geometric\+Object\+Implementation\+::\+Notify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_subject_abce09fd771a2e59b145af1f70f3a3aca}{ISubject}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_implementation_8h}{Geometric\+Object\+Implementation.\+h}}\item 
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_implementation_8cpp}{Geometric\+Object\+Implementation.\+cpp}}\end{DoxyCompactItemize}

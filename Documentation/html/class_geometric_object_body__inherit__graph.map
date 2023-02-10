@@ -1,0 +1,7 @@
+<map id="GeometricObjectBody" name="GeometricObjectBody">
+<area shape="rect" id="node1" title=" " alt="" coords="78,79,229,104"/>
+<area shape="rect" id="node3" href="$class_conic_body.html" title=" " alt="" coords="5,152,91,177"/>
+<area shape="rect" id="node4" href="$class_line_body.html" title=" " alt="" coords="115,152,191,177"/>
+<area shape="rect" id="node5" href="$class_point_body.html" title=" " alt="" coords="216,152,299,177"/>
+<area shape="rect" id="node2" title=" " alt="" coords="107,5,200,31"/>
+</map>

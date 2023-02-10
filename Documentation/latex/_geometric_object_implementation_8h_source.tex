@@ -1,0 +1,93 @@
+\hypertarget{_geometric_object_implementation_8h_source}{}\doxysection{Geometric\+Object\+Implementation.\+h}
+\label{_geometric_object_implementation_8h_source}\index{HomoGebra/GeometricObjectImplementation.h@{HomoGebra/GeometricObjectImplementation.h}}
+\mbox{\hyperlink{_geometric_object_implementation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_coordinate}{Coordinate}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_point_coordinate}{PointCoordinate}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_coordinate}{Coordinate}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_line_coordinate}{LineCoordinate}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_coordinate}{Coordinate}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_observer}{IObserver}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_observer_a1306da2dbaf55620130af5586e3a0373}{\string~IObserver}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_observer_ae151ed2f23bf3bf4a811e3f187b6b995}{Update}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_subject}{ISubject}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_subject_ae7264a3f132816d45581a1b31845ecac}{\string~ISubject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_subject_a2c6637387737ccabbdaa610541bbc2c7}{Attach}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_observer}{IObserver}}*\ observer)\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_subject_a13509581a03848d9782812545b408273}{Detach}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_observer}{IObserver}}*\ observer)\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_subject_abce09fd771a2e59b145af1f70f3a3aca}{Notify}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_geometric_object_implementation}{GeometricObjectImplementation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_subject}{ISubject}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{class_geometric_object_implementation_ac88fa84f2272d2110350b04756f12add}{\string~GeometricObjectImplementation}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{comment}{//\ ISubject\ overrides}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geometric_object_implementation_a201486cca4f8f131b841f2d9a9843de4}{Attach}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_observer}{IObserver}}*\ observer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geometric_object_implementation_a5aac6474c1ebcc0ac049f28824520647}{Detach}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_observer}{IObserver}}*\ observer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geometric_object_implementation_ad3984adb0765a7ad41aa47dd5bc9a8ae}{Notify}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ std::list<const\ IObserver*>\ observers\_;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_implementation}{PointImplementation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_geometric_object_implementation}{GeometricObjectImplementation}}}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{class_point_implementation}{PointImplementation}}();}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_line_implementation}{LineImplementation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_geometric_object_implementation}{GeometricObjectImplementation}}}
+\DoxyCodeLine{00060\ \{\};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_conic_implementation}{ConicImplementation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_geometric_object_implementation}{GeometricObjectImplementation}}}
+\DoxyCodeLine{00063\ \{\};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_construction}{Construction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_observer}{IObserver}}}
+\DoxyCodeLine{00067\ \{\};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_construction_point}{ConstructionPoint}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_construction}{Construction}}}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_construction_on_plane}{ConstructionOnPlane}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_construction_point}{ConstructionPoint}}}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_construction_line}{ConstructionLine}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_construction}{Construction}}}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_construction_conic}{ConstructionConic}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_construction}{Construction}}}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \};}
+
+\end{DoxyCode}

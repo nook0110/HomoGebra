@@ -4,7 +4,7 @@
 #include "imgui-SFML.h"
 
 #include "GUI.h"
-
+#include "GeometricObject.h"
 int main()
 {
 	sf::ContextSettings settings;
