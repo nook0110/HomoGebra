@@ -9,8 +9,9 @@ var searchData=
   ['geometricobjectimplementation_6',['GeometricObjectImplementation',['../class_geometric_object_implementation.html',1,'']]],
   ['geometricobjectimplementation_2ecpp_7',['GeometricObjectImplementation.cpp',['../_geometric_object_implementation_8cpp.html',1,'']]],
   ['geometricobjectimplementation_2eh_8',['GeometricObjectImplementation.h',['../_geometric_object_implementation_8h.html',1,'']]],
-  ['global_9',['Global',['../class_g_u_i_1_1_global.html',1,'GUI']]],
-  ['gui_10',['GUI',['../namespace_g_u_i.html',1,'']]],
-  ['gui_2ecpp_11',['GUI.cpp',['../_g_u_i_8cpp.html',1,'']]],
-  ['gui_2eh_12',['GUI.h',['../_g_u_i_8h.html',1,'']]]
+  ['getposition_9',['GetPosition',['../class_point_implementation.html#a019de03ebe65a56dec056a71178c0a66',1,'PointImplementation']]],
+  ['global_10',['Global',['../class_g_u_i_1_1_global.html',1,'GUI']]],
+  ['gui_11',['GUI',['../namespace_g_u_i.html',1,'']]],
+  ['gui_2ecpp_12',['GUI.cpp',['../_g_u_i_8cpp.html',1,'']]],
+  ['gui_2eh_13',['GUI.h',['../_g_u_i_8h.html',1,'']]]
 ];

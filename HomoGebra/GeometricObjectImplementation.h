@@ -59,7 +59,7 @@ private:
  * \detail Implements pattern called 'Observer'
  *
  * \see ConstructionObserver
- * \see GeometricObject
+ * \see GeometricObjectImplementation
 */
 class ObservableGeometricObject
 {
@@ -127,6 +127,21 @@ public:
 
 class PointImplementation : public GeometricObjectImplementation
 {
+public:
+  /**
+   * \brief Sets new equation of point.
+   * 
+   * \param equation Equation of point
+  */
+  void SetEquation(const PointEquation& equation);
+
+  /**
+   * \brief Return current equation of point.
+   * 
+   * \return Point equation.
+   */
+  const PointEquation& GetEquation() const;
+
 private:
   /**
    * \brief Default constructor.
@@ -137,16 +152,71 @@ private:
   /**
    * Member data.
    */
+  PointEquation equation_; //!< Point equation
 };
 
 class LineImplementation : public GeometricObjectImplementation
-{};
+{
+public:
+  /**
+   * \brief Sets new equation of line.
+   *
+   * \param equation Equation of line
+  */
+  void SetPosition(const LineEquation & equation);
+
+  /**
+   * \brief Return equation of line.
+   *
+   * \return Line equation.
+   */
+  const LineEquation& GetEquation() const;
+
+private:
+  /**
+   * \brief Default constructor.
+   *
+   */
+  LineImplementation();
+
+  /**
+   * Member data.
+   */
+  LineEquation equation_; //!< Line equation
+};
 
 class ConicImplementation : public GeometricObjectImplementation
-{};
+{
+public:
+  /**
+   * \brief Sets new equation of conic.
+   *
+   * \param equation Equation of conic
+  */
+  void SetPosition(const ConicEquation& equation);
+
+  /**
+   * \brief Return equation of conic.
+   *
+   * \return Conic equation.
+   */
+  const ConicEquation& GetEquation() const;
+
+private:
+  /**
+   * \brief Default constructor.
+   *
+   */
+  ConicImplementation();
+
+  /**
+   * Member data.
+   */
+  ConicEquation equation_; //!< Conic equation
+};
 
 /**
- * \brief Class that manages dependencies between objects.
+ * \brief Defines how object is created.
  *
  * \author nook0110
  *
@@ -154,23 +224,55 @@ class ConicImplementation : public GeometricObjectImplementation
  *
  * \date February 2023
  *
- * \details After notified, updates positions of objects
+ * \details Updates positions of objects
  * \see GeometricObjectImplementation
 */
 class Construction : public ConstructionObserver
-{};
+{
+protected:
+};
 
+/**
+ * \brief Defines how point is created.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ *
+ * \details Updates position of point
+*/
 class ConstructionPoint : public Construction
-{};
+{
+protected:
+  PointImplementation& object;
+};
 
+/**
+ * \brief Construction of a casual point on a plane.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ *
+ * \details Have no dependence on other objects
+*/
 class ConstructionOnPlane : public ConstructionPoint
 {
 public:
-  void Update(Event::Destroyed) const override;
+  void Update(Event::Moved) const override;
 };
 
 class ConstructionLine : public Construction
-{};
+{
+public:
+  void Update(Event::Moved) const override;
+private:
+  LineImplementation& object;
+};
 
 class ConstructionConic : public Construction
 {};

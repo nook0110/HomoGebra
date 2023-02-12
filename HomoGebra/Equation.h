@@ -1,26 +1,8 @@
 #pragma once
-#include <complex>
 #include <array>
 #include <optional>
-using complex = std::complex<long double>;
 
-/**
- * \brief Coordinates in \f{ \mathbb{C}\mathrm{P}^2 \f}
- *
- * \author nook0110
- *
- * \version 0.1
- *
- * \date February 2023
- *
- * \see <a href="https://en.wikipedia.org/wiki/Homogeneous_coordinates">Wikipedia: Homogeneous coordinates</a>
- */
-struct HomogeneousCoordinate
-{
-  complex x;
-  complex y;
-  complex z;
-};
+#include "Coordinate.h"
 
 /**
  * \brief Struct that defines position of the objects

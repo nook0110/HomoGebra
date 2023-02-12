@@ -4,6 +4,3 @@ using namespace Event;
 
 GeometricObjectImplementation::~GeometricObjectImplementation()
 {}
-
-void ConstructionOnPlane::Update(Event::Destroyed) const
-{}
