@@ -1,0 +1,48 @@
+\hypertarget{_equation_8h_source}{}\doxysection{Equation.\+h}
+\label{_equation_8h_source}\index{HomoGebra/Equation.h@{HomoGebra/Equation.h}}
+\mbox{\hyperlink{_equation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{_equation_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}\ =\ std::complex<long\ double>;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{_equation_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}\ \mbox{\hyperlink{struct_homogeneous_coordinate_a3e34b30a184e45f6bdd17081c37ff38b}{x}};}
+\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{_equation_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}\ \mbox{\hyperlink{struct_homogeneous_coordinate_aac51e05b4f82cfb9707bef377db235d9}{y}};}
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{_equation_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}\ \mbox{\hyperlink{struct_homogeneous_coordinate_a30f7369c502bde536189ff79e8b08d37}{z}};}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_equation}{Equation}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{var}}}
+\DoxyCodeLine{00042\ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920a0ac0dd65e82e143ab04d378a0133bf9e}{kX}},}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920a39b629a97c6f6ac91423cf042154dd86}{kY}},}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920aca4d7439951bc76061bedb523255ff3d}{kZ}}}
+\DoxyCodeLine{00046\ \ \ \};}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_point_equation}{PointEquation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_equation}{Equation}}}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\ \mbox{\hyperlink{struct_point_equation_a62701fa1745d2f59aadd72c06b04a2e6}{equation}};}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_line_equation}{LineEquation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_equation}{Equation}}}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\ \mbox{\hyperlink{struct_line_equation_a56ed56fa0030fc476877b225210358e8}{equation}};}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_conic_equation}{ConicEquation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_equation}{Equation}}}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00103\ \ \ std::array<complex,\ 3>\ \mbox{\hyperlink{struct_conic_equation_a203390acc200de69495d53d78b2d6b4f}{squares}};}
+\DoxyCodeLine{00104\ \ \ std::array<complex,\ 3>\ \mbox{\hyperlink{struct_conic_equation_aa220c0df266f56a01885f4b24752c6ca}{pair\_products}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::array<var,\ 3>\ \mbox{\hyperlink{struct_conic_equation_a0e66d5601071fe10b7fc28da762cd1e0}{prev}};}
+\DoxyCodeLine{00109\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::array<var,\ 3>\ \mbox{\hyperlink{struct_conic_equation_a8fe870fd3691626e4f0d0ae35417f067}{next}};}
+\DoxyCodeLine{00110\ \};}
+
+\end{DoxyCode}

@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -79,17 +86,35 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_geometric_object_8h_source.html">GeometricObject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_plane_8h_source.html">Plane.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for GeometricObjectFactory.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_geometric_object_factory_8h__incl.png" border="0" usemap="#a_homo_gebra_2_geometric_object_factory_8h" alt=""/></div>
 <map name="a_homo_gebra_2_geometric_object_factory_8h" id="a_homo_gebra_2_geometric_object_factory_8h">
-<area shape="rect" title=" " alt="" coords="125,5,318,45"/>
-<area shape="rect" href="_geometric_object_8h.html" title=" " alt="" coords="156,93,287,119"/>
-<area shape="rect" href="_geometric_object_implementation_8h.html" title=" " alt="" coords="5,167,224,192"/>
-<area shape="rect" href="_geometric_object_body_8h.html" title=" " alt="" coords="249,167,410,192"/>
-<area shape="rect" title=" " alt="" coords="95,240,134,265"/>
-<area shape="rect" title=" " alt="" coords="260,240,399,265"/>
+<area shape="rect" title=" " alt="" coords="145,5,338,45"/>
+<area shape="rect" href="_geometric_object_8h.html" title=" " alt="" coords="119,240,249,265"/>
+<area shape="rect" href="_plane_8h.html" title=" " alt="" coords="265,93,332,119"/>
+<area shape="rect" href="_geometric_object_implementation_8h.html" title=" " alt="" coords="5,313,224,339"/>
+<area shape="rect" href="_geometric_object_body_8h.html" title=" " alt="" coords="249,313,410,339"/>
+<area shape="rect" title=" " alt="" coords="93,387,131,412"/>
+<area shape="rect" href="_equation_8h.html" title=" " alt="" coords="155,387,239,412"/>
+<area shape="rect" title=" " alt="" coords="77,460,147,485"/>
+<area shape="rect" title=" " alt="" coords="172,460,223,485"/>
+<area shape="rect" title=" " alt="" coords="247,460,313,485"/>
+<area shape="rect" title=" " alt="" coords="321,387,460,412"/>
+<area shape="rect" href="_plane_implementation_8h.html" title=" " alt="" coords="221,167,376,192"/>
+<area shape="rect" href="_plane_body_8h.html" title=" " alt="" coords="400,167,496,192"/>
+<area shape="rect" title=" " alt="" coords="273,240,329,265"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="_geometric_object_factory_8h__dep__incl.png" border="0" usemap="#a_homo_gebra_2_geometric_object_factory_8hdep" alt=""/></div>
+<map name="a_homo_gebra_2_geometric_object_factory_8hdep" id="a_homo_gebra_2_geometric_object_factory_8hdep">
+<area shape="rect" title=" " alt="" coords="5,5,199,45"/>
+<area shape="rect" href="_geometric_object_factory_8cpp.html" title=" " alt="" coords="5,93,199,133"/>
 </map>
 </div>
 </div>
@@ -98,7 +123,13 @@ Include dependency graph for GeometricObjectFactory.h:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_factory.html">PointFactory</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that constructs geometric objects.  <a href="class_point_factory.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that constructs points.  <a href="class_point_factory.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_factory.html">LineFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that constructs lines.  <a href="class_line_factory.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_conic_factory.html">ConicFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that constructs conics.  <a href="class_conic_factory.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

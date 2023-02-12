@@ -1,0 +1,10 @@
+<map id="Point" name="Point">
+<area shape="rect" id="node1" title="Point on a plane." alt="" coords="203,671,255,748"/>
+<area shape="rect" id="node2" href="$class_point_body.html" title=" " alt="" coords="95,501,206,608"/>
+<area shape="rect" id="node3" href="$class_geometric_object_body.html" title=" " alt="" coords="5,345,184,452"/>
+<area shape="rect" id="node4" title=" " alt="" coords="48,189,141,267"/>
+<area shape="rect" id="node5" href="$class_point_implementation.html" title=" " alt="" coords="239,516,395,593"/>
+<area shape="rect" id="node6" href="$class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="209,360,445,437"/>
+<area shape="rect" id="node7" href="$class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="221,160,433,296"/>
+<area shape="rect" id="node8" title=" " alt="" coords="217,5,436,97"/>
+</map>

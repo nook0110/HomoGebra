@@ -1,7 +1,11 @@
 <map id="HomoGebra/GeometricObject.h" name="HomoGebra/GeometricObject.h">
 <area shape="rect" id="node1" title=" " alt="" coords="119,5,323,31"/>
 <area shape="rect" id="node2" href="$_geometric_object_implementation_8h.html" title=" " alt="" coords="5,79,224,104"/>
-<area shape="rect" id="node4" href="$_geometric_object_body_8h.html" title=" " alt="" coords="249,79,410,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="95,152,134,177"/>
-<area shape="rect" id="node5" title=" " alt="" coords="260,152,399,177"/>
+<area shape="rect" id="node8" href="$_geometric_object_body_8h.html" title=" " alt="" coords="249,79,410,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="50,152,89,177"/>
+<area shape="rect" id="node4" href="$_equation_8h.html" title=" " alt="" coords="113,152,197,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="34,225,105,251"/>
+<area shape="rect" id="node6" title=" " alt="" coords="129,225,180,251"/>
+<area shape="rect" id="node7" title=" " alt="" coords="204,225,271,251"/>
+<area shape="rect" id="node9" title=" " alt="" coords="260,152,399,177"/>
 </map>

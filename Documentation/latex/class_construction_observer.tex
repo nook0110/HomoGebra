@@ -1,0 +1,112 @@
+\hypertarget{class_construction_observer}{}\doxysection{Construction\+Observer Class Reference}
+\label{class_construction_observer}\index{ConstructionObserver@{ConstructionObserver}}
+
+
+Makes \mbox{\hyperlink{class_construction}{Construction}} an observer.  
+
+
+
+
+{\ttfamily \#include $<$Geometric\+Object\+Implementation.\+h$>$}
+
+
+
+Inheritance diagram for Construction\+Observer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_construction_observer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Construction\+Observer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{class_construction_observer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_construction_observer_a62066e9c4c31c48b38cb241876484a41}{$\sim$\+Construction\+Observer}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_construction_observer_a45e9a8ab6c2e95e2aa70a27643989a8d}{Update}} (\mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}}) const =0
+\item 
+virtual void \mbox{\hyperlink{class_construction_observer_a34d1f6d4b70d23f677098516b7521baf}{Update}} (\mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}}) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ const \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} $\ast$ $>$ \mbox{\hyperlink{class_construction_observer_ac503d47d29c8102ba76c08b5a398e1ce}{observers\+\_\+}}
+\begin{DoxyCompactList}\small\item\em List of subscribed observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Makes \mbox{\hyperlink{class_construction}{Construction}} an observer. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+\textbackslash{}detail Implements pattern called \textquotesingle{}Observer\textquotesingle{}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_observable_geometric_object}{Observable\+Geometric\+Object}} 
+
+\mbox{\hyperlink{class_construction}{Construction}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_construction_observer_a62066e9c4c31c48b38cb241876484a41}\label{class_construction_observer_a62066e9c4c31c48b38cb241876484a41}} 
+\index{ConstructionObserver@{ConstructionObserver}!````~ConstructionObserver@{$\sim$ConstructionObserver}}
+\index{````~ConstructionObserver@{$\sim$ConstructionObserver}!ConstructionObserver@{ConstructionObserver}}
+\doxysubsubsection{\texorpdfstring{$\sim$ConstructionObserver()}{~ConstructionObserver()}}
+{\footnotesize\ttfamily virtual Construction\+Observer\+::$\sim$\+Construction\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_construction_observer_a34d1f6d4b70d23f677098516b7521baf}\label{class_construction_observer_a34d1f6d4b70d23f677098516b7521baf}} 
+\index{ConstructionObserver@{ConstructionObserver}!Update@{Update}}
+\index{Update@{Update}!ConstructionObserver@{ConstructionObserver}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Construction\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}}}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_construction_on_plane_a1cd62b2b44cb1d19a1b4908742676164}{Construction\+On\+Plane}}.
+
+\mbox{\Hypertarget{class_construction_observer_a45e9a8ab6c2e95e2aa70a27643989a8d}\label{class_construction_observer_a45e9a8ab6c2e95e2aa70a27643989a8d}} 
+\index{ConstructionObserver@{ConstructionObserver}!Update@{Update}}
+\index{Update@{Update}!ConstructionObserver@{ConstructionObserver}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Construction\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}}}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_construction_observer_ac503d47d29c8102ba76c08b5a398e1ce}\label{class_construction_observer_ac503d47d29c8102ba76c08b5a398e1ce}} 
+\index{ConstructionObserver@{ConstructionObserver}!observers\_@{observers\_}}
+\index{observers\_@{observers\_}!ConstructionObserver@{ConstructionObserver}}
+\doxysubsubsection{\texorpdfstring{observers\_}{observers\_}}
+{\footnotesize\ttfamily std\+::list$<$const \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}}$\ast$$>$ Construction\+Observer\+::observers\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List of subscribed observers. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_implementation_8h}{Geometric\+Object\+Implementation.\+h}}\end{DoxyCompactItemize}

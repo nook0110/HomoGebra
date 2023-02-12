@@ -7,41 +7,41 @@
 #include "GeometricObject.h"
 int main()
 {
-	sf::ContextSettings settings;
-	settings.depthBits = 24;
-	settings.stencilBits = 8;
-	settings.antialiasingLevel = 16;
-	settings.majorVersion = 3;
-	settings.minorVersion = 0;
-	sf::RenderWindow window(sf::VideoMode(1000, 1000), "Window Title", sf::Style::Default, settings);
-	ImGui::SFML::Init(window);
+  sf::ContextSettings settings;
+  settings.depthBits = 24;
+  settings.stencilBits = 8;
+  settings.antialiasingLevel = 16;
+  settings.majorVersion = 3;
+  settings.minorVersion = 0;
+  sf::RenderWindow window(sf::VideoMode(1000, 1000), "Window Title", sf::Style::Default, settings);
+  ImGui::SFML::Init(window);
 
-	window.setFramerateLimit(60);
-	ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+  window.setFramerateLimit(60);
+  ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-	while (window.isOpen())
-	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			GUI::Global::ProcessEvent(event);
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
+  while (window.isOpen())
+  {
+    sf::Event event;
+    while (window.pollEvent(event))
+    {
+      GUI::Global::ProcessEvent(event);
+      if (event.type == sf::Event::Closed)
+        window.close();
+    }
 
-		window.clear(sf::Color::White);
+    window.clear(sf::Color::White);
 
-		GUI::Global::Update(window);
+    GUI::Global::Update(window);
 
-		ImGui::Begin("Test window");
-		ImGui::Text("Hello world!");
-		ImGui::End();
+    ImGui::Begin("Test window");
+    ImGui::Text("Hello world!");
+    ImGui::End();
 
-		GUI::Global::Render(window);
+    GUI::Global::Render(window);
 
-		window.display();
-	}
+    window.display();
+  }
 
-	ImGui::SFML::Shutdown();
-	return 0;
+  ImGui::SFML::Shutdown();
+  return 0;
 }

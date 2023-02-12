@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_g_u_i_1_1_global.html" title=" " alt="" coords="5,5,95,31"/>
+<area shape="rect" id="node1" href="$class_construction_observer.html" title="Makes Construction an observer." alt="" coords="5,55,152,80"/>
+<area shape="rect" id="node2" href="$class_construction.html" title="Class that manages dependencies between objects." alt="" coords="200,55,295,80"/>
+<area shape="rect" id="node3" href="$class_construction_conic.html" title=" " alt="" coords="343,5,471,31"/>
+<area shape="rect" id="node4" href="$class_construction_line.html" title=" " alt="" coords="347,55,466,80"/>
+<area shape="rect" id="node5" href="$class_construction_point.html" title=" " alt="" coords="344,104,469,129"/>
+<area shape="rect" id="node6" href="$class_construction_on_plane.html" title=" " alt="" coords="519,104,664,129"/>
 </map>

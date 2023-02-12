@@ -1,15 +1,22 @@
 #pragma once
-#include <vector>
+#include "PlaneImplementation.h"
+#include "PlaneBody.h"
 
-#include "GeometricObject.h"
-
+/**
+ * \brief Container for all objects, which you can draw.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ *
+ * \see PlaneImplementation
+ * \see PlaneBody
+ */
 class Plane
 {
-public:
-
 private:
-  // All objects
-  std::vector<Point> points_;
-  std::vector<Line> lines_;
-  std::vector<Conic> conics_;
+  PlaneImplementation implementation_;
+  PlaneBody body_;
 };

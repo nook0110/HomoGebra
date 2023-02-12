@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -75,8 +82,10 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="class_construction_line.html">ConstructionLine</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_i_observer.html#ae151ed2f23bf3bf4a811e3f187b6b995">Update</a>() const =0</td><td class="entry"><a class="el" href="class_i_observer.html">IObserver</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_i_observer.html#a1306da2dbaf55620130af5586e3a0373">~IObserver</a>()=default</td><td class="entry"><a class="el" href="class_i_observer.html">IObserver</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_construction_observer.html#ac503d47d29c8102ba76c08b5a398e1ce">observers_</a></td><td class="entry"><a class="el" href="class_construction_observer.html">ConstructionObserver</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_construction_observer.html#a45e9a8ab6c2e95e2aa70a27643989a8d">Update</a>(Event::Moved) const =0</td><td class="entry"><a class="el" href="class_construction_observer.html">ConstructionObserver</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_construction_observer.html#a34d1f6d4b70d23f677098516b7521baf">Update</a>(Event::Destroyed) const =0</td><td class="entry"><a class="el" href="class_construction_observer.html">ConstructionObserver</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_construction_observer.html#a62066e9c4c31c48b38cb241876484a41">~ConstructionObserver</a>()=default</td><td class="entry"><a class="el" href="class_construction_observer.html">ConstructionObserver</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

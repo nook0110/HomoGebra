@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -75,8 +82,9 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="class_geometric_object_body.html">GeometricObjectBody</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_geometric_object_body.html#a107be47974a8fbcc61b20a655165427c">draw</a>(sf::RenderTarget &amp;target, sf::RenderStates states) const override=0</td><td class="entry"><a class="el" href="class_geometric_object_body.html">GeometricObjectBody</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_geometric_object_body.html#af4ad2d5a677bbbccc0725b17a11a5825">~GeometricObjectBody</a>() override</td><td class="entry"><a class="el" href="class_geometric_object_body.html">GeometricObjectBody</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_geometric_object_body.html#a107be47974a8fbcc61b20a655165427c">draw</a>(sf::RenderTarget &amp;target, sf::RenderStates states) const override=0</td><td class="entry"><a class="el" href="class_geometric_object_body.html">GeometricObjectBody</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_geometric_object_body.html#a997317a41173940766d6db74ad3f391d">GeometricObjectBody</a>()=default</td><td class="entry"><a class="el" href="class_geometric_object_body.html">GeometricObjectBody</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_geometric_object_body.html#af4ad2d5a677bbbccc0725b17a11a5825">~GeometricObjectBody</a>() override</td><td class="entry"><a class="el" href="class_geometric_object_body.html">GeometricObjectBody</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

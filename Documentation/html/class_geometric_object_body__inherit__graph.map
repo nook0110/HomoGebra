@@ -1,7 +1,7 @@
 <map id="GeometricObjectBody" name="GeometricObjectBody">
-<area shape="rect" id="node1" title=" " alt="" coords="78,79,229,104"/>
-<area shape="rect" id="node3" href="$class_conic_body.html" title=" " alt="" coords="5,152,91,177"/>
-<area shape="rect" id="node4" href="$class_line_body.html" title=" " alt="" coords="115,152,191,177"/>
-<area shape="rect" id="node5" href="$class_point_body.html" title=" " alt="" coords="216,152,299,177"/>
-<area shape="rect" id="node2" title=" " alt="" coords="107,5,200,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="106,131,285,237"/>
+<area shape="rect" id="node3" href="$class_conic_body.html" title=" " alt="" coords="5,285,119,392"/>
+<area shape="rect" id="node4" href="$class_line_body.html" title=" " alt="" coords="143,285,247,392"/>
+<area shape="rect" id="node5" href="$class_point_body.html" title=" " alt="" coords="272,285,383,392"/>
+<area shape="rect" id="node2" title=" " alt="" coords="149,5,242,83"/>
 </map>

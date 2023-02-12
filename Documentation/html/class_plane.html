@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -70,12 +77,91 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_plane-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Plane Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p>Container for all objects, which you can draw.  
+ <a href="class_plane.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_plane_8h_source.html">Plane.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Plane:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_plane__coll__graph.png" border="0" usemap="#a_plane_coll__map" alt="Collaboration graph"/></div>
+<map name="a_plane_coll__map" id="a_plane_coll__map">
+<area shape="rect" title="Container for all objects, which you can draw." alt="" coords="295,285,349,363"/>
+<area shape="rect" href="class_plane_implementation.html" title="Implementation of Plane." alt="" coords="183,145,325,223"/>
+<area shape="rect" title=" " alt="" coords="5,5,116,83"/>
+<area shape="rect" title=" " alt="" coords="141,5,245,83"/>
+<area shape="rect" title=" " alt="" coords="269,5,383,83"/>
+<area shape="rect" href="class_plane_body.html" title=" " alt="" coords="381,145,466,223"/>
+<area shape="rect" title=" " alt="" coords="407,5,501,83"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:acc86f8aae09b055699688b1c50ad7501"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_plane_implementation.html">PlaneImplementation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#acc86f8aae09b055699688b1c50ad7501">implementation_</a></td></tr>
+<tr class="separator:acc86f8aae09b055699688b1c50ad7501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa45a1ee353c3eab80ec049db4a02c4f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_plane_body.html">PlaneBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#aa45a1ee353c3eab80ec049db4a02c4f8">body_</a></td></tr>
+<tr class="separator:aa45a1ee353c3eab80ec049db4a02c4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Container for all objects, which you can draw. </p>
+<dl class="section author"><dt>Author</dt><dd>nook0110</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>February 2023</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_plane_implementation.html" title="Implementation of Plane.">PlaneImplementation</a> </dd>
+<dd>
+<a class="el" href="class_plane_body.html">PlaneBody</a> </dd></dl>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa45a1ee353c3eab80ec049db4a02c4f8" name="aa45a1ee353c3eab80ec049db4a02c4f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa45a1ee353c3eab80ec049db4a02c4f8">&#9670;&#160;</a></span>body_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_plane_body.html">PlaneBody</a> Plane::body_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc86f8aae09b055699688b1c50ad7501" name="acc86f8aae09b055699688b1c50ad7501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc86f8aae09b055699688b1c50ad7501">&#9670;&#160;</a></span>implementation_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_plane_implementation.html">PlaneImplementation</a> Plane::implementation_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>HomoGebra/<a class="el" href="_plane_8h_source.html">Plane.h</a></li>
 </ul>

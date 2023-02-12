@@ -1,16 +1,15 @@
 \hypertarget{_geometric_object_implementation_8h}{}\doxysection{Homo\+Gebra/\+Geometric\+Object\+Implementation.h File Reference}
 \label{_geometric_object_implementation_8h}\index{HomoGebra/GeometricObjectImplementation.h@{HomoGebra/GeometricObjectImplementation.h}}
 {\ttfamily \#include $<$list$>$}\newline
-Include dependency graph for Geometric\+Object\+Implementation.\+h\+:
-\nopagebreak
+{\ttfamily \#include \char`\"{}Equation.\+h\char`\"{}}\newline
+Include dependency graph for Geometric\+Object\+Implementation.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=225pt]{_geometric_object_implementation_8h__incl}
+\includegraphics[width=272pt]{_geometric_object_implementation_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,18 +19,16 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_coordinate}{Coordinate}}
-\item 
-struct \mbox{\hyperlink{struct_point_coordinate}{Point\+Coordinate}}
-\item 
-struct \mbox{\hyperlink{struct_line_coordinate}{Line\+Coordinate}}
-\item 
-class \mbox{\hyperlink{class_i_observer}{IObserver}}
-\item 
-class \mbox{\hyperlink{class_i_subject}{ISubject}}
-\item 
+struct \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}}
+\begin{DoxyCompactList}\small\item\em Tag that shows that object was moved. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}}
+\begin{DoxyCompactList}\small\item\em Tag that shows that object was destroyed. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}}
+\begin{DoxyCompactList}\small\item\em Makes \mbox{\hyperlink{class_construction}{Construction}} an observer. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_observable_geometric_object}{Observable\+Geometric\+Object}}
+\begin{DoxyCompactList}\small\item\em Makes \mbox{\hyperlink{class_geometric_object_implementation}{Geometric\+Object\+Implementation}} observable. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometric_object_implementation}{Geometric\+Object\+Implementation}}
-\item 
+\begin{DoxyCompactList}\small\item\em Base class for implementations of geometric objects. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_point_implementation}{Point\+Implementation}}
 \item 
 class \mbox{\hyperlink{class_line_implementation}{Line\+Implementation}}
@@ -39,7 +36,7 @@ class \mbox{\hyperlink{class_line_implementation}{Line\+Implementation}}
 class \mbox{\hyperlink{class_conic_implementation}{Conic\+Implementation}}
 \item 
 class \mbox{\hyperlink{class_construction}{Construction}}
-\item 
+\begin{DoxyCompactList}\small\item\em Class that manages dependencies between objects. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_construction_point}{Construction\+Point}}
 \item 
 class \mbox{\hyperlink{class_construction_on_plane}{Construction\+On\+Plane}}
@@ -48,3 +45,8 @@ class \mbox{\hyperlink{class_construction_line}{Construction\+Line}}
 \item 
 class \mbox{\hyperlink{class_construction_conic}{Construction\+Conic}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_event}{Event}}
+\begin{DoxyCompactList}\small\item\em Events which can happen. \end{DoxyCompactList}\end{DoxyCompactItemize}

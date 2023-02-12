@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -75,11 +82,13 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="class_conic_implementation.html">ConicImplementation</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_geometric_object_implementation.html#a201486cca4f8f131b841f2d9a9843de4">Attach</a>(const IObserver *observer) override</td><td class="entry"><a class="el" href="class_geometric_object_implementation.html">GeometricObjectImplementation</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_geometric_object_implementation.html#a5aac6474c1ebcc0ac049f28824520647">Detach</a>(const IObserver *observer) override</td><td class="entry"><a class="el" href="class_geometric_object_implementation.html">GeometricObjectImplementation</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_geometric_object_implementation.html#ad3984adb0765a7ad41aa47dd5bc9a8ae">Notify</a>() const override</td><td class="entry"><a class="el" href="class_geometric_object_implementation.html">GeometricObjectImplementation</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_geometric_object_implementation.html#ac88fa84f2272d2110350b04756f12add">~GeometricObjectImplementation</a>() override=default</td><td class="entry"><a class="el" href="class_geometric_object_implementation.html">GeometricObjectImplementation</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_i_subject.html#ae7264a3f132816d45581a1b31845ecac">~ISubject</a>()=default</td><td class="entry"><a class="el" href="class_i_subject.html">ISubject</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_observable_geometric_object.html#afefebecdc84813461680d9487ae33983">Attach</a>(std::shared_ptr&lt; const ConstructionObserver &gt; observer)</td><td class="entry"><a class="el" href="class_observable_geometric_object.html">ObservableGeometricObject</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_observable_geometric_object.html#aab93df41a73b15ccc6bc0b36204ab810">Detach</a>(const ConstructionObserver *observer)</td><td class="entry"><a class="el" href="class_observable_geometric_object.html">ObservableGeometricObject</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_observable_geometric_object.html#aa983a428c8218f4c2ce81323b8d0f053">Notify</a>(Event::Moved) const</td><td class="entry"><a class="el" href="class_observable_geometric_object.html">ObservableGeometricObject</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_observable_geometric_object.html#a0a013fe0b293dc7fc8d28525c7f62cfd">Notify</a>(Event::Destroyed) const</td><td class="entry"><a class="el" href="class_observable_geometric_object.html">ObservableGeometricObject</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_observable_geometric_object.html#a22ac8300a58a6e234f18f79675a7433c">observers_</a></td><td class="entry"><a class="el" href="class_observable_geometric_object.html">ObservableGeometricObject</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_geometric_object_implementation.html#a353ebc23cbfa1f5226b8520e2d77bf94">~GeometricObjectImplementation</a>() override</td><td class="entry"><a class="el" href="class_geometric_object_implementation.html">GeometricObjectImplementation</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_observable_geometric_object.html#ad27598f56baa57327f83ba98f2105ea8">~ObservableGeometricObject</a>()=default</td><td class="entry"><a class="el" href="class_observable_geometric_object.html">ObservableGeometricObject</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

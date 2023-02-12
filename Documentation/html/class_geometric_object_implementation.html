@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -76,52 +83,71 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Base class for implementations of geometric objects.  
+ <a href="class_geometric_object_implementation.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_geometric_object_implementation_8h_source.html">GeometricObjectImplementation.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for GeometricObjectImplementation:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_geometric_object_implementation__inherit__graph.png" border="0" usemap="#a_geometric_object_implementation_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_geometric_object_implementation_inherit__map" id="a_geometric_object_implementation_inherit__map">
-<area shape="rect" title=" " alt="" coords="135,79,343,104"/>
-<area shape="rect" href="class_conic_implementation.html" title=" " alt="" coords="5,152,148,177"/>
-<area shape="rect" href="class_line_implementation.html" title=" " alt="" coords="172,152,307,177"/>
-<area shape="rect" href="class_point_implementation.html" title=" " alt="" coords="331,152,471,177"/>
-<area shape="rect" href="class_i_subject.html" title=" " alt="" coords="205,5,274,31"/>
+<area shape="rect" title="Base class for implementations of geometric objects." alt="" coords="121,189,357,267"/>
+<area shape="rect" href="class_conic_implementation.html" title=" " alt="" coords="5,315,148,392"/>
+<area shape="rect" href="class_line_implementation.html" title=" " alt="" coords="172,315,307,392"/>
+<area shape="rect" href="class_point_implementation.html" title=" " alt="" coords="331,315,487,392"/>
+<area shape="rect" href="class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="133,5,345,141"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for GeometricObjectImplementation:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_geometric_object_implementation__coll__graph.png" border="0" usemap="#a_geometric_object_implementation_coll__map" alt="Collaboration graph"/></div>
 <map name="a_geometric_object_implementation_coll__map" id="a_geometric_object_implementation_coll__map">
-<area shape="rect" title=" " alt="" coords="5,79,213,104"/>
-<area shape="rect" href="class_i_subject.html" title=" " alt="" coords="75,5,144,31"/>
+<area shape="rect" title="Base class for implementations of geometric objects." alt="" coords="5,345,241,423"/>
+<area shape="rect" href="class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="17,160,229,296"/>
+<area shape="rect" title=" " alt="" coords="14,5,233,97"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac88fa84f2272d2110350b04756f12add"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_object_implementation.html#ac88fa84f2272d2110350b04756f12add">~GeometricObjectImplementation</a> () override=default</td></tr>
-<tr class="separator:ac88fa84f2272d2110350b04756f12add"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a201486cca4f8f131b841f2d9a9843de4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_object_implementation.html#a201486cca4f8f131b841f2d9a9843de4">Attach</a> (const <a class="el" href="class_i_observer.html">IObserver</a> *observer) override</td></tr>
-<tr class="separator:a201486cca4f8f131b841f2d9a9843de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aac6474c1ebcc0ac049f28824520647"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_object_implementation.html#a5aac6474c1ebcc0ac049f28824520647">Detach</a> (const <a class="el" href="class_i_observer.html">IObserver</a> *observer) override</td></tr>
-<tr class="separator:a5aac6474c1ebcc0ac049f28824520647"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3984adb0765a7ad41aa47dd5bc9a8ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_object_implementation.html#ad3984adb0765a7ad41aa47dd5bc9a8ae">Notify</a> () const override</td></tr>
-<tr class="separator:ad3984adb0765a7ad41aa47dd5bc9a8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_class_i_subject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_i_subject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_i_subject.html">ISubject</a></td></tr>
-<tr class="memitem:ae7264a3f132816d45581a1b31845ecac inherit pub_methods_class_i_subject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_subject.html#ae7264a3f132816d45581a1b31845ecac">~ISubject</a> ()=default</td></tr>
-<tr class="separator:ae7264a3f132816d45581a1b31845ecac inherit pub_methods_class_i_subject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c6637387737ccabbdaa610541bbc2c7 inherit pub_methods_class_i_subject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_subject.html#a2c6637387737ccabbdaa610541bbc2c7">Attach</a> (const <a class="el" href="class_i_observer.html">IObserver</a> *observer)=0</td></tr>
-<tr class="separator:a2c6637387737ccabbdaa610541bbc2c7 inherit pub_methods_class_i_subject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13509581a03848d9782812545b408273 inherit pub_methods_class_i_subject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_subject.html#a13509581a03848d9782812545b408273">Detach</a> (const <a class="el" href="class_i_observer.html">IObserver</a> *observer)=0</td></tr>
-<tr class="separator:a13509581a03848d9782812545b408273 inherit pub_methods_class_i_subject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abce09fd771a2e59b145af1f70f3a3aca inherit pub_methods_class_i_subject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_subject.html#abce09fd771a2e59b145af1f70f3a3aca">Notify</a> () const =0</td></tr>
-<tr class="separator:abce09fd771a2e59b145af1f70f3a3aca inherit pub_methods_class_i_subject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353ebc23cbfa1f5226b8520e2d77bf94"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_object_implementation.html#a353ebc23cbfa1f5226b8520e2d77bf94">~GeometricObjectImplementation</a> () override</td></tr>
+<tr class="memdesc:a353ebc23cbfa1f5226b8520e2d77bf94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
+<tr class="separator:a353ebc23cbfa1f5226b8520e2d77bf94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_observable_geometric_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_observable_geometric_object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_observable_geometric_object.html">ObservableGeometricObject</a></td></tr>
+<tr class="memitem:ad27598f56baa57327f83ba98f2105ea8 inherit pub_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#ad27598f56baa57327f83ba98f2105ea8">~ObservableGeometricObject</a> ()=default</td></tr>
+<tr class="separator:ad27598f56baa57327f83ba98f2105ea8 inherit pub_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afefebecdc84813461680d9487ae33983 inherit pub_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#afefebecdc84813461680d9487ae33983">Attach</a> (std::shared_ptr&lt; const <a class="el" href="class_construction_observer.html">ConstructionObserver</a> &gt; observer)</td></tr>
+<tr class="memdesc:afefebecdc84813461680d9487ae33983 inherit pub_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe an observer on this object.  <br /></td></tr>
+<tr class="separator:afefebecdc84813461680d9487ae33983 inherit pub_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab93df41a73b15ccc6bc0b36204ab810 inherit pub_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#aab93df41a73b15ccc6bc0b36204ab810">Detach</a> (const <a class="el" href="class_construction_observer.html">ConstructionObserver</a> *observer)</td></tr>
+<tr class="memdesc:aab93df41a73b15ccc6bc0b36204ab810 inherit pub_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribe an observer on this object.  <br /></td></tr>
+<tr class="separator:aab93df41a73b15ccc6bc0b36204ab810 inherit pub_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_class_observable_geometric_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_observable_geometric_object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_observable_geometric_object.html">ObservableGeometricObject</a></td></tr>
+<tr class="memitem:aa983a428c8218f4c2ce81323b8d0f053 inherit pro_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#aa983a428c8218f4c2ce81323b8d0f053">Notify</a> (<a class="el" href="struct_event_1_1_moved.html">Event::Moved</a>) const</td></tr>
+<tr class="memdesc:aa983a428c8218f4c2ce81323b8d0f053 inherit pro_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify all subscribed observers that object was moved.  <br /></td></tr>
+<tr class="separator:aa983a428c8218f4c2ce81323b8d0f053 inherit pro_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a013fe0b293dc7fc8d28525c7f62cfd inherit pro_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#a0a013fe0b293dc7fc8d28525c7f62cfd">Notify</a> (<a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a>) const</td></tr>
+<tr class="memdesc:a0a013fe0b293dc7fc8d28525c7f62cfd inherit pro_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify all subscribed observers that object was destroyed.  <br /></td></tr>
+<tr class="separator:a0a013fe0b293dc7fc8d28525c7f62cfd inherit pro_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac88fa84f2272d2110350b04756f12add" name="ac88fa84f2272d2110350b04756f12add"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac88fa84f2272d2110350b04756f12add">&#9670;&#160;</a></span>~GeometricObjectImplementation()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for implementations of geometric objects. </p>
+<dl class="section author"><dt>Author</dt><dd>nook0110</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>February 2023</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_point_implementation.html">PointImplementation</a> </dd>
+<dd>
+<a class="el" href="class_line_implementation.html">LineImplementation</a> </dd>
+<dd>
+<a class="el" href="class_conic_implementation.html">ConicImplementation</a> </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a353ebc23cbfa1f5226b8520e2d77bf94" name="a353ebc23cbfa1f5226b8520e2d77bf94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a353ebc23cbfa1f5226b8520e2d77bf94">&#9670;&#160;</a></span>~GeometricObjectImplementation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,94 +164,12 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a201486cca4f8f131b841f2d9a9843de4" name="a201486cca4f8f131b841f2d9a9843de4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a201486cca4f8f131b841f2d9a9843de4">&#9670;&#160;</a></span>Attach()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GeometricObjectImplementation::Attach </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_i_observer.html">IObserver</a> *&#160;</td>
-          <td class="paramname"><em>observer</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="class_i_subject.html#a2c6637387737ccabbdaa610541bbc2c7">ISubject</a>.</p>
-
-</div>
-</div>
-<a id="a5aac6474c1ebcc0ac049f28824520647" name="a5aac6474c1ebcc0ac049f28824520647"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5aac6474c1ebcc0ac049f28824520647">&#9670;&#160;</a></span>Detach()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GeometricObjectImplementation::Detach </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_i_observer.html">IObserver</a> *&#160;</td>
-          <td class="paramname"><em>observer</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="class_i_subject.html#a13509581a03848d9782812545b408273">ISubject</a>.</p>
-
-</div>
-</div>
-<a id="ad3984adb0765a7ad41aa47dd5bc9a8ae" name="ad3984adb0765a7ad41aa47dd5bc9a8ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3984adb0765a7ad41aa47dd5bc9a8ae">&#9670;&#160;</a></span>Notify()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GeometricObjectImplementation::Notify </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="class_i_subject.html#abce09fd771a2e59b145af1f70f3a3aca">ISubject</a>.</p>
+<p>Destructor. </p>
 
 </div>
 </div>

@@ -1,0 +1,114 @@
+\hypertarget{class_conic_factory}{}\doxysection{Conic\+Factory Class Reference}
+\label{class_conic_factory}\index{ConicFactory@{ConicFactory}}
+
+
+Class that constructs conics.  
+
+
+
+
+{\ttfamily \#include $<$Geometric\+Object\+Factory.\+h$>$}
+
+
+
+Collaboration diagram for Conic\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_conic_factory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_conic_factory_a6b2ed1dd10f9f432a9c17b4785cf6653}{Conic\+Factory}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane)
+\begin{DoxyCompactList}\small\item\em Construct a factory from the plane. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_conic}{Conic}} \& \mbox{\hyperlink{class_conic_factory_a04e270a169445430cc36c6e7ad00a84e}{By\+Five\+Points}} (const \mbox{\hyperlink{class_point}{Point}} \&first, const \mbox{\hyperlink{class_point}{Point}} \&second, const \mbox{\hyperlink{class_point}{Point}} \&third, const \mbox{\hyperlink{class_point}{Point}} \&fourth, const \mbox{\hyperlink{class_point}{Point}} \&fifth)
+\begin{DoxyCompactList}\small\item\em Constructs a conic through five given points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_plane}{Plane}} \& \mbox{\hyperlink{class_conic_factory_aae78e85d161fa5a4508c8626c1826fe9}{plane\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_plane}{Plane}} to add objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that constructs conics. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+Class constructs conics and places them into the plane automatically. It also constructs dependencies between objects. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_construction}{Construction}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_conic_factory_a6b2ed1dd10f9f432a9c17b4785cf6653}\label{class_conic_factory_a6b2ed1dd10f9f432a9c17b4785cf6653}} 
+\index{ConicFactory@{ConicFactory}!ConicFactory@{ConicFactory}}
+\index{ConicFactory@{ConicFactory}!ConicFactory@{ConicFactory}}
+\doxysubsubsection{\texorpdfstring{ConicFactory()}{ConicFactory()}}
+{\footnotesize\ttfamily Conic\+Factory\+::\+Conic\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} \&}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a factory from the plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plane} & Instance where to place objects. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_conic_factory_a04e270a169445430cc36c6e7ad00a84e}\label{class_conic_factory_a04e270a169445430cc36c6e7ad00a84e}} 
+\index{ConicFactory@{ConicFactory}!ByFivePoints@{ByFivePoints}}
+\index{ByFivePoints@{ByFivePoints}!ConicFactory@{ConicFactory}}
+\doxysubsubsection{\texorpdfstring{ByFivePoints()}{ByFivePoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_conic}{Conic}} \& Conic\+Factory\+::\+By\+Five\+Points (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{first,  }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{second,  }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{third,  }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{fourth,  }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{fifth }\end{DoxyParamCaption})}
+
+
+
+Constructs a conic through five given points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & First point to go through. \\
+\hline
+{\em second} & Second point to go through \\
+\hline
+{\em third} & Third point to go through. \\
+\hline
+{\em fourth} & Fourth point to go through \\
+\hline
+{\em fifth} & Fifth point to go through. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to a constructed conic. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_conic_factory_aae78e85d161fa5a4508c8626c1826fe9}\label{class_conic_factory_aae78e85d161fa5a4508c8626c1826fe9}} 
+\index{ConicFactory@{ConicFactory}!plane\_@{plane\_}}
+\index{plane\_@{plane\_}!ConicFactory@{ConicFactory}}
+\doxysubsubsection{\texorpdfstring{plane\_}{plane\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_plane}{Plane}}\& Conic\+Factory\+::plane\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_plane}{Plane}} to add objects. 
+
+Member data. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_factory_8h}{Geometric\+Object\+Factory.\+h}}\end{DoxyCompactItemize}

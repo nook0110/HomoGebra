@@ -6,38 +6,39 @@
 
 
 
-Inheritance diagram for Line\+Body\+:
-\nopagebreak
+Inheritance diagram for Line\+Body\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=193pt]{class_line_body__inherit__graph}
+\includegraphics[width=214pt]{class_line_body__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Line\+Body\+:
-\nopagebreak
+Collaboration diagram for Line\+Body\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=193pt]{class_line_body__coll__graph}
+\includegraphics[width=214pt]{class_line_body__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_line_body_adff44877eb68abb12b5fe08dddde50de}{$\sim$\+Line\+Body}} () override=default
-\item 
-void \mbox{\hyperlink{class_line_body_af6df3c968e28e34c8d97c80cb57a3110}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const final
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_geometric_object_body}{Geometric\+Object\+Body}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_geometric_object_body_af4ad2d5a677bbbccc0725b17a11a5825}{$\sim$\+Geometric\+Object\+Body}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_geometric_object_body_a107be47974a8fbcc61b20a655165427c}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override=0
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_line_body_af6df3c968e28e34c8d97c80cb57a3110}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const final
+\begin{DoxyCompactList}\small\item\em Draw the line to a render target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_line_body_adc654d451c772950964ab6371689e6b4}{Line\+Body}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -49,13 +50,38 @@ void \mbox{\hyperlink{class_geometric_object_body_a107be47974a8fbcc61b20a6551654
 
 
 
+Destructor. 
+
+\mbox{\Hypertarget{class_line_body_adc654d451c772950964ab6371689e6b4}\label{class_line_body_adc654d451c772950964ab6371689e6b4}} 
+\index{LineBody@{LineBody}!LineBody@{LineBody}}
+\index{LineBody@{LineBody}!LineBody@{LineBody}}
+\doxysubsubsection{\texorpdfstring{LineBody()}{LineBody()}}
+{\footnotesize\ttfamily Line\+Body\+::\+Line\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Default constructor. 
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_line_body_af6df3c968e28e34c8d97c80cb57a3110}\label{class_line_body_af6df3c968e28e34c8d97c80cb57a3110}} 
 \index{LineBody@{LineBody}!draw@{draw}}
 \index{draw@{draw}!LineBody@{LineBody}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily void Line\+Body\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Line\+Body\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
 
+
+
+Draw the line to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to. \\
+\hline
+{\em states} & Current render states. \\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{class_geometric_object_body_a107be47974a8fbcc61b20a655165427c}{Geometric\+Object\+Body}}.

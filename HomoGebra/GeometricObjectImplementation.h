@@ -1,59 +1,142 @@
 #pragma once
 #include <list>
 
-struct Coordinate
+#include "Equation.h"
+
+/**
+* \brief Events which can happen
+*
+*/
+namespace Event
 {
+  /**
+   * \brief Tag that shows that object was moved.
+   */
+  struct Moved {};
 
-};
+  /**
+   * \brief Tag that shows that object was destroyed.
+   */
+  struct Destroyed {};
+}
 
-struct PointCoordinate : public Coordinate
-{
-
-};
-
-struct LineCoordinate : public Coordinate
-{
-
-};
-
-class IObserver
+/**
+ * \brief Makes Construction an observer.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ *
+ * \detail Implements pattern called 'Observer'
+ *
+ * \see ObservableGeometricObject
+ * \see Construction
+ *
+*/
+class ConstructionObserver
 {
 public:
-  virtual ~IObserver() = default;
+  virtual ~ConstructionObserver() = default;
 
-  virtual void Update() const = 0;
-};
+  virtual void Update(Event::Moved) const = 0;
+  virtual void Update(Event::Destroyed) const = 0;
 
-class ISubject
-{
-public:
-  virtual ~ISubject() = default;
-
-  virtual void Attach(const IObserver* observer) = 0;
-  virtual void Detach(const IObserver* observer) = 0;
-  virtual void Notify() const = 0;
-};
-
-class GeometricObjectImplementation : public ISubject
-{
-public:
-  ~GeometricObjectImplementation() override = default;
-
-  // ISubject overrides
-
-  void Attach(const IObserver* observer) override;
-  void Detach(const IObserver* observer) override;
-  void Notify() const override;
 private:
+  std::list<const ConstructionObserver*> observers_; //!< List of subscribed observers
+};
 
-  std::list<const IObserver*> observers_;
+/**
+ * \brief Makes GeometricObjectImplementation observable.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ *
+ * \detail Implements pattern called 'Observer'
+ *
+ * \see ConstructionObserver
+ * \see GeometricObject
+*/
+class ObservableGeometricObject
+{
+public:
 
+  virtual ~ObservableGeometricObject() = default;
+
+  /**
+   * \brief Subscribe an observer on this object
+   *
+   * \param observer Observer to add
+   */
+  void Attach(std::shared_ptr<const ConstructionObserver> observer);
+
+  /**
+   * \brief Unsubscribe an observer on this object
+   *
+   * \param observer Observer to delete
+   */
+  void Detach(const ConstructionObserver* observer);
+
+protected:
+  /**
+  * \brief Notify all subscribed observers that object was moved
+  *
+  */
+  void Notify(Event::Moved) const;
+
+  /**
+  * \brief Notify all subscribed observers that object was destroyed
+  *
+  */
+  void Notify(Event::Destroyed) const;
+
+private:
+  /**
+   * Member data.
+   */
+  std::list<std::shared_ptr<const ConstructionObserver>> observers_; //!< List of subscribed observers
+};
+
+/**
+ * \brief Base class for implementations of geometric objects.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ *
+ * \see PointImplementation
+ * \see LineImplementation
+ * \see ConicImplementation
+ *
+*/
+class GeometricObjectImplementation : public ObservableGeometricObject
+{
+public:
+  /**
+  * \brief Destructor.
+  *
+  */
+  ~GeometricObjectImplementation() override;
 };
 
 class PointImplementation : public GeometricObjectImplementation
 {
 private:
+  /**
+   * \brief Default constructor.
+   *
+   */
   PointImplementation();
+
+  /**
+   * Member data.
+   */
 };
 
 class LineImplementation : public GeometricObjectImplementation
@@ -62,26 +145,32 @@ class LineImplementation : public GeometricObjectImplementation
 class ConicImplementation : public GeometricObjectImplementation
 {};
 
-
-class Construction : public IObserver
+/**
+ * \brief Class that manages dependencies between objects.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ *
+ * \details After notified, updates positions of objects
+ * \see GeometricObjectImplementation
+*/
+class Construction : public ConstructionObserver
 {};
 
 class ConstructionPoint : public Construction
-{
-
-};
+{};
 
 class ConstructionOnPlane : public ConstructionPoint
 {
-
+public:
+  void Update(Event::Destroyed) const override;
 };
 
 class ConstructionLine : public Construction
-{
-
-};
+{};
 
 class ConstructionConic : public Construction
-{
-
-};
+{};

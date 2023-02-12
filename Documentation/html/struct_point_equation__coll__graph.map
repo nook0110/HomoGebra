@@ -1,0 +1,6 @@
+<map id="PointEquation" name="PointEquation">
+<area shape="rect" id="node1" title="Struct that defines position of the point." alt="" coords="37,315,140,392"/>
+<area shape="rect" id="node2" href="$struct_equation.html" title="Struct that defines position of the objects." alt="" coords="5,175,79,252"/>
+<area shape="rect" id="node3" href="$struct_homogeneous_coordinate.html" title="Coordinates in." alt="" coords="103,175,269,252"/>
+<area shape="rect" id="node4" title=" " alt="" coords="105,5,267,83"/>
+</map>

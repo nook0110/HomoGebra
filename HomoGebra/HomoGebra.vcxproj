@@ -154,18 +154,25 @@
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_stdlib.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Equation.cpp" />
     <ClCompile Include="GeometricObjectBody.cpp" />
+    <ClCompile Include="GeometricObjectFactory.cpp" />
     <ClCompile Include="GeometricObjectImplementation.cpp" />
     <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="Plane.cpp" />
+    <ClCompile Include="PlaneBody.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Equation.h" />
     <ClInclude Include="GeometricObject.h" />
     <ClInclude Include="GeometricObjectBody.h" />
     <ClInclude Include="GeometricObjectFactory.h" />
     <ClInclude Include="GUI.h" />
     <ClInclude Include="GeometricObjectImplementation.h" />
     <ClInclude Include="Plane.h" />
+    <ClInclude Include="PlaneBody.h" />
+    <ClInclude Include="PlaneImplementation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

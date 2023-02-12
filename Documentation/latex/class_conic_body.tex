@@ -6,38 +6,39 @@
 
 
 
-Inheritance diagram for Conic\+Body\+:
-\nopagebreak
+Inheritance diagram for Conic\+Body\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=193pt]{class_conic_body__inherit__graph}
+\includegraphics[width=214pt]{class_conic_body__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Conic\+Body\+:
-\nopagebreak
+Collaboration diagram for Conic\+Body\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=193pt]{class_conic_body__coll__graph}
+\includegraphics[width=214pt]{class_conic_body__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_conic_body_a295837df8a7fc96bedea4baa8023c7c9}{$\sim$\+Conic\+Body}} () override=default
-\item 
-void \mbox{\hyperlink{class_conic_body_a5b3b73998789725d4c94327e4e01e2b1}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const final
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_geometric_object_body}{Geometric\+Object\+Body}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_geometric_object_body_af4ad2d5a677bbbccc0725b17a11a5825}{$\sim$\+Geometric\+Object\+Body}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_geometric_object_body_a107be47974a8fbcc61b20a655165427c}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override=0
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_conic_body_a5b3b73998789725d4c94327e4e01e2b1}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const final
+\begin{DoxyCompactList}\small\item\em Draw the conic to a render target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_conic_body_a179f5b513ca875e4251ae8647e851094}{Conic\+Body}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -49,13 +50,38 @@ void \mbox{\hyperlink{class_geometric_object_body_a107be47974a8fbcc61b20a6551654
 
 
 
+Destructor. 
+
+\mbox{\Hypertarget{class_conic_body_a179f5b513ca875e4251ae8647e851094}\label{class_conic_body_a179f5b513ca875e4251ae8647e851094}} 
+\index{ConicBody@{ConicBody}!ConicBody@{ConicBody}}
+\index{ConicBody@{ConicBody}!ConicBody@{ConicBody}}
+\doxysubsubsection{\texorpdfstring{ConicBody()}{ConicBody()}}
+{\footnotesize\ttfamily Conic\+Body\+::\+Conic\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Default constructor. 
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_conic_body_a5b3b73998789725d4c94327e4e01e2b1}\label{class_conic_body_a5b3b73998789725d4c94327e4e01e2b1}} 
 \index{ConicBody@{ConicBody}!draw@{draw}}
 \index{draw@{draw}!ConicBody@{ConicBody}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily void Conic\+Body\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Conic\+Body\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
 
+
+
+Draw the conic to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to. \\
+\hline
+{\em states} & Current render states. \\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{class_geometric_object_body_a107be47974a8fbcc61b20a655165427c}{Geometric\+Object\+Body}}.

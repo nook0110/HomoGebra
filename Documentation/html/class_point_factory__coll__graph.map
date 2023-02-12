@@ -1,0 +1,10 @@
+<map id="PointFactory" name="PointFactory">
+<area shape="rect" id="node1" title="Class that constructs points." alt="" coords="264,425,380,532"/>
+<area shape="rect" id="node2" href="$class_plane.html" title="Container for all objects, which you can draw." alt="" coords="295,285,349,363"/>
+<area shape="rect" id="node3" href="$class_plane_implementation.html" title="Implementation of Plane." alt="" coords="183,145,325,223"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,5,116,83"/>
+<area shape="rect" id="node5" title=" " alt="" coords="141,5,245,83"/>
+<area shape="rect" id="node6" title=" " alt="" coords="269,5,383,83"/>
+<area shape="rect" id="node7" href="$class_plane_body.html" title=" " alt="" coords="381,145,466,223"/>
+<area shape="rect" id="node8" title=" " alt="" coords="407,5,501,83"/>
+</map>

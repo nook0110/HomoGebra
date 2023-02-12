@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['render_0',['Render',['../class_g_u_i_1_1_global.html#a78eaed605f99fbf47b0a4fc871ea3ece',1,'GUI::Global']]]
+  ['notify_0',['Notify',['../class_observable_geometric_object.html#aa983a428c8218f4c2ce81323b8d0f053',1,'ObservableGeometricObject::Notify(Event::Moved) const'],['../class_observable_geometric_object.html#a0a013fe0b293dc7fc8d28525c7f62cfd',1,'ObservableGeometricObject::Notify(Event::Destroyed) const']]]
 ];

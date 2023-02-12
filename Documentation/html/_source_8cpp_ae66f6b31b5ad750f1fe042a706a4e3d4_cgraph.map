@@ -1,0 +1,6 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,55,56,80"/>
+<area shape="rect" id="node2" href="$class_g_u_i_1_1_global.html#abe0014daf1249fbdc5f5a563ab7a0a24" title="Process event happened to update Dear ImGui windows." alt="" coords="104,5,281,31"/>
+<area shape="rect" id="node3" href="$class_g_u_i_1_1_global.html#a78eaed605f99fbf47b0a4fc871ea3ece" title="Renders all Dear ImGui windows in sf::RenderWindow instance." alt="" coords="123,55,262,80"/>
+<area shape="rect" id="node4" href="$class_g_u_i_1_1_global.html#a08ec9a506fb4b9a149227a437e6bb247" title="Updates all Dear ImGui windows in sf::RenderWindow instance." alt="" coords="123,104,262,129"/>
+</map>

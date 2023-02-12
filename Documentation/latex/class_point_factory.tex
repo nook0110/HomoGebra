@@ -2,87 +2,126 @@
 \label{class_point_factory}\index{PointFactory@{PointFactory}}
 
 
-Class that constructs geometric objects.  
+Class that constructs points.  
 
 
 
 
 {\ttfamily \#include $<$Geometric\+Object\+Factory.\+h$>$}
 
+
+
+Collaboration diagram for Point\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_factory__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_point}{Point}} \& \mbox{\hyperlink{class_point_factory_a7525c0485d4586b4aede6dd8c4d8fd80}{On\+Plane}} (const \mbox{\hyperlink{struct_point_coordinate}{Point\+Coordinate}} \&coordinate)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_point}{Point}}\+: \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_point}{Point}} \& \mbox{\hyperlink{class_point_factory_a74d05608463a10d738f6f97ef72edb92}{Projection}} ()
+\mbox{\hyperlink{class_point_factory_a3d582f9e22954cb47155cd0eef56d588}{Point\+Factory}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane)
+\begin{DoxyCompactList}\small\item\em Construct a factory from the plane. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point}{Point}} \& \mbox{\hyperlink{class_point_factory_ac99e799034d75b12b7bc551d67984a8e}{On\+Plane}} (const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&coordinate)
+\begin{DoxyCompactList}\small\item\em Constructs a point with given coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point}{Point}} \& \mbox{\hyperlink{class_point_factory_ad3802f6b4c49346e3a3ab9a60aa3c1b9}{Projection}} (const \mbox{\hyperlink{class_point}{Point}} \&from, const \mbox{\hyperlink{class_line}{Line}} \&to)
+\begin{DoxyCompactList}\small\item\em Constructs point on a plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_line}{Line}} \& \mbox{\hyperlink{class_point_factory_ae6e8119eff7be5aabbe2fdce6d04214d}{By\+Two\+Points}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_line}{Line}}\+: \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_conic}{Conic}} \& \mbox{\hyperlink{class_point_factory_a5084501aa001e3ade45217a56353bbce}{By\+Five\+Points}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_conic}{Conic}}\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_plane}{Plane}} \& \mbox{\hyperlink{class_point_factory_a956e4bdc296f1cd0b879472be8c9d227}{plane\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_plane}{Plane}} to add objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class that constructs geometric objects. 
+Class that constructs points. 
 
 \begin{DoxyAuthor}{Author}
-nook0110 
+nook0110
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-0.\+1 
+0.\+1
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-Februrary 2023 This class incapsulates 
+February 2023
 \end{DoxyDate}
+Class constructs points and places them into the plane automatically. It also constructs dependencies between objects. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_construction}{Construction}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_point_factory_a3d582f9e22954cb47155cd0eef56d588}\label{class_point_factory_a3d582f9e22954cb47155cd0eef56d588}} 
+\index{PointFactory@{PointFactory}!PointFactory@{PointFactory}}
+\index{PointFactory@{PointFactory}!PointFactory@{PointFactory}}
+\doxysubsubsection{\texorpdfstring{PointFactory()}{PointFactory()}}
+{\footnotesize\ttfamily Point\+Factory\+::\+Point\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} \&}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a factory from the plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plane} & Instance where to place objects. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_point_factory_a5084501aa001e3ade45217a56353bbce}\label{class_point_factory_a5084501aa001e3ade45217a56353bbce}} 
-\index{PointFactory@{PointFactory}!ByFivePoints@{ByFivePoints}}
-\index{ByFivePoints@{ByFivePoints}!PointFactory@{PointFactory}}
-\doxysubsubsection{\texorpdfstring{ByFivePoints()}{ByFivePoints()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_conic}{Conic}} \& Point\+Factory\+::\+By\+Five\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-\mbox{\hyperlink{class_conic}{Conic}}\+: 
-
-\mbox{\Hypertarget{class_point_factory_ae6e8119eff7be5aabbe2fdce6d04214d}\label{class_point_factory_ae6e8119eff7be5aabbe2fdce6d04214d}} 
-\index{PointFactory@{PointFactory}!ByTwoPoints@{ByTwoPoints}}
-\index{ByTwoPoints@{ByTwoPoints}!PointFactory@{PointFactory}}
-\doxysubsubsection{\texorpdfstring{ByTwoPoints()}{ByTwoPoints()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_line}{Line}} \& Point\+Factory\+::\+By\+Two\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-\mbox{\hyperlink{class_line}{Line}}\+: 
-
-\mbox{\Hypertarget{class_point_factory_a7525c0485d4586b4aede6dd8c4d8fd80}\label{class_point_factory_a7525c0485d4586b4aede6dd8c4d8fd80}} 
+\mbox{\Hypertarget{class_point_factory_ac99e799034d75b12b7bc551d67984a8e}\label{class_point_factory_ac99e799034d75b12b7bc551d67984a8e}} 
 \index{PointFactory@{PointFactory}!OnPlane@{OnPlane}}
 \index{OnPlane@{OnPlane}!PointFactory@{PointFactory}}
 \doxysubsubsection{\texorpdfstring{OnPlane()}{OnPlane()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} \& Point\+Factory\+::\+On\+Plane (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point_coordinate}{Point\+Coordinate}} \&}]{coordinate }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} \& Point\+Factory\+::\+On\+Plane (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{coordinate }\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{class_point}{Point}}\+: 
+Constructs a point with given coordinates. 
 
-Constructs point on a plane with given coordinates 
+
 \begin{DoxyParams}{Parameters}
-{\em coordinate} & Place where point will be constructed \\
+{\em coordinate} & A place where point will be constructed.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{class_point}{Point}}\& 
+\mbox{\hyperlink{class_point}{Point}}\& Reference to a constructed point. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_point_factory_a74d05608463a10d738f6f97ef72edb92}\label{class_point_factory_a74d05608463a10d738f6f97ef72edb92}} 
+\mbox{\Hypertarget{class_point_factory_ad3802f6b4c49346e3a3ab9a60aa3c1b9}\label{class_point_factory_ad3802f6b4c49346e3a3ab9a60aa3c1b9}} 
 \index{PointFactory@{PointFactory}!Projection@{Projection}}
 \index{Projection@{Projection}!PointFactory@{PointFactory}}
 \doxysubsubsection{\texorpdfstring{Projection()}{Projection()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} \& Point\+Factory\+::\+Projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} \& Point\+Factory\+::\+Projection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{from,  }\item[{const \mbox{\hyperlink{class_line}{Line}} \&}]{to }\end{DoxyParamCaption})}
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+Constructs point on a plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & The point that is projected.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to a constructed point. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_point_factory_a956e4bdc296f1cd0b879472be8c9d227}\label{class_point_factory_a956e4bdc296f1cd0b879472be8c9d227}} 
+\index{PointFactory@{PointFactory}!plane\_@{plane\_}}
+\index{plane\_@{plane\_}!PointFactory@{PointFactory}}
+\doxysubsubsection{\texorpdfstring{plane\_}{plane\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_plane}{Plane}}\& Point\+Factory\+::plane\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_plane}{Plane}} to add objects. 
+
+Member data. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Homo\+Gebra/\mbox{\hyperlink{_geometric_object_factory_8h}{Geometric\+Object\+Factory.\+h}}\end{DoxyCompactItemize}
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_factory_8h}{Geometric\+Object\+Factory.\+h}}\item 
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_factory_8cpp}{Geometric\+Object\+Factory.\+cpp}}\end{DoxyCompactItemize}

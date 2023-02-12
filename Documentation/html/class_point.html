@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -70,12 +77,98 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_point-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Point Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="class_point.html" title="Point on a plane.">Point</a> on a plane.  
+ <a href="class_point.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_geometric_object_8h_source.html">GeometricObject.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Point:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_point__coll__graph.png" border="0" usemap="#a_point_coll__map" alt="Collaboration graph"/></div>
+<map name="a_point_coll__map" id="a_point_coll__map">
+<area shape="rect" title="Point on a plane." alt="" coords="203,671,255,748"/>
+<area shape="rect" href="class_point_body.html" title=" " alt="" coords="95,501,206,608"/>
+<area shape="rect" href="class_geometric_object_body.html" title=" " alt="" coords="5,345,184,452"/>
+<area shape="rect" title=" " alt="" coords="48,189,141,267"/>
+<area shape="rect" href="class_point_implementation.html" title=" " alt="" coords="239,516,395,593"/>
+<area shape="rect" href="class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="209,360,445,437"/>
+<area shape="rect" href="class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="221,160,433,296"/>
+<area shape="rect" title=" " alt="" coords="217,5,436,97"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae771f27294532425c9d4cd327358f2ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_point_body.html">PointBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#ae771f27294532425c9d4cd327358f2ba">body_</a></td></tr>
+<tr class="memdesc:ae771f27294532425c9d4cd327358f2ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Body, which you can draw.  <br /></td></tr>
+<tr class="separator:ae771f27294532425c9d4cd327358f2ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76c2c7ce144a18b459605515997ef00d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_point_implementation.html">PointImplementation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a76c2c7ce144a18b459605515997ef00d">implementation_</a></td></tr>
+<tr class="memdesc:a76c2c7ce144a18b459605515997ef00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation.  <br /></td></tr>
+<tr class="separator:a76c2c7ce144a18b459605515997ef00d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_point.html" title="Point on a plane.">Point</a> on a plane. </p>
+<dl class="section author"><dt>Author</dt><dd>nook0110</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>February 2023</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_point_body.html">PointBody</a> </dd>
+<dd>
+<a class="el" href="class_point_implementation.html">PointImplementation</a> </dd></dl>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae771f27294532425c9d4cd327358f2ba" name="ae771f27294532425c9d4cd327358f2ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae771f27294532425c9d4cd327358f2ba">&#9670;&#160;</a></span>body_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_point_body.html">PointBody</a> Point::body_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Body, which you can draw. </p>
+
+</div>
+</div>
+<a id="a76c2c7ce144a18b459605515997ef00d" name="a76c2c7ce144a18b459605515997ef00d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76c2c7ce144a18b459605515997ef00d">&#9670;&#160;</a></span>implementation_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_point_implementation.html">PointImplementation</a> Point::implementation_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implementation. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>HomoGebra/<a class="el" href="_geometric_object_8h_source.html">GeometricObject.h</a></li>
 </ul>

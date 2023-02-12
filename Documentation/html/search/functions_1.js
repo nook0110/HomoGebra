@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['byfivepoints_0',['ByFivePoints',['../class_point_factory.html#a5084501aa001e3ade45217a56353bbce',1,'PointFactory']]],
-  ['bytwopoints_1',['ByTwoPoints',['../class_point_factory.html#ae6e8119eff7be5aabbe2fdce6d04214d',1,'PointFactory']]]
+  ['byfivepoints_0',['ByFivePoints',['../class_conic_factory.html#a04e270a169445430cc36c6e7ad00a84e',1,'ConicFactory']]],
+  ['bytwopoints_1',['ByTwoPoints',['../class_line_factory.html#a4b8ff5a7161f92d65fe2f53b08faeae3',1,'LineFactory']]]
 ];

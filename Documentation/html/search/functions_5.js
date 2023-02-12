@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['onplane_0',['OnPlane',['../class_point_factory.html#a7525c0485d4586b4aede6dd8c4d8fd80',1,'PointFactory']]]
+  ['linebody_0',['LineBody',['../class_line_body.html#adc654d451c772950964ab6371689e6b4',1,'LineBody']]],
+  ['linefactory_1',['LineFactory',['../class_line_factory.html#aed7a9a4ac381d2079f198eaafeddb5cb',1,'LineFactory']]]
 ];

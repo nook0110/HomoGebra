@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -75,23 +82,54 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_g_u_i_1_1_global-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">GUI::Global Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="class_g_u_i_1_1_global.html" title="Global functions needed for Dear ImGui to work.">Global</a> functions needed for Dear ImGui to work.  
+ <a href="class_g_u_i_1_1_global.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_g_u_i_8h_source.html">GUI.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for GUI::Global:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_1_1_global__coll__graph.png" border="0" usemap="#a_g_u_i_1_1_global_coll__map" alt="Collaboration graph"/></div>
+<map name="a_g_u_i_1_1_global_coll__map" id="a_g_u_i_1_1_global_coll__map">
+<area shape="rect" title="Global functions needed for Dear ImGui to work." alt="" coords="5,145,128,252"/>
+<area shape="rect" title=" " alt="" coords="39,5,94,83"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a08ec9a506fb4b9a149227a437e6bb247"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_global.html#a08ec9a506fb4b9a149227a437e6bb247">Update</a> (sf::RenderWindow &amp;window)</td></tr>
+<tr class="memdesc:a08ec9a506fb4b9a149227a437e6bb247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all Dear ImGui windows in sf::RenderWindow instance.  <br /></td></tr>
 <tr class="separator:a08ec9a506fb4b9a149227a437e6bb247"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78eaed605f99fbf47b0a4fc871ea3ece"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_global.html#a78eaed605f99fbf47b0a4fc871ea3ece">Render</a> (sf::RenderWindow &amp;window)</td></tr>
+<tr class="memdesc:a78eaed605f99fbf47b0a4fc871ea3ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders all Dear ImGui windows in sf::RenderWindow instance.  <br /></td></tr>
 <tr class="separator:a78eaed605f99fbf47b0a4fc871ea3ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe0014daf1249fbdc5f5a563ab7a0a24"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_global.html#abe0014daf1249fbdc5f5a563ab7a0a24">ProcessEvent</a> (sf::Event event)</td></tr>
+<tr class="memdesc:abe0014daf1249fbdc5f5a563ab7a0a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process event happened to update Dear ImGui windows.  <br /></td></tr>
 <tr class="separator:abe0014daf1249fbdc5f5a563ab7a0a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a6deafeb96ce85560c2fd895f5dee6e0e"><td class="memItemLeft" align="right" valign="top">static sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_global.html#a6deafeb96ce85560c2fd895f5dee6e0e">deltaClock</a></td></tr>
+<tr class="memdesc:a6deafeb96ce85560c2fd895f5dee6e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock that counts time for updates.  <br /></td></tr>
+<tr class="separator:a6deafeb96ce85560c2fd895f5dee6e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_g_u_i_1_1_global.html" title="Global functions needed for Dear ImGui to work.">Global</a> functions needed for Dear ImGui to work. </p>
+<dl class="section author"><dt>Author</dt><dd>nook0110</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>February 2023</dd></dl>
+<p>Wraps Dear ImGui global methods and a clock for rendering.</p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://github.com/ocornut/imgui">Dear ImGui</a> </dd>
+<dd>
+<a href="https://github.com/eliasdaler/imgui-sfml">ImGui-SFML v2.5</a> </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="abe0014daf1249fbdc5f5a563ab7a0a24" name="abe0014daf1249fbdc5f5a563ab7a0a24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe0014daf1249fbdc5f5a563ab7a0a24">&#9670;&#160;</a></span>ProcessEvent()</h2>
 
@@ -115,6 +153,23 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Process event happened to update Dear ImGui windows. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td><a class="el" href="namespace_event.html" title="Events which can happen.">Event</a> that happened. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24_icgraph.png" border="0" usemap="#aclass_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24_icgraph" id="aclass_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24_icgraph">
+<area shape="rect" title="Process event happened to update Dear ImGui windows." alt="" coords="104,5,281,31"/>
+<area shape="rect" href="_source_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -142,6 +197,23 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Renders all Dear ImGui windows in sf::RenderWindow instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>sf::RenderWindow where to render Dear ImGui windows. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_1_1_global_a78eaed605f99fbf47b0a4fc871ea3ece_icgraph.png" border="0" usemap="#aclass_g_u_i_1_1_global_a78eaed605f99fbf47b0a4fc871ea3ece_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_1_1_global_a78eaed605f99fbf47b0a4fc871ea3ece_icgraph" id="aclass_g_u_i_1_1_global_a78eaed605f99fbf47b0a4fc871ea3ece_icgraph">
+<area shape="rect" title="Renders all Dear ImGui windows in sf::RenderWindow instance." alt="" coords="104,5,243,31"/>
+<area shape="rect" href="_source_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a08ec9a506fb4b9a149227a437e6bb247" name="a08ec9a506fb4b9a149227a437e6bb247"></a>
@@ -167,6 +239,49 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Updates all Dear ImGui windows in sf::RenderWindow instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>sf::RenderWindow where to update Dear ImGui windows. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247_icgraph.png" border="0" usemap="#aclass_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247_icgraph" id="aclass_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247_icgraph">
+<area shape="rect" title="Updates all Dear ImGui windows in sf::RenderWindow instance." alt="" coords="104,5,243,31"/>
+<area shape="rect" href="_source_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a6deafeb96ce85560c2fd895f5dee6e0e" name="a6deafeb96ce85560c2fd895f5dee6e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6deafeb96ce85560c2fd895f5dee6e0e">&#9670;&#160;</a></span>deltaClock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Clock Global::deltaClock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clock that counts time for updates. </p>
+<p>Static member data. </p>
 
 </div>
 </div>

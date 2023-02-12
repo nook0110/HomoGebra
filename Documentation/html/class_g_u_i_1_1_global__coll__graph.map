@@ -1,0 +1,4 @@
+<map id="GUI::Global" name="GUI::Global">
+<area shape="rect" id="node1" title="Global functions needed for Dear ImGui to work." alt="" coords="5,145,128,252"/>
+<area shape="rect" id="node2" title=" " alt="" coords="39,5,94,83"/>
+</map>

@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -71,76 +78,94 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_point_factory-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">PointFactory Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class that constructs geometric objects.  
+<p>Class that constructs points.  
  <a href="class_point_factory.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_geometric_object_factory_8h_source.html">GeometricObjectFactory.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for PointFactory:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_point_factory__coll__graph.png" border="0" usemap="#a_point_factory_coll__map" alt="Collaboration graph"/></div>
+<map name="a_point_factory_coll__map" id="a_point_factory_coll__map">
+<area shape="rect" title="Class that constructs points." alt="" coords="264,425,380,532"/>
+<area shape="rect" href="class_plane.html" title="Container for all objects, which you can draw." alt="" coords="295,285,349,363"/>
+<area shape="rect" href="class_plane_implementation.html" title="Implementation of Plane." alt="" coords="183,145,325,223"/>
+<area shape="rect" title=" " alt="" coords="5,5,116,83"/>
+<area shape="rect" title=" " alt="" coords="141,5,245,83"/>
+<area shape="rect" title=" " alt="" coords="269,5,383,83"/>
+<area shape="rect" href="class_plane_body.html" title=" " alt="" coords="381,145,466,223"/>
+<area shape="rect" title=" " alt="" coords="407,5,501,83"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7525c0485d4586b4aede6dd8c4d8fd80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_factory.html#a7525c0485d4586b4aede6dd8c4d8fd80">OnPlane</a> (const <a class="el" href="struct_point_coordinate.html">PointCoordinate</a> &amp;coordinate)</td></tr>
-<tr class="memdesc:a7525c0485d4586b4aede6dd8c4d8fd80"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_point.html">Point</a>:  <br /></td></tr>
-<tr class="separator:a7525c0485d4586b4aede6dd8c4d8fd80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74d05608463a10d738f6f97ef72edb92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_factory.html#a74d05608463a10d738f6f97ef72edb92">Projection</a> ()</td></tr>
-<tr class="separator:a74d05608463a10d738f6f97ef72edb92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6e8119eff7be5aabbe2fdce6d04214d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_line.html">Line</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_factory.html#ae6e8119eff7be5aabbe2fdce6d04214d">ByTwoPoints</a> ()</td></tr>
-<tr class="memdesc:ae6e8119eff7be5aabbe2fdce6d04214d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_line.html">Line</a>:  <br /></td></tr>
-<tr class="separator:ae6e8119eff7be5aabbe2fdce6d04214d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5084501aa001e3ade45217a56353bbce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_conic.html">Conic</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_factory.html#a5084501aa001e3ade45217a56353bbce">ByFivePoints</a> ()</td></tr>
-<tr class="memdesc:a5084501aa001e3ade45217a56353bbce"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_conic.html">Conic</a>:  <br /></td></tr>
-<tr class="separator:a5084501aa001e3ade45217a56353bbce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d582f9e22954cb47155cd0eef56d588"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_factory.html#a3d582f9e22954cb47155cd0eef56d588">PointFactory</a> (<a class="el" href="class_plane.html">Plane</a> &amp;plane)</td></tr>
+<tr class="memdesc:a3d582f9e22954cb47155cd0eef56d588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a factory from the plane.  <br /></td></tr>
+<tr class="separator:a3d582f9e22954cb47155cd0eef56d588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac99e799034d75b12b7bc551d67984a8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_factory.html#ac99e799034d75b12b7bc551d67984a8e">OnPlane</a> (const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;coordinate)</td></tr>
+<tr class="memdesc:ac99e799034d75b12b7bc551d67984a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a point with given coordinates.  <br /></td></tr>
+<tr class="separator:ac99e799034d75b12b7bc551d67984a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3802f6b4c49346e3a3ab9a60aa3c1b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_factory.html#ad3802f6b4c49346e3a3ab9a60aa3c1b9">Projection</a> (const <a class="el" href="class_point.html">Point</a> &amp;from, const <a class="el" href="class_line.html">Line</a> &amp;to)</td></tr>
+<tr class="memdesc:ad3802f6b4c49346e3a3ab9a60aa3c1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs point on a plane.  <br /></td></tr>
+<tr class="separator:ad3802f6b4c49346e3a3ab9a60aa3c1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a956e4bdc296f1cd0b879472be8c9d227"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_plane.html">Plane</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_factory.html#a956e4bdc296f1cd0b879472be8c9d227">plane_</a></td></tr>
+<tr class="memdesc:a956e4bdc296f1cd0b879472be8c9d227"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_plane.html" title="Container for all objects, which you can draw.">Plane</a> to add objects.  <br /></td></tr>
+<tr class="separator:a956e4bdc296f1cd0b879472be8c9d227"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class that constructs geometric objects. </p>
-<dl class="section author"><dt>Author</dt><dd>nook0110 </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Februrary 2023 This class incapsulates </dd></dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5084501aa001e3ade45217a56353bbce" name="a5084501aa001e3ade45217a56353bbce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5084501aa001e3ade45217a56353bbce">&#9670;&#160;</a></span>ByFivePoints()</h2>
+<div class="textblock"><p>Class that constructs points. </p>
+<dl class="section author"><dt>Author</dt><dd>nook0110</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>February 2023</dd></dl>
+<p>Class constructs points and places them into the plane automatically. It also constructs dependencies between objects. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_construction.html" title="Class that manages dependencies between objects.">Construction</a> </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3d582f9e22954cb47155cd0eef56d588" name="a3d582f9e22954cb47155cd0eef56d588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d582f9e22954cb47155cd0eef56d588">&#9670;&#160;</a></span>PointFactory()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_conic.html">Conic</a> &amp; PointFactory::ByFivePoints </td>
+          <td class="memname">PointFactory::PointFactory </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_plane.html">Plane</a> &amp;&#160;</td>
+          <td class="paramname"><em>plane</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_conic.html">Conic</a>: </p>
+<p>Construct a factory from the plane. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plane</td><td>Instance where to place objects. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="ae6e8119eff7be5aabbe2fdce6d04214d" name="ae6e8119eff7be5aabbe2fdce6d04214d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6e8119eff7be5aabbe2fdce6d04214d">&#9670;&#160;</a></span>ByTwoPoints()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_line.html">Line</a> &amp; PointFactory::ByTwoPoints </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="class_line.html">Line</a>: </p>
-
-</div>
-</div>
-<a id="a7525c0485d4586b4aede6dd8c4d8fd80" name="a7525c0485d4586b4aede6dd8c4d8fd80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7525c0485d4586b4aede6dd8c4d8fd80">&#9670;&#160;</a></span>OnPlane()</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac99e799034d75b12b7bc551d67984a8e" name="ac99e799034d75b12b7bc551d67984a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac99e799034d75b12b7bc551d67984a8e">&#9670;&#160;</a></span>OnPlane()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,26 +173,26 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_point.html">Point</a> &amp; PointFactory::OnPlane </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_point_coordinate.html">PointCoordinate</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;&#160;</td>
           <td class="paramname"><em>coordinate</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_point.html">Point</a>: </p>
-<p>Constructs point on a plane with given coordinates </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Constructs a point with given coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">coordinate</td><td>Place where point will be constructed </td></tr>
+    <tr><td class="paramname">coordinate</td><td>A place where point will be constructed.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_point.html">Point</a>&amp; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_point.html" title="Point on a plane.">Point</a>&amp; Reference to a constructed point. </dd></dl>
 
 </div>
 </div>
-<a id="a74d05608463a10d738f6f97ef72edb92" name="a74d05608463a10d738f6f97ef72edb92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74d05608463a10d738f6f97ef72edb92">&#9670;&#160;</a></span>Projection()</h2>
+<a id="ad3802f6b4c49346e3a3ab9a60aa3c1b9" name="ad3802f6b4c49346e3a3ab9a60aa3c1b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3802f6b4c49346e3a3ab9a60aa3c1b9">&#9670;&#160;</a></span>Projection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,16 +200,63 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_point.html">Point</a> &amp; PointFactory::Projection </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="class_point.html">Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="class_line.html">Line</a> &amp;&#160;</td>
+          <td class="paramname"><em>to</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructs point on a plane. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>The point that is projected.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to a constructed point. </dd></dl>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a956e4bdc296f1cd0b879472be8c9d227" name="a956e4bdc296f1cd0b879472be8c9d227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a956e4bdc296f1cd0b879472be8c9d227">&#9670;&#160;</a></span>plane_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_plane.html">Plane</a>&amp; PointFactory::plane_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_plane.html" title="Container for all objects, which you can draw.">Plane</a> to add objects. </p>
+<p>Member data. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>HomoGebra/<a class="el" href="_geometric_object_factory_8h_source.html">GeometricObjectFactory.h</a></li>
+<li>HomoGebra/<a class="el" href="_geometric_object_factory_8cpp.html">GeometricObjectFactory.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

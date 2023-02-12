@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -85,19 +92,21 @@ $(function() {
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespace_g_u_i.html">    8</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_g_u_i.html">GUI</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_g_u_i_1_1_global.html">   10</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_g_u_i_1_1_global.html">Global</a></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">static</span> sf::Clock deltaClock;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_g_u_i_1_1_global.html#a08ec9a506fb4b9a149227a437e6bb247">Update</a>(sf::RenderWindow&amp; window);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_g_u_i_1_1_global.html#a78eaed605f99fbf47b0a4fc871ea3ece">Render</a>(sf::RenderWindow&amp; window);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_g_u_i_1_1_global.html#abe0014daf1249fbdc5f5a563ab7a0a24">ProcessEvent</a>(sf::Event event);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    };</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
-<div class="ttc" id="aclass_g_u_i_1_1_global_html"><div class="ttname"><a href="class_g_u_i_1_1_global.html">GUI::Global</a></div><div class="ttdef"><b>Definition:</b> GUI.h:11</div></div>
-<div class="ttc" id="aclass_g_u_i_1_1_global_html_a08ec9a506fb4b9a149227a437e6bb247"><div class="ttname"><a href="class_g_u_i_1_1_global.html#a08ec9a506fb4b9a149227a437e6bb247">GUI::Global::Update</a></div><div class="ttdeci">static void Update(sf::RenderWindow &amp;window)</div><div class="ttdef"><b>Definition:</b> GUI.cpp:7</div></div>
-<div class="ttc" id="aclass_g_u_i_1_1_global_html_a78eaed605f99fbf47b0a4fc871ea3ece"><div class="ttname"><a href="class_g_u_i_1_1_global.html#a78eaed605f99fbf47b0a4fc871ea3ece">GUI::Global::Render</a></div><div class="ttdeci">static void Render(sf::RenderWindow &amp;window)</div><div class="ttdef"><b>Definition:</b> GUI.cpp:12</div></div>
-<div class="ttc" id="aclass_g_u_i_1_1_global_html_abe0014daf1249fbdc5f5a563ab7a0a24"><div class="ttname"><a href="class_g_u_i_1_1_global.html#abe0014daf1249fbdc5f5a563ab7a0a24">GUI::Global::ProcessEvent</a></div><div class="ttdeci">static void ProcessEvent(sf::Event event)</div><div class="ttdef"><b>Definition:</b> GUI.cpp:17</div></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_g_u_i_1_1_global.html">   24</a></span>  <span class="keyword">class </span><a class="code hl_class" href="class_g_u_i_1_1_global.html">Global</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_g_u_i_1_1_global.html#a08ec9a506fb4b9a149227a437e6bb247">Update</a>(sf::RenderWindow&amp; window);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_g_u_i_1_1_global.html#a78eaed605f99fbf47b0a4fc871ea3ece">Render</a>(sf::RenderWindow&amp; window);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_g_u_i_1_1_global.html#abe0014daf1249fbdc5f5a563ab7a0a24">ProcessEvent</a>(sf::Event event);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_g_u_i_1_1_global.html#a6deafeb96ce85560c2fd895f5dee6e0e">   49</a></span>    <span class="keyword">static</span> sf::Clock <a class="code hl_variable" href="class_g_u_i_1_1_global.html#a6deafeb96ce85560c2fd895f5dee6e0e">deltaClock</a>; </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  };</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+<div class="ttc" id="aclass_g_u_i_1_1_global_html"><div class="ttname"><a href="class_g_u_i_1_1_global.html">GUI::Global</a></div><div class="ttdoc">Global functions needed for Dear ImGui to work.</div><div class="ttdef"><b>Definition:</b> GUI.h:25</div></div>
+<div class="ttc" id="aclass_g_u_i_1_1_global_html_a08ec9a506fb4b9a149227a437e6bb247"><div class="ttname"><a href="class_g_u_i_1_1_global.html#a08ec9a506fb4b9a149227a437e6bb247">GUI::Global::Update</a></div><div class="ttdeci">static void Update(sf::RenderWindow &amp;window)</div><div class="ttdoc">Updates all Dear ImGui windows in sf::RenderWindow instance.</div><div class="ttdef"><b>Definition:</b> GUI.cpp:7</div></div>
+<div class="ttc" id="aclass_g_u_i_1_1_global_html_a6deafeb96ce85560c2fd895f5dee6e0e"><div class="ttname"><a href="class_g_u_i_1_1_global.html#a6deafeb96ce85560c2fd895f5dee6e0e">GUI::Global::deltaClock</a></div><div class="ttdeci">static sf::Clock deltaClock</div><div class="ttdoc">Clock that counts time for updates.</div><div class="ttdef"><b>Definition:</b> GUI.h:49</div></div>
+<div class="ttc" id="aclass_g_u_i_1_1_global_html_a78eaed605f99fbf47b0a4fc871ea3ece"><div class="ttname"><a href="class_g_u_i_1_1_global.html#a78eaed605f99fbf47b0a4fc871ea3ece">GUI::Global::Render</a></div><div class="ttdeci">static void Render(sf::RenderWindow &amp;window)</div><div class="ttdoc">Renders all Dear ImGui windows in sf::RenderWindow instance.</div><div class="ttdef"><b>Definition:</b> GUI.cpp:13</div></div>
+<div class="ttc" id="aclass_g_u_i_1_1_global_html_abe0014daf1249fbdc5f5a563ab7a0a24"><div class="ttname"><a href="class_g_u_i_1_1_global.html#abe0014daf1249fbdc5f5a563ab7a0a24">GUI::Global::ProcessEvent</a></div><div class="ttdeci">static void ProcessEvent(sf::Event event)</div><div class="ttdoc">Process event happened to update Dear ImGui windows.</div><div class="ttdef"><b>Definition:</b> GUI.cpp:19</div></div>
 <div class="ttc" id="anamespace_g_u_i_html"><div class="ttname"><a href="namespace_g_u_i.html">GUI</a></div><div class="ttdef"><b>Definition:</b> GUI.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

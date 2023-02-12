@@ -1,4 +1,22 @@
 var searchData=
 [
-  ['update_0',['Update',['../class_i_observer.html#ae151ed2f23bf3bf4a811e3f187b6b995',1,'IObserver::Update()'],['../class_g_u_i_1_1_global.html#a08ec9a506fb4b9a149227a437e6bb247',1,'GUI::Global::Update()']]]
+  ['pair_5fproducts_0',['pair_products',['../struct_conic_equation.html#aa220c0df266f56a01885f4b24752c6ca',1,'ConicEquation']]],
+  ['plane_1',['Plane',['../class_plane.html',1,'']]],
+  ['plane_2ecpp_2',['Plane.cpp',['../_plane_8cpp.html',1,'']]],
+  ['plane_2eh_3',['Plane.h',['../_plane_8h.html',1,'']]],
+  ['plane_5f_4',['plane_',['../class_point_factory.html#a956e4bdc296f1cd0b879472be8c9d227',1,'PointFactory::plane_()'],['../class_line_factory.html#aee510eb7711e7565c3e65740aaf43a0a',1,'LineFactory::plane_()'],['../class_conic_factory.html#aae78e85d161fa5a4508c8626c1826fe9',1,'ConicFactory::plane_()']]],
+  ['planebody_5',['PlaneBody',['../class_plane_body.html',1,'']]],
+  ['planebody_2ecpp_6',['PlaneBody.cpp',['../_plane_body_8cpp.html',1,'']]],
+  ['planebody_2eh_7',['PlaneBody.h',['../_plane_body_8h.html',1,'']]],
+  ['planeimplementation_8',['PlaneImplementation',['../class_plane_implementation.html',1,'']]],
+  ['planeimplementation_2eh_9',['PlaneImplementation.h',['../_plane_implementation_8h.html',1,'']]],
+  ['point_10',['Point',['../class_point.html',1,'']]],
+  ['pointbody_11',['PointBody',['../class_point_body.html',1,'PointBody'],['../class_point_body.html#a1d5e72d441cf724d516b4a9ace20eba7',1,'PointBody::PointBody()']]],
+  ['pointequation_12',['PointEquation',['../struct_point_equation.html',1,'']]],
+  ['pointfactory_13',['PointFactory',['../class_point_factory.html',1,'PointFactory'],['../class_point_factory.html#a3d582f9e22954cb47155cd0eef56d588',1,'PointFactory::PointFactory()']]],
+  ['pointimplementation_14',['PointImplementation',['../class_point_implementation.html',1,'PointImplementation'],['../class_point_implementation.html#aded0f8c1a826f91e556cad773063b43b',1,'PointImplementation::PointImplementation()']]],
+  ['points_5f_15',['points_',['../class_plane_implementation.html#a5aca52264b3749486c754de36b5300de',1,'PlaneImplementation']]],
+  ['prev_16',['prev',['../struct_conic_equation.html#a0e66d5601071fe10b7fc28da762cd1e0',1,'ConicEquation']]],
+  ['processevent_17',['ProcessEvent',['../class_g_u_i_1_1_global.html#abe0014daf1249fbdc5f5a563ab7a0a24',1,'GUI::Global']]],
+  ['projection_18',['Projection',['../class_point_factory.html#ad3802f6b4c49346e3a3ab9a60aa3c1b9',1,'PointFactory']]]
 ];

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['line_0',['Line',['../class_line.html',1,'']]],
-  ['linebody_1',['LineBody',['../class_line_body.html',1,'']]],
-  ['linecoordinate_2',['LineCoordinate',['../struct_line_coordinate.html',1,'']]],
-  ['lineimplementation_3',['LineImplementation',['../class_line_implementation.html',1,'']]]
+  ['geometricobjectbody_0',['GeometricObjectBody',['../class_geometric_object_body.html',1,'']]],
+  ['geometricobjectimplementation_1',['GeometricObjectImplementation',['../class_geometric_object_implementation.html',1,'']]],
+  ['global_2',['Global',['../class_g_u_i_1_1_global.html',1,'GUI']]]
 ];
