@@ -39,10 +39,10 @@ public:
    * \return Determinant
    */
   complex Determinant() const;
-  
+
   /**
    * Multiplies this matrix on another one.
-   * 
+   *
    * \param other Another matrix
    * \return Reference to this object
    */
@@ -105,12 +105,12 @@ public:
 
   /**
    * \brief Construct transformation from movement of 4 points.
-   * 
+   *
    * \detail This transformation will do homography (preimage->image)
    * A projective transformation of the plane is defined by specifying four pairs of corresponding mapping points.
    * For correct homography three points of the four images or preimages shouldn't lie on the same line.
    * (Otherwise it will degenerate)
-   * 
+   *
    * \param first_preimage First point preimage position
    * \param second_preimage Second point preimage position
    * \param third_preimage Third point preimage position
@@ -129,5 +129,3 @@ public:
 private:
   TransformationMatrix transformation_;
 };
-
-

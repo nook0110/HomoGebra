@@ -130,14 +130,14 @@ class PointImplementation : public GeometricObjectImplementation
 public:
   /**
    * \brief Sets new equation of point.
-   * 
+   *
    * \param equation Equation of point
   */
   void SetEquation(const PointEquation& equation);
 
   /**
    * \brief Return current equation of point.
-   * 
+   *
    * \return Point equation.
    */
   const PointEquation& GetEquation() const;
@@ -163,7 +163,7 @@ public:
    *
    * \param equation Equation of line
   */
-  void SetPosition(const LineEquation & equation);
+  void SetPosition(const LineEquation& equation);
 
   /**
    * \brief Return equation of line.
