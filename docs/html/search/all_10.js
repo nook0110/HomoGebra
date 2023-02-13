@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['update_0',['Update',['../class_construction_observer.html#a45e9a8ab6c2e95e2aa70a27643989a8d',1,'ConstructionObserver::Update(Event::Moved) const =0'],['../class_construction_observer.html#a34d1f6d4b70d23f677098516b7521baf',1,'ConstructionObserver::Update(Event::Destroyed) const =0'],['../class_g_u_i_1_1_global.html#a08ec9a506fb4b9a149227a437e6bb247',1,'GUI::Global::Update()']]]
+  ['transformation_0',['Transformation',['../class_transformation.html',1,'Transformation'],['../class_transformation.html#a6c68aff17646a716a352f003dfe48341',1,'Transformation::Transformation(const TransformationMatrix &amp;transformation=TransformationMatrix())']]],
+  ['transformation_5f_1',['transformation_',['../class_transformation.html#a411585533799d6bfe14484f2b83bd7a7',1,'Transformation']]],
+  ['transformationmatrix_2',['TransformationMatrix',['../class_transformation_matrix.html',1,'TransformationMatrix'],['../class_transformation_matrix.html#aa188aa955061de541799126a392a56b0',1,'TransformationMatrix::TransformationMatrix()'],['../class_transformation_matrix.html#a930ac00a412ac2be37ab8f5fb69d6110',1,'TransformationMatrix::TransformationMatrix(const complex &amp;a00, const complex &amp;a01, const complex &amp;a02, const complex &amp;a10, const complex &amp;a11, const complex &amp;a12, const complex &amp;a20, const complex &amp;a21, const complex &amp;a22)']]]
 ];

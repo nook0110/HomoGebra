@@ -1,6 +1,14 @@
 <map id="ConstructionPoint" name="ConstructionPoint">
-<area shape="rect" id="node1" title=" " alt="" coords="30,443,155,520"/>
-<area shape="rect" id="node2" href="$class_construction.html" title="Class that manages dependencies between objects." alt="" coords="45,316,140,393"/>
-<area shape="rect" id="node3" href="$class_construction_observer.html" title="Makes Construction an observer." alt="" coords="5,160,180,267"/>
-<area shape="rect" id="node4" title=" " alt="" coords="13,5,173,97"/>
+<area shape="rect" id="node1" title="Defines how point is created." alt="" coords="163,727,289,804"/>
+<area shape="rect" id="node2" href="$class_construction.html" title="Defines how object is created." alt="" coords="105,572,200,649"/>
+<area shape="rect" id="node3" href="$class_construction_observer.html" title="Makes Construction an observer." alt="" coords="5,388,180,495"/>
+<area shape="rect" id="node4" title=" " alt="" coords="13,211,173,303"/>
+<area shape="rect" id="node5" href="$class_point_implementation.html" title=" " alt="" coords="244,557,400,664"/>
+<area shape="rect" id="node6" href="$class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="204,403,440,480"/>
+<area shape="rect" id="node7" href="$class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="216,189,428,325"/>
+<area shape="rect" id="node8" title=" " alt="" coords="213,5,431,97"/>
+<area shape="rect" id="node9" href="$struct_point_equation.html" title="Struct that defines position of the point." alt="" coords="464,403,567,480"/>
+<area shape="rect" id="node10" href="$struct_equation.html" title="Struct that defines position of the objects." alt="" coords="465,219,539,296"/>
+<area shape="rect" id="node11" href="$struct_homogeneous_coordinate.html" title="Coordinates in." alt="" coords="563,219,729,296"/>
+<area shape="rect" id="node12" title=" " alt="" coords="565,13,727,90"/>
 </map>

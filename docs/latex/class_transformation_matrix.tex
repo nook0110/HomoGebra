@@ -1,0 +1,173 @@
+\hypertarget{class_transformation_matrix}{}\doxysection{Transformation\+Matrix Class Reference}
+\label{class_transformation_matrix}\index{TransformationMatrix@{TransformationMatrix}}
+
+
+{\ttfamily \#include $<$Coordinate.\+h$>$}
+
+
+
+Collaboration diagram for Transformation\+Matrix\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_transformation_matrix__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_transformation_matrix_a9fb9a268aa31408e70f5874a8c795723}{Matrix\+Row}} = std\+::array$<$ \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}, 3 $>$
+\item 
+using \mbox{\hyperlink{class_transformation_matrix_a18731619f8a92b0c490c3eafe6cda996}{Matrix\+Column}} = std\+::array$<$ \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}, 3 $>$
+\item 
+using \mbox{\hyperlink{class_transformation_matrix_a675f432af86befa6cac47f7225f7d47f}{Matrix\+Container}} = std\+::array$<$ std\+::array$<$ \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}, 3 $>$, 3 $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transformation_matrix_aa188aa955061de541799126a392a56b0}{Transformation\+Matrix}} ()
+\item 
+\mbox{\hyperlink{class_transformation_matrix_a930ac00a412ac2be37ab8f5fb69d6110}{Transformation\+Matrix}} (const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&a00, const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&a01, const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&a02, const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&a10, const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&a11, const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&a12, const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&a20, const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&a21, const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&a22)
+\item 
+std\+::optional$<$ \mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}} $>$ \mbox{\hyperlink{class_transformation_matrix_a4437f5b19df3a31e85c380c1cbeff3ee}{Get\+Inverse}} () const
+\item 
+\mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \mbox{\hyperlink{class_transformation_matrix_ad48777040a3716b44c5821e8c4ce602c}{Determinant}} () const
+\item 
+const \mbox{\hyperlink{class_transformation_matrix_a18731619f8a92b0c490c3eafe6cda996}{Matrix\+Column}} \& \mbox{\hyperlink{class_transformation_matrix_a6637d3fd00152b6f6c4fe416150d0a44}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t row) const
+\item 
+\mbox{\hyperlink{class_transformation_matrix_a18731619f8a92b0c490c3eafe6cda996}{Matrix\+Column}} \& \mbox{\hyperlink{class_transformation_matrix_a64c46bec43e44378c3fd5b6bda0a3463}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t row)
+\item 
+Matrix\+Container\+::const\+\_\+iterator \mbox{\hyperlink{class_transformation_matrix_a7ad5e674edc6b7dff9da7e393a23af93}{begin}} () const
+\item 
+Matrix\+Container\+::const\+\_\+iterator \mbox{\hyperlink{class_transformation_matrix_af5104b85c5ddb58382a3584e710cabec}{end}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transformation_matrix_a675f432af86befa6cac47f7225f7d47f}{Matrix\+Container}} \mbox{\hyperlink{class_transformation_matrix_a25c169ff424bbf50e72c455ac76b30f6}{matrix\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_transformation_matrix_a18731619f8a92b0c490c3eafe6cda996}\label{class_transformation_matrix_a18731619f8a92b0c490c3eafe6cda996}} 
+\index{TransformationMatrix@{TransformationMatrix}!MatrixColumn@{MatrixColumn}}
+\index{MatrixColumn@{MatrixColumn}!TransformationMatrix@{TransformationMatrix}}
+\doxysubsubsection{\texorpdfstring{MatrixColumn}{MatrixColumn}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_transformation_matrix_a18731619f8a92b0c490c3eafe6cda996}{Transformation\+Matrix\+::\+Matrix\+Column}} =  std\+::array$<$\mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}, 3$>$}
+
+\mbox{\Hypertarget{class_transformation_matrix_a675f432af86befa6cac47f7225f7d47f}\label{class_transformation_matrix_a675f432af86befa6cac47f7225f7d47f}} 
+\index{TransformationMatrix@{TransformationMatrix}!MatrixContainer@{MatrixContainer}}
+\index{MatrixContainer@{MatrixContainer}!TransformationMatrix@{TransformationMatrix}}
+\doxysubsubsection{\texorpdfstring{MatrixContainer}{MatrixContainer}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_transformation_matrix_a675f432af86befa6cac47f7225f7d47f}{Transformation\+Matrix\+::\+Matrix\+Container}} =  std\+::array$<$std\+::array$<$\mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}, 3$>$, 3$>$}
+
+\mbox{\Hypertarget{class_transformation_matrix_a9fb9a268aa31408e70f5874a8c795723}\label{class_transformation_matrix_a9fb9a268aa31408e70f5874a8c795723}} 
+\index{TransformationMatrix@{TransformationMatrix}!MatrixRow@{MatrixRow}}
+\index{MatrixRow@{MatrixRow}!TransformationMatrix@{TransformationMatrix}}
+\doxysubsubsection{\texorpdfstring{MatrixRow}{MatrixRow}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_transformation_matrix_a9fb9a268aa31408e70f5874a8c795723}{Transformation\+Matrix\+::\+Matrix\+Row}} =  std\+::array$<$\mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}, 3$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_transformation_matrix_aa188aa955061de541799126a392a56b0}\label{class_transformation_matrix_aa188aa955061de541799126a392a56b0}} 
+\index{TransformationMatrix@{TransformationMatrix}!TransformationMatrix@{TransformationMatrix}}
+\index{TransformationMatrix@{TransformationMatrix}!TransformationMatrix@{TransformationMatrix}}
+\doxysubsubsection{\texorpdfstring{TransformationMatrix()}{TransformationMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Transformation\+Matrix\+::\+Transformation\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default Constructor. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_transformation_matrix_aa188aa955061de541799126a392a56b0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_transformation_matrix_a930ac00a412ac2be37ab8f5fb69d6110}\label{class_transformation_matrix_a930ac00a412ac2be37ab8f5fb69d6110}} 
+\index{TransformationMatrix@{TransformationMatrix}!TransformationMatrix@{TransformationMatrix}}
+\index{TransformationMatrix@{TransformationMatrix}!TransformationMatrix@{TransformationMatrix}}
+\doxysubsubsection{\texorpdfstring{TransformationMatrix()}{TransformationMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Transformation\+Matrix\+::\+Transformation\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&}]{a00,  }\item[{const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&}]{a01,  }\item[{const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&}]{a02,  }\item[{const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&}]{a10,  }\item[{const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&}]{a11,  }\item[{const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&}]{a12,  }\item[{const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&}]{a20,  }\item[{const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&}]{a21,  }\item[{const \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \&}]{a22 }\end{DoxyParamCaption})}
+
+Constructor that initializes all elements in matrix 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_transformation_matrix_a7ad5e674edc6b7dff9da7e393a23af93}\label{class_transformation_matrix_a7ad5e674edc6b7dff9da7e393a23af93}} 
+\index{TransformationMatrix@{TransformationMatrix}!begin@{begin}}
+\index{begin@{begin}!TransformationMatrix@{TransformationMatrix}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily Matrix\+Container\+::const\+\_\+iterator Transformation\+Matrix\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_transformation_matrix_ad48777040a3716b44c5821e8c4ce602c}\label{class_transformation_matrix_ad48777040a3716b44c5821e8c4ce602c}} 
+\index{TransformationMatrix@{TransformationMatrix}!Determinant@{Determinant}}
+\index{Determinant@{Determinant}!TransformationMatrix@{TransformationMatrix}}
+\doxysubsubsection{\texorpdfstring{Determinant()}{Determinant()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} Transformation\+Matrix\+::\+Determinant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Calculates determinant
+
+\begin{DoxyReturn}{Returns}
+Determinant 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_transformation_matrix_ad48777040a3716b44c5821e8c4ce602c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_transformation_matrix_af5104b85c5ddb58382a3584e710cabec}\label{class_transformation_matrix_af5104b85c5ddb58382a3584e710cabec}} 
+\index{TransformationMatrix@{TransformationMatrix}!end@{end}}
+\index{end@{end}!TransformationMatrix@{TransformationMatrix}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily Matrix\+Container\+::const\+\_\+iterator Transformation\+Matrix\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_transformation_matrix_a4437f5b19df3a31e85c380c1cbeff3ee}\label{class_transformation_matrix_a4437f5b19df3a31e85c380c1cbeff3ee}} 
+\index{TransformationMatrix@{TransformationMatrix}!GetInverse@{GetInverse}}
+\index{GetInverse@{GetInverse}!TransformationMatrix@{TransformationMatrix}}
+\doxysubsubsection{\texorpdfstring{GetInverse()}{GetInverse()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}} $>$ Transformation\+Matrix\+::\+Get\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Finds inversion of matrix.
+
+\begin{DoxyReturn}{Returns}
+Inverse matrix 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_transformation_matrix_a4437f5b19df3a31e85c380c1cbeff3ee_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_transformation_matrix_a64c46bec43e44378c3fd5b6bda0a3463}\label{class_transformation_matrix_a64c46bec43e44378c3fd5b6bda0a3463}} 
+\index{TransformationMatrix@{TransformationMatrix}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!TransformationMatrix@{TransformationMatrix}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transformation_matrix_a18731619f8a92b0c490c3eafe6cda996}{Matrix\+Column}} \& Transformation\+Matrix\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_transformation_matrix_a6637d3fd00152b6f6c4fe416150d0a44}\label{class_transformation_matrix_a6637d3fd00152b6f6c4fe416150d0a44}} 
+\index{TransformationMatrix@{TransformationMatrix}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!TransformationMatrix@{TransformationMatrix}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_transformation_matrix_a18731619f8a92b0c490c3eafe6cda996}{Matrix\+Column}} \& Transformation\+Matrix\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_transformation_matrix_a25c169ff424bbf50e72c455ac76b30f6}\label{class_transformation_matrix_a25c169ff424bbf50e72c455ac76b30f6}} 
+\index{TransformationMatrix@{TransformationMatrix}!matrix\_@{matrix\_}}
+\index{matrix\_@{matrix\_}!TransformationMatrix@{TransformationMatrix}}
+\doxysubsubsection{\texorpdfstring{matrix\_}{matrix\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transformation_matrix_a675f432af86befa6cac47f7225f7d47f}{Matrix\+Container}} Transformation\+Matrix\+::matrix\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/\mbox{\hyperlink{_coordinate_8h}{Coordinate.\+h}}\item 
+Homo\+Gebra/\mbox{\hyperlink{_coordinate_8cpp}{Coordinate.\+cpp}}\end{DoxyCompactItemize}

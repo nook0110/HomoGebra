@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../struct_homogeneous_coordinate.html#a3e34b30a184e45f6bdd17081c37ff38b',1,'HomogeneousCoordinate']]]
+  ['var_0',['var',['../struct_equation.html#a97cbcb97188027c47a4bda31c34e4920',1,'Equation::var()'],['../_equation_8cpp.html#a71c256f07d0fcc7ee2f9e32ec81c57ed',1,'var():&#160;Equation.cpp']]]
 ];

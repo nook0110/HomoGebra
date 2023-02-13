@@ -27,10 +27,10 @@ Collaboration diagram for Point\+Implementation\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_point_implementation_ad2de8c5a1aacd3c2986f82a3b0ac5854}{Set\+Position}} (const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&equation)
-\begin{DoxyCompactList}\small\item\em Sets position of point. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \& \mbox{\hyperlink{class_point_implementation_a019de03ebe65a56dec056a71178c0a66}{Get\+Position}} () const
-\begin{DoxyCompactList}\small\item\em Return position of points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_point_implementation_a0c7491c3bbb4aefe4bf54ef0092f403a}{Set\+Equation}} (const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&equation)
+\begin{DoxyCompactList}\small\item\em Sets new equation of point. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \& \mbox{\hyperlink{class_point_implementation_acf2070120f5877ed5e73a0aa3eb9cf46}{Get\+Equation}} () const
+\begin{DoxyCompactList}\small\item\em Return current equation of point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_geometric_object_implementation}{Geometric\+Object\+Implementation}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,7 +54,7 @@ void \mbox{\hyperlink{class_observable_geometric_object_aab93df41a73b15ccc6bc0b3
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \mbox{\hyperlink{class_point_implementation_a1853abf96bb27aa1f72f3f7e356578a4}{equation\+\_\+}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_point}{Point}} position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_point}{Point}} equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_observable_geometric_object}{Observable\+Geometric\+Object}}}
 \begin{DoxyCompactItemize}
@@ -79,30 +79,35 @@ Default constructor.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_point_implementation_a019de03ebe65a56dec056a71178c0a66}\label{class_point_implementation_a019de03ebe65a56dec056a71178c0a66}} 
-\index{PointImplementation@{PointImplementation}!GetPosition@{GetPosition}}
-\index{GetPosition@{GetPosition}!PointImplementation@{PointImplementation}}
-\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \& Point\+Implementation\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+\mbox{\Hypertarget{class_point_implementation_acf2070120f5877ed5e73a0aa3eb9cf46}\label{class_point_implementation_acf2070120f5877ed5e73a0aa3eb9cf46}} 
+\index{PointImplementation@{PointImplementation}!GetEquation@{GetEquation}}
+\index{GetEquation@{GetEquation}!PointImplementation@{PointImplementation}}
+\doxysubsubsection{\texorpdfstring{GetEquation()}{GetEquation()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \& Point\+Implementation\+::\+Get\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
-Return position of points. 
+Return current equation of point. 
 
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{class_point}{Point}} position. 
+\mbox{\hyperlink{class_point}{Point}} equation. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_point_implementation_ad2de8c5a1aacd3c2986f82a3b0ac5854}\label{class_point_implementation_ad2de8c5a1aacd3c2986f82a3b0ac5854}} 
-\index{PointImplementation@{PointImplementation}!SetPosition@{SetPosition}}
-\index{SetPosition@{SetPosition}!PointImplementation@{PointImplementation}}
-\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
-{\footnotesize\ttfamily void Point\+Implementation\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{equation }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_point_implementation_a0c7491c3bbb4aefe4bf54ef0092f403a}\label{class_point_implementation_a0c7491c3bbb4aefe4bf54ef0092f403a}} 
+\index{PointImplementation@{PointImplementation}!SetEquation@{SetEquation}}
+\index{SetEquation@{SetEquation}!PointImplementation@{PointImplementation}}
+\doxysubsubsection{\texorpdfstring{SetEquation()}{SetEquation()}}
+{\footnotesize\ttfamily void Point\+Implementation\+::\+Set\+Equation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{equation }\end{DoxyParamCaption})}
 
 
 
-Sets position of point. 
+Sets new equation of point. 
 
-/param equation \mbox{\hyperlink{struct_equation}{Equation}} of point 
+
+\begin{DoxyParams}{Parameters}
+{\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of point \\
+\hline
+\end{DoxyParams}
+
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_point_implementation_a1853abf96bb27aa1f72f3f7e356578a4}\label{class_point_implementation_a1853abf96bb27aa1f72f3f7e356578a4}} 
@@ -113,7 +118,7 @@ Sets position of point.
 
 
 
-\mbox{\hyperlink{class_point}{Point}} position. 
+\mbox{\hyperlink{class_point}{Point}} equation. 
 
 Member data. 
 

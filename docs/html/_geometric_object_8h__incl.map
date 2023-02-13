@@ -1,11 +1,12 @@
 <map id="HomoGebra/GeometricObject.h" name="HomoGebra/GeometricObject.h">
-<area shape="rect" id="node1" title=" " alt="" coords="119,5,323,31"/>
-<area shape="rect" id="node2" href="$_geometric_object_implementation_8h.html" title=" " alt="" coords="5,79,224,104"/>
-<area shape="rect" id="node8" href="$_geometric_object_body_8h.html" title=" " alt="" coords="249,79,410,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="50,152,89,177"/>
-<area shape="rect" id="node4" href="$_equation_8h.html" title=" " alt="" coords="113,152,197,177"/>
-<area shape="rect" id="node5" title=" " alt="" coords="34,225,105,251"/>
-<area shape="rect" id="node6" title=" " alt="" coords="129,225,180,251"/>
-<area shape="rect" id="node7" title=" " alt="" coords="204,225,271,251"/>
-<area shape="rect" id="node9" title=" " alt="" coords="260,152,399,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="163,5,367,31"/>
+<area shape="rect" id="node2" href="$_geometric_object_implementation_8h.html" title=" " alt="" coords="49,79,268,104"/>
+<area shape="rect" id="node9" href="$_geometric_object_body_8h.html" title=" " alt="" coords="293,79,454,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="182,152,221,177"/>
+<area shape="rect" id="node4" href="$_equation_8h.html" title=" " alt="" coords="74,152,158,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,299,56,324"/>
+<area shape="rect" id="node6" title=" " alt="" coords="176,299,243,324"/>
+<area shape="rect" id="node7" href="$_coordinate_8h.html" title=" " alt="" coords="69,225,163,251"/>
+<area shape="rect" id="node8" title=" " alt="" coords="81,299,151,324"/>
+<area shape="rect" id="node10" title=" " alt="" coords="304,152,443,177"/>
 </map>

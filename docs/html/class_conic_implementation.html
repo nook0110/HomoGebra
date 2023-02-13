@@ -77,6 +77,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_conic_implementation-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ConicImplementation Class Reference</div></div>
 </div><!--header-->
@@ -88,7 +91,7 @@ Inheritance diagram for ConicImplementation:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_conic_implementation__inherit__graph.png" border="0" usemap="#a_conic_implementation_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_conic_implementation_inherit__map" id="a_conic_implementation_inherit__map">
-<area shape="rect" title=" " alt="" coords="52,315,195,392"/>
+<area shape="rect" title=" " alt="" coords="44,315,203,421"/>
 <area shape="rect" href="class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="5,189,241,267"/>
 <area shape="rect" href="class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="17,5,229,141"/>
 </map>
@@ -98,15 +101,25 @@ Collaboration diagram for ConicImplementation:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_conic_implementation__coll__graph.png" border="0" usemap="#a_conic_implementation_coll__map" alt="Collaboration graph"/></div>
 <map name="a_conic_implementation_coll__map" id="a_conic_implementation_coll__map">
-<area shape="rect" title=" " alt="" coords="52,472,195,549"/>
-<area shape="rect" href="class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="5,345,241,423"/>
-<area shape="rect" href="class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="17,160,229,296"/>
-<area shape="rect" title=" " alt="" coords="14,5,233,97"/>
+<area shape="rect" title=" " alt="" coords="197,513,355,620"/>
+<area shape="rect" href="class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="61,373,297,451"/>
+<area shape="rect" href="class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="9,160,221,296"/>
+<area shape="rect" title=" " alt="" coords="5,5,224,97"/>
+<area shape="rect" href="struct_conic_equation.html" title="Struct that defines position of the conic." alt="" coords="347,373,453,451"/>
+<area shape="rect" href="struct_equation.html" title="Struct that defines position of the objects." alt="" coords="245,189,318,267"/>
+<area shape="rect" title=" " alt="" coords="343,189,481,267"/>
+<area shape="rect" title=" " alt="" coords="505,189,612,267"/>
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a141916e929b29453c5885ef253ac535d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_conic_implementation.html#a141916e929b29453c5885ef253ac535d">SetPosition</a> (const <a class="el" href="struct_conic_equation.html">ConicEquation</a> &amp;equation)</td></tr>
+<tr class="memdesc:a141916e929b29453c5885ef253ac535d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets new equation of conic.  <br /></td></tr>
+<tr class="separator:a141916e929b29453c5885ef253ac535d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa3c93a6b00844ff71956aeab1e867e3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_conic_equation.html">ConicEquation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_conic_implementation.html#afa3c93a6b00844ff71956aeab1e867e3">GetEquation</a> () const</td></tr>
+<tr class="memdesc:afa3c93a6b00844ff71956aeab1e867e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return equation of conic.  <br /></td></tr>
+<tr class="separator:afa3c93a6b00844ff71956aeab1e867e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_geometric_object_implementation"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_geometric_object_implementation')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_geometric_object_implementation.html">GeometricObjectImplementation</a></td></tr>
 <tr class="memitem:a353ebc23cbfa1f5226b8520e2d77bf94 inherit pub_methods_class_geometric_object_implementation"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_object_implementation.html#a353ebc23cbfa1f5226b8520e2d77bf94">~GeometricObjectImplementation</a> () override</td></tr>
 <tr class="memdesc:a353ebc23cbfa1f5226b8520e2d77bf94 inherit pub_methods_class_geometric_object_implementation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
@@ -120,6 +133,21 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aab93df41a73b15ccc6bc0b36204ab810 inherit pub_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#aab93df41a73b15ccc6bc0b36204ab810">Detach</a> (const <a class="el" href="class_construction_observer.html">ConstructionObserver</a> *observer)</td></tr>
 <tr class="memdesc:aab93df41a73b15ccc6bc0b36204ab810 inherit pub_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribe an observer on this object.  <br /></td></tr>
 <tr class="separator:aab93df41a73b15ccc6bc0b36204ab810 inherit pub_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab02f086005b778438c25d89965e2c71b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_conic_implementation.html#ab02f086005b778438c25d89965e2c71b">ConicImplementation</a> ()</td></tr>
+<tr class="memdesc:ab02f086005b778438c25d89965e2c71b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
+<tr class="separator:ab02f086005b778438c25d89965e2c71b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af7682211f5fb5ca5100171ba849fc58e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_conic_equation.html">ConicEquation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_conic_implementation.html#af7682211f5fb5ca5100171ba849fc58e">equation_</a></td></tr>
+<tr class="memdesc:af7682211f5fb5ca5100171ba849fc58e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_conic.html" title="Conic on a plane.">Conic</a> equation.  <br /></td></tr>
+<tr class="separator:af7682211f5fb5ca5100171ba849fc58e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_observable_geometric_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_observable_geometric_object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_observable_geometric_object.html">ObservableGeometricObject</a></td></tr>
 <tr class="memitem:aa983a428c8218f4c2ce81323b8d0f053 inherit pro_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#aa983a428c8218f4c2ce81323b8d0f053">Notify</a> (<a class="el" href="struct_event_1_1_moved.html">Event::Moved</a>) const</td></tr>
 <tr class="memdesc:aa983a428c8218f4c2ce81323b8d0f053 inherit pro_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify all subscribed observers that object was moved.  <br /></td></tr>
@@ -128,6 +156,107 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a0a013fe0b293dc7fc8d28525c7f62cfd inherit pro_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify all subscribed observers that object was destroyed.  <br /></td></tr>
 <tr class="separator:a0a013fe0b293dc7fc8d28525c7f62cfd inherit pro_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab02f086005b778438c25d89965e2c71b" name="ab02f086005b778438c25d89965e2c71b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab02f086005b778438c25d89965e2c71b">&#9670;&#160;</a></span>ConicImplementation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConicImplementation::ConicImplementation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afa3c93a6b00844ff71956aeab1e867e3" name="afa3c93a6b00844ff71956aeab1e867e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa3c93a6b00844ff71956aeab1e867e3">&#9670;&#160;</a></span>GetEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_conic_equation.html">ConicEquation</a> &amp; ConicImplementation::GetEquation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return equation of conic. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_conic.html" title="Conic on a plane.">Conic</a> equation. </dd></dl>
+
+</div>
+</div>
+<a id="a141916e929b29453c5885ef253ac535d" name="a141916e929b29453c5885ef253ac535d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a141916e929b29453c5885ef253ac535d">&#9670;&#160;</a></span>SetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConicImplementation::SetPosition </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_conic_equation.html">ConicEquation</a> &amp;&#160;</td>
+          <td class="paramname"><em>equation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets new equation of conic. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">equation</td><td><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of conic </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af7682211f5fb5ca5100171ba849fc58e" name="af7682211f5fb5ca5100171ba849fc58e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7682211f5fb5ca5100171ba849fc58e">&#9670;&#160;</a></span>equation_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_conic_equation.html">ConicEquation</a> ConicImplementation::equation_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_conic.html" title="Conic on a plane.">Conic</a> equation. </p>
+<p>Member data. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>HomoGebra/<a class="el" href="_geometric_object_implementation_8h_source.html">GeometricObjectImplementation.h</a></li>
 </ul>

@@ -77,6 +77,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_construction_line-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ConstructionLine Class Reference</div></div>
 </div><!--header-->
@@ -89,7 +91,7 @@ Inheritance diagram for ConstructionLine:</div>
 <div class="center"><img src="class_construction_line__inherit__graph.png" border="0" usemap="#a_construction_line_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_construction_line_inherit__map" id="a_construction_line_inherit__map">
 <area shape="rect" title=" " alt="" coords="33,285,152,363"/>
-<area shape="rect" href="class_construction.html" title="Class that manages dependencies between objects." alt="" coords="45,160,140,237"/>
+<area shape="rect" href="class_construction.html" title="Defines how object is created." alt="" coords="45,160,140,237"/>
 <area shape="rect" href="class_construction_observer.html" title="Makes Construction an observer." alt="" coords="5,5,180,112"/>
 </map>
 </div>
@@ -98,15 +100,25 @@ Collaboration diagram for ConstructionLine:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_construction_line__coll__graph.png" border="0" usemap="#a_construction_line_coll__map" alt="Collaboration graph"/></div>
 <map name="a_construction_line_coll__map" id="a_construction_line_coll__map">
-<area shape="rect" title=" " alt="" coords="33,443,152,520"/>
-<area shape="rect" href="class_construction.html" title="Class that manages dependencies between objects." alt="" coords="45,316,140,393"/>
-<area shape="rect" href="class_construction_observer.html" title="Makes Construction an observer." alt="" coords="5,160,180,267"/>
-<area shape="rect" title=" " alt="" coords="13,5,173,97"/>
+<area shape="rect" title=" " alt="" coords="168,727,287,804"/>
+<area shape="rect" href="class_construction.html" title="Defines how object is created." alt="" coords="108,572,203,649"/>
+<area shape="rect" href="class_construction_observer.html" title="Makes Construction an observer." alt="" coords="5,388,180,495"/>
+<area shape="rect" title=" " alt="" coords="13,211,173,303"/>
+<area shape="rect" href="class_line_implementation.html" title=" " alt="" coords="247,557,397,664"/>
+<area shape="rect" href="class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="204,403,440,480"/>
+<area shape="rect" href="class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="216,189,428,325"/>
+<area shape="rect" title=" " alt="" coords="213,5,431,97"/>
+<area shape="rect" href="struct_line_equation.html" title="Struct that defines position of the line." alt="" coords="464,403,561,480"/>
+<area shape="rect" href="struct_equation.html" title="Struct that defines position of the objects." alt="" coords="464,219,537,296"/>
+<area shape="rect" href="struct_homogeneous_coordinate.html" title="Coordinates in." alt="" coords="561,219,728,296"/>
+<area shape="rect" title=" " alt="" coords="564,13,725,90"/>
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aefc6d7066e12b9f4ceb616c8f1a64bff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_line.html#aefc6d7066e12b9f4ceb616c8f1a64bff">Update</a> (<a class="el" href="struct_event_1_1_moved.html">Event::Moved</a>) const override</td></tr>
+<tr class="separator:aefc6d7066e12b9f4ceb616c8f1a64bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_construction_observer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_construction_observer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_construction_observer.html">ConstructionObserver</a></td></tr>
 <tr class="memitem:a62066e9c4c31c48b38cb241876484a41 inherit pub_methods_class_construction_observer"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_observer.html#a62066e9c4c31c48b38cb241876484a41">~ConstructionObserver</a> ()=default</td></tr>
 <tr class="separator:a62066e9c4c31c48b38cb241876484a41 inherit pub_methods_class_construction_observer"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,7 +126,64 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a45e9a8ab6c2e95e2aa70a27643989a8d inherit pub_methods_class_construction_observer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34d1f6d4b70d23f677098516b7521baf inherit pub_methods_class_construction_observer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_observer.html#a34d1f6d4b70d23f677098516b7521baf">Update</a> (<a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a>) const =0</td></tr>
 <tr class="separator:a34d1f6d4b70d23f677098516b7521baf inherit pub_methods_class_construction_observer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a2377c046c614a5d202e42f6a949a7d75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_line_implementation.html">LineImplementation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_line.html#a2377c046c614a5d202e42f6a949a7d75">object</a></td></tr>
+<tr class="separator:a2377c046c614a5d202e42f6a949a7d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aefc6d7066e12b9f4ceb616c8f1a64bff" name="aefc6d7066e12b9f4ceb616c8f1a64bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefc6d7066e12b9f4ceb616c8f1a64bff">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConstructionLine::Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_event_1_1_moved.html">Event::Moved</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_construction_observer.html#a45e9a8ab6c2e95e2aa70a27643989a8d">ConstructionObserver</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2377c046c614a5d202e42f6a949a7d75" name="a2377c046c614a5d202e42f6a949a7d75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2377c046c614a5d202e42f6a949a7d75">&#9670;&#160;</a></span>object</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_line_implementation.html">LineImplementation</a>&amp; ConstructionLine::object</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>HomoGebra/<a class="el" href="_geometric_object_implementation_8h_source.html">GeometricObjectImplementation.h</a></li>
 </ul>

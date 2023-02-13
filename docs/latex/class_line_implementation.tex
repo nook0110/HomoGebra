@@ -6,7 +6,8 @@
 
 
 
-Inheritance diagram for Line\+Implementation\+:\nopagebreak
+Inheritance diagram for Line\+Implementation\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,14 +16,21 @@ Inheritance diagram for Line\+Implementation\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Line\+Implementation\+:\nopagebreak
+Collaboration diagram for Line\+Implementation\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=257pt]{class_line_implementation__coll__graph}
+\includegraphics[width=350pt]{class_line_implementation__coll__graph}
 \end{center}
 \end{figure}
-\doxysubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_line_implementation_a471ca1f799fb907f56e8263a528bcd1f}{Set\+Position}} (const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \&equation)
+\begin{DoxyCompactList}\small\item\em Sets new equation of line. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \& \mbox{\hyperlink{class_line_implementation_a99a0e44758035b82214f2d84a739a1d9}{Get\+Equation}} () const
+\begin{DoxyCompactList}\small\item\em Return equation of line. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_geometric_object_implementation}{Geometric\+Object\+Implementation}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -37,6 +45,17 @@ void \mbox{\hyperlink{class_observable_geometric_object_afefebecdc84813461680d94
 \begin{DoxyCompactList}\small\item\em Subscribe an observer on this object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_observable_geometric_object_aab93df41a73b15ccc6bc0b36204ab810}{Detach}} (const \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} $\ast$observer)
 \begin{DoxyCompactList}\small\item\em Unsubscribe an observer on this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_line_implementation_a4e7780a4c82a70853834709d3ed24891}{Line\+Implementation}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \mbox{\hyperlink{class_line_implementation_acf082a29c25138fabd50ba14b56ff5d7}{equation\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_line}{Line}} equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_observable_geometric_object}{Observable\+Geometric\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -45,6 +64,63 @@ void \mbox{\hyperlink{class_observable_geometric_object_aa983a428c8218f4c2ce8132
 void \mbox{\hyperlink{class_observable_geometric_object_a0a013fe0b293dc7fc8d28525c7f62cfd}{Notify}} (\mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}}) const
 \begin{DoxyCompactList}\small\item\em Notify all subscribed observers that object was destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_line_implementation_a4e7780a4c82a70853834709d3ed24891}\label{class_line_implementation_a4e7780a4c82a70853834709d3ed24891}} 
+\index{LineImplementation@{LineImplementation}!LineImplementation@{LineImplementation}}
+\index{LineImplementation@{LineImplementation}!LineImplementation@{LineImplementation}}
+\doxysubsubsection{\texorpdfstring{LineImplementation()}{LineImplementation()}}
+{\footnotesize\ttfamily Line\+Implementation\+::\+Line\+Implementation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_line_implementation_a99a0e44758035b82214f2d84a739a1d9}\label{class_line_implementation_a99a0e44758035b82214f2d84a739a1d9}} 
+\index{LineImplementation@{LineImplementation}!GetEquation@{GetEquation}}
+\index{GetEquation@{GetEquation}!LineImplementation@{LineImplementation}}
+\doxysubsubsection{\texorpdfstring{GetEquation()}{GetEquation()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \& Line\+Implementation\+::\+Get\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return equation of line. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_line}{Line}} equation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_line_implementation_a471ca1f799fb907f56e8263a528bcd1f}\label{class_line_implementation_a471ca1f799fb907f56e8263a528bcd1f}} 
+\index{LineImplementation@{LineImplementation}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!LineImplementation@{LineImplementation}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Line\+Implementation\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \&}]{equation }\end{DoxyParamCaption})}
+
+
+
+Sets new equation of line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of line \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_line_implementation_acf082a29c25138fabd50ba14b56ff5d7}\label{class_line_implementation_acf082a29c25138fabd50ba14b56ff5d7}} 
+\index{LineImplementation@{LineImplementation}!equation\_@{equation\_}}
+\index{equation\_@{equation\_}!LineImplementation@{LineImplementation}}
+\doxysubsubsection{\texorpdfstring{equation\_}{equation\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} Line\+Implementation\+::equation\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_line}{Line}} equation. 
+
+Member data. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

@@ -1,8 +1,8 @@
 <map id="Construction" name="Construction">
-<area shape="rect" id="node1" title="Class that manages dependencies between objects." alt="" coords="170,160,265,237"/>
+<area shape="rect" id="node1" title="Defines how object is created." alt="" coords="170,160,265,237"/>
 <area shape="rect" id="node3" href="$class_construction_conic.html" title=" " alt="" coords="5,285,133,363"/>
 <area shape="rect" id="node4" href="$class_construction_line.html" title=" " alt="" coords="158,285,277,363"/>
-<area shape="rect" id="node5" href="$class_construction_point.html" title=" " alt="" coords="301,285,427,363"/>
+<area shape="rect" id="node5" href="$class_construction_point.html" title="Defines how point is created." alt="" coords="301,285,427,363"/>
 <area shape="rect" id="node2" href="$class_construction_observer.html" title="Makes Construction an observer." alt="" coords="130,5,305,112"/>
-<area shape="rect" id="node6" href="$class_construction_on_plane.html" title=" " alt="" coords="291,411,437,488"/>
+<area shape="rect" id="node6" href="$class_construction_on_plane.html" title="Construction of a casual point on a plane." alt="" coords="291,411,437,488"/>
 </map>

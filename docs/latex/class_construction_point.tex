@@ -2,6 +2,11 @@
 \label{class_construction_point}\index{ConstructionPoint@{ConstructionPoint}}
 
 
+Defines how point is created.  
+
+
+
+
 {\ttfamily \#include $<$Geometric\+Object\+Implementation.\+h$>$}
 
 
@@ -16,13 +21,19 @@ Inheritance diagram for Construction\+Point\+:
 \end{figure}
 
 
-Collaboration diagram for Construction\+Point\+:\nopagebreak
+Collaboration diagram for Construction\+Point\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=211pt]{class_construction_point__coll__graph}
+\includegraphics[width=350pt]{class_construction_point__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point_implementation}{Point\+Implementation}} \& \mbox{\hyperlink{class_construction_point_a1571f03d5ad5aa52057823e1acb49113}{object}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}}}
 \begin{DoxyCompactItemize}
@@ -33,6 +44,29 @@ virtual void \mbox{\hyperlink{class_construction_observer_a45e9a8ab6c2e95e2aa70a
 \item 
 virtual void \mbox{\hyperlink{class_construction_observer_a34d1f6d4b70d23f677098516b7521baf}{Update}} (\mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}}) const =0
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines how point is created. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+Updates position of point 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_construction_point_a1571f03d5ad5aa52057823e1acb49113}\label{class_construction_point_a1571f03d5ad5aa52057823e1acb49113}} 
+\index{ConstructionPoint@{ConstructionPoint}!object@{object}}
+\index{object@{object}!ConstructionPoint@{ConstructionPoint}}
+\doxysubsubsection{\texorpdfstring{object}{object}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point_implementation}{Point\+Implementation}}\& Construction\+Point\+::object\hspace{0.3cm}{\ttfamily [protected]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

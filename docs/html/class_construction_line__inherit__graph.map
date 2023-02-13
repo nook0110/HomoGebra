@@ -1,5 +1,5 @@
 <map id="ConstructionLine" name="ConstructionLine">
 <area shape="rect" id="node1" title=" " alt="" coords="33,285,152,363"/>
-<area shape="rect" id="node2" href="$class_construction.html" title="Class that manages dependencies between objects." alt="" coords="45,160,140,237"/>
+<area shape="rect" id="node2" href="$class_construction.html" title="Defines how object is created." alt="" coords="45,160,140,237"/>
 <area shape="rect" id="node3" href="$class_construction_observer.html" title="Makes Construction an observer." alt="" coords="5,5,180,112"/>
 </map>

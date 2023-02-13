@@ -2,6 +2,11 @@
 \label{class_construction_on_plane}\index{ConstructionOnPlane@{ConstructionOnPlane}}
 
 
+\mbox{\hyperlink{class_construction}{Construction}} of a casual point on a plane.  
+
+
+
+
 {\ttfamily \#include $<$Geometric\+Object\+Implementation.\+h$>$}
 
 
@@ -21,10 +26,14 @@ Collaboration diagram for Construction\+On\+Plane\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{class_construction_on_plane__coll__graph}
+\includegraphics[width=350pt]{class_construction_on_plane__coll__graph}
 \end{center}
 \end{figure}
-\doxysubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_construction_on_plane_ab3cdba7eebdfd0ff06c39ac3b1114d88}{Update}} (\mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}}) const override
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,6 +43,39 @@ virtual void \mbox{\hyperlink{class_construction_observer_a45e9a8ab6c2e95e2aa70a
 \item 
 virtual void \mbox{\hyperlink{class_construction_observer_a34d1f6d4b70d23f677098516b7521baf}{Update}} (\mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}}) const =0
 \end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_construction_point}{Construction\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point_implementation}{Point\+Implementation}} \& \mbox{\hyperlink{class_construction_point_a1571f03d5ad5aa52057823e1acb49113}{object}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_construction}{Construction}} of a casual point on a plane. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+Have no dependence on other objects 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_construction_on_plane_ab3cdba7eebdfd0ff06c39ac3b1114d88}\label{class_construction_on_plane_ab3cdba7eebdfd0ff06c39ac3b1114d88}} 
+\index{ConstructionOnPlane@{ConstructionOnPlane}!Update@{Update}}
+\index{Update@{Update}!ConstructionOnPlane@{ConstructionOnPlane}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Construction\+On\+Plane\+::\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}}}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_construction_observer_a45e9a8ab6c2e95e2aa70a27643989a8d}{Construction\+Observer}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

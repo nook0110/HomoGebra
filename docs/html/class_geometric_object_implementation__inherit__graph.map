@@ -1,7 +1,7 @@
 <map id="GeometricObjectImplementation" name="GeometricObjectImplementation">
-<area shape="rect" id="node1" title="Base class for implementations of geometric objects." alt="" coords="121,189,357,267"/>
-<area shape="rect" id="node3" href="$class_conic_implementation.html" title=" " alt="" coords="5,329,148,407"/>
-<area shape="rect" id="node4" href="$class_line_implementation.html" title=" " alt="" coords="172,329,307,407"/>
-<area shape="rect" id="node5" href="$class_point_implementation.html" title=" " alt="" coords="331,315,487,421"/>
-<area shape="rect" id="node2" href="$class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="133,5,345,141"/>
+<area shape="rect" id="node1" title="Base class for implementations of geometric objects." alt="" coords="145,189,381,267"/>
+<area shape="rect" id="node3" href="$class_conic_implementation.html" title=" " alt="" coords="5,315,164,421"/>
+<area shape="rect" id="node4" href="$class_line_implementation.html" title=" " alt="" coords="188,315,339,421"/>
+<area shape="rect" id="node5" href="$class_point_implementation.html" title=" " alt="" coords="363,315,519,421"/>
+<area shape="rect" id="node2" href="$class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="157,5,369,141"/>
 </map>

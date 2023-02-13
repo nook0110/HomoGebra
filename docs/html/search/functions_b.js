@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['setposition_0',['SetPosition',['../class_point_implementation.html#ad2de8c5a1aacd3c2986f82a3b0ac5854',1,'PointImplementation']]]
+  ['render_0',['Render',['../class_g_u_i_1_1_global.html#a78eaed605f99fbf47b0a4fc871ea3ece',1,'GUI::Global']]]
 ];
