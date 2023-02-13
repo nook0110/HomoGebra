@@ -2,6 +2,11 @@
 \label{class_transformation}\index{Transformation@{Transformation}}
 
 
+Class to save and do homography.  
+
+
+
+
 {\ttfamily \#include $<$Coordinate.\+h$>$}
 
 
@@ -17,6 +22,10 @@ Collaboration diagram for Transformation\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_transformation_a6c68aff17646a716a352f003dfe48341}{Transformation}} (const \mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}} \&transformation=\mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}}())
+\begin{DoxyCompactList}\small\item\em Constructs transformation from matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_transformation_a5b23f62e7697c24191cbadede00b875a}{Transformation}} (const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&first\+\_\+preimage, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&second\+\_\+preimage, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&third\+\_\+preimage, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&fourth\+\_\+preimage, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&first\+\_\+image, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&second\+\_\+image, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&third\+\_\+image, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&fourth\+\_\+image)
+\begin{DoxyCompactList}\small\item\em Construct transformation from movement of 4 points. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{class_transformation}{Transformation}} $>$ \mbox{\hyperlink{class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c}{Get\+Inverse}} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -25,13 +34,78 @@ Collaboration diagram for Transformation\+:\nopagebreak
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Class to save and do homography. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023 
+\end{DoxyDate}
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_transformation_a6c68aff17646a716a352f003dfe48341}\label{class_transformation_a6c68aff17646a716a352f003dfe48341}} 
 \index{Transformation@{Transformation}!Transformation@{Transformation}}
 \index{Transformation@{Transformation}!Transformation@{Transformation}}
-\doxysubsubsection{\texorpdfstring{Transformation()}{Transformation()}}
-{\footnotesize\ttfamily Transformation\+::\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}} \&}]{transformation = {\ttfamily \mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}}()} }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{Transformation()}{Transformation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Transformation\+::\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}} \&}]{transformation = {\ttfamily \mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
+
+
+Constructs transformation from matrix. 
+
+\mbox{\Hypertarget{class_transformation_a5b23f62e7697c24191cbadede00b875a}\label{class_transformation_a5b23f62e7697c24191cbadede00b875a}} 
+\index{Transformation@{Transformation}!Transformation@{Transformation}}
+\index{Transformation@{Transformation}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{Transformation()}{Transformation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Transformation\+::\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{first\+\_\+preimage,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{second\+\_\+preimage,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{third\+\_\+preimage,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{fourth\+\_\+preimage,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{first\+\_\+image,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{second\+\_\+image,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{third\+\_\+image,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{fourth\+\_\+image }\end{DoxyParamCaption})}
+
+
+
+Construct transformation from movement of 4 points. 
+
+\textbackslash{}detail This transformation will do homography (preimage-\/\texorpdfstring{$>$}{>}image) A projective transformation of the plane is defined by specifying four pairs of corresponding mapping points. For correct homography three points of the four images or preimages shouldn\textquotesingle{}t lie on the same line. (Otherwise it will degenerate)
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+\_\+preimage} & First point preimage position \\
+\hline
+{\em second\+\_\+preimage} & Second point preimage position \\
+\hline
+{\em third\+\_\+preimage} & Third point preimage position \\
+\hline
+{\em fourth\+\_\+preimage} & Fourth point preimage position \\
+\hline
+{\em first\+\_\+image} & First point image position \\
+\hline
+{\em second\+\_\+image} & Second point preimage position \\
+\hline
+{\em third\+\_\+image} & Third point preimage position \\
+\hline
+{\em fourth\+\_\+image} & Fourth point preimage position \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c}\label{class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c}} 
+\index{Transformation@{Transformation}!GetInverse@{GetInverse}}
+\index{GetInverse@{GetInverse}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{GetInverse()}{GetInverse()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{class_transformation}{Transformation}} $>$ Transformation\+::\+Get\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Data Documentation}
@@ -43,6 +117,7 @@ Collaboration diagram for Transformation\+:\nopagebreak
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Homo\+Gebra/\mbox{\hyperlink{_coordinate_8h}{Coordinate.\+h}}\end{DoxyCompactItemize}
+Homo\+Gebra/\mbox{\hyperlink{_coordinate_8h}{Coordinate.\+h}}\item 
+Homo\+Gebra/\mbox{\hyperlink{_coordinate_8cpp}{Coordinate.\+cpp}}\end{DoxyCompactItemize}

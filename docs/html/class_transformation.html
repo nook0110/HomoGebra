@@ -87,14 +87,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class to save and do homography.  
+ <a href="class_transformation.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_coordinate_8h_source.html">Coordinate.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Transformation:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_transformation__coll__graph.png" border="0" usemap="#a_transformation_coll__map" alt="Collaboration graph"/></div>
 <map name="a_transformation_coll__map" id="a_transformation_coll__map">
-<area shape="rect" title=" " alt="" coords="23,403,150,480"/>
-<area shape="rect" href="class_transformation_matrix.html" title=" " alt="" coords="5,160,168,340"/>
+<area shape="rect" title="Class to save and do homography." alt="" coords="23,432,150,539"/>
+<area shape="rect" href="class_transformation_matrix.html" title=" " alt="" coords="5,160,168,369"/>
 <area shape="rect" title=" " alt="" coords="22,5,151,97"/>
 </map>
 </div>
@@ -102,19 +105,33 @@ Collaboration diagram for Transformation:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c68aff17646a716a352f003dfe48341"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation.html#a6c68aff17646a716a352f003dfe48341">Transformation</a> (const <a class="el" href="class_transformation_matrix.html">TransformationMatrix</a> &amp;transformation=<a class="el" href="class_transformation_matrix.html">TransformationMatrix</a>())</td></tr>
+<tr class="memdesc:a6c68aff17646a716a352f003dfe48341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs transformation from matrix.  <br /></td></tr>
 <tr class="separator:a6c68aff17646a716a352f003dfe48341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b23f62e7697c24191cbadede00b875a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation.html#a5b23f62e7697c24191cbadede00b875a">Transformation</a> (const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;first_preimage, const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;second_preimage, const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;third_preimage, const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;fourth_preimage, const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;first_image, const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;second_image, const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;third_image, const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;fourth_image)</td></tr>
+<tr class="memdesc:a5b23f62e7697c24191cbadede00b875a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct transformation from movement of 4 points.  <br /></td></tr>
+<tr class="separator:a5b23f62e7697c24191cbadede00b875a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d5ded1acd2dfd8f61571c9da49915c"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="class_transformation.html">Transformation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation.html#ac3d5ded1acd2dfd8f61571c9da49915c">GetInverse</a> () const</td></tr>
+<tr class="separator:ac3d5ded1acd2dfd8f61571c9da49915c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a411585533799d6bfe14484f2b83bd7a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_transformation_matrix.html">TransformationMatrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation.html#a411585533799d6bfe14484f2b83bd7a7">transformation_</a></td></tr>
 <tr class="separator:a411585533799d6bfe14484f2b83bd7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class to save and do homography. </p>
+<dl class="section author"><dt>Author</dt><dd>nook0110</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>February 2023 </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6c68aff17646a716a352f003dfe48341" name="a6c68aff17646a716a352f003dfe48341"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c68aff17646a716a352f003dfe48341">&#9670;&#160;</a></span>Transformation()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c68aff17646a716a352f003dfe48341">&#9670;&#160;</a></span>Transformation() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Transformation::Transformation </td>
@@ -124,7 +141,123 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>Constructs transformation from matrix. </p>
+
+</div>
+</div>
+<a id="a5b23f62e7697c24191cbadede00b875a" name="a5b23f62e7697c24191cbadede00b875a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b23f62e7697c24191cbadede00b875a">&#9670;&#160;</a></span>Transformation() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transformation::Transformation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;&#160;</td>
+          <td class="paramname"><em>first_preimage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;&#160;</td>
+          <td class="paramname"><em>second_preimage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;&#160;</td>
+          <td class="paramname"><em>third_preimage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;&#160;</td>
+          <td class="paramname"><em>fourth_preimage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;&#160;</td>
+          <td class="paramname"><em>first_image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;&#160;</td>
+          <td class="paramname"><em>second_image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;&#160;</td>
+          <td class="paramname"><em>third_image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;&#160;</td>
+          <td class="paramname"><em>fourth_image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct transformation from movement of 4 points. </p>
+<p>\detail This transformation will do homography (preimage-&gt;image) A projective transformation of the plane is defined by specifying four pairs of corresponding mapping points. For correct homography three points of the four images or preimages shouldn't lie on the same line. (Otherwise it will degenerate)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first_preimage</td><td>First point preimage position </td></tr>
+    <tr><td class="paramname">second_preimage</td><td>Second point preimage position </td></tr>
+    <tr><td class="paramname">third_preimage</td><td>Third point preimage position </td></tr>
+    <tr><td class="paramname">fourth_preimage</td><td>Fourth point preimage position </td></tr>
+    <tr><td class="paramname">first_image</td><td>First point image position </td></tr>
+    <tr><td class="paramname">second_image</td><td>Second point preimage position </td></tr>
+    <tr><td class="paramname">third_image</td><td>Third point preimage position </td></tr>
+    <tr><td class="paramname">fourth_image</td><td>Fourth point preimage position </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac3d5ded1acd2dfd8f61571c9da49915c" name="ac3d5ded1acd2dfd8f61571c9da49915c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3d5ded1acd2dfd8f61571c9da49915c">&#9670;&#160;</a></span>GetInverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="class_transformation.html">Transformation</a> &gt; Transformation::GetInverse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c_cgraph.png" border="0" usemap="#aclass_transformation_ac3d5ded1acd2dfd8f61571c9da49915c_cgraph" alt=""/></div>
+<map name="aclass_transformation_ac3d5ded1acd2dfd8f61571c9da49915c_cgraph" id="aclass_transformation_ac3d5ded1acd2dfd8f61571c9da49915c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,45,181,70"/>
+<area shape="rect" href="class_transformation_matrix.html#a4437f5b19df3a31e85c380c1cbeff3ee" title=" " alt="" coords="229,37,372,77"/>
+<area shape="rect" href="class_transformation_matrix.html#aa188aa955061de541799126a392a56b0" title="Default Constructor." alt="" coords="420,5,571,45"/>
+<area shape="rect" href="class_transformation_matrix.html#ad48777040a3716b44c5821e8c4ce602c" title=" " alt="" coords="424,69,567,109"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -151,8 +284,9 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>HomoGebra/<a class="el" href="_coordinate_8h_source.html">Coordinate.h</a></li>
+<li>HomoGebra/<a class="el" href="_coordinate_8cpp.html">Coordinate.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -10,7 +10,7 @@ var searchData=
   ['geometricobjectimplementation_2ecpp_7',['GeometricObjectImplementation.cpp',['../_geometric_object_implementation_8cpp.html',1,'']]],
   ['geometricobjectimplementation_2eh_8',['GeometricObjectImplementation.h',['../_geometric_object_implementation_8h.html',1,'']]],
   ['getequation_9',['GetEquation',['../class_point_implementation.html#acf2070120f5877ed5e73a0aa3eb9cf46',1,'PointImplementation::GetEquation()'],['../class_line_implementation.html#a99a0e44758035b82214f2d84a739a1d9',1,'LineImplementation::GetEquation()'],['../class_conic_implementation.html#afa3c93a6b00844ff71956aeab1e867e3',1,'ConicImplementation::GetEquation()']]],
-  ['getinverse_10',['GetInverse',['../class_transformation_matrix.html#a4437f5b19df3a31e85c380c1cbeff3ee',1,'TransformationMatrix']]],
+  ['getinverse_10',['GetInverse',['../class_transformation_matrix.html#a4437f5b19df3a31e85c380c1cbeff3ee',1,'TransformationMatrix::GetInverse()'],['../class_transformation.html#ac3d5ded1acd2dfd8f61571c9da49915c',1,'Transformation::GetInverse()']]],
   ['global_11',['Global',['../class_g_u_i_1_1_global.html',1,'GUI']]],
   ['gui_12',['GUI',['../namespace_g_u_i.html',1,'']]],
   ['gui_2ecpp_13',['GUI.cpp',['../_g_u_i_8cpp.html',1,'']]],

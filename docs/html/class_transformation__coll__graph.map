@@ -1,5 +1,5 @@
 <map id="Transformation" name="Transformation">
-<area shape="rect" id="node1" title=" " alt="" coords="23,403,150,480"/>
-<area shape="rect" id="node2" href="$class_transformation_matrix.html" title=" " alt="" coords="5,160,168,340"/>
+<area shape="rect" id="node1" title="Class to save and do homography." alt="" coords="23,432,150,539"/>
+<area shape="rect" id="node2" href="$class_transformation_matrix.html" title=" " alt="" coords="5,160,168,369"/>
 <area shape="rect" id="node3" title=" " alt="" coords="22,5,151,97"/>
 </map>

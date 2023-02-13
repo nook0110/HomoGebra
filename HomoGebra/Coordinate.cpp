@@ -52,3 +52,50 @@ complex TransformationMatrix::Determinant() const
     matrix_[0][1] * (matrix_[1][0] * matrix_[2][2] - matrix_[1][2] * matrix_[2][0]) +
     matrix_[0][2] * (matrix_[1][0] * matrix_[2][1] - matrix_[1][1] * matrix_[2][0]);
 }
+
+TransformationMatrix& TransformationMatrix::operator*=(const TransformationMatrix& other)
+{
+  // Assigning multiplication result to this
+  (*this) = (*this) * other;
+
+  // Returning this
+  return *this;
+}
+
+TransformationMatrix TransformationMatrix::operator*(const TransformationMatrix& other) const
+{
+  // Matrix that we will return (this*other)
+  TransformationMatrix product_matrix;
+
+  // Iterating through all elements in matrix
+  for (int row = 0; row < std::tuple_size<MatrixColumn>::value; ++row)
+  {
+    for (int column = 0; column < std::tuple_size<MatrixRow>::value; ++column)
+    {
+      // Multiplication of row [this] and column [other]
+      complex sum = 0;
+
+      // Element-by-element multiplication
+      for (int it = 0; it < std::tuple_size<MatrixRow>::value; ++it)
+      {
+        sum += matrix_[row][it] * other[it][column];
+      }
+
+      // Setting element
+      product_matrix[row][column] = sum;
+    }
+  }
+
+  // Return answer
+  return product_matrix;
+}
+
+Transformation::Transformation(const TransformationMatrix& transformation)
+  :transformation_(transformation)
+{}
+
+std::optional<Transformation> Transformation::GetInverse() const
+{
+  // Return inverse transformation
+  return std::optional<Transformation>(transformation_.GetInverse());
+}
