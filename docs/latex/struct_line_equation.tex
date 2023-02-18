@@ -24,9 +24,18 @@ Collaboration diagram for Line\+Equation\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=278pt]{struct_line_equation__coll__graph}
+\includegraphics[width=280pt]{struct_line_equation__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_line_equation_adb9d9d9e24ffea16524aff477253e337}{Apply}} (const \mbox{\hyperlink{class_transformation}{Transformation}} \&transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to a conic equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}{Apply}} (const \mbox{\hyperlink{class_transformation}{Transformation}} \&transformation)=0
+\begin{DoxyCompactList}\small\item\em Apply transformation to an equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -58,6 +67,31 @@ February 2023
 \begin{DoxySeeAlso}{See also}
 Line\+Implementataion 
 \end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_line_equation_adb9d9d9e24ffea16524aff477253e337}\label{struct_line_equation_adb9d9d9e24ffea16524aff477253e337}} 
+\index{LineEquation@{LineEquation}!Apply@{Apply}}
+\index{Apply@{Apply}!LineEquation@{LineEquation}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily void Line\+Equation\+::\+Apply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_transformation}{Transformation}} \&}]{transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to a conic equation. 
+
+\begin{DoxyWarning}{Warning}
+It will multiply on inverse of transformation. Because if you substitute an image of point, equation should equal to zero.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em transformation} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}{Equation}}.
+
 
 
 \doxysubsection{Member Data Documentation}

@@ -160,6 +160,7 @@
     <ClCompile Include="GeometricObjectFactory.cpp" />
     <ClCompile Include="GeometricObjectImplementation.cpp" />
     <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="PlaneBody.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="GeometricObjectFactory.h" />
     <ClInclude Include="GUI.h" />
     <ClInclude Include="GeometricObjectImplementation.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="PlaneBody.h" />
     <ClInclude Include="PlaneImplementation.h" />

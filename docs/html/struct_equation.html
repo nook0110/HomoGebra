@@ -81,8 +81,9 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="struct_equation-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Equation Struct Reference</div></div>
+  <div class="headertitle"><div class="title">Equation Struct Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -95,10 +96,10 @@ Inheritance diagram for Equation:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_equation__inherit__graph.png" border="0" usemap="#a_equation_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_equation_inherit__map" id="a_equation_inherit__map">
-<area shape="rect" title="Struct that defines position of the objects." alt="" coords="154,5,227,83"/>
-<area shape="rect" href="struct_conic_equation.html" title="Struct that defines position of the conic." alt="" coords="5,131,117,267"/>
-<area shape="rect" href="struct_line_equation.html" title="Struct that defines position of the line." alt="" coords="142,160,239,237"/>
-<area shape="rect" href="struct_point_equation.html" title="Struct that defines position of the point." alt="" coords="263,160,366,237"/>
+<area shape="rect" title="Struct that defines position of the objects." alt="" coords="153,5,228,83"/>
+<area shape="rect" href="struct_conic_equation.html" title="Struct that defines position of the conic." alt="" coords="5,131,117,311"/>
+<area shape="rect" href="struct_line_equation.html" title="Struct that defines position of the line." alt="" coords="142,182,239,259"/>
+<area shape="rect" href="struct_point_equation.html" title="Struct that defines position of the point." alt="" coords="263,182,366,259"/>
 </map>
 </div>
 <div class="dynheader">
@@ -106,7 +107,7 @@ Collaboration diagram for Equation:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_equation__coll__graph.png" border="0" usemap="#a_equation_coll__map" alt="Collaboration graph"/></div>
 <map name="a_equation_coll__map" id="a_equation_coll__map">
-<area shape="rect" title="Struct that defines position of the objects." alt="" coords="5,5,79,83"/>
+<area shape="rect" title="Struct that defines position of the objects." alt="" coords="5,5,80,83"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -118,6 +119,12 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a97cbcb97188027c47a4bda31c34e4920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of axes.  <a href="struct_equation.html#a97cbcb97188027c47a4bda31c34e4920">More...</a><br /></td></tr>
 <tr class="separator:a97cbcb97188027c47a4bda31c34e4920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ae19dd6d1fc0a2b74e039dc8c1979b840"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_equation.html#ae19dd6d1fc0a2b74e039dc8c1979b840">Apply</a> (const <a class="el" href="class_transformation.html">Transformation</a> &amp;transformation)=0</td></tr>
+<tr class="memdesc:ae19dd6d1fc0a2b74e039dc8c1979b840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply transformation to an equation.  <br /></td></tr>
+<tr class="separator:ae19dd6d1fc0a2b74e039dc8c1979b840"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Struct that defines position of the objects. </p>
@@ -151,6 +158,43 @@ Public Types</h2></td></tr>
 <tr><td class="fieldname"><a id="a97cbcb97188027c47a4bda31c34e4920a39b629a97c6f6ac91423cf042154dd86" name="a97cbcb97188027c47a4bda31c34e4920a39b629a97c6f6ac91423cf042154dd86"></a>kY&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a97cbcb97188027c47a4bda31c34e4920aca4d7439951bc76061bedb523255ff3d" name="a97cbcb97188027c47a4bda31c34e4920aca4d7439951bc76061bedb523255ff3d"></a>kZ&#160;</td><td class="fielddoc"></td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae19dd6d1fc0a2b74e039dc8c1979b840" name="ae19dd6d1fc0a2b74e039dc8c1979b840"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae19dd6d1fc0a2b74e039dc8c1979b840">&#9670;&#160;</a></span>Apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Equation::Apply </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_transformation.html">Transformation</a> &amp;&#160;</td>
+          <td class="paramname"><em>transformation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply transformation to an equation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">transformation</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="struct_line_equation.html#adb9d9d9e24ffea16524aff477253e337">LineEquation</a>, and <a class="el" href="struct_conic_equation.html#a3d04814cb42783152d2fc6f9bfc48fc1">ConicEquation</a>.</p>
 
 </div>
 </div>

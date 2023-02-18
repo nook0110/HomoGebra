@@ -80,7 +80,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="struct_conic_equation-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ConicEquation Struct Reference</div></div>
 </div><!--header-->
@@ -95,8 +95,8 @@ Inheritance diagram for ConicEquation:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_conic_equation__inherit__graph.png" border="0" usemap="#a_conic_equation_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_conic_equation_inherit__map" id="a_conic_equation_inherit__map">
-<area shape="rect" title="Struct that defines position of the conic." alt="" coords="5,131,117,267"/>
-<area shape="rect" href="struct_equation.html" title="Struct that defines position of the objects." alt="" coords="25,5,98,83"/>
+<area shape="rect" title="Struct that defines position of the conic." alt="" coords="5,131,117,311"/>
+<area shape="rect" href="struct_equation.html" title="Struct that defines position of the objects." alt="" coords="24,5,99,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -104,13 +104,22 @@ Collaboration diagram for ConicEquation:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_conic_equation__coll__graph.png" border="0" usemap="#a_conic_equation_coll__map" alt="Collaboration graph"/></div>
 <map name="a_conic_equation_coll__map" id="a_conic_equation_coll__map">
-<area shape="rect" title="Struct that defines position of the conic." alt="" coords="119,160,226,237"/>
-<area shape="rect" href="struct_equation.html" title="Struct that defines position of the objects." alt="" coords="5,5,79,83"/>
-<area shape="rect" title=" " alt="" coords="103,5,242,83"/>
-<area shape="rect" title=" " alt="" coords="266,5,373,83"/>
+<area shape="rect" title="Struct that defines position of the conic." alt="" coords="104,160,211,237"/>
+<area shape="rect" href="struct_equation.html" title="Struct that defines position of the objects." alt="" coords="5,5,80,83"/>
+<area shape="rect" title=" " alt="" coords="104,5,211,83"/>
+<area shape="rect" title=" " alt="" coords="235,5,373,83"/>
 </map>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a3d04814cb42783152d2fc6f9bfc48fc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_conic_equation.html#a3d04814cb42783152d2fc6f9bfc48fc1">Apply</a> (const <a class="el" href="class_transformation.html">Transformation</a> &amp;transformation) override</td></tr>
+<tr class="memdesc:a3d04814cb42783152d2fc6f9bfc48fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply transformation to a conic equation.  <br /></td></tr>
+<tr class="separator:a3d04814cb42783152d2fc6f9bfc48fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae19dd6d1fc0a2b74e039dc8c1979b840"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_equation.html#ae19dd6d1fc0a2b74e039dc8c1979b840">Apply</a> (const <a class="el" href="class_transformation.html">Transformation</a> &amp;transformation)=0</td></tr>
+<tr class="memdesc:ae19dd6d1fc0a2b74e039dc8c1979b840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply transformation to an equation.  <br /></td></tr>
+<tr class="separator:ae19dd6d1fc0a2b74e039dc8c1979b840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Equation</div></td></tr>
@@ -123,6 +132,9 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Static arrays to get next o previous vars.</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>It is used to get from <a class="el" href="struct_equation.html#a97cbcb97188027c47a4bda31c34e4920" title="Name of axes.">Equation::var</a> next or previous <a class="el" href="struct_equation.html#a97cbcb97188027c47a4bda31c34e4920" title="Name of axes.">Equation::var</a> </p>
+</div></td></tr>
 <tr class="memitem:a0e66d5601071fe10b7fc28da762cd1e0"><td class="memItemLeft" align="right" valign="top">static const std::array&lt; <a class="el" href="struct_equation.html#a97cbcb97188027c47a4bda31c34e4920">var</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_conic_equation.html#a0e66d5601071fe10b7fc28da762cd1e0">prev</a></td></tr>
 <tr class="separator:a0e66d5601071fe10b7fc28da762cd1e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fe870fd3691626e4f0d0ae35417f067"><td class="memItemLeft" align="right" valign="top">static const std::array&lt; <a class="el" href="struct_equation.html#a97cbcb97188027c47a4bda31c34e4920">var</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_conic_equation.html#a8fe870fd3691626e4f0d0ae35417f067">next</a></td></tr>
@@ -144,9 +156,9 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>February 2023</dd></dl>
 <dl class="section see"><dt>See also</dt><dd>ConicImplementataion </dd></dl>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a8fe870fd3691626e4f0d0ae35417f067" name="a8fe870fd3691626e4f0d0ae35417f067"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fe870fd3691626e4f0d0ae35417f067">&#9670;&#160;</a></span>next</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3d04814cb42783152d2fc6f9bfc48fc1" name="a3d04814cb42783152d2fc6f9bfc48fc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d04814cb42783152d2fc6f9bfc48fc1">&#9670;&#160;</a></span>Apply()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,34 +167,34 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::array&lt; <a class="el" href="struct_equation.html#a97cbcb97188027c47a4bda31c34e4920">var</a>, 3 &gt; ConicEquation::next</td>
+          <td class="memname">void ConicEquation::Apply </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_transformation.html">Transformation</a> &amp;&#160;</td>
+          <td class="paramname"><em>transformation</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">{ var::kY, var::kZ,var::kX }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aa220c0df266f56a01885f4b24752c6ca" name="aa220c0df266f56a01885f4b24752c6ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa220c0df266f56a01885f4b24752c6ca">&#9670;&#160;</a></span>pair_products</h2>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::array&lt;<a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a>, 3&gt; ConicEquation::pair_products</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Apply transformation to a conic equation. </p>
+<dl class="section warning"><dt>Warning</dt><dd>It will multiply on inverse of transformation squared each element. Because if you substitute an image of point, equation should equal to zero.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">transformation</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="struct_equation.html#ae19dd6d1fc0a2b74e039dc8c1979b840">Equation</a>.</p>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
 <a id="a0e66d5601071fe10b7fc28da762cd1e0" name="a0e66d5601071fe10b7fc28da762cd1e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0e66d5601071fe10b7fc28da762cd1e0">&#9670;&#160;</a></span>prev</h2>
 
@@ -207,6 +219,30 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a8fe870fd3691626e4f0d0ae35417f067" name="a8fe870fd3691626e4f0d0ae35417f067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fe870fd3691626e4f0d0ae35417f067">&#9670;&#160;</a></span>next</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::array&lt; <a class="el" href="struct_equation.html#a97cbcb97188027c47a4bda31c34e4920">var</a>, 3 &gt; ConicEquation::next</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">{ var::kY, var::kZ,var::kX }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a203390acc200de69495d53d78b2d6b4f" name="a203390acc200de69495d53d78b2d6b4f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a203390acc200de69495d53d78b2d6b4f">&#9670;&#160;</a></span>squares</h2>
 
@@ -215,6 +251,20 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::array&lt;<a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a>, 3&gt; ConicEquation::squares</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa220c0df266f56a01885f4b24752c6ca" name="aa220c0df266f56a01885f4b24752c6ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa220c0df266f56a01885f4b24752c6ca">&#9670;&#160;</a></span>pair_products</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;<a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a>, 3&gt; ConicEquation::pair_products</td>
         </tr>
       </table>
 </div><div class="memdoc">

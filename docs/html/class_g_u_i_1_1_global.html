@@ -133,8 +133,8 @@ Static Private Attributes</h2></td></tr>
 <dd>
 <a href="https://github.com/eliasdaler/imgui-sfml">ImGui-SFML v2.5</a> </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="abe0014daf1249fbdc5f5a563ab7a0a24" name="abe0014daf1249fbdc5f5a563ab7a0a24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe0014daf1249fbdc5f5a563ab7a0a24">&#9670;&#160;</a></span>ProcessEvent()</h2>
+<a id="a08ec9a506fb4b9a149227a437e6bb247" name="a08ec9a506fb4b9a149227a437e6bb247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08ec9a506fb4b9a149227a437e6bb247">&#9670;&#160;</a></span>Update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,10 +143,10 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Global::ProcessEvent </td>
+          <td class="memname">void Global::Update </td>
           <td>(</td>
-          <td class="paramtype">sf::Event&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
+          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -157,19 +157,19 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Process event happened to update Dear ImGui windows. </p>
+<p>Updates all Dear ImGui windows in sf::RenderWindow instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td><a class="el" href="namespace_event.html" title="Events which can happen.">Event</a> that happened. </td></tr>
+    <tr><td class="paramname">window</td><td>sf::RenderWindow where to update Dear ImGui windows. </td></tr>
   </table>
   </dd>
 </dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24_icgraph.png" border="0" usemap="#aclass_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24_icgraph" alt=""/></div>
-<map name="aclass_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24_icgraph" id="aclass_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24_icgraph">
-<area shape="rect" title="Process event happened to update Dear ImGui windows." alt="" coords="104,5,281,31"/>
+<div class="center"><img src="class_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247_icgraph.png" border="0" usemap="#aclass_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247_icgraph" id="aclass_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247_icgraph">
+<area shape="rect" title="Updates all Dear ImGui windows in sf::RenderWindow instance." alt="" coords="104,5,243,31"/>
 <area shape="rect" href="_source_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
 </map>
 </div>
@@ -219,8 +219,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a08ec9a506fb4b9a149227a437e6bb247" name="a08ec9a506fb4b9a149227a437e6bb247"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08ec9a506fb4b9a149227a437e6bb247">&#9670;&#160;</a></span>Update()</h2>
+<a id="abe0014daf1249fbdc5f5a563ab7a0a24" name="abe0014daf1249fbdc5f5a563ab7a0a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe0014daf1249fbdc5f5a563ab7a0a24">&#9670;&#160;</a></span>ProcessEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,10 +229,10 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Global::Update </td>
+          <td class="memname">void Global::ProcessEvent </td>
           <td>(</td>
-          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
-          <td class="paramname"><em>window</em></td><td>)</td>
+          <td class="paramtype">sf::Event&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -243,19 +243,19 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Updates all Dear ImGui windows in sf::RenderWindow instance. </p>
+<p>Process event happened to update Dear ImGui windows. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>sf::RenderWindow where to update Dear ImGui windows. </td></tr>
+    <tr><td class="paramname">event</td><td><a class="el" href="namespace_event.html" title="Events which can happen.">Event</a> that happened. </td></tr>
   </table>
   </dd>
 </dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247_icgraph.png" border="0" usemap="#aclass_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247_icgraph" alt=""/></div>
-<map name="aclass_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247_icgraph" id="aclass_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247_icgraph">
-<area shape="rect" title="Updates all Dear ImGui windows in sf::RenderWindow instance." alt="" coords="104,5,243,31"/>
+<div class="center"><img src="class_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24_icgraph.png" border="0" usemap="#aclass_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24_icgraph" id="aclass_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24_icgraph">
+<area shape="rect" title="Process event happened to update Dear ImGui windows." alt="" coords="104,5,281,31"/>
 <area shape="rect" href="_source_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
 </map>
 </div>

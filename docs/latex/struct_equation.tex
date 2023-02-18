@@ -24,7 +24,7 @@ Collaboration diagram for Equation\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=135pt]{struct_equation__coll__graph}
+\includegraphics[width=136pt]{struct_equation__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -35,6 +35,11 @@ enum class \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{v
 , \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920aca4d7439951bc76061bedb523255ff3d}{kZ}}
  \}
 \begin{DoxyCompactList}\small\item\em Name of axes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}{Apply}} (const \mbox{\hyperlink{class_transformation}{Transformation}} \&transformation)=0
+\begin{DoxyCompactList}\small\item\em Apply transformation to an equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -76,6 +81,28 @@ kZ&\\
 \hline
 
 \end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}\label{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}} 
+\index{Equation@{Equation}!Apply@{Apply}}
+\index{Apply@{Apply}!Equation@{Equation}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily virtual void Equation\+::\+Apply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_transformation}{Transformation}} \&}]{transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Apply transformation to an equation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transformation} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{struct_line_equation_adb9d9d9e24ffea16524aff477253e337}{Line\+Equation}}, and \mbox{\hyperlink{struct_conic_equation_a3d04814cb42783152d2fc6f9bfc48fc1}{Conic\+Equation}}.
+
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}

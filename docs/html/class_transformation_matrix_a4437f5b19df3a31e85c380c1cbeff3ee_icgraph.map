@@ -1,4 +1,4 @@
 <map id="TransformationMatrix::GetInverse" name="TransformationMatrix::GetInverse">
-<area shape="rect" id="node1" title=" " alt="" coords="229,5,372,45"/>
-<area shape="rect" id="node2" href="$class_transformation.html#ac3d5ded1acd2dfd8f61571c9da49915c" title=" " alt="" coords="5,13,181,38"/>
+<area shape="rect" id="node1" title="Finds inversion of matrix." alt="" coords="229,5,372,45"/>
+<area shape="rect" id="node2" href="$class_transformation.html#ac3d5ded1acd2dfd8f61571c9da49915c" title="Calculate inverse of transformation." alt="" coords="5,13,181,38"/>
 </map>

@@ -26,12 +26,14 @@ Collaboration diagram for Transformation\+:\nopagebreak
 \mbox{\hyperlink{class_transformation_a5b23f62e7697c24191cbadede00b875a}{Transformation}} (const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&first\+\_\+preimage, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&second\+\_\+preimage, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&third\+\_\+preimage, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&fourth\+\_\+preimage, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&first\+\_\+image, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&second\+\_\+image, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&third\+\_\+image, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&fourth\+\_\+image)
 \begin{DoxyCompactList}\small\item\em Construct transformation from movement of 4 points. \end{DoxyCompactList}\item 
 std\+::optional$<$ \mbox{\hyperlink{class_transformation}{Transformation}} $>$ \mbox{\hyperlink{class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c}{Get\+Inverse}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Calculate inverse of transformation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_transformation}{Transformation}} \& \mbox{\hyperlink{class_transformation_a7a5a3c0fe81508e8c65b7f4ab763f30a}{Apply}} (const \mbox{\hyperlink{class_transformation}{Transformation}} \&other)
+\begin{DoxyCompactList}\small\item\em Apply transformation to this. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}} \mbox{\hyperlink{class_transformation_a411585533799d6bfe14484f2b83bd7a7}{transformation\+\_\+}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Matrix of transformation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -99,6 +101,13 @@ Construct transformation from movement of 4 points.
 \doxysubsubsection{\texorpdfstring{GetInverse()}{GetInverse()}}
 {\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{class_transformation}{Transformation}} $>$ Transformation\+::\+Get\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Calculate inverse of transformation. 
+
+\begin{DoxyReturn}{Returns}
+Return inverse if it exists, otherwise 
+\end{DoxyReturn}
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -106,6 +115,24 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{class_transformation_a7a5a3c0fe81508e8c65b7f4ab763f30a}\label{class_transformation_a7a5a3c0fe81508e8c65b7f4ab763f30a}} 
+\index{Transformation@{Transformation}!Apply@{Apply}}
+\index{Apply@{Apply}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transformation}{Transformation}} \& Transformation\+::\+Apply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_transformation}{Transformation}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Apply transformation to this. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Which transformation to apply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this transformation. 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}
@@ -116,6 +143,10 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}} Transformation\+::transformation\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
 
+
+Matrix of transformation. 
+
+Member data. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

@@ -1,6 +1,9 @@
 ﻿#include "Coordinate.h"
 #include <optional>
 
+#include "Matrix.h"
+#include "Equation.h"
+
 TransformationMatrix::TransformationMatrix()
 {
   // Make Identity matrix
@@ -94,8 +97,256 @@ Transformation::Transformation(const TransformationMatrix& transformation)
   :transformation_(transformation)
 {}
 
+Transformation::Transformation(const PointEquation& first_preimage, const PointEquation& second_preimage,
+                               const PointEquation& third_preimage, const PointEquation& fourth_preimage,
+                               const PointEquation& first_image, const PointEquation& second_image,
+                               const PointEquation& third_image, const PointEquation& fourth_image)
+{
+  // Get equation of all images and preimages
+  auto& first_preimage_equation = first_preimage.GetEquation();
+  auto& second_preimage_equation = second_preimage.GetEquation();
+  auto& third_preimage_equation = third_preimage.GetEquation();
+  auto& fourth_preimage_equation = fourth_preimage.GetEquation();
+
+  auto& first_image_equation = first_image.GetEquation();
+  auto& second_image_equation = second_image.GetEquation();
+  auto& third_image_equation = third_image.GetEquation();
+  auto& fourth_image_equation = fourth_image.GetEquation();
+
+  /*
+  * We want to find matrix
+  *     |h1 h2 h3|
+  * H:  |h4 h5 h6|
+  *     |h7 h8 h9|
+  *
+  * For which it is true that H * Preimage = Image
+  *
+  * For all pairs of Preimage and Image we will write 3 equations
+  *
+  * We describe the multiplication of a matrix by a vector
+  *
+  * Assume preimage is (x,y,z) and image is (x',y',z')
+  *
+  * But we have coordinates with the accuracy of proportionality.
+  *
+  * So we want to find any matrix H. We will add 3 more variables: first_lamda, second_lamda, third_lamda,
+  * so our coordinates for first 3 image are (x' * lamda, y' * lamda, z' * lamda)
+  * And for fourth point we will "fix" its coordinates.
+  *
+  * We will write 3 equations for each pair of preimage and image
+  *
+  * h1 * x + h2 * y + h3 * z = x' * first_lamda
+  * h4 * x + h5 * y + h6 * z = y' * second_lamda
+  * h7 * x + h8 * y + h9 * z = z' * third_lamda
+  *
+  * Move all the summands to the left.
+  *
+  * h1 * x + h2 * y + h3 * z - x' * first_lamda = 0
+  * h4 * x + h5 * y + h6 * z - y' * second_lamda = 0
+  * h7 * x + h8 * y + h9 * z - z' * third_lamda = 0
+  *
+  * For the fourth one we will have these 3 equations
+  * h1 * x + h2 * y + h3 * z = x'
+  * h4 * x + h5 * y + h6 * z = y'
+  * h7 * x + h8 * y + h9 * z = z'
+  *
+  * So in sum we have 12 variables and 12 equations.
+  *
+  * Let's put them into matrix with augmentation and solve this system of linear equations.
+  */
+
+  SquaredMatrix matrix
+  (
+    // Matrix
+    {
+      // First three rows
+      {
+        first_preimage_equation.x, first_preimage_equation.y, first_preimage_equation.z,
+        0, 0, 0,
+        0, 0, 0,
+        -first_image_equation.x, 0, 0
+      },
+      {
+        0, 0, 0,
+        first_preimage_equation.x, first_preimage_equation.y, first_preimage_equation.z,
+        0, 0, 0,
+        -first_image_equation.y, 0, 0
+      },
+      {
+        0, 0, 0,
+        0, 0, 0,
+        first_preimage_equation.x, first_preimage_equation.y, first_preimage_equation.z,
+        -first_image_equation.z, 0, 0
+      },
+
+    // Second three rows
+      {
+        second_preimage_equation.x, second_preimage_equation.y, second_preimage_equation.z,
+        0, 0, 0,
+        0, 0, 0,
+        0, -second_image_equation.x, 0
+      },
+      {
+        0, 0, 0,
+        second_preimage_equation.x, second_preimage_equation.y, second_image_equation.z,
+        0, 0, 0,
+        0, -second_image_equation.y, 0
+      },
+      {
+        0, 0, 0,
+        0, 0, 0,
+        second_preimage_equation.x, second_preimage_equation.y, second_preimage_equation.z,
+        0, -second_image_equation.z, 0
+      },
+
+    // Third three rows
+      {
+        third_preimage_equation.x, third_preimage_equation.y, third_preimage_equation.z,
+        0, 0, 0,
+        0, 0, 0,
+        0, 0, -third_image_equation.x
+      },
+      {
+        0, 0, 0,
+        third_preimage_equation.x, third_preimage_equation.y, third_preimage_equation.z,
+        0, 0, 0,
+        0, 0, -third_image_equation.y
+      },
+      {
+        0, 0, 0,
+        0, 0, 0,
+        third_preimage_equation.x, third_preimage_equation.y, third_preimage_equation.z,
+        0, 0, -third_image_equation.z
+      },
+
+    // Fourth three rows
+      {
+        fourth_preimage_equation.x, fourth_preimage_equation.y, fourth_preimage_equation.z,
+        0, 0, 0,
+        0, 0, 0,
+        0, 0, 0
+      },
+      {
+        0, 0, 0,
+        fourth_preimage_equation.x, fourth_preimage_equation.y, fourth_preimage_equation.z,
+        0, 0, 0,
+        0, 0, 0
+      },
+      {
+        0, 0, 0,
+        0, 0, 0,
+        fourth_preimage_equation.x, fourth_preimage_equation.y, fourth_preimage_equation.z,
+        0, 0, 0
+      },
+    },
+
+    //Augmentation
+    {
+      0, 0, 0,
+      0, 0, 0,
+      0, 0, 0,
+      fourth_image_equation.x, fourth_image_equation.y, fourth_image_equation.z
+    }
+    );
+
+  // Solve system of linear equations
+  auto solution = matrix.GetSolution();
+
+  // Check if solution exists
+  if (!solution)
+  {
+    throw std::invalid_argument("No solution");
+  }
+
+  // Init transformation
+  transformation_ = TransformationMatrix(
+    solution.value()[0], solution.value()[1], solution.value()[2],
+    solution.value()[3], solution.value()[4], solution.value()[5],
+    solution.value()[6], solution.value()[7], solution.value()[8]
+  );
+}
+
 std::optional<Transformation> Transformation::GetInverse() const
 {
   // Return inverse transformation
   return std::optional<Transformation>(transformation_.GetInverse());
+}
+
+Transformation& Transformation::operator*=(const Transformation& other)
+{
+  // Multiply on matrix
+  transformation_ *= other.transformation_;
+
+  // Return this
+  return *this;
+}
+
+Transformation Transformation::operator*(const Transformation& other) const
+{
+  // Multiply two matrices
+  return Transformation(transformation_ * other.transformation_);
+}
+
+HomogeneousCoordinate Transformation::operator()(const HomogeneousCoordinate& coordinate) const
+{
+  return (*this) * coordinate;
+}
+
+HomogeneousCoordinate& operator*=(HomogeneousCoordinate& coordinate, const Transformation& transformation)
+{
+  coordinate = transformation * coordinate;
+  return coordinate;
+}
+
+HomogeneousCoordinate operator*(const Transformation& transformation, const HomogeneousCoordinate& coordinate)
+{
+  auto copy = coordinate;
+  for (size_t row = 0; row < std::tuple_size<Transformation::Column>::value; ++row)
+  {
+    complex element { 0 };
+    for (size_t column = 0; column < std::tuple_size<Transformation::Row>::value; ++column)
+    {
+      element += coordinate[static_cast<var>(column)] * transformation.transformation_[row][column];
+    }
+    copy[static_cast<var>(row)] = element;
+  }
+  return copy;
+}
+
+const complex& HomogeneousCoordinate::operator[](var variable) const
+{
+  switch (variable)
+  {
+    case var::kX:
+    return x;
+    break;
+    case var::kY:
+    return y;
+    break;
+    case var::kZ:
+    return z;
+    break;
+    default:
+    throw std::invalid_argument("No such variable!");
+    break;
+  }
+}
+
+complex& HomogeneousCoordinate::operator[](var variable)
+{
+  switch (variable)
+  {
+    case var::kX:
+    return x;
+    break;
+    case var::kY:
+    return y;
+    break;
+    case var::kZ:
+    return z;
+    break;
+    default:
+    std::invalid_argument("No such variable!");
+    break;
+  }
 }

@@ -96,7 +96,7 @@ Collaboration diagram for Transformation:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_transformation__coll__graph.png" border="0" usemap="#a_transformation_coll__map" alt="Collaboration graph"/></div>
 <map name="a_transformation_coll__map" id="a_transformation_coll__map">
-<area shape="rect" title="Class to save and do homography." alt="" coords="23,432,150,539"/>
+<area shape="rect" title="Class to save and do homography." alt="" coords="23,432,150,553"/>
 <area shape="rect" href="class_transformation_matrix.html" title=" " alt="" coords="5,160,168,369"/>
 <area shape="rect" title=" " alt="" coords="22,5,151,97"/>
 </map>
@@ -111,11 +111,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5b23f62e7697c24191cbadede00b875a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct transformation from movement of 4 points.  <br /></td></tr>
 <tr class="separator:a5b23f62e7697c24191cbadede00b875a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3d5ded1acd2dfd8f61571c9da49915c"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="class_transformation.html">Transformation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation.html#ac3d5ded1acd2dfd8f61571c9da49915c">GetInverse</a> () const</td></tr>
+<tr class="memdesc:ac3d5ded1acd2dfd8f61571c9da49915c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate inverse of transformation.  <br /></td></tr>
 <tr class="separator:ac3d5ded1acd2dfd8f61571c9da49915c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a5a3c0fe81508e8c65b7f4ab763f30a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_transformation.html">Transformation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation.html#a7a5a3c0fe81508e8c65b7f4ab763f30a">Apply</a> (const <a class="el" href="class_transformation.html">Transformation</a> &amp;other)</td></tr>
+<tr class="memdesc:a7a5a3c0fe81508e8c65b7f4ab763f30a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply transformation to this.  <br /></td></tr>
+<tr class="separator:a7a5a3c0fe81508e8c65b7f4ab763f30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a411585533799d6bfe14484f2b83bd7a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_transformation_matrix.html">TransformationMatrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation.html#a411585533799d6bfe14484f2b83bd7a7">transformation_</a></td></tr>
+<tr class="memdesc:a411585533799d6bfe14484f2b83bd7a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix of transformation.  <br /></td></tr>
 <tr class="separator:a411585533799d6bfe14484f2b83bd7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -247,17 +252,47 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Calculate inverse of transformation. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return inverse if it exists, otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c_cgraph.png" border="0" usemap="#aclass_transformation_ac3d5ded1acd2dfd8f61571c9da49915c_cgraph" alt=""/></div>
 <map name="aclass_transformation_ac3d5ded1acd2dfd8f61571c9da49915c_cgraph" id="aclass_transformation_ac3d5ded1acd2dfd8f61571c9da49915c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,45,181,70"/>
-<area shape="rect" href="class_transformation_matrix.html#a4437f5b19df3a31e85c380c1cbeff3ee" title=" " alt="" coords="229,37,372,77"/>
+<area shape="rect" title="Calculate inverse of transformation." alt="" coords="5,45,181,70"/>
+<area shape="rect" href="class_transformation_matrix.html#a4437f5b19df3a31e85c380c1cbeff3ee" title="Finds inversion of matrix." alt="" coords="229,37,372,77"/>
 <area shape="rect" href="class_transformation_matrix.html#aa188aa955061de541799126a392a56b0" title="Default Constructor." alt="" coords="420,5,571,45"/>
-<area shape="rect" href="class_transformation_matrix.html#ad48777040a3716b44c5821e8c4ce602c" title=" " alt="" coords="424,69,567,109"/>
+<area shape="rect" href="class_transformation_matrix.html#ad48777040a3716b44c5821e8c4ce602c" title="Calculates determinant." alt="" coords="424,69,567,109"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a7a5a3c0fe81508e8c65b7f4ab763f30a" name="a7a5a3c0fe81508e8c65b7f4ab763f30a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a5a3c0fe81508e8c65b7f4ab763f30a">&#9670;&#160;</a></span>Apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_transformation.html">Transformation</a> &amp; Transformation::Apply </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_transformation.html">Transformation</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Apply transformation to this. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Which transformation to apply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to this transformation. </dd></dl>
 
 </div>
 </div>
@@ -281,6 +316,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Matrix of transformation. </p>
+<p>Member data. </p>
 
 </div>
 </div>

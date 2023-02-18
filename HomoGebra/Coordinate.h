@@ -13,13 +13,13 @@ public:
   using MatrixContainer = std::array<std::array<complex, 3>, 3>;
 
   /**
-   * \brief Default Constructor.
+   * \brief Default Constructor. Creates identity matrix.
    *
    */
   TransformationMatrix();
 
   /**
-   *  \brief Constructor that initializes all elements in matrix
+   *  \brief Constructor that initializes all elements in matrix.
    *
    */
   TransformationMatrix(const complex& a00, const complex& a01, const complex& a02,
@@ -27,21 +27,21 @@ public:
                        const complex& a20, const complex& a21, const complex& a22);
 
   /**
-   * Finds inversion of matrix.
+   * \brief Finds inversion of matrix.
    *
-   * \return Inverse matrix
+   * \return Inverse matrix if it exists, otherwise std::nullopt.
    */
   std::optional<TransformationMatrix> GetInverse() const;
 
   /**
-   * Calculates determinant
+   * \brief Calculates determinant
    *
    * \return Determinant
    */
   complex Determinant() const;
 
   /**
-   * Multiplies this matrix on another one.
+   * \brief Multiplies this matrix on another one.
    *
    * \param other Another matrix
    * \return Reference to this object
@@ -49,7 +49,7 @@ public:
   TransformationMatrix& operator*=(const TransformationMatrix& other);
 
   /**
-   * Multiplies this matrix on another one.
+   * \brief Multiplies this matrix on another one.
    *
    * \param other Another matrix
    * \return New matrix equals to result of multiplication
@@ -62,28 +62,14 @@ public:
   MatrixContainer::const_iterator begin() const { return matrix_.begin(); }
   MatrixContainer::const_iterator end() const { return matrix_.end(); }
 private:
-  MatrixContainer matrix_;
-};
-
-/**
- * \brief Coordinates in \f{ \mathbb{C}\mathrm{P}^2 \f}
- *
- * \author nook0110
- *
- * \version 0.1
- *
- * \date February 2023
- *
- * \see <a href="https://en.wikipedia.org/wiki/Homogeneous_coordinates">Wikipedia: Homogeneous coordinates</a>
- */
-struct HomogeneousCoordinate
-{
-  complex x;
-  complex y;
-  complex z;
+  /**
+   * Member data.
+   */
+  MatrixContainer matrix_; //!< Matrix
 };
 
 struct PointEquation;
+struct HomogeneousCoordinate;
 
 /**
  * \brief Class to save and do homography.
@@ -98,8 +84,13 @@ struct PointEquation;
 class Transformation
 {
 public:
+  using Row = TransformationMatrix::MatrixRow;
+  using Column = TransformationMatrix::MatrixColumn;
+
+  friend HomogeneousCoordinate operator*(const Transformation& transformation, const HomogeneousCoordinate& coordinate);
+
   /**
-   *  \brief Constructs transformation from matrix.
+   *  \brief Constructs transformation from matrix. For default transformation use identity matrix.
    */
   explicit Transformation(const TransformationMatrix& transformation = TransformationMatrix());
 
@@ -125,7 +116,78 @@ public:
                  const PointEquation& first_image, const PointEquation& second_image,
                  const PointEquation& third_image, const PointEquation& fourth_image);
 
+  /**
+   * \brief Calculate inverse of transformation.
+   *
+   * \return Return inverse if it exists, otherwise
+   */
   std::optional<Transformation> GetInverse() const;
+
+  /**
+   * \brief Apply transformation to this.
+   *
+   * \param other Which transformation to apply.
+   * \return Reference to this transformation.
+   */
+  Transformation& operator*=(const Transformation& other);
+
+  /**
+   * \brief Combine two transformations.
+   *
+   * \param other Which transformation to apply.
+   * \return A combined transformation
+   */
+  Transformation operator*(const Transformation& other) const;
+
+  /**
+   * \brief Apply transfromation to a homogeneous coordinate.
+   *
+   * \param coordinate A homogeneous coordinate to apply transformation on.
+   * \return Coordinate after transfromation
+   */
+  HomogeneousCoordinate operator()(const HomogeneousCoordinate& coordinate) const;
+
+
 private:
-  TransformationMatrix transformation_;
+  /**
+   * Member data.
+   */
+  TransformationMatrix transformation_; //!< Matrix of transformation
 };
+
+/**
+* \brief Name of axes.
+*
+*/
+enum class var
+{
+  kX,
+  kY,
+  kZ
+};
+
+/**
+ * \brief Coordinates in \f{ \mathbb{C}\mathrm{P}^2 \f}
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ *
+ * \see <a href="https://en.wikipedia.org/wiki/Homogeneous_coordinates">Wikipedia: Homogeneous coordinates</a>
+ *
+ */
+struct HomogeneousCoordinate
+{
+  const complex& operator[](var variable) const;
+  complex& operator[](var variable);
+
+
+  complex x;
+  complex y;
+  complex z;
+};
+
+HomogeneousCoordinate& operator*=(HomogeneousCoordinate& coordinate, const Transformation& transformation);
+HomogeneousCoordinate operator*(const Transformation& transformation, const HomogeneousCoordinate& coordinate);
