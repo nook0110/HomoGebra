@@ -140,13 +140,12 @@ public:
   Transformation operator*(const Transformation& other) const;
 
   /**
-   * \brief Apply transfromation to a homogeneous coordinate.
+   * \brief Apply transformation to a homogeneous coordinate.
    *
    * \param coordinate A homogeneous coordinate to apply transformation on.
-   * \return Coordinate after transfromation
+   * \return Coordinate after transformation
    */
   HomogeneousCoordinate operator()(const HomogeneousCoordinate& coordinate) const;
-
 
 private:
   /**
@@ -182,7 +181,6 @@ struct HomogeneousCoordinate
 {
   const complex& operator[](var variable) const;
   complex& operator[](var variable);
-
 
   complex x;
   complex y;

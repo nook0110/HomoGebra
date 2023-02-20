@@ -124,9 +124,4 @@ private:
   Column augmentation_; //<! Augmentation
 
   size_t size_; //<! Size of matrix
-
 };
-
-
-
-

@@ -17,6 +17,8 @@
 */
 class Point
 {
+public:
+
 private:
   /*
   * Member data

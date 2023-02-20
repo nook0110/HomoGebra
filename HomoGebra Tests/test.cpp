@@ -29,6 +29,28 @@ namespace HomogebraTest
       << "Second: " << second.real() << " " << second.imag() << " are not near equal!";
   }
 
+  // Checks that two vectors which filled with complex number are equal with precision [abs_error]
+  testing::AssertionResult check_two_vectors(const std::vector<complex>& first, const std::vector<complex>& second, long double abs_error)
+  {
+    if (first.size() != second.size())
+    {
+      return testing::AssertionFailure() << "First vector size: " << first.size() << " "
+        << "Second vector size: " << second.size() << " are not equal!";
+    }
+
+    for (size_t i = 0; i < first.size(); ++i)
+    {
+      auto result = check_two_complex(first[i], second[i], abs_error);
+
+      if (!result)
+      {
+        return testing::AssertionFailure() << "Vectors are not near equal! " << "Index: " << i;
+      }
+    }
+
+    return testing::AssertionSuccess() << "Vectors are near equal!";
+  }
+
   namespace Matrix
   {
     // Checks that two squared matrix are equal with precision [abs_error]
@@ -130,6 +152,35 @@ namespace HomogebraTest
 
       // Check that augmentation is correct
       ASSERT_TRUE(check_two_augmentation(real_inverse_of_matrix, second_inverse_matrix.value(), epsilon));
+    }
+
+    TEST(SquaredMatrix, Solution)
+    {
+      // Create a random matrix 3 * 3 with determinant 1
+      const SquaredMatrix matrix(
+        {
+          SquaredMatrix::Row{ complex(1.0, 1.2), complex(2.0, 4.12), complex(3.0, 7.636) },
+          SquaredMatrix::Row{ complex(1.0, 2.8), complex(5.0, 5.521), complex(6.0, 8.616) },
+          SquaredMatrix::Row{ complex(1.0, 3.8), complex(8.0, 6.1234), complex(9.0, 9.93) }
+        },
+        SquaredMatrix::Row { complex(1.0, 0.0), complex(11.0, 0.0), complex(12.0, 0.0) }
+      );
+
+      // {{1.0 + 1.2*i, 2.0 + 4.12*i, 3.0 + 7.636*i}, {1.0 + 2.8*i, 5.0 + 5.521*i, 6.0 + 8.616*i}, {1.0 + 3.8*i, 8.0 + 6.1234*i, 9.0 + 9.93*i}}, {{1.0, 11.0, 12.0}}
+
+      // Get solution
+      const auto solution = matrix.GetSolution();
+
+      // Check that solution is not empty
+      ASSERT_TRUE(solution.has_value());
+
+      // Real solution
+
+      // { { 3.45389768638 - 5.87719130279 i }, { -2.10575700912 - 5.19875528911 i }, { 1.16970378546 + 3.95796180972 i } }
+      const std::vector<complex> real_solution = { complex(3.45389768638, -5.87719130279), complex(-2.10575700912, -5.19875528911), complex(1.16970378546, 3.95796180972) };
+
+      // Check that solution is correct
+      ASSERT_TRUE(check_two_vectors(real_solution, solution.value(), epsilon));
     }
   }
 
@@ -319,15 +370,15 @@ namespace HomogebraTest
     TEST(Transformation, From_points_constructor)
     {
       // Construct ID (images = preimages)
-      PointEquation A_id({ complex(1, 0), complex(0, 0), complex(0, 0) });
-      PointEquation B_id({ complex(0, 0), complex(1, 0), complex(0, 0) });
-      PointEquation C_id({ complex(0, 0), complex(0, 0), complex(1, 0) });
-      PointEquation D_id({ complex(0, 0), complex(0, 0), complex(0, 0) });
+      PointEquation A_id({ complex(1, 0), complex(0, 0), complex(1, 0) });
+      PointEquation B_id({ complex(0, 0), complex(1, 0), complex(1, 0) });
+      PointEquation C_id({ complex(1, 0), complex(1, 0), complex(1, 0)});
+      PointEquation D_id({ complex(0, 0), complex(0, 0), complex(1, 0) });
 
-      PointEquation A_image_id({ complex(1, 0), complex(0, 0), complex(0, 0) });
-      PointEquation B_image_id({ complex(0, 0), complex(1, 0), complex(0, 0) });
-      PointEquation C_image_id({ complex(0, 0), complex(0, 0), complex(1, 0) });
-      PointEquation D_image_id({ complex(0, 0), complex(0, 0), complex(0, 0) });
+      PointEquation A_image_id({ complex(1, 0), complex(0, 0), complex(1, 0) });
+      PointEquation B_image_id({ complex(0, 0), complex(1, 0), complex(1, 0) });
+      PointEquation C_image_id({ complex(1, 0), complex(1, 0), complex(1, 0) });
+      PointEquation D_image_id({ complex(0, 0), complex(0, 0), complex(1, 0) });
 
       // Construct a transformation from 4 preimages and 4 images
       Transformation id(A_id, B_id, C_id, D_id,
@@ -338,6 +389,114 @@ namespace HomogebraTest
 
       // Check that the point is image of itself
       EXPECT_TRUE(check_two_coordinates(id(point.equation), point.equation, epsilon));
+
+      // Construct Homothety
+      PointEquation A_homothety({ complex(1, 0), complex(0, 0), complex(1, 0) });
+      PointEquation B_homothety({ complex(0, 0), complex(1, 0), complex(1, 0) });
+      PointEquation C_homothety({ complex(1, 0), complex(1, 0), complex(1, 0) });
+      PointEquation D_homothety({ complex(0, 0), complex(0, 0), complex(1, 0) });
+
+      PointEquation A_image_homothety({ complex(2, 0), complex(0, 0), complex(1, 0) });
+      PointEquation B_image_homothety({ complex(0, 0), complex(2, 0), complex(1, 0) });
+      PointEquation C_image_homothety({ complex(2, 0), complex(2, 0), complex(1, 0) });
+      PointEquation D_image_homothety({ complex(0, 0), complex(0, 0), complex(1, 0) });
+
+      // Construct a transformation from 4 preimages and 4 images
+      Transformation homothety(A_homothety, B_homothety, C_homothety, D_homothety,
+                                      A_image_homothety, B_image_homothety, C_image_homothety, D_image_homothety);
+
+      // Construct random point equation
+      PointEquation point_homothety({ complex{3,1}, complex{1, 2}, complex{1, 2} });
+
+      // Construct answer
+      PointEquation point_homothety_image({ complex{6,2}, complex{2, 4}, complex{1, 2} });
+
+      // Check transformation
+      EXPECT_TRUE(check_two_coordinates(homothety(point_homothety.equation), point_homothety_image.equation, epsilon));
+
+      // Construct a rotation
+      PointEquation A_rotation({ complex(1, 0), complex(0, 0), complex(1, 0) });
+      PointEquation B_rotation({ complex(0, 0), complex(1, 0), complex(1, 0) });
+      PointEquation C_rotation({ complex(1, 0), complex(1, 0), complex(1, 0) });
+      PointEquation D_rotation({ complex(0, 0), complex(0, 0), complex(1, 0) });
+
+      PointEquation A_image_rotation({ complex(0, 0), complex(1, 0), complex(1, 0) });
+      PointEquation B_image_rotation({ complex(-1, 0), complex(0, 0), complex(1, 0) });
+      PointEquation C_image_rotation({ complex(-1, 0), complex(1, 0), complex(1, 0) });
+      PointEquation D_image_rotation({ complex(0, 0), complex(0, 0), complex(1, 0) });
+
+      // Construct a transformation from 4 preimages and 4 images
+      Transformation rotation(A_rotation, B_rotation, C_rotation, D_rotation,
+                                     A_image_rotation, B_image_rotation, C_image_rotation, D_image_rotation);
+
+      // Construct random point equation
+      PointEquation point_rotation({ complex{3,0}, complex{1, 0}, complex{1, 0} });
+
+      // Construct answer
+      PointEquation point_rotation_image({ complex{-1,0}, complex{3, 0}, complex{1, 0} });
+
+      // Check transformation
+      EXPECT_TRUE(check_two_coordinates(rotation(point_rotation.equation), point_rotation_image.equation, epsilon));
+
+      // Construct a translation
+      PointEquation A_translation({ complex(1, 0), complex(0, 0), complex(1, 0) });
+      PointEquation B_translation({ complex(0, 0), complex(1, 0), complex(1, 0) });
+      PointEquation C_translation({ complex(1, 0), complex(1, 0), complex(1, 0) });
+      PointEquation D_translation({ complex(0, 0), complex(0, 0), complex(1, 0) });
+
+      PointEquation A_image_translation({ complex(2, 0), complex(1, 0), complex(1, 0) });
+      PointEquation B_image_translation({ complex(1, 0), complex(2, 0), complex(1, 0) });
+      PointEquation C_image_translation({ complex(2, 0), complex(2, 0), complex(1, 0) });
+      PointEquation D_image_translation({ complex(1, 0), complex(1, 0), complex(1, 0) });
+
+      // Construct a transformation from 4 preimages and 4 images
+      Transformation translation(A_translation, B_translation, C_translation, D_translation,
+                                                                        A_image_translation, B_image_translation, C_image_translation, D_image_translation);
+
+      // Construct random point equation
+      PointEquation point_translation({ complex{3,0}, complex{1, 0}, complex{1, 0} });
+
+      // Construct answer
+      PointEquation point_translation_image({ complex{4,0}, complex{2, 0}, complex{1, 0} });
+
+      // Check transformation
+      EXPECT_TRUE(check_two_coordinates(translation(point_translation.equation), point_translation_image.equation, epsilon));
+    
+      // Construct a composition
+      Transformation composition = translation * rotation * homothety;
+
+      // Construct random point equation
+      PointEquation point_composition({ complex{3,0}, complex{1, 0}, complex{1, 0} });
+
+      // Construct answer
+      PointEquation point_composition_image({ complex{-1,0}, complex{7, 0}, complex{1, 0} });
+
+      // Check transformation
+      EXPECT_TRUE(check_two_coordinates(composition(point_composition.equation), point_composition_image.equation, epsilon));
+
+      // Construct a composition
+      Transformation composition2 = homothety * rotation * translation;
+
+      // Construct random point equation
+      PointEquation point_composition2({ complex{3,0}, complex{1, 0}, complex{1, 0} });
+
+      // Construct answer
+      PointEquation point_composition2_image({ complex{-4,0}, complex{8, 0}, complex{1, 0} });
+
+      // Check transformation
+      EXPECT_TRUE(check_two_coordinates(composition2(point_composition2.equation), point_composition2_image.equation, epsilon));
+
+      // Construct a composition
+      Transformation composition3 = translation * homothety * rotation;
+
+      // Construct random point equation
+      PointEquation point_composition3({ complex{3,0}, complex{1, 0}, complex{1, 0} });
+
+      // Construct answer
+      PointEquation point_composition3_image({ complex{-1,0}, complex{7, 0}, complex{1, 0} });
+
+      // Check transformation
+      EXPECT_TRUE(check_two_coordinates(composition3(point_composition3.equation), point_composition3_image.equation, epsilon));
     }
 
     TEST(Transformation, Multiplication)

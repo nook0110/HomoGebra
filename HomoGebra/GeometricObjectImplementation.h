@@ -163,7 +163,7 @@ public:
    *
    * \param equation Equation of line
   */
-  void SetPosition(const LineEquation& equation);
+  void SetEquation(const LineEquation& equation);
 
   /**
    * \brief Return equation of line.
@@ -193,7 +193,7 @@ public:
    *
    * \param equation Equation of conic
   */
-  void SetPosition(const ConicEquation& equation);
+  void SetEquation(const ConicEquation& equation);
 
   /**
    * \brief Return equation of conic.
@@ -229,7 +229,18 @@ private:
 */
 class Construction : public ConstructionObserver
 {
-protected:
+public:
+  /**
+   * \brief Constructor deleted.
+   * 
+   */
+  Construction() = delete;
+
+  /**
+   * \brief Default destructor.
+   * 
+   */
+  ~Construction() override = default;
 };
 
 /**
@@ -245,8 +256,35 @@ protected:
 */
 class ConstructionPoint : public Construction
 {
+public:
+  /**
+   * \brief Constructor deleted.
+   * 
+   */
+  ConstructionPoint() = delete;
+
+  /**
+  * \brief Default destructor.
+  * 
+  */
+  ~ConstructionPoint() override = default;
+
+  /**
+   * Recalculate equation of point.
+   * 
+   * \return New equation of point.
+   */
+  virtual PointEquation RecalculateEquation() const = 0;
+
+  /**
+   * \brief Update the object because sth moved.
+   * 
+   * \param Tag for tag dispatch
+   */
+  void Update(Event::Moved) const override;
 protected:
-  PointImplementation& object;
+  PointImplementation& object_;
+private:
 };
 
 /**
@@ -263,15 +301,41 @@ protected:
 class ConstructionOnPlane : public ConstructionPoint
 {
 public:
-  void Update(Event::Moved) const override;
+  ~ConstructionOnPlane() override = default;
+};
+
+class ConstructionFromTwoLines : public ConstructionPoint
+{
 };
 
 class ConstructionLine : public Construction
 {
 public:
+  /**
+   * \brief Constructor deleted.
+   */
+  ConstructionLine() = delete;
+
+  /**
+   * \brief Default destructor.
+   */
+  ~ConstructionLine() override = default;
+
+  /**
+   * Recalculate equation of point.
+   *
+   * \return New equation of point.
+   */
+  virtual LineEquation RecalculateEquation() const = 0;
+
+  /**
+   * \brief Update object because sth moved.
+   * 
+   * \param Tag for tag dispatch 
+   */
   void Update(Event::Moved) const override;
 private:
-  LineImplementation& object;
+  LineImplementation& object_;
 };
 
 class ConstructionConic : public Construction
