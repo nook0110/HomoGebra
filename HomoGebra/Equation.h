@@ -102,7 +102,9 @@ struct ConicEquation : public Equation
    *
    * It is used to get from Equation::var next or previous Equation::var
    */
-   /// @{
+
+  /// @{
+  
   static const std::array<var, 3> prev;
   static const std::array<var, 3> next;
 
@@ -124,6 +126,7 @@ struct ConicEquation : public Equation
   * \f$ a \cdot x^2 + b \cdot y^2 + c \cdot z^2 + d \cdot yz + e \cdot xz + f \cdot xy \f$
   */
   /// @{
+  
   std::array<complex, 3> squares;
   std::array<complex, 3> pair_products;
 

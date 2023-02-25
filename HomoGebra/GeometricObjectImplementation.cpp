@@ -76,21 +76,3 @@ const ConicEquation& ConicImplementation::GetEquation() const
   // Return equation
   return equation_;
 }
-
-void ConstructionPoint::Update(Event::Moved) const
-{
-  // Recalculate equation
-  auto equation = RecalculateEquation();
-
-  // Set new equation
-  object_.SetEquation(equation);
-}
-
-void ConstructionLine::Update(Event::Moved) const
-{
-  // Recalculate equation
-  auto equation = RecalculateEquation();
-
-  // Set new equation
-  object_.SetEquation(equation);
-}

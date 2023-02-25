@@ -11,6 +11,21 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{10488992-4abb-422e-8aa8-1ceed9d88708}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GeomObject">
+      <UniqueIdentifier>{4a00b89f-cf34-49df-be19-a9a265ea91a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\GeomObject">
+      <UniqueIdentifier>{af0114f8-bec6-4aba-bc15-9f904b63e17b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\GUI">
+      <UniqueIdentifier>{eec9c24f-e04d-49a0-89e9-b63124561664}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GUI">
+      <UniqueIdentifier>{2bd4fc21-a291-41ad-88c7-8a01ad50db9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Plane">
+      <UniqueIdentifier>{f2e9daf6-c218-43e9-9ac6-72e426e8d859}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui.cpp">
@@ -40,18 +55,6 @@
     <ClCompile Include="Equation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeometricObjectBody.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeometricObjectFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeometricObjectImplementation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GUI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Plane.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -64,33 +67,24 @@
     <ClCompile Include="Matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Construction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometricObjectBody.cpp">
+      <Filter>Source Files\GeomObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometricObjectFactory.cpp">
+      <Filter>Source Files\GeomObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometricObjectImplementation.cpp">
+      <Filter>Source Files\GeomObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GUI.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="GeometricObject.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="GeometricObjectImplementation.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="GeometricObjectBody.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="GeometricObjectFactory.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="PlaneImplementation.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Equation.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Plane.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="PlaneBody.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Coordinate.h">
@@ -98,6 +92,33 @@
     </ClInclude>
     <ClInclude Include="Matrix.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Construction.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometricObject.h">
+      <Filter>Файлы заголовков\GeomObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometricObjectBody.h">
+      <Filter>Файлы заголовков\GeomObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometricObjectFactory.h">
+      <Filter>Файлы заголовков\GeomObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometricObjectImplementation.h">
+      <Filter>Файлы заголовков\GeomObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI.h">
+      <Filter>Файлы заголовков\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Файлы заголовков\Plane</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaneBody.h">
+      <Filter>Файлы заголовков\Plane</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaneImplementation.h">
+      <Filter>Файлы заголовков\Plane</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

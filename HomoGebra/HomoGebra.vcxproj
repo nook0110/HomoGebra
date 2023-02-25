@@ -154,6 +154,7 @@
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_stdlib.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Construction.cpp" />
     <ClCompile Include="Coordinate.cpp" />
     <ClCompile Include="Equation.cpp" />
     <ClCompile Include="GeometricObjectBody.cpp" />
@@ -166,6 +167,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Construction.h" />
     <ClInclude Include="Coordinate.h" />
     <ClInclude Include="Equation.h" />
     <ClInclude Include="GeometricObject.h" />

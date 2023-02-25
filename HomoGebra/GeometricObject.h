@@ -1,7 +1,7 @@
 #pragma once
 
-#include "GeometricObjectImplementation.h"
 #include "GeometricObjectBody.h"
+#include "GeometricObjectImplementation.h"
 
 /**
  * \brief Point on a plane.
@@ -14,17 +14,26 @@
  *
  * \see PointBody
  * \see PointImplementation
-*/
-class Point
-{
-public:
+ */
+class Point {
+ public:
+  /**
+   * \Set new equation of point.
+   *
+   * \param equation Equation of point
+   */
+  void SetEquation(const PointEquation& equation);
 
-private:
+ /**
+  * \brief 
+ */
+
+ private:
   /*
-  * Member data
-  */
-  PointBody body_; //!< Body, which you can draw.
-  PointImplementation implementation_; //!< Implementation.
+   * Member data
+   */
+  PointBody body_;                      //!< Body, which you can draw.
+  PointImplementation implementation_;  //!< Implementation.
 };
 
 /**
@@ -38,15 +47,22 @@ private:
  *
  * \see LineBody
  * \see LineImplementation
-*/
-class Line
-{
-private:
+ */
+class Line {
+ public:
+  /**
+   * \brief Set new equation of line.
+   *
+   * \param equation Equation of line
+   */
+  void SetEquation(const LineEquation& equation);
+
+ private:
   /*
-  * Member data
-  */
-  LineBody body_; //!< Body, which you can draw.
-  LineImplementation implementation_; //!< Implementation.
+   * Member data
+   */
+  LineBody body_;                      //!< Body, which you can draw.
+  LineImplementation implementation_;  //!< Implementation.
 };
 
 /**
@@ -60,13 +76,12 @@ private:
  *
  * \see ConicBody
  * \see ConicImplementation
-*/
-class Conic
-{
-private:
+ */
+class Conic {
+ private:
   /*
-  * Member data
-  */
-  ConicBody body_; //!< Body, which you can draw.
-  ConicImplementation implementation_; //!< Implementation.
+   * Member data
+   */
+  ConicBody body_;                      //!< Body, which you can draw.
+  ConicImplementation implementation_;  //!< Implementation.
 };

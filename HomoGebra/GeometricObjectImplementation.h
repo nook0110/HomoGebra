@@ -128,6 +128,13 @@ public:
 class PointImplementation : public GeometricObjectImplementation
 {
 public:
+
+  /**
+  * \brief Destroy an object
+  *
+  */
+  void Destroy();
+
   /**
    * \brief Sets new equation of point.
    *
@@ -215,128 +222,3 @@ private:
   ConicEquation equation_; //!< Conic equation
 };
 
-/**
- * \brief Defines how object is created.
- *
- * \author nook0110
- *
- * \version 0.1
- *
- * \date February 2023
- *
- * \details Updates positions of objects
- * \see GeometricObjectImplementation
-*/
-class Construction : public ConstructionObserver
-{
-public:
-  /**
-   * \brief Constructor deleted.
-   * 
-   */
-  Construction() = delete;
-
-  /**
-   * \brief Default destructor.
-   * 
-   */
-  ~Construction() override = default;
-};
-
-/**
- * \brief Defines how point is created.
- *
- * \author nook0110
- *
- * \version 0.1
- *
- * \date February 2023
- *
- * \details Updates position of point
-*/
-class ConstructionPoint : public Construction
-{
-public:
-  /**
-   * \brief Constructor deleted.
-   * 
-   */
-  ConstructionPoint() = delete;
-
-  /**
-  * \brief Default destructor.
-  * 
-  */
-  ~ConstructionPoint() override = default;
-
-  /**
-   * Recalculate equation of point.
-   * 
-   * \return New equation of point.
-   */
-  virtual PointEquation RecalculateEquation() const = 0;
-
-  /**
-   * \brief Update the object because sth moved.
-   * 
-   * \param Tag for tag dispatch
-   */
-  void Update(Event::Moved) const override;
-protected:
-  PointImplementation& object_;
-private:
-};
-
-/**
- * \brief Construction of a casual point on a plane.
- *
- * \author nook0110
- *
- * \version 0.1
- *
- * \date February 2023
- *
- * \details Have no dependence on other objects
-*/
-class ConstructionOnPlane : public ConstructionPoint
-{
-public:
-  ~ConstructionOnPlane() override = default;
-};
-
-class ConstructionFromTwoLines : public ConstructionPoint
-{
-};
-
-class ConstructionLine : public Construction
-{
-public:
-  /**
-   * \brief Constructor deleted.
-   */
-  ConstructionLine() = delete;
-
-  /**
-   * \brief Default destructor.
-   */
-  ~ConstructionLine() override = default;
-
-  /**
-   * Recalculate equation of point.
-   *
-   * \return New equation of point.
-   */
-  virtual LineEquation RecalculateEquation() const = 0;
-
-  /**
-   * \brief Update object because sth moved.
-   * 
-   * \param Tag for tag dispatch 
-   */
-  void Update(Event::Moved) const override;
-private:
-  LineImplementation& object_;
-};
-
-class ConstructionConic : public Construction
-{};

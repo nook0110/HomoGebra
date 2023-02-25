@@ -18,10 +18,31 @@
  */
 class PlaneImplementation
 {
+public:
+  /**
+  * \brief Delete point through implementation
+  *
+  * \param A reference to an implementation
+  */
+  void DeletePoint(const PointImplementation& point);
+
+  /**
+  * \brief Delete line through implementation
+  *
+  * \param A reference to an implementation
+  */
+  void DeleteLine(const LineImplementation& line);
+
+  /**
+  * \brief Delete conic through implementation
+  *
+  * \param A reference to an implementation
+  */
+  void DeleteConic(const ConicImplementation& conic);
 private:
   /**
-   * Member data.
-   */
+  * Member data.
+  */
   std::vector<Point> points_; //!< All points on the plane.
   std::vector<Line> lines_; //!< All lines on the plane.
   std::vector<Conic> conics_; //!< All conics on the plane.
