@@ -20,26 +20,54 @@ class PlaneImplementation
 {
 public:
   /**
-  * \brief Delete point through implementation
-  *
-  * \param A reference to an implementation
-  */
-  void DeletePoint(const PointImplementation& point);
+ * \brief Construct point
+ *
+ * \param A coordinate where to construct
+ *
+ * \return A reference to a constructed point
+ */
+  Point& EmplacePoint(const PointEquation& equation);
 
   /**
-  * \brief Delete line through implementation
+  * \brief Construct line
   *
-  * \param A reference to an implementation
+  * \param A coordinate where to construct
+  *
+  * \return A reference to a constructed line
   */
-  void DeleteLine(const LineImplementation& line);
+  Line& EmplaceLine(const LineEquation& equation);
 
   /**
-  * \brief Delete conic through implementation
+  * \brief Construct conic
   *
-  * \param A reference to an implementation
+  * \param A coordinate where to construct
+  *
+  * \return A reference to a constructed conic
   */
-  void DeleteConic(const ConicImplementation& conic);
+  Conic& EmplaceConic(const ConicEquation& equation);
+
+  /**
+  * \brief Delete point
+  *
+  * \param A reference to a point
+  */
+  void DeletePoint(const Point& point);
+
+  /**
+  * \brief Delete line
+  *
+  * \param A reference to a line
+  */
+  void DeleteLine(const Line& line);
+
+  /**
+  * \brief Delete conic
+  *
+  * \param A reference to a conic
+  */
+  void DeleteConic(const Conic& conic);
 private:
+
   /**
   * Member data.
   */

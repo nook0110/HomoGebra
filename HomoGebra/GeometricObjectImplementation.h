@@ -3,8 +3,10 @@
 
 #include "Equation.h"
 
+class Plane;
+
 /**
-* \brief Events which can happen
+* \brief Events which can happen.
 *
 */
 namespace Event
@@ -17,7 +19,13 @@ namespace Event
   /**
    * \brief Tag that shows that object was destroyed.
    */
-  struct Destroyed {};
+  struct Destroyed 
+  {
+    /*
+    * Member data.
+    */
+    Plane& plane_; //!< Plane where object was destroyed.
+  };
 }
 
 /**
@@ -29,20 +37,32 @@ namespace Event
  *
  * \date February 2023
  *
- * \detail Implements pattern called 'Observer'
+ * \detail Implements pattern called 'Observer'.
  *
  * \see ObservableGeometricObject
  * \see Construction
- *
 */
 class ConstructionObserver
 {
 public:
+  /**
+  * Default destructor.
+  */
   virtual ~ConstructionObserver() = default;
 
-  virtual void Update(Event::Moved) const = 0;
-  virtual void Update(Event::Destroyed) const = 0;
+  /**
+  * \brief Update the object, because sth moved.
+  * 
+  * \param Tag with some information
+  */
+  virtual void Update(const Event::Moved&) const = 0;
 
+  /**
+  * \brief Update the object, because sth was destroyed.
+  * 
+  * \param Tag with some information (Plane where it was destroyed)
+  */
+  virtual void Update(const Event::Destroyed&) const = 0;
 private:
   std::list<const ConstructionObserver*> observers_; //!< List of subscribed observers
 };
@@ -86,13 +106,13 @@ protected:
   * \brief Notify all subscribed observers that object was moved
   *
   */
-  void Notify(Event::Moved) const;
+  void Notify(const Event::Moved&) const;
 
   /**
   * \brief Notify all subscribed observers that object was destroyed
   *
   */
-  void Notify(Event::Destroyed) const;
+  void Notify(const Event::Destroyed&) const;
 
 private:
   /**
@@ -128,13 +148,6 @@ public:
 class PointImplementation : public GeometricObjectImplementation
 {
 public:
-
-  /**
-  * \brief Destroy an object
-  *
-  */
-  void Destroy();
-
   /**
    * \brief Sets new equation of point.
    *

@@ -18,18 +18,18 @@ void ObservableGeometricObject::Detach(const ConstructionObserver* observer)
   });
 }
 
-void ObservableGeometricObject::Notify(Event::Moved) const
+void ObservableGeometricObject::Notify(const Event::Moved& moved) const
 {
   // Update all observers
   for (const auto& observer : observers_)
-    observer->Update(Event::Moved());
+    observer->Update(moved);
 }
 
-void ObservableGeometricObject::Notify(Event::Destroyed) const
+void ObservableGeometricObject::Notify(const Event::Destroyed& destroyed) const
 {
   // Update all observers
   for (const auto& observer : observers_)
-    observer->Update(Event::Destroyed());
+    observer->Update(destroyed);
 }
 
 void PointImplementation::SetEquation(const PointEquation& equation)

@@ -1,6 +1,7 @@
 #include "Construction.h"
+#include "Plane.h"
 
-void ConstructionPoint::Update(Event::Moved) const
+void ConstructionPoint::Update(const Event::Moved&) const
 {
   // Recalculate equation
   auto equation = RecalculateEquation();
@@ -9,9 +10,9 @@ void ConstructionPoint::Update(Event::Moved) const
   object_.SetEquation(equation);
 }
 
-void ConstructionPoint::Update(Event::Destroyed) const
+void ConstructionPoint::Update(const Event::Destroyed& destroyed) const
 {
-  object_.Destroy();
+  destroyed.plane_.DeletePoint(object_);
 }
 
 void ConstructionLine::Update(Event::Moved) const

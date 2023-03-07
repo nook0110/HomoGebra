@@ -115,12 +115,12 @@ public:
   explicit ConicFactory(Plane& plane);
 
   /**
-   * \brief Constructs a conic through  five given points.
+   * \brief Constructs a conic through five given points.
    *
    * \param first First point to go through.
-   * \param second Second point to go through
+   * \param second Second point to go through.
    * \param third Third point to go through.
-   * \param fourth Fourth point to go through
+   * \param fourth Fourth point to go through.
    * \param fifth Fifth point to go through.
    * \return Reference to a constructed conic.
    */

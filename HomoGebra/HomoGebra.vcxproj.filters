@@ -26,6 +26,9 @@
     <Filter Include="Файлы заголовков\Plane">
       <UniqueIdentifier>{f2e9daf6-c218-43e9-9ac6-72e426e8d859}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Plane">
+      <UniqueIdentifier>{d8434f5a-0afb-4acd-97e1-c9f10d054650}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui.cpp">
@@ -55,12 +58,6 @@
     <ClCompile Include="Equation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Plane.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PlaneBody.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -81,6 +78,15 @@
     </ClCompile>
     <ClCompile Include="GUI.cpp">
       <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaneImplementation.cpp">
+      <Filter>Source Files\Plane</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>Source Files\Plane</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaneBody.cpp">
+      <Filter>Source Files\Plane</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

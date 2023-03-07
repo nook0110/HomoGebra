@@ -164,6 +164,7 @@
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="PlaneBody.cpp" />
+    <ClCompile Include="PlaneImplementation.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>

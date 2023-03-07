@@ -15,8 +15,17 @@
  * \see PointBody
  * \see PointImplementation
  */
-class Point {
- public:
+class Point 
+{
+public:
+  Point() = delete;
+
+   /**
+  * \brief Default destructor.
+  *
+  */
+  ~Point();
+
   /**
    * \Set new equation of point.
    *
@@ -24,14 +33,25 @@ class Point {
    */
   void SetEquation(const PointEquation& equation);
 
- /**
-  * \brief 
- */
+private:
+  /**
+  * \brief Construct a point on a plane.
+  *
+  * \param Reference to a plane where point is constructed.
+  */
+  explicit Point(Plane& plane);
 
- private:
+  /**
+  * \brief Notify observers about changes.
+  * 
+  * \param Event
+  */
+
   /*
    * Member data
    */
+  Plane& plane_;                       //!< Plane, where point is constructed.
+
   PointBody body_;                      //!< Body, which you can draw.
   PointImplementation implementation_;  //!< Implementation.
 };
@@ -48,8 +68,9 @@ class Point {
  * \see LineBody
  * \see LineImplementation
  */
-class Line {
- public:
+class Line 
+{
+public:
   /**
    * \brief Set new equation of line.
    *
@@ -57,7 +78,7 @@ class Line {
    */
   void SetEquation(const LineEquation& equation);
 
- private:
+private:
   /*
    * Member data
    */
@@ -77,8 +98,9 @@ class Line {
  * \see ConicBody
  * \see ConicImplementation
  */
-class Conic {
- private:
+class Conic 
+{
+private:
   /*
    * Member data
    */

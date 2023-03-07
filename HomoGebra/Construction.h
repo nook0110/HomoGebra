@@ -66,14 +66,14 @@ public:
    *
    * \param Tag [Event::Moved] for tag dispatch
    */
-  void Update(Event::Moved) const override;
+  void Update(const Event::Moved&) const override;
 
   /**
   * \brief Update the object because sth was destroyed.
   *
   * \param Tag [Event::Destroyed] for tag dispatch
   */
-  void Update(Event::Destroyed) const override;
+  void Update(const Event::Destroyed&) const override;
 
 protected:
   Point& object_;

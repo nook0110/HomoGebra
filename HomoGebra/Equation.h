@@ -43,7 +43,11 @@ struct Equation
  */
 struct PointEquation : public Equation
 {
+  /**
+  * \brief Constructor.
+  */
   explicit PointEquation(const HomogeneousCoordinate& equation);
+  
   /**
    * \brief Apply transformation to a point equation.
    *
@@ -71,6 +75,11 @@ struct PointEquation : public Equation
  */
 struct LineEquation : public Equation
 {
+  /**
+  * \brief Constructor.
+  */
+  explicit LineEquation(const HomogeneousCoordinate& equation);
+  
   /**
    * \brief Apply transformation to a conic equation.
    *
