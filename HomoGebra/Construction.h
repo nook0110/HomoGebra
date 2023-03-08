@@ -66,17 +66,32 @@ public:
    *
    * \param Tag [Event::Moved] for tag dispatch
    */
-  void Update(const Event::Moved&) const override;
+  void Update(const Event::Moved&) override;
 
   /**
   * \brief Update the object because sth was destroyed.
   *
-  * \param Tag [Event::Destroyed] for tag dispatch
+  * \param Tag [Event::Destroyed] for tag dispatch.
   */
-  void Update(const Event::Destroyed&) const override;
-
+  void Update(const Event::Destroyed&) override;
 protected:
-  Point& object_;
+
+  /**
+  * \brief Get equation of point.
+  *
+  * \return Equation of point.
+  */
+  const PointEquation& GetEquation() const;
+
+  /**
+  * \brief Set equation of point.
+  *
+  * \param equation Equation of point.
+  */
+  void SetEquation(const PointEquation& equation);
+
+private:
+  std::shared_ptr<Point> point_; //!< Point, which is created.
 };
 
 /**
@@ -131,17 +146,31 @@ public:
    *
    * \param Tag for tag dispatch
    */
-  void Update(Event::Moved) const override;
+  void Update(const Event::Moved&) override;
 
   /**
   * \brief Update object because sth destroyed.
   *
   * \param Tag for tag dispatch
   */
-  void Update(Event::Destroyed) const override;
+  void Update(const Event::Destroyed&) override;
+protected:
+  /**
+  * \brief Get equation of line.
+  *
+  * \return Equation of line.
+  */
+  const LineEquation& GetEquation() const;
+
+  /**
+  * \brief Set equation of line.
+  *
+  * \param equation Equation of line.
+  */
+  void SetEquation(const LineEquation& equation);
 
 private:
-  Line& object_;
+  std::shared_ptr<Line> line_; //!< Line, which is created.
 };
 
 class ConstructionConic : public Construction

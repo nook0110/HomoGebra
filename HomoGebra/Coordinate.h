@@ -23,8 +23,8 @@ public:
    *
    */
   TransformationMatrix(const complex& a00, const complex& a01, const complex& a02,
-                       const complex& a10, const complex& a11, const complex& a12,
-                       const complex& a20, const complex& a21, const complex& a22);
+    const complex& a10, const complex& a11, const complex& a12,
+    const complex& a20, const complex& a21, const complex& a22);
 
   /**
    * \brief Finds inversion of matrix.
@@ -112,9 +112,9 @@ public:
    * \param fourth_image Fourth point preimage position
    */
   Transformation(const PointEquation& first_preimage, const PointEquation& second_preimage,
-                 const PointEquation& third_preimage, const PointEquation& fourth_preimage,
-                 const PointEquation& first_image, const PointEquation& second_image,
-                 const PointEquation& third_image, const PointEquation& fourth_image);
+    const PointEquation& third_preimage, const PointEquation& fourth_preimage,
+    const PointEquation& first_image, const PointEquation& second_image,
+    const PointEquation& third_image, const PointEquation& fourth_image);
 
   /**
    * \brief Calculate inverse of transformation.

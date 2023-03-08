@@ -5,17 +5,17 @@ using namespace Event;
 GeometricObjectImplementation::~GeometricObjectImplementation()
 {}
 
-void ObservableGeometricObject::Attach(std::shared_ptr<const ConstructionObserver> observer)
+void ObservableGeometricObject::Attach(const std::shared_ptr<ConstructionObserver>& observer)
 {
   observers_.push_back(observer);
 }
 
 void ObservableGeometricObject::Detach(const ConstructionObserver* observer)
 {
-  observers_.remove_if([observer](const std::shared_ptr<const ConstructionObserver>& ptr)
-  {
-    return ptr.get() == observer;
-  });
+  observers_.remove_if([observer](const std::shared_ptr<ConstructionObserver>& ptr)
+    {
+      return ptr.get() == observer;
+    });
 }
 
 void ObservableGeometricObject::Notify(const Event::Moved& moved) const

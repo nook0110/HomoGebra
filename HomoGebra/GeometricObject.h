@@ -3,6 +3,10 @@
 #include "GeometricObjectBody.h"
 #include "GeometricObjectImplementation.h"
 
+class GeometricObject
+{
+};
+
 /**
  * \brief Point on a plane.
  *
@@ -15,43 +19,42 @@
  * \see PointBody
  * \see PointImplementation
  */
-class Point 
+class Point : public GeometricObject
 {
 public:
-  Point() = delete;
 
-   /**
-  * \brief Default destructor.
+  /**
+  * \brief Construct point on a plane with equation.
   *
+  * \param equation Equation of point.
   */
+  explicit Point(const PointEquation& equation = PointEquation{});
+
+  /**
+ * \brief Default destructor.
+ *
+ */
   ~Point();
 
   /**
-   * \Set new equation of point.
+   * \brief Set new equation of point.
    *
    * \param equation Equation of point
    */
   void SetEquation(const PointEquation& equation);
 
-private:
   /**
-  * \brief Construct a point on a plane.
-  *
-  * \param Reference to a plane where point is constructed.
-  */
-  explicit Point(Plane& plane);
-
-  /**
-  * \brief Notify observers about changes.
+  * \brief Return current equation of point.
   * 
-  * \param Event
+  * \return Equation of point
   */
+  const PointEquation& GetEquation() const;
+
+private:
 
   /*
    * Member data
    */
-  Plane& plane_;                       //!< Plane, where point is constructed.
-
   PointBody body_;                      //!< Body, which you can draw.
   PointImplementation implementation_;  //!< Implementation.
 };
@@ -68,9 +71,17 @@ private:
  * \see LineBody
  * \see LineImplementation
  */
-class Line 
+class Line : public GeometricObject
 {
 public:
+
+  /**
+  * \brief Construct line on a plane with equation.
+  *
+  * \param equation Equation of line
+  */
+  explicit Line(const LineEquation& equation = LineEquation{});
+
   /**
    * \brief Set new equation of line.
    *
@@ -98,7 +109,7 @@ private:
  * \see ConicBody
  * \see ConicImplementation
  */
-class Conic 
+class Conic : public GeometricObject
 {
 private:
   /*

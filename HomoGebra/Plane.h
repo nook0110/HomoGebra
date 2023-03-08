@@ -18,52 +18,12 @@ class Plane
 {
 public:
   /**
- * \brief Construct point
- *
- * \param A coordinate where to construct
- *
- * \return A reference to a constructed point
- */
-  Point& EmplacePoint(const PointEquation& equation);
-
-  /**
-  * \brief Construct line
+  * \brief Add object to plane.
   *
-  * \param A coordinate where to construct
-  *
-  * \return A reference to a constructed line
+  * \param object Pointer to an object.
   */
-  Line& EmplaceLine(const LineEquation& equation);
+  void AddObject(const std::shared_ptr<GeometricObject>& object);
 
-  /**
-  * \brief Construct conic
-  *
-  * \param A coordinate where to construct
-  *
-  * \return A reference to a constructed conic
-  */
-  Conic& EmplaceConic(const ConicEquation& equation);
-
-  /**
-  * \brief Destroy point
-  * 
-  * \param Point to destroy
-  */
-  void DeletePoint(const Point& point);
-
-  /**
-  * \brief Destroy line
-  * 
-  * \param Line to destroy
-  */
-  void DeleteLine(const Line& line);
-
-  /**
-  * \brief Destroy conic
-  * 
-  * \param Conic to destroy
-  */
-  void DeleteConic(const Conic& conic);
 private:
   PlaneImplementation implementation_;
   PlaneBody body_;

@@ -30,18 +30,18 @@ public:
    *
    * \param coordinate A place where point will be constructed.
    *
-   * \return Point& Reference to a constructed point.
+   * \return Pointer to a constructed point.
    */
-  Point& OnPlane(const PointEquation& coordinate);
+  std::shared_ptr<Point> OnPlane(const PointEquation& coordinate);
 
   /**
    * \brief Constructs point on a plane.
    *
    * \param from The point that is projected.
    *
-   * \return Reference to a constructed point.
+   * \return Pointer to a constructed point.
    */
-  Point& Projection(const Point& from, const Line& to);
+  std::shared_ptr<Point> Projection(const Point& from, const Line& to);
 
 private:
   /**
@@ -80,9 +80,9 @@ public:
    *
    * \param second Second point to go through.
    *
-   * \return Reference to a constructed line.
+   * \return Pointer to a constructed line.
    */
-  Line& ByTwoPoints(const Point& first, const Point& second);
+  std::shared_ptr<Line> ByTwoPoints(const Point& first, const Point& second);
 
 private:
   /**
@@ -125,8 +125,8 @@ public:
    * \return Reference to a constructed conic.
    */
   Conic& ByFivePoints(const Point& first, const Point& second,
-                      const Point& third, const Point& fourth,
-                      const Point& fifth);
+    const Point& third, const Point& fourth,
+    const Point& fifth);
 
 private:
   /**

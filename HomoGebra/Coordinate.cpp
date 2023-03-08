@@ -14,13 +14,13 @@ TransformationMatrix::TransformationMatrix()
 }
 
 TransformationMatrix::TransformationMatrix(const complex& a00, const complex& a01, const complex& a02,
-                                           const complex& a10, const complex& a11, const complex& a12,
-                                           const complex& a20, const complex& a21, const complex& a22)
-  :matrix_(MatrixContainer {
+  const complex& a10, const complex& a11, const complex& a12,
+  const complex& a20, const complex& a21, const complex& a22)
+  :matrix_(MatrixContainer{
           MatrixRow{a00,a01,a02},
           MatrixRow{a10,a11,a12},
           MatrixRow{a20,a21,a22}
-           }
+    }
   )
 {}
 
@@ -30,7 +30,7 @@ std::optional<TransformationMatrix> TransformationMatrix::GetInverse() const
   auto det = Determinant();
 
   // Compute the inverse if the determinant is not zero
-  if (det == complex { 0 })
+  if (det == complex{ 0 })
     return std::nullopt;
 
   return TransformationMatrix(
@@ -98,9 +98,9 @@ Transformation::Transformation(const TransformationMatrix& transformation)
 {}
 
 Transformation::Transformation(const PointEquation& first_preimage, const PointEquation& second_preimage,
-                               const PointEquation& third_preimage, const PointEquation& fourth_preimage,
-                               const PointEquation& first_image, const PointEquation& second_image,
-                               const PointEquation& third_image, const PointEquation& fourth_image)
+  const PointEquation& third_preimage, const PointEquation& fourth_preimage,
+  const PointEquation& first_image, const PointEquation& second_image,
+  const PointEquation& third_image, const PointEquation& fourth_image)
 {
   // Get equation of all images and preimages
   auto& first_preimage_equation = first_preimage.GetEquation();
@@ -303,7 +303,7 @@ HomogeneousCoordinate operator*(const Transformation& transformation, const Homo
   auto copy = coordinate;
   for (size_t row = 0; row < std::tuple_size<Transformation::Column>::value; ++row)
   {
-    complex element { 0 };
+    complex element{ 0 };
     for (size_t column = 0; column < std::tuple_size<Transformation::Row>::value; ++column)
     {
       element += coordinate[static_cast<var>(column)] * transformation.transformation_[row][column];
@@ -317,16 +317,16 @@ const complex& HomogeneousCoordinate::operator[](var variable) const
 {
   switch (variable)
   {
-    case var::kX:
+  case var::kX:
     return x;
     break;
-    case var::kY:
+  case var::kY:
     return y;
     break;
-    case var::kZ:
+  case var::kZ:
     return z;
     break;
-    default:
+  default:
     throw std::invalid_argument("No such variable!");
     break;
   }
@@ -336,16 +336,16 @@ complex& HomogeneousCoordinate::operator[](var variable)
 {
   switch (variable)
   {
-    case var::kX:
+  case var::kX:
     return x;
     break;
-    case var::kY:
+  case var::kY:
     return y;
     break;
-    case var::kZ:
+  case var::kZ:
     return z;
     break;
-    default:
+  default:
     std::invalid_argument("No such variable!");
     break;
   }

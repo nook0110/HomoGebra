@@ -5,23 +5,29 @@ PointFactory::PointFactory(Plane& plane)
   :plane_(plane)
 {}
 
-Point& PointFactory::OnPlane(const PointEquation & coordinate)
+std::shared_ptr<Point> PointFactory::OnPlane(const PointEquation& coordinate)
 {
   // Construct equation
   PointEquation equation(coordinate);
 
-  // Emplace new point
-  return plane_.EmplacePoint(equation);
+  // Create point
+  auto point = std::make_shared<Point>(equation);
+
+  // Add point to plane
+  plane_.AddObject(point);
+
+  // Return point
+  return point;
 }
 
 LineFactory::LineFactory(Plane& plane)
   :plane_(plane)
 {}
 
-Line& LineFactory::ByTwoPoints(const Point& first, const Point& second)
+std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first, const Point& second)
 {
   // Construct equation
-  
+
   // Calculate equation of a line that goes through 2 points
   // We need to solve the system of equations [matrix]:
   // f_ is first, s_ is second
@@ -30,9 +36,17 @@ Line& LineFactory::ByTwoPoints(const Point& first, const Point& second)
   // |  1   1   1  | 1 |
 
   SquaredMatrix matrix(3);
-  matrix[0][0] = first.
+  //matrix[0][0] = first.
 
+  // Create equation
+  LineEquation equation{ HomogeneousCoordinate{} };
 
-  // Emplace new line
-  return plane_.EmplaceLine(equation);
+  // Create line
+  auto line = std::make_shared<Line>(equation);
+
+  // Add line to plane
+  plane_.AddObject(line);
+
+  // Return line
+  return line;
 }

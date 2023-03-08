@@ -14,7 +14,7 @@ SquaredMatrix::SquaredMatrix(const Matrix& matrix, const Row& augmentation = Row
   :matrix_(matrix), augmentation_(augmentation), size_(matrix.size())
 {
   if (std::any_of(matrix.begin(), matrix.end(),
-                  [this](const Row& row) { return row.size() != size_; }))
+    [this](const Row& row) { return row.size() != size_; }))
   {
     throw std::invalid_argument("Matrix is not squared");
   }
@@ -25,7 +25,7 @@ SquaredMatrix::SquaredMatrix(const Matrix& matrix, const Row& augmentation = Row
   }
 
   if (std::any_of(matrix.begin(), matrix.end(),
-                  [](const Row& row) { return std::any_of(row.begin(), row.end(), [](const complex& value) { return std::isnan(value.real()) || std::isnan(value.imag()); }); }))
+    [](const Row& row) { return std::any_of(row.begin(), row.end(), [](const complex& value) { return std::isnan(value.real()) || std::isnan(value.imag()); }); }))
   {
     throw std::invalid_argument("Matrix contains NaN");
   }
@@ -36,7 +36,7 @@ SquaredMatrix::SquaredMatrix(const Matrix& matrix, const Row& augmentation = Row
   }
 
   if (std::any_of(matrix.begin(), matrix.end(),
-                  [](const Row& row) { return std::any_of(row.begin(), row.end(), [](const complex& value) { return std::isinf(value.real()) || std::isinf(value.imag()); }); }))
+    [](const Row& row) { return std::any_of(row.begin(), row.end(), [](const complex& value) { return std::isinf(value.real()) || std::isinf(value.imag()); }); }))
   {
     throw std::invalid_argument("Matrix contains Inf");
   }

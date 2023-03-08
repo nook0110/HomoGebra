@@ -19,59 +19,26 @@
 class PlaneImplementation
 {
 public:
-  /**
- * \brief Construct point
- *
- * \param A coordinate where to construct
- *
- * \return A reference to a constructed point
- */
-  Point& EmplacePoint(const PointEquation& equation);
 
   /**
-  * \brief Construct line
+  * \brief Adds object
   *
-  * \param A coordinate where to construct
-  *
-  * \return A reference to a constructed line
+  * \param Object to add
   */
-  Line& EmplaceLine(const LineEquation& equation);
+  void AddObject(const std::shared_ptr<GeometricObject>& object);
 
   /**
-  * \brief Construct conic
+  * \brief Remove object
   *
-  * \param A coordinate where to construct
-  *
-  * \return A reference to a constructed conic
+  * \param Object to destroy
   */
-  Conic& EmplaceConic(const ConicEquation& equation);
+  void RemoveObject(GeometricObject* object);
 
-  /**
-  * \brief Delete point
-  *
-  * \param A reference to a point
-  */
-  void DeletePoint(const Point& point);
-
-  /**
-  * \brief Delete line
-  *
-  * \param A reference to a line
-  */
-  void DeleteLine(const Line& line);
-
-  /**
-  * \brief Delete conic
-  *
-  * \param A reference to a conic
-  */
-  void DeleteConic(const Conic& conic);
 private:
 
   /**
   * Member data.
   */
-  std::vector<Point> points_; //!< All points on the plane.
-  std::vector<Line> lines_; //!< All lines on the plane.
-  std::vector<Conic> conics_; //!< All conics on the plane.
+
+  std::vector<std::shared_ptr<GeometricObject>> objects_; //!< All objects on the plane.
 };

@@ -6,6 +6,12 @@ class GeometricObjectBody : public sf::Drawable
 {
 public:
   /**
+ * \brief Default constructor.
+ *
+ */
+  GeometricObjectBody() = default;
+
+  /**
    * \brief Destructor.
    *
    */
@@ -19,17 +25,17 @@ private:
    * \param states Current render states.
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override = 0;
-
-  /**
-   * \brief Default constructor.
-   *
-   */
-  GeometricObjectBody() = default;
 };
 
 class PointBody : public GeometricObjectBody
 {
 public:
+  /**
+  * \brief Default constructor.
+  *
+  */
+  PointBody() = default;
+
   /**
    * \brief Destructor.
    *
@@ -44,17 +50,17 @@ private:
    * \param states Current render states.
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const final;
-
-  /**
-   * \brief Default constructor.
-   *
-   */
-  PointBody();
 };
 
 class LineBody : public GeometricObjectBody
 {
 public:
+  /**
+ * \brief Default constructor.
+ *
+ */
+  LineBody() = default;
+
   /**
    * \brief Destructor.
    *
@@ -69,12 +75,6 @@ private:
    * \param states Current render states.
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const final;
-
-  /**
-   * \brief Default constructor.
-   *
-   */
-  LineBody();
 };
 
 class ConicBody : public GeometricObjectBody

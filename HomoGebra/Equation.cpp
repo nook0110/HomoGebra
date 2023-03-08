@@ -25,6 +25,10 @@ const HomogeneousCoordinate& PointEquation::GetEquation() const
   return equation;
 }
 
+LineEquation::LineEquation(const HomogeneousCoordinate& equation)
+{
+}
+
 void LineEquation::Apply(const Transformation& transformation)
 {
   equation *= transformation.GetInverse().value();

@@ -19,7 +19,7 @@ namespace Event
   /**
    * \brief Tag that shows that object was destroyed.
    */
-  struct Destroyed 
+  struct Destroyed
   {
     /*
     * Member data.
@@ -52,19 +52,19 @@ public:
 
   /**
   * \brief Update the object, because sth moved.
-  * 
-  * \param Tag with some information
+  *
+  * \param Tag with some information.
   */
-  virtual void Update(const Event::Moved&) const = 0;
+  virtual void Update(const Event::Moved&) = 0;
 
   /**
   * \brief Update the object, because sth was destroyed.
-  * 
-  * \param Tag with some information (Plane where it was destroyed)
+  *
+  * \param Tag with some information (Plane where it was destroyed).
   */
-  virtual void Update(const Event::Destroyed&) const = 0;
+  virtual void Update(const Event::Destroyed&) = 0;
 private:
-  std::list<const ConstructionObserver*> observers_; //!< List of subscribed observers
+  std::list<const ConstructionObserver*> observers_; //!< List of subscribed observers.
 };
 
 /**
@@ -76,7 +76,7 @@ private:
  *
  * \date February 2023
  *
- * \detail Implements pattern called 'Observer'
+ * \detail Implements pattern called 'Observer'.
  *
  * \see ConstructionObserver
  * \see GeometricObjectImplementation
@@ -88,28 +88,28 @@ public:
   virtual ~ObservableGeometricObject() = default;
 
   /**
-   * \brief Subscribe an observer on this object
+   * \brief Subscribe an observer on this object.
    *
-   * \param observer Observer to add
+   * \param observer Observer to add.
    */
-  void Attach(std::shared_ptr<const ConstructionObserver> observer);
+  void Attach(const std::shared_ptr<ConstructionObserver>& observer);
 
   /**
-   * \brief Unsubscribe an observer on this object
+   * \brief Unsubscribe an observer on this object.
    *
-   * \param observer Observer to delete
+   * \param observer Observer to delete.
    */
   void Detach(const ConstructionObserver* observer);
 
 protected:
   /**
-  * \brief Notify all subscribed observers that object was moved
+  * \brief Notify all subscribed observers that object was moved.
   *
   */
   void Notify(const Event::Moved&) const;
 
   /**
-  * \brief Notify all subscribed observers that object was destroyed
+  * \brief Notify all subscribed observers that object was destroyed.
   *
   */
   void Notify(const Event::Destroyed&) const;
@@ -118,7 +118,7 @@ private:
   /**
    * Member data.
    */
-  std::list<std::shared_ptr<const ConstructionObserver>> observers_; //!< List of subscribed observers
+  std::list<std::shared_ptr<ConstructionObserver>> observers_; //!< List of subscribed observers.
 };
 
 /**
@@ -149,9 +149,15 @@ class PointImplementation : public GeometricObjectImplementation
 {
 public:
   /**
+ * \brief Default constructor.
+ *
+ */
+  PointImplementation() = default;
+
+  /**
    * \brief Sets new equation of point.
    *
-   * \param equation Equation of point
+   * \param equation Equation of point.
   */
   void SetEquation(const PointEquation& equation);
 
@@ -163,25 +169,26 @@ public:
   const PointEquation& GetEquation() const;
 
 private:
-  /**
-   * \brief Default constructor.
-   *
-   */
-  PointImplementation();
 
   /**
    * Member data.
    */
-  PointEquation equation_; //!< Point equation
+  PointEquation equation_; //!< Point equation.
 };
 
 class LineImplementation : public GeometricObjectImplementation
 {
 public:
   /**
+ * \brief Default constructor.
+ *
+ */
+  LineImplementation() = default;
+
+  /**
    * \brief Sets new equation of line.
    *
-   * \param equation Equation of line
+   * \param equation Equation of line.
   */
   void SetEquation(const LineEquation& equation);
 
@@ -193,25 +200,26 @@ public:
   const LineEquation& GetEquation() const;
 
 private:
-  /**
-   * \brief Default constructor.
-   *
-   */
-  LineImplementation();
 
   /**
    * Member data.
    */
-  LineEquation equation_; //!< Line equation
+  LineEquation equation_; //!< Line equation.
 };
 
 class ConicImplementation : public GeometricObjectImplementation
 {
 public:
   /**
+ * \brief Default constructor.
+ *
+ */
+  ConicImplementation() = default;
+
+  /**
    * \brief Sets new equation of conic.
    *
-   * \param equation Equation of conic
+   * \param equation Equation of conic.
   */
   void SetEquation(const ConicEquation& equation);
 
@@ -223,15 +231,9 @@ public:
   const ConicEquation& GetEquation() const;
 
 private:
-  /**
-   * \brief Default constructor.
-   *
-   */
-  ConicImplementation();
 
   /**
    * Member data.
    */
-  ConicEquation equation_; //!< Conic equation
+  ConicEquation equation_; //!< Conic equation.
 };
-

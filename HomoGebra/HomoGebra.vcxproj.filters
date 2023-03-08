@@ -88,6 +88,9 @@
     <ClCompile Include="PlaneBody.cpp">
       <Filter>Source Files\Plane</Filter>
     </ClCompile>
+    <ClCompile Include="GeometricObject.cpp">
+      <Filter>Source Files\GeomObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Equation.h">
