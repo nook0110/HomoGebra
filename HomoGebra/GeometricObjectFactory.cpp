@@ -69,14 +69,12 @@ std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first, const Point& 
   // Get augmentation
   auto& augmentation = matrix.GetAugmentation();
 
-  // Set augmantation
+  // Set augmentation
   std::fill(augmentation.begin(), std::prev(augmentation.end()), complex{ 0 });
   augmentation.back() = complex{ 1 };
 
   // Create equation
   LineEquation equation{ HomogeneousCoordinate{} };
-
-
 
   // Create line
   auto line = std::make_shared<Line>(equation);

@@ -9,7 +9,8 @@ TransformationMatrix::TransformationMatrix()
   // Make Identity matrix
   for (int iter = 0; iter < std::tuple_size<MatrixColumn>::value; ++iter)
   {
-    matrix_[iter][iter] = complex(1, 0);
+    // Set diagonal to 1
+    matrix_[iter][iter] = complex{ 1 };
   }
 }
 
@@ -33,6 +34,7 @@ std::optional<TransformationMatrix> TransformationMatrix::GetInverse() const
   if (det == complex{ 0 })
     return std::nullopt;
 
+  // Return the inverse
   return TransformationMatrix(
     (matrix_[1][1] * matrix_[2][2] - matrix_[1][2] * matrix_[2][1]) / det,
     -(matrix_[0][1] * matrix_[2][2] - matrix_[0][2] * matrix_[2][1]) / det,
@@ -289,32 +291,45 @@ Transformation Transformation::operator*(const Transformation& other) const
 
 HomogeneousCoordinate Transformation::operator()(const HomogeneousCoordinate& coordinate) const
 {
+  // Apply transformation and return result
   return (*this) * coordinate;
 }
 
 HomogeneousCoordinate& operator*=(HomogeneousCoordinate& coordinate, const Transformation& transformation)
 {
+  // Apply transformation
   coordinate = transformation * coordinate;
+
+  // Return coordinate
   return coordinate;
 }
 
 HomogeneousCoordinate operator*(const Transformation& transformation, const HomogeneousCoordinate& coordinate)
 {
+  // Copy coordinate
   auto copy = coordinate;
+
+  // Apply transformation
   for (size_t row = 0; row < std::tuple_size<Transformation::Column>::value; ++row)
   {
+    // Calculate element
     complex element{ 0 };
     for (size_t column = 0; column < std::tuple_size<Transformation::Row>::value; ++column)
     {
       element += coordinate[static_cast<var>(column)] * transformation.transformation_[row][column];
     }
+
+    // Set element
     copy[static_cast<var>(row)] = element;
   }
+
+  // Return copy
   return copy;
 }
 
 const complex& HomogeneousCoordinate::operator[](var variable) const
 {
+  // Return value
   switch (variable)
   {
   case var::kX:
@@ -334,6 +349,7 @@ const complex& HomogeneousCoordinate::operator[](var variable) const
 
 complex& HomogeneousCoordinate::operator[](var variable)
 {
+  // Return value
   switch (variable)
   {
   case var::kX:

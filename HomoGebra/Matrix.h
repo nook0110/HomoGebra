@@ -46,7 +46,7 @@ public:
    *
    * \return Determinant
    */
-  [[nodiscard]] complex Determinant() const;
+  [[nodiscard]] complex GetDeterminant() const;
 
   /**
    * \brief Find solution of linear equations.

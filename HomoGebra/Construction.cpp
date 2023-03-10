@@ -15,7 +15,7 @@ void ConstructionPoint::Update(const Event::Destroyed& destroyed)
   // Check if destroyed object is point that we contain
   if (destroyed.object == point_.get())
   {
-    // Realese the ownership
+    // Release the ownership
     point_.reset();
     return;
   }
@@ -38,6 +38,7 @@ void ConstructionPoint::SetEquation(const PointEquation& equation)
 
 PointEquation ConstructionOnPlane::RecalculateEquation() const
 {
+  // Return point equation, because it has no dependencies
   return GetEquation();
 }
 
@@ -55,7 +56,7 @@ void ConstructionLine::Update(const Event::Destroyed& destroyed)
   // Check if destroyed object is line that we contain
   if (destroyed.object == line_.get())
   {
-    // Realese the ownership
+    // Release the ownership
     line_.reset();
     return;
   }

@@ -13,34 +13,40 @@ SquaredMatrix::SquaredMatrix(size_t size)
 SquaredMatrix::SquaredMatrix(const Matrix& matrix, const Row& augmentation = Row())
   :matrix_(matrix), augmentation_(augmentation), size_(matrix.size())
 {
+  // Check if matrix is squared
   if (std::any_of(matrix.begin(), matrix.end(),
     [this](const Row& row) { return row.size() != size_; }))
   {
     throw std::invalid_argument("Matrix is not squared");
   }
 
+  // Check if augmentation is correct
   if (augmentation.size() != size_)
   {
     throw std::invalid_argument("Augmentation is not correct");
   }
 
+  // Check if matrix contains NaN
   if (std::any_of(matrix.begin(), matrix.end(),
     [](const Row& row) { return std::any_of(row.begin(), row.end(), [](const complex& value) { return std::isnan(value.real()) || std::isnan(value.imag()); }); }))
   {
     throw std::invalid_argument("Matrix contains NaN");
   }
 
+  // Check if augmentation contains NaN or Inf
   if (std::any_of(augmentation.begin(), augmentation.end(), [](const complex& value) { return std::isnan(value.real()) || std::isnan(value.imag()); }))
   {
     throw std::invalid_argument("Augmentation contains NaN");
   }
 
+  // Check if matrix contains Inf
   if (std::any_of(matrix.begin(), matrix.end(),
     [](const Row& row) { return std::any_of(row.begin(), row.end(), [](const complex& value) { return std::isinf(value.real()) || std::isinf(value.imag()); }); }))
   {
     throw std::invalid_argument("Matrix contains Inf");
   }
 
+  // Check if augmentation contains Inf
   if (std::any_of(augmentation.begin(), augmentation.end(), [](const complex& value) { return std::isinf(value.real()) || std::isinf(value.imag()); }))
   {
     throw std::invalid_argument("Augmentation contains Inf");
@@ -52,6 +58,7 @@ std::optional<SquaredMatrix> SquaredMatrix::GetInverse() const
   // Construct ID matrix
   Matrix inverse(size_, Row(size_));
 
+  // Set ID matrix
   for (size_t i = 0; i < size_; ++i)
   {
     inverse[i][i] = 1;
@@ -126,9 +133,59 @@ std::optional<SquaredMatrix> SquaredMatrix::GetInverse() const
   return SquaredMatrix(inverse, augmentation);
 }
 
-complex SquaredMatrix::Determinant() const
+complex SquaredMatrix::GetDeterminant() const
 {
-  return complex();
+  // Construct copy of our matrix
+  Matrix matrix = matrix_;
+
+  // Gauss-Jordan elimination for matrix and augmentation
+  for (size_t step = 0; step < size_; ++step)
+  {
+    // Find pivot
+    size_t pivot = step;
+    for (size_t row = step + 1; row < size_; ++row)
+    {
+      if (std::abs(matrix[row][step]) > std::abs(matrix[pivot][step]))
+      {
+        pivot = row;
+      }
+    }
+
+    // Swap rows
+    std::swap(matrix[step], matrix[pivot]);
+
+    // Check if matrix is singular with precision [epsilon]
+    if (std::abs(matrix[step][step]) < kEpsilon)
+    {
+      return 0;
+    }
+
+    // Subtract row from other rows
+    for (size_t row = 0; row < size_; ++row)
+    {
+      // Skip current row
+      if (step != row)
+      {
+        // Calculate multiplier
+        complex multiplier = matrix[row][step] / matrix[step][step];
+
+        for (size_t column = 0; column < size_; ++column)
+        {
+          matrix[row][column] -= matrix[step][column] * multiplier;
+        }
+      }
+    }
+  }
+
+  // Calculate determinant
+  complex determinant = 1;
+  for (size_t i = 0; i < size_; ++i)
+  {
+    determinant *= matrix[i][i];
+  }
+
+  // Return answer
+  return determinant;
 }
 
 std::optional<SquaredMatrix::Column> SquaredMatrix::GetSolution() const

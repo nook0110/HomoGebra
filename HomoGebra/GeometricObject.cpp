@@ -20,7 +20,7 @@ void Point::Notify(const Event::Destroyed& event) const
 
 void Point::SetEquation(const PointEquation& equation)
 {
-  // Set equation in emplemetation
+  // Set equation in implementation
   implementation_.SetEquation(equation);
 }
 

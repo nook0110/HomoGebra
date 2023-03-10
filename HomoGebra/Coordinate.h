@@ -57,7 +57,11 @@ public:
   [[nodiscard]] TransformationMatrix operator*(const TransformationMatrix& other) const;
 
   /**
-  * \brief Return row of matrix.
+  * \brief Overload of operator[]. Returns row of matrix.
+  * 
+  * \param row Row of matrix
+  * 
+  * \return Row of matrix
   */
   [[nodiscard]] const MatrixRow& operator[](size_t row) const { return matrix_[row]; };
   [[nodiscard]] MatrixRow& operator[](size_t row) { return matrix_[row]; }
@@ -87,8 +91,8 @@ struct HomogeneousCoordinate;
 class Transformation
 {
 public:
-  using Row = TransformationMatrix::MatrixRow;
-  using Column = TransformationMatrix::MatrixColumn;
+  using Row = TransformationMatrix::MatrixRow;       //!< Row of matrix
+  using Column = TransformationMatrix::MatrixColumn; //!< Column of matrix
 
   friend HomogeneousCoordinate operator*(const Transformation& transformation, const HomogeneousCoordinate& coordinate);
 
@@ -158,14 +162,13 @@ private:
 };
 
 /**
-* \brief Name of axes.
-*
+* \brief Name of axes/variables.
 */
 enum class var
 {
-  kX,
-  kY,
-  kZ
+  kX, //<! X axis
+  kY, //<! Y axis
+  kZ  //<! Z axis
 };
 
 /**
@@ -182,7 +185,22 @@ enum class var
  */
 struct HomogeneousCoordinate
 {
+  /**
+  * \breif Overload of operator[]. Returns const reference to x, y or z coordinate.
+  * 
+  * \param variable Variable to get reference to
+  * 
+  * \return Returns const reference to x, y or z coordinate.
+  */
   [[nodiscard]] const complex& operator[](var variable) const;
+
+  /**
+  * \brief Overload of operator[]. Returns reference to x, y or z coordinate.
+  * 
+  * \param variable Variable to get reference to
+  * 
+  * \return Returns reference to x, y or z coordinate.
+  */
   [[nodiscard]] complex& operator[](var variable);
 
   complex x;
@@ -190,5 +208,22 @@ struct HomogeneousCoordinate
   complex z;
 };
 
+/**
+* \brief Overload of operator *= for homogeneous coordinate and tranformation. Transforms coordinate.
+* 
+* \param coordinate Coordinate to transform
+* \param transformation Transformation to apply
+* 
+* \return Reference to a coordinate
+*/
 HomogeneousCoordinate& operator*=(HomogeneousCoordinate& coordinate, const Transformation& transformation);
+
+/**
+* \brief Overload of operator * for homogeneous coordinate and tranformation. Transforms coordinate.
+* 
+* \param coordinate Coordinate to transform
+* \param transformation Transformation to apply
+* 
+* \return Coordinate after transformation
+*/
 [[nodiscard]] HomogeneousCoordinate operator*(const Transformation& transformation, const HomogeneousCoordinate& coordinate);

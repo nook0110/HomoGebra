@@ -45,4 +45,6 @@ void ConicEquation::Apply(const Transformation& transformation)
   */
 
   throw std::logic_error("The method or operation is not implemented.");
+
+  // TODO: Implement this function
 }

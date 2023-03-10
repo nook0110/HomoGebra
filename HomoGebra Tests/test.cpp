@@ -20,7 +20,7 @@ namespace HomogebraTest
   testing::AssertionResult check_two_complex(const complex& first, const complex& second, long double abs_error)
   {
     if (abs(first.real() - second.real()) < abs_error
-        && abs(first.imag() - second.imag()) < abs_error)
+      && abs(first.imag() - second.imag()) < abs_error)
     {
       return testing::AssertionSuccess() << "First: " << first.real() << " " << first.imag() << " "
         << "Second: " << second.real() << " " << second.imag() << " are near equal!";
@@ -103,12 +103,12 @@ namespace HomogebraTest
     {
       // Generate random matrix 3 * 3 with determinant 0
       const SquaredMatrix matrix(
-        SquaredMatrix::Matrix {
+        SquaredMatrix::Matrix{
           SquaredMatrix::Row{ complex(1.0, 2.0), complex(3.0, 4.0), complex(5.0, 6.0) },
           SquaredMatrix::Row{ complex(7.0, 8.0), complex(9.0, 10.0), complex(11.0, 12.0) },
           SquaredMatrix::Row{ complex(8.0, 10.0), complex(12.0, 14.0), complex(16.0, 18.0) }
         },
-        SquaredMatrix::Row { complex(19.0, 20.0), complex(21.0, 22.0), complex(23.0, 24.0) }
+        SquaredMatrix::Row{ complex(19.0, 20.0), complex(21.0, 22.0), complex(23.0, 24.0) }
       );
 
       // Get inverse matrix
@@ -126,7 +126,7 @@ namespace HomogebraTest
           SquaredMatrix::Row{ complex(1.0, 2.8), complex(5.0, 5.521), complex(6.0, 8.616) },
           SquaredMatrix::Row{ complex(1.0, 3.8), complex(8.0, 6.1234), complex(9.0, 9.93) }
         },
-        SquaredMatrix::Row { complex(1.0, 0.0), complex(11.0, 0.0), complex(12.0, 0.0) }
+        SquaredMatrix::Row{ complex(1.0, 0.0), complex(11.0, 0.0), complex(12.0, 0.0) }
       );
 
       const SquaredMatrix real_inverse_of_matrix(
@@ -135,7 +135,7 @@ namespace HomogebraTest
           SquaredMatrix::Row{ complex(0.104126199172L, 0.608370065879L), complex(-0.83038879224L, -1.40436460852), complex(0.577032792198L, 0.8034071115L) },
           SquaredMatrix::Row{ complex(-0.043135151367L, -0.556184119699L), complex(0.343429483128L, 0.988543488361L), complex(-0.213740448132L, -0.529986036879L) }
         },
-        SquaredMatrix::Row { complex(3.45389768638, -5.87719130279), complex(-2.10575700912,  -5.19875528911), complex(1.16970378546, 3.95796180972) }
+        SquaredMatrix::Row{ complex(3.45389768638, -5.87719130279), complex(-2.10575700912,  -5.19875528911), complex(1.16970378546, 3.95796180972) }
       );
 
       // Get inverse matrix
@@ -153,14 +153,14 @@ namespace HomogebraTest
 
     TEST(SquaredMatrix, Solution)
     {
-      // Create a random matrix 3 * 3 with determinant 1
+      // Create a random matrix 3 * 3 with determinant not 0
       const SquaredMatrix matrix(
         {
           SquaredMatrix::Row{ complex(1.0, 1.2), complex(2.0, 4.12), complex(3.0, 7.636) },
           SquaredMatrix::Row{ complex(1.0, 2.8), complex(5.0, 5.521), complex(6.0, 8.616) },
           SquaredMatrix::Row{ complex(1.0, 3.8), complex(8.0, 6.1234), complex(9.0, 9.93) }
         },
-        SquaredMatrix::Row { complex(1.0, 0.0), complex(11.0, 0.0), complex(12.0, 0.0) }
+        SquaredMatrix::Row{ complex(1.0, 0.0), complex(11.0, 0.0), complex(12.0, 0.0) }
       );
 
       // Get solution
@@ -174,6 +174,44 @@ namespace HomogebraTest
 
       // Check that solution is correct
       ASSERT_TRUE(check_two_vectors(real_solution, solution.value(), epsilon));
+    }
+
+    TEST(SquaredMatrix, Determinant)
+    {
+      // Create a random matrix 3 * 3 with determinant not 0
+      const SquaredMatrix matrix(
+        {
+          SquaredMatrix::Row{ complex(1.0, 1.2), complex(2.0, 4.12), complex(3.0, 7.636) },
+          SquaredMatrix::Row{ complex(1.0, 2.8), complex(5.0, 5.521), complex(6.0, 8.616) },
+          SquaredMatrix::Row{ complex(1.0, 3.8), complex(8.0, 6.1234), complex(9.0, 9.93) }
+        },
+        SquaredMatrix::Row{ complex(1.0, 0.0), complex(11.0, 0.0), complex(12.0, 0.0) }
+      );
+
+      // Get determinant
+      const auto determinant = matrix.GetDeterminant();
+
+      // Construct real determinant
+      const auto real_determinant = complex(-8.100441999999997478, 11.659567359999980951);
+
+      // Check that determinant is correct
+      ASSERT_TRUE(check_two_complex(real_determinant, determinant, epsilon));
+
+      // Create a random matrix 3 * 3 with determinant 0
+      const SquaredMatrix matrix_with_zero_determinant(
+        {
+          SquaredMatrix::Row{ complex(1.0, 2.0), complex(3.0, 4.0), complex(5.0, 6.0) },
+          SquaredMatrix::Row{ complex(7.0, 8.0), complex(9.0, 10.0), complex(11.0, 12.0) },
+          SquaredMatrix::Row{ complex(13.0, 14.0), complex(15.0, 16.0), complex(17.0, 18.0) }
+        },
+        SquaredMatrix::Row{ complex(1.0, 0.0), complex(11.0, 0.0), complex(12.0, 0.0) }
+      );
+      
+      // Get determinant
+      const auto determinant_with_zero_determinant = matrix_with_zero_determinant.GetDeterminant();
+
+      // Check that determinant is 0
+      ASSERT_TRUE(check_two_complex(complex(0.0, 0.0), determinant_with_zero_determinant, epsilon));
     }
   }
 
@@ -228,7 +266,7 @@ namespace HomogebraTest
       const auto det = matrix.Determinant();
 
       // Check answer
-      EXPECT_TRUE(check_two_complex(det, complex { -292.293300759 , 116.289449988 }, epsilon));
+      EXPECT_TRUE(check_two_complex(det, complex{ -292.293300759 , 116.289449988 }, epsilon));
     }
 
     TEST(TransformationMatrix, Inverse)
@@ -365,7 +403,7 @@ namespace HomogebraTest
       // Construct ID (images = preimages)
       PointEquation A_id({ complex(1, 0), complex(0, 0), complex(1, 0) });
       PointEquation B_id({ complex(0, 0), complex(1, 0), complex(1, 0) });
-      PointEquation C_id({ complex(1, 0), complex(1, 0), complex(1, 0)});
+      PointEquation C_id({ complex(1, 0), complex(1, 0), complex(1, 0) });
       PointEquation D_id({ complex(0, 0), complex(0, 0), complex(1, 0) });
 
       PointEquation A_image_id({ complex(1, 0), complex(0, 0), complex(1, 0) });
@@ -375,7 +413,7 @@ namespace HomogebraTest
 
       // Construct a transformation from 4 preimages and 4 images
       Transformation id(A_id, B_id, C_id, D_id,
-                     A_image_id, B_image_id, C_image_id, D_image_id);
+        A_image_id, B_image_id, C_image_id, D_image_id);
 
       // Construct random point equation
       PointEquation point({ complex{3,1}, complex{1, 2}, complex{1, 2} });
@@ -396,7 +434,7 @@ namespace HomogebraTest
 
       // Construct a transformation from 4 preimages and 4 images
       Transformation homothety(A_homothety, B_homothety, C_homothety, D_homothety,
-                                      A_image_homothety, B_image_homothety, C_image_homothety, D_image_homothety);
+        A_image_homothety, B_image_homothety, C_image_homothety, D_image_homothety);
 
       // Construct random point equation
       PointEquation point_homothety({ complex{3,1}, complex{1, 2}, complex{1, 2} });
@@ -420,7 +458,7 @@ namespace HomogebraTest
 
       // Construct a transformation from 4 preimages and 4 images
       Transformation rotation(A_rotation, B_rotation, C_rotation, D_rotation,
-                                     A_image_rotation, B_image_rotation, C_image_rotation, D_image_rotation);
+        A_image_rotation, B_image_rotation, C_image_rotation, D_image_rotation);
 
       // Construct random point equation
       PointEquation point_rotation({ complex{3,0}, complex{1, 0}, complex{1, 0} });
@@ -444,7 +482,7 @@ namespace HomogebraTest
 
       // Construct a transformation from 4 preimages and 4 images
       Transformation translation(A_translation, B_translation, C_translation, D_translation,
-                                                                        A_image_translation, B_image_translation, C_image_translation, D_image_translation);
+        A_image_translation, B_image_translation, C_image_translation, D_image_translation);
 
       // Construct random point equation
       PointEquation point_translation({ complex{3,0}, complex{1, 0}, complex{1, 0} });
@@ -454,7 +492,7 @@ namespace HomogebraTest
 
       // Check transformation
       EXPECT_TRUE(check_two_coordinates(translation(point_translation.equation), point_translation_image.equation, epsilon));
-    
+
       // Construct a composition
       Transformation composition = translation * rotation * homothety;
 
