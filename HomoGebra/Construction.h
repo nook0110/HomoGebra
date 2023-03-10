@@ -129,7 +129,7 @@ public:
   *
   * \return New equation of point.
   */
-  PointEquation RecalculateEquation() const override;
+  [[nodiscard]] PointEquation RecalculateEquation() const override;
 };
 
 class ConstructionFromTwoLines : public ConstructionPoint
@@ -153,7 +153,7 @@ public:
    *
    * \return New equation of point.
    */
-  virtual LineEquation RecalculateEquation() const = 0;
+  [[nodiscard]] virtual LineEquation RecalculateEquation() const = 0;
 
   /**
    * \brief Update object because sth moved.

@@ -77,7 +77,7 @@ public:
   *
   * \return Equation of point
   */
-  const PointEquation& GetEquation() const;
+  [[nodiscard]] const PointEquation& GetEquation() const;
 
 private:
 

@@ -76,6 +76,8 @@ std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first, const Point& 
   // Create equation
   LineEquation equation{ HomogeneousCoordinate{} };
 
+
+
   // Create line
   auto line = std::make_shared<Line>(equation);
 

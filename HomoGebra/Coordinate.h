@@ -191,4 +191,4 @@ struct HomogeneousCoordinate
 };
 
 HomogeneousCoordinate& operator*=(HomogeneousCoordinate& coordinate, const Transformation& transformation);
-HomogeneousCoordinate operator*(const Transformation& transformation, const HomogeneousCoordinate& coordinate);
+[[nodiscard]] HomogeneousCoordinate operator*(const Transformation& transformation, const HomogeneousCoordinate& coordinate);
