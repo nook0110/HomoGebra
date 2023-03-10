@@ -3,11 +3,11 @@
 
 #include "Equation.h"
 
+class GeometricObject;
 class Plane;
 
 /**
 * \brief Events which can happen.
-*
 */
 namespace Event
 {
@@ -24,7 +24,8 @@ namespace Event
     /*
     * Member data.
     */
-    Plane& plane_; //!< Plane where object was destroyed.
+    GeometricObject* object; //!< Object which was destroyed.
+    Plane& plane; //!< Plane where object was destroyed.
   };
 }
 
@@ -101,7 +102,6 @@ public:
    */
   void Detach(const ConstructionObserver* observer);
 
-protected:
   /**
   * \brief Notify all subscribed observers that object was moved.
   *
@@ -142,17 +142,18 @@ public:
   * \brief Destructor.
   *
   */
-  ~GeometricObjectImplementation() override;
+  ~GeometricObjectImplementation() override = default;
 };
 
 class PointImplementation : public GeometricObjectImplementation
 {
 public:
   /**
- * \brief Default constructor.
- *
- */
-  PointImplementation() = default;
+  * \brief Construct a point with given equation.
+  *
+  * \param equation Equation of point.
+  */
+  explicit PointImplementation(const PointEquation& equation = PointEquation());
 
   /**
    * \brief Sets new equation of point.
@@ -180,10 +181,11 @@ class LineImplementation : public GeometricObjectImplementation
 {
 public:
   /**
- * \brief Default constructor.
- *
- */
-  LineImplementation() = default;
+   * \brief Construct a line with given equation.
+   *
+   * \param equation Equation of line.
+  */
+  explicit LineImplementation(const LineEquation& equation = LineEquation());
 
   /**
    * \brief Sets new equation of line.
@@ -210,6 +212,7 @@ private:
 class ConicImplementation : public GeometricObjectImplementation
 {
 public:
+
   /**
  * \brief Default constructor.
  *

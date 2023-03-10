@@ -1,33 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Файлы заголовков">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="imgui">
       <UniqueIdentifier>{28e018b6-5868-4852-9b07-3af257704029}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{10488992-4abb-422e-8aa8-1ceed9d88708}</UniqueIdentifier>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Source Files\GeomObject">
-      <UniqueIdentifier>{4a00b89f-cf34-49df-be19-a9a265ea91a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\GeomObject">
+    <Filter Include="Headers\GeomObject">
       <UniqueIdentifier>{af0114f8-bec6-4aba-bc15-9f904b63e17b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\GUI">
+    <Filter Include="Headers\GUI">
       <UniqueIdentifier>{eec9c24f-e04d-49a0-89e9-b63124561664}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GUI">
-      <UniqueIdentifier>{2bd4fc21-a291-41ad-88c7-8a01ad50db9c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Plane">
+    <Filter Include="Headers\Plane">
       <UniqueIdentifier>{f2e9daf6-c218-43e9-9ac6-72e426e8d859}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Plane">
+    <Filter Include="Headers\Construction">
+      <UniqueIdentifier>{cb60057f-2515-40fe-b990-35b396e9af04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Equation">
+      <UniqueIdentifier>{354e5316-6130-451f-91fe-bde30c9e9a9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Matrix">
+      <UniqueIdentifier>{6a37f75b-37fd-46d8-8111-300db2116bd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{10488992-4abb-422e-8aa8-1ceed9d88708}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\GeomObject">
+      <UniqueIdentifier>{4a00b89f-cf34-49df-be19-a9a265ea91a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\GUI">
+      <UniqueIdentifier>{2bd4fc21-a291-41ad-88c7-8a01ad50db9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Plane">
       <UniqueIdentifier>{d8434f5a-0afb-4acd-97e1-c9f10d054650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Construcction">
+      <UniqueIdentifier>{4515a49c-30b6-45a3-bcb0-0f579349135d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Equation">
+      <UniqueIdentifier>{06abfe7b-84dd-4dc5-85cc-1fc6567194ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Matrix">
+      <UniqueIdentifier>{4cb6716f-b571-43b7-84c3-45aed2d2349c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -52,82 +70,82 @@
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_stdlib.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
-    <ClCompile Include="Coordinate.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Equation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Matrix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Construction.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="GeometricObjectBody.cpp">
-      <Filter>Source Files\GeomObject</Filter>
+      <Filter>Sources\GeomObject</Filter>
     </ClCompile>
     <ClCompile Include="GeometricObjectFactory.cpp">
-      <Filter>Source Files\GeomObject</Filter>
+      <Filter>Sources\GeomObject</Filter>
     </ClCompile>
     <ClCompile Include="GeometricObjectImplementation.cpp">
-      <Filter>Source Files\GeomObject</Filter>
+      <Filter>Sources\GeomObject</Filter>
     </ClCompile>
     <ClCompile Include="GUI.cpp">
-      <Filter>Source Files\GUI</Filter>
+      <Filter>Sources\GUI</Filter>
     </ClCompile>
     <ClCompile Include="PlaneImplementation.cpp">
-      <Filter>Source Files\Plane</Filter>
+      <Filter>Sources\Plane</Filter>
     </ClCompile>
     <ClCompile Include="Plane.cpp">
-      <Filter>Source Files\Plane</Filter>
+      <Filter>Sources\Plane</Filter>
     </ClCompile>
     <ClCompile Include="PlaneBody.cpp">
-      <Filter>Source Files\Plane</Filter>
+      <Filter>Sources\Plane</Filter>
     </ClCompile>
     <ClCompile Include="GeometricObject.cpp">
-      <Filter>Source Files\GeomObject</Filter>
+      <Filter>Sources\GeomObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Construction.cpp">
+      <Filter>Sources\Construcction</Filter>
+    </ClCompile>
+    <ClCompile Include="Equation.cpp">
+      <Filter>Sources\Equation</Filter>
+    </ClCompile>
+    <ClCompile Include="Coordinate.cpp">
+      <Filter>Sources\Equation</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>Sources\Matrix</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Equation.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Coordinate.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Construction.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="GeometricObject.h">
-      <Filter>Файлы заголовков\GeomObject</Filter>
+      <Filter>Headers\GeomObject</Filter>
     </ClInclude>
     <ClInclude Include="GeometricObjectBody.h">
-      <Filter>Файлы заголовков\GeomObject</Filter>
+      <Filter>Headers\GeomObject</Filter>
     </ClInclude>
     <ClInclude Include="GeometricObjectFactory.h">
-      <Filter>Файлы заголовков\GeomObject</Filter>
+      <Filter>Headers\GeomObject</Filter>
     </ClInclude>
     <ClInclude Include="GeometricObjectImplementation.h">
-      <Filter>Файлы заголовков\GeomObject</Filter>
+      <Filter>Headers\GeomObject</Filter>
     </ClInclude>
     <ClInclude Include="GUI.h">
-      <Filter>Файлы заголовков\GUI</Filter>
+      <Filter>Headers\GUI</Filter>
     </ClInclude>
     <ClInclude Include="Plane.h">
-      <Filter>Файлы заголовков\Plane</Filter>
+      <Filter>Headers\Plane</Filter>
     </ClInclude>
     <ClInclude Include="PlaneBody.h">
-      <Filter>Файлы заголовков\Plane</Filter>
+      <Filter>Headers\Plane</Filter>
     </ClInclude>
     <ClInclude Include="PlaneImplementation.h">
-      <Filter>Файлы заголовков\Plane</Filter>
+      <Filter>Headers\Plane</Filter>
+    </ClInclude>
+    <ClInclude Include="Construction.h">
+      <Filter>Headers\Construction</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinate.h">
+      <Filter>Headers\Equation</Filter>
+    </ClInclude>
+    <ClInclude Include="Equation.h">
+      <Filter>Headers\Equation</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Headers\Matrix</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

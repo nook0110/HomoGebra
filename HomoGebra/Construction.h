@@ -1,5 +1,19 @@
 #pragma once
 #include "GeometricObject.h"
+
+class WeekConstruction
+{
+public:
+
+  const Transformation& GetTransformation() const;
+
+private:
+  Transformation tranformation_;
+};
+
+class StrongConstruction
+{};
+
 /**
  * \brief Defines how object is created.
  *
@@ -55,7 +69,7 @@ public:
   ~ConstructionPoint() override = default;
 
   /**
-   * Recalculate equation of point.
+   * \brief Recalculate equation of point.
    *
    * \return New equation of point.
    */
@@ -105,7 +119,7 @@ private:
  *
  * \details Have no dependence on other objects
 */
-class ConstructionOnPlane : public ConstructionPoint
+class ConstructionOnPlane : public ConstructionPoint, public StrongConstruction
 {
 public:
   ~ConstructionOnPlane() override = default;

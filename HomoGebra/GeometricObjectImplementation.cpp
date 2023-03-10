@@ -2,9 +2,6 @@
 
 using namespace Event;
 
-GeometricObjectImplementation::~GeometricObjectImplementation()
-{}
-
 void ObservableGeometricObject::Attach(const std::shared_ptr<ConstructionObserver>& observer)
 {
   observers_.push_back(observer);
@@ -32,6 +29,11 @@ void ObservableGeometricObject::Notify(const Event::Destroyed& destroyed) const
     observer->Update(destroyed);
 }
 
+PointImplementation::PointImplementation(const PointEquation& equation)
+  : equation_(equation)
+{
+}
+
 void PointImplementation::SetEquation(const PointEquation& equation)
 {
   // Set equation
@@ -45,6 +47,11 @@ const PointEquation& PointImplementation::GetEquation() const
 {
   // Return equation
   return equation_;
+}
+
+LineImplementation::LineImplementation(const LineEquation& equation)
+  :equation_(equation)
+{
 }
 
 void LineImplementation::SetEquation(const LineEquation& equation)

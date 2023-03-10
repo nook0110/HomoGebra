@@ -5,6 +5,21 @@
 
 class GeometricObject
 {
+public:
+  /**
+  * \brief Default destructor.
+  */
+  virtual ~GeometricObject() = default;
+
+  /**
+  * \brief Destroy this object.
+  *
+  * \param plane Plane, where this object is located.
+  */
+  virtual void Destroy(Plane& plane) = 0;
+
+protected:
+  GeometricObject() = default;
 };
 
 /**
@@ -31,10 +46,24 @@ public:
   explicit Point(const PointEquation& equation = PointEquation{});
 
   /**
- * \brief Default destructor.
- *
- */
-  ~Point();
+  * \brief Default destructor.
+  *
+  */
+  ~Point() final = default;
+
+  /**
+  * \brief Destroy this object.
+  *
+  * \param plane Plane, where this object is located.
+  */
+  void Destroy(Plane& plane) final;
+
+  /**
+  * \brief Notify observers that this objected is destroyed
+  *
+  * \param event Event
+  */
+  void Notify(const Event::Destroyed& event) const;
 
   /**
    * \brief Set new equation of point.
@@ -45,7 +74,7 @@ public:
 
   /**
   * \brief Return current equation of point.
-  * 
+  *
   * \return Equation of point
   */
   const PointEquation& GetEquation() const;
@@ -83,6 +112,26 @@ public:
   explicit Line(const LineEquation& equation = LineEquation{});
 
   /**
+  * \brief Default destructor.
+  *
+  */
+  ~Line() final = default;
+
+  /**
+  * \brief Destroy this object.
+  *
+  * \param plane Plane, where this object is located.
+  */
+  void Destroy(Plane& plane) final;
+
+  /**
+  * \brief Notify observers that this objected is destroyed
+  *
+  * \param event Event
+  */
+  void Notify(const Event::Destroyed& event) const;
+
+  /**
    * \brief Set new equation of line.
    *
    * \param equation Equation of line
@@ -111,6 +160,21 @@ private:
  */
 class Conic : public GeometricObject
 {
+public:
+  /**
+  * \brief Destroy this object.
+  *
+  * \param plane Plane, where this object is located.
+  */
+  void Destroy(Plane& plane) final;
+
+  /**
+  * \brief Notify observers that this objected is destroyed
+  *
+  * \param event Event
+  */
+  void Notify(const Event::Destroyed& event) const;
+
 private:
   /*
    * Member data

@@ -115,13 +115,12 @@ struct ConicEquation : public Equation
    /// @{
   static const std::array<var, 3> prev;
   static const std::array<var, 3> next;
-
   /// @}
 
   /**
    * \brief Apply transformation to a conic equation.
    *
-   * \warning It will multiply on inverse of transformation squared each element. Because if you substitute an image of point, equation should equal to zero.
+   * \warning This method is not implemented!
    *
    * \param transformation
    */
@@ -136,6 +135,5 @@ struct ConicEquation : public Equation
   /// @{
   std::array<complex, 3> squares;
   std::array<complex, 3> pair_products;
-
   /// @}
 };

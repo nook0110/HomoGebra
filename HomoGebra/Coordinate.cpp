@@ -346,7 +346,7 @@ complex& HomogeneousCoordinate::operator[](var variable)
     return z;
     break;
   default:
-    std::invalid_argument("No such variable!");
+    throw std::invalid_argument("No such variable!");
     break;
   }
 }

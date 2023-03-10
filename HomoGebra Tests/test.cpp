@@ -128,8 +128,6 @@ namespace HomogebraTest
         },
         SquaredMatrix::Row { complex(1.0, 0.0), complex(11.0, 0.0), complex(12.0, 0.0) }
       );
-      // {{1+1.2*i, 2+4.12*i, 3+7.636*i}, {1+2.8*i, 5+5.521*i, 6+8.616*i}, {1+3.8*i, 8+6.1234*i, 9+9.93*i}}, {{1, 11, 12}}
-
 
       const SquaredMatrix real_inverse_of_matrix(
         {
@@ -139,7 +137,6 @@ namespace HomogebraTest
         },
         SquaredMatrix::Row { complex(3.45389768638, -5.87719130279), complex(-2.10575700912,  -5.19875528911), complex(1.16970378546, 3.95796180972) }
       );
-      // {{-0.162603872026+0.547316949016*i, 1.29642322808-0.91383483088*i, -0.887012829208+0.302306240654*i}, {0.104126199172+0.608370065879*i, -0.83038879224-1.40436460852*i, 0.577032792198+0.8034071115*i}, {-0.043135151367-0.556184119699*i, 0.343429483128+0.988543488361*i, -0.213740448132-0.529986036879*i}}, {{3.45389768638-5.87719130279*i, -2.10575700912-5.19875528911*i, 1.16970378546+3.95796180972*i}}
 
       // Get inverse matrix
       const auto second_inverse_matrix = second_matrix.GetInverse();
@@ -166,8 +163,6 @@ namespace HomogebraTest
         SquaredMatrix::Row { complex(1.0, 0.0), complex(11.0, 0.0), complex(12.0, 0.0) }
       );
 
-      // {{1.0 + 1.2*i, 2.0 + 4.12*i, 3.0 + 7.636*i}, {1.0 + 2.8*i, 5.0 + 5.521*i, 6.0 + 8.616*i}, {1.0 + 3.8*i, 8.0 + 6.1234*i, 9.0 + 9.93*i}}, {{1.0, 11.0, 12.0}}
-
       // Get solution
       const auto solution = matrix.GetSolution();
 
@@ -175,8 +170,6 @@ namespace HomogebraTest
       ASSERT_TRUE(solution.has_value());
 
       // Real solution
-
-      // { { 3.45389768638 - 5.87719130279 i }, { -2.10575700912 - 5.19875528911 i }, { 1.16970378546 + 3.95796180972 i } }
       const std::vector<complex> real_solution = { complex(3.45389768638, -5.87719130279), complex(-2.10575700912, -5.19875528911), complex(1.16970378546, 3.95796180972) };
 
       // Check that solution is correct
@@ -527,8 +520,6 @@ namespace HomogebraTest
       // Check Id transform
       EXPECT_TRUE(check_two_coordinates(Transformation() * point, point, epsilon));
 
-      // {-2.728+2.730*i,8.852-2.598*i,-2.883+6.312*i}
-
       // Create real answer to transformation * point
       const HomogeneousCoordinate answer
       {
@@ -569,25 +560,5 @@ namespace HomogebraTest
       // Check zero transformation
       EXPECT_TRUE(check_two_coordinates(zero_trans * point, zero_coord, epsilon));
     }
-  }
-
-  namespace Equation
-  {
-    /// TODO (Write tests)
-  }
-
-  namespace GeometricObjectFactory
-  {
-    /// TODO (Write tests)
-  }
-
-  namespace GeometricObjectImplementation
-  {
-    /// TODO (Write tests)
-  }
-
-  namespace PlaneImplementation
-  {
-    /// TODO (Write tests)
   }
 }
