@@ -11,42 +11,29 @@ Makes \mbox{\hyperlink{class_geometric_object_implementation}{Geometric\+Object\
 
 
 
-Inheritance diagram for Observable\+Geometric\+Object\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_observable_geometric_object__inherit__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for Observable\+Geometric\+Object\+:
+% FIG 0
 
 
-Collaboration diagram for Observable\+Geometric\+Object\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=244pt]{class_observable_geometric_object__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for Observable\+Geometric\+Object\+:
+% FIG 1
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{class_observable_geometric_object_ad27598f56baa57327f83ba98f2105ea8}{$\sim$\+Observable\+Geometric\+Object}} ()=default
 \item 
-void \mbox{\hyperlink{class_observable_geometric_object_afefebecdc84813461680d9487ae33983}{Attach}} (std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} $>$ observer)
+void \mbox{\hyperlink{class_observable_geometric_object_a7bcc0b90e5030f9ca0a8c5a8bd8b59ba}{Attach}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} $>$ \&observer)
 \begin{DoxyCompactList}\small\item\em Subscribe an observer on this object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_observable_geometric_object_aab93df41a73b15ccc6bc0b36204ab810}{Detach}} (const \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} $\ast$observer)
-\begin{DoxyCompactList}\small\item\em Unsubscribe an observer on this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Protected Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{class_observable_geometric_object_aa983a428c8218f4c2ce81323b8d0f053}{Notify}} (\mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}}) const
+\begin{DoxyCompactList}\small\item\em Unsubscribe an observer on this object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_geometric_object_a15d865c4eb09e61691db40d1ff103f13}{Notify}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&) const
 \begin{DoxyCompactList}\small\item\em Notify all subscribed observers that object was moved. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_observable_geometric_object_a0a013fe0b293dc7fc8d28525c7f62cfd}{Notify}} (\mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}}) const
+void \mbox{\hyperlink{class_observable_geometric_object_a529db68c912a248a82f6398a886185cf}{Notify}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&) const
 \begin{DoxyCompactList}\small\item\em Notify all subscribed observers that object was destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::list$<$ std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} $>$ $>$ \mbox{\hyperlink{class_observable_geometric_object_a22ac8300a58a6e234f18f79675a7433c}{observers\+\_\+}}
+std\+::list$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} $>$ $>$ \mbox{\hyperlink{class_observable_geometric_object_a6a64e75e42aa659ef1f83ac08e4300e1}{observers\+\_\+}}
 \begin{DoxyCompactList}\small\item\em List of subscribed observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -62,7 +49,7 @@ nook0110
 \begin{DoxyDate}{Date}
 February 2023
 \end{DoxyDate}
-\textbackslash{}detail Implements pattern called \textquotesingle{}Observer\textquotesingle{}
+\textbackslash{}detail Implements pattern called \textquotesingle{}Observer\textquotesingle{}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} 
@@ -81,11 +68,11 @@ February 2023
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_observable_geometric_object_afefebecdc84813461680d9487ae33983}\label{class_observable_geometric_object_afefebecdc84813461680d9487ae33983}} 
+\mbox{\Hypertarget{class_observable_geometric_object_a7bcc0b90e5030f9ca0a8c5a8bd8b59ba}\label{class_observable_geometric_object_a7bcc0b90e5030f9ca0a8c5a8bd8b59ba}} 
 \index{ObservableGeometricObject@{ObservableGeometricObject}!Attach@{Attach}}
 \index{Attach@{Attach}!ObservableGeometricObject@{ObservableGeometricObject}}
 \doxysubsubsection{\texorpdfstring{Attach()}{Attach()}}
-{\footnotesize\ttfamily void Observable\+Geometric\+Object\+::\+Attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} $>$}]{observer }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Observable\+Geometric\+Object\+::\+Attach (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} $>$ \&}]{observer }\end{DoxyParamCaption})}
 
 
 
@@ -93,7 +80,7 @@ Subscribe an observer on this object.
 
 
 \begin{DoxyParams}{Parameters}
-{\em observer} & Observer to add \\
+{\em observer} & Observer to add. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_observable_geometric_object_aab93df41a73b15ccc6bc0b36204ab810}\label{class_observable_geometric_object_aab93df41a73b15ccc6bc0b36204ab810}} 
@@ -108,37 +95,39 @@ Unsubscribe an observer on this object.
 
 
 \begin{DoxyParams}{Parameters}
-{\em observer} & Observer to delete \\
+{\em observer} & Observer to delete. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_observable_geometric_object_aa983a428c8218f4c2ce81323b8d0f053}\label{class_observable_geometric_object_aa983a428c8218f4c2ce81323b8d0f053}} 
+\mbox{\Hypertarget{class_observable_geometric_object_a529db68c912a248a82f6398a886185cf}\label{class_observable_geometric_object_a529db68c912a248a82f6398a886185cf}} 
 \index{ObservableGeometricObject@{ObservableGeometricObject}!Notify@{Notify}}
 \index{Notify@{Notify}!ObservableGeometricObject@{ObservableGeometricObject}}
 \doxysubsubsection{\texorpdfstring{Notify()}{Notify()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Observable\+Geometric\+Object\+::\+Notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}}}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Notify all subscribed observers that object was moved. 
-
-\mbox{\Hypertarget{class_observable_geometric_object_a0a013fe0b293dc7fc8d28525c7f62cfd}\label{class_observable_geometric_object_a0a013fe0b293dc7fc8d28525c7f62cfd}} 
-\index{ObservableGeometricObject@{ObservableGeometricObject}!Notify@{Notify}}
-\index{Notify@{Notify}!ObservableGeometricObject@{ObservableGeometricObject}}
-\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void Observable\+Geometric\+Object\+::\+Notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}}}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily void Observable\+Geometric\+Object\+::\+Notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&}]{destroyed }\end{DoxyParamCaption}) const}
 
 
 
 Notify all subscribed observers that object was destroyed. 
 
+\mbox{\Hypertarget{class_observable_geometric_object_a15d865c4eb09e61691db40d1ff103f13}\label{class_observable_geometric_object_a15d865c4eb09e61691db40d1ff103f13}} 
+\index{ObservableGeometricObject@{ObservableGeometricObject}!Notify@{Notify}}
+\index{Notify@{Notify}!ObservableGeometricObject@{ObservableGeometricObject}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Observable\+Geometric\+Object\+::\+Notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&}]{moved }\end{DoxyParamCaption}) const}
+
+
+
+Notify all subscribed observers that object was moved. 
+
+Here is the caller graph for this function\+:
+% FIG 2
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_observable_geometric_object_a22ac8300a58a6e234f18f79675a7433c}\label{class_observable_geometric_object_a22ac8300a58a6e234f18f79675a7433c}} 
+\mbox{\Hypertarget{class_observable_geometric_object_a6a64e75e42aa659ef1f83ac08e4300e1}\label{class_observable_geometric_object_a6a64e75e42aa659ef1f83ac08e4300e1}} 
 \index{ObservableGeometricObject@{ObservableGeometricObject}!observers\_@{observers\_}}
 \index{observers\_@{observers\_}!ObservableGeometricObject@{ObservableGeometricObject}}
 \doxysubsubsection{\texorpdfstring{observers\_}{observers\_}}
-{\footnotesize\ttfamily std\+::list$<$std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}}$>$ $>$ Observable\+Geometric\+Object\+::observers\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::list$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_construction_observer}{Construction\+Observer}}$>$ $>$ Observable\+Geometric\+Object\+::observers\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -146,6 +135,7 @@ List of subscribed observers.
 
 Member data. 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Homo\+Gebra/\mbox{\hyperlink{_geometric_object_implementation_8h}{Geometric\+Object\+Implementation.\+h}}\end{DoxyCompactItemize}
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_implementation_8h}{Geometric\+Object\+Implementation.\+h}}\item 
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_implementation_8cpp}{Geometric\+Object\+Implementation.\+cpp}}\end{DoxyCompactItemize}

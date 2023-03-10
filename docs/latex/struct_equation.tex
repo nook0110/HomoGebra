@@ -11,32 +11,16 @@ Struct that defines position of the objects.
 
 
 
-Inheritance diagram for Equation\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{struct_equation__inherit__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for Equation\+:
+% FIG 0
 
 
-Collaboration diagram for Equation\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=136pt]{struct_equation__coll__graph}
-\end{center}
-\end{figure}
-\doxysubsection*{Public Types}
-\begin{DoxyCompactItemize}
-\item 
-enum class \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{var}} \{ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920a0ac0dd65e82e143ab04d378a0133bf9e}{kX}}
-, \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920a39b629a97c6f6ac91423cf042154dd86}{kY}}
-, \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920aca4d7439951bc76061bedb523255ff3d}{kZ}}
- \}
-\begin{DoxyCompactList}\small\item\em Name of axes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+Collaboration diagram for Equation\+:
+% FIG 1
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_equation_ab2e495ce21c5bb9e7d325127fc1a5ac5}{$\sim$\+Equation}} ()=default
 \item 
 virtual void \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}{Apply}} (const \mbox{\hyperlink{class_transformation}{Transformation}} \&transformation)=0
 \begin{DoxyCompactList}\small\item\em Apply transformation to an equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -56,32 +40,14 @@ February 2023
 \end{DoxyDate}
 
 
-\doxysubsection{Member Enumeration Documentation}
-\mbox{\Hypertarget{struct_equation_a97cbcb97188027c47a4bda31c34e4920}\label{struct_equation_a97cbcb97188027c47a4bda31c34e4920}} 
-\index{Equation@{Equation}!var@{var}}
-\index{var@{var}!Equation@{Equation}}
-\doxysubsubsection{\texorpdfstring{var}{var}}
-{\footnotesize\ttfamily enum class \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{Equation\+::var}}\hspace{0.3cm}{\ttfamily [strong]}}
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_equation_ab2e495ce21c5bb9e7d325127fc1a5ac5}\label{struct_equation_ab2e495ce21c5bb9e7d325127fc1a5ac5}} 
+\index{Equation@{Equation}!````~Equation@{$\sim$Equation}}
+\index{````~Equation@{$\sim$Equation}!Equation@{Equation}}
+\doxysubsubsection{\texorpdfstring{$\sim$Equation()}{~Equation()}}
+{\footnotesize\ttfamily virtual Equation\+::$\sim$\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
 
-
-
-Name of axes. 
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{kX@{kX}!Equation@{Equation}}\index{Equation@{Equation}!kX@{kX}}}\mbox{\Hypertarget{struct_equation_a97cbcb97188027c47a4bda31c34e4920a0ac0dd65e82e143ab04d378a0133bf9e}\label{struct_equation_a97cbcb97188027c47a4bda31c34e4920a0ac0dd65e82e143ab04d378a0133bf9e}} 
-kX&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{kY@{kY}!Equation@{Equation}}\index{Equation@{Equation}!kY@{kY}}}\mbox{\Hypertarget{struct_equation_a97cbcb97188027c47a4bda31c34e4920a39b629a97c6f6ac91423cf042154dd86}\label{struct_equation_a97cbcb97188027c47a4bda31c34e4920a39b629a97c6f6ac91423cf042154dd86}} 
-kY&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{kZ@{kZ}!Equation@{Equation}}\index{Equation@{Equation}!kZ@{kZ}}}\mbox{\Hypertarget{struct_equation_a97cbcb97188027c47a4bda31c34e4920aca4d7439951bc76061bedb523255ff3d}\label{struct_equation_a97cbcb97188027c47a4bda31c34e4920aca4d7439951bc76061bedb523255ff3d}} 
-kZ&\\
-\hline
-
-\end{DoxyEnumFields}
-
+Default destructor. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}\label{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}} 
@@ -101,7 +67,7 @@ Apply transformation to an equation.
 \end{DoxyParams}
 
 
-Implemented in \mbox{\hyperlink{struct_line_equation_adb9d9d9e24ffea16524aff477253e337}{Line\+Equation}}, and \mbox{\hyperlink{struct_conic_equation_a3d04814cb42783152d2fc6f9bfc48fc1}{Conic\+Equation}}.
+Implemented in \mbox{\hyperlink{struct_point_equation_a7975f94b130c5f33e70e2d43e56f2ef2}{Point\+Equation}}, \mbox{\hyperlink{struct_line_equation_adb9d9d9e24ffea16524aff477253e337}{Line\+Equation}}, and \mbox{\hyperlink{struct_conic_equation_a3d04814cb42783152d2fc6f9bfc48fc1}{Conic\+Equation}}.
 
 
 

@@ -4,37 +4,80 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_geometric_object_implementation_8h}{GeometricObjectImplementation.h}}"{}}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_geometric_object_body_8h}{GeometricObjectBody.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_geometric_object_body_8h}{GeometricObjectBody.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_geometric_object_implementation_8h}{GeometricObjectImplementation.h}}"{}}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point}{Point}}}
-\DoxyCodeLine{00019\ \{}
-\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00021\ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00022\ \textcolor{comment}{\ \ *\ Member\ data}}
-\DoxyCodeLine{00023\ \textcolor{comment}{\ \ */}}
-\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{class_point_body}{PointBody}}\ \mbox{\hyperlink{class_point_ae771f27294532425c9d4cd327358f2ba}{body\_}};\ }
-\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{class_point_implementation}{PointImplementation}}\ \mbox{\hyperlink{class_point_a76c2c7ce144a18b459605515997ef00d}{implementation\_}};\ }
-\DoxyCodeLine{00026\ \};}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_line}{Line}}}
-\DoxyCodeLine{00041\ \{}
-\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00043\ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00044\ \textcolor{comment}{\ \ *\ Member\ data}}
-\DoxyCodeLine{00045\ \textcolor{comment}{\ \ */}}
-\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{class_line_body}{LineBody}}\ \mbox{\hyperlink{class_line_a76a838ebe3259a8973f3b0e5cac8f6fc}{body\_}};\ }
-\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{class_line_implementation}{LineImplementation}}\ \mbox{\hyperlink{class_line_a5b96783588f8dddc60a868303c17ac4b}{implementation\_}};\ }
-\DoxyCodeLine{00048\ \};}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_conic}{Conic}}}
-\DoxyCodeLine{00063\ \{}
-\DoxyCodeLine{00064\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00065\ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00066\ \textcolor{comment}{\ \ *\ Member\ data}}
-\DoxyCodeLine{00067\ \textcolor{comment}{\ \ */}}
-\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{class_conic_body}{ConicBody}}\ \mbox{\hyperlink{class_conic_a23dd744e18de02047d7b29e4a78a770f}{body\_}};\ }
-\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{class_conic_implementation}{ConicImplementation}}\ \mbox{\hyperlink{class_conic_ae755f42c11c6e21769d0a8207a90a63a}{implementation\_}};\ }
-\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_geometric_object}{GeometricObject}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_geometric_object_a8d7f6fe72f4f9a45de56a7ae04f955fe}{\string~GeometricObject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geometric_object_a76b6b40dcbd020ca773d1513fe4e5b70}{Destroy}}(\mbox{\hyperlink{class_plane}{Plane}}\&\ plane)\ =\ 0;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{class_geometric_object_a51c3b1f38bd1750a89617b77d08bb49c}{GeometricObject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point}{Point}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_geometric_object}{GeometricObject}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_point}{Point}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point_equation}{PointEquation}}\&\ equation\ =\ \mbox{\hyperlink{struct_point_equation}{PointEquation}}\{\});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{class_point_a743fb4edcb14dc6b450d1f9b31f650bd}{\string~Point}}()\ final\ =\ default;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a206ded007973dc7db19c6adaff5e79c8}{Destroy}}(\mbox{\hyperlink{class_plane}{Plane}}\&\ plane)\ final;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a853df76b6338eff57189585c2adb0b1f}{Notify}}(const\ \mbox{\hyperlink{namespace_event}{Event}}::Destroyed\&\ event)\ const;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a38529969767ee5a8b7341ac84bea8d47}{SetEquation}}(const\ \mbox{\hyperlink{struct_point_equation}{PointEquation}}\&\ equation);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ [[nodiscard]]\ const\ \mbox{\hyperlink{struct_point_equation}{PointEquation}}\&\ \mbox{\hyperlink{class_point_ac45889f34111c0347477f76a303c6677}{GetEquation}}()\ const;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ private:}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ \ \ *\ Member\ data}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00087\ \ \ \mbox{\hyperlink{class_point_body}{PointBody}}\ \mbox{\hyperlink{class_point_ae771f27294532425c9d4cd327358f2ba}{body\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{class_point_implementation}{PointImplementation}}\ \mbox{\hyperlink{class_point_a76c2c7ce144a18b459605515997ef00d}{implementation\_}};\ \ }
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00103\ class\ \mbox{\hyperlink{class_line}{Line}}\ :\ public\ \mbox{\hyperlink{class_geometric_object}{GeometricObject}}}
+\DoxyCodeLine{00104\ \{}
+\DoxyCodeLine{00105\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00112\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_line}{Line}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_line_equation}{LineEquation}}\&\ equation\ =\ \mbox{\hyperlink{struct_line_equation}{LineEquation}}\{\});}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{class_line_ad6c2db935145f50c3e82780ad563ec30}{\string~Line}}()\ final\ =\ default;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a206ded007973dc7db19c6adaff5e79c8}{Destroy}}(\mbox{\hyperlink{class_plane}{Plane}}\&\ plane)\ final;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00131\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a853df76b6338eff57189585c2adb0b1f}{Notify}}(const\ \mbox{\hyperlink{namespace_event}{Event}}::Destroyed\&\ event)\ const;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00138\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a38529969767ee5a8b7341ac84bea8d47}{SetEquation}}(const\ \mbox{\hyperlink{struct_line_equation}{LineEquation}}\&\ equation);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ private:}
+\DoxyCodeLine{00141\ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00142\ \textcolor{comment}{\ \ \ *\ Member\ data}}
+\DoxyCodeLine{00143\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{class_line_body}{LineBody}}\ \mbox{\hyperlink{class_point_ae771f27294532425c9d4cd327358f2ba}{body\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00145\ \ \ \mbox{\hyperlink{class_line_implementation}{LineImplementation}}\ \mbox{\hyperlink{class_point_a76c2c7ce144a18b459605515997ef00d}{implementation\_}};\ \ }
+\DoxyCodeLine{00146\ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00160\ class\ \mbox{\hyperlink{class_conic}{Conic}}\ :\ public\ \mbox{\hyperlink{class_geometric_object}{GeometricObject}}}
+\DoxyCodeLine{00161\ \{}
+\DoxyCodeLine{00162\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00168\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a206ded007973dc7db19c6adaff5e79c8}{Destroy}}(\mbox{\hyperlink{class_plane}{Plane}}\&\ plane)\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a853df76b6338eff57189585c2adb0b1f}{Notify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_event_1_1_destroyed}{Event::Destroyed}}\&\ event)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00178\ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00179\ \textcolor{comment}{\ \ \ *\ Member\ data}}
+\DoxyCodeLine{00180\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00181\ \ \ \mbox{\hyperlink{class_conic_body}{ConicBody}}\ \mbox{\hyperlink{class_conic_a23dd744e18de02047d7b29e4a78a770f}{body\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00182\ \ \ \mbox{\hyperlink{class_conic_implementation}{ConicImplementation}}\ \mbox{\hyperlink{class_conic_ae755f42c11c6e21769d0a8207a90a63a}{implementation\_}};\ \ }
+\DoxyCodeLine{00183\ \};}
 
 \end{DoxyCode}

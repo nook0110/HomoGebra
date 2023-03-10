@@ -1,0 +1,15 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.9];
+  rankdir="LR";
+  Node0 [label="Equation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_equation.html",tooltip="Struct that defines position of the objects."];
+  Node0 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node1 [label="ConicEquation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_conic_equation.html",tooltip="Struct that defines position of the conic."];
+  Node0 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="LineEquation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_line_equation.html",tooltip="Struct that defines position of the line."];
+  Node0 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="PointEquation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_point_equation.html",tooltip="Struct that defines position of the point."];
+}

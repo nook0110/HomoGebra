@@ -1,0 +1,61 @@
+\hypertarget{_matrix_8h_source}{}\doxysection{Matrix.\+h}
+\label{_matrix_8h_source}\index{HomoGebra/Matrix.h@{HomoGebra/Matrix.h}}
+\mbox{\hyperlink{_matrix_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}\ =\ std::complex<long\ double>;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_squared_matrix}{SquaredMatrix}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Row}}\ =\ std::vector<complex>;}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Column}}\ =\ std::vector<complex>;}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_squared_matrix_a518d41fca446f5e42848cfdd2ce24967}{Matrix}}\ =\ std::vector<Row>;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_squared_matrix_a219d0db15cbea63b70a3ba13a44db511}{SquaredMatrix}}(\textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{class_squared_matrix_a219d0db15cbea63b70a3ba13a44db511}{SquaredMatrix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_squared_matrix_a518d41fca446f5e42848cfdd2ce24967}{Matrix}}\&\ matrix,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Row}}\&\ augmentation);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ [[nodiscard]]\ std::optional<SquaredMatrix>\ \mbox{\hyperlink{class_squared_matrix_a4137a2d278b3cb7fc9c8489c8d2a5393}{GetInverse}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ [[nodiscard]]\ \mbox{\hyperlink{_matrix_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}\ \mbox{\hyperlink{class_squared_matrix_a7f6c086b732f25b59d4547ef1e8d9d26}{GetDeterminant}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ [[nodiscard]]\ std::optional<Column>\ \mbox{\hyperlink{class_squared_matrix_aecc105efa6ff85b4941df3a4a3124606}{GetSolution}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_squared_matrix_ab58d532003c502cceab2a77bb1703723}{GetSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ [[nodiscard]]\ \mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Column}}\&\ \mbox{\hyperlink{class_squared_matrix_a681af005cf514394b175d5ab7c447f95}{GetAugmentation}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Column}}\&\ \mbox{\hyperlink{class_squared_matrix_a681af005cf514394b175d5ab7c447f95}{GetAugmentation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00085\ \ \ \mbox{\hyperlink{class_squared_matrix}{SquaredMatrix}}\&\ \mbox{\hyperlink{class_squared_matrix_a8b616a0bb6465315f8d347ada4f652c1}{operator*=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_squared_matrix}{SquaredMatrix}}\&\ other);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00093\ \ \ [[nodiscard]]\ \mbox{\hyperlink{class_squared_matrix}{SquaredMatrix}}\ \mbox{\hyperlink{class_squared_matrix_af9817d6a29940711f2e447e4d08846aa}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_squared_matrix}{SquaredMatrix}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00101\ \ \ [[nodiscard]]\ std::vector<complex>\ \mbox{\hyperlink{class_squared_matrix_af9817d6a29940711f2e447e4d08846aa}{operator*}}(\textcolor{keyword}{const}\ std::vector<complex>\&\ vector)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00108\ \ \ [[nodiscard]]\ \mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Row}}\&\ \mbox{\hyperlink{class_squared_matrix_a007c510de954eec9aa7b92366f6bd6ff}{operator[]}}(\textcolor{keywordtype}{size\_t}\ row);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00115\ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Row}}\&\ \mbox{\hyperlink{class_squared_matrix_a007c510de954eec9aa7b92366f6bd6ff}{operator[]}}(\textcolor{keywordtype}{size\_t}\ row)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00122\ \ \ [[nodiscard]]\ SquaredMatrix::Matrix::const\_iterator\ \mbox{\hyperlink{class_squared_matrix_a6c66ae850a8a51433d65105508afb502}{begin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00129\ \ \ [[nodiscard]]\ SquaredMatrix::Matrix::const\_iterator\ \mbox{\hyperlink{class_squared_matrix_a6d4fe3e49e94cb43615dbc2af4490575}{end}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_squared_matrix_a65428f404fdb5d1837a30239129aec1f}{kEpsilon}};\ \textcolor{comment}{//<!\ Epsilon\ for\ comparison}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00138\ \ \ \mbox{\hyperlink{class_squared_matrix_a219d0db15cbea63b70a3ba13a44db511}{SquaredMatrix}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{class_squared_matrix_a518d41fca446f5e42848cfdd2ce24967}{Matrix}}\ \mbox{\hyperlink{class_squared_matrix_a6760e4f582354295f1cd7ce517ad4828}{matrix\_}};\ \textcolor{comment}{//<!\ Matrix}}
+\DoxyCodeLine{00145\ \ \ \mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Column}}\ \mbox{\hyperlink{class_squared_matrix_a6e596bf11695594db44edc681fcb58b7}{augmentation\_}};\ \textcolor{comment}{//<!\ Augmentation}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_squared_matrix_a1bb12326cc5e9b25b3e231842955eb3a}{size\_}};\ \textcolor{comment}{//<!\ Size\ of\ matrix}}
+\DoxyCodeLine{00148\ \};}
+
+\end{DoxyCode}

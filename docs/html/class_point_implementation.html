@@ -81,7 +81,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_point_implementation-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">PointImplementation Class Reference</div></div>
@@ -117,6 +116,9 @@ Collaboration diagram for PointImplementation:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a8222aee85eaa41cded9f4d654fa8632d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_implementation.html#a8222aee85eaa41cded9f4d654fa8632d">PointImplementation</a> (const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;equation=<a class="el" href="struct_point_equation.html">PointEquation</a>())</td></tr>
+<tr class="memdesc:a8222aee85eaa41cded9f4d654fa8632d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a point with given equation.  <br /></td></tr>
+<tr class="separator:a8222aee85eaa41cded9f4d654fa8632d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c7491c3bbb4aefe4bf54ef0092f403a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_implementation.html#a0c7491c3bbb4aefe4bf54ef0092f403a">SetEquation</a> (const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;equation)</td></tr>
 <tr class="memdesc:a0c7491c3bbb4aefe4bf54ef0092f403a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets new equation of point.  <br /></td></tr>
 <tr class="separator:a0c7491c3bbb4aefe4bf54ef0092f403a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,44 +126,34 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:acf2070120f5877ed5e73a0aa3eb9cf46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return current equation of point.  <br /></td></tr>
 <tr class="separator:acf2070120f5877ed5e73a0aa3eb9cf46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_geometric_object_implementation"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_geometric_object_implementation')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_geometric_object_implementation.html">GeometricObjectImplementation</a></td></tr>
-<tr class="memitem:a353ebc23cbfa1f5226b8520e2d77bf94 inherit pub_methods_class_geometric_object_implementation"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_object_implementation.html#a353ebc23cbfa1f5226b8520e2d77bf94">~GeometricObjectImplementation</a> () override</td></tr>
-<tr class="memdesc:a353ebc23cbfa1f5226b8520e2d77bf94 inherit pub_methods_class_geometric_object_implementation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
-<tr class="separator:a353ebc23cbfa1f5226b8520e2d77bf94 inherit pub_methods_class_geometric_object_implementation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac88fa84f2272d2110350b04756f12add inherit pub_methods_class_geometric_object_implementation"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_object_implementation.html#ac88fa84f2272d2110350b04756f12add">~GeometricObjectImplementation</a> () override=default</td></tr>
+<tr class="memdesc:ac88fa84f2272d2110350b04756f12add inherit pub_methods_class_geometric_object_implementation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
+<tr class="separator:ac88fa84f2272d2110350b04756f12add inherit pub_methods_class_geometric_object_implementation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_observable_geometric_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_observable_geometric_object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_observable_geometric_object.html">ObservableGeometricObject</a></td></tr>
 <tr class="memitem:ad27598f56baa57327f83ba98f2105ea8 inherit pub_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#ad27598f56baa57327f83ba98f2105ea8">~ObservableGeometricObject</a> ()=default</td></tr>
 <tr class="separator:ad27598f56baa57327f83ba98f2105ea8 inherit pub_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afefebecdc84813461680d9487ae33983 inherit pub_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#afefebecdc84813461680d9487ae33983">Attach</a> (std::shared_ptr&lt; const <a class="el" href="class_construction_observer.html">ConstructionObserver</a> &gt; observer)</td></tr>
-<tr class="memdesc:afefebecdc84813461680d9487ae33983 inherit pub_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe an observer on this object.  <br /></td></tr>
-<tr class="separator:afefebecdc84813461680d9487ae33983 inherit pub_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bcc0b90e5030f9ca0a8c5a8bd8b59ba inherit pub_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#a7bcc0b90e5030f9ca0a8c5a8bd8b59ba">Attach</a> (const std::shared_ptr&lt; <a class="el" href="class_construction_observer.html">ConstructionObserver</a> &gt; &amp;observer)</td></tr>
+<tr class="memdesc:a7bcc0b90e5030f9ca0a8c5a8bd8b59ba inherit pub_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe an observer on this object.  <br /></td></tr>
+<tr class="separator:a7bcc0b90e5030f9ca0a8c5a8bd8b59ba inherit pub_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab93df41a73b15ccc6bc0b36204ab810 inherit pub_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#aab93df41a73b15ccc6bc0b36204ab810">Detach</a> (const <a class="el" href="class_construction_observer.html">ConstructionObserver</a> *observer)</td></tr>
 <tr class="memdesc:aab93df41a73b15ccc6bc0b36204ab810 inherit pub_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribe an observer on this object.  <br /></td></tr>
 <tr class="separator:aab93df41a73b15ccc6bc0b36204ab810 inherit pub_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:aded0f8c1a826f91e556cad773063b43b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_implementation.html#aded0f8c1a826f91e556cad773063b43b">PointImplementation</a> ()</td></tr>
-<tr class="memdesc:aded0f8c1a826f91e556cad773063b43b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
-<tr class="separator:aded0f8c1a826f91e556cad773063b43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15d865c4eb09e61691db40d1ff103f13 inherit pub_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#a15d865c4eb09e61691db40d1ff103f13">Notify</a> (const <a class="el" href="struct_event_1_1_moved.html">Event::Moved</a> &amp;) const</td></tr>
+<tr class="memdesc:a15d865c4eb09e61691db40d1ff103f13 inherit pub_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify all subscribed observers that object was moved.  <br /></td></tr>
+<tr class="separator:a15d865c4eb09e61691db40d1ff103f13 inherit pub_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529db68c912a248a82f6398a886185cf inherit pub_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#a529db68c912a248a82f6398a886185cf">Notify</a> (const <a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a> &amp;) const</td></tr>
+<tr class="memdesc:a529db68c912a248a82f6398a886185cf inherit pub_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify all subscribed observers that object was destroyed.  <br /></td></tr>
+<tr class="separator:a529db68c912a248a82f6398a886185cf inherit pub_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a1853abf96bb27aa1f72f3f7e356578a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_point_equation.html">PointEquation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point_implementation.html#a1853abf96bb27aa1f72f3f7e356578a4">equation_</a></td></tr>
 <tr class="memdesc:a1853abf96bb27aa1f72f3f7e356578a4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_point.html" title="Point on a plane.">Point</a> equation.  <br /></td></tr>
 <tr class="separator:a1853abf96bb27aa1f72f3f7e356578a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_class_observable_geometric_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_observable_geometric_object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_observable_geometric_object.html">ObservableGeometricObject</a></td></tr>
-<tr class="memitem:aa983a428c8218f4c2ce81323b8d0f053 inherit pro_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#aa983a428c8218f4c2ce81323b8d0f053">Notify</a> (<a class="el" href="struct_event_1_1_moved.html">Event::Moved</a>) const</td></tr>
-<tr class="memdesc:aa983a428c8218f4c2ce81323b8d0f053 inherit pro_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify all subscribed observers that object was moved.  <br /></td></tr>
-<tr class="separator:aa983a428c8218f4c2ce81323b8d0f053 inherit pro_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a013fe0b293dc7fc8d28525c7f62cfd inherit pro_methods_class_observable_geometric_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable_geometric_object.html#a0a013fe0b293dc7fc8d28525c7f62cfd">Notify</a> (<a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a>) const</td></tr>
-<tr class="memdesc:a0a013fe0b293dc7fc8d28525c7f62cfd inherit pro_methods_class_observable_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify all subscribed observers that object was destroyed.  <br /></td></tr>
-<tr class="separator:a0a013fe0b293dc7fc8d28525c7f62cfd inherit pro_methods_class_observable_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aded0f8c1a826f91e556cad773063b43b" name="aded0f8c1a826f91e556cad773063b43b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aded0f8c1a826f91e556cad773063b43b">&#9670;&#160;</a></span>PointImplementation()</h2>
+<a id="a8222aee85eaa41cded9f4d654fa8632d" name="a8222aee85eaa41cded9f4d654fa8632d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8222aee85eaa41cded9f4d654fa8632d">&#9670;&#160;</a></span>PointImplementation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,22 +164,54 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">PointImplementation::PointImplementation </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;&#160;</td>
+          <td class="paramname"><em>equation</em> = <code><a class="el" href="struct_point_equation.html">PointEquation</a>()</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Default constructor. </p>
+<p>Construct a point with given equation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">equation</td><td><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of point. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="acf2070120f5877ed5e73a0aa3eb9cf46" name="acf2070120f5877ed5e73a0aa3eb9cf46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf2070120f5877ed5e73a0aa3eb9cf46">&#9670;&#160;</a></span>GetEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp; PointImplementation::GetEquation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return current equation of point. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_point.html" title="Point on a plane.">Point</a> equation. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_point_implementation_acf2070120f5877ed5e73a0aa3eb9cf46_icgraph.png" border="0" usemap="#aclass_point_implementation_acf2070120f5877ed5e73a0aa3eb9cf46_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <a id="a0c7491c3bbb4aefe4bf54ef0092f403a" name="a0c7491c3bbb4aefe4bf54ef0092f403a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0c7491c3bbb4aefe4bf54ef0092f403a">&#9670;&#160;</a></span>SetEquation()</h2>
 
@@ -207,30 +231,20 @@ Additional Inherited Members</h2></td></tr>
 <p>Sets new equation of point. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">equation</td><td><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of point </td></tr>
+    <tr><td class="paramname">equation</td><td><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of point. </td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_point_implementation_a0c7491c3bbb4aefe4bf54ef0092f403a_cgraph.png" border="0" usemap="#aclass_point_implementation_a0c7491c3bbb4aefe4bf54ef0092f403a_cgraph" alt=""/></div>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_point_implementation_a0c7491c3bbb4aefe4bf54ef0092f403a_icgraph.png" border="0" usemap="#aclass_point_implementation_a0c7491c3bbb4aefe4bf54ef0092f403a_icgraph" alt=""/></div>
 </div>
-<a id="acf2070120f5877ed5e73a0aa3eb9cf46" name="acf2070120f5877ed5e73a0aa3eb9cf46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf2070120f5877ed5e73a0aa3eb9cf46">&#9670;&#160;</a></span>GetEquation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp; PointImplementation::GetEquation </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return current equation of point. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_point.html" title="Point on a plane.">Point</a> equation. </dd></dl>
 
 </div>
 </div>
@@ -260,8 +274,9 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>HomoGebra/<a class="el" href="_geometric_object_implementation_8h_source.html">GeometricObjectImplementation.h</a></li>
+<li>HomoGebra/<a class="el" href="_geometric_object_implementation_8cpp.html">GeometricObjectImplementation.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

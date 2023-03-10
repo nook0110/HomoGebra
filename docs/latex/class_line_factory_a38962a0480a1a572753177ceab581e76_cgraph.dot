@@ -1,0 +1,17 @@
+digraph "LineFactory::ByTwoPoints"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.9];
+  rankdir="LR";
+  Node1 [label="LineFactory::ByTwoPoints",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Constructs line through two given points."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Plane::AddObject",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_plane.html#ada179fa401de8aa43984ef692d89e760",tooltip="Add object to plane."];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="PointEquation::GetEquation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_point_equation.html#ab4e9d4eb7db520d259dc3e4afead36d8",tooltip=" "];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Point::GetEquation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_point.html#ac45889f34111c0347477f76a303c6677",tooltip="Return current equation of point."];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="PointImplementation\l::GetEquation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_point_implementation.html#acf2070120f5877ed5e73a0aa3eb9cf46",tooltip="Return current equation of point."];
+}

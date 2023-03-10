@@ -1,0 +1,11 @@
+digraph "ConstructionPoint::RecalculateEquation"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.9];
+  rankdir="RL";
+  Node1 [label="ConstructionPoint::\lRecalculateEquation",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Recalculate equation of point."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="ConstructionPoint::\lUpdate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_construction_point.html#a33ad8fe12e9cc94bd3672de54479c41e",tooltip="Update the object because sth was moved."];
+}

@@ -1,0 +1,379 @@
+\hypertarget{class_squared_matrix}{}\doxysection{Squared\+Matrix Class Reference}
+\label{class_squared_matrix}\index{SquaredMatrix@{SquaredMatrix}}
+
+
+A squared matrix with augmentation.  
+
+
+
+
+{\ttfamily \#include $<$Matrix.\+h$>$}
+
+
+
+Collaboration diagram for Squared\+Matrix\+:
+% FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Row}} = std\+::vector$<$ \mbox{\hyperlink{_matrix_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} $>$
+\begin{DoxyCompactList}\small\item\em Type aliases. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Column}} = std\+::vector$<$ \mbox{\hyperlink{_matrix_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} $>$
+\item 
+using \mbox{\hyperlink{class_squared_matrix_a518d41fca446f5e42848cfdd2ce24967}{Matrix}} = std\+::vector$<$ \mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Row}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_squared_matrix_af67e2d73c9dcbec672a5b278bb609cc1}{Squared\+Matrix}} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Construct from size. Matrix and augmentation will be filled with zeros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_squared_matrix_ac01622b66f33873deadfdb2b1f547420}{Squared\+Matrix}} (const \mbox{\hyperlink{class_squared_matrix_a518d41fca446f5e42848cfdd2ce24967}{Matrix}} \&matrix, const \mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Row}} \&augmentation)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes all elements in matrix and its augmentation. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{class_squared_matrix}{Squared\+Matrix}} $>$ \mbox{\hyperlink{class_squared_matrix_a4137a2d278b3cb7fc9c8489c8d2a5393}{Get\+Inverse}} () const
+\begin{DoxyCompactList}\small\item\em Finds inversion of matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_matrix_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} \mbox{\hyperlink{class_squared_matrix_a7f6c086b732f25b59d4547ef1e8d9d26}{Get\+Determinant}} () const
+\begin{DoxyCompactList}\small\item\em Calculates determinant. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Column}} $>$ \mbox{\hyperlink{class_squared_matrix_aecc105efa6ff85b4941df3a4a3124606}{Get\+Solution}} () const
+\begin{DoxyCompactList}\small\item\em Find solution of linear equations. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_squared_matrix_ab58d532003c502cceab2a77bb1703723}{Get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get size of matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Column}} \& \mbox{\hyperlink{class_squared_matrix_a681af005cf514394b175d5ab7c447f95}{Get\+Augmentation}} ()
+\begin{DoxyCompactList}\small\item\em Get matrix augmentation. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Column}} \& \mbox{\hyperlink{class_squared_matrix_a8d3eb0282711d4f2cdc89869362e658b}{Get\+Augmentation}} () const
+\begin{DoxyCompactList}\small\item\em Get matrix augmentation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_squared_matrix}{Squared\+Matrix}} \& \mbox{\hyperlink{class_squared_matrix_a8b616a0bb6465315f8d347ada4f652c1}{operator$\ast$=}} (const \mbox{\hyperlink{class_squared_matrix}{Squared\+Matrix}} \&other)
+\begin{DoxyCompactList}\small\item\em Multiplies this matrix on another one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_squared_matrix}{Squared\+Matrix}} \mbox{\hyperlink{class_squared_matrix_af9817d6a29940711f2e447e4d08846aa}{operator$\ast$}} (const \mbox{\hyperlink{class_squared_matrix}{Squared\+Matrix}} \&other) const
+\begin{DoxyCompactList}\small\item\em Multiplies this matrix on another one. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{_matrix_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} $>$ \mbox{\hyperlink{class_squared_matrix_a9a3a1db8d9f0f2c76fb017ab2683997b}{operator$\ast$}} (const std\+::vector$<$ \mbox{\hyperlink{_matrix_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} $>$ \&vector) const
+\begin{DoxyCompactList}\small\item\em Multiplies this matrix on vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Row}} \& \mbox{\hyperlink{class_squared_matrix_a007c510de954eec9aa7b92366f6bd6ff}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t row)
+\begin{DoxyCompactList}\small\item\em operator to get row of matrix. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Row}} \& \mbox{\hyperlink{class_squared_matrix_a264b7d43024d80995edefce5f63a3ab1}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t row) const
+\begin{DoxyCompactList}\small\item\em operator to get row of matrix. \end{DoxyCompactList}\item 
+Squared\+Matrix\+::\+Matrix\+::const\+\_\+iterator \mbox{\hyperlink{class_squared_matrix_a6c66ae850a8a51433d65105508afb502}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Return iterator to the beginning of rows. \end{DoxyCompactList}\item 
+Squared\+Matrix\+::\+Matrix\+::const\+\_\+iterator \mbox{\hyperlink{class_squared_matrix_a6d4fe3e49e94cb43615dbc2af4490575}{end}} () const
+\begin{DoxyCompactList}\small\item\em Return iterator to the end of rows. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_squared_matrix_a219d0db15cbea63b70a3ba13a44db511}{Squared\+Matrix}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_squared_matrix_a518d41fca446f5e42848cfdd2ce24967}{Matrix}} \mbox{\hyperlink{class_squared_matrix_a6760e4f582354295f1cd7ce517ad4828}{matrix\+\_\+}}
+\item 
+\mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Column}} \mbox{\hyperlink{class_squared_matrix_a6e596bf11695594db44edc681fcb58b7}{augmentation\+\_\+}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_squared_matrix_a1bb12326cc5e9b25b3e231842955eb3a}{size\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const long double \mbox{\hyperlink{class_squared_matrix_a65428f404fdb5d1837a30239129aec1f}{k\+Epsilon}} = 1e-\/12L
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A squared matrix with augmentation. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_squared_matrix_a57e673c83f14455833af91332d40c6af}\label{class_squared_matrix_a57e673c83f14455833af91332d40c6af}} 
+\index{SquaredMatrix@{SquaredMatrix}!Column@{Column}}
+\index{Column@{Column}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{Column}{Column}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Squared\+Matrix\+::\+Column}} =  std\+::vector$<$\mbox{\hyperlink{_matrix_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}$>$}
+
+\mbox{\Hypertarget{class_squared_matrix_a518d41fca446f5e42848cfdd2ce24967}\label{class_squared_matrix_a518d41fca446f5e42848cfdd2ce24967}} 
+\index{SquaredMatrix@{SquaredMatrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{Matrix}{Matrix}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_squared_matrix_a518d41fca446f5e42848cfdd2ce24967}{Squared\+Matrix\+::\+Matrix}} =  std\+::vector$<$\mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Row}}$>$}
+
+\mbox{\Hypertarget{class_squared_matrix_a6a196563be91f65013e044a19965822c}\label{class_squared_matrix_a6a196563be91f65013e044a19965822c}} 
+\index{SquaredMatrix@{SquaredMatrix}!Row@{Row}}
+\index{Row@{Row}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{Row}{Row}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Squared\+Matrix\+::\+Row}} =  std\+::vector$<$\mbox{\hyperlink{_matrix_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}$>$}
+
+
+
+Type aliases. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_squared_matrix_af67e2d73c9dcbec672a5b278bb609cc1}\label{class_squared_matrix_af67e2d73c9dcbec672a5b278bb609cc1}} 
+\index{SquaredMatrix@{SquaredMatrix}!SquaredMatrix@{SquaredMatrix}}
+\index{SquaredMatrix@{SquaredMatrix}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{SquaredMatrix()}{SquaredMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Squared\+Matrix\+::\+Squared\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct from size. Matrix and augmentation will be filled with zeros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Size of matrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_squared_matrix_ac01622b66f33873deadfdb2b1f547420}\label{class_squared_matrix_ac01622b66f33873deadfdb2b1f547420}} 
+\index{SquaredMatrix@{SquaredMatrix}!SquaredMatrix@{SquaredMatrix}}
+\index{SquaredMatrix@{SquaredMatrix}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{SquaredMatrix()}{SquaredMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Squared\+Matrix\+::\+Squared\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_squared_matrix_a518d41fca446f5e42848cfdd2ce24967}{Matrix}} \&}]{matrix,  }\item[{const \mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Row}} \&}]{augmentation = {\ttfamily \mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Row}}()} }\end{DoxyParamCaption})}
+
+
+
+Constructor that initializes all elements in matrix and its augmentation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Matrix \\
+\hline
+{\em augmentation} & Augmentation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_squared_matrix_a219d0db15cbea63b70a3ba13a44db511}\label{class_squared_matrix_a219d0db15cbea63b70a3ba13a44db511}} 
+\index{SquaredMatrix@{SquaredMatrix}!SquaredMatrix@{SquaredMatrix}}
+\index{SquaredMatrix@{SquaredMatrix}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{SquaredMatrix()}{SquaredMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Squared\+Matrix\+::\+Squared\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}
+
+Default constructor. Here is the caller graph for this function\+:
+% FIG 1
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_squared_matrix_a6c66ae850a8a51433d65105508afb502}\label{class_squared_matrix_a6c66ae850a8a51433d65105508afb502}} 
+\index{SquaredMatrix@{SquaredMatrix}!begin@{begin}}
+\index{begin@{begin}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily Squared\+Matrix\+::\+Matrix\+::const\+\_\+iterator Squared\+Matrix\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return iterator to the beginning of rows. 
+
+\begin{DoxyReturn}{Returns}
+Iterator to first row 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_squared_matrix_a6d4fe3e49e94cb43615dbc2af4490575}\label{class_squared_matrix_a6d4fe3e49e94cb43615dbc2af4490575}} 
+\index{SquaredMatrix@{SquaredMatrix}!end@{end}}
+\index{end@{end}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily Squared\+Matrix\+::\+Matrix\+::const\+\_\+iterator Squared\+Matrix\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return iterator to the end of rows. 
+
+\begin{DoxyReturn}{Returns}
+Iterator to end of rows 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_squared_matrix_a681af005cf514394b175d5ab7c447f95}\label{class_squared_matrix_a681af005cf514394b175d5ab7c447f95}} 
+\index{SquaredMatrix@{SquaredMatrix}!GetAugmentation@{GetAugmentation}}
+\index{GetAugmentation@{GetAugmentation}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{GetAugmentation()}{GetAugmentation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Squared\+Matrix\+::\+Column}} \& Squared\+Matrix\+::\+Get\+Augmentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get matrix augmentation. 
+
+\begin{DoxyReturn}{Returns}
+augmentation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_squared_matrix_a8d3eb0282711d4f2cdc89869362e658b}\label{class_squared_matrix_a8d3eb0282711d4f2cdc89869362e658b}} 
+\index{SquaredMatrix@{SquaredMatrix}!GetAugmentation@{GetAugmentation}}
+\index{GetAugmentation@{GetAugmentation}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{GetAugmentation()}{GetAugmentation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Squared\+Matrix\+::\+Column}} \& Squared\+Matrix\+::\+Get\+Augmentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get matrix augmentation. 
+
+\begin{DoxyReturn}{Returns}
+augmentation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_squared_matrix_a7f6c086b732f25b59d4547ef1e8d9d26}\label{class_squared_matrix_a7f6c086b732f25b59d4547ef1e8d9d26}} 
+\index{SquaredMatrix@{SquaredMatrix}!GetDeterminant@{GetDeterminant}}
+\index{GetDeterminant@{GetDeterminant}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{GetDeterminant()}{GetDeterminant()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_matrix_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} Squared\+Matrix\+::\+Get\+Determinant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Calculates determinant. 
+
+\begin{DoxyReturn}{Returns}
+Determinant 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_squared_matrix_a4137a2d278b3cb7fc9c8489c8d2a5393}\label{class_squared_matrix_a4137a2d278b3cb7fc9c8489c8d2a5393}} 
+\index{SquaredMatrix@{SquaredMatrix}!GetInverse@{GetInverse}}
+\index{GetInverse@{GetInverse}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{GetInverse()}{GetInverse()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{class_squared_matrix}{Squared\+Matrix}} $>$ Squared\+Matrix\+::\+Get\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Finds inversion of matrix. 
+
+\begin{DoxyReturn}{Returns}
+Inverse matrix if it exists, otherwise std\+::nullopt. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_squared_matrix_ab58d532003c502cceab2a77bb1703723}\label{class_squared_matrix_ab58d532003c502cceab2a77bb1703723}} 
+\index{SquaredMatrix@{SquaredMatrix}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{GetSize()}{GetSize()}}
+{\footnotesize\ttfamily size\+\_\+t Squared\+Matrix\+::\+Get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get size of matrix. 
+
+\begin{DoxyReturn}{Returns}
+size of matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_squared_matrix_aecc105efa6ff85b4941df3a4a3124606}\label{class_squared_matrix_aecc105efa6ff85b4941df3a4a3124606}} 
+\index{SquaredMatrix@{SquaredMatrix}!GetSolution@{GetSolution}}
+\index{GetSolution@{GetSolution}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{GetSolution()}{GetSolution()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Squared\+Matrix\+::\+Column}} $>$ Squared\+Matrix\+::\+Get\+Solution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Find solution of linear equations. 
+
+\begin{DoxyReturn}{Returns}
+Vector of solutions 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_squared_matrix_af9817d6a29940711f2e447e4d08846aa}\label{class_squared_matrix_af9817d6a29940711f2e447e4d08846aa}} 
+\index{SquaredMatrix@{SquaredMatrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_squared_matrix}{Squared\+Matrix}} Squared\+Matrix\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_squared_matrix}{Squared\+Matrix}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Multiplies this matrix on another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New matrix equals to result of multiplication 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_squared_matrix_a9a3a1db8d9f0f2c76fb017ab2683997b}\label{class_squared_matrix_a9a3a1db8d9f0f2c76fb017ab2683997b}} 
+\index{SquaredMatrix@{SquaredMatrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{_matrix_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} $>$ Squared\+Matrix\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{_matrix_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}} $>$ \&}]{vector }\end{DoxyParamCaption}) const}
+
+
+
+Multiplies this matrix on vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & Vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector equals to result of multiplication 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_squared_matrix_a8b616a0bb6465315f8d347ada4f652c1}\label{class_squared_matrix_a8b616a0bb6465315f8d347ada4f652c1}} 
+\index{SquaredMatrix@{SquaredMatrix}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_squared_matrix}{Squared\+Matrix}} \& Squared\+Matrix\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_squared_matrix}{Squared\+Matrix}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Multiplies this matrix on another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_squared_matrix_a007c510de954eec9aa7b92366f6bd6ff}\label{class_squared_matrix_a007c510de954eec9aa7b92366f6bd6ff}} 
+\index{SquaredMatrix@{SquaredMatrix}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Squared\+Matrix\+::\+Row}} \& Squared\+Matrix\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row }\end{DoxyParamCaption})}
+
+
+
+operator to get row of matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Row of matrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_squared_matrix_a264b7d43024d80995edefce5f63a3ab1}\label{class_squared_matrix_a264b7d43024d80995edefce5f63a3ab1}} 
+\index{SquaredMatrix@{SquaredMatrix}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_squared_matrix_a6a196563be91f65013e044a19965822c}{Squared\+Matrix\+::\+Row}} \& Squared\+Matrix\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row }\end{DoxyParamCaption}) const}
+
+
+
+operator to get row of matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Row of matrix \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_squared_matrix_a6e596bf11695594db44edc681fcb58b7}\label{class_squared_matrix_a6e596bf11695594db44edc681fcb58b7}} 
+\index{SquaredMatrix@{SquaredMatrix}!augmentation\_@{augmentation\_}}
+\index{augmentation\_@{augmentation\_}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{augmentation\_}{augmentation\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_squared_matrix_a57e673c83f14455833af91332d40c6af}{Column}} Squared\+Matrix\+::augmentation\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_squared_matrix_a65428f404fdb5d1837a30239129aec1f}\label{class_squared_matrix_a65428f404fdb5d1837a30239129aec1f}} 
+\index{SquaredMatrix@{SquaredMatrix}!kEpsilon@{kEpsilon}}
+\index{kEpsilon@{kEpsilon}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{kEpsilon}{kEpsilon}}
+{\footnotesize\ttfamily const long double Squared\+Matrix\+::k\+Epsilon = 1e-\/12L\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_squared_matrix_a6760e4f582354295f1cd7ce517ad4828}\label{class_squared_matrix_a6760e4f582354295f1cd7ce517ad4828}} 
+\index{SquaredMatrix@{SquaredMatrix}!matrix\_@{matrix\_}}
+\index{matrix\_@{matrix\_}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{matrix\_}{matrix\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_squared_matrix_a518d41fca446f5e42848cfdd2ce24967}{Matrix}} Squared\+Matrix\+::matrix\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Member data. \mbox{\Hypertarget{class_squared_matrix_a1bb12326cc5e9b25b3e231842955eb3a}\label{class_squared_matrix_a1bb12326cc5e9b25b3e231842955eb3a}} 
+\index{SquaredMatrix@{SquaredMatrix}!size\_@{size\_}}
+\index{size\_@{size\_}!SquaredMatrix@{SquaredMatrix}}
+\doxysubsubsection{\texorpdfstring{size\_}{size\_}}
+{\footnotesize\ttfamily size\+\_\+t Squared\+Matrix\+::size\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/\mbox{\hyperlink{_matrix_8h}{Matrix.\+h}}\item 
+Homo\+Gebra/\mbox{\hyperlink{_matrix_8cpp}{Matrix.\+cpp}}\end{DoxyCompactItemize}

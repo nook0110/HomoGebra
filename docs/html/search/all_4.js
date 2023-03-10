@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['end_0',['end',['../class_transformation_matrix.html#af5104b85c5ddb58382a3584e710cabec',1,'TransformationMatrix']]],
+  ['end_0',['end',['../class_transformation_matrix.html#af5104b85c5ddb58382a3584e710cabec',1,'TransformationMatrix::end()'],['../class_squared_matrix.html#a6d4fe3e49e94cb43615dbc2af4490575',1,'SquaredMatrix::end()']]],
   ['equation_1',['Equation',['../struct_equation.html',1,'']]],
   ['equation_2',['equation',['../struct_point_equation.html#a62701fa1745d2f59aadd72c06b04a2e6',1,'PointEquation::equation()'],['../struct_line_equation.html#a56ed56fa0030fc476877b225210358e8',1,'LineEquation::equation()']]],
   ['equation_2ecpp_3',['Equation.cpp',['../_equation_8cpp.html',1,'']]],

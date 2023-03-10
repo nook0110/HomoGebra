@@ -11,19 +11,14 @@ Class that constructs lines.
 
 
 
-Collaboration diagram for Line\+Factory\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_line_factory__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for Line\+Factory\+:
+% FIG 0
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_line_factory_aed7a9a4ac381d2079f198eaafeddb5cb}{Line\+Factory}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane)
 \begin{DoxyCompactList}\small\item\em Construct a factory from the plane. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_line}{Line}} \& \mbox{\hyperlink{class_line_factory_a4b8ff5a7161f92d65fe2f53b08faeae3}{By\+Two\+Points}} (const \mbox{\hyperlink{class_point}{Point}} \&first, const \mbox{\hyperlink{class_point}{Point}} \&second)
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_line}{Line}} $>$ \mbox{\hyperlink{class_line_factory_a38962a0480a1a572753177ceab581e76}{By\+Two\+Points}} (const \mbox{\hyperlink{class_point}{Point}} \&first, const \mbox{\hyperlink{class_point}{Point}} \&second)
 \begin{DoxyCompactList}\small\item\em Constructs line through two given points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -68,11 +63,11 @@ Construct a factory from the plane.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_line_factory_a4b8ff5a7161f92d65fe2f53b08faeae3}\label{class_line_factory_a4b8ff5a7161f92d65fe2f53b08faeae3}} 
+\mbox{\Hypertarget{class_line_factory_a38962a0480a1a572753177ceab581e76}\label{class_line_factory_a38962a0480a1a572753177ceab581e76}} 
 \index{LineFactory@{LineFactory}!ByTwoPoints@{ByTwoPoints}}
 \index{ByTwoPoints@{ByTwoPoints}!LineFactory@{LineFactory}}
 \doxysubsubsection{\texorpdfstring{ByTwoPoints()}{ByTwoPoints()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_line}{Line}} \& Line\+Factory\+::\+By\+Two\+Points (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{first,  }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{second }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_line}{Line}} $>$ Line\+Factory\+::\+By\+Two\+Points (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{first,  }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{second }\end{DoxyParamCaption})}
 
 
 
@@ -86,8 +81,10 @@ Constructs line through two given points.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Reference to a constructed line. 
+Pointer to a constructed line. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 1
 
 
 \doxysubsection{Member Data Documentation}
@@ -103,6 +100,7 @@ Reference to a constructed line.
 
 Member data. 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Homo\+Gebra/\mbox{\hyperlink{_geometric_object_factory_8h}{Geometric\+Object\+Factory.\+h}}\end{DoxyCompactItemize}
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_factory_8h}{Geometric\+Object\+Factory.\+h}}\item 
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_factory_8cpp}{Geometric\+Object\+Factory.\+cpp}}\end{DoxyCompactItemize}

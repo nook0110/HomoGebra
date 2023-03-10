@@ -1,0 +1,11 @@
+digraph "ConstructionLine::SetEquation"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.9];
+  rankdir="RL";
+  Node1 [label="ConstructionLine::SetEquation",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Set equation of line."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="ConstructionLine::Update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_construction_line.html#a6e1a0d334433fd5ec9fa5921e86e5f8d",tooltip="Update object because sth moved."];
+}

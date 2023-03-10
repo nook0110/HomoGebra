@@ -1,0 +1,86 @@
+\hypertarget{_construction_8h_source}{}\doxysection{Construction.\+h}
+\label{_construction_8h_source}\index{HomoGebra/Construction.h@{HomoGebra/Construction.h}}
+\mbox{\hyperlink{_construction_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_geometric_object_8h}{GeometricObject.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_week_construction}{WeekConstruction}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_transformation}{Transformation}}\&\ \mbox{\hyperlink{class_week_construction_afa0fb1ca03d59f681c7b99f50d82b4d8}{GetTransformation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \mbox{\hyperlink{class_transformation}{Transformation}}\ \mbox{\hyperlink{class_week_construction_a4a8863dbf04315e646101689a916131e}{tranformation\_}};}
+\DoxyCodeLine{00012\ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_strong_construction}{StrongConstruction}}}
+\DoxyCodeLine{00015\ \{\};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_construction}{Construction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_construction_observer}{ConstructionObserver}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{class_construction_ac63219c567e828fcee36eddd4af9e46b}{Construction}}()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{class_construction_ae4966d1b922fae8b24038ba42d0e86d6}{\string~Construction}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_construction_point}{ConstructionPoint}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_construction}{Construction}}}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{class_construction_point_aa4c1868ef442bcad98adf494d3f17678}{ConstructionPoint}}()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{class_construction_point_aab10fae305c5d9cc2d5f13d44859d6bb}{\string~ConstructionPoint}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_point_equation}{PointEquation}}\ \mbox{\hyperlink{class_construction_point_a83ee0b44834b4ef52821224b6c92b5a5}{RecalculateEquation}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_construction_point_a33ad8fe12e9cc94bd3672de54479c41e}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_event_1_1_moved}{Event::Moved}}\&)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_construction_point_a33ad8fe12e9cc94bd3672de54479c41e}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_event_1_1_destroyed}{Event::Destroyed}}\&)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00091\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point_equation}{PointEquation}}\&\ \mbox{\hyperlink{class_construction_point_a2c01aefc0f452ef9a54472b651ae5b9d}{GetEquation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_construction_point_ac41cd3bf9089b5b2172e7e51c729cd96}{SetEquation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point_equation}{PointEquation}}\&\ equation);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00108\ \ \ std::shared\_ptr<Point>\ \mbox{\hyperlink{class_construction_point_ac3273ea405ba41c15ce8e587f57dbd09}{point\_}};\ }
+\DoxyCodeLine{00109\ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_construction_on_plane}{ConstructionOnPlane}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_construction_point}{ConstructionPoint}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_strong_construction}{StrongConstruction}}}
+\DoxyCodeLine{00123\ \{}
+\DoxyCodeLine{00124\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00125\ \ \ \mbox{\hyperlink{class_construction_on_plane_a82a32f95d6c0efb702d7bb19ff444bf0}{\string~ConstructionOnPlane}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00132\ \ \ [[nodiscard]]\ \mbox{\hyperlink{struct_point_equation}{PointEquation}}\ \mbox{\hyperlink{class_construction_on_plane_a04ef2106058f09fb32d08c16779b48ef}{RecalculateEquation}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_construction_from_two_lines}{ConstructionFromTwoLines}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_construction_point}{ConstructionPoint}}}
+\DoxyCodeLine{00136\ \{\};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_construction_line}{ConstructionLine}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_construction}{Construction}}}
+\DoxyCodeLine{00139\ \{}
+\DoxyCodeLine{00140\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{class_construction_line_abc5408b233c50289d122b8eb925b9d70}{ConstructionLine}}()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00149\ \ \ \mbox{\hyperlink{class_construction_line_a4008615e14155b4b606920dd50d94e9a}{\string~ConstructionLine}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00156\ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_line_equation}{LineEquation}}\ \mbox{\hyperlink{class_construction_line_ae78c62f2179b6a824bd842ca929c39b7}{RecalculateEquation}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00163\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_construction_line_a6e1a0d334433fd5ec9fa5921e86e5f8d}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_event_1_1_moved}{Event::Moved}}\&)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00170\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_construction_line_a6e1a0d334433fd5ec9fa5921e86e5f8d}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_event_1_1_destroyed}{Event::Destroyed}}\&)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00171\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00177\ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_line_equation}{LineEquation}}\&\ \mbox{\hyperlink{class_construction_line_afa48482c9fc94d9229c825da577175fb}{GetEquation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00184\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_construction_line_ab029d75f768d7e9d0facc0c5d2197ebf}{SetEquation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_line_equation}{LineEquation}}\&\ equation);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00187\ \ \ std::shared\_ptr<Line>\ \mbox{\hyperlink{class_construction_line_a82c096015a642402e4a394e4502da39c}{line\_}};\ }
+\DoxyCodeLine{00188\ \};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_construction_conic}{ConstructionConic}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_construction}{Construction}}}
+\DoxyCodeLine{00191\ \{\};}
+
+\end{DoxyCode}

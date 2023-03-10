@@ -1,0 +1,11 @@
+digraph "SquaredMatrix::GetSolution"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.9];
+  rankdir="RL";
+  Node1 [label="SquaredMatrix::GetSolution",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Find solution of linear equations."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Transformation::Transformation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transformation.html#a5b23f62e7697c24191cbadede00b875a",tooltip="Construct transformation from movement of 4 points."];
+}

@@ -1,0 +1,10 @@
+digraph "ObservableGeometricObject"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.9];
+  Node1 [shape=record,label="{ObservableGeometricObject\n||+ ~ObservableGeometricObject()\l+ Attach()\l+ Detach()\l+ Notify()\l+ Notify()\l}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Makes GeometricObjectImplementation observable."];
+  Node2 -> Node1 [color="grey25",style="solid",label=" -observers_" ,arrowhead="odiamond"];
+  Node2 [shape=record,label="{list\< std::shared_ptr\l\< ConstructionObserver \> \>\n||}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+}

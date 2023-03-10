@@ -1,0 +1,11 @@
+digraph "Line::Notify"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.9];
+  rankdir="RL";
+  Node1 [label="Line::Notify",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Notify observers that this objected is destroyed."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Line::Destroy",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_line.html#ad28541e8af01f2b9559910e5599d7321",tooltip="Destroy this object."];
+}

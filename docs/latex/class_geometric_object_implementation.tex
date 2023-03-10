@@ -11,43 +11,29 @@ Base class for implementations of geometric objects.
 
 
 
-Inheritance diagram for Geometric\+Object\+Implementation\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_geometric_object_implementation__inherit__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for Geometric\+Object\+Implementation\+:
+% FIG 0
 
 
-Collaboration diagram for Geometric\+Object\+Implementation\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=257pt]{class_geometric_object_implementation__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for Geometric\+Object\+Implementation\+:
+% FIG 1
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometric_object_implementation_a353ebc23cbfa1f5226b8520e2d77bf94}{$\sim$\+Geometric\+Object\+Implementation}} () override
+\mbox{\hyperlink{class_geometric_object_implementation_ac88fa84f2272d2110350b04756f12add}{$\sim$\+Geometric\+Object\+Implementation}} () override=default
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable_geometric_object}{Observable\+Geometric\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{class_observable_geometric_object_ad27598f56baa57327f83ba98f2105ea8}{$\sim$\+Observable\+Geometric\+Object}} ()=default
 \item 
-void \mbox{\hyperlink{class_observable_geometric_object_afefebecdc84813461680d9487ae33983}{Attach}} (std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} $>$ observer)
+void \mbox{\hyperlink{class_observable_geometric_object_a7bcc0b90e5030f9ca0a8c5a8bd8b59ba}{Attach}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} $>$ \&observer)
 \begin{DoxyCompactList}\small\item\em Subscribe an observer on this object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_observable_geometric_object_aab93df41a73b15ccc6bc0b36204ab810}{Detach}} (const \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}} $\ast$observer)
-\begin{DoxyCompactList}\small\item\em Unsubscribe an observer on this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
-\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_observable_geometric_object}{Observable\+Geometric\+Object}}}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{class_observable_geometric_object_aa983a428c8218f4c2ce81323b8d0f053}{Notify}} (\mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}}) const
+\begin{DoxyCompactList}\small\item\em Unsubscribe an observer on this object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_geometric_object_a15d865c4eb09e61691db40d1ff103f13}{Notify}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&) const
 \begin{DoxyCompactList}\small\item\em Notify all subscribed observers that object was moved. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_observable_geometric_object_a0a013fe0b293dc7fc8d28525c7f62cfd}{Notify}} (\mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}}) const
+void \mbox{\hyperlink{class_observable_geometric_object_a529db68c912a248a82f6398a886185cf}{Notify}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&) const
 \begin{DoxyCompactList}\small\item\em Notify all subscribed observers that object was destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -73,11 +59,11 @@ February 2023
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometric_object_implementation_a353ebc23cbfa1f5226b8520e2d77bf94}\label{class_geometric_object_implementation_a353ebc23cbfa1f5226b8520e2d77bf94}} 
+\mbox{\Hypertarget{class_geometric_object_implementation_ac88fa84f2272d2110350b04756f12add}\label{class_geometric_object_implementation_ac88fa84f2272d2110350b04756f12add}} 
 \index{GeometricObjectImplementation@{GeometricObjectImplementation}!````~GeometricObjectImplementation@{$\sim$GeometricObjectImplementation}}
 \index{````~GeometricObjectImplementation@{$\sim$GeometricObjectImplementation}!GeometricObjectImplementation@{GeometricObjectImplementation}}
 \doxysubsubsection{\texorpdfstring{$\sim$GeometricObjectImplementation()}{~GeometricObjectImplementation()}}
-{\footnotesize\ttfamily Geometric\+Object\+Implementation\+::$\sim$\+Geometric\+Object\+Implementation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+{\footnotesize\ttfamily Geometric\+Object\+Implementation\+::$\sim$\+Geometric\+Object\+Implementation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
 
 
 
@@ -85,7 +71,6 @@ Destructor.
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Homo\+Gebra/\mbox{\hyperlink{_geometric_object_implementation_8h}{Geometric\+Object\+Implementation.\+h}}\item 
-Homo\+Gebra/\mbox{\hyperlink{_geometric_object_implementation_8cpp}{Geometric\+Object\+Implementation.\+cpp}}\end{DoxyCompactItemize}
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_implementation_8h}{Geometric\+Object\+Implementation.\+h}}\end{DoxyCompactItemize}

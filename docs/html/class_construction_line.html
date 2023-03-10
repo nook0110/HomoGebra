@@ -81,13 +81,14 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_construction_line-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ConstructionLine Class Reference</div></div>
+  <div class="headertitle"><div class="title">ConstructionLine Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="_geometric_object_implementation_8h_source.html">GeometricObjectImplementation.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_construction_8h_source.html">Construction.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ConstructionLine:</div>
 <div class="dyncontent">
@@ -120,24 +121,209 @@ Collaboration diagram for ConstructionLine:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aefc6d7066e12b9f4ceb616c8f1a64bff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_line.html#aefc6d7066e12b9f4ceb616c8f1a64bff">Update</a> (<a class="el" href="struct_event_1_1_moved.html">Event::Moved</a>) const override</td></tr>
-<tr class="separator:aefc6d7066e12b9f4ceb616c8f1a64bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc5408b233c50289d122b8eb925b9d70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_line.html#abc5408b233c50289d122b8eb925b9d70">ConstructionLine</a> ()=delete</td></tr>
+<tr class="memdesc:abc5408b233c50289d122b8eb925b9d70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor deleted.  <br /></td></tr>
+<tr class="separator:abc5408b233c50289d122b8eb925b9d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4008615e14155b4b606920dd50d94e9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_line.html#a4008615e14155b4b606920dd50d94e9a">~ConstructionLine</a> () override=default</td></tr>
+<tr class="memdesc:a4008615e14155b4b606920dd50d94e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
+<tr class="separator:a4008615e14155b4b606920dd50d94e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae78c62f2179b6a824bd842ca929c39b7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_line_equation.html">LineEquation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_line.html#ae78c62f2179b6a824bd842ca929c39b7">RecalculateEquation</a> () const =0</td></tr>
+<tr class="separator:ae78c62f2179b6a824bd842ca929c39b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1a0d334433fd5ec9fa5921e86e5f8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_line.html#a6e1a0d334433fd5ec9fa5921e86e5f8d">Update</a> (const <a class="el" href="struct_event_1_1_moved.html">Event::Moved</a> &amp;) override</td></tr>
+<tr class="memdesc:a6e1a0d334433fd5ec9fa5921e86e5f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update object because sth moved.  <br /></td></tr>
+<tr class="separator:a6e1a0d334433fd5ec9fa5921e86e5f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc8544b25aa140a73f50a10faee6dc6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_line.html#abc8544b25aa140a73f50a10faee6dc6a">Update</a> (const <a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a> &amp;) override</td></tr>
+<tr class="memdesc:abc8544b25aa140a73f50a10faee6dc6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update object because sth destroyed.  <br /></td></tr>
+<tr class="separator:abc8544b25aa140a73f50a10faee6dc6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_construction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_construction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_construction.html">Construction</a></td></tr>
+<tr class="memitem:ac63219c567e828fcee36eddd4af9e46b inherit pub_methods_class_construction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction.html#ac63219c567e828fcee36eddd4af9e46b">Construction</a> ()=delete</td></tr>
+<tr class="memdesc:ac63219c567e828fcee36eddd4af9e46b inherit pub_methods_class_construction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor deleted.  <br /></td></tr>
+<tr class="separator:ac63219c567e828fcee36eddd4af9e46b inherit pub_methods_class_construction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4966d1b922fae8b24038ba42d0e86d6 inherit pub_methods_class_construction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction.html#ae4966d1b922fae8b24038ba42d0e86d6">~Construction</a> () override=default</td></tr>
+<tr class="memdesc:ae4966d1b922fae8b24038ba42d0e86d6 inherit pub_methods_class_construction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
+<tr class="separator:ae4966d1b922fae8b24038ba42d0e86d6 inherit pub_methods_class_construction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_construction_observer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_construction_observer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_construction_observer.html">ConstructionObserver</a></td></tr>
 <tr class="memitem:a62066e9c4c31c48b38cb241876484a41 inherit pub_methods_class_construction_observer"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_observer.html#a62066e9c4c31c48b38cb241876484a41">~ConstructionObserver</a> ()=default</td></tr>
 <tr class="separator:a62066e9c4c31c48b38cb241876484a41 inherit pub_methods_class_construction_observer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45e9a8ab6c2e95e2aa70a27643989a8d inherit pub_methods_class_construction_observer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_observer.html#a45e9a8ab6c2e95e2aa70a27643989a8d">Update</a> (<a class="el" href="struct_event_1_1_moved.html">Event::Moved</a>) const =0</td></tr>
-<tr class="separator:a45e9a8ab6c2e95e2aa70a27643989a8d inherit pub_methods_class_construction_observer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34d1f6d4b70d23f677098516b7521baf inherit pub_methods_class_construction_observer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_observer.html#a34d1f6d4b70d23f677098516b7521baf">Update</a> (<a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a>) const =0</td></tr>
-<tr class="separator:a34d1f6d4b70d23f677098516b7521baf inherit pub_methods_class_construction_observer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd50f4b74924a72462d4223414ae09b3 inherit pub_methods_class_construction_observer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_observer.html#afd50f4b74924a72462d4223414ae09b3">Update</a> (const <a class="el" href="struct_event_1_1_moved.html">Event::Moved</a> &amp;)=0</td></tr>
+<tr class="memdesc:afd50f4b74924a72462d4223414ae09b3 inherit pub_methods_class_construction_observer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the object, because sth moved.  <br /></td></tr>
+<tr class="separator:afd50f4b74924a72462d4223414ae09b3 inherit pub_methods_class_construction_observer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d2a6d8d53815568273ddb74dee26de inherit pub_methods_class_construction_observer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_observer.html#a88d2a6d8d53815568273ddb74dee26de">Update</a> (const <a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a> &amp;)=0</td></tr>
+<tr class="memdesc:a88d2a6d8d53815568273ddb74dee26de inherit pub_methods_class_construction_observer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the object, because sth was destroyed.  <br /></td></tr>
+<tr class="separator:a88d2a6d8d53815568273ddb74dee26de inherit pub_methods_class_construction_observer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:afa48482c9fc94d9229c825da577175fb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_line_equation.html">LineEquation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_line.html#afa48482c9fc94d9229c825da577175fb">GetEquation</a> () const</td></tr>
+<tr class="memdesc:afa48482c9fc94d9229c825da577175fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get equation of line.  <br /></td></tr>
+<tr class="separator:afa48482c9fc94d9229c825da577175fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab029d75f768d7e9d0facc0c5d2197ebf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_line.html#ab029d75f768d7e9d0facc0c5d2197ebf">SetEquation</a> (const <a class="el" href="struct_line_equation.html">LineEquation</a> &amp;equation)</td></tr>
+<tr class="memdesc:ab029d75f768d7e9d0facc0c5d2197ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set equation of line.  <br /></td></tr>
+<tr class="separator:ab029d75f768d7e9d0facc0c5d2197ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a2377c046c614a5d202e42f6a949a7d75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_line_implementation.html">LineImplementation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_line.html#a2377c046c614a5d202e42f6a949a7d75">object</a></td></tr>
-<tr class="separator:a2377c046c614a5d202e42f6a949a7d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c096015a642402e4a394e4502da39c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_line.html">Line</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_line.html#a82c096015a642402e4a394e4502da39c">line_</a></td></tr>
+<tr class="memdesc:a82c096015a642402e4a394e4502da39c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_line.html" title="Line on a plane.">Line</a>, which is created.  <br /></td></tr>
+<tr class="separator:a82c096015a642402e4a394e4502da39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="abc5408b233c50289d122b8eb925b9d70" name="abc5408b233c50289d122b8eb925b9d70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc5408b233c50289d122b8eb925b9d70">&#9670;&#160;</a></span>ConstructionLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConstructionLine::ConstructionLine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor deleted. </p>
+
+</div>
+</div>
+<a id="a4008615e14155b4b606920dd50d94e9a" name="a4008615e14155b4b606920dd50d94e9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4008615e14155b4b606920dd50d94e9a">&#9670;&#160;</a></span>~ConstructionLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConstructionLine::~ConstructionLine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default destructor. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aefc6d7066e12b9f4ceb616c8f1a64bff" name="aefc6d7066e12b9f4ceb616c8f1a64bff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefc6d7066e12b9f4ceb616c8f1a64bff">&#9670;&#160;</a></span>Update()</h2>
+<a id="afa48482c9fc94d9229c825da577175fb" name="afa48482c9fc94d9229c825da577175fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa48482c9fc94d9229c825da577175fb">&#9670;&#160;</a></span>GetEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_line_equation.html">LineEquation</a> &amp; ConstructionLine::GetEquation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get equation of line. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of line. </dd></dl>
+
+</div>
+</div>
+<a id="ae78c62f2179b6a824bd842ca929c39b7" name="ae78c62f2179b6a824bd842ca929c39b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae78c62f2179b6a824bd842ca929c39b7">&#9670;&#160;</a></span>RecalculateEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="struct_line_equation.html">LineEquation</a> ConstructionLine::RecalculateEquation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Recalculate equation of point.</p>
+<dl class="section return"><dt>Returns</dt><dd>New equation of point. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_construction_line_ae78c62f2179b6a824bd842ca929c39b7_icgraph.png" border="0" usemap="#aclass_construction_line_ae78c62f2179b6a824bd842ca929c39b7_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ab029d75f768d7e9d0facc0c5d2197ebf" name="ab029d75f768d7e9d0facc0c5d2197ebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab029d75f768d7e9d0facc0c5d2197ebf">&#9670;&#160;</a></span>SetEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConstructionLine::SetEquation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_line_equation.html">LineEquation</a> &amp;&#160;</td>
+          <td class="paramname"><em>equation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set equation of line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">equation</td><td><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_construction_line_ab029d75f768d7e9d0facc0c5d2197ebf_icgraph.png" border="0" usemap="#aclass_construction_line_ab029d75f768d7e9d0facc0c5d2197ebf_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="abc8544b25aa140a73f50a10faee6dc6a" name="abc8544b25aa140a73f50a10faee6dc6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc8544b25aa140a73f50a10faee6dc6a">&#9670;&#160;</a></span>Update() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,9 +334,9 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void ConstructionLine::Update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_event_1_1_moved.html">Event::Moved</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const <a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a> &amp;&#160;</td>
+          <td class="paramname"><em>destroyed</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -160,13 +346,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_construction_observer.html#a45e9a8ab6c2e95e2aa70a27643989a8d">ConstructionObserver</a>.</p>
+<p>Update object because sth destroyed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Tag</td><td>for tag dispatch </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_construction_observer.html#a88d2a6d8d53815568273ddb74dee26de">ConstructionObserver</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a2377c046c614a5d202e42f6a949a7d75" name="a2377c046c614a5d202e42f6a949a7d75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2377c046c614a5d202e42f6a949a7d75">&#9670;&#160;</a></span>object</h2>
+<a id="a6e1a0d334433fd5ec9fa5921e86e5f8d" name="a6e1a0d334433fd5ec9fa5921e86e5f8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e1a0d334433fd5ec9fa5921e86e5f8d">&#9670;&#160;</a></span>Update() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,7 +368,49 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_line_implementation.html">LineImplementation</a>&amp; ConstructionLine::object</td>
+          <td class="memname">void ConstructionLine::Update </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_event_1_1_moved.html">Event::Moved</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update object because sth moved. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Tag</td><td>for tag dispatch </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_construction_observer.html#afd50f4b74924a72462d4223414ae09b3">ConstructionObserver</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_construction_line_a6e1a0d334433fd5ec9fa5921e86e5f8d_cgraph.png" border="0" usemap="#aclass_construction_line_a6e1a0d334433fd5ec9fa5921e86e5f8d_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a82c096015a642402e4a394e4502da39c" name="a82c096015a642402e4a394e4502da39c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c096015a642402e4a394e4502da39c">&#9670;&#160;</a></span>line_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_line.html">Line</a>&gt; ConstructionLine::line_</td>
         </tr>
       </table>
   </td>
@@ -185,10 +420,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="class_line.html" title="Line on a plane.">Line</a>, which is created. </p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>HomoGebra/<a class="el" href="_geometric_object_implementation_8h_source.html">GeometricObjectImplementation.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>HomoGebra/<a class="el" href="_construction_8h_source.html">Construction.h</a></li>
+<li>HomoGebra/<a class="el" href="_construction_8cpp.html">Construction.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -111,7 +111,7 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa188aa955061de541799126a392a56b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation_matrix.html#aa188aa955061de541799126a392a56b0">TransformationMatrix</a> ()</td></tr>
-<tr class="memdesc:aa188aa955061de541799126a392a56b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <br /></td></tr>
+<tr class="memdesc:aa188aa955061de541799126a392a56b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. Creates identity matrix.  <br /></td></tr>
 <tr class="separator:aa188aa955061de541799126a392a56b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a930ac00a412ac2be37ab8f5fb69d6110"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation_matrix.html#a930ac00a412ac2be37ab8f5fb69d6110">TransformationMatrix</a> (const <a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a> &amp;a00, const <a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a> &amp;a01, const <a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a> &amp;a02, const <a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a> &amp;a10, const <a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a> &amp;a11, const <a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a> &amp;a12, const <a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a> &amp;a20, const <a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a> &amp;a21, const <a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a> &amp;a22)</td></tr>
 <tr class="memdesc:a930ac00a412ac2be37ab8f5fb69d6110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that initializes all elements in matrix.  <br /></td></tr>
@@ -128,10 +128,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2bd4b4d72750eab0d9e5d504bcead9ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_transformation_matrix.html">TransformationMatrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation_matrix.html#a2bd4b4d72750eab0d9e5d504bcead9ac">operator*</a> (const <a class="el" href="class_transformation_matrix.html">TransformationMatrix</a> &amp;other) const</td></tr>
 <tr class="memdesc:a2bd4b4d72750eab0d9e5d504bcead9ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies this matrix on another one.  <br /></td></tr>
 <tr class="separator:a2bd4b4d72750eab0d9e5d504bcead9ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6637d3fd00152b6f6c4fe416150d0a44"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_transformation_matrix.html#a18731619f8a92b0c490c3eafe6cda996">MatrixColumn</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation_matrix.html#a6637d3fd00152b6f6c4fe416150d0a44">operator[]</a> (size_t row) const</td></tr>
-<tr class="separator:a6637d3fd00152b6f6c4fe416150d0a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64c46bec43e44378c3fd5b6bda0a3463"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_transformation_matrix.html#a18731619f8a92b0c490c3eafe6cda996">MatrixColumn</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation_matrix.html#a64c46bec43e44378c3fd5b6bda0a3463">operator[]</a> (size_t row)</td></tr>
-<tr class="separator:a64c46bec43e44378c3fd5b6bda0a3463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f9f5613ba5f2f8a0dc8f7da865dcf8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_transformation_matrix.html#a9fb9a268aa31408e70f5874a8c795723">MatrixRow</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation_matrix.html#af7f9f5613ba5f2f8a0dc8f7da865dcf8">operator[]</a> (size_t row) const</td></tr>
+<tr class="memdesc:af7f9f5613ba5f2f8a0dc8f7da865dcf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of operator[]. Returns row of matrix.  <br /></td></tr>
+<tr class="separator:af7f9f5613ba5f2f8a0dc8f7da865dcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36276183c6d25077f663ad1a69f9234a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_transformation_matrix.html#a9fb9a268aa31408e70f5874a8c795723">MatrixRow</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation_matrix.html#a36276183c6d25077f663ad1a69f9234a">operator[]</a> (size_t row)</td></tr>
+<tr class="separator:a36276183c6d25077f663ad1a69f9234a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ad5e674edc6b7dff9da7e393a23af93"><td class="memItemLeft" align="right" valign="top">MatrixContainer::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation_matrix.html#a7ad5e674edc6b7dff9da7e393a23af93">begin</a> () const</td></tr>
 <tr class="separator:a7ad5e674edc6b7dff9da7e393a23af93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5104b85c5ddb58382a3584e710cabec"><td class="memItemLeft" align="right" valign="top">MatrixContainer::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation_matrix.html#af5104b85c5ddb58382a3584e710cabec">end</a> () const</td></tr>
@@ -144,20 +145,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a25c169ff424bbf50e72c455ac76b30f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a9fb9a268aa31408e70f5874a8c795723" name="a9fb9a268aa31408e70f5874a8c795723"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fb9a268aa31408e70f5874a8c795723">&#9670;&#160;</a></span>MatrixRow</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="class_transformation_matrix.html#a9fb9a268aa31408e70f5874a8c795723">TransformationMatrix::MatrixRow</a> =  std::array&lt;<a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a>, 3&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a18731619f8a92b0c490c3eafe6cda996" name="a18731619f8a92b0c490c3eafe6cda996"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a18731619f8a92b0c490c3eafe6cda996">&#9670;&#160;</a></span>MatrixColumn</h2>
 
@@ -186,6 +173,20 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9fb9a268aa31408e70f5874a8c795723" name="a9fb9a268aa31408e70f5874a8c795723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fb9a268aa31408e70f5874a8c795723">&#9670;&#160;</a></span>MatrixRow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_transformation_matrix.html#a9fb9a268aa31408e70f5874a8c795723">TransformationMatrix::MatrixRow</a> =  std::array&lt;<a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a>, 3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa188aa955061de541799126a392a56b0" name="aa188aa955061de541799126a392a56b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa188aa955061de541799126a392a56b0">&#9670;&#160;</a></span>TransformationMatrix() <span class="overload">[1/2]</span></h2>
@@ -202,7 +203,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Default Constructor. </p>
+<p>Default Constructor. Creates identity matrix. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -289,6 +290,86 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7ad5e674edc6b7dff9da7e393a23af93" name="a7ad5e674edc6b7dff9da7e393a23af93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ad5e674edc6b7dff9da7e393a23af93">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MatrixContainer::const_iterator TransformationMatrix::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad48777040a3716b44c5821e8c4ce602c" name="ad48777040a3716b44c5821e8c4ce602c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48777040a3716b44c5821e8c4ce602c">&#9670;&#160;</a></span>Determinant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a> TransformationMatrix::Determinant </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates determinant. </p>
+<dl class="section return"><dt>Returns</dt><dd>Determinant </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transformation_matrix_ad48777040a3716b44c5821e8c4ce602c_icgraph.png" border="0" usemap="#aclass_transformation_matrix_ad48777040a3716b44c5821e8c4ce602c_icgraph" alt=""/></div>
+<map name="aclass_transformation_matrix_ad48777040a3716b44c5821e8c4ce602c_icgraph" id="aclass_transformation_matrix_ad48777040a3716b44c5821e8c4ce602c_icgraph">
+<area shape="rect" title="Calculates determinant." alt="" coords="420,5,563,45"/>
+<area shape="rect" href="class_transformation_matrix.html#a4437f5b19df3a31e85c380c1cbeff3ee" title="Finds inversion of matrix." alt="" coords="229,5,372,45"/>
+<area shape="rect" href="class_transformation.html#ac3d5ded1acd2dfd8f61571c9da49915c" title="Calculate inverse of transformation." alt="" coords="5,13,181,38"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af5104b85c5ddb58382a3584e710cabec" name="af5104b85c5ddb58382a3584e710cabec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5104b85c5ddb58382a3584e710cabec">&#9670;&#160;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MatrixContainer::const_iterator TransformationMatrix::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a4437f5b19df3a31e85c380c1cbeff3ee" name="a4437f5b19df3a31e85c380c1cbeff3ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4437f5b19df3a31e85c380c1cbeff3ee">&#9670;&#160;</a></span>GetInverse()</h2>
 
@@ -328,33 +409,30 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ad48777040a3716b44c5821e8c4ce602c" name="ad48777040a3716b44c5821e8c4ce602c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad48777040a3716b44c5821e8c4ce602c">&#9670;&#160;</a></span>Determinant()</h2>
+<a id="a2bd4b4d72750eab0d9e5d504bcead9ac" name="a2bd4b4d72750eab0d9e5d504bcead9ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bd4b4d72750eab0d9e5d504bcead9ac">&#9670;&#160;</a></span>operator*()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_coordinate_8h.html#ab6d4e5b86f39365e36471d2129e6b620">complex</a> TransformationMatrix::Determinant </td>
+          <td class="memname"><a class="el" href="class_transformation_matrix.html">TransformationMatrix</a> TransformationMatrix::operator* </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="class_transformation_matrix.html">TransformationMatrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calculates determinant. </p>
-<dl class="section return"><dt>Returns</dt><dd>Determinant </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_transformation_matrix_ad48777040a3716b44c5821e8c4ce602c_icgraph.png" border="0" usemap="#aclass_transformation_matrix_ad48777040a3716b44c5821e8c4ce602c_icgraph" alt=""/></div>
-<map name="aclass_transformation_matrix_ad48777040a3716b44c5821e8c4ce602c_icgraph" id="aclass_transformation_matrix_ad48777040a3716b44c5821e8c4ce602c_icgraph">
-<area shape="rect" title="Calculates determinant." alt="" coords="420,5,563,45"/>
-<area shape="rect" href="class_transformation_matrix.html#a4437f5b19df3a31e85c380c1cbeff3ee" title="Finds inversion of matrix." alt="" coords="229,5,372,45"/>
-<area shape="rect" href="class_transformation.html#ac3d5ded1acd2dfd8f61571c9da49915c" title="Calculate inverse of transformation." alt="" coords="5,13,181,38"/>
-</map>
-</div>
+<p>Multiplies this matrix on another one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New matrix equals to result of multiplication </dd></dl>
 
 </div>
 </div>
@@ -385,35 +463,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a2bd4b4d72750eab0d9e5d504bcead9ac" name="a2bd4b4d72750eab0d9e5d504bcead9ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bd4b4d72750eab0d9e5d504bcead9ac">&#9670;&#160;</a></span>operator*()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_transformation_matrix.html">TransformationMatrix</a> TransformationMatrix::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_transformation_matrix.html">TransformationMatrix</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Multiplies this matrix on another one. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>Another matrix </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>New matrix equals to result of multiplication </dd></dl>
-
-</div>
-</div>
-<a id="a6637d3fd00152b6f6c4fe416150d0a44" name="a6637d3fd00152b6f6c4fe416150d0a44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6637d3fd00152b6f6c4fe416150d0a44">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+<a id="a36276183c6d25077f663ad1a69f9234a" name="a36276183c6d25077f663ad1a69f9234a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36276183c6d25077f663ad1a69f9234a">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,33 +473,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_transformation_matrix.html#a18731619f8a92b0c490c3eafe6cda996">MatrixColumn</a> &amp; TransformationMatrix::operator[] </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>row</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a64c46bec43e44378c3fd5b6bda0a3463" name="a64c46bec43e44378c3fd5b6bda0a3463"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64c46bec43e44378c3fd5b6bda0a3463">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_transformation_matrix.html#a18731619f8a92b0c490c3eafe6cda996">MatrixColumn</a> &amp; TransformationMatrix::operator[] </td>
+          <td class="memname"><a class="el" href="class_transformation_matrix.html#a9fb9a268aa31408e70f5874a8c795723">MatrixRow</a> &amp; TransformationMatrix::operator[] </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>row</em></td><td>)</td>
@@ -464,8 +489,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a7ad5e674edc6b7dff9da7e393a23af93" name="a7ad5e674edc6b7dff9da7e393a23af93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ad5e674edc6b7dff9da7e393a23af93">&#9670;&#160;</a></span>begin()</h2>
+<a id="af7f9f5613ba5f2f8a0dc8f7da865dcf8" name="af7f9f5613ba5f2f8a0dc8f7da865dcf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f9f5613ba5f2f8a0dc8f7da865dcf8">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -474,9 +499,10 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">MatrixContainer::const_iterator TransformationMatrix::begin </td>
+          <td class="memname">const <a class="el" href="class_transformation_matrix.html#a9fb9a268aa31408e70f5874a8c795723">MatrixRow</a> &amp; TransformationMatrix::operator[] </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>row</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -487,30 +513,14 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="af5104b85c5ddb58382a3584e710cabec" name="af5104b85c5ddb58382a3584e710cabec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5104b85c5ddb58382a3584e710cabec">&#9670;&#160;</a></span>end()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">MatrixContainer::const_iterator TransformationMatrix::end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Overload of operator[]. Returns row of matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>Row of matrix</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Row of matrix </dd></dl>
 
 </div>
 </div>

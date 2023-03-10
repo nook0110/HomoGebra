@@ -11,13 +11,32 @@
 
 
 
-Collaboration diagram for Line\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_line__coll__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for Line\+:
+% FIG 0
+
+
+Collaboration diagram for Line\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_line_a8e88de43a3d868a85cfd7d39ba9e2bcb}{Line}} (const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \&equation=\mbox{\hyperlink{struct_line_equation}{Line\+Equation}}\{\})
+\begin{DoxyCompactList}\small\item\em Construct line on a plane with equation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_line_ad6c2db935145f50c3e82780ad563ec30}{$\sim$\+Line}} () final=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_line_ad28541e8af01f2b9559910e5599d7321}{Destroy}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane) final
+\begin{DoxyCompactList}\small\item\em Destroy this object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_line_a54dbeed3d17564f31a014a9c80aab279}{Notify}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&event) const
+\begin{DoxyCompactList}\small\item\em Notify observers that this objected is destroyed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_line_ad99f3e15fa5630bbe53659939f2cf78e}{Set\+Equation}} (const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \&equation)
+\begin{DoxyCompactList}\small\item\em Set new equation of line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_geometric_object_a8d7f6fe72f4f9a45de56a7ae04f955fe}{$\sim$\+Geometric\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometric_object_a76b6b40dcbd020ca773d1513fe4e5b70}{Destroy}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane)=0
+\begin{DoxyCompactList}\small\item\em Destroy this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,6 +44,12 @@ Collaboration diagram for Line\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em Body, which you can draw. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_line_implementation}{Line\+Implementation}} \mbox{\hyperlink{class_line_a5b96783588f8dddc60a868303c17ac4b}{implementation\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometric_object_a51c3b1f38bd1750a89617b77d08bb49c}{Geometric\+Object}} ()=default
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -44,6 +69,94 @@ February 2023
 
 \mbox{\hyperlink{class_line_implementation}{Line\+Implementation}} 
 \end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_line_a8e88de43a3d868a85cfd7d39ba9e2bcb}\label{class_line_a8e88de43a3d868a85cfd7d39ba9e2bcb}} 
+\index{Line@{Line}!Line@{Line}}
+\index{Line@{Line}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{Line()}{Line()}}
+{\footnotesize\ttfamily Line\+::\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \&}]{equation = {\ttfamily \mbox{\hyperlink{struct_line_equation}{Line\+Equation}}\{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct line on a plane with equation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of line \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_line_ad6c2db935145f50c3e82780ad563ec30}\label{class_line_ad6c2db935145f50c3e82780ad563ec30}} 
+\index{Line@{Line}!````~Line@{$\sim$Line}}
+\index{````~Line@{$\sim$Line}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{$\sim$Line()}{~Line()}}
+{\footnotesize\ttfamily Line\+::$\sim$\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_line_ad28541e8af01f2b9559910e5599d7321}\label{class_line_ad28541e8af01f2b9559910e5599d7321}} 
+\index{Line@{Line}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily void Line\+::\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} \&}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Destroy this object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plane} & \mbox{\hyperlink{class_plane}{Plane}}, where this object is located. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometric_object_a76b6b40dcbd020ca773d1513fe4e5b70}{Geometric\+Object}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_line_a54dbeed3d17564f31a014a9c80aab279}\label{class_line_a54dbeed3d17564f31a014a9c80aab279}} 
+\index{Line@{Line}!Notify@{Notify}}
+\index{Notify@{Notify}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily void Line\+::\+Notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&}]{event }\end{DoxyParamCaption}) const}
+
+
+
+Notify observers that this objected is destroyed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \mbox{\hyperlink{namespace_event}{Event}} \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_line_ad99f3e15fa5630bbe53659939f2cf78e}\label{class_line_ad99f3e15fa5630bbe53659939f2cf78e}} 
+\index{Line@{Line}!SetEquation@{SetEquation}}
+\index{SetEquation@{SetEquation}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{SetEquation()}{SetEquation()}}
+{\footnotesize\ttfamily void Line\+::\+Set\+Equation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \&}]{equation }\end{DoxyParamCaption})}
+
+
+
+Set new equation of line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of line \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 5
 
 
 \doxysubsection{Member Data Documentation}
@@ -69,6 +182,7 @@ Implementation.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Homo\+Gebra/\mbox{\hyperlink{_geometric_object_8h}{Geometric\+Object.\+h}}\end{DoxyCompactItemize}
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_8h}{Geometric\+Object.\+h}}\item 
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_8cpp}{Geometric\+Object.\+cpp}}\end{DoxyCompactItemize}

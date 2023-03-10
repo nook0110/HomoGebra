@@ -11,28 +11,23 @@ Struct that defines position of the line.
 
 
 
-Inheritance diagram for Line\+Equation\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=153pt]{struct_line_equation__inherit__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for Line\+Equation\+:
+% FIG 0
 
 
-Collaboration diagram for Line\+Equation\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=280pt]{struct_line_equation__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for Line\+Equation\+:
+% FIG 1
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{struct_line_equation_a06e6a447c527febc4817db0999d397d2}{Line\+Equation}} (const \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \&\mbox{\hyperlink{struct_line_equation_a56ed56fa0030fc476877b225210358e8}{equation}}=\mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}}\{\})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_line_equation_adb9d9d9e24ffea16524aff477253e337}{Apply}} (const \mbox{\hyperlink{class_transformation}{Transformation}} \&transformation) override
 \begin{DoxyCompactList}\small\item\em Apply transformation to a conic equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{struct_equation}{Equation}}}
 \begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_equation_ab2e495ce21c5bb9e7d325127fc1a5ac5}{$\sim$\+Equation}} ()=default
 \item 
 virtual void \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}{Apply}} (const \mbox{\hyperlink{class_transformation}{Transformation}} \&transformation)=0
 \begin{DoxyCompactList}\small\item\em Apply transformation to an equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -41,15 +36,6 @@ virtual void \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}
 \item 
 \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \mbox{\hyperlink{struct_line_equation_a56ed56fa0030fc476877b225210358e8}{equation}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
-\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{struct_equation}{Equation}}}
-\begin{DoxyCompactItemize}
-\item 
-enum class \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{var}} \{ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920a0ac0dd65e82e143ab04d378a0133bf9e}{kX}}
-, \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920a39b629a97c6f6ac91423cf042154dd86}{kY}}
-, \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920aca4d7439951bc76061bedb523255ff3d}{kZ}}
- \}
-\begin{DoxyCompactList}\small\item\em Name of axes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -67,6 +53,19 @@ February 2023
 \begin{DoxySeeAlso}{See also}
 Line\+Implementataion 
 \end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_line_equation_a06e6a447c527febc4817db0999d397d2}\label{struct_line_equation_a06e6a447c527febc4817db0999d397d2}} 
+\index{LineEquation@{LineEquation}!LineEquation@{LineEquation}}
+\index{LineEquation@{LineEquation}!LineEquation@{LineEquation}}
+\doxysubsubsection{\texorpdfstring{LineEquation()}{LineEquation()}}
+{\footnotesize\ttfamily Line\+Equation\+::\+Line\+Equation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \&}]{equation = {\ttfamily \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}}\{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -92,6 +91,8 @@ It will multiply on inverse of transformation. Because if you substitute an imag
 
 Implements \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}{Equation}}.
 
+Here is the call graph for this function\+:
+% FIG 2
 
 
 \doxysubsection{Member Data Documentation}
@@ -103,6 +104,7 @@ Implements \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}{E
 
 
 
-The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Homo\+Gebra/\mbox{\hyperlink{_equation_8h}{Equation.\+h}}\end{DoxyCompactItemize}
+Homo\+Gebra/\mbox{\hyperlink{_equation_8h}{Equation.\+h}}\item 
+Homo\+Gebra/\mbox{\hyperlink{_equation_8cpp}{Equation.\+cpp}}\end{DoxyCompactItemize}

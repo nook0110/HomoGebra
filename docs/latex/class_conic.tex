@@ -11,13 +11,26 @@
 
 
 
-Collaboration diagram for Conic\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_conic__coll__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for Conic\+:
+% FIG 0
+
+
+Collaboration diagram for Conic\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_conic_a55d85bd86505f6f7265d95e94ac002f2}{Destroy}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane) final
+\begin{DoxyCompactList}\small\item\em Destroy this object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_conic_a6443bed118a3507d3d04bfcf1c10e2e7}{Notify}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&event) const
+\begin{DoxyCompactList}\small\item\em Notify observers that this objected is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_geometric_object_a8d7f6fe72f4f9a45de56a7ae04f955fe}{$\sim$\+Geometric\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometric_object_a76b6b40dcbd020ca773d1513fe4e5b70}{Destroy}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane)=0
+\begin{DoxyCompactList}\small\item\em Destroy this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,6 +38,12 @@ Collaboration diagram for Conic\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em Body, which you can draw. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_conic_implementation}{Conic\+Implementation}} \mbox{\hyperlink{class_conic_ae755f42c11c6e21769d0a8207a90a63a}{implementation\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometric_object_a51c3b1f38bd1750a89617b77d08bb49c}{Geometric\+Object}} ()=default
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -44,6 +63,49 @@ February 2023
 
 \mbox{\hyperlink{class_conic_implementation}{Conic\+Implementation}} 
 \end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_conic_a55d85bd86505f6f7265d95e94ac002f2}\label{class_conic_a55d85bd86505f6f7265d95e94ac002f2}} 
+\index{Conic@{Conic}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Conic@{Conic}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily void Conic\+::\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} \&}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Destroy this object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plane} & \mbox{\hyperlink{class_plane}{Plane}}, where this object is located. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometric_object_a76b6b40dcbd020ca773d1513fe4e5b70}{Geometric\+Object}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_conic_a6443bed118a3507d3d04bfcf1c10e2e7}\label{class_conic_a6443bed118a3507d3d04bfcf1c10e2e7}} 
+\index{Conic@{Conic}!Notify@{Notify}}
+\index{Notify@{Notify}!Conic@{Conic}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily void Conic\+::\+Notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&}]{event }\end{DoxyParamCaption}) const}
+
+
+
+Notify observers that this objected is destroyed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \mbox{\hyperlink{namespace_event}{Event}} \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
 
 
 \doxysubsection{Member Data Documentation}
@@ -69,6 +131,7 @@ Implementation.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Homo\+Gebra/\mbox{\hyperlink{_geometric_object_8h}{Geometric\+Object.\+h}}\end{DoxyCompactItemize}
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_8h}{Geometric\+Object.\+h}}\item 
+Homo\+Gebra/\mbox{\hyperlink{_geometric_object_8cpp}{Geometric\+Object.\+cpp}}\end{DoxyCompactItemize}

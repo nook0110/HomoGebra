@@ -118,10 +118,12 @@ Collaboration diagram for ConstructionObserver:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a62066e9c4c31c48b38cb241876484a41"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_observer.html#a62066e9c4c31c48b38cb241876484a41">~ConstructionObserver</a> ()=default</td></tr>
 <tr class="separator:a62066e9c4c31c48b38cb241876484a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45e9a8ab6c2e95e2aa70a27643989a8d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_observer.html#a45e9a8ab6c2e95e2aa70a27643989a8d">Update</a> (<a class="el" href="struct_event_1_1_moved.html">Event::Moved</a>) const =0</td></tr>
-<tr class="separator:a45e9a8ab6c2e95e2aa70a27643989a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34d1f6d4b70d23f677098516b7521baf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_observer.html#a34d1f6d4b70d23f677098516b7521baf">Update</a> (<a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a>) const =0</td></tr>
-<tr class="separator:a34d1f6d4b70d23f677098516b7521baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd50f4b74924a72462d4223414ae09b3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_observer.html#afd50f4b74924a72462d4223414ae09b3">Update</a> (const <a class="el" href="struct_event_1_1_moved.html">Event::Moved</a> &amp;)=0</td></tr>
+<tr class="memdesc:afd50f4b74924a72462d4223414ae09b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the object, because sth moved.  <br /></td></tr>
+<tr class="separator:afd50f4b74924a72462d4223414ae09b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d2a6d8d53815568273ddb74dee26de"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_construction_observer.html#a88d2a6d8d53815568273ddb74dee26de">Update</a> (const <a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a> &amp;)=0</td></tr>
+<tr class="memdesc:a88d2a6d8d53815568273ddb74dee26de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the object, because sth was destroyed.  <br /></td></tr>
+<tr class="separator:a88d2a6d8d53815568273ddb74dee26de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -134,7 +136,7 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>nook0110</dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>February 2023</dd></dl>
-<p>\detail Implements pattern called 'Observer'</p>
+<p>\detail Implements pattern called 'Observer'.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable.">ObservableGeometricObject</a> </dd>
 <dd>
 <a class="el" href="class_construction.html" title="Defines how object is created.">Construction</a> </dd></dl>
@@ -161,12 +163,13 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Default destructor. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a45e9a8ab6c2e95e2aa70a27643989a8d" name="a45e9a8ab6c2e95e2aa70a27643989a8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45e9a8ab6c2e95e2aa70a27643989a8d">&#9670;&#160;</a></span>Update() <span class="overload">[1/2]</span></h2>
+<a id="a88d2a6d8d53815568273ddb74dee26de" name="a88d2a6d8d53815568273ddb74dee26de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88d2a6d8d53815568273ddb74dee26de">&#9670;&#160;</a></span>Update() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,9 +180,9 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual void ConstructionObserver::Update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_event_1_1_moved.html">Event::Moved</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a> &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -189,12 +192,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_construction_on_plane.html#ab3cdba7eebdfd0ff06c39ac3b1114d88">ConstructionOnPlane</a>, and <a class="el" href="class_construction_line.html#aefc6d7066e12b9f4ceb616c8f1a64bff">ConstructionLine</a>.</p>
+<p>Update the object, because sth was destroyed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Tag</td><td>with some information (<a class="el" href="class_plane.html" title="Container for all objects, which you can draw.">Plane</a> where it was destroyed). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_construction_point.html#a6b42b25a3bf90d941bb45dce65849b72">ConstructionPoint</a>, and <a class="el" href="class_construction_line.html#abc8544b25aa140a73f50a10faee6dc6a">ConstructionLine</a>.</p>
 
 </div>
 </div>
-<a id="a34d1f6d4b70d23f677098516b7521baf" name="a34d1f6d4b70d23f677098516b7521baf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34d1f6d4b70d23f677098516b7521baf">&#9670;&#160;</a></span>Update() <span class="overload">[2/2]</span></h2>
+<a id="afd50f4b74924a72462d4223414ae09b3" name="afd50f4b74924a72462d4223414ae09b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd50f4b74924a72462d4223414ae09b3">&#9670;&#160;</a></span>Update() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,9 +216,9 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual void ConstructionObserver::Update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct_event_1_1_moved.html">Event::Moved</a> &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -216,6 +227,16 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Update the object, because sth moved. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Tag</td><td>with some information. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_construction_point.html#a33ad8fe12e9cc94bd3672de54479c41e">ConstructionPoint</a>, and <a class="el" href="class_construction_line.html#a6e1a0d334433fd5ec9fa5921e86e5f8d">ConstructionLine</a>.</p>
 
 </div>
 </div>

@@ -7,36 +7,32 @@ Defines how object is created.
 
 
 
-{\ttfamily \#include $<$Geometric\+Object\+Implementation.\+h$>$}
+{\ttfamily \#include $<$Construction.\+h$>$}
 
 
 
-Inheritance diagram for Construction\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_construction__inherit__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for Construction\+:
+% FIG 0
 
 
-Collaboration diagram for Construction\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=211pt]{class_construction__coll__graph}
-\end{center}
-\end{figure}
-\doxysubsection*{Additional Inherited Members}
+Collaboration diagram for Construction\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_construction_ac63219c567e828fcee36eddd4af9e46b}{Construction}} ()=delete
+\begin{DoxyCompactList}\small\item\em Constructor deleted. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_construction_ae4966d1b922fae8b24038ba42d0e86d6}{$\sim$\+Construction}} () override=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{class_construction_observer_a62066e9c4c31c48b38cb241876484a41}{$\sim$\+Construction\+Observer}} ()=default
 \item 
-virtual void \mbox{\hyperlink{class_construction_observer_a45e9a8ab6c2e95e2aa70a27643989a8d}{Update}} (\mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}}) const =0
-\item 
-virtual void \mbox{\hyperlink{class_construction_observer_a34d1f6d4b70d23f677098516b7521baf}{Update}} (\mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}}) const =0
-\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{class_construction_observer_afd50f4b74924a72462d4223414ae09b3}{Update}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&)=0
+\begin{DoxyCompactList}\small\item\em Update the object, because sth moved. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_construction_observer_a88d2a6d8d53815568273ddb74dee26de}{Update}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&)=0
+\begin{DoxyCompactList}\small\item\em Update the object, because sth was destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -56,6 +52,29 @@ Updates positions of objects \begin{DoxySeeAlso}{See also}
 \end{DoxySeeAlso}
 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_construction_ac63219c567e828fcee36eddd4af9e46b}\label{class_construction_ac63219c567e828fcee36eddd4af9e46b}} 
+\index{Construction@{Construction}!Construction@{Construction}}
+\index{Construction@{Construction}!Construction@{Construction}}
+\doxysubsubsection{\texorpdfstring{Construction()}{Construction()}}
+{\footnotesize\ttfamily Construction\+::\+Construction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Constructor deleted. 
+
+\mbox{\Hypertarget{class_construction_ae4966d1b922fae8b24038ba42d0e86d6}\label{class_construction_ae4966d1b922fae8b24038ba42d0e86d6}} 
+\index{Construction@{Construction}!````~Construction@{$\sim$Construction}}
+\index{````~Construction@{$\sim$Construction}!Construction@{Construction}}
+\doxysubsubsection{\texorpdfstring{$\sim$Construction()}{~Construction()}}
+{\footnotesize\ttfamily Construction\+::$\sim$\+Construction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Homo\+Gebra/\mbox{\hyperlink{_geometric_object_implementation_8h}{Geometric\+Object\+Implementation.\+h}}\end{DoxyCompactItemize}
+Homo\+Gebra/\mbox{\hyperlink{_construction_8h}{Construction.\+h}}\end{DoxyCompactItemize}

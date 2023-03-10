@@ -11,22 +11,20 @@ Implementation of \mbox{\hyperlink{class_plane}{Plane}}.
 
 
 
-Collaboration diagram for Plane\+Implementation\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_plane_implementation__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for Plane\+Implementation\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_plane_implementation_a5e8581d9c6abf230d9b898c5672cc412}{Add\+Object}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $>$ \&object)
+\begin{DoxyCompactList}\small\item\em Adds object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_implementation_a2cf51b61df6bff4500784d1b34c04202}{Remove\+Object}} (\mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$object)
+\begin{DoxyCompactList}\small\item\em Remove object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \mbox{\hyperlink{class_plane_implementation_a5aca52264b3749486c754de36b5300de}{points\+\_\+}}
-\begin{DoxyCompactList}\small\item\em All points on the plane. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{class_line}{Line}} $>$ \mbox{\hyperlink{class_plane_implementation_adbd5846939d68ba65972e6606c9e9229}{lines\+\_\+}}
-\begin{DoxyCompactList}\small\item\em All lines on the plane. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{class_conic}{Conic}} $>$ \mbox{\hyperlink{class_plane_implementation_afe45f06916052c1a92932bbca54306e7}{conics\+\_\+}}
-\begin{DoxyCompactList}\small\item\em All conics on the plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $>$ $>$ \mbox{\hyperlink{class_plane_implementation_a195bb8d7be148d8c42399e72d22f35ef}{objects\+\_\+}}
+\begin{DoxyCompactList}\small\item\em All objects on the plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -48,39 +46,53 @@ Class that manages all objects.
 \end{DoxySeeAlso}
 
 
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_plane_implementation_a5e8581d9c6abf230d9b898c5672cc412}\label{class_plane_implementation_a5e8581d9c6abf230d9b898c5672cc412}} 
+\index{PlaneImplementation@{PlaneImplementation}!AddObject@{AddObject}}
+\index{AddObject@{AddObject}!PlaneImplementation@{PlaneImplementation}}
+\doxysubsubsection{\texorpdfstring{AddObject()}{AddObject()}}
+{\footnotesize\ttfamily void Plane\+Implementation\+::\+Add\+Object (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $>$ \&}]{object }\end{DoxyParamCaption})}
+
+
+
+Adds object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Object} & to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_plane_implementation_a2cf51b61df6bff4500784d1b34c04202}\label{class_plane_implementation_a2cf51b61df6bff4500784d1b34c04202}} 
+\index{PlaneImplementation@{PlaneImplementation}!RemoveObject@{RemoveObject}}
+\index{RemoveObject@{RemoveObject}!PlaneImplementation@{PlaneImplementation}}
+\doxysubsubsection{\texorpdfstring{RemoveObject()}{RemoveObject()}}
+{\footnotesize\ttfamily void Plane\+Implementation\+::\+Remove\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$}]{object }\end{DoxyParamCaption})}
+
+
+
+Remove object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Object} & to destroy \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_plane_implementation_a5aca52264b3749486c754de36b5300de}\label{class_plane_implementation_a5aca52264b3749486c754de36b5300de}} 
-\index{PlaneImplementation@{PlaneImplementation}!points\_@{points\_}}
-\index{points\_@{points\_}!PlaneImplementation@{PlaneImplementation}}
-\doxysubsubsection{\texorpdfstring{points\_}{points\_}}
-{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_point}{Point}}$>$ Plane\+Implementation\+::points\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_plane_implementation_a195bb8d7be148d8c42399e72d22f35ef}\label{class_plane_implementation_a195bb8d7be148d8c42399e72d22f35ef}} 
+\index{PlaneImplementation@{PlaneImplementation}!objects\_@{objects\_}}
+\index{objects\_@{objects\_}!PlaneImplementation@{PlaneImplementation}}
+\doxysubsubsection{\texorpdfstring{objects\_}{objects\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_geometric_object}{Geometric\+Object}}$>$ $>$ Plane\+Implementation\+::objects\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-All points on the plane. 
+All objects on the plane. 
 
-Member data. \mbox{\Hypertarget{class_plane_implementation_adbd5846939d68ba65972e6606c9e9229}\label{class_plane_implementation_adbd5846939d68ba65972e6606c9e9229}} 
-\index{PlaneImplementation@{PlaneImplementation}!lines\_@{lines\_}}
-\index{lines\_@{lines\_}!PlaneImplementation@{PlaneImplementation}}
-\doxysubsubsection{\texorpdfstring{lines\_}{lines\_}}
-{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_line}{Line}}$>$ Plane\+Implementation\+::lines\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+Member data. 
 
-
-
-All lines on the plane. 
-
-\mbox{\Hypertarget{class_plane_implementation_afe45f06916052c1a92932bbca54306e7}\label{class_plane_implementation_afe45f06916052c1a92932bbca54306e7}} 
-\index{PlaneImplementation@{PlaneImplementation}!conics\_@{conics\_}}
-\index{conics\_@{conics\_}!PlaneImplementation@{PlaneImplementation}}
-\doxysubsubsection{\texorpdfstring{conics\_}{conics\_}}
-{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_conic}{Conic}}$>$ Plane\+Implementation\+::conics\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-All conics on the plane. 
-
-
-
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Homo\+Gebra/\mbox{\hyperlink{_plane_implementation_8h}{Plane\+Implementation.\+h}}\end{DoxyCompactItemize}
+Homo\+Gebra/\mbox{\hyperlink{_plane_implementation_8h}{Plane\+Implementation.\+h}}\item 
+Homo\+Gebra/\mbox{\hyperlink{_plane_implementation_8cpp}{Plane\+Implementation.\+cpp}}\end{DoxyCompactItemize}

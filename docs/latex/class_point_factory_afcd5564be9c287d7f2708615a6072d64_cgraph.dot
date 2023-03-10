@@ -1,0 +1,11 @@
+digraph "PointFactory::OnPlane"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.9];
+  rankdir="LR";
+  Node1 [label="PointFactory::OnPlane",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Constructs a point with given coordinates."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Plane::AddObject",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_plane.html#ada179fa401de8aa43984ef692d89e760",tooltip="Add object to plane."];
+}

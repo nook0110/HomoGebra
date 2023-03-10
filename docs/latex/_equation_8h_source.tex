@@ -10,42 +10,41 @@
 \DoxyCodeLine{00006\ }
 \DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_equation}{Equation}}}
 \DoxyCodeLine{00018\ \{}
-\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{var}}}
-\DoxyCodeLine{00024\ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920a0ac0dd65e82e143ab04d378a0133bf9e}{kX}},}
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920a39b629a97c6f6ac91423cf042154dd86}{kY}},}
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920aca4d7439951bc76061bedb523255ff3d}{kZ}}}
-\DoxyCodeLine{00028\ \ \ \};}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}{Apply}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_transformation}{Transformation}}\&\ transformation)\ =\ 0;}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \};}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00051\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_point_equation}{PointEquation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_equation}{Equation}}}
-\DoxyCodeLine{00052\ \{}
-\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\ \mbox{\hyperlink{struct_point_equation_a62701fa1745d2f59aadd72c06b04a2e6}{equation}};}
-\DoxyCodeLine{00054\ \};}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00068\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_line_equation}{LineEquation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_equation}{Equation}}}
-\DoxyCodeLine{00069\ \{}
-\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_line_equation_adb9d9d9e24ffea16524aff477253e337}{Apply}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_transformation}{Transformation}}\&\ transformation)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\ \mbox{\hyperlink{struct_line_equation_a56ed56fa0030fc476877b225210358e8}{equation}};}
-\DoxyCodeLine{00080\ \};}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00094\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_conic_equation}{ConicEquation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_equation}{Equation}}}
-\DoxyCodeLine{00095\ \{}
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00103\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::array<var,\ 3>\ \mbox{\hyperlink{struct_conic_equation_a0e66d5601071fe10b7fc28da762cd1e0}{prev}};}
-\DoxyCodeLine{00104\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::array<var,\ 3>\ \mbox{\hyperlink{struct_conic_equation_a8fe870fd3691626e4f0d0ae35417f067}{next}};}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00115\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_conic_equation_a3d04814cb42783152d2fc6f9bfc48fc1}{Apply}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_transformation}{Transformation}}\&\ transformation)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00124\ }
-\DoxyCodeLine{00125\ \ \ std::array<complex,\ 3>\ \mbox{\hyperlink{struct_conic_equation_a203390acc200de69495d53d78b2d6b4f}{squares}};}
-\DoxyCodeLine{00126\ \ \ std::array<complex,\ 3>\ \mbox{\hyperlink{struct_conic_equation_aa220c0df266f56a01885f4b24752c6ca}{pair\_products}};}
-\DoxyCodeLine{00127\ }
-\DoxyCodeLine{00129\ \};}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_equation_ab2e495ce21c5bb9e7d325127fc1a5ac5}{\string~Equation}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}{Apply}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_transformation}{Transformation}}\&\ transformation)\ =\ 0;}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_point_equation}{PointEquation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_equation}{Equation}}}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{struct_point_equation}{PointEquation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\&\ \mbox{\hyperlink{struct_point_equation_a62701fa1745d2f59aadd72c06b04a2e6}{equation}}\ =\ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\{\});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_point_equation_a7975f94b130c5f33e70e2d43e56f2ef2}{Apply}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_transformation}{Transformation}}\&\ transformation)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ [[nodiscard]]\ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\&\ \mbox{\hyperlink{struct_point_equation_ab4e9d4eb7db520d259dc3e4afead36d8}{GetEquation}}();}
+\DoxyCodeLine{00059\ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\&\ \mbox{\hyperlink{struct_point_equation_ab4e9d4eb7db520d259dc3e4afead36d8}{GetEquation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\ \mbox{\hyperlink{struct_point_equation_a62701fa1745d2f59aadd72c06b04a2e6}{equation}};}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_line_equation}{LineEquation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_equation}{Equation}}}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00081\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{struct_line_equation}{LineEquation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\&\ \mbox{\hyperlink{struct_line_equation_a56ed56fa0030fc476877b225210358e8}{equation}}\ =\ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\{\});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_line_equation_adb9d9d9e24ffea16524aff477253e337}{Apply}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_transformation}{Transformation}}\&\ transformation)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\ \mbox{\hyperlink{struct_line_equation_a56ed56fa0030fc476877b225210358e8}{equation}};}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_conic_equation}{ConicEquation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_equation}{Equation}}}
+\DoxyCodeLine{00108\ \{}
+\DoxyCodeLine{00116\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::array<var,\ 3>\ \mbox{\hyperlink{struct_conic_equation_a0e66d5601071fe10b7fc28da762cd1e0}{prev}};}
+\DoxyCodeLine{00117\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::array<var,\ 3>\ \mbox{\hyperlink{struct_conic_equation_a8fe870fd3691626e4f0d0ae35417f067}{next}};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00127\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_conic_equation_a3d04814cb42783152d2fc6f9bfc48fc1}{Apply}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_transformation}{Transformation}}\&\ transformation)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00136\ \ \ std::array<complex,\ 3>\ \mbox{\hyperlink{struct_conic_equation_a203390acc200de69495d53d78b2d6b4f}{squares}};}
+\DoxyCodeLine{00137\ \ \ std::array<complex,\ 3>\ \mbox{\hyperlink{struct_conic_equation_aa220c0df266f56a01885f4b24752c6ca}{pair\_products}};}
+\DoxyCodeLine{00139\ \};}
 
 \end{DoxyCode}

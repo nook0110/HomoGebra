@@ -11,13 +11,8 @@ Makes \mbox{\hyperlink{class_construction}{Construction}} an observer.
 
 
 
-Inheritance diagram for Construction\+Observer\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_construction_observer__inherit__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for Construction\+Observer\+:
+% FIG 0
 
 
 Collaboration diagram for Construction\+Observer\+:\nopagebreak
@@ -32,10 +27,10 @@ Collaboration diagram for Construction\+Observer\+:\nopagebreak
 \item 
 virtual \mbox{\hyperlink{class_construction_observer_a62066e9c4c31c48b38cb241876484a41}{$\sim$\+Construction\+Observer}} ()=default
 \item 
-virtual void \mbox{\hyperlink{class_construction_observer_a45e9a8ab6c2e95e2aa70a27643989a8d}{Update}} (\mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}}) const =0
-\item 
-virtual void \mbox{\hyperlink{class_construction_observer_a34d1f6d4b70d23f677098516b7521baf}{Update}} (\mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}}) const =0
-\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{class_construction_observer_afd50f4b74924a72462d4223414ae09b3}{Update}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&)=0
+\begin{DoxyCompactList}\small\item\em Update the object, because sth moved. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_construction_observer_a88d2a6d8d53815568273ddb74dee26de}{Update}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&)=0
+\begin{DoxyCompactList}\small\item\em Update the object, because sth was destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -55,7 +50,7 @@ nook0110
 \begin{DoxyDate}{Date}
 February 2023
 \end{DoxyDate}
-\textbackslash{}detail Implements pattern called \textquotesingle{}Observer\textquotesingle{}
+\textbackslash{}detail Implements pattern called \textquotesingle{}Observer\textquotesingle{}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_observable_geometric_object}{Observable\+Geometric\+Object}} 
@@ -71,24 +66,46 @@ February 2023
 \doxysubsubsection{\texorpdfstring{$\sim$ConstructionObserver()}{~ConstructionObserver()}}
 {\footnotesize\ttfamily virtual Construction\+Observer\+::$\sim$\+Construction\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
 
-
+Default destructor. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_construction_observer_a45e9a8ab6c2e95e2aa70a27643989a8d}\label{class_construction_observer_a45e9a8ab6c2e95e2aa70a27643989a8d}} 
+\mbox{\Hypertarget{class_construction_observer_a88d2a6d8d53815568273ddb74dee26de}\label{class_construction_observer_a88d2a6d8d53815568273ddb74dee26de}} 
 \index{ConstructionObserver@{ConstructionObserver}!Update@{Update}}
 \index{Update@{Update}!ConstructionObserver@{ConstructionObserver}}
 \doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily virtual void Construction\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}}}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void Construction\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \mbox{\hyperlink{class_construction_on_plane_ab3cdba7eebdfd0ff06c39ac3b1114d88}{Construction\+On\+Plane}}, and \mbox{\hyperlink{class_construction_line_aefc6d7066e12b9f4ceb616c8f1a64bff}{Construction\+Line}}.
+Update the object, because sth was destroyed. 
 
-\mbox{\Hypertarget{class_construction_observer_a34d1f6d4b70d23f677098516b7521baf}\label{class_construction_observer_a34d1f6d4b70d23f677098516b7521baf}} 
+
+\begin{DoxyParams}{Parameters}
+{\em Tag} & with some information (\mbox{\hyperlink{class_plane}{Plane}} where it was destroyed). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_construction_point_a6b42b25a3bf90d941bb45dce65849b72}{Construction\+Point}}, and \mbox{\hyperlink{class_construction_line_abc8544b25aa140a73f50a10faee6dc6a}{Construction\+Line}}.
+
+\mbox{\Hypertarget{class_construction_observer_afd50f4b74924a72462d4223414ae09b3}\label{class_construction_observer_afd50f4b74924a72462d4223414ae09b3}} 
 \index{ConstructionObserver@{ConstructionObserver}!Update@{Update}}
 \index{Update@{Update}!ConstructionObserver@{ConstructionObserver}}
 \doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily virtual void Construction\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}}}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void Construction\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update the object, because sth moved. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Tag} & with some information. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_construction_point_a33ad8fe12e9cc94bd3672de54479c41e}{Construction\+Point}}, and \mbox{\hyperlink{class_construction_line_a6e1a0d334433fd5ec9fa5921e86e5f8d}{Construction\+Line}}.
 
 
 

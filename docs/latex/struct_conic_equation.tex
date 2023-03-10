@@ -11,28 +11,21 @@ Struct that defines position of the conic.
 
 
 
-Inheritance diagram for Conic\+Equation\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=164pt]{struct_conic_equation__inherit__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for Conic\+Equation\+:
+% FIG 0
 
 
-Collaboration diagram for Conic\+Equation\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{struct_conic_equation__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for Conic\+Equation\+:
+% FIG 1
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{struct_conic_equation_a3d04814cb42783152d2fc6f9bfc48fc1}{Apply}} (const \mbox{\hyperlink{class_transformation}{Transformation}} \&transformation) override
 \begin{DoxyCompactList}\small\item\em Apply transformation to a conic equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{struct_equation}{Equation}}}
 \begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_equation_ab2e495ce21c5bb9e7d325127fc1a5ac5}{$\sim$\+Equation}} ()=default
 \item 
 virtual void \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}{Apply}} (const \mbox{\hyperlink{class_transformation}{Transformation}} \&transformation)=0
 \begin{DoxyCompactList}\small\item\em Apply transformation to an equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -47,22 +40,13 @@ std\+::array$<$ \mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b62
 \end{Indent}
 \doxysubsection*{Static Public Attributes}
 \begin{Indent}\textbf{ Static arrays to get next o previous vars.}\par
-{\em It is used to get from \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{Equation\+::var}} next or previous \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{Equation\+::var}} }\begin{DoxyCompactItemize}
+{\em It is used to get from Equation\+::var next or previous Equation\+::var }\begin{DoxyCompactItemize}
 \item 
-static const std\+::array$<$ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{var}}, 3 $>$ \mbox{\hyperlink{struct_conic_equation_a0e66d5601071fe10b7fc28da762cd1e0}{prev}}
+static const std\+::array$<$ \mbox{\hyperlink{_coordinate_8h_a335628f2e9085305224b4f9cc6e95ed5}{var}}, 3 $>$ \mbox{\hyperlink{struct_conic_equation_a0e66d5601071fe10b7fc28da762cd1e0}{prev}}
 \item 
-static const std\+::array$<$ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{var}}, 3 $>$ \mbox{\hyperlink{struct_conic_equation_a8fe870fd3691626e4f0d0ae35417f067}{next}}
+static const std\+::array$<$ \mbox{\hyperlink{_coordinate_8h_a335628f2e9085305224b4f9cc6e95ed5}{var}}, 3 $>$ \mbox{\hyperlink{struct_conic_equation_a8fe870fd3691626e4f0d0ae35417f067}{next}}
 \end{DoxyCompactItemize}
 \end{Indent}
-\doxysubsection*{Additional Inherited Members}
-\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{struct_equation}{Equation}}}
-\begin{DoxyCompactItemize}
-\item 
-enum class \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{var}} \{ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920a0ac0dd65e82e143ab04d378a0133bf9e}{kX}}
-, \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920a39b629a97c6f6ac91423cf042154dd86}{kY}}
-, \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920aca4d7439951bc76061bedb523255ff3d}{kZ}}
- \}
-\begin{DoxyCompactList}\small\item\em Name of axes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -94,7 +78,7 @@ Conic\+Implementataion
 Apply transformation to a conic equation. 
 
 \begin{DoxyWarning}{Warning}
-It will multiply on inverse of transformation squared each element. Because if you substitute an image of point, equation should equal to zero.
+This method is not implemented!
 \end{DoxyWarning}
 
 \begin{DoxyParams}{Parameters}
@@ -108,23 +92,11 @@ Implements \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}{E
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{struct_conic_equation_a0e66d5601071fe10b7fc28da762cd1e0}\label{struct_conic_equation_a0e66d5601071fe10b7fc28da762cd1e0}} 
-\index{ConicEquation@{ConicEquation}!prev@{prev}}
-\index{prev@{prev}!ConicEquation@{ConicEquation}}
-\doxysubsubsection{\texorpdfstring{prev}{prev}}
-{\footnotesize\ttfamily const std\+::array$<$ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{var}}, 3 $>$ Conic\+Equation\+::prev\hspace{0.3cm}{\ttfamily [static]}}
-
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{=}
-\DoxyCodeLine{\{\ var::kZ,\ var::kX,\ var::kY\ \}}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{struct_conic_equation_a8fe870fd3691626e4f0d0ae35417f067}\label{struct_conic_equation_a8fe870fd3691626e4f0d0ae35417f067}} 
 \index{ConicEquation@{ConicEquation}!next@{next}}
 \index{next@{next}!ConicEquation@{ConicEquation}}
 \doxysubsubsection{\texorpdfstring{next}{next}}
-{\footnotesize\ttfamily const std\+::array$<$ \mbox{\hyperlink{struct_equation_a97cbcb97188027c47a4bda31c34e4920}{var}}, 3 $>$ Conic\+Equation\+::next\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily const std\+::array$<$ \mbox{\hyperlink{_coordinate_8h_a335628f2e9085305224b4f9cc6e95ed5}{var}}, 3 $>$ Conic\+Equation\+::next\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
@@ -132,17 +104,29 @@ Implements \mbox{\hyperlink{struct_equation_ae19dd6d1fc0a2b74e039dc8c1979b840}{E
 \DoxyCodeLine{\{\ var::kY,\ var::kZ,var::kX\ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{struct_conic_equation_a203390acc200de69495d53d78b2d6b4f}\label{struct_conic_equation_a203390acc200de69495d53d78b2d6b4f}} 
-\index{ConicEquation@{ConicEquation}!squares@{squares}}
-\index{squares@{squares}!ConicEquation@{ConicEquation}}
-\doxysubsubsection{\texorpdfstring{squares}{squares}}
-{\footnotesize\ttfamily std\+::array$<$\mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}, 3$>$ Conic\+Equation\+::squares}
-
 \mbox{\Hypertarget{struct_conic_equation_aa220c0df266f56a01885f4b24752c6ca}\label{struct_conic_equation_aa220c0df266f56a01885f4b24752c6ca}} 
 \index{ConicEquation@{ConicEquation}!pair\_products@{pair\_products}}
 \index{pair\_products@{pair\_products}!ConicEquation@{ConicEquation}}
 \doxysubsubsection{\texorpdfstring{pair\_products}{pair\_products}}
 {\footnotesize\ttfamily std\+::array$<$\mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}, 3$>$ Conic\+Equation\+::pair\+\_\+products}
+
+\mbox{\Hypertarget{struct_conic_equation_a0e66d5601071fe10b7fc28da762cd1e0}\label{struct_conic_equation_a0e66d5601071fe10b7fc28da762cd1e0}} 
+\index{ConicEquation@{ConicEquation}!prev@{prev}}
+\index{prev@{prev}!ConicEquation@{ConicEquation}}
+\doxysubsubsection{\texorpdfstring{prev}{prev}}
+{\footnotesize\ttfamily const std\+::array$<$ \mbox{\hyperlink{_coordinate_8h_a335628f2e9085305224b4f9cc6e95ed5}{var}}, 3 $>$ Conic\+Equation\+::prev\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ var::kZ,\ var::kX,\ var::kY\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_conic_equation_a203390acc200de69495d53d78b2d6b4f}\label{struct_conic_equation_a203390acc200de69495d53d78b2d6b4f}} 
+\index{ConicEquation@{ConicEquation}!squares@{squares}}
+\index{squares@{squares}!ConicEquation@{ConicEquation}}
+\doxysubsubsection{\texorpdfstring{squares}{squares}}
+{\footnotesize\ttfamily std\+::array$<$\mbox{\hyperlink{_coordinate_8h_ab6d4e5b86f39365e36471d2129e6b620}{complex}}, 3$>$ Conic\+Equation\+::squares}
 
 
 
