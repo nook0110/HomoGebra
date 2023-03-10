@@ -1,10 +1,10 @@
 <map id="ConicImplementation" name="ConicImplementation">
-<area shape="rect" id="node1" title=" " alt="" coords="187,513,346,620"/>
-<area shape="rect" id="node2" href="$class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="51,373,287,451"/>
-<area shape="rect" id="node3" href="$class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="9,160,221,296"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,5,224,97"/>
-<area shape="rect" id="node5" href="$struct_conic_equation.html" title="Struct that defines position of the conic." alt="" coords="333,373,440,451"/>
-<area shape="rect" id="node6" href="$struct_equation.html" title="Struct that defines position of the objects." alt="" coords="245,189,320,267"/>
-<area shape="rect" id="node7" title=" " alt="" coords="344,189,451,267"/>
-<area shape="rect" id="node8" title=" " alt="" coords="475,189,613,267"/>
+<area shape="rect" id="node1" title=" " alt="" coords="198,513,361,620"/>
+<area shape="rect" id="node2" href="$class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="64,373,300,451"/>
+<area shape="rect" id="node3" href="$class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="5,160,217,296"/>
+<area shape="rect" id="node4" title=" " alt="" coords="20,5,203,97"/>
+<area shape="rect" id="node5" href="$struct_conic_equation.html" title="Struct that defines position of the conic." alt="" coords="353,373,459,451"/>
+<area shape="rect" id="node6" href="$struct_equation.html" title="Struct that defines position of the objects." alt="" coords="242,182,343,274"/>
+<area shape="rect" id="node7" title=" " alt="" coords="367,189,474,267"/>
+<area shape="rect" id="node8" title=" " alt="" coords="498,189,637,267"/>
 </map>

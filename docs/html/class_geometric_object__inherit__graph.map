@@ -1,0 +1,6 @@
+<map id="GeometricObject" name="GeometricObject">
+<area shape="rect" id="node1" title="Base class for geometric objects." alt="" coords="143,5,291,112"/>
+<area shape="rect" id="node2" href="$class_conic.html" title="Conic on a plane." alt="" coords="5,189,131,296"/>
+<area shape="rect" id="node3" href="$class_line.html" title="Line on a plane." alt="" coords="155,167,280,318"/>
+<area shape="rect" id="node4" href="$class_point.html" title="Point on a plane." alt="" coords="304,160,429,325"/>
+</map>

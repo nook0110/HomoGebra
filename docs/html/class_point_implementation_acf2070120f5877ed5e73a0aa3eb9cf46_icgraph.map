@@ -1,0 +1,5 @@
+<map id="PointImplementation::GetEquation" name="PointImplementation::GetEquation">
+<area shape="rect" id="node1" title="Return current equation of point." alt="" coords="408,5,548,45"/>
+<area shape="rect" id="node2" href="$class_point.html#ac45889f34111c0347477f76a303c6677" title="Return current equation of point." alt="" coords="228,13,360,38"/>
+<area shape="rect" id="node3" href="$class_line_factory.html#a38962a0480a1a572753177ceab581e76" title="Constructs line through two given points." alt="" coords="5,13,180,38"/>
+</map>

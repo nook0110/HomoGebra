@@ -1,0 +1,7 @@
+<map id="Transformation::Transformation" name="Transformation::Transformation">
+<area shape="rect" id="node1" title="Construct transformation from movement of 4 points." alt="" coords="5,31,205,56"/>
+<area shape="rect" id="node2" href="$struct_point_equation.html#ab4e9d4eb7db520d259dc3e4afead36d8" title=" " alt="" coords="253,5,436,31"/>
+<area shape="rect" id="node3" href="$class_squared_matrix.html#aecc105efa6ff85b4941df3a4a3124606" title="Find solution of linear equations." alt="" coords="253,55,436,80"/>
+<area shape="rect" id="node4" href="$class_squared_matrix.html#a4137a2d278b3cb7fc9c8489c8d2a5393" title="Finds inversion of matrix." alt="" coords="484,55,659,80"/>
+<area shape="rect" id="node5" href="$class_squared_matrix.html#a219d0db15cbea63b70a3ba13a44db511" title=" " alt="" coords="707,55,905,80"/>
+</map>

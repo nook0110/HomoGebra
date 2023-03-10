@@ -1,14 +1,15 @@
 <map id="Line" name="Line">
-<area shape="rect" id="node1" title="Line on a plane." alt="" coords="207,727,254,804"/>
-<area shape="rect" id="node2" href="$class_line_body.html" title=" " alt="" coords="103,557,207,664"/>
-<area shape="rect" id="node3" href="$class_geometric_object_body.html" title=" " alt="" coords="5,388,184,495"/>
-<area shape="rect" id="node4" title=" " alt="" coords="48,219,141,296"/>
-<area shape="rect" id="node5" href="$class_line_implementation.html" title=" " alt="" coords="251,557,402,664"/>
-<area shape="rect" id="node6" href="$class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="209,403,445,480"/>
-<area shape="rect" id="node7" href="$class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="221,189,433,325"/>
-<area shape="rect" id="node8" title=" " alt="" coords="217,5,436,97"/>
-<area shape="rect" id="node9" href="$struct_line_equation.html" title="Struct that defines position of the line." alt="" coords="469,403,566,480"/>
-<area shape="rect" id="node10" href="$struct_equation.html" title="Struct that defines position of the objects." alt="" coords="468,219,543,296"/>
-<area shape="rect" id="node11" href="$struct_homogeneous_coordinate.html" title="Coordinates in." alt="" coords="567,219,734,296"/>
-<area shape="rect" id="node12" title=" " alt="" coords="570,13,731,90"/>
+<area shape="rect" id="node1" title="Line on a plane." alt="" coords="173,727,287,863"/>
+<area shape="rect" id="node2" href="$class_geometric_object.html" title="Base class for geometric objects." alt="" coords="5,557,153,664"/>
+<area shape="rect" id="node3" href="$class_line_body.html" title=" " alt="" coords="178,557,282,664"/>
+<area shape="rect" id="node4" href="$class_geometric_object_body.html" title=" " alt="" coords="82,388,261,495"/>
+<area shape="rect" id="node5" title=" " alt="" coords="125,219,218,296"/>
+<area shape="rect" id="node6" href="$class_line_implementation.html" title=" " alt="" coords="326,557,481,664"/>
+<area shape="rect" id="node7" href="$class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="285,403,521,480"/>
+<area shape="rect" id="node8" href="$class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="297,189,509,325"/>
+<area shape="rect" id="node9" title=" " alt="" coords="312,5,495,97"/>
+<area shape="rect" id="node10" href="$struct_line_equation.html" title="Struct that defines position of the line." alt="" coords="546,395,663,487"/>
+<area shape="rect" id="node11" href="$struct_equation.html" title="Struct that defines position of the objects." alt="" coords="543,211,645,303"/>
+<area shape="rect" id="node12" href="$struct_homogeneous_coordinate.html" title="Coordinates in." alt="" coords="669,211,836,303"/>
+<area shape="rect" id="node13" title=" " alt="" coords="672,13,833,90"/>
 </map>

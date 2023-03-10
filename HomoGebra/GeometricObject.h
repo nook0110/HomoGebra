@@ -3,6 +3,19 @@
 #include "GeometricObjectBody.h"
 #include "GeometricObjectImplementation.h"
 
+/**
+ * \brief Base class for geometric objects.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ *
+ * \see Point
+ * \see Line
+ * \see Conic
+*/
 class GeometricObject
 {
 public:
@@ -19,6 +32,9 @@ public:
   virtual void Destroy(Plane& plane) = 0;
 
 protected:
+  /**
+  * \brief Default constructor.
+  */
   GeometricObject() = default;
 };
 

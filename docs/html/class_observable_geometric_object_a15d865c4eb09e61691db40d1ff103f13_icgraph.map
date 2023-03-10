@@ -1,0 +1,14 @@
+<map id="ObservableGeometricObject::Notify" name="ObservableGeometricObject::Notify">
+<area shape="rect" id="node1" title="Notify all subscribed observers that object was moved." alt="" coords="375,126,559,166"/>
+<area shape="rect" id="node2" href="$class_point.html#a853df76b6338eff57189585c2adb0b1f" title="Notify observers that this objected is destroyed." alt="" coords="209,5,302,31"/>
+<area shape="rect" id="node4" href="$class_line.html#a54dbeed3d17564f31a014a9c80aab279" title="Notify observers that this objected is destroyed." alt="" coords="212,55,299,80"/>
+<area shape="rect" id="node6" href="$class_conic.html#a6443bed118a3507d3d04bfcf1c10e2e7" title="Notify observers that this objected is destroyed." alt="" coords="207,104,303,129"/>
+<area shape="rect" id="node8" href="$class_conic_implementation.html#a72b09ee314545675e7ac07c8660ab05b" title="Sets new equation of conic." alt="" coords="184,154,327,194"/>
+<area shape="rect" id="node9" href="$class_line_implementation.html#a2a2a56c63abb7ff6b1ebeb2c196d4fcc" title="Sets new equation of line." alt="" coords="188,218,323,258"/>
+<area shape="rect" id="node11" href="$class_point_implementation.html#a0c7491c3bbb4aefe4bf54ef0092f403a" title="Sets new equation of point." alt="" coords="185,282,325,322"/>
+<area shape="rect" id="node3" href="$class_point.html#a206ded007973dc7db19c6adaff5e79c8" title="Destroy this object." alt="" coords="18,5,123,31"/>
+<area shape="rect" id="node5" href="$class_line.html#ad28541e8af01f2b9559910e5599d7321" title="Destroy this object." alt="" coords="21,55,120,80"/>
+<area shape="rect" id="node7" href="$class_conic.html#a55d85bd86505f6f7265d95e94ac002f2" title="Destroy this object." alt="" coords="17,104,125,129"/>
+<area shape="rect" id="node10" href="$class_line.html#ad99f3e15fa5630bbe53659939f2cf78e" title="Set new equation of line." alt="" coords="8,225,133,251"/>
+<area shape="rect" id="node12" href="$class_point.html#a38529969767ee5a8b7341ac84bea8d47" title="Set new equation of point." alt="" coords="5,289,136,315"/>
+</map>

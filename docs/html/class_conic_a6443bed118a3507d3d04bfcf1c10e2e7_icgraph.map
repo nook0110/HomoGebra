@@ -1,0 +1,4 @@
+<map id="Conic::Notify" name="Conic::Notify">
+<area shape="rect" id="node1" title="Notify observers that this objected is destroyed." alt="" coords="161,5,257,31"/>
+<area shape="rect" id="node2" href="$class_conic.html#a55d85bd86505f6f7265d95e94ac002f2" title="Destroy this object." alt="" coords="5,5,113,31"/>
+</map>
