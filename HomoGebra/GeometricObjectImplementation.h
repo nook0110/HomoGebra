@@ -167,7 +167,7 @@ public:
    *
    * \return Point equation.
    */
-  const PointEquation& GetEquation() const;
+  [[nodiscard]] const PointEquation& GetEquation() const;
 
 private:
 
@@ -199,7 +199,7 @@ public:
    *
    * \return Line equation.
    */
-  const LineEquation& GetEquation() const;
+  [[nodiscard]] const LineEquation& GetEquation() const;
 
 private:
 
@@ -231,7 +231,7 @@ public:
    *
    * \return Conic equation.
    */
-  const ConicEquation& GetEquation() const;
+  [[nodiscard]] const ConicEquation& GetEquation() const;
 
 private:
 

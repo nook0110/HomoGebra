@@ -55,8 +55,8 @@ struct PointEquation : public Equation
    */
   void Apply(const Transformation& transformation) override;
 
-  HomogeneousCoordinate& GetEquation();
-  const HomogeneousCoordinate& GetEquation() const;
+  [[nodiscard]] HomogeneousCoordinate& GetEquation();
+  [[nodiscard]] const HomogeneousCoordinate& GetEquation() const;
 
   HomogeneousCoordinate equation;
 };

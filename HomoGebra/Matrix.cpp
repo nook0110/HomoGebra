@@ -151,7 +151,12 @@ size_t SquaredMatrix::GetSize() const
   return size_;
 }
 
-SquaredMatrix::Column SquaredMatrix::GetAugmentation() const
+SquaredMatrix::Column& SquaredMatrix::GetAugmentation()
+{
+  return augmentation_;
+}
+
+const SquaredMatrix::Column& SquaredMatrix::GetAugmentation() const
 {
   return augmentation_;
 }
@@ -222,4 +227,16 @@ SquaredMatrix::Row& SquaredMatrix::operator[](size_t row)
 const SquaredMatrix::Row& SquaredMatrix::operator[](size_t row) const
 {
   return matrix_[row];
+}
+
+SquaredMatrix::Matrix::const_iterator SquaredMatrix::begin() const
+{
+  // Return iterator to first row
+  return matrix_.begin();
+}
+
+SquaredMatrix::Matrix::const_iterator SquaredMatrix::end() const
+{
+  // Return iterator to last row
+  return matrix_.end();
 }

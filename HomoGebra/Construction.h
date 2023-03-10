@@ -5,7 +5,7 @@ class WeekConstruction
 {
 public:
 
-  const Transformation& GetTransformation() const;
+  [[nodiscard]] const Transformation& GetTransformation() const;
 
 private:
   Transformation tranformation_;
@@ -73,7 +73,7 @@ public:
    *
    * \return New equation of point.
    */
-  virtual PointEquation RecalculateEquation() const = 0;
+  [[nodiscard]] virtual PointEquation RecalculateEquation() const = 0;
 
   /**
    * \brief Update the object because sth was moved.
@@ -95,7 +95,7 @@ protected:
   *
   * \return Equation of point.
   */
-  const PointEquation& GetEquation() const;
+  [[nodiscard]] const PointEquation& GetEquation() const;
 
   /**
   * \brief Set equation of point.
@@ -174,7 +174,7 @@ protected:
   *
   * \return Equation of line.
   */
-  const LineEquation& GetEquation() const;
+  [[nodiscard]] const LineEquation& GetEquation() const;
 
   /**
   * \brief Set equation of line.

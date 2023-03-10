@@ -39,35 +39,42 @@ public:
    *
    * \return Inverse matrix if it exists, otherwise std::nullopt.
    */
-  std::optional<SquaredMatrix> GetInverse() const;
+  [[nodiscard]] std::optional<SquaredMatrix> GetInverse() const;
 
   /**
    * \brief Calculates determinant
    *
    * \return Determinant
    */
-  complex Determinant() const;
+  [[nodiscard]] complex Determinant() const;
 
   /**
    * \brief Find solution of linear equations.
    *
    * \return Vector of solutions
    */
-  std::optional<Column> GetSolution() const;
+  [[nodiscard]] std::optional<Column> GetSolution() const;
 
   /**
    * \brief Get size of matrix.
    *
    * \return size of matrix
    */
-  size_t GetSize() const;
+  [[nodiscard]] size_t GetSize() const;
 
   /**
    * \brief Get matrix augmentation.
    *
    * \return augmentation
    */
-  Column GetAugmentation() const;
+  [[nodiscard]] Column& GetAugmentation();
+
+  /**
+   * \brief Get matrix augmentation.
+   *
+   * \return augmentation
+   */
+  [[nodiscard]] const Column& GetAugmentation() const;
 
   /**
    * \brief Multiplies this matrix on another one.
@@ -83,7 +90,7 @@ public:
    * \param other Another matrix
    * \return New matrix equals to result of multiplication
    */
-  SquaredMatrix operator*(const SquaredMatrix& other) const;
+  [[nodiscard]] SquaredMatrix operator*(const SquaredMatrix& other) const;
 
   /**
    * \brief Multiplies this matrix on vector.
@@ -91,21 +98,35 @@ public:
    * \param vector Vector
    * \return New vector equals to result of multiplication
    */
-  std::vector<complex> operator*(const std::vector<complex>& vector) const;
+  [[nodiscard]] std::vector<complex> operator*(const std::vector<complex>& vector) const;
 
   /**
    * \brief operator to get row of matrix.
    *
    * \param row Row of matrix
    */
-  Row& operator[](size_t row);
+  [[nodiscard]] Row& operator[](size_t row);
 
   /**
   * \brief operator to get row of matrix.
   *
   * \param row Row of matrix
   */
-  const Row& operator[](size_t row) const;
+  [[nodiscard]] const Row& operator[](size_t row) const;
+
+  /**
+  * \brief Return iterator to the beginning of rows
+  * 
+  * \return Iterator to first row
+  */
+  [[nodiscard]] SquaredMatrix::Matrix::const_iterator begin() const;
+
+  /**
+  * \brief Return iterator to the end of rows
+  * 
+  * \return Iterator to end of rows
+  */
+  [[nodiscard]] SquaredMatrix::Matrix::const_iterator end() const;
 
 private:
 

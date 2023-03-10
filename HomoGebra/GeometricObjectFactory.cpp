@@ -35,8 +35,43 @@ std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first, const Point& 
   // | s_x s_y s_z | 0 |
   // |  1   1   1  | 1 |
 
-  SquaredMatrix matrix(3);
-  //matrix[0][0] = first.
+  // Get equations of points
+  const auto& f_equation = first.GetEquation().GetEquation();
+  const auto& s_equation = second.GetEquation().GetEquation();
+
+  // Create matrix
+  SquaredMatrix matrix{ 3 };
+
+  // Get first row
+  auto& first_row = matrix[0];
+
+  // Set first row
+  for (int column = 0; column < first_row.size(); ++column)
+  {
+    first_row[column] = f_equation[static_cast<var>(column)];
+  }
+
+  // Get second row
+  auto& second_row = matrix[1];
+
+  // Set second row
+  for (int column = 0; column < second_row.size(); ++column)
+  {
+    second_row[column] = s_equation[static_cast<var>(column)];
+  }
+
+  // Get third row
+  auto& third_row = matrix[2];
+
+  // Set third row
+  std::fill(third_row.begin(), third_row.end(), complex{ 1 });
+
+  // Get augmentation
+  auto& augmentation = matrix.GetAugmentation();
+
+  // Set augmantation
+  std::fill(augmentation.begin(), std::prev(augmentation.end()), complex{ 0 });
+  augmentation.back() = complex{ 1 };
 
   // Create equation
   LineEquation equation{ HomogeneousCoordinate{} };

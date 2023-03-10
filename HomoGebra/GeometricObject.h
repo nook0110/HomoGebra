@@ -113,7 +113,6 @@ public:
 
   /**
   * \brief Default destructor.
-  *
   */
   ~Line() final = default;
 

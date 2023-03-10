@@ -31,14 +31,14 @@ public:
    *
    * \return Inverse matrix if it exists, otherwise std::nullopt.
    */
-  std::optional<TransformationMatrix> GetInverse() const;
+  [[nodiscard]] std::optional<TransformationMatrix> GetInverse() const;
 
   /**
    * \brief Calculates determinant
    *
    * \return Determinant
    */
-  complex Determinant() const;
+  [[nodiscard]] complex Determinant() const;
 
   /**
    * \brief Multiplies this matrix on another one.
@@ -54,13 +54,16 @@ public:
    * \param other Another matrix
    * \return New matrix equals to result of multiplication
    */
-  TransformationMatrix operator*(const TransformationMatrix& other) const;
+  [[nodiscard]] TransformationMatrix operator*(const TransformationMatrix& other) const;
 
-  const MatrixColumn& operator[](size_t row) const { return matrix_[row]; };
-  MatrixColumn& operator[](size_t row) { return matrix_[row]; }
+  /**
+  * \brief Return row of matrix.
+  */
+  [[nodiscard]] const MatrixRow& operator[](size_t row) const { return matrix_[row]; };
+  [[nodiscard]] MatrixRow& operator[](size_t row) { return matrix_[row]; }
 
-  MatrixContainer::const_iterator begin() const { return matrix_.begin(); }
-  MatrixContainer::const_iterator end() const { return matrix_.end(); }
+  [[nodiscard]] MatrixContainer::const_iterator begin() const { return matrix_.begin(); }
+  [[nodiscard]] MatrixContainer::const_iterator end() const { return matrix_.end(); }
 private:
   /**
    * Member data.
@@ -121,7 +124,7 @@ public:
    *
    * \return Return inverse if it exists, otherwise
    */
-  std::optional<Transformation> GetInverse() const;
+  [[nodiscard]] std::optional<Transformation> GetInverse() const;
 
   /**
    * \brief Apply transformation to this.
@@ -137,7 +140,7 @@ public:
    * \param other Which transformation to apply.
    * \return A combined transformation
    */
-  Transformation operator*(const Transformation& other) const;
+  [[nodiscard]] Transformation operator*(const Transformation& other) const;
 
   /**
    * \brief Apply transformation to a homogeneous coordinate.
@@ -145,7 +148,7 @@ public:
    * \param coordinate A homogeneous coordinate to apply transformation on.
    * \return Coordinate after transformation
    */
-  HomogeneousCoordinate operator()(const HomogeneousCoordinate& coordinate) const;
+  [[nodiscard]] HomogeneousCoordinate operator()(const HomogeneousCoordinate& coordinate) const;
 
 private:
   /**
@@ -179,8 +182,8 @@ enum class var
  */
 struct HomogeneousCoordinate
 {
-  const complex& operator[](var variable) const;
-  complex& operator[](var variable);
+  [[nodiscard]] const complex& operator[](var variable) const;
+  [[nodiscard]] complex& operator[](var variable);
 
   complex x;
   complex y;
