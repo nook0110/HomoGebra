@@ -172,7 +172,7 @@ enum class var
 };
 
 /**
- * \brief Coordinates in \f{ \mathbb{C}\mathrm{P}^2 \f}
+ * \brief Coordinates in \f$ \mathbb{C}\mathrm{P}^2 \f$
  *
  * \author nook0110
  *
