@@ -1,10 +1,8 @@
-#include "SFML/Graphics.hpp"
-
-#include "imgui.h"
-#include "imgui-SFML.h"
-
 #include "GUI.h"
 #include "GeometricObject.h"
+#include "SFML/Graphics.hpp"
+#include "imgui-SFML.h"
+#include "imgui.h"
 int main()
 {
   sf::ContextSettings settings;
@@ -13,7 +11,8 @@ int main()
   settings.antialiasingLevel = 16;
   settings.majorVersion = 3;
   settings.minorVersion = 0;
-  sf::RenderWindow window(sf::VideoMode(1000, 1000), "Window Title", sf::Style::Default, settings);
+  sf::RenderWindow window(sf::VideoMode(1000, 1000), "Window Title",
+                          sf::Style::Default, settings);
   ImGui::SFML::Init(window);
 
   window.setFramerateLimit(60);
@@ -25,8 +24,7 @@ int main()
     while (window.pollEvent(event))
     {
       GUI::Global::ProcessEvent(event);
-      if (event.type == sf::Event::Closed)
-        window.close();
+      if (event.type == sf::Event::Closed) window.close();
     }
 
     window.clear(sf::Color::White);

@@ -2,7 +2,8 @@
 
 using namespace Event;
 
-void ObservableGeometricObject::Attach(const std::shared_ptr<ConstructionObserver>& observer)
+void ObservableGeometricObject::Attach(
+    const std::shared_ptr<ConstructionObserver>& observer)
 {
   // Add observer to list
   observers_.push_back(observer);
@@ -11,30 +12,26 @@ void ObservableGeometricObject::Attach(const std::shared_ptr<ConstructionObserve
 void ObservableGeometricObject::Detach(const ConstructionObserver* observer)
 {
   // Remove observer from list
-  observers_.remove_if([observer](const std::shared_ptr<ConstructionObserver>& ptr)
-    {
-      return ptr.get() == observer;
-    });
+  observers_.remove_if(
+      [observer](const std::shared_ptr<ConstructionObserver>& ptr)
+      { return ptr.get() == observer; });
 }
 
 void ObservableGeometricObject::Notify(const Event::Moved& moved) const
 {
   // Update all observers
-  for (const auto& observer : observers_)
-    observer->Update(moved);
+  for (const auto& observer : observers_) observer->Update(moved);
 }
 
 void ObservableGeometricObject::Notify(const Event::Destroyed& destroyed) const
 {
   // Update all observers
-  for (const auto& observer : observers_)
-    observer->Update(destroyed);
+  for (const auto& observer : observers_) observer->Update(destroyed);
 }
 
 PointImplementation::PointImplementation(const PointEquation& equation)
-  : equation_(equation)
-{
-}
+    : equation_(equation)
+{}
 
 void PointImplementation::SetEquation(const PointEquation& equation)
 {
@@ -52,9 +49,8 @@ const PointEquation& PointImplementation::GetEquation() const
 }
 
 LineImplementation::LineImplementation(const LineEquation& equation)
-  :equation_(equation)
-{
-}
+    : equation_(equation)
+{}
 
 void LineImplementation::SetEquation(const LineEquation& equation)
 {

@@ -4,11 +4,11 @@
 
 class GeometricObjectBody : public sf::Drawable
 {
-public:
+ public:
   /**
- * \brief Default constructor.
- *
- */
+   * \brief Default constructor.
+   *
+   */
   GeometricObjectBody() = default;
 
   /**
@@ -17,23 +17,24 @@ public:
    */
   ~GeometricObjectBody() override;
 
-private:
+ private:
   /**
    * \brief Draw the object to a render target.
    *
    * \param target Render target to draw to.
    * \param states Current render states.
    */
-  void draw(sf::RenderTarget& target, sf::RenderStates states) const override = 0;
+  void draw(sf::RenderTarget& target,
+            sf::RenderStates states) const override = 0;
 };
 
 class PointBody : public GeometricObjectBody
 {
-public:
+ public:
   /**
-  * \brief Default constructor.
-  *
-  */
+   * \brief Default constructor.
+   *
+   */
   PointBody() = default;
 
   /**
@@ -42,7 +43,7 @@ public:
    */
   ~PointBody() override = default;
 
-private:
+ private:
   /**
    * \brief Draw the point to a render target.
    *
@@ -54,11 +55,11 @@ private:
 
 class LineBody : public GeometricObjectBody
 {
-public:
+ public:
   /**
- * \brief Default constructor.
- *
- */
+   * \brief Default constructor.
+   *
+   */
   LineBody() = default;
 
   /**
@@ -67,7 +68,7 @@ public:
    */
   ~LineBody() override = default;
 
-private:
+ private:
   /**
    * \brief Draw the line to a render target.
    *
@@ -79,14 +80,14 @@ private:
 
 class ConicBody : public GeometricObjectBody
 {
-public:
+ public:
   /**
    * \brief Destructor.
    *
    */
   ~ConicBody() override = default;
 
-private:
+ private:
   /**
    * \brief Draw the conic to a render target.
    *

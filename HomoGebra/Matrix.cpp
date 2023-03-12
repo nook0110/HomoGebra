@@ -1,21 +1,21 @@
 #include "Matrix.h"
+
 #include <algorithm>
 
 // Static member init
 const long double SquaredMatrix::kEpsilon = 1e-12L;
 
 SquaredMatrix::SquaredMatrix(size_t size)
-  : matrix_(size, Row(size))
-  , augmentation_(size),
-  size_(size)
+    : matrix_(size, Row(size)), augmentation_(size), size_(size)
 {}
 
-SquaredMatrix::SquaredMatrix(const Matrix& matrix, const Row& augmentation = Row())
-  :matrix_(matrix), augmentation_(augmentation), size_(matrix.size())
+SquaredMatrix::SquaredMatrix(const Matrix& matrix,
+                             const Row& augmentation = Row())
+    : matrix_(matrix), augmentation_(augmentation), size_(matrix.size())
 {
   // Check if matrix is squared
   if (std::any_of(matrix.begin(), matrix.end(),
-    [this](const Row& row) { return row.size() != size_; }))
+                  [this](const Row& row) { return row.size() != size_; }))
   {
     throw std::invalid_argument("Matrix is not squared");
   }
@@ -28,26 +28,46 @@ SquaredMatrix::SquaredMatrix(const Matrix& matrix, const Row& augmentation = Row
 
   // Check if matrix contains NaN
   if (std::any_of(matrix.begin(), matrix.end(),
-    [](const Row& row) { return std::any_of(row.begin(), row.end(), [](const complex& value) { return std::isnan(value.real()) || std::isnan(value.imag()); }); }))
+                  [](const Row& row)
+                  {
+                    return std::any_of(row.begin(), row.end(),
+                                       [](const complex& value) {
+                                         return std::isnan(value.real()) ||
+                                                std::isnan(value.imag());
+                                       });
+                  }))
   {
     throw std::invalid_argument("Matrix contains NaN");
   }
 
   // Check if augmentation contains NaN or Inf
-  if (std::any_of(augmentation.begin(), augmentation.end(), [](const complex& value) { return std::isnan(value.real()) || std::isnan(value.imag()); }))
+  if (std::any_of(augmentation.begin(), augmentation.end(),
+                  [](const complex& value) {
+                    return std::isnan(value.real()) || std::isnan(value.imag());
+                  }))
   {
     throw std::invalid_argument("Augmentation contains NaN");
   }
 
   // Check if matrix contains Inf
   if (std::any_of(matrix.begin(), matrix.end(),
-    [](const Row& row) { return std::any_of(row.begin(), row.end(), [](const complex& value) { return std::isinf(value.real()) || std::isinf(value.imag()); }); }))
+                  [](const Row& row)
+                  {
+                    return std::any_of(row.begin(), row.end(),
+                                       [](const complex& value) {
+                                         return std::isinf(value.real()) ||
+                                                std::isinf(value.imag());
+                                       });
+                  }))
   {
     throw std::invalid_argument("Matrix contains Inf");
   }
 
   // Check if augmentation contains Inf
-  if (std::any_of(augmentation.begin(), augmentation.end(), [](const complex& value) { return std::isinf(value.real()) || std::isinf(value.imag()); }))
+  if (std::any_of(augmentation.begin(), augmentation.end(),
+                  [](const complex& value) {
+                    return std::isinf(value.real()) || std::isinf(value.imag());
+                  }))
   {
     throw std::invalid_argument("Augmentation contains Inf");
   }
@@ -203,10 +223,7 @@ std::optional<SquaredMatrix::Column> SquaredMatrix::GetSolution() const
   return inverse->GetAugmentation();
 }
 
-size_t SquaredMatrix::GetSize() const
-{
-  return size_;
-}
+size_t SquaredMatrix::GetSize() const { return size_; }
 
 SquaredMatrix::Column& SquaredMatrix::GetAugmentation()
 {
@@ -252,7 +269,8 @@ SquaredMatrix SquaredMatrix::operator*(const SquaredMatrix& other) const
   return result;
 }
 
-std::vector<complex> SquaredMatrix::operator*(const std::vector<complex>& vector) const
+std::vector<complex> SquaredMatrix::operator*(
+    const std::vector<complex>& vector) const
 {
   // Check if vector is compatible
   if (vector.size() != size_)

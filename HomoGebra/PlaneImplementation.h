@@ -18,27 +18,34 @@
  */
 class PlaneImplementation
 {
-public:
-
+ public:
   /**
-  * \brief Adds object
-  *
-  * \param Object to add
-  */
+   * \brief Adds object
+   *
+   * \param Object to add
+   */
   void AddObject(const std::shared_ptr<GeometricObject>& object);
 
   /**
-  * \brief Remove object
-  *
-  * \param Object to destroy
-  */
+   * \brief Remove object.
+   *
+   * \param Object to destroy.
+   */
   void RemoveObject(GeometricObject* object);
 
-private:
-
   /**
-  * Member data.
-  */
+   * \brief Get all objects.
+   *
+   * \return All objects.
+   */
+  [[nodiscard]] const std::vector<std::shared_ptr<GeometricObject>>&
+  GetObjects() const;
 
-  std::vector<std::shared_ptr<GeometricObject>> objects_; //!< All objects on the plane.
+ private:
+  /**
+   * Member data.
+   */
+
+  std::vector<std::shared_ptr<GeometricObject>>
+      objects_;  //!< All objects on the plane.
 };

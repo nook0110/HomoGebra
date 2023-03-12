@@ -15,26 +15,26 @@
  * \see Point
  * \see Line
  * \see Conic
-*/
+ */
 class GeometricObject
 {
-public:
+ public:
   /**
-  * \brief Default destructor.
-  */
+   * \brief Default destructor.
+   */
   virtual ~GeometricObject() = default;
 
   /**
-  * \brief Destroy this object.
-  *
-  * \param plane Plane, where this object is located.
-  */
+   * \brief Destroy this object.
+   *
+   * \param plane Plane, where this object is located.
+   */
   virtual void Destroy(Plane& plane) = 0;
 
-protected:
+ protected:
   /**
-  * \brief Default constructor.
-  */
+   * \brief Default constructor.
+   */
   GeometricObject() = default;
 };
 
@@ -50,36 +50,28 @@ protected:
  * \see PointBody
  * \see PointImplementation
  */
-class Point : public GeometricObject
+class Point final : public GeometricObject
 {
-public:
-
+ public:
   /**
-  * \brief Construct point on a plane with equation.
-  *
-  * \param equation Equation of point.
-  */
+   * \brief Construct point on a plane with equation.
+   *
+   * \param equation Equation of point.
+   */
   explicit Point(const PointEquation& equation = PointEquation{});
 
   /**
-  * \brief Default destructor.
-  *
-  */
-  ~Point() final = default;
+   * \brief Default destructor.
+   *
+   */
+  ~Point() override = default;
 
   /**
-  * \brief Destroy this object.
-  *
-  * \param plane Plane, where this object is located.
-  */
-  void Destroy(Plane& plane) final;
-
-  /**
-  * \brief Notify observers that this objected is destroyed
-  *
-  * \param event Event
-  */
-  void Notify(const Event::Destroyed& event) const;
+   * \brief Destroy this object.
+   *
+   * \param plane Plane, where this object is located.
+   */
+  void Destroy(Plane& plane) override;
 
   /**
    * \brief Set new equation of point.
@@ -89,13 +81,19 @@ public:
   void SetEquation(const PointEquation& equation);
 
   /**
-  * \brief Return current equation of point.
-  *
-  * \return Equation of point
-  */
+   * \brief Return current equation of point.
+   *
+   * \return Equation of point
+   */
   [[nodiscard]] const PointEquation& GetEquation() const;
 
-private:
+ private:
+  /**
+   * \brief Notify observers that this objected is destroyed
+   *
+   * \param event Event
+   */
+  void Notify(const Event::Destroyed& event) const;
 
   /*
    * Member data
@@ -116,35 +114,27 @@ private:
  * \see LineBody
  * \see LineImplementation
  */
-class Line : public GeometricObject
+class Line final : public GeometricObject
 {
-public:
-
+ public:
   /**
-  * \brief Construct line on a plane with equation.
-  *
-  * \param equation Equation of line
-  */
+   * \brief Construct line on a plane with equation.
+   *
+   * \param equation Equation of line
+   */
   explicit Line(const LineEquation& equation = LineEquation{});
 
   /**
-  * \brief Default destructor.
-  */
-  ~Line() final = default;
+   * \brief Default destructor.
+   */
+  ~Line() override = default;
 
   /**
-  * \brief Destroy this object.
-  *
-  * \param plane Plane, where this object is located.
-  */
-  void Destroy(Plane& plane) final;
-
-  /**
-  * \brief Notify observers that this objected is destroyed
-  *
-  * \param event Event
-  */
-  void Notify(const Event::Destroyed& event) const;
+   * \brief Destroy this object.
+   *
+   * \param plane Plane, where this object is located.
+   */
+  void Destroy(Plane& plane) override;
 
   /**
    * \brief Set new equation of line.
@@ -153,7 +143,21 @@ public:
    */
   void SetEquation(const LineEquation& equation);
 
-private:
+  /**
+   * \brief Return current equation of point.
+   *
+   * \return Equation of point
+   */
+  [[nodiscard]] const LineEquation& GetEquation() const;
+
+ private:
+  /**
+   * \brief Notify observers that this objected is destroyed
+   *
+   * \param event Event
+   */
+  void Notify(const Event::Destroyed& event) const;
+
   /*
    * Member data
    */
@@ -175,22 +179,22 @@ private:
  */
 class Conic : public GeometricObject
 {
-public:
+ public:
   /**
-  * \brief Destroy this object.
-  *
-  * \param plane Plane, where this object is located.
-  */
+   * \brief Destroy this object.
+   *
+   * \param plane Plane, where this object is located.
+   */
   void Destroy(Plane& plane) final;
 
   /**
-  * \brief Notify observers that this objected is destroyed
-  *
-  * \param event Event
-  */
+   * \brief Notify observers that this objected is destroyed
+   *
+   * \param event Event
+   */
   void Notify(const Event::Destroyed& event) const;
 
-private:
+ private:
   /*
    * Member data
    */

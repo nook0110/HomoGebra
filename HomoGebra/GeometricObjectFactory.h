@@ -11,13 +11,13 @@
  *
  * \date February 2023
  *
- * \details Class constructs points and places them into the plane automatically.
- * It also constructs dependencies between objects.
- * \see Construction
-*/
+ * \details Class constructs points and places them into the plane
+ * automatically. It also constructs dependencies between objects. \see
+ * Construction
+ */
 class PointFactory
 {
-public:
+ public:
   /**
    * \brief Construct a factory from the plane.
    *
@@ -43,11 +43,11 @@ public:
    */
   std::shared_ptr<Point> Projection(const Point& from, const Line& to);
 
-private:
+ private:
   /**
    * Member data.
    */
-  Plane& plane_; //!< Plane to add objects.
+  Plane& plane_;  //!< Plane to add objects.
 };
 
 /**
@@ -62,10 +62,10 @@ private:
  * \details Class constructs lines and places them into the plane automatically.
  * It also constructs dependencies between objects.
  * \see Construction
-*/
+ */
 class LineFactory
 {
-public:
+ public:
   /**
    * \brief Construct a factory from the plane.
    *
@@ -84,11 +84,11 @@ public:
    */
   std::shared_ptr<Line> ByTwoPoints(const Point& first, const Point& second);
 
-private:
+ private:
   /**
    * Member data.
    */
-  Plane& plane_; //!< Plane to add objects.
+  Plane& plane_;  //!< Plane to add objects.
 };
 
 /**
@@ -100,13 +100,13 @@ private:
  *
  * \date February 2023
  *
- * \details Class constructs conics and places them into the plane automatically.
- * It also constructs dependencies between objects.
- * \see Construction
-*/
+ * \details Class constructs conics and places them into the plane
+ * automatically. It also constructs dependencies between objects. \see
+ * Construction
+ */
 class ConicFactory
 {
-public:
+ public:
   /**
    * \brief Construct a factory from the plane.
    *
@@ -125,12 +125,12 @@ public:
    * \return Reference to a constructed conic.
    */
   Conic& ByFivePoints(const Point& first, const Point& second,
-    const Point& third, const Point& fourth,
-    const Point& fifth);
+                      const Point& third, const Point& fourth,
+                      const Point& fifth);
 
-private:
+ private:
   /**
    * Member data.
    */
-  Plane& plane_; //!< Plane to add objects.
+  Plane& plane_;  //!< Plane to add objects.
 };

@@ -1,9 +1,8 @@
 ﻿#include "GeometricObjectFactory.h"
+
 #include "Matrix.h"
 
-PointFactory::PointFactory(Plane& plane)
-  :plane_(plane)
-{}
+PointFactory::PointFactory(Plane& plane) : plane_(plane) {}
 
 std::shared_ptr<Point> PointFactory::OnPlane(const PointEquation& coordinate)
 {
@@ -20,11 +19,10 @@ std::shared_ptr<Point> PointFactory::OnPlane(const PointEquation& coordinate)
   return point;
 }
 
-LineFactory::LineFactory(Plane& plane)
-  :plane_(plane)
-{}
+LineFactory::LineFactory(Plane& plane) : plane_(plane) {}
 
-std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first, const Point& second)
+std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first,
+                                               const Point& second)
 {
   // Construct equation
 
@@ -40,7 +38,7 @@ std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first, const Point& 
   const auto& s_equation = second.GetEquation().GetEquation();
 
   // Create matrix
-  SquaredMatrix matrix{ 3 };
+  SquaredMatrix matrix{3};
 
   // Get first row
   auto& first_row = matrix[0];
@@ -64,17 +62,29 @@ std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first, const Point& 
   auto& third_row = matrix[2];
 
   // Set third row
-  std::fill(third_row.begin(), third_row.end(), complex{ 1 });
+  std::fill(third_row.begin(), third_row.end(), complex{1});
 
   // Get augmentation
   auto& augmentation = matrix.GetAugmentation();
 
   // Set augmentation
-  std::fill(augmentation.begin(), std::prev(augmentation.end()), complex{ 0 });
-  augmentation.back() = complex{ 1 };
+  std::fill(augmentation.begin(), std::prev(augmentation.end()), complex{0});
+  augmentation.back() = complex{1};
+
+  // Get solution
+  auto solution = matrix.GetSolution();
+
+  // Check if solution exists
+  if (!solution)
+  {
+    throw std::runtime_error("Points are on the same line");
+  }
+
+  // Get value
+  const auto& value = *solution;
 
   // Create equation
-  LineEquation equation{ HomogeneousCoordinate{} };
+  LineEquation equation{{value[0], value[1], value[2]}};
 
   // Create line
   auto line = std::make_shared<Line>(equation);
@@ -85,3 +95,5 @@ std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first, const Point& 
   // Return line
   return line;
 }
+
+ConicFactory::ConicFactory(Plane& plane) : plane_(plane) {}

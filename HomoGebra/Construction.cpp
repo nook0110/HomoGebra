@@ -1,4 +1,5 @@
 ﻿#include "Construction.h"
+
 #include "Plane.h"
 
 void ConstructionPoint::Update(const Event::Moved&)

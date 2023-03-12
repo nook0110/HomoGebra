@@ -7,27 +7,28 @@ class GeometricObject;
 class Plane;
 
 /**
-* \brief Events which can happen.
-*/
+ * \brief Events which can happen.
+ */
 namespace Event
 {
-  /**
-   * \brief Tag that shows that object was moved.
-   */
-  struct Moved {};
+/**
+ * \brief Tag that shows that object was moved.
+ */
+struct Moved
+{};
 
-  /**
-   * \brief Tag that shows that object was destroyed.
+/**
+ * \brief Tag that shows that object was destroyed.
+ */
+struct Destroyed
+{
+  /*
+   * Member data.
    */
-  struct Destroyed
-  {
-    /*
-    * Member data.
-    */
-    GeometricObject* object; //!< Object which was destroyed.
-    Plane& plane; //!< Plane where object was destroyed.
-  };
-}
+  GeometricObject* object;  //!< Object which was destroyed.
+  Plane& plane;             //!< Plane where object was destroyed.
+};
+}  // namespace Event
 
 /**
  * \brief Makes Construction an observer.
@@ -42,30 +43,32 @@ namespace Event
  *
  * \see ObservableGeometricObject
  * \see Construction
-*/
+ */
 class ConstructionObserver
 {
-public:
+ public:
   /**
-  * Default destructor.
-  */
+   * Default destructor.
+   */
   virtual ~ConstructionObserver() = default;
 
   /**
-  * \brief Update the object, because sth moved.
-  *
-  * \param Tag with some information.
-  */
+   * \brief Update the object, because sth moved.
+   *
+   * \param Tag with some information.
+   */
   virtual void Update(const Event::Moved&) = 0;
 
   /**
-  * \brief Update the object, because sth was destroyed.
-  *
-  * \param Tag with some information (Plane where it was destroyed).
-  */
+   * \brief Update the object, because sth was destroyed.
+   *
+   * \param Tag with some information (Plane where it was destroyed).
+   */
   virtual void Update(const Event::Destroyed&) = 0;
-private:
-  std::list<const ConstructionObserver*> observers_; //!< List of subscribed observers.
+
+ private:
+  std::list<const ConstructionObserver*>
+      observers_;  //!< List of subscribed observers.
 };
 
 /**
@@ -81,11 +84,10 @@ private:
  *
  * \see ConstructionObserver
  * \see GeometricObjectImplementation
-*/
+ */
 class ObservableGeometricObject
 {
-public:
-
+ public:
   virtual ~ObservableGeometricObject() = default;
 
   /**
@@ -103,22 +105,23 @@ public:
   void Detach(const ConstructionObserver* observer);
 
   /**
-  * \brief Notify all subscribed observers that object was moved.
-  *
-  */
+   * \brief Notify all subscribed observers that object was moved.
+   *
+   */
   void Notify(const Event::Moved&) const;
 
   /**
-  * \brief Notify all subscribed observers that object was destroyed.
-  *
-  */
+   * \brief Notify all subscribed observers that object was destroyed.
+   *
+   */
   void Notify(const Event::Destroyed&) const;
 
-private:
+ private:
   /**
    * Member data.
    */
-  std::list<std::shared_ptr<ConstructionObserver>> observers_; //!< List of subscribed observers.
+  std::list<std::shared_ptr<ConstructionObserver>>
+      observers_;  //!< List of subscribed observers.
 };
 
 /**
@@ -134,32 +137,32 @@ private:
  * \see LineImplementation
  * \see ConicImplementation
  *
-*/
+ */
 class GeometricObjectImplementation : public ObservableGeometricObject
 {
-public:
+ public:
   /**
-  * \brief Destructor.
-  *
-  */
+   * \brief Destructor.
+   *
+   */
   ~GeometricObjectImplementation() override = default;
 };
 
 class PointImplementation : public GeometricObjectImplementation
 {
-public:
+ public:
   /**
-  * \brief Construct a point with given equation.
-  *
-  * \param equation Equation of point.
-  */
+   * \brief Construct a point with given equation.
+   *
+   * \param equation Equation of point.
+   */
   explicit PointImplementation(const PointEquation& equation = PointEquation());
 
   /**
    * \brief Sets new equation of point.
    *
    * \param equation Equation of point.
-  */
+   */
   void SetEquation(const PointEquation& equation);
 
   /**
@@ -169,29 +172,28 @@ public:
    */
   [[nodiscard]] const PointEquation& GetEquation() const;
 
-private:
-
+ private:
   /**
    * Member data.
    */
-  PointEquation equation_; //!< Point equation.
+  PointEquation equation_;  //!< Point equation.
 };
 
 class LineImplementation : public GeometricObjectImplementation
 {
-public:
+ public:
   /**
    * \brief Construct a line with given equation.
    *
    * \param equation Equation of line.
-  */
+   */
   explicit LineImplementation(const LineEquation& equation = LineEquation());
 
   /**
    * \brief Sets new equation of line.
    *
    * \param equation Equation of line.
-  */
+   */
   void SetEquation(const LineEquation& equation);
 
   /**
@@ -201,29 +203,27 @@ public:
    */
   [[nodiscard]] const LineEquation& GetEquation() const;
 
-private:
-
+ private:
   /**
    * Member data.
    */
-  LineEquation equation_; //!< Line equation.
+  LineEquation equation_;  //!< Line equation.
 };
 
 class ConicImplementation : public GeometricObjectImplementation
 {
-public:
-
+ public:
   /**
- * \brief Default constructor.
- *
- */
+   * \brief Default constructor.
+   *
+   */
   ConicImplementation() = default;
 
   /**
    * \brief Sets new equation of conic.
    *
    * \param equation Equation of conic.
-  */
+   */
   void SetEquation(const ConicEquation& equation);
 
   /**
@@ -233,10 +233,9 @@ public:
    */
   [[nodiscard]] const ConicEquation& GetEquation() const;
 
-private:
-
+ private:
   /**
    * Member data.
    */
-  ConicEquation equation_; //!< Conic equation.
+  ConicEquation equation_;  //!< Conic equation.
 };

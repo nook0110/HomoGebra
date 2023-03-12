@@ -1,6 +1,6 @@
 #pragma once
-#include "PlaneImplementation.h"
 #include "PlaneBody.h"
+#include "PlaneImplementation.h"
 
 /**
  * \brief Container for all objects, which you can draw.
@@ -16,15 +16,23 @@
  */
 class Plane
 {
-public:
+ public:
   /**
-  * \brief Add object to plane.
-  *
-  * \param object Pointer to an object.
-  */
+   * \brief Add object to plane.
+   *
+   * \param object Pointer to an object.
+   */
   void AddObject(const std::shared_ptr<GeometricObject>& object);
 
-private:
+  /**
+   * \brief Get all objects.
+   *
+   * \return All objects.
+   */
+  [[nodiscard]] const std::vector<std::shared_ptr<GeometricObject>>&
+  GetObjects() const;
+
+ private:
   PlaneImplementation implementation_;
   PlaneBody body_;
 };

@@ -1,7 +1,7 @@
 #pragma once
 #include <complex>
-#include <vector>
 #include <optional>
+#include <vector>
 
 using complex = std::complex<long double>;
 
@@ -10,7 +10,7 @@ using complex = std::complex<long double>;
  */
 class SquaredMatrix
 {
-public:
+ public:
   /**
    * \brief Type aliases.
    *
@@ -20,14 +20,16 @@ public:
   using Matrix = std::vector<Row>;
 
   /**
-   * \brief Construct from size. Matrix and augmentation will be filled with zeros.
+   * \brief Construct from size. Matrix and augmentation will be filled with
+   * zeros.
    *
    * \param size Size of matrix
    */
   explicit SquaredMatrix(size_t size);
 
   /**
-   * \brief Constructor that initializes all elements in matrix and its augmentation
+   * \brief Constructor that initializes all elements in matrix and its
+   * augmentation
    *
    * \param matrix Matrix
    * \param augmentation Augmentation
@@ -98,7 +100,8 @@ public:
    * \param vector Vector
    * \return New vector equals to result of multiplication
    */
-  [[nodiscard]] std::vector<complex> operator*(const std::vector<complex>& vector) const;
+  [[nodiscard]] std::vector<complex> operator*(
+      const std::vector<complex>& vector) const;
 
   /**
    * \brief operator to get row of matrix.
@@ -108,41 +111,40 @@ public:
   [[nodiscard]] Row& operator[](size_t row);
 
   /**
-  * \brief operator to get row of matrix.
-  *
-  * \param row Row of matrix
-  */
+   * \brief operator to get row of matrix.
+   *
+   * \param row Row of matrix
+   */
   [[nodiscard]] const Row& operator[](size_t row) const;
 
   /**
-  * \brief Return iterator to the beginning of rows
-  * 
-  * \return Iterator to first row
-  */
+   * \brief Return iterator to the beginning of rows
+   *
+   * \return Iterator to first row
+   */
   [[nodiscard]] SquaredMatrix::Matrix::const_iterator begin() const;
 
   /**
-  * \brief Return iterator to the end of rows
-  * 
-  * \return Iterator to end of rows
-  */
+   * \brief Return iterator to the end of rows
+   *
+   * \return Iterator to end of rows
+   */
   [[nodiscard]] SquaredMatrix::Matrix::const_iterator end() const;
 
-private:
-
-  static const long double kEpsilon; //<! Epsilon for comparison
+ private:
+  static const long double kEpsilon;  //<! Epsilon for comparison
 
   /**
- * Default constructor.
- */
+   * Default constructor.
+   */
   SquaredMatrix() = default;
 
   /**
    * Member data.
    */
 
-  Matrix matrix_; //<! Matrix
-  Column augmentation_; //<! Augmentation
+  Matrix matrix_;        //<! Matrix
+  Column augmentation_;  //<! Augmentation
 
-  size_t size_; //<! Size of matrix
+  size_t size_;  //<! Size of matrix
 };
