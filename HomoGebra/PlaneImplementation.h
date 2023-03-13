@@ -31,7 +31,7 @@ class PlaneImplementation
    *
    * \param Object to destroy.
    */
-  void RemoveObject(GeometricObject* object);
+  void RemoveObject(const GeometricObject* object);
 
   /**
    * \brief Get all objects.

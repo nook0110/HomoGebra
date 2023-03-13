@@ -18,6 +18,9 @@ int main()
   window.setFramerateLimit(60);
   ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
+  GUI::ObjectMenu::HomogeneousCoordinateEditor coordinate(
+      HomogeneousCoordinate{complex(1, 2), complex(3, 4), complex(5, 6)});
+
   while (window.isOpen())
   {
     sf::Event event;
@@ -31,8 +34,8 @@ int main()
 
     GUI::Global::Update(window);
 
-    ImGui::Begin("Test window");
-    ImGui::Text("Hello world!");
+    ImGui::Begin("Test!");
+    coordinate.Construct();
     ImGui::End();
 
     GUI::Global::Render(window);

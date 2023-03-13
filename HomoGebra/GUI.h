@@ -96,19 +96,33 @@ class ImGuiWindow
 class ObjectMenu : public ImGuiWindow
 {
  public:
-  explicit ObjectMenu(Plane& plane) : plane(plane) {}
-
-  void Construct() final;
-
- private:
   class HomogeneousCoordinateEditor
   {
    public:
-    explicit HomogeneousCoordinateEditor(HomogeneousCoordinate& coordinate);
-    const HomogeneousCoordinate& GetCoordinate();
+    explicit HomogeneousCoordinateEditor(
+        const HomogeneousCoordinate& coordinate = HomogeneousCoordinate{});
+
+    void Construct();
+
+    HomogeneousCoordinate GetCoordinate() const;
 
    private:
-    HomogeneousCoordinate coordinate;
+    class ComplexEditor
+    {
+     public:
+      explicit ComplexEditor(const complex& number = complex{});
+
+      void Construct();
+
+      complex GetNumber() const;
+
+     private:
+      double real_part_;
+      double imaginary_part_;
+    };
+    ComplexEditor x_variable;
+    ComplexEditor y_variable;
+    ComplexEditor z_variable;
   };
 
   /**
@@ -125,6 +139,11 @@ class ObjectMenu : public ImGuiWindow
    private:
   };
 
+  explicit ObjectMenu(Plane& plane) : plane(plane) {}
+
+  void Construct() final;
+
+ private:
   /**
    * Member data.
    */

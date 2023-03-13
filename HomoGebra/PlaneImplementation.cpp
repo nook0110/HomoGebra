@@ -7,7 +7,7 @@ void PlaneImplementation::AddObject(
   objects_.push_back(object);
 }
 
-void PlaneImplementation::RemoveObject(GeometricObject* object)
+void PlaneImplementation::RemoveObject(const GeometricObject* object)
 {
   // Delete object from vector of all objects
   objects_.erase(
