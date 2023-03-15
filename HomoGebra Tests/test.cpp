@@ -1,13 +1,8 @@
-#include "../HomoGebra/Coordinate.cpp"
+#include "../HomoGebra/Coordinate.cpp"  // NOLINT(bugprone-suspicious-include)
 #include "../HomoGebra/Coordinate.h"
-#include "../HomoGebra/Equation.cpp"
 #include "../HomoGebra/Equation.h"
-#include "../HomoGebra/GeometricObjectImplementation.cpp"
-#include "../HomoGebra/GeometricObjectImplementation.h"
-#include "../HomoGebra/Matrix.cpp"
 #include "../HomoGebra/Matrix.h"
 #include "gtest/gtest.h"
-#include "pch.h"
 
 constexpr long double kEpsilon = 1e-10L;
 
@@ -36,7 +31,7 @@ testing::AssertionResult check_two_complex(const Complex& first,
 // precision [abs_error]
 testing::AssertionResult check_two_vectors(const std::vector<Complex>& first,
                                            const std::vector<Complex>& second,
-                                           long double abs_error)
+                                           const long double abs_error)
 {
   if (first.size() != second.size())
   {
@@ -173,11 +168,17 @@ TEST(SquaredMatrix, Inverse)
 
   // Check that inverse matrix is correct
   ASSERT_TRUE(check_two_squared_matrix(
-      real_inverse_of_matrix, second_inverse_matrix.value(), kEpsilon));
+      real_inverse_of_matrix,
+      second_inverse_matrix  // NOLINT(bugprone-unchecked-optional-access)
+          .value(),
+      kEpsilon));
 
   // Check that augmentation is correct
-  ASSERT_TRUE(check_two_augmentation(real_inverse_of_matrix,
-                                     second_inverse_matrix.value(), kEpsilon));
+  ASSERT_TRUE(check_two_augmentation(
+      real_inverse_of_matrix,
+      second_inverse_matrix  // NOLINT(bugprone-unchecked-optional-access)
+          .value(),
+      kEpsilon));
 }
 
 TEST(SquaredMatrix, Solution)
@@ -206,7 +207,10 @@ TEST(SquaredMatrix, Solution)
       Complex(1.16970378546, 3.95796180972)};
 
   // Check that solution is correct
-  ASSERT_TRUE(check_two_vectors(real_solution, solution.value(), kEpsilon));
+  ASSERT_TRUE(check_two_vectors(
+      real_solution,
+      solution.value(),  // NOLINT(bugprone-unchecked-optional-access)
+      kEpsilon));
 }
 
 TEST(SquaredMatrix, Determinant)
@@ -258,18 +262,18 @@ namespace Coordinate
 // Checks that two matrices are equal [each element] with precision [abs_error]
 testing::AssertionResult check_two_matrix(const TransformationMatrix& first,
                                           const TransformationMatrix& second,
-                                          long double abs_error)
+                                          const long double abs_error)
 {
-  for (int row = 0;
-       row < std::tuple_size<TransformationMatrix::MatrixColumn>::value; ++row)
+  for (size_t row = 0;
+       row < std::tuple_size_v<TransformationMatrix::MatrixColumn>; ++row)
   {
-    for (int column = 0;
-         column < std::tuple_size<TransformationMatrix::MatrixColumn>::value;
+    for (size_t column = 0;
+         column < std::tuple_size_v<TransformationMatrix::MatrixColumn>;
          ++column)
     {
-      auto result =
-          check_two_complex(first[row][column], second[row][column], abs_error);
-      if (!result)
+      if (auto result = check_two_complex(first[row][column],
+                                          second[row][column], abs_error);
+          !result)
       {
         return testing::AssertionFailure() << "Matrices are not near equal!"
                                            << "\n"
@@ -285,9 +289,6 @@ testing::AssertionResult check_two_matrix(const TransformationMatrix& first,
 
 TEST(TransformationMatrix, Determinant)
 {
-  // Create an identity matrix
-  const TransformationMatrix identity;
-
   // Create a random matrix
   const TransformationMatrix matrix(
       Complex(-4.924, -2.768), Complex(0.248, 9.890), Complex(2.895, 8.700),
@@ -323,8 +324,11 @@ TEST(TransformationMatrix, Inverse)
   ASSERT_TRUE(inverse_of_identity.has_value());
 
   // Check answer
-  EXPECT_TRUE(
-      check_two_matrix(identity, inverse_of_identity.value(), kEpsilon));
+  EXPECT_TRUE(check_two_matrix(
+      identity,
+      inverse_of_identity  // NOLINT(bugprone-unchecked-optional-access)
+          .value(),
+      kEpsilon));
 
   // Create a random matrix
   const TransformationMatrix matrix(
@@ -353,7 +357,11 @@ TEST(TransformationMatrix, Inverse)
                            Complex(0.1832029399L, -0.1264355453L));
 
   // Check answer
-  EXPECT_TRUE(check_two_matrix(correct_inverse, inverse.value(), kEpsilon));
+  EXPECT_TRUE(
+      check_two_matrix(correct_inverse,
+                       inverse  // NOLINT(bugprone-unchecked-optional-access)
+                           .value(),
+                       kEpsilon));
 
   // Create a random transformation with determinant 0
   const TransformationMatrix transformation_without_inversion(
@@ -390,9 +398,19 @@ TEST(TransformationMatrix, Multiplication)
   // Compute inverse
   const auto inverse = matrix.GetInverse();
 
+  // Check if inverse matrix exists
+  ASSERT_TRUE(inverse.has_value());
+
   // Checks A*A^-1 = E = A^-1*A
-  EXPECT_TRUE(check_two_matrix(matrix * inverse.value(), identity, kEpsilon));
-  EXPECT_TRUE(check_two_matrix(inverse.value() * matrix, identity, kEpsilon));
+  EXPECT_TRUE(check_two_matrix(
+      matrix * inverse  // NOLINT(bugprone-unchecked-optional-access)
+                   .value(),
+      identity, kEpsilon));
+  EXPECT_TRUE(
+      check_two_matrix(inverse  // NOLINT(bugprone-unchecked-optional-access)
+                               .value() *
+                           matrix,
+                       identity, kEpsilon));
 
   // Create matrix^2
   const TransformationMatrix squared_matrix(
@@ -406,10 +424,15 @@ TEST(TransformationMatrix, Multiplication)
 
   // Check some multiplications
   EXPECT_TRUE(check_two_matrix(matrix * matrix, squared_matrix, kEpsilon));
+  EXPECT_TRUE(check_two_matrix(
+      squared_matrix * inverse  // NOLINT(bugprone-unchecked-optional-access)
+                           .value(),
+      matrix, kEpsilon));
   EXPECT_TRUE(
-      check_two_matrix(squared_matrix * inverse.value(), matrix, kEpsilon));
-  EXPECT_TRUE(
-      check_two_matrix(inverse.value() * squared_matrix, matrix, kEpsilon));
+      check_two_matrix(inverse  // NOLINT(bugprone-unchecked-optional-access)
+                               .value() *
+                           squared_matrix,
+                       matrix, kEpsilon));
 }
 
 // Checks that two coordinates are near equal
@@ -435,19 +458,19 @@ testing::AssertionResult check_two_coordinates(
 TEST(Transformation, From_points_constructor)
 {
   // Construct ID (images = preimages)
-  PointEquation A_id({Complex(1, 0), Complex(0, 0), Complex(1, 0)});
-  PointEquation B_id({Complex(0, 0), Complex(1, 0), Complex(1, 0)});
-  PointEquation C_id({Complex(1, 0), Complex(1, 0), Complex(1, 0)});
-  PointEquation D_id({Complex(0, 0), Complex(0, 0), Complex(1, 0)});
+  PointEquation a_id({Complex(1, 0), Complex(0, 0), Complex(1, 0)});
+  PointEquation b_id({Complex(0, 0), Complex(1, 0), Complex(1, 0)});
+  PointEquation c_id({Complex(1, 0), Complex(1, 0), Complex(1, 0)});
+  PointEquation d_id({Complex(0, 0), Complex(0, 0), Complex(1, 0)});
 
-  PointEquation A_image_id({Complex(1, 0), Complex(0, 0), Complex(1, 0)});
-  PointEquation B_image_id({Complex(0, 0), Complex(1, 0), Complex(1, 0)});
-  PointEquation C_image_id({Complex(1, 0), Complex(1, 0), Complex(1, 0)});
-  PointEquation D_image_id({Complex(0, 0), Complex(0, 0), Complex(1, 0)});
+  PointEquation a_image_id({Complex(1, 0), Complex(0, 0), Complex(1, 0)});
+  PointEquation b_image_id({Complex(0, 0), Complex(1, 0), Complex(1, 0)});
+  PointEquation c_image_id({Complex(1, 0), Complex(1, 0), Complex(1, 0)});
+  PointEquation d_image_id({Complex(0, 0), Complex(0, 0), Complex(1, 0)});
 
   // Construct a transformation from 4 preimages and 4 images
-  Transformation id(A_id, B_id, C_id, D_id, A_image_id, B_image_id, C_image_id,
-                    D_image_id);
+  Transformation id(a_id, b_id, c_id, d_id, a_image_id, b_image_id, c_image_id,
+                    d_image_id);
 
   // Construct random point equation
   PointEquation point({Complex{3, 1}, Complex{1, 2}, Complex{1, 2}});
@@ -457,24 +480,24 @@ TEST(Transformation, From_points_constructor)
       check_two_coordinates(id(point.equation), point.equation, kEpsilon));
 
   // Construct Homothety
-  PointEquation A_homothety({Complex(1, 0), Complex(0, 0), Complex(1, 0)});
-  PointEquation B_homothety({Complex(0, 0), Complex(1, 0), Complex(1, 0)});
-  PointEquation C_homothety({Complex(1, 0), Complex(1, 0), Complex(1, 0)});
-  PointEquation D_homothety({Complex(0, 0), Complex(0, 0), Complex(1, 0)});
+  PointEquation a_homothety({Complex(1, 0), Complex(0, 0), Complex(1, 0)});
+  PointEquation b_homothety({Complex(0, 0), Complex(1, 0), Complex(1, 0)});
+  PointEquation c_homothety({Complex(1, 0), Complex(1, 0), Complex(1, 0)});
+  PointEquation d_homothety({Complex(0, 0), Complex(0, 0), Complex(1, 0)});
 
-  PointEquation A_image_homothety(
+  PointEquation a_image_homothety(
       {Complex(2, 0), Complex(0, 0), Complex(1, 0)});
-  PointEquation B_image_homothety(
+  PointEquation b_image_homothety(
       {Complex(0, 0), Complex(2, 0), Complex(1, 0)});
-  PointEquation C_image_homothety(
+  PointEquation c_image_homothety(
       {Complex(2, 0), Complex(2, 0), Complex(1, 0)});
-  PointEquation D_image_homothety(
+  PointEquation d_image_homothety(
       {Complex(0, 0), Complex(0, 0), Complex(1, 0)});
 
   // Construct a transformation from 4 preimages and 4 images
-  Transformation homothety(A_homothety, B_homothety, C_homothety, D_homothety,
-                           A_image_homothety, B_image_homothety,
-                           C_image_homothety, D_image_homothety);
+  Transformation homothety(a_homothety, b_homothety, c_homothety, d_homothety,
+                           a_image_homothety, b_image_homothety,
+                           c_image_homothety, d_image_homothety);
 
   // Construct random point equation
   PointEquation point_homothety({Complex{3, 1}, Complex{1, 2}, Complex{1, 2}});
