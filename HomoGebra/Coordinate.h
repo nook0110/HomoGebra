@@ -3,14 +3,14 @@
 #include <complex>
 #include <optional>
 
-using complex = std::complex<long double>;
+using Complex = std::complex<long double>;
 
 class TransformationMatrix
 {
  public:
-  using MatrixRow = std::array<complex, 3>;
-  using MatrixColumn = std::array<complex, 3>;
-  using MatrixContainer = std::array<std::array<complex, 3>, 3>;
+  using MatrixRow = std::array<Complex, 3>;
+  using MatrixColumn = std::array<Complex, 3>;
+  using MatrixContainer = std::array<std::array<Complex, 3>, 3>;
 
   /**
    * \brief Default Constructor. Creates identity matrix.
@@ -22,11 +22,11 @@ class TransformationMatrix
    *  \brief Constructor that initializes all elements in matrix.
    *
    */
-  TransformationMatrix(const complex& a00, const complex& a01,
-                       const complex& a02, const complex& a10,
-                       const complex& a11, const complex& a12,
-                       const complex& a20, const complex& a21,
-                       const complex& a22);
+  TransformationMatrix(const Complex& a00, const Complex& a01,
+                       const Complex& a02, const Complex& a10,
+                       const Complex& a11, const Complex& a12,
+                       const Complex& a20, const Complex& a21,
+                       const Complex& a22);
 
   /**
    * \brief Finds inversion of matrix.
@@ -40,7 +40,7 @@ class TransformationMatrix
    *
    * \return Determinant
    */
-  [[nodiscard]] complex Determinant() const;
+  [[nodiscard]] Complex Determinant() const;
 
   /**
    * \brief Multiplies this matrix on another one.
@@ -134,7 +134,7 @@ class Transformation
    * \detail This transformation will do homography (preimage->image)
    * A projective transformation of the plane is defined by specifying four
    * pairs of corresponding mapping points. For correct homography three points
-   * of the four images or preimages shouldn't lie on the same line. (Otherwise
+   * of the four images or preimages should not lie on the same line. (Otherwise
    * it will degenerate)
    *
    * \param first_preimage First point preimage position
@@ -194,7 +194,7 @@ class Transformation
 /**
  * \brief Name of axes/variables.
  */
-enum class var
+enum class Var
 {
   kX,
   kY,
@@ -210,7 +210,7 @@ enum class var
  *
  * \date February 2023
  *
- * \see <a
+ * \see <a>
  * href="https://en.wikipedia.org/wiki/Homogeneous_coordinates">Wikipedia:
  * Homogeneous coordinates</a>
  *
@@ -225,7 +225,7 @@ struct HomogeneousCoordinate
    *
    * \return Returns const reference to x, y or z coordinate.
    */
-  [[nodiscard]] const complex& operator[](var variable) const;
+  [[nodiscard]] const Complex& operator[](const Var variable) const;
 
   /**
    * \brief Overload of operator[]. Returns reference to x, y or z coordinate.
@@ -234,11 +234,11 @@ struct HomogeneousCoordinate
    *
    * \return Returns reference to x, y or z coordinate.
    */
-  [[nodiscard]] complex& operator[](var variable);
+  [[nodiscard]] Complex& operator[](const Var variable);
 
-  complex x;
-  complex y;
-  complex z;
+  Complex x;
+  Complex y;
+  Complex z;
 };
 
 /**

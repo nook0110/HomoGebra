@@ -13,32 +13,35 @@ int main()
   settings.minorVersion = 0;
   sf::RenderWindow window(sf::VideoMode(1000, 1000), "Window Title",
                           sf::Style::Default, settings);
-  ImGui::SFML::Init(window);
+  if (!ImGui::SFML::Init(window))
+  {
+    return 1;
+  }
 
   window.setFramerateLimit(60);
   ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-  GUI::ObjectMenu::HomogeneousCoordinateEditor coordinate(
-      HomogeneousCoordinate{complex(1, 2), complex(3, 4), complex(5, 6)});
+  Gui::ObjectMenu::HomogeneousCoordinateEditor coordinate(
+      HomogeneousCoordinate{Complex(1, 2), Complex(3, 4), Complex(5, 6)});
 
   while (window.isOpen())
   {
-    sf::Event event;
+    sf::Event event{};
     while (window.pollEvent(event))
     {
-      GUI::Global::ProcessEvent(event);
+      Gui::Global::ProcessEvent(event);
       if (event.type == sf::Event::Closed) window.close();
     }
 
     window.clear(sf::Color::White);
 
-    GUI::Global::Update(window);
+    Gui::Global::Update(window);
 
     ImGui::Begin("Test!");
     coordinate.Construct();
     ImGui::End();
 
-    GUI::Global::Render(window);
+    Gui::Global::Render(window);
 
     window.display();
   }

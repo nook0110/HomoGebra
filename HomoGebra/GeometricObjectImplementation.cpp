@@ -67,6 +67,10 @@ const LineEquation& LineImplementation::GetEquation() const
   return equation_;
 }
 
+ConicImplementation::ConicImplementation(const ConicEquation& equation)
+    : equation_(equation)
+{}
+
 void ConicImplementation::SetEquation(const ConicEquation& equation)
 {
   // Set equation

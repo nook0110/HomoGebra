@@ -83,15 +83,15 @@ class Point final : public GeometricObject
   /**
    * \brief Return current equation of point.
    *
-   * \return Equation of point
+   * \return Equation of point.
    */
   [[nodiscard]] const PointEquation& GetEquation() const;
 
  private:
   /**
-   * \brief Notify observers that this objected is destroyed
+   * \brief Notify observers that this objected is destroyed.
    *
-   * \param event Event
+   * \param event Event of destruction.
    */
   void Notify(const Event::Destroyed& event) const;
 
@@ -120,7 +120,7 @@ class Line final : public GeometricObject
   /**
    * \brief Construct line on a plane with equation.
    *
-   * \param equation Equation of line
+   * \param equation Equation of line.
    */
   explicit Line(const LineEquation& equation = LineEquation{});
 
@@ -139,14 +139,14 @@ class Line final : public GeometricObject
   /**
    * \brief Set new equation of line.
    *
-   * \param equation Equation of line
+   * \param equation Equation of line.
    */
   void SetEquation(const LineEquation& equation);
 
   /**
    * \brief Return current equation of point.
    *
-   * \return Equation of point
+   * \return Equation of point.
    */
   [[nodiscard]] const LineEquation& GetEquation() const;
 
@@ -177,9 +177,16 @@ class Line final : public GeometricObject
  * \see ConicBody
  * \see ConicImplementation
  */
-class Conic : public GeometricObject
+class Conic final : public GeometricObject
 {
  public:
+  /**
+   * \brief Construct conic on a plane with equation.
+   *
+   * \param equation Equation of conic.
+   */
+  explicit Conic(const ConicEquation& equation = ConicEquation{});
+
   /**
    * \brief Destroy this object.
    *

@@ -22,14 +22,14 @@ class PlaneImplementation
   /**
    * \brief Adds object
    *
-   * \param Object to add
+   * \param object Object to add
    */
   void AddObject(const std::shared_ptr<GeometricObject>& object);
 
   /**
    * \brief Remove object.
    *
-   * \param Object to destroy.
+   * \param object Object to destroy.
    */
   void RemoveObject(const GeometricObject* object);
 

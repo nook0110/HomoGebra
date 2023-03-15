@@ -1,13 +1,16 @@
 ﻿#include "GUI.h"
 
-using namespace GUI;
+#include <imgui-SFML.h>
+#include <imgui.h>
 
-sf::Clock Global::deltaClock;
+using namespace Gui;
+
+sf::Clock Global::delta_clock_;
 
 void Global::Update(sf::RenderWindow& window)
 {
   // Just calls ImGui ImGui::SFML::Update method
-  ImGui::SFML::Update(window, deltaClock.restart());
+  ImGui::SFML::Update(window, delta_clock_.restart());
 }
 
 void Global::Render(sf::RenderWindow& window)
@@ -16,7 +19,7 @@ void Global::Render(sf::RenderWindow& window)
   ImGui::SFML::Render(window);
 }
 
-void Global::ProcessEvent(sf::Event event)
+void Global::ProcessEvent(const sf::Event& event)
 {
   // Just calls ImGui ImGui::SFML::ProcessEvent method
   ImGui::SFML::ProcessEvent(event);
@@ -30,9 +33,9 @@ void ObjectMenu::Construct() {}
 
 ObjectMenu::HomogeneousCoordinateEditor::HomogeneousCoordinateEditor(
     const HomogeneousCoordinate& coordinate)
-    : x_variable(coordinate.x),
-      y_variable(coordinate.y),
-      z_variable(coordinate.z)
+    : x_variable_editor_(coordinate.x),
+      y_variable_editor_(coordinate.y),
+      z_variable_editor_(coordinate.z)
 {}
 
 void ObjectMenu::HomogeneousCoordinateEditor::Construct()
@@ -43,37 +46,39 @@ void ObjectMenu::HomogeneousCoordinateEditor::Construct()
   ImGui::Text("Variable x");
   // Pushing id to ImGui stack so that it can be used to identify the variable
   ImGui::PushID("x");
-  x_variable.Construct();
+  x_variable_editor_.Construct();
   ImGui::PopID();
 
   // Construct description to identify the variable
   ImGui::Text("Variable y");
   // Pushing id to ImGui stack so that it can be used to identify the variable
   ImGui::PushID("y");
-  y_variable.Construct();
+  y_variable_editor_.Construct();
   ImGui::PopID();
 
   // Construct description to identify the variable
   ImGui::Text("Variable z");
   // Pushing id to ImGui stack so that it can be used to identify the variable
   ImGui::PushID("z");
-  z_variable.Construct();
+  z_variable_editor_.Construct();
   ImGui::PopID();
 }
 
 HomogeneousCoordinate ObjectMenu::HomogeneousCoordinateEditor::GetCoordinate()
     const
 {
-  return HomogeneousCoordinate{x_variable.GetNumber(), y_variable.GetNumber(),
-                               z_variable.GetNumber()};
+  return HomogeneousCoordinate{x_variable_editor_.GetNumber(),
+                               y_variable_editor_.GetNumber(),
+                               z_variable_editor_.GetNumber()};
 }
 
-GUI::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::ComplexEditor(
-    const complex& number)
-    : real_part_(number.real()), imaginary_part_(number.imag())
+Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::ComplexEditor(
+    const Complex& number)
+    : real_part_(static_cast<double>(number.real())),
+      imaginary_part_(static_cast<double>(number.imag()))
 {}
 
-void GUI::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::Construct()
+void Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::Construct()
 {
   // Construct input for real part of number
   ImGui::InputDouble("Real part", &real_part_);
@@ -82,8 +87,8 @@ void GUI::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::Construct()
   ImGui::InputDouble("Imaginary part", &imaginary_part_);
 }
 
-complex GUI::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::GetNumber()
+Complex Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::GetNumber()
     const
 {
-  return complex{real_part_, imaginary_part_};
+  return Complex{real_part_, imaginary_part_};
 }

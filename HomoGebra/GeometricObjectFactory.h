@@ -38,6 +38,7 @@ class PointFactory
    * \brief Constructs point on a plane.
    *
    * \param from The point that is projected.
+   * \param to The line that is projected on.
    *
    * \return Pointer to a constructed point.
    */
@@ -124,9 +125,9 @@ class ConicFactory
    * \param fifth Fifth point to go through.
    * \return Reference to a constructed conic.
    */
-  Conic& ByFivePoints(const Point& first, const Point& second,
-                      const Point& third, const Point& fourth,
-                      const Point& fifth);
+  std::shared_ptr<Conic> ByFivePoints(const Point& first, const Point& second,
+                                      const Point& third, const Point& fourth,
+                                      const Point& fifth);
 
  private:
   /**

@@ -3,10 +3,8 @@
 #include "GeometricObject.h"
 #include "Plane.h"
 #include "SFML/Graphics.hpp"
-#include "imgui-SFML.h"
-#include "imgui.h"
 
-namespace GUI
+namespace Gui
 {
 /**
  * \brief Global functions needed for Dear ImGui to work.
@@ -42,13 +40,13 @@ class Global
    *
    * \param event Event that happened.
    */
-  static void ProcessEvent(sf::Event event);
+  static void ProcessEvent(const sf::Event& event);
 
  private:
   /**
    * Static member data.
    */
-  static sf::Clock deltaClock;  //!< Clock that counts time for updates.
+  static sf::Clock delta_clock_;  //!< Clock that counts time for updates.
 };
 
 /**
@@ -93,7 +91,7 @@ class ImGuiWindow
  *
  * \date February 2023
  */
-class ObjectMenu : public ImGuiWindow
+class ObjectMenu final : public ImGuiWindow
 {
  public:
   class HomogeneousCoordinateEditor
@@ -104,25 +102,25 @@ class ObjectMenu : public ImGuiWindow
 
     void Construct();
 
-    HomogeneousCoordinate GetCoordinate() const;
+    [[nodiscard]] HomogeneousCoordinate GetCoordinate() const;
 
    private:
     class ComplexEditor
     {
      public:
-      explicit ComplexEditor(const complex& number = complex{});
+      explicit ComplexEditor(const Complex& number = Complex{});
 
       void Construct();
 
-      complex GetNumber() const;
+      [[nodiscard]] Complex GetNumber() const;
 
      private:
       double real_part_;
       double imaginary_part_;
     };
-    ComplexEditor x_variable;
-    ComplexEditor y_variable;
-    ComplexEditor z_variable;
+    ComplexEditor x_variable_editor_;
+    ComplexEditor y_variable_editor_;
+    ComplexEditor z_variable_editor_;
   };
 
   /**
@@ -137,9 +135,15 @@ class ObjectMenu : public ImGuiWindow
   class PointSubmenu
   {
    private:
+    /**
+     * Member data.
+     */
+    HomogeneousCoordinateEditor
+        coordinate_editor_;         //!< Editor for coordinates.
+    std::shared_ptr<Point> point_;  //!< Point to edit.
   };
 
-  explicit ObjectMenu(Plane& plane) : plane(plane) {}
+  explicit ObjectMenu(Plane& plane) : plane_(plane) {}
 
   void Construct() final;
 
@@ -147,6 +151,6 @@ class ObjectMenu : public ImGuiWindow
   /**
    * Member data.
    */
-  Plane& plane;  //!< Plane which we can edit.
+  Plane& plane_;  //!< Plane which we can edit.
 };
-}  // namespace GUI
+}  // namespace Gui

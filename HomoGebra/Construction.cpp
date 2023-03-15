@@ -5,16 +5,16 @@
 void ConstructionPoint::Update(const Event::Moved&)
 {
   // Recalculate equation
-  auto equation = RecalculateEquation();
+  const auto equation = RecalculateEquation();
 
   // Set new equation
   SetEquation(equation);
 }
 
-void ConstructionPoint::Update(const Event::Destroyed& destroyed)
+void ConstructionPoint::Update(const Event::Destroyed& event)
 {
-  // Check if destroyed object is point that we contain
-  if (destroyed.object == point_.get())
+  // Check if event object is point that we contain
+  if (event.object == point_.get())
   {
     // Release the ownership
     point_.reset();
@@ -22,7 +22,7 @@ void ConstructionPoint::Update(const Event::Destroyed& destroyed)
   }
 
   // Destroy the point
-  point_->Destroy(destroyed.plane);
+  point_->Destroy(event.plane);
 }
 
 const PointEquation& ConstructionPoint::GetEquation() const
@@ -46,16 +46,16 @@ PointEquation ConstructionOnPlane::RecalculateEquation() const
 void ConstructionLine::Update(const Event::Moved&)
 {
   // Recalculate equation
-  auto equation = RecalculateEquation();
+  const auto equation = RecalculateEquation();
 
   // Set new equation
   SetEquation(equation);
 }
 
-void ConstructionLine::Update(const Event::Destroyed& destroyed)
+void ConstructionLine::Update(const Event::Destroyed& event)
 {
-  // Check if destroyed object is line that we contain
-  if (destroyed.object == line_.get())
+  // Check if event object is line that we contain
+  if (event.object == line_.get())
   {
     // Release the ownership
     line_.reset();
@@ -63,7 +63,13 @@ void ConstructionLine::Update(const Event::Destroyed& destroyed)
   }
 
   // Destroy the line
-  line_->Destroy(destroyed.plane);
+  line_->Destroy(event.plane);
+}
+
+const LineEquation& ConstructionLine::GetEquation() const
+{
+  // Return line equation
+  return line_->GetEquation();
 }
 
 void ConstructionLine::SetEquation(const LineEquation& equation)

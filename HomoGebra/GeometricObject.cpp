@@ -52,6 +52,8 @@ const LineEquation& Line::GetEquation() const
   return implementation_.GetEquation();
 }
 
+Conic::Conic(const ConicEquation& equation) : implementation_(equation) {}
+
 void Conic::Destroy(Plane& plane)
 {
   // Notify observers that object was destroyed

@@ -1,6 +1,5 @@
 #pragma once
 #include <array>
-#include <optional>
 
 #include "Coordinate.h"
 
@@ -24,7 +23,7 @@ struct Equation
   /**
    * \brief Apply transformation to an equation.
    *
-   * \param transformation
+   * \param transformation Transformation to apply.
    */
   virtual void Apply(const Transformation& transformation) = 0;
 };
@@ -38,10 +37,10 @@ struct Equation
  *
  * \date February 2023
  *
- * \see PointImplementataion
+ * \see PointImplementation
  *
  */
-struct PointEquation : public Equation
+struct PointEquation final : public Equation
 {
   /**
    * \brief Constructor.
@@ -52,7 +51,7 @@ struct PointEquation : public Equation
   /**
    * \brief Apply transformation to a point equation.
    *
-   * \param transformation
+   * \param transformation Transformation to apply.
    */
   void Apply(const Transformation& transformation) override;
 
@@ -71,10 +70,10 @@ struct PointEquation : public Equation
  *
  * \date February 2023
  *
- * \see LineImplementataion
+ * \see LineImplementation
  *
  */
-struct LineEquation : public Equation
+struct LineEquation final : public Equation
 {
   /**
    * \brief Constructor.
@@ -88,7 +87,7 @@ struct LineEquation : public Equation
    * \warning It will multiply on inverse of transformation. Because if you
    * substitute an image of point, equation should equal to zero.
    *
-   * \param transformation
+   * \param transformation Transformation to apply.
    */
   void Apply(const Transformation& transformation) override;
 
@@ -104,20 +103,20 @@ struct LineEquation : public Equation
  *
  * \date February 2023
  *
- * \see ConicImplementataion
+ * \see ConicImplementation
  *
  */
-struct ConicEquation : public Equation
+struct ConicEquation final : public Equation
 {
   /**
    * \name Static arrays to get next o previous vars.
    *
-   * It is used to get from Equation::var next or previous Equation::var
+   * It is used to get from Equation::Var next or previous Equation::Var
    */
 
   /// @{
-  static const std::array<var, 3> prev;
-  static const std::array<var, 3> next;
+  static const std::array<Var, 3> kPrev;
+  static const std::array<Var, 3> kNext;
   /// @}
 
   /**
@@ -125,7 +124,7 @@ struct ConicEquation : public Equation
    *
    * \warning This method is not implemented!
    *
-   * \param transformation
+   * \param transformation Transformation to apply.
    */
   void Apply(const Transformation& transformation) override;
 
@@ -137,7 +136,7 @@ struct ConicEquation : public Equation
    * \cdot xy \f$
    */
   /// @{
-  std::array<complex, 3> squares;
-  std::array<complex, 3> pair_products;
+  std::array<Complex, 3> squares;
+  std::array<Complex, 3> pair_products;
   /// @}
 };

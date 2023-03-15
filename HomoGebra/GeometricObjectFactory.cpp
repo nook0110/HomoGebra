@@ -19,6 +19,12 @@ std::shared_ptr<Point> PointFactory::OnPlane(const PointEquation& coordinate)
   return point;
 }
 
+std::shared_ptr<Point> PointFactory::Projection(const Point& from,
+                                                const Line& to)
+{
+  return std::shared_ptr<Point>();
+}
+
 LineFactory::LineFactory(Plane& plane) : plane_(plane) {}
 
 std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first,
@@ -44,32 +50,32 @@ std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first,
   auto& first_row = matrix[0];
 
   // Set first row
-  for (int column = 0; column < first_row.size(); ++column)
+  for (size_t column = 0; column < first_row.size(); ++column)
   {
-    first_row[column] = f_equation[static_cast<var>(column)];
+    first_row[column] = f_equation[static_cast<Var>(column)];
   }
 
   // Get second row
   auto& second_row = matrix[1];
 
   // Set second row
-  for (int column = 0; column < second_row.size(); ++column)
+  for (size_t column = 0; column < second_row.size(); ++column)
   {
-    second_row[column] = s_equation[static_cast<var>(column)];
+    second_row[column] = s_equation[static_cast<Var>(column)];
   }
 
   // Get third row
   auto& third_row = matrix[2];
 
   // Set third row
-  std::fill(third_row.begin(), third_row.end(), complex{1});
+  std::fill(third_row.begin(), third_row.end(), Complex{1});
 
   // Get augmentation
   auto& augmentation = matrix.GetAugmentation();
 
   // Set augmentation
-  std::fill(augmentation.begin(), std::prev(augmentation.end()), complex{0});
-  augmentation.back() = complex{1};
+  std::fill(augmentation.begin(), std::prev(augmentation.end()), Complex{0});
+  augmentation.back() = Complex{1};
 
   // Get solution
   auto solution = matrix.GetSolution();
@@ -97,3 +103,12 @@ std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first,
 }
 
 ConicFactory::ConicFactory(Plane& plane) : plane_(plane) {}
+
+std::shared_ptr<Conic> ConicFactory::ByFivePoints(const Point& first,
+                                                  const Point& second,
+                                                  const Point& third,
+                                                  const Point& fourth,
+                                                  const Point& fifth)
+{
+  return std::make_shared<Conic>(ConicEquation());
+}

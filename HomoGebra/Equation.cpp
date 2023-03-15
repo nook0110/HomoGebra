@@ -1,8 +1,8 @@
 #include "Equation.h"
 
-const std::array<var, 3> ConicEquation::prev = {var::kZ, var::kX, var::kY};
+const std::array<Var, 3> ConicEquation::kPrev = {Var::kZ, Var::kX, Var::kY};
 
-const std::array<var, 3> ConicEquation::next = {var::kY, var::kZ, var::kX};
+const std::array<Var, 3> ConicEquation::kNext = {Var::kY, Var::kZ, Var::kX};
 
 PointEquation::PointEquation(const HomogeneousCoordinate& _equation)
     : equation(_equation)
@@ -32,8 +32,18 @@ LineEquation::LineEquation(const HomogeneousCoordinate& _equation)
 
 void LineEquation::Apply(const Transformation& transformation)
 {
+  // Get inversion of transformation
+  const auto inverse = transformation.GetInverse();
+
+  // Check if it exists
+  if (!inverse.has_value())
+  {
+    // Throw exception
+    throw std::logic_error("Transformation has no inverse.");
+  }
+
   // Apply transformation to equation
-  equation *= transformation.GetInverse().value();
+  equation *= inverse.value();
 }
 
 void ConicEquation::Apply(const Transformation& transformation)

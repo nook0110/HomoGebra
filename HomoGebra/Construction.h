@@ -7,7 +7,7 @@ class WeekConstruction
   [[nodiscard]] const Transformation& GetTransformation() const;
 
  private:
-  Transformation tranformation_;
+  Transformation transformation_;
 };
 
 class StrongConstruction
@@ -29,16 +29,17 @@ class Construction : public ConstructionObserver
 {
  public:
   /**
-   * \brief Constructor deleted.
-   *
-   */
-  Construction() = delete;
-
-  /**
    * \brief Default destructor.
    *
    */
   ~Construction() override = default;
+
+ protected:
+  /**
+   * \brief Constructor deleted.
+   *
+   */
+  Construction() = default;
 };
 
 /**
@@ -56,12 +57,6 @@ class ConstructionPoint : public Construction
 {
  public:
   /**
-   * \brief Constructor deleted.
-   *
-   */
-  ConstructionPoint() = delete;
-
-  /**
    * \brief Default destructor.
    *
    */
@@ -77,18 +72,24 @@ class ConstructionPoint : public Construction
   /**
    * \brief Update the object because sth was moved.
    *
-   * \param Tag [Event::Moved] for tag dispatch
+   * \param event Tag [Event::Moved] for tag dispatch
    */
-  void Update(const Event::Moved&) override;
+  void Update(const Event::Moved& event) override;
 
   /**
    * \brief Update the object because sth was destroyed.
    *
-   * \param Tag [Event::Destroyed] for tag dispatch.
+   * \param event Tag [Event::Destroyed] for tag dispatch.
    */
-  void Update(const Event::Destroyed&) override;
+  void Update(const Event::Destroyed& event) override;
 
  protected:
+  /**
+   * \brief Constructor deleted.
+   *
+   */
+  ConstructionPoint() = default;
+
   /**
    * \brief Get equation of point.
    *
@@ -157,16 +158,16 @@ class ConstructionLine : public Construction
   /**
    * \brief Update object because sth moved.
    *
-   * \param Tag for tag dispatch
+   * \param event Tag for tag dispatch
    */
-  void Update(const Event::Moved&) override;
+  void Update(const Event::Moved& event) override;
 
   /**
    * \brief Update object because sth destroyed.
    *
-   * \param Tag for tag dispatch
+   * \param event Tag for tag dispatch
    */
-  void Update(const Event::Destroyed&) override;
+  void Update(const Event::Destroyed& event) override;
 
  protected:
   /**
@@ -186,6 +187,3 @@ class ConstructionLine : public Construction
  private:
   std::shared_ptr<Line> line_;  //!< Line, which is created.
 };
-
-class ConstructionConic : public Construction
-{};

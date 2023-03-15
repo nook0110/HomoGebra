@@ -3,7 +3,7 @@
 #include <optional>
 #include <vector>
 
-using complex = std::complex<long double>;
+using Complex = std::complex<long double>;
 
 /**
  * \brief A squared matrix with augmentation.
@@ -15,8 +15,8 @@ class SquaredMatrix
    * \brief Type aliases.
    *
    */
-  using Row = std::vector<complex>;
-  using Column = std::vector<complex>;
+  using Row = std::vector<Complex>;
+  using Column = std::vector<Complex>;
   using Matrix = std::vector<Row>;
 
   /**
@@ -25,7 +25,7 @@ class SquaredMatrix
    *
    * \param size Size of matrix
    */
-  explicit SquaredMatrix(size_t size);
+  explicit SquaredMatrix(const size_t size);
 
   /**
    * \brief Constructor that initializes all elements in matrix and its
@@ -48,7 +48,7 @@ class SquaredMatrix
    *
    * \return Determinant
    */
-  [[nodiscard]] complex GetDeterminant() const;
+  [[nodiscard]] Complex GetDeterminant() const;
 
   /**
    * \brief Find solution of linear equations.
@@ -100,8 +100,8 @@ class SquaredMatrix
    * \param vector Vector
    * \return New vector equals to result of multiplication
    */
-  [[nodiscard]] std::vector<complex> operator*(
-      const std::vector<complex>& vector) const;
+  [[nodiscard]] std::vector<Complex> operator*(
+      const std::vector<Complex>& vector) const;
 
   /**
    * \brief operator to get row of matrix.
@@ -132,7 +132,7 @@ class SquaredMatrix
   [[nodiscard]] SquaredMatrix::Matrix::const_iterator end() const;
 
  private:
-  static const long double kEpsilon;  //<! Epsilon for comparison
+  static const long double kEpsilon;  //!< Epsilon for comparison
 
   /**
    * Default constructor.
@@ -143,8 +143,7 @@ class SquaredMatrix
    * Member data.
    */
 
-  Matrix matrix_;        //<! Matrix
-  Column augmentation_;  //<! Augmentation
-
-  size_t size_;  //<! Size of matrix
+  Matrix matrix_{};        //!< Matrix
+  Column augmentation_{};  //!< Augmentation
+  size_t size_{};          //!< Size of matrix
 };

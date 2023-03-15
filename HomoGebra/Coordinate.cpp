@@ -8,17 +8,17 @@
 TransformationMatrix::TransformationMatrix()
 {
   // Make Identity matrix
-  for (int iter = 0; iter < std::tuple_size<MatrixColumn>::value; ++iter)
+  for (size_t it = 0; it < std::tuple_size_v<MatrixColumn>; ++it)
   {
     // Set diagonal to 1
-    matrix_[iter][iter] = complex{1};
+    matrix_[it][it] = Complex{1};
   }
 }
 
 TransformationMatrix::TransformationMatrix(
-    const complex& a00, const complex& a01, const complex& a02,
-    const complex& a10, const complex& a11, const complex& a12,
-    const complex& a20, const complex& a21, const complex& a22)
+    const Complex& a00, const Complex& a01, const Complex& a02,
+    const Complex& a10, const Complex& a11, const Complex& a12,
+    const Complex& a20, const Complex& a21, const Complex& a22)
     : matrix_(MatrixContainer{MatrixRow{a00, a01, a02},
                               MatrixRow{a10, a11, a12},
                               MatrixRow{a20, a21, a22}})
@@ -27,10 +27,10 @@ TransformationMatrix::TransformationMatrix(
 std::optional<TransformationMatrix> TransformationMatrix::GetInverse() const
 {
   // Compute the determinant
-  auto det = Determinant();
+  const auto det = Determinant();
 
   // Compute the inverse if the determinant is not zero
-  if (det == complex{0}) return std::nullopt;
+  if (det == Complex{0}) return std::nullopt;
 
   // Return the inverse
   return TransformationMatrix(
@@ -47,7 +47,7 @@ std::optional<TransformationMatrix> TransformationMatrix::GetInverse() const
       (matrix_[0][0] * matrix_[1][1] - matrix_[0][1] * matrix_[1][0]) / det);
 }
 
-complex TransformationMatrix::Determinant() const
+Complex TransformationMatrix::Determinant() const
 {
   // Compute the determinant
   return matrix_[0][0] *
@@ -75,15 +75,15 @@ TransformationMatrix TransformationMatrix::operator*(
   TransformationMatrix product_matrix;
 
   // Iterating through all elements in matrix
-  for (int row = 0; row < std::tuple_size<MatrixColumn>::value; ++row)
+  for (size_t row = 0; row < std::tuple_size_v<MatrixColumn>; ++row)
   {
-    for (int column = 0; column < std::tuple_size<MatrixRow>::value; ++column)
+    for (size_t column = 0; column < std::tuple_size_v<MatrixRow>; ++column)
     {
       // Multiplication of row [this] and column [other]
-      complex sum = 0;
+      Complex sum = 0;
 
       // Element-by-element multiplication
-      for (int it = 0; it < std::tuple_size<MatrixRow>::value; ++it)
+      for (size_t it = 0; it < std::tuple_size_v<MatrixRow>; ++it)
       {
         sum += matrix_[row][it] * other[it][column];
       }
@@ -168,7 +168,7 @@ Transformation::Transformation(
    * h4 * x + h5 * y + h6 * z = y' * second_lamda
    * h7 * x + h8 * y + h9 * z = z' * third_lamda
    *
-   * Move all the summands to the left.
+   * Move all the sums to the left.
    *
    * h1 * x + h2 * y + h3 * z - x' * first_lamda = 0
    * h4 * x + h5 * y + h6 * z - y' * second_lamda = 0
@@ -186,7 +186,7 @@ Transformation::Transformation(
    * linear equations.
    */
 
-  SquaredMatrix matrix(
+  const SquaredMatrix matrix(
       // Matrix
       {
           // First three rows
@@ -233,7 +233,7 @@ Transformation::Transformation(
        fourth_image_equation.y, fourth_image_equation.z});
 
   // Solve system of linear equations
-  auto solution = matrix.GetSolution();
+  const auto solution = matrix.GetSolution();
 
   // Check if solution exists
   if (!solution)
@@ -293,54 +293,51 @@ HomogeneousCoordinate operator*(const Transformation& transformation,
   auto copy = coordinate;
 
   // Apply transformation
-  for (size_t row = 0; row < std::tuple_size<Transformation::Column>::value;
-       ++row)
+  for (size_t row = 0; row < std::tuple_size_v<Transformation::Column>; ++row)
   {
     // Calculate element
-    complex element{0};
-    for (size_t column = 0;
-         column < std::tuple_size<Transformation::Row>::value; ++column)
+    Complex element{0};
+    for (size_t column = 0; column < std::tuple_size_v<Transformation::Row>;
+         ++column)
     {
-      element += coordinate[static_cast<var>(column)] *
+      element += coordinate[static_cast<Var>(column)] *
                  transformation.transformation_[row][column];
     }
 
     // Set element
-    copy[static_cast<var>(row)] = element;
+    copy[static_cast<Var>(row)] = element;
   }
 
   // Return copy
   return copy;
 }
 
-const complex& HomogeneousCoordinate::operator[](var variable) const
+const Complex& HomogeneousCoordinate::operator[](const Var variable) const
 {
   // Return value
   switch (variable)
   {
-    case var::kX:
+    case Var::kX:
       return x;
-    case var::kY:
+    case Var::kY:
       return y;
-    case var::kZ:
+    case Var::kZ:
       return z;
-    default:
-      throw std::invalid_argument("No such variable!");
   }
+  throw std::invalid_argument("No such variable!");
 }
 
-complex& HomogeneousCoordinate::operator[](var variable)
+Complex& HomogeneousCoordinate::operator[](const Var variable)
 {
   // Return value
   switch (variable)
   {
-    case var::kX:
+    case Var::kX:
       return x;
-    case var::kY:
+    case Var::kY:
       return y;
-    case var::kZ:
+    case Var::kZ:
       return z;
-    default:
-      throw std::invalid_argument("No such variable!");
   }
+  throw std::invalid_argument("No such variable!");
 }

@@ -5,7 +5,7 @@
 // Static member init
 const long double SquaredMatrix::kEpsilon = 1e-12L;
 
-SquaredMatrix::SquaredMatrix(size_t size)
+SquaredMatrix::SquaredMatrix(const size_t size)
     : matrix_(size, Row(size)), augmentation_(size), size_(size)
 {}
 
@@ -31,7 +31,7 @@ SquaredMatrix::SquaredMatrix(const Matrix& matrix,
                   [](const Row& row)
                   {
                     return std::any_of(row.begin(), row.end(),
-                                       [](const complex& value) {
+                                       [](const Complex& value) {
                                          return std::isnan(value.real()) ||
                                                 std::isnan(value.imag());
                                        });
@@ -42,7 +42,7 @@ SquaredMatrix::SquaredMatrix(const Matrix& matrix,
 
   // Check if augmentation contains NaN or Inf
   if (std::any_of(augmentation.begin(), augmentation.end(),
-                  [](const complex& value) {
+                  [](const Complex& value) {
                     return std::isnan(value.real()) || std::isnan(value.imag());
                   }))
   {
@@ -54,7 +54,7 @@ SquaredMatrix::SquaredMatrix(const Matrix& matrix,
                   [](const Row& row)
                   {
                     return std::any_of(row.begin(), row.end(),
-                                       [](const complex& value) {
+                                       [](const Complex& value) {
                                          return std::isinf(value.real()) ||
                                                 std::isinf(value.imag());
                                        });
@@ -65,7 +65,7 @@ SquaredMatrix::SquaredMatrix(const Matrix& matrix,
 
   // Check if augmentation contains Inf
   if (std::any_of(augmentation.begin(), augmentation.end(),
-                  [](const complex& value) {
+                  [](const Complex& value) {
                     return std::isinf(value.real()) || std::isinf(value.imag());
                   }))
   {
@@ -119,7 +119,7 @@ std::optional<SquaredMatrix> SquaredMatrix::GetInverse() const
     }
 
     // Divide row by pivot
-    complex pivot_value = matrix[step][step];
+    const Complex pivot_value = matrix[step][step];
     for (size_t column = 0; column < size_; ++column)
     {
       matrix[step][column] /= pivot_value;
@@ -135,7 +135,7 @@ std::optional<SquaredMatrix> SquaredMatrix::GetInverse() const
       // Skip current row
       if (step != row)
       {
-        complex multiplier = matrix[row][step];
+        Complex multiplier = matrix[row][step];
 
         for (size_t column = 0; column < size_; ++column)
         {
@@ -153,7 +153,7 @@ std::optional<SquaredMatrix> SquaredMatrix::GetInverse() const
   return SquaredMatrix(inverse, augmentation);
 }
 
-complex SquaredMatrix::GetDeterminant() const
+Complex SquaredMatrix::GetDeterminant() const
 {
   // Construct copy of our matrix
   Matrix matrix = matrix_;
@@ -187,7 +187,7 @@ complex SquaredMatrix::GetDeterminant() const
       if (step != row)
       {
         // Calculate multiplier
-        complex multiplier = matrix[row][step] / matrix[step][step];
+        Complex multiplier = matrix[row][step] / matrix[step][step];
 
         for (size_t column = 0; column < size_; ++column)
         {
@@ -198,7 +198,7 @@ complex SquaredMatrix::GetDeterminant() const
   }
 
   // Calculate determinant
-  complex determinant = 1;
+  Complex determinant = 1;
   for (size_t i = 0; i < size_; ++i)
   {
     determinant *= matrix[i][i];
@@ -269,8 +269,8 @@ SquaredMatrix SquaredMatrix::operator*(const SquaredMatrix& other) const
   return result;
 }
 
-std::vector<complex> SquaredMatrix::operator*(
-    const std::vector<complex>& vector) const
+std::vector<Complex> SquaredMatrix::operator*(
+    const std::vector<Complex>& vector) const
 {
   // Check if vector is compatible
   if (vector.size() != size_)
@@ -279,7 +279,7 @@ std::vector<complex> SquaredMatrix::operator*(
   }
 
   // Construct new vector filled with zeros
-  std::vector<complex> result(size_);
+  std::vector<Complex> result(size_);
 
   // Multiply
   for (size_t i = 0; i < size_; ++i)

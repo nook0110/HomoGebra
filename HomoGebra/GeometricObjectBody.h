@@ -82,6 +82,12 @@ class ConicBody : public GeometricObjectBody
 {
  public:
   /**
+   * \brief Default constructor.
+   *
+   */
+  ConicBody() = default;
+
+  /**
    * \brief Destructor.
    *
    */
@@ -95,10 +101,4 @@ class ConicBody : public GeometricObjectBody
    * \param states Current render states.
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const final;
-
-  /**
-   * \brief Default constructor.
-   *
-   */
-  ConicBody();
 };

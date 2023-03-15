@@ -55,16 +55,16 @@ class ConstructionObserver
   /**
    * \brief Update the object, because sth moved.
    *
-   * \param Tag with some information.
+   * \param event Tag with some information.
    */
-  virtual void Update(const Event::Moved&) = 0;
+  virtual void Update(const Event::Moved& event) = 0;
 
   /**
    * \brief Update the object, because sth was destroyed.
    *
-   * \param Tag with some information (Plane where it was destroyed).
+   * \param event Tag with some information (Plane where it was destroyed).
    */
-  virtual void Update(const Event::Destroyed&) = 0;
+  virtual void Update(const Event::Destroyed& event) = 0;
 
  private:
   std::list<const ConstructionObserver*>
@@ -148,7 +148,7 @@ class GeometricObjectImplementation : public ObservableGeometricObject
   ~GeometricObjectImplementation() override = default;
 };
 
-class PointImplementation : public GeometricObjectImplementation
+class PointImplementation final : public GeometricObjectImplementation
 {
  public:
   /**
@@ -210,14 +210,15 @@ class LineImplementation : public GeometricObjectImplementation
   LineEquation equation_;  //!< Line equation.
 };
 
-class ConicImplementation : public GeometricObjectImplementation
+class ConicImplementation final : public GeometricObjectImplementation
 {
  public:
   /**
-   * \brief Default constructor.
+   * \brief Construct a conic with given equation.
    *
+   * \param equation Equation of conic.
    */
-  ConicImplementation() = default;
+  explicit ConicImplementation(const ConicEquation& equation = ConicEquation());
 
   /**
    * \brief Sets new equation of conic.
