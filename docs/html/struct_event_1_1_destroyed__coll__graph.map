@@ -1,9 +1,9 @@
 <map id="Event::Destroyed" name="Event::Destroyed">
-<area shape="rect" id="node1" title="Tag that shows that object was destroyed." alt="" coords="57,484,179,561"/>
-<area shape="rect" id="node2" href="$class_geometric_object.html" title="Base class for geometric objects." alt="" coords="5,315,153,421"/>
-<area shape="rect" id="node3" href="$class_plane.html" title="Container for all objects, which you can draw." alt="" coords="177,329,280,407"/>
-<area shape="rect" id="node4" href="$class_plane_implementation.html" title="Implementation of Plane." alt="" coords="88,160,231,252"/>
-<area shape="rect" id="node5" title=" " alt="" coords="65,5,243,97"/>
-<area shape="rect" id="node6" href="$class_plane_body.html" title=" " alt="" coords="266,167,351,245"/>
-<area shape="rect" id="node7" title=" " alt="" coords="267,13,361,90"/>
+<area shape="rect" id="node1" title="Tag that shows that object was destroyed." alt="" coords="57,572,179,649"/>
+<area shape="rect" id="node2" href="$class_geometric_object.html" title="Base class for geometric objects." alt="" coords="5,388,153,495"/>
+<area shape="rect" id="node3" href="$class_plane.html" title="Container for all objects, which you can draw." alt="" coords="177,373,285,509"/>
+<area shape="rect" id="node4" href="$class_plane_implementation.html" title="Implementation of Plane." alt="" coords="91,160,233,311"/>
+<area shape="rect" id="node5" title=" " alt="" coords="67,5,246,97"/>
+<area shape="rect" id="node6" href="$class_plane_body.html" title=" " alt="" coords="269,197,354,274"/>
+<area shape="rect" id="node7" title=" " alt="" coords="270,13,363,90"/>
 </map>

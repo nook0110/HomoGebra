@@ -11,7 +11,8 @@
 
 
 
-Inheritance diagram for Construction\+On\+Plane\+:\nopagebreak
+Inheritance diagram for Construction\+On\+Plane\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Construction\+On\+Plane\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Construction\+On\+Plane\+:\nopagebreak
+Collaboration diagram for Construction\+On\+Plane\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,21 +39,17 @@ Collaboration diagram for Construction\+On\+Plane\+:\nopagebreak
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_construction_point}{Construction\+Point}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_construction_point_aa4c1868ef442bcad98adf494d3f17678}{Construction\+Point}} ()=delete
-\begin{DoxyCompactList}\small\item\em Constructor deleted. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_construction_point_aab10fae305c5d9cc2d5f13d44859d6bb}{$\sim$\+Construction\+Point}} () override=default
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \mbox{\hyperlink{class_construction_point_a83ee0b44834b4ef52821224b6c92b5a5}{Recalculate\+Equation}} () const =0
 \begin{DoxyCompactList}\small\item\em Recalculate equation of point. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_construction_point_a33ad8fe12e9cc94bd3672de54479c41e}{Update}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&) override
+void \mbox{\hyperlink{class_construction_point_aeb6510d6b922fd23dbaf24cd583314f3}{Update}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&event) override
 \begin{DoxyCompactList}\small\item\em Update the object because sth was moved. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_construction_point_a6b42b25a3bf90d941bb45dce65849b72}{Update}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&) override
+void \mbox{\hyperlink{class_construction_point_a17a4172623768e3f0eaa84ae30ac86e0}{Update}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&event) override
 \begin{DoxyCompactList}\small\item\em Update the object because sth was destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_construction}{Construction}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_construction_ac63219c567e828fcee36eddd4af9e46b}{Construction}} ()=delete
-\begin{DoxyCompactList}\small\item\em Constructor deleted. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_construction_ae4966d1b922fae8b24038ba42d0e86d6}{$\sim$\+Construction}} () override=default
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}}}
@@ -59,18 +57,25 @@ void \mbox{\hyperlink{class_construction_point_a6b42b25a3bf90d941bb45dce65849b72
 \item 
 virtual \mbox{\hyperlink{class_construction_observer_a62066e9c4c31c48b38cb241876484a41}{$\sim$\+Construction\+Observer}} ()=default
 \item 
-virtual void \mbox{\hyperlink{class_construction_observer_afd50f4b74924a72462d4223414ae09b3}{Update}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&)=0
+virtual void \mbox{\hyperlink{class_construction_observer_a4da221fa0ff67596c5f69124078a427f}{Update}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&event)=0
 \begin{DoxyCompactList}\small\item\em Update the object, because sth moved. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_construction_observer_a88d2a6d8d53815568273ddb74dee26de}{Update}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&)=0
+virtual void \mbox{\hyperlink{class_construction_observer_a84f7122411cc4c08460b260a3e04cc7c}{Update}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&event)=0
 \begin{DoxyCompactList}\small\item\em Update the object, because sth was destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_construction_point}{Construction\+Point}}}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_construction_point_a7688301f929aa2ebad1f4f07bd34c005}{Construction\+Point}} ()=default
+\begin{DoxyCompactList}\small\item\em Constructor deleted. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \& \mbox{\hyperlink{class_construction_point_a2c01aefc0f452ef9a54472b651ae5b9d}{Get\+Equation}} () const
 \begin{DoxyCompactList}\small\item\em Get equation of point. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_construction_point_ac41cd3bf9089b5b2172e7e51c729cd96}{Set\+Equation}} (const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&equation)
 \begin{DoxyCompactList}\small\item\em Set equation of point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_construction}{Construction}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_construction_ace7677ff2aed8a88b4ceb25e1d773565}{Construction}} ()=default
+\begin{DoxyCompactList}\small\item\em Constructor deleted. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

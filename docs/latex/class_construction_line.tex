@@ -6,7 +6,8 @@
 
 
 
-Inheritance diagram for Construction\+Line\+:\nopagebreak
+Inheritance diagram for Construction\+Line\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Inheritance diagram for Construction\+Line\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Construction\+Line\+:\nopagebreak
+Collaboration diagram for Construction\+Line\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -31,15 +33,13 @@ Collaboration diagram for Construction\+Line\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \mbox{\hyperlink{class_construction_line_ae78c62f2179b6a824bd842ca929c39b7}{Recalculate\+Equation}} () const =0
 \item 
-void \mbox{\hyperlink{class_construction_line_a6e1a0d334433fd5ec9fa5921e86e5f8d}{Update}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&) override
+void \mbox{\hyperlink{class_construction_line_a71e7b4a19ce5570d959aac478f6ed521}{Update}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&event) override
 \begin{DoxyCompactList}\small\item\em Update object because sth moved. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_construction_line_abc8544b25aa140a73f50a10faee6dc6a}{Update}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&) override
+void \mbox{\hyperlink{class_construction_line_a06f6d950fa7712ce468a19d1028fa730}{Update}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&event) override
 \begin{DoxyCompactList}\small\item\em Update object because sth destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_construction}{Construction}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_construction_ac63219c567e828fcee36eddd4af9e46b}{Construction}} ()=delete
-\begin{DoxyCompactList}\small\item\em Constructor deleted. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_construction_ae4966d1b922fae8b24038ba42d0e86d6}{$\sim$\+Construction}} () override=default
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_construction_observer}{Construction\+Observer}}}
@@ -47,9 +47,9 @@ void \mbox{\hyperlink{class_construction_line_abc8544b25aa140a73f50a10faee6dc6a}
 \item 
 virtual \mbox{\hyperlink{class_construction_observer_a62066e9c4c31c48b38cb241876484a41}{$\sim$\+Construction\+Observer}} ()=default
 \item 
-virtual void \mbox{\hyperlink{class_construction_observer_afd50f4b74924a72462d4223414ae09b3}{Update}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&)=0
+virtual void \mbox{\hyperlink{class_construction_observer_a4da221fa0ff67596c5f69124078a427f}{Update}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&event)=0
 \begin{DoxyCompactList}\small\item\em Update the object, because sth moved. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_construction_observer_a88d2a6d8d53815568273ddb74dee26de}{Update}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&)=0
+virtual void \mbox{\hyperlink{class_construction_observer_a84f7122411cc4c08460b260a3e04cc7c}{Update}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&event)=0
 \begin{DoxyCompactList}\small\item\em Update the object, because sth was destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -58,6 +58,11 @@ const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \& \mbox{\hyperlin
 \begin{DoxyCompactList}\small\item\em Get equation of line. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_construction_line_ab029d75f768d7e9d0facc0c5d2197ebf}{Set\+Equation}} (const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \&equation)
 \begin{DoxyCompactList}\small\item\em Set equation of line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_construction}{Construction}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_construction_ace7677ff2aed8a88b4ceb25e1d773565}{Construction}} ()=default
+\begin{DoxyCompactList}\small\item\em Constructor deleted. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -113,7 +118,8 @@ Recalculate equation of point.
 \begin{DoxyReturn}{Returns}
 New equation of point. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -135,18 +141,19 @@ Set equation of line.
 {\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of line. \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_construction_line_ab029d75f768d7e9d0facc0c5d2197ebf_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_construction_line_abc8544b25aa140a73f50a10faee6dc6a}\label{class_construction_line_abc8544b25aa140a73f50a10faee6dc6a}} 
+\mbox{\Hypertarget{class_construction_line_a06f6d950fa7712ce468a19d1028fa730}\label{class_construction_line_a06f6d950fa7712ce468a19d1028fa730}} 
 \index{ConstructionLine@{ConstructionLine}!Update@{Update}}
 \index{Update@{Update}!ConstructionLine@{ConstructionLine}}
 \doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Construction\+Line\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&}]{destroyed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Construction\+Line\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -154,18 +161,18 @@ Update object because sth destroyed.
 
 
 \begin{DoxyParams}{Parameters}
-{\em Tag} & for tag dispatch \\
+{\em event} & Tag for tag dispatch \\
 \hline
 \end{DoxyParams}
 
 
-Implements \mbox{\hyperlink{class_construction_observer_a88d2a6d8d53815568273ddb74dee26de}{Construction\+Observer}}.
+Implements \mbox{\hyperlink{class_construction_observer_a84f7122411cc4c08460b260a3e04cc7c}{Construction\+Observer}}.
 
-\mbox{\Hypertarget{class_construction_line_a6e1a0d334433fd5ec9fa5921e86e5f8d}\label{class_construction_line_a6e1a0d334433fd5ec9fa5921e86e5f8d}} 
+\mbox{\Hypertarget{class_construction_line_a71e7b4a19ce5570d959aac478f6ed521}\label{class_construction_line_a71e7b4a19ce5570d959aac478f6ed521}} 
 \index{ConstructionLine@{ConstructionLine}!Update@{Update}}
 \index{Update@{Update}!ConstructionLine@{ConstructionLine}}
 \doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void Construction\+Line\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Construction\+Line\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -173,18 +180,19 @@ Update object because sth moved.
 
 
 \begin{DoxyParams}{Parameters}
-{\em Tag} & for tag dispatch \\
+{\em event} & Tag for tag dispatch \\
 \hline
 \end{DoxyParams}
 
 
-Implements \mbox{\hyperlink{class_construction_observer_afd50f4b74924a72462d4223414ae09b3}{Construction\+Observer}}.
+Implements \mbox{\hyperlink{class_construction_observer_a4da221fa0ff67596c5f69124078a427f}{Construction\+Observer}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_construction_line_a6e1a0d334433fd5ec9fa5921e86e5f8d_cgraph}
+\includegraphics[width=350pt]{class_construction_line_a71e7b4a19ce5570d959aac478f6ed521_cgraph}
 \end{center}
 \end{figure}
 

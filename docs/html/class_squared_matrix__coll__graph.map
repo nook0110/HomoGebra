@@ -1,7 +1,7 @@
 <map id="SquaredMatrix" name="SquaredMatrix">
-<area shape="rect" id="node1" title="A squared matrix with augmentation." alt="" coords="239,145,382,443"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,165,83"/>
-<area shape="rect" id="node3" title=" " alt="" coords="190,5,295,83"/>
-<area shape="rect" id="node4" title=" " alt="" coords="319,5,449,83"/>
-<area shape="rect" id="node5" title=" " alt="" coords="475,5,533,83"/>
+<area shape="rect" id="node1" title="A squared matrix with augmentation." alt="" coords="140,145,283,443"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,65,83"/>
+<area shape="rect" id="node3" title=" " alt="" coords="89,5,195,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="219,5,350,83"/>
+<area shape="rect" id="node5" title=" " alt="" coords="377,5,435,83"/>
 </map>

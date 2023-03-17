@@ -96,10 +96,10 @@ Collaboration diagram for Plane:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_plane__coll__graph.png" border="0" usemap="#a_plane_coll__map" alt="Collaboration graph"/></div>
 <map name="a_plane_coll__map" id="a_plane_coll__map">
-<area shape="rect" title="Container for all objects, which you can draw." alt="" coords="117,315,219,392"/>
-<area shape="rect" href="class_plane_implementation.html" title="Implementation of Plane." alt="" coords="29,160,171,252"/>
+<area shape="rect" title="Container for all objects, which you can draw." alt="" coords="114,373,222,509"/>
+<area shape="rect" href="class_plane_implementation.html" title="Implementation of Plane." alt="" coords="29,160,171,311"/>
 <area shape="rect" title=" " alt="" coords="5,5,184,97"/>
-<area shape="rect" href="class_plane_body.html" title=" " alt="" coords="207,167,292,245"/>
+<area shape="rect" href="class_plane_body.html" title=" " alt="" coords="207,197,292,274"/>
 <area shape="rect" title=" " alt="" coords="208,13,301,90"/>
 </map>
 </div>
@@ -109,12 +109,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ada179fa401de8aa43984ef692d89e760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#ada179fa401de8aa43984ef692d89e760">AddObject</a> (const std::shared_ptr&lt; <a class="el" href="class_geometric_object.html">GeometricObject</a> &gt; &amp;object)</td></tr>
 <tr class="memdesc:ada179fa401de8aa43984ef692d89e760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add object to plane.  <br /></td></tr>
 <tr class="separator:ada179fa401de8aa43984ef692d89e760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ff4f3b921fd8c1192211c97bb8b701e"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_geometric_object.html">GeometricObject</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a3ff4f3b921fd8c1192211c97bb8b701e">GetObjects</a> () const</td></tr>
+<tr class="memdesc:a3ff4f3b921fd8c1192211c97bb8b701e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all objects.  <br /></td></tr>
+<tr class="separator:a3ff4f3b921fd8c1192211c97bb8b701e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96536ba73e67633e522460a0aeee9fb5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_geometric_object.html">GeometricObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a96536ba73e67633e522460a0aeee9fb5">GetPoints</a> () const</td></tr>
+<tr class="separator:a96536ba73e67633e522460a0aeee9fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eaf76bd50a406f7f9389e00dbc53fda"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_geometric_object.html">GeometricObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a7eaf76bd50a406f7f9389e00dbc53fda">GetLines</a> () const</td></tr>
+<tr class="separator:a7eaf76bd50a406f7f9389e00dbc53fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c65317451001621394902cba7eec343"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_geometric_object.html">GeometricObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a7c65317451001621394902cba7eec343">GetConics</a> () const</td></tr>
+<tr class="separator:a7c65317451001621394902cba7eec343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:acc86f8aae09b055699688b1c50ad7501"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_plane_implementation.html">PlaneImplementation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#acc86f8aae09b055699688b1c50ad7501">implementation_</a></td></tr>
+<tr class="memdesc:acc86f8aae09b055699688b1c50ad7501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of plane.  <br /></td></tr>
 <tr class="separator:acc86f8aae09b055699688b1c50ad7501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa45a1ee353c3eab80ec049db4a02c4f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_plane_body.html">PlaneBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#aa45a1ee353c3eab80ec049db4a02c4f8">body_</a></td></tr>
+<tr class="memdesc:aa45a1ee353c3eab80ec049db4a02c4f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Body of plane.  <br /></td></tr>
 <tr class="separator:aa45a1ee353c3eab80ec049db4a02c4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -150,13 +161,130 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_plane_ada179fa401de8aa43984ef692d89e760_cgraph.png" border="0" usemap="#aclass_plane_ada179fa401de8aa43984ef692d89e760_cgraph" alt=""/></div>
+<map name="aclass_plane_ada179fa401de8aa43984ef692d89e760_cgraph" id="aclass_plane_ada179fa401de8aa43984ef692d89e760_cgraph">
+<area shape="rect" title="Add object to plane." alt="" coords="5,13,129,38"/>
+<area shape="rect" href="class_plane_implementation.html#a5e8581d9c6abf230d9b898c5672cc412" title="Adds object." alt="" coords="177,5,320,45"/>
+</map>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_plane_ada179fa401de8aa43984ef692d89e760_icgraph.png" border="0" usemap="#aclass_plane_ada179fa401de8aa43984ef692d89e760_icgraph" alt=""/></div>
 <map name="aclass_plane_ada179fa401de8aa43984ef692d89e760_icgraph" id="aclass_plane_ada179fa401de8aa43984ef692d89e760_icgraph">
-<area shape="rect" title="Add object to plane." alt="" coords="228,31,352,56"/>
-<area shape="rect" href="class_line_factory.html#a38962a0480a1a572753177ceab581e76" title="Constructs line through two given points." alt="" coords="5,5,180,31"/>
-<area shape="rect" href="class_point_factory.html#afcd5564be9c287d7f2708615a6072d64" title="Constructs a point with given coordinates." alt="" coords="15,55,170,80"/>
+<area shape="rect" title="Add object to plane." alt="" coords="327,31,451,56"/>
+<area shape="rect" href="class_line_factory.html#a38962a0480a1a572753177ceab581e76" title="Constructs line through two given points." alt="" coords="104,5,279,31"/>
+<area shape="rect" href="class_point_factory.html#afcd5564be9c287d7f2708615a6072d64" title="Constructs a point with given coordinates." alt="" coords="114,55,269,80"/>
+<area shape="rect" href="_source_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,56,80"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7c65317451001621394902cba7eec343" name="a7c65317451001621394902cba7eec343"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c65317451001621394902cba7eec343">&#9670;&#160;</a></span>GetConics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_geometric_object.html">GeometricObject</a> &gt; &gt; Plane::GetConics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_plane_a7c65317451001621394902cba7eec343_cgraph.png" border="0" usemap="#aclass_plane_a7c65317451001621394902cba7eec343_cgraph" alt=""/></div>
+<map name="aclass_plane_a7c65317451001621394902cba7eec343_cgraph" id="aclass_plane_a7c65317451001621394902cba7eec343_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,129,38"/>
+<area shape="rect" href="class_plane_implementation.html#a8f44fd1c8b1cff05015769fca95d4fe9" title=" " alt="" coords="177,5,320,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7eaf76bd50a406f7f9389e00dbc53fda" name="a7eaf76bd50a406f7f9389e00dbc53fda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eaf76bd50a406f7f9389e00dbc53fda">&#9670;&#160;</a></span>GetLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_geometric_object.html">GeometricObject</a> &gt; &gt; Plane::GetLines </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_plane_a7eaf76bd50a406f7f9389e00dbc53fda_cgraph.png" border="0" usemap="#aclass_plane_a7eaf76bd50a406f7f9389e00dbc53fda_cgraph" alt=""/></div>
+<map name="aclass_plane_a7eaf76bd50a406f7f9389e00dbc53fda_cgraph" id="aclass_plane_a7eaf76bd50a406f7f9389e00dbc53fda_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,120,38"/>
+<area shape="rect" href="class_plane_implementation.html#a8c74ac7ab3d61bd13fa569fa1c15ca3a" title=" " alt="" coords="168,5,311,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3ff4f3b921fd8c1192211c97bb8b701e" name="a3ff4f3b921fd8c1192211c97bb8b701e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ff4f3b921fd8c1192211c97bb8b701e">&#9670;&#160;</a></span>GetObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_geometric_object.html">GeometricObject</a> &gt; &gt; &amp; Plane::GetObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all objects. </p>
+<dl class="section return"><dt>Returns</dt><dd>All objects. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_plane_a3ff4f3b921fd8c1192211c97bb8b701e_cgraph.png" border="0" usemap="#aclass_plane_a3ff4f3b921fd8c1192211c97bb8b701e_cgraph" alt=""/></div>
+<map name="aclass_plane_a3ff4f3b921fd8c1192211c97bb8b701e_cgraph" id="aclass_plane_a3ff4f3b921fd8c1192211c97bb8b701e_cgraph">
+<area shape="rect" title="Get all objects." alt="" coords="5,13,135,38"/>
+<area shape="rect" href="class_plane_implementation.html#a2934a3808fd2cd0569beb17459338a8d" title="Get all objects." alt="" coords="183,5,325,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a96536ba73e67633e522460a0aeee9fb5" name="a96536ba73e67633e522460a0aeee9fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96536ba73e67633e522460a0aeee9fb5">&#9670;&#160;</a></span>GetPoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_geometric_object.html">GeometricObject</a> &gt; &gt; Plane::GetPoints </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_plane_a96536ba73e67633e522460a0aeee9fb5_cgraph.png" border="0" usemap="#aclass_plane_a96536ba73e67633e522460a0aeee9fb5_cgraph" alt=""/></div>
+<map name="aclass_plane_a96536ba73e67633e522460a0aeee9fb5_cgraph" id="aclass_plane_a96536ba73e67633e522460a0aeee9fb5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,127,38"/>
+<area shape="rect" href="class_plane_implementation.html#a131b9703d56d4020bc178e0bbdff0632" title=" " alt="" coords="175,5,317,45"/>
 </map>
 </div>
 
@@ -183,6 +311,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Body of plane. </p>
+
 </div>
 </div>
 <a id="acc86f8aae09b055699688b1c50ad7501" name="acc86f8aae09b055699688b1c50ad7501"></a>
@@ -204,6 +334,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implementation of plane. </p>
 
 </div>
 </div>

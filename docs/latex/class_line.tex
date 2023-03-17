@@ -11,7 +11,8 @@
 
 
 
-Inheritance diagram for Line\+:\nopagebreak
+Inheritance diagram for Line\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,14 +34,14 @@ Collaboration diagram for Line\+:
 \item 
 \mbox{\hyperlink{class_line_a8e88de43a3d868a85cfd7d39ba9e2bcb}{Line}} (const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \&equation=\mbox{\hyperlink{struct_line_equation}{Line\+Equation}}\{\})
 \begin{DoxyCompactList}\small\item\em Construct line on a plane with equation. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_line_ad6c2db935145f50c3e82780ad563ec30}{$\sim$\+Line}} () final=default
+\mbox{\hyperlink{class_line_a1eb11f35f4f98a9c50c853928f9fd6de}{$\sim$\+Line}} () override=default
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_line_ad28541e8af01f2b9559910e5599d7321}{Destroy}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane) final
+void \mbox{\hyperlink{class_line_a1ed21ff0cf32c1cf8d691c5bd1f4085c}{Destroy}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane) override
 \begin{DoxyCompactList}\small\item\em Destroy this object. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_line_a54dbeed3d17564f31a014a9c80aab279}{Notify}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&event) const
-\begin{DoxyCompactList}\small\item\em Notify observers that this objected is destroyed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_line_ad99f3e15fa5630bbe53659939f2cf78e}{Set\+Equation}} (const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \&equation)
-\begin{DoxyCompactList}\small\item\em Set new equation of line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set new equation of line. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \& \mbox{\hyperlink{class_line_a355fed79f6ee957f9dc4f663156ad194}{Get\+Equation}} () const
+\begin{DoxyCompactList}\small\item\em Return current equation of point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -48,6 +49,11 @@ virtual \mbox{\hyperlink{class_geometric_object_a8d7f6fe72f4f9a45de56a7ae04f955f
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_geometric_object_a76b6b40dcbd020ca773d1513fe4e5b70}{Destroy}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane)=0
 \begin{DoxyCompactList}\small\item\em Destroy this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_line_a54dbeed3d17564f31a014a9c80aab279}{Notify}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&event) const
+\begin{DoxyCompactList}\small\item\em Notify observers that this objected is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -95,14 +101,14 @@ Construct line on a plane with equation.
 
 
 \begin{DoxyParams}{Parameters}
-{\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of line \\
+{\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of line. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_line_ad6c2db935145f50c3e82780ad563ec30}\label{class_line_ad6c2db935145f50c3e82780ad563ec30}} 
+\mbox{\Hypertarget{class_line_a1eb11f35f4f98a9c50c853928f9fd6de}\label{class_line_a1eb11f35f4f98a9c50c853928f9fd6de}} 
 \index{Line@{Line}!````~Line@{$\sim$Line}}
 \index{````~Line@{$\sim$Line}!Line@{Line}}
 \doxysubsubsection{\texorpdfstring{$\sim$Line()}{~Line()}}
-{\footnotesize\ttfamily Line\+::$\sim$\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [default]}}
+{\footnotesize\ttfamily Line\+::$\sim$\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
 
 
 
@@ -111,11 +117,11 @@ Default destructor.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_line_ad28541e8af01f2b9559910e5599d7321}\label{class_line_ad28541e8af01f2b9559910e5599d7321}} 
+\mbox{\Hypertarget{class_line_a1ed21ff0cf32c1cf8d691c5bd1f4085c}\label{class_line_a1ed21ff0cf32c1cf8d691c5bd1f4085c}} 
 \index{Line@{Line}!Destroy@{Destroy}}
 \index{Destroy@{Destroy}!Line@{Line}}
 \doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
-{\footnotesize\ttfamily void Line\+::\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} \&}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Line\+::\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} \&}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -130,18 +136,40 @@ Destroy this object.
 
 Implements \mbox{\hyperlink{class_geometric_object_a76b6b40dcbd020ca773d1513fe4e5b70}{Geometric\+Object}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_line_ad28541e8af01f2b9559910e5599d7321_cgraph}
+\includegraphics[width=350pt]{class_line_a1ed21ff0cf32c1cf8d691c5bd1f4085c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_line_a355fed79f6ee957f9dc4f663156ad194}\label{class_line_a355fed79f6ee957f9dc4f663156ad194}} 
+\index{Line@{Line}!GetEquation@{GetEquation}}
+\index{GetEquation@{GetEquation}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{GetEquation()}{GetEquation()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \& Line\+::\+Get\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return current equation of point. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_equation}{Equation}} of point. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_line_a355fed79f6ee957f9dc4f663156ad194_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_line_a54dbeed3d17564f31a014a9c80aab279}\label{class_line_a54dbeed3d17564f31a014a9c80aab279}} 
 \index{Line@{Line}!Notify@{Notify}}
 \index{Notify@{Notify}!Line@{Line}}
 \doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
-{\footnotesize\ttfamily void Line\+::\+Notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&}]{event }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily void Line\+::\+Notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&}]{event }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -159,7 +187,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=319pt]{class_line_a54dbeed3d17564f31a014a9c80aab279_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -178,7 +207,7 @@ Set new equation of line.
 
 
 \begin{DoxyParams}{Parameters}
-{\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of line \\
+{\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of line. \\
 \hline
 \end{DoxyParams}
 Here is the call graph for this function\+:\nopagebreak

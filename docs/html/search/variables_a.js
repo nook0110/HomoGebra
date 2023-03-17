@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['pair_5fproducts_0',['pair_products',['../struct_conic_equation.html#aa220c0df266f56a01885f4b24752c6ca',1,'ConicEquation']]],
-  ['plane_1',['plane',['../struct_event_1_1_destroyed.html#a53368b148ea1057a53e878622d19308a',1,'Event::Destroyed']]],
-  ['plane_5f_2',['plane_',['../class_point_factory.html#a956e4bdc296f1cd0b879472be8c9d227',1,'PointFactory::plane_()'],['../class_line_factory.html#aee510eb7711e7565c3e65740aaf43a0a',1,'LineFactory::plane_()'],['../class_conic_factory.html#aae78e85d161fa5a4508c8626c1826fe9',1,'ConicFactory::plane_()']]],
-  ['point_5f_3',['point_',['../class_construction_point.html#ac3273ea405ba41c15ce8e587f57dbd09',1,'ConstructionPoint']]],
-  ['prev_4',['prev',['../struct_conic_equation.html#a0e66d5601071fe10b7fc28da762cd1e0',1,'ConicEquation']]]
+  ['object_0',['object',['../struct_event_1_1_destroyed.html#a549d11e8cddf0d9bfbfeaa6ce3b1fe25',1,'Event::Destroyed']]],
+  ['objects_5f_1',['objects_',['../class_plane_implementation.html#a195bb8d7be148d8c42399e72d22f35ef',1,'PlaneImplementation']]],
+  ['observers_5f_2',['observers_',['../class_construction_observer.html#ac503d47d29c8102ba76c08b5a398e1ce',1,'ConstructionObserver::observers_()'],['../class_observable_geometric_object.html#a6a64e75e42aa659ef1f83ac08e4300e1',1,'ObservableGeometricObject::observers_()']]]
 ];

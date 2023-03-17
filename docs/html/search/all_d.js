@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['pair_5fproducts_0',['pair_products',['../struct_conic_equation.html#aa220c0df266f56a01885f4b24752c6ca',1,'ConicEquation']]],
+  ['pair_5fproducts_0',['pair_products',['../struct_conic_equation.html#a6176013b0aef997a4c816f96634422f7',1,'ConicEquation']]],
   ['plane_1',['Plane',['../class_plane.html',1,'']]],
   ['plane_2',['plane',['../struct_event_1_1_destroyed.html#a53368b148ea1057a53e878622d19308a',1,'Event::Destroyed']]],
   ['plane_2ecpp_3',['Plane.cpp',['../_plane_8cpp.html',1,'']]],
   ['plane_2eh_4',['Plane.h',['../_plane_8h.html',1,'']]],
-  ['plane_5f_5',['plane_',['../class_point_factory.html#a956e4bdc296f1cd0b879472be8c9d227',1,'PointFactory::plane_()'],['../class_line_factory.html#aee510eb7711e7565c3e65740aaf43a0a',1,'LineFactory::plane_()'],['../class_conic_factory.html#aae78e85d161fa5a4508c8626c1826fe9',1,'ConicFactory::plane_()']]],
+  ['plane_5f_5',['plane_',['../class_point_factory.html#a956e4bdc296f1cd0b879472be8c9d227',1,'PointFactory::plane_()'],['../class_line_factory.html#aee510eb7711e7565c3e65740aaf43a0a',1,'LineFactory::plane_()'],['../class_conic_factory.html#aae78e85d161fa5a4508c8626c1826fe9',1,'ConicFactory::plane_()'],['../class_gui_1_1_object_menu.html#a00094a07725ec7d80f9d10d180233787',1,'Gui::ObjectMenu::plane_()']]],
   ['planebody_6',['PlaneBody',['../class_plane_body.html',1,'']]],
   ['planebody_2ecpp_7',['PlaneBody.cpp',['../_plane_body_8cpp.html',1,'']]],
   ['planebody_2eh_8',['PlaneBody.h',['../_plane_body_8h.html',1,'']]],
@@ -13,12 +13,12 @@ var searchData=
   ['planeimplementation_2ecpp_10',['PlaneImplementation.cpp',['../_plane_implementation_8cpp.html',1,'']]],
   ['planeimplementation_2eh_11',['PlaneImplementation.h',['../_plane_implementation_8h.html',1,'']]],
   ['point_12',['Point',['../class_point.html',1,'Point'],['../class_point.html#a1094bae779f0e199013821a711bb5019',1,'Point::Point()']]],
-  ['point_5f_13',['point_',['../class_construction_point.html#ac3273ea405ba41c15ce8e587f57dbd09',1,'ConstructionPoint']]],
+  ['point_5f_13',['point_',['../class_construction_point.html#ac3273ea405ba41c15ce8e587f57dbd09',1,'ConstructionPoint::point_()'],['../class_gui_1_1_object_menu_1_1_point_submenu.html#a78c59603e040c65b753e652914dbb69b',1,'Gui::ObjectMenu::PointSubmenu::point_()']]],
   ['pointbody_14',['PointBody',['../class_point_body.html',1,'PointBody'],['../class_point_body.html#a25a6927a19fce6b86eab03705370351c',1,'PointBody::PointBody()']]],
   ['pointequation_15',['PointEquation',['../struct_point_equation.html',1,'PointEquation'],['../struct_point_equation.html#a7335e3eb0f2c3bc5b5e13a740561ee7a',1,'PointEquation::PointEquation()']]],
   ['pointfactory_16',['PointFactory',['../class_point_factory.html',1,'PointFactory'],['../class_point_factory.html#a3d582f9e22954cb47155cd0eef56d588',1,'PointFactory::PointFactory()']]],
   ['pointimplementation_17',['PointImplementation',['../class_point_implementation.html',1,'PointImplementation'],['../class_point_implementation.html#a8222aee85eaa41cded9f4d654fa8632d',1,'PointImplementation::PointImplementation()']]],
-  ['prev_18',['prev',['../struct_conic_equation.html#a0e66d5601071fe10b7fc28da762cd1e0',1,'ConicEquation']]],
-  ['processevent_19',['ProcessEvent',['../class_g_u_i_1_1_global.html#abe0014daf1249fbdc5f5a563ab7a0a24',1,'GUI::Global']]],
+  ['pointsubmenu_18',['PointSubmenu',['../class_gui_1_1_object_menu_1_1_point_submenu.html',1,'Gui::ObjectMenu::PointSubmenu'],['../class_gui_1_1_object_menu_1_1_point_submenu.html#a13353c447caa11e9b5041499d2b8c167',1,'Gui::ObjectMenu::PointSubmenu::PointSubmenu()']]],
+  ['processevent_19',['ProcessEvent',['../class_gui_1_1_global.html#aa1f482e829751f6113546a10265a532c',1,'Gui::Global']]],
   ['projection_20',['Projection',['../class_point_factory.html#a981b0c0826075b6e6465d57dc60155f4',1,'PointFactory']]]
 ];

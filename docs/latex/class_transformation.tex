@@ -11,7 +11,8 @@ Class to save and do homography.
 
 
 
-Collaboration diagram for Transformation\+:\nopagebreak
+Collaboration diagram for Transformation\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,9 +22,9 @@ Collaboration diagram for Transformation\+:\nopagebreak
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{class_transformation_a063b6c06765875368416a3c5f9aac5ca}{Row}} = \mbox{\hyperlink{class_transformation_matrix_a9fb9a268aa31408e70f5874a8c795723}{Transformation\+Matrix\+::\+Matrix\+Row}}
+using \mbox{\hyperlink{class_transformation_a063b6c06765875368416a3c5f9aac5ca}{Row}} = \mbox{\hyperlink{class_transformation_matrix_a5432c6a888904bd4b4743d400e4a6d25}{Transformation\+Matrix\+::\+Matrix\+Row}}
 \begin{DoxyCompactList}\small\item\em Row of matrix. \end{DoxyCompactList}\item 
-using \mbox{\hyperlink{class_transformation_ab4bfdd238ad1750b0e4dce9afe8b1838}{Column}} = \mbox{\hyperlink{class_transformation_matrix_a18731619f8a92b0c490c3eafe6cda996}{Transformation\+Matrix\+::\+Matrix\+Column}}
+using \mbox{\hyperlink{class_transformation_ab4bfdd238ad1750b0e4dce9afe8b1838}{Column}} = \mbox{\hyperlink{class_transformation_matrix_a83a68faedab3909e1fc5739b3df6741c}{Transformation\+Matrix\+::\+Matrix\+Column}}
 \begin{DoxyCompactList}\small\item\em Column of matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -49,7 +50,7 @@ std\+::optional$<$ \mbox{\hyperlink{class_transformation}{Transformation}} $>$ \
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \mbox{\hyperlink{class_transformation_ab392934890a5accdfe2a380453ca7c2d}{operator$\ast$}} (const \mbox{\hyperlink{class_transformation}{Transformation}} \&transformation, const \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \&coordinate)
-\begin{DoxyCompactList}\small\item\em Overload of operator $\ast$ for homogeneous coordinate and tranformation. Transforms coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Overload of operator $\ast$ for homogeneous coordinate and transformation. Transforms coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -71,7 +72,7 @@ February 2023
 \index{Transformation@{Transformation}!Column@{Column}}
 \index{Column@{Column}!Transformation@{Transformation}}
 \doxysubsubsection{\texorpdfstring{Column}{Column}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{class_transformation_ab4bfdd238ad1750b0e4dce9afe8b1838}{Transformation\+::\+Column}} =  \mbox{\hyperlink{class_transformation_matrix_a18731619f8a92b0c490c3eafe6cda996}{Transformation\+Matrix\+::\+Matrix\+Column}}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_transformation_ab4bfdd238ad1750b0e4dce9afe8b1838}{Transformation\+::\+Column}} =  \mbox{\hyperlink{class_transformation_matrix_a83a68faedab3909e1fc5739b3df6741c}{Transformation\+Matrix\+::\+Matrix\+Column}}}
 
 
 
@@ -81,7 +82,7 @@ Column of matrix.
 \index{Transformation@{Transformation}!Row@{Row}}
 \index{Row@{Row}!Transformation@{Transformation}}
 \doxysubsubsection{\texorpdfstring{Row}{Row}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{class_transformation_a063b6c06765875368416a3c5f9aac5ca}{Transformation\+::\+Row}} =  \mbox{\hyperlink{class_transformation_matrix_a9fb9a268aa31408e70f5874a8c795723}{Transformation\+Matrix\+::\+Matrix\+Row}}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_transformation_a063b6c06765875368416a3c5f9aac5ca}{Transformation\+::\+Row}} =  \mbox{\hyperlink{class_transformation_matrix_a5432c6a888904bd4b4743d400e4a6d25}{Transformation\+Matrix\+::\+Matrix\+Row}}}
 
 
 
@@ -110,7 +111,7 @@ Constructs transformation from matrix. For default transformation use identity m
 
 Construct transformation from movement of 4 points. 
 
-\textbackslash{}detail This transformation will do homography (preimage-\/\texorpdfstring{$>$}{>}image) A projective transformation of the plane is defined by specifying four pairs of corresponding mapping points. For correct homography three points of the four images or preimages shouldn\textquotesingle{}t lie on the same line. (Otherwise it will degenerate)
+\textbackslash{}detail This transformation will do homography (preimage-\/\texorpdfstring{$>$}{>}image) A projective transformation of the plane is defined by specifying four pairs of corresponding mapping points. For correct homography three points of the four images or preimages should not lie on the same line. (Otherwise it will degenerate)
 
 
 \begin{DoxyParams}{Parameters}
@@ -154,7 +155,8 @@ Calculate inverse of transformation.
 \begin{DoxyReturn}{Returns}
 Return inverse if it exists, otherwise 
 \end{DoxyReturn}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -233,7 +235,7 @@ Reference to this transformation.
 
 
 
-Overload of operator $\ast$ for homogeneous coordinate and tranformation. Transforms coordinate. 
+Overload of operator $\ast$ for homogeneous coordinate and transformation. Transforms coordinate. 
 
 
 \begin{DoxyParams}{Parameters}

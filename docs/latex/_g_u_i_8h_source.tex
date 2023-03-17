@@ -4,22 +4,125 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}imgui.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}imgui-\/SFML.h"{}}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_g_u_i}{GUI}}}
-\DoxyCodeLine{00009\ \{}
-\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_g_u_i_1_1_global}{Global}}}
-\DoxyCodeLine{00025\ \ \ \{}
-\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_1_1_global_a08ec9a506fb4b9a149227a437e6bb247}{Update}}(sf::RenderWindow\&\ window);}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_1_1_global_a78eaed605f99fbf47b0a4fc871ea3ece}{Render}}(sf::RenderWindow\&\ window);}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_1_1_global_abe0014daf1249fbdc5f5a563ab7a0a24}{ProcessEvent}}(sf::Event\ event);}
-\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ sf::Clock\ \mbox{\hyperlink{class_g_u_i_1_1_global_a6deafeb96ce85560c2fd895f5dee6e0e}{deltaClock}};\ }
-\DoxyCodeLine{00050\ \ \ \};}
-\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_geometric_object_8h}{GeometricObject.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plane_8h}{Plane.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_gui}{Gui}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gui_1_1_global}{Global}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_global_a08ec9a506fb4b9a149227a437e6bb247}{Update}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_global_a78eaed605f99fbf47b0a4fc871ea3ece}{Render}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_global_aa1f482e829751f6113546a10265a532c}{ProcessEvent}}(\textcolor{keyword}{const}\ sf::Event\&\ event);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{static}\ sf::Clock\ \mbox{\hyperlink{class_gui_1_1_global_a2b20f70219852e3b786ab0f4980b4dbb}{delta\_clock\_}};\ \ }
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gui_1_1_editor_window}{EditorWindow}}}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_gui_1_1_editor_window_a2d0757f0665ff0709ab33e91c8836789}{EditorWindow}}(\textcolor{keyword}{const}\ std::string\&\ name):\ \mbox{\hyperlink{class_gui_1_1_editor_window_a334d4097c2deed619bf4eb3140e5740f}{name\_}}(name)\ \{\};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_gui_1_1_editor_window_a6187c5f92f92969a4d0ad7460c0fa26f}{\string~EditorWindow}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_editor_window_adac25427817a7bae5a5c4f93ff451de8}{Begin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_editor_window_a7df203905029c8bb16a3195bcc0c9439}{End}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_editor_window_a18ccba3d24a8308c5468099734a7fd47}{Construct}}()\ =\ 0;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00084\ \ \ std::string\ \mbox{\hyperlink{class_gui_1_1_editor_window_a334d4097c2deed619bf4eb3140e5740f}{name\_}};\ \ }
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gui_1_1_object_menu}{ObjectMenu}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_gui_1_1_editor_window}{EditorWindow}}}
+\DoxyCodeLine{00097\ \{}
+\DoxyCodeLine{00098\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor}{HomogeneousCoordinateEditor}}}
+\DoxyCodeLine{00100\ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor}{HomogeneousCoordinateEditor}}(}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\&\ coordinate\ =\ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\{\});}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_a64d9f9f036c1e480e20c58e9864d11bb}{Construct}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_a64d9f9f036c1e480e20c58e9864d11bb}{Construct}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{struct_homogeneous_coordinate}{HomogeneousCoordinate}}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_a59af8f7488f399243ca74562d4be9bd0}{GetCoordinate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor}{ComplexEditor}}}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor}{ComplexEditor}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_coordinate_8h_a88fc838f9351c3c30cbdc2eff0a060f0}{Complex}}\&\ number\ =\ \mbox{\hyperlink{_coordinate_8h_a88fc838f9351c3c30cbdc2eff0a060f0}{Complex}}\{\});}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor_a53fccd11e55c2f04fb2c4180455bba5b}{Construct}}();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor_a53fccd11e55c2f04fb2c4180455bba5b}{Construct}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{_coordinate_8h_a88fc838f9351c3c30cbdc2eff0a060f0}{Complex}}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor_a83593f71580a881da9859b10b9699f66}{GetNumber}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor_add890a2e9d8547ea2ea117d1495ffcc9}{real\_part\_}};\ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{double}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor_a67e602ad8b1dba3ce6bb4b1376082cb6}{imaginary\_part\_}};\ \ }
+\DoxyCodeLine{00129\ \ \ \ \ \};}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor}{ComplexEditor}}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_ac65413c565165dfeaa2e5dc1d2fc53ac}{x\_variable\_editor\_}};}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor}{ComplexEditor}}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_ab78d1e072572b4450f59ac21c9ce4962}{y\_variable\_editor\_}};}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor}{ComplexEditor}}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_a46da4d15fcb23e4cb8b916fea634b438}{z\_variable\_editor\_}};}
+\DoxyCodeLine{00133\ \ \ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00144\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gui_1_1_object_menu_1_1_point_submenu}{PointSubmenu}}}
+\DoxyCodeLine{00145\ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_point_submenu}{PointSubmenu}}(\textcolor{keyword}{const}\ std::shared\_ptr<Point>\&\ point);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_point_submenu_a5e4b51f0b8301c26db45996126a910df}{Construct}}();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_point_submenu_a94026ffb5b882a83b486ff702c277542}{ConstructEditableValues}}();}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_point_submenu_a5dad76388e3172db52e5096df3814ee3}{ConstructCurrentValues}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor}{HomogeneousCoordinateEditor}}\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_point_submenu_a0552aa8f3ca8628937b6fa4459a9ecc8}{coordinate\_editor\_}};\ \ }
+\DoxyCodeLine{00160\ \ \ \ \ std::shared\_ptr<Point>\ \mbox{\hyperlink{class_gui_1_1_object_menu_1_1_point_submenu_a78c59603e040c65b753e652914dbb69b}{point\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00161\ \ \ \};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_gui_1_1_object_menu_aaad018eb28ed64e66d5895f4c0cb2a00}{ObjectMenu}}(\mbox{\hyperlink{class_plane}{Plane}}\&\ plane,\ \textcolor{keyword}{const}\ std::string\&\ name)\ :\ \mbox{\hyperlink{class_gui_1_1_object_menu_a00094a07725ec7d80f9d10d180233787}{plane\_}}(plane),\ \mbox{\hyperlink{class_gui_1_1_editor_window}{EditorWindow}}(name)\{\}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_object_menu_a93024caf97f312b69661eab2fb4dbf5a}{Construct}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00168\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_gui_1_1_object_menu_adb1b1c3ad54f3744c6e060fbcb4c8ed2}{ObjectType}}\ :\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00169\ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{class_gui_1_1_object_menu_adb1b1c3ad54f3744c6e060fbcb4c8ed2a34bdbffdb1c0e1b603f58fc0d49548b6}{kAll}},}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{class_gui_1_1_object_menu_adb1b1c3ad54f3744c6e060fbcb4c8ed2a20e722b15a1b587c30633f0a136b7009}{kPoint}},}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{class_gui_1_1_object_menu_adb1b1c3ad54f3744c6e060fbcb4c8ed2aee669fa7b5a35d96a396d4ed648afb45}{kLine}},}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{class_gui_1_1_object_menu_adb1b1c3ad54f3744c6e060fbcb4c8ed2ac545f0ce90c66ee4a4abaedf2302082e}{kConic}}}
+\DoxyCodeLine{00174\ \ \ \};}
+\DoxyCodeLine{00175\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::array<const\ char*,\ 4>\ \mbox{\hyperlink{class_gui_1_1_object_menu_a6d38cabf65d7dee61d0ef40806347719}{kTypesOfObjects}}\ =\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}All"{}},\ \textcolor{stringliteral}{"{}Points"{}},\ \textcolor{stringliteral}{"{}Lines"{}},\ \textcolor{stringliteral}{"{}Conics"{}}\};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ [[nodiscard]]\ std::vector<std::shared\_ptr<GeometricObject>>\ \mbox{\hyperlink{class_gui_1_1_object_menu_a8525088109bd3e63b9c8e8006b8a157b}{GetObjectsOfType}}(}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_gui_1_1_object_menu_adb1b1c3ad54f3744c6e060fbcb4c8ed2}{ObjectType}}\ type)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_object_menu_a93024caf97f312b69661eab2fb4dbf5a}{Construct}}(\textcolor{keyword}{const}\ std::vector<std::shared\_ptr<GeometricObject>>\&\ objects);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_object_menu_a93024caf97f312b69661eab2fb4dbf5a}{Construct}}(\textcolor{keyword}{const}\ std::shared\_ptr<Point>\&\ \textcolor{keywordtype}{object});}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_object_menu_a93024caf97f312b69661eab2fb4dbf5a}{Construct}}(\textcolor{keyword}{const}\ std::shared\_ptr<Line>\&\ line);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_object_menu_a93024caf97f312b69661eab2fb4dbf5a}{Construct}}(\textcolor{keyword}{const}\ std::shared\_ptr<Conic>\&\ conic);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00192\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gui_1_1_object_menu_a516322d1e75ca8e7a139ae31a076a9bb}{current\_type\_}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_gui_1_1_object_menu_adb1b1c3ad54f3744c6e060fbcb4c8ed2a34bdbffdb1c0e1b603f58fc0d49548b6}{ObjectType::kAll}});}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \mbox{\hyperlink{class_plane}{Plane}}\&\ \mbox{\hyperlink{class_gui_1_1_object_menu_a00094a07725ec7d80f9d10d180233787}{plane\_}};\ \ }
+\DoxyCodeLine{00195\ \};}
+\DoxyCodeLine{00196\ \}\ \ \textcolor{comment}{//\ namespace\ Gui}}
 
 \end{DoxyCode}

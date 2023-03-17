@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gui_0',['GUI',['../namespace_g_u_i.html',1,'']]]
+  ['gui_0',['Gui',['../namespace_gui.html',1,'']]]
 ];

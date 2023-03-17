@@ -8,39 +8,39 @@
 \DoxyCodeLine{00004\ }
 \DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_factory}{PointFactory}}}
 \DoxyCodeLine{00019\ \{}
-\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00026\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_point_factory}{PointFactory}}(\mbox{\hyperlink{class_plane}{Plane}}\&\ plane);}
 \DoxyCodeLine{00027\ }
 \DoxyCodeLine{00035\ \ \ std::shared\_ptr<Point>\ \mbox{\hyperlink{class_point_factory_afcd5564be9c287d7f2708615a6072d64}{OnPlane}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point_equation}{PointEquation}}\&\ coordinate);}
 \DoxyCodeLine{00036\ }
-\DoxyCodeLine{00044\ \ \ std::shared\_ptr<Point>\ \mbox{\hyperlink{class_point_factory_a981b0c0826075b6e6465d57dc60155f4}{Projection}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ from,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_line}{Line}}\&\ to);}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{class_plane}{Plane}}\&\ \mbox{\hyperlink{class_point_factory_a956e4bdc296f1cd0b879472be8c9d227}{plane\_}};\ }
-\DoxyCodeLine{00051\ \};}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_line_factory}{LineFactory}}}
-\DoxyCodeLine{00067\ \{}
-\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00074\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_line_factory}{LineFactory}}(\mbox{\hyperlink{class_plane}{Plane}}\&\ plane);}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00085\ \ \ std::shared\_ptr<Line>\ \mbox{\hyperlink{class_line_factory_a38962a0480a1a572753177ceab581e76}{ByTwoPoints}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ first,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ second);}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{class_plane}{Plane}}\&\ \mbox{\hyperlink{class_line_factory_aee510eb7711e7565c3e65740aaf43a0a}{plane\_}};\ }
-\DoxyCodeLine{00092\ \};}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00107\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_conic_factory}{ConicFactory}}}
-\DoxyCodeLine{00108\ \{}
-\DoxyCodeLine{00109\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00115\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_conic_factory_a6b2ed1dd10f9f432a9c17b4785cf6653}{ConicFactory}}(\mbox{\hyperlink{class_plane}{Plane}}\&\ plane);}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00127\ \ \ \mbox{\hyperlink{class_conic}{Conic}}\&\ \mbox{\hyperlink{class_conic_factory_a04e270a169445430cc36c6e7ad00a84e}{ByFivePoints}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ first,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ second,}
-\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ third,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ fourth,}
-\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ fifth);}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00131\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{class_plane}{Plane}}\&\ \mbox{\hyperlink{class_conic_factory_aae78e85d161fa5a4508c8626c1826fe9}{plane\_}};\ }
-\DoxyCodeLine{00136\ \};}
+\DoxyCodeLine{00045\ \ \ std::shared\_ptr<Point>\ \mbox{\hyperlink{class_point_factory_a981b0c0826075b6e6465d57dc60155f4}{Projection}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ from,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_line}{Line}}\&\ to);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{class_plane}{Plane}}\&\ \mbox{\hyperlink{class_point_factory_a956e4bdc296f1cd0b879472be8c9d227}{plane\_}};\ \ }
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_line_factory}{LineFactory}}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00075\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_line_factory}{LineFactory}}(\mbox{\hyperlink{class_plane}{Plane}}\&\ plane);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00086\ \ \ std::shared\_ptr<Line>\ \mbox{\hyperlink{class_line_factory_a38962a0480a1a572753177ceab581e76}{ByTwoPoints}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ first,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ second);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{class_plane}{Plane}}\&\ \mbox{\hyperlink{class_line_factory_aee510eb7711e7565c3e65740aaf43a0a}{plane\_}};\ \ }
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_conic_factory}{ConicFactory}}}
+\DoxyCodeLine{00109\ \{}
+\DoxyCodeLine{00110\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00116\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_conic_factory}{ConicFactory}}(\mbox{\hyperlink{class_plane}{Plane}}\&\ plane);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00128\ \ \ std::shared\_ptr<Conic>\ \mbox{\hyperlink{class_conic_factory_affb1c76f50cae443155f9d02cbf9d7e3}{ByFivePoints}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ first,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ second,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ third,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ fourth,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ fifth);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00136\ \ \ \mbox{\hyperlink{class_plane}{Plane}}\&\ \mbox{\hyperlink{class_conic_factory_aae78e85d161fa5a4508c8626c1826fe9}{plane\_}};\ \ }
+\DoxyCodeLine{00137\ \};}
 
 \end{DoxyCode}

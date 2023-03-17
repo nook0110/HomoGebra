@@ -11,7 +11,8 @@ Container for all objects, which you can draw.
 
 
 
-Collaboration diagram for Plane\+:\nopagebreak
+Collaboration diagram for Plane\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,14 +23,22 @@ Collaboration diagram for Plane\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_plane_ada179fa401de8aa43984ef692d89e760}{Add\+Object}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $>$ \&object)
-\begin{DoxyCompactList}\small\item\em Add object to plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Add object to plane. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $>$ $>$ \& \mbox{\hyperlink{class_plane_a3ff4f3b921fd8c1192211c97bb8b701e}{Get\+Objects}} () const
+\begin{DoxyCompactList}\small\item\em Get all objects. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $>$ $>$ \mbox{\hyperlink{class_plane_a96536ba73e67633e522460a0aeee9fb5}{Get\+Points}} () const
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $>$ $>$ \mbox{\hyperlink{class_plane_a7eaf76bd50a406f7f9389e00dbc53fda}{Get\+Lines}} () const
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $>$ $>$ \mbox{\hyperlink{class_plane_a7c65317451001621394902cba7eec343}{Get\+Conics}} () const
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_plane_implementation}{Plane\+Implementation}} \mbox{\hyperlink{class_plane_acc86f8aae09b055699688b1c50ad7501}{implementation\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em Implementation of plane. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_plane_body}{Plane\+Body}} \mbox{\hyperlink{class_plane_aa45a1ee353c3eab80ec049db4a02c4f8}{body\+\_\+}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Body of plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -67,11 +76,83 @@ Add object to plane.
 {\em object} & Pointer to an object. \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=340pt]{class_plane_ada179fa401de8aa43984ef692d89e760_icgraph}
+\includegraphics[width=316pt]{class_plane_ada179fa401de8aa43984ef692d89e760_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plane_ada179fa401de8aa43984ef692d89e760_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_a7c65317451001621394902cba7eec343}\label{class_plane_a7c65317451001621394902cba7eec343}} 
+\index{Plane@{Plane}!GetConics@{GetConics}}
+\index{GetConics@{GetConics}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{GetConics()}{GetConics()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $>$ $>$ Plane\+::\+Get\+Conics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_plane_a7c65317451001621394902cba7eec343_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_a7eaf76bd50a406f7f9389e00dbc53fda}\label{class_plane_a7eaf76bd50a406f7f9389e00dbc53fda}} 
+\index{Plane@{Plane}!GetLines@{GetLines}}
+\index{GetLines@{GetLines}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{GetLines()}{GetLines()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $>$ $>$ Plane\+::\+Get\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_plane_a7eaf76bd50a406f7f9389e00dbc53fda_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_a3ff4f3b921fd8c1192211c97bb8b701e}\label{class_plane_a3ff4f3b921fd8c1192211c97bb8b701e}} 
+\index{Plane@{Plane}!GetObjects@{GetObjects}}
+\index{GetObjects@{GetObjects}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{GetObjects()}{GetObjects()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $>$ $>$ \& Plane\+::\+Get\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get all objects. 
+
+\begin{DoxyReturn}{Returns}
+All objects. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_plane_a3ff4f3b921fd8c1192211c97bb8b701e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_a96536ba73e67633e522460a0aeee9fb5}\label{class_plane_a96536ba73e67633e522460a0aeee9fb5}} 
+\index{Plane@{Plane}!GetPoints@{GetPoints}}
+\index{GetPoints@{GetPoints}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{GetPoints()}{GetPoints()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $>$ $>$ Plane\+::\+Get\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_plane_a96536ba73e67633e522460a0aeee9fb5_cgraph}
 \end{center}
 \end{figure}
 
@@ -83,11 +164,19 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{body\_}{body\_}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_plane_body}{Plane\+Body}} Plane\+::body\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Body of plane. 
+
 \mbox{\Hypertarget{class_plane_acc86f8aae09b055699688b1c50ad7501}\label{class_plane_acc86f8aae09b055699688b1c50ad7501}} 
 \index{Plane@{Plane}!implementation\_@{implementation\_}}
 \index{implementation\_@{implementation\_}!Plane@{Plane}}
 \doxysubsubsection{\texorpdfstring{implementation\_}{implementation\_}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_plane_implementation}{Plane\+Implementation}} Plane\+::implementation\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Implementation of plane. 
 
 
 

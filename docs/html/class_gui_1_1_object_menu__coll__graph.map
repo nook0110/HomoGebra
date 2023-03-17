@@ -1,0 +1,12 @@
+<map id="Gui::ObjectMenu" name="Gui::ObjectMenu">
+<area shape="rect" id="node1" title="Class that represents a window that allows to edit objects." alt="" coords="237,572,382,737"/>
+<area shape="rect" id="node2" href="$class_gui_1_1_editor_window.html" title="Interface that represents a window in Dear ImGui." alt="" coords="5,373,136,509"/>
+<area shape="rect" id="node3" title=" " alt="" coords="43,197,98,274"/>
+<area shape="rect" id="node4" title=" " alt="" coords="160,403,320,480"/>
+<area shape="rect" id="node5" title=" " alt="" coords="361,403,399,480"/>
+<area shape="rect" id="node6" href="$class_plane.html" title="Container for all objects, which you can draw." alt="" coords="445,373,553,509"/>
+<area shape="rect" id="node7" href="$class_plane_implementation.html" title="Implementation of Plane." alt="" coords="347,160,490,311"/>
+<area shape="rect" id="node8" title=" " alt="" coords="327,5,505,97"/>
+<area shape="rect" id="node9" href="$class_plane_body.html" title=" " alt="" coords="532,197,617,274"/>
+<area shape="rect" id="node10" title=" " alt="" coords="529,13,623,90"/>
+</map>

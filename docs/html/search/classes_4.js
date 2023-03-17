@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['homogeneouscoordinate_0',['HomogeneousCoordinate',['../struct_homogeneous_coordinate.html',1,'']]]
+  ['homogeneouscoordinate_0',['HomogeneousCoordinate',['../struct_homogeneous_coordinate.html',1,'']]],
+  ['homogeneouscoordinateeditor_1',['HomogeneousCoordinateEditor',['../class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor.html',1,'Gui::ObjectMenu']]]
 ];

@@ -81,9 +81,10 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_point-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Point Class Reference</div></div>
+  <div class="headertitle"><div class="title">Point Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -126,15 +127,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1094bae779f0e199013821a711bb5019"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a1094bae779f0e199013821a711bb5019">Point</a> (const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;equation=<a class="el" href="struct_point_equation.html">PointEquation</a>{})</td></tr>
 <tr class="memdesc:a1094bae779f0e199013821a711bb5019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct point on a plane with equation.  <br /></td></tr>
 <tr class="separator:a1094bae779f0e199013821a711bb5019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a743fb4edcb14dc6b450d1f9b31f650bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a743fb4edcb14dc6b450d1f9b31f650bd">~Point</a> () final=default</td></tr>
-<tr class="memdesc:a743fb4edcb14dc6b450d1f9b31f650bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
-<tr class="separator:a743fb4edcb14dc6b450d1f9b31f650bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a206ded007973dc7db19c6adaff5e79c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a206ded007973dc7db19c6adaff5e79c8">Destroy</a> (<a class="el" href="class_plane.html">Plane</a> &amp;plane) final</td></tr>
-<tr class="memdesc:a206ded007973dc7db19c6adaff5e79c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy this object.  <br /></td></tr>
-<tr class="separator:a206ded007973dc7db19c6adaff5e79c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a853df76b6338eff57189585c2adb0b1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a853df76b6338eff57189585c2adb0b1f">Notify</a> (const <a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a> &amp;event) const</td></tr>
-<tr class="memdesc:a853df76b6338eff57189585c2adb0b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify observers that this objected is destroyed.  <br /></td></tr>
-<tr class="separator:a853df76b6338eff57189585c2adb0b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4faff9f781dcf0b26c78db650f89b1ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a4faff9f781dcf0b26c78db650f89b1ae">~Point</a> () override=default</td></tr>
+<tr class="memdesc:a4faff9f781dcf0b26c78db650f89b1ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
+<tr class="separator:a4faff9f781dcf0b26c78db650f89b1ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac6c97aec3586ef12b4bab54079eb06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a8ac6c97aec3586ef12b4bab54079eb06">Destroy</a> (<a class="el" href="class_plane.html">Plane</a> &amp;plane) override</td></tr>
+<tr class="memdesc:a8ac6c97aec3586ef12b4bab54079eb06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy this object.  <br /></td></tr>
+<tr class="separator:a8ac6c97aec3586ef12b4bab54079eb06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38529969767ee5a8b7341ac84bea8d47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a38529969767ee5a8b7341ac84bea8d47">SetEquation</a> (const <a class="el" href="struct_point_equation.html">PointEquation</a> &amp;equation)</td></tr>
 <tr class="memdesc:a38529969767ee5a8b7341ac84bea8d47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set new equation of point.  <br /></td></tr>
 <tr class="separator:a38529969767ee5a8b7341ac84bea8d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,6 +146,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a76b6b40dcbd020ca773d1513fe4e5b70 inherit pub_methods_class_geometric_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_object.html#a76b6b40dcbd020ca773d1513fe4e5b70">Destroy</a> (<a class="el" href="class_plane.html">Plane</a> &amp;plane)=0</td></tr>
 <tr class="memdesc:a76b6b40dcbd020ca773d1513fe4e5b70 inherit pub_methods_class_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy this object.  <br /></td></tr>
 <tr class="separator:a76b6b40dcbd020ca773d1513fe4e5b70 inherit pub_methods_class_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a853df76b6338eff57189585c2adb0b1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a853df76b6338eff57189585c2adb0b1f">Notify</a> (const <a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a> &amp;event) const</td></tr>
+<tr class="memdesc:a853df76b6338eff57189585c2adb0b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify observers that this objected is destroyed.  <br /></td></tr>
+<tr class="separator:a853df76b6338eff57189585c2adb0b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -208,8 +212,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a743fb4edcb14dc6b450d1f9b31f650bd" name="a743fb4edcb14dc6b450d1f9b31f650bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a743fb4edcb14dc6b450d1f9b31f650bd">&#9670;&#160;</a></span>~Point()</h2>
+<a id="a4faff9f781dcf0b26c78db650f89b1ae" name="a4faff9f781dcf0b26c78db650f89b1ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4faff9f781dcf0b26c78db650f89b1ae">&#9670;&#160;</a></span>~Point()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +230,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -236,8 +240,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a206ded007973dc7db19c6adaff5e79c8" name="a206ded007973dc7db19c6adaff5e79c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a206ded007973dc7db19c6adaff5e79c8">&#9670;&#160;</a></span>Destroy()</h2>
+<a id="a8ac6c97aec3586ef12b4bab54079eb06" name="a8ac6c97aec3586ef12b4bab54079eb06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac6c97aec3586ef12b4bab54079eb06">&#9670;&#160;</a></span>Destroy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +259,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -272,8 +276,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_point_a206ded007973dc7db19c6adaff5e79c8_cgraph.png" border="0" usemap="#aclass_point_a206ded007973dc7db19c6adaff5e79c8_cgraph" alt=""/></div>
-<map name="aclass_point_a206ded007973dc7db19c6adaff5e79c8_cgraph" id="aclass_point_a206ded007973dc7db19c6adaff5e79c8_cgraph">
+<div class="center"><img src="class_point_a8ac6c97aec3586ef12b4bab54079eb06_cgraph.png" border="0" usemap="#aclass_point_a8ac6c97aec3586ef12b4bab54079eb06_cgraph" alt=""/></div>
+<map name="aclass_point_a8ac6c97aec3586ef12b4bab54079eb06_cgraph" id="aclass_point_a8ac6c97aec3586ef12b4bab54079eb06_cgraph">
 <area shape="rect" title="Destroy this object." alt="" coords="5,13,111,38"/>
 <area shape="rect" href="class_point.html#a853df76b6338eff57189585c2adb0b1f" title="Notify observers that this objected is destroyed." alt="" coords="159,13,252,38"/>
 <area shape="rect" href="class_observable_geometric_object.html#a15d865c4eb09e61691db40d1ff103f13" title="Notify all subscribed observers that object was moved." alt="" coords="300,5,484,45"/>
@@ -298,7 +302,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return current equation of point. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of point </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of point. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -325,6 +329,9 @@ Here is the caller graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Point::Notify </td>
@@ -334,12 +341,17 @@ Here is the caller graph for this function:</div>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Notify observers that this objected is destroyed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td><a class="el" href="namespace_event.html" title="Events which can happen.">Event</a> </td></tr>
+    <tr><td class="paramname">event</td><td><a class="el" href="namespace_event.html" title="Events which can happen.">Event</a> of destruction. </td></tr>
   </table>
   </dd>
 </dl>
@@ -358,7 +370,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_point_a853df76b6338eff57189585c2adb0b1f_icgraph.png" border="0" usemap="#aclass_point_a853df76b6338eff57189585c2adb0b1f_icgraph" alt=""/></div>
 <map name="aclass_point_a853df76b6338eff57189585c2adb0b1f_icgraph" id="aclass_point_a853df76b6338eff57189585c2adb0b1f_icgraph">
 <area shape="rect" title="Notify observers that this objected is destroyed." alt="" coords="159,5,252,31"/>
-<area shape="rect" href="class_point.html#a206ded007973dc7db19c6adaff5e79c8" title="Destroy this object." alt="" coords="5,5,111,31"/>
+<area shape="rect" href="class_point.html#a8ac6c97aec3586ef12b4bab54079eb06" title="Destroy this object." alt="" coords="5,5,111,31"/>
 </map>
 </div>
 

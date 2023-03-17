@@ -11,7 +11,8 @@
 
 
 
-Inheritance diagram for Point\+:\nopagebreak
+Inheritance diagram for Point\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,12 +34,10 @@ Collaboration diagram for Point\+:
 \item 
 \mbox{\hyperlink{class_point_a1094bae779f0e199013821a711bb5019}{Point}} (const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&equation=\mbox{\hyperlink{struct_point_equation}{Point\+Equation}}\{\})
 \begin{DoxyCompactList}\small\item\em Construct point on a plane with equation. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_point_a743fb4edcb14dc6b450d1f9b31f650bd}{$\sim$\+Point}} () final=default
+\mbox{\hyperlink{class_point_a4faff9f781dcf0b26c78db650f89b1ae}{$\sim$\+Point}} () override=default
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_point_a206ded007973dc7db19c6adaff5e79c8}{Destroy}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane) final
+void \mbox{\hyperlink{class_point_a8ac6c97aec3586ef12b4bab54079eb06}{Destroy}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane) override
 \begin{DoxyCompactList}\small\item\em Destroy this object. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_point_a853df76b6338eff57189585c2adb0b1f}{Notify}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&event) const
-\begin{DoxyCompactList}\small\item\em Notify observers that this objected is destroyed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_point_a38529969767ee5a8b7341ac84bea8d47}{Set\+Equation}} (const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&equation)
 \begin{DoxyCompactList}\small\item\em Set new equation of point. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \& \mbox{\hyperlink{class_point_ac45889f34111c0347477f76a303c6677}{Get\+Equation}} () const
@@ -50,6 +49,11 @@ virtual \mbox{\hyperlink{class_geometric_object_a8d7f6fe72f4f9a45de56a7ae04f955f
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_geometric_object_a76b6b40dcbd020ca773d1513fe4e5b70}{Destroy}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane)=0
 \begin{DoxyCompactList}\small\item\em Destroy this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_point_a853df76b6338eff57189585c2adb0b1f}{Notify}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&event) const
+\begin{DoxyCompactList}\small\item\em Notify observers that this objected is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -100,11 +104,11 @@ Construct point on a plane with equation.
 {\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of point. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_point_a743fb4edcb14dc6b450d1f9b31f650bd}\label{class_point_a743fb4edcb14dc6b450d1f9b31f650bd}} 
+\mbox{\Hypertarget{class_point_a4faff9f781dcf0b26c78db650f89b1ae}\label{class_point_a4faff9f781dcf0b26c78db650f89b1ae}} 
 \index{Point@{Point}!````~Point@{$\sim$Point}}
 \index{````~Point@{$\sim$Point}!Point@{Point}}
 \doxysubsubsection{\texorpdfstring{$\sim$Point()}{~Point()}}
-{\footnotesize\ttfamily Point\+::$\sim$\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [default]}}
+{\footnotesize\ttfamily Point\+::$\sim$\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
 
 
 
@@ -113,11 +117,11 @@ Default destructor.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_point_a206ded007973dc7db19c6adaff5e79c8}\label{class_point_a206ded007973dc7db19c6adaff5e79c8}} 
+\mbox{\Hypertarget{class_point_a8ac6c97aec3586ef12b4bab54079eb06}\label{class_point_a8ac6c97aec3586ef12b4bab54079eb06}} 
 \index{Point@{Point}!Destroy@{Destroy}}
 \index{Destroy@{Destroy}!Point@{Point}}
 \doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
-{\footnotesize\ttfamily void Point\+::\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} \&}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Point\+::\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} \&}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -132,11 +136,12 @@ Destroy this object.
 
 Implements \mbox{\hyperlink{class_geometric_object_a76b6b40dcbd020ca773d1513fe4e5b70}{Geometric\+Object}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_point_a206ded007973dc7db19c6adaff5e79c8_cgraph}
+\includegraphics[width=350pt]{class_point_a8ac6c97aec3586ef12b4bab54079eb06_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_point_ac45889f34111c0347477f76a303c6677}\label{class_point_ac45889f34111c0347477f76a303c6677}} 
@@ -150,7 +155,7 @@ Here is the call graph for this function\+:\nopagebreak
 Return current equation of point. 
 
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{struct_equation}{Equation}} of point 
+\mbox{\hyperlink{struct_equation}{Equation}} of point. 
 \end{DoxyReturn}
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -170,7 +175,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{Point@{Point}!Notify@{Notify}}
 \index{Notify@{Notify}!Point@{Point}}
 \doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
-{\footnotesize\ttfamily void Point\+::\+Notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&}]{event }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily void Point\+::\+Notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&}]{event }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -178,7 +183,7 @@ Notify observers that this objected is destroyed.
 
 
 \begin{DoxyParams}{Parameters}
-{\em event} & \mbox{\hyperlink{namespace_event}{Event}} \\
+{\em event} & \mbox{\hyperlink{namespace_event}{Event}} of destruction. \\
 \hline
 \end{DoxyParams}
 Here is the call graph for this function\+:\nopagebreak
@@ -188,7 +193,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=324pt]{class_point_a853df76b6338eff57189585c2adb0b1f_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

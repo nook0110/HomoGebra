@@ -1,18 +1,20 @@
 <map id="HomoGebra/Equation.h" name="HomoGebra/Equation.h">
-<area shape="rect" id="node1" title=" " alt="" coords="483,5,641,31"/>
-<area shape="rect" id="node2" href="$_coordinate_8cpp.html" title=" " alt="" coords="269,86,452,111"/>
-<area shape="rect" id="node3" href="$_equation_8cpp.html" title=" " alt="" coords="477,86,647,111"/>
-<area shape="rect" id="node4" href="$_geometric_object_implementation_8h.html" title=" " alt="" coords="672,79,865,119"/>
-<area shape="rect" id="node5" href="$_geometric_object_8h.html" title=" " alt="" coords="556,174,760,199"/>
-<area shape="rect" id="node16" href="$_geometric_object_implementation_8cpp.html" title=" " alt="" coords="784,167,977,207"/>
+<area shape="rect" id="node1" title=" " alt="" coords="509,5,666,31"/>
+<area shape="rect" id="node2" href="$_coordinate_8cpp.html" title=" " alt="" coords="295,86,477,111"/>
+<area shape="rect" id="node3" href="$_equation_8cpp.html" title=" " alt="" coords="502,86,673,111"/>
+<area shape="rect" id="node4" href="$_geometric_object_implementation_8h.html" title=" " alt="" coords="697,79,891,119"/>
+<area shape="rect" id="node5" href="$_geometric_object_8h.html" title=" " alt="" coords="581,174,785,199"/>
+<area shape="rect" id="node18" href="$_geometric_object_implementation_8cpp.html" title=" " alt="" coords="809,167,1003,207"/>
 <area shape="rect" id="node6" href="$_construction_8h.html" title=" " alt="" coords="13,328,191,353"/>
-<area shape="rect" id="node8" href="$_geometric_object_8cpp.html" title=" " alt="" coords="695,255,914,280"/>
-<area shape="rect" id="node9" href="$_geometric_object_factory_8h.html" title=" " alt="" coords="480,401,673,441"/>
-<area shape="rect" id="node11" href="$_plane_implementation_8h.html" title=" " alt="" coords="386,255,613,280"/>
-<area shape="rect" id="node15" href="$_source_8cpp.html" title=" " alt="" coords="939,255,1100,280"/>
+<area shape="rect" id="node8" href="$_g_u_i_8h.html" title=" " alt="" coords="506,409,634,434"/>
+<area shape="rect" id="node10" href="$_source_8cpp.html" title=" " alt="" coords="628,497,789,522"/>
+<area shape="rect" id="node11" href="$_geometric_object_8cpp.html" title=" " alt="" coords="797,255,1015,280"/>
+<area shape="rect" id="node12" href="$_geometric_object_factory_8h.html" title=" " alt="" coords="747,401,940,441"/>
+<area shape="rect" id="node14" href="$_plane_implementation_8h.html" title=" " alt="" coords="386,255,613,280"/>
 <area shape="rect" id="node7" href="$_construction_8cpp.html" title=" " alt="" coords="5,409,199,434"/>
-<area shape="rect" id="node10" href="$_geometric_object_factory_8cpp.html" title=" " alt="" coords="480,489,673,529"/>
-<area shape="rect" id="node12" href="$_plane_8h.html" title=" " alt="" coords="215,328,354,353"/>
-<area shape="rect" id="node14" href="$_plane_implementation_8cpp.html" title=" " alt="" coords="379,328,620,353"/>
-<area shape="rect" id="node13" href="$_plane_8cpp.html" title=" " alt="" coords="223,409,376,434"/>
+<area shape="rect" id="node9" href="$_g_u_i_8cpp.html" title=" " alt="" coords="461,497,604,522"/>
+<area shape="rect" id="node13" href="$_geometric_object_factory_8cpp.html" title=" " alt="" coords="813,489,1007,529"/>
+<area shape="rect" id="node15" href="$_plane_8h.html" title=" " alt="" coords="215,328,354,353"/>
+<area shape="rect" id="node17" href="$_plane_implementation_8cpp.html" title=" " alt="" coords="379,328,620,353"/>
+<area shape="rect" id="node16" href="$_plane_8cpp.html" title=" " alt="" coords="223,409,376,434"/>
 </map>

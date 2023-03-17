@@ -1,16 +1,16 @@
 <map id="HomoGebra/Plane.h" name="HomoGebra/Plane.h">
 <area shape="rect" id="node1" title=" " alt="" coords="59,5,197,31"/>
-<area shape="rect" id="node2" href="$_plane_implementation_8h.html" title=" " alt="" coords="125,79,280,104"/>
-<area shape="rect" id="node14" href="$_plane_body_8h.html" title=" " alt="" coords="5,79,101,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="132,152,188,177"/>
-<area shape="rect" id="node4" href="$_geometric_object_8h.html" title=" " alt="" coords="212,152,343,177"/>
-<area shape="rect" id="node5" href="$_geometric_object_body_8h.html" title=" " alt="" coords="91,225,253,251"/>
-<area shape="rect" id="node7" href="$_geometric_object_implementation_8h.html" title=" " alt="" coords="277,225,496,251"/>
-<area shape="rect" id="node6" title=" " alt="" coords="44,299,183,324"/>
-<area shape="rect" id="node8" title=" " alt="" coords="325,299,363,324"/>
-<area shape="rect" id="node9" href="$_equation_8h.html" title=" " alt="" coords="387,299,471,324"/>
-<area shape="rect" id="node10" title=" " alt="" coords="319,445,369,471"/>
-<area shape="rect" id="node11" title=" " alt="" coords="489,445,556,471"/>
-<area shape="rect" id="node12" href="$_coordinate_8h.html" title=" " alt="" coords="382,372,477,397"/>
-<area shape="rect" id="node13" title=" " alt="" coords="394,445,465,471"/>
+<area shape="rect" id="node2" href="$_plane_body_8h.html" title=" " alt="" coords="5,79,101,104"/>
+<area shape="rect" id="node4" href="$_plane_implementation_8h.html" title=" " alt="" coords="125,79,280,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="44,299,183,324"/>
+<area shape="rect" id="node5" title=" " alt="" coords="132,152,188,177"/>
+<area shape="rect" id="node6" href="$_geometric_object_8h.html" title=" " alt="" coords="212,152,343,177"/>
+<area shape="rect" id="node7" href="$_geometric_object_body_8h.html" title=" " alt="" coords="91,225,253,251"/>
+<area shape="rect" id="node8" href="$_geometric_object_implementation_8h.html" title=" " alt="" coords="277,225,496,251"/>
+<area shape="rect" id="node9" title=" " alt="" coords="325,299,363,324"/>
+<area shape="rect" id="node10" href="$_equation_8h.html" title=" " alt="" coords="387,299,471,324"/>
+<area shape="rect" id="node11" title=" " alt="" coords="361,445,412,471"/>
+<area shape="rect" id="node12" href="$_coordinate_8h.html" title=" " alt="" coords="425,372,519,397"/>
+<area shape="rect" id="node13" title=" " alt="" coords="437,445,507,471"/>
+<area shape="rect" id="node14" title=" " alt="" coords="532,445,599,471"/>
 </map>

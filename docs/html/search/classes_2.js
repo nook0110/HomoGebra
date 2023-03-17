@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['equation_0',['Equation',['../struct_equation.html',1,'']]]
+  ['editorwindow_0',['EditorWindow',['../class_gui_1_1_editor_window.html',1,'Gui']]],
+  ['equation_1',['Equation',['../struct_equation.html',1,'']]]
 ];

@@ -1,5 +1,5 @@
 <map id="Line" name="Line">
-<area shape="rect" id="node1" title="Line on a plane." alt="" coords="173,727,287,863"/>
+<area shape="rect" id="node1" title="Line on a plane." alt="" coords="173,727,287,877"/>
 <area shape="rect" id="node2" href="$class_geometric_object.html" title="Base class for geometric objects." alt="" coords="5,557,153,664"/>
 <area shape="rect" id="node3" href="$class_line_body.html" title=" " alt="" coords="178,557,282,664"/>
 <area shape="rect" id="node4" href="$class_geometric_object_body.html" title=" " alt="" coords="82,388,261,495"/>

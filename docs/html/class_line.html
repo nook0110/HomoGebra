@@ -81,9 +81,10 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_line-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Line Class Reference</div></div>
+  <div class="headertitle"><div class="title">Line Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -96,7 +97,7 @@ Inheritance diagram for Line:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_line__inherit__graph.png" border="0" usemap="#a_line_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_line_inherit__map" id="a_line_inherit__map">
-<area shape="rect" title="Line on a plane." alt="" coords="17,160,142,311"/>
+<area shape="rect" title="Line on a plane." alt="" coords="17,160,142,325"/>
 <area shape="rect" href="class_geometric_object.html" title="Base class for geometric objects." alt="" coords="5,5,153,112"/>
 </map>
 </div>
@@ -105,7 +106,7 @@ Collaboration diagram for Line:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_line__coll__graph.png" border="0" usemap="#a_line_coll__map" alt="Collaboration graph"/></div>
 <map name="a_line_coll__map" id="a_line_coll__map">
-<area shape="rect" title="Line on a plane." alt="" coords="173,727,287,863"/>
+<area shape="rect" title="Line on a plane." alt="" coords="173,727,287,877"/>
 <area shape="rect" href="class_geometric_object.html" title="Base class for geometric objects." alt="" coords="5,557,153,664"/>
 <area shape="rect" href="class_line_body.html" title=" " alt="" coords="178,557,282,664"/>
 <area shape="rect" href="class_geometric_object_body.html" title=" " alt="" coords="82,388,261,495"/>
@@ -126,18 +127,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8e88de43a3d868a85cfd7d39ba9e2bcb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line.html#a8e88de43a3d868a85cfd7d39ba9e2bcb">Line</a> (const <a class="el" href="struct_line_equation.html">LineEquation</a> &amp;equation=<a class="el" href="struct_line_equation.html">LineEquation</a>{})</td></tr>
 <tr class="memdesc:a8e88de43a3d868a85cfd7d39ba9e2bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct line on a plane with equation.  <br /></td></tr>
 <tr class="separator:a8e88de43a3d868a85cfd7d39ba9e2bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6c2db935145f50c3e82780ad563ec30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line.html#ad6c2db935145f50c3e82780ad563ec30">~Line</a> () final=default</td></tr>
-<tr class="memdesc:ad6c2db935145f50c3e82780ad563ec30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
-<tr class="separator:ad6c2db935145f50c3e82780ad563ec30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad28541e8af01f2b9559910e5599d7321"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line.html#ad28541e8af01f2b9559910e5599d7321">Destroy</a> (<a class="el" href="class_plane.html">Plane</a> &amp;plane) final</td></tr>
-<tr class="memdesc:ad28541e8af01f2b9559910e5599d7321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy this object.  <br /></td></tr>
-<tr class="separator:ad28541e8af01f2b9559910e5599d7321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54dbeed3d17564f31a014a9c80aab279"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line.html#a54dbeed3d17564f31a014a9c80aab279">Notify</a> (const <a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a> &amp;event) const</td></tr>
-<tr class="memdesc:a54dbeed3d17564f31a014a9c80aab279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify observers that this objected is destroyed.  <br /></td></tr>
-<tr class="separator:a54dbeed3d17564f31a014a9c80aab279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eb11f35f4f98a9c50c853928f9fd6de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line.html#a1eb11f35f4f98a9c50c853928f9fd6de">~Line</a> () override=default</td></tr>
+<tr class="memdesc:a1eb11f35f4f98a9c50c853928f9fd6de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
+<tr class="separator:a1eb11f35f4f98a9c50c853928f9fd6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed21ff0cf32c1cf8d691c5bd1f4085c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line.html#a1ed21ff0cf32c1cf8d691c5bd1f4085c">Destroy</a> (<a class="el" href="class_plane.html">Plane</a> &amp;plane) override</td></tr>
+<tr class="memdesc:a1ed21ff0cf32c1cf8d691c5bd1f4085c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy this object.  <br /></td></tr>
+<tr class="separator:a1ed21ff0cf32c1cf8d691c5bd1f4085c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad99f3e15fa5630bbe53659939f2cf78e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line.html#ad99f3e15fa5630bbe53659939f2cf78e">SetEquation</a> (const <a class="el" href="struct_line_equation.html">LineEquation</a> &amp;equation)</td></tr>
 <tr class="memdesc:ad99f3e15fa5630bbe53659939f2cf78e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set new equation of line.  <br /></td></tr>
 <tr class="separator:ad99f3e15fa5630bbe53659939f2cf78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a355fed79f6ee957f9dc4f663156ad194"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_line_equation.html">LineEquation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line.html#a355fed79f6ee957f9dc4f663156ad194">GetEquation</a> () const</td></tr>
+<tr class="memdesc:a355fed79f6ee957f9dc4f663156ad194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return current equation of point.  <br /></td></tr>
+<tr class="separator:a355fed79f6ee957f9dc4f663156ad194"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_geometric_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_geometric_object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_geometric_object.html">GeometricObject</a></td></tr>
 <tr class="memitem:a8d7f6fe72f4f9a45de56a7ae04f955fe inherit pub_methods_class_geometric_object"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_object.html#a8d7f6fe72f4f9a45de56a7ae04f955fe">~GeometricObject</a> ()=default</td></tr>
 <tr class="memdesc:a8d7f6fe72f4f9a45de56a7ae04f955fe inherit pub_methods_class_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
@@ -145,6 +146,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a76b6b40dcbd020ca773d1513fe4e5b70 inherit pub_methods_class_geometric_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_object.html#a76b6b40dcbd020ca773d1513fe4e5b70">Destroy</a> (<a class="el" href="class_plane.html">Plane</a> &amp;plane)=0</td></tr>
 <tr class="memdesc:a76b6b40dcbd020ca773d1513fe4e5b70 inherit pub_methods_class_geometric_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy this object.  <br /></td></tr>
 <tr class="separator:a76b6b40dcbd020ca773d1513fe4e5b70 inherit pub_methods_class_geometric_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a54dbeed3d17564f31a014a9c80aab279"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line.html#a54dbeed3d17564f31a014a9c80aab279">Notify</a> (const <a class="el" href="struct_event_1_1_destroyed.html">Event::Destroyed</a> &amp;event) const</td></tr>
+<tr class="memdesc:a54dbeed3d17564f31a014a9c80aab279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify observers that this objected is destroyed.  <br /></td></tr>
+<tr class="separator:a54dbeed3d17564f31a014a9c80aab279"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -198,15 +205,15 @@ Additional Inherited Members</h2></td></tr>
 <p>Construct line on a plane with equation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">equation</td><td><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of line </td></tr>
+    <tr><td class="paramname">equation</td><td><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of line. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ad6c2db935145f50c3e82780ad563ec30" name="ad6c2db935145f50c3e82780ad563ec30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6c2db935145f50c3e82780ad563ec30">&#9670;&#160;</a></span>~Line()</h2>
+<a id="a1eb11f35f4f98a9c50c853928f9fd6de" name="a1eb11f35f4f98a9c50c853928f9fd6de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eb11f35f4f98a9c50c853928f9fd6de">&#9670;&#160;</a></span>~Line()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +230,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -233,8 +240,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad28541e8af01f2b9559910e5599d7321" name="ad28541e8af01f2b9559910e5599d7321"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad28541e8af01f2b9559910e5599d7321">&#9670;&#160;</a></span>Destroy()</h2>
+<a id="a1ed21ff0cf32c1cf8d691c5bd1f4085c" name="a1ed21ff0cf32c1cf8d691c5bd1f4085c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed21ff0cf32c1cf8d691c5bd1f4085c">&#9670;&#160;</a></span>Destroy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,7 +259,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -269,11 +276,40 @@ Additional Inherited Members</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_line_ad28541e8af01f2b9559910e5599d7321_cgraph.png" border="0" usemap="#aclass_line_ad28541e8af01f2b9559910e5599d7321_cgraph" alt=""/></div>
-<map name="aclass_line_ad28541e8af01f2b9559910e5599d7321_cgraph" id="aclass_line_ad28541e8af01f2b9559910e5599d7321_cgraph">
+<div class="center"><img src="class_line_a1ed21ff0cf32c1cf8d691c5bd1f4085c_cgraph.png" border="0" usemap="#aclass_line_a1ed21ff0cf32c1cf8d691c5bd1f4085c_cgraph" alt=""/></div>
+<map name="aclass_line_a1ed21ff0cf32c1cf8d691c5bd1f4085c_cgraph" id="aclass_line_a1ed21ff0cf32c1cf8d691c5bd1f4085c_cgraph">
 <area shape="rect" title="Destroy this object." alt="" coords="5,13,104,38"/>
 <area shape="rect" href="class_line.html#a54dbeed3d17564f31a014a9c80aab279" title="Notify observers that this objected is destroyed." alt="" coords="152,13,239,38"/>
 <area shape="rect" href="class_observable_geometric_object.html#a15d865c4eb09e61691db40d1ff103f13" title="Notify all subscribed observers that object was moved." alt="" coords="287,5,471,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a355fed79f6ee957f9dc4f663156ad194" name="a355fed79f6ee957f9dc4f663156ad194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a355fed79f6ee957f9dc4f663156ad194">&#9670;&#160;</a></span>GetEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_line_equation.html">LineEquation</a> &amp; Line::GetEquation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return current equation of point. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of point. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_line_a355fed79f6ee957f9dc4f663156ad194_cgraph.png" border="0" usemap="#aclass_line_a355fed79f6ee957f9dc4f663156ad194_cgraph" alt=""/></div>
+<map name="aclass_line_a355fed79f6ee957f9dc4f663156ad194_cgraph" id="aclass_line_a355fed79f6ee957f9dc4f663156ad194_cgraph">
+<area shape="rect" title="Return current equation of point." alt="" coords="5,13,132,38"/>
+<area shape="rect" href="class_line_implementation.html#a99a0e44758035b82214f2d84a739a1d9" title="Return equation of line." alt="" coords="180,5,315,45"/>
 </map>
 </div>
 
@@ -284,6 +320,9 @@ Here is the call graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Line::Notify </td>
@@ -293,6 +332,11 @@ Here is the call graph for this function:</div>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Notify observers that this objected is destroyed. </p>
@@ -317,7 +361,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_line_a54dbeed3d17564f31a014a9c80aab279_icgraph.png" border="0" usemap="#aclass_line_a54dbeed3d17564f31a014a9c80aab279_icgraph" alt=""/></div>
 <map name="aclass_line_a54dbeed3d17564f31a014a9c80aab279_icgraph" id="aclass_line_a54dbeed3d17564f31a014a9c80aab279_icgraph">
 <area shape="rect" title="Notify observers that this objected is destroyed." alt="" coords="152,5,239,31"/>
-<area shape="rect" href="class_line.html#ad28541e8af01f2b9559910e5599d7321" title="Destroy this object." alt="" coords="5,5,104,31"/>
+<area shape="rect" href="class_line.html#a1ed21ff0cf32c1cf8d691c5bd1f4085c" title="Destroy this object." alt="" coords="5,5,104,31"/>
 </map>
 </div>
 
@@ -342,7 +386,7 @@ Here is the caller graph for this function:</div>
 <p>Set new equation of line. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">equation</td><td><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of line </td></tr>
+    <tr><td class="paramname">equation</td><td><a class="el" href="struct_equation.html" title="Struct that defines position of the objects.">Equation</a> of line. </td></tr>
   </table>
   </dd>
 </dl>

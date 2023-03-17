@@ -15,7 +15,8 @@ Inheritance diagram for Conic\+Implementation\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Conic\+Implementation\+:\nopagebreak
+Collaboration diagram for Conic\+Implementation\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -25,8 +26,8 @@ Collaboration diagram for Conic\+Implementation\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_conic_implementation_ab55fbe0399c6eedd9e482ed92f6c333d}{Conic\+Implementation}} ()=default
-\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_conic_implementation_ad460d8dce50a269ea3aad5d79a7282b9}{Conic\+Implementation}} (const \mbox{\hyperlink{struct_conic_equation}{Conic\+Equation}} \&equation=\mbox{\hyperlink{struct_conic_equation}{Conic\+Equation}}())
+\begin{DoxyCompactList}\small\item\em Construct a conic with given equation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_conic_implementation_a72b09ee314545675e7ac07c8660ab05b}{Set\+Equation}} (const \mbox{\hyperlink{struct_conic_equation}{Conic\+Equation}} \&equation)
 \begin{DoxyCompactList}\small\item\em Sets new equation of conic. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{struct_conic_equation}{Conic\+Equation}} \& \mbox{\hyperlink{class_conic_implementation_afa3c93a6b00844ff71956aeab1e867e3}{Get\+Equation}} () const
@@ -57,16 +58,21 @@ void \mbox{\hyperlink{class_observable_geometric_object_a529db68c912a248a82f6398
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_conic_implementation_ab55fbe0399c6eedd9e482ed92f6c333d}\label{class_conic_implementation_ab55fbe0399c6eedd9e482ed92f6c333d}} 
+\mbox{\Hypertarget{class_conic_implementation_ad460d8dce50a269ea3aad5d79a7282b9}\label{class_conic_implementation_ad460d8dce50a269ea3aad5d79a7282b9}} 
 \index{ConicImplementation@{ConicImplementation}!ConicImplementation@{ConicImplementation}}
 \index{ConicImplementation@{ConicImplementation}!ConicImplementation@{ConicImplementation}}
 \doxysubsubsection{\texorpdfstring{ConicImplementation()}{ConicImplementation()}}
-{\footnotesize\ttfamily Conic\+Implementation\+::\+Conic\+Implementation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+{\footnotesize\ttfamily Conic\+Implementation\+::\+Conic\+Implementation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_conic_equation}{Conic\+Equation}} \&}]{equation = {\ttfamily \mbox{\hyperlink{struct_conic_equation}{Conic\+Equation}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Default constructor. 
+Construct a conic with given equation. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of conic. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}

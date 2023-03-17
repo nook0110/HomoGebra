@@ -39,6 +39,6 @@ class Plane
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetConics() const;
 
  private:
-  PlaneImplementation implementation_;
-  PlaneBody body_;
+  PlaneImplementation implementation_;  //!< Implementation of plane
+  PlaneBody body_;                      //!< Body of plane
 };

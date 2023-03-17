@@ -89,18 +89,30 @@ $(function() {
   <div class="headertitle"><div class="title">GUI.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;SFML/Graphics.hpp&quot;</code><br />
-<code>#include &quot;imgui.h&quot;</code><br />
-<code>#include &quot;imgui-SFML.h&quot;</code><br />
+<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="_geometric_object_8h_source.html">GeometricObject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_plane_8h_source.html">Plane.h</a>&quot;</code><br />
+<code>#include &quot;SFML/Graphics.hpp&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for GUI.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_g_u_i_8h__incl.png" border="0" usemap="#a_homo_gebra_2_g_u_i_8h" alt=""/></div>
 <map name="a_homo_gebra_2_g_u_i_8h" id="a_homo_gebra_2_g_u_i_8h">
-<area shape="rect" title=" " alt="" coords="136,5,264,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,144,104"/>
-<area shape="rect" title=" " alt="" coords="168,79,232,104"/>
-<area shape="rect" title=" " alt="" coords="257,79,359,104"/>
+<area shape="rect" title=" " alt="" coords="49,5,177,31"/>
+<area shape="rect" title=" " alt="" coords="92,225,148,251"/>
+<area shape="rect" href="_geometric_object_8h.html" title=" " alt="" coords="315,225,445,251"/>
+<area shape="rect" title=" " alt="" coords="167,372,305,397"/>
+<area shape="rect" href="_plane_8h.html" title=" " alt="" coords="137,79,204,104"/>
+<area shape="rect" href="_geometric_object_body_8h.html" title=" " alt="" coords="274,299,435,324"/>
+<area shape="rect" href="_geometric_object_implementation_8h.html" title=" " alt="" coords="460,299,679,324"/>
+<area shape="rect" title=" " alt="" coords="593,372,631,397"/>
+<area shape="rect" href="_equation_8h.html" title=" " alt="" coords="485,372,569,397"/>
+<area shape="rect" title=" " alt="" coords="460,519,511,544"/>
+<area shape="rect" href="_coordinate_8h.html" title=" " alt="" coords="522,445,617,471"/>
+<area shape="rect" title=" " alt="" coords="626,519,697,544"/>
+<area shape="rect" title=" " alt="" coords="535,519,601,544"/>
+<area shape="rect" href="_plane_body_8h.html" title=" " alt="" coords="272,152,368,177"/>
+<area shape="rect" href="_plane_implementation_8h.html" title=" " alt="" coords="93,152,248,177"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -118,13 +130,26 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_global.html">GUI::Global</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_g_u_i_1_1_global.html" title="Global functions needed for Dear ImGui to work.">Global</a> functions needed for Dear ImGui to work.  <a href="class_g_u_i_1_1_global.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gui_1_1_global.html">Gui::Global</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_gui_1_1_global.html" title="Global functions needed for Dear ImGui to work.">Global</a> functions needed for Dear ImGui to work.  <a href="class_gui_1_1_global.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gui_1_1_editor_window.html">Gui::EditorWindow</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface that represents a window in Dear ImGui.  <a href="class_gui_1_1_editor_window.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gui_1_1_object_menu.html">Gui::ObjectMenu</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that represents a window that allows to edit objects.  <a href="class_gui_1_1_object_menu.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor.html">Gui::ObjectMenu::HomogeneousCoordinateEditor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor.html">Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gui_1_1_object_menu_1_1_point_submenu.html">Gui::ObjectMenu::PointSubmenu</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that represents a submenu that allows to edit points.  <a href="class_gui_1_1_object_menu_1_1_point_submenu.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespace_g_u_i"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i.html">GUI</a></td></tr>
+<tr class="memitem:namespace_gui"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_gui.html">Gui</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

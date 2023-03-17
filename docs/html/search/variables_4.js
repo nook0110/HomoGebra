@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['implementation_5f_0',['implementation_',['../class_point.html#a76c2c7ce144a18b459605515997ef00d',1,'Point::implementation_()'],['../class_line.html#a5b96783588f8dddc60a868303c17ac4b',1,'Line::implementation_()'],['../class_conic.html#ae755f42c11c6e21769d0a8207a90a63a',1,'Conic::implementation_()'],['../class_plane.html#acc86f8aae09b055699688b1c50ad7501',1,'Plane::implementation_()']]]
+  ['equation_0',['equation',['../struct_point_equation.html#a62701fa1745d2f59aadd72c06b04a2e6',1,'PointEquation::equation()'],['../struct_line_equation.html#a56ed56fa0030fc476877b225210358e8',1,'LineEquation::equation()']]],
+  ['equation_5f_1',['equation_',['../class_point_implementation.html#a1853abf96bb27aa1f72f3f7e356578a4',1,'PointImplementation::equation_()'],['../class_line_implementation.html#acf082a29c25138fabd50ba14b56ff5d7',1,'LineImplementation::equation_()'],['../class_conic_implementation.html#af7682211f5fb5ca5100171ba849fc58e',1,'ConicImplementation::equation_()']]]
 ];
