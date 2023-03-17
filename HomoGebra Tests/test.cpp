@@ -1,6 +1,8 @@
 #include "../HomoGebra/Coordinate.cpp"  // NOLINT(bugprone-suspicious-include)
 #include "../HomoGebra/Coordinate.h"
+#include "../HomoGebra/Equation.cpp"
 #include "../HomoGebra/Equation.h"
+#include "../HomoGebra/Matrix.cpp"
 #include "../HomoGebra/Matrix.h"
 #include "gtest/gtest.h"
 

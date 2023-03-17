@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "GeometricObject.h"
 #include "Plane.h"
 #include "SFML/Graphics.hpp"
@@ -58,16 +60,16 @@ class Global
  *
  * \date February 2023
  */
-class ImGuiWindow
+class EditorWindow
 {
  public:
   /**
    * \brief Default constructor.
    *
    */
-  ImGuiWindow() = default;
+  explicit EditorWindow(const std::string& name): name_(name) {};
 
-  virtual ~ImGuiWindow() = default;
+  virtual ~EditorWindow() = default;
 
   void Begin() const;
 
@@ -79,7 +81,7 @@ class ImGuiWindow
   virtual void Construct() = 0;
 
  private:
-  std::string name;  //!< Name of the window.
+  std::string name_;  //!< Name of the window.
 };
 
 /**
@@ -91,7 +93,7 @@ class ImGuiWindow
  *
  * \date February 2023
  */
-class ObjectMenu final : public ImGuiWindow
+class ObjectMenu final : public EditorWindow
 {
  public:
   class HomogeneousCoordinateEditor
@@ -101,6 +103,8 @@ class ObjectMenu final : public ImGuiWindow
         const HomogeneousCoordinate& coordinate = HomogeneousCoordinate{});
 
     void Construct();
+
+    void Construct() const;
 
     [[nodiscard]] HomogeneousCoordinate GetCoordinate() const;
 
@@ -112,11 +116,16 @@ class ObjectMenu final : public ImGuiWindow
 
       void Construct();
 
+      void Construct() const;
+
       [[nodiscard]] Complex GetNumber() const;
 
      private:
-      double real_part_;
-      double imaginary_part_;
+      mutable double real_part_;  //!< Real part of the number. (It is mutable,
+                                  //!< because ImGui::InputDouble is not const)
+      mutable double
+          imaginary_part_;  //!< Imaginary part of the number. (It is mutable,
+                            //!< because ImGui::InputDouble is not const)
     };
     ComplexEditor x_variable_editor_;
     ComplexEditor y_variable_editor_;
@@ -134,23 +143,54 @@ class ObjectMenu final : public ImGuiWindow
    */
   class PointSubmenu
   {
+   public:
+    explicit PointSubmenu(const std::shared_ptr<Point>& point);
+
+    void Construct();
+
    private:
+    void ConstructEditableValues();
+
+    void ConstructCurrentValues() const;
+
     /**
      * Member data.
      */
-    HomogeneousCoordinateEditor
-        coordinate_editor_;         //!< Editor for coordinates.
-    std::shared_ptr<Point> point_;  //!< Point to edit.
+    HomogeneousCoordinateEditor coordinate_editor_;  //!< Editor for coordinates
+    std::shared_ptr<Point> point_;                   //!< Point to edit.
   };
 
-  explicit ObjectMenu(Plane& plane) : plane_(plane) {}
+  explicit ObjectMenu(Plane& plane, const std::string& name) : plane_(plane), EditorWindow(name){}
 
-  void Construct() final;
+  void Construct() override;
 
  private:
+  enum class ObjectType : int
+  {
+    kAll,
+    kPoint,
+    kLine,
+    kConic
+  };
+  static constexpr std::array<const char*, 4> kTypesOfObjects = {
+      "All", "Points", "Lines", "Conics"};
+
+  [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetObjectsOfType(
+      const ObjectType type) const;
+
+  void Construct(const std::vector<std::shared_ptr<GeometricObject>>& objects);
+
+  void Construct(const std::shared_ptr<Point>& object);
+
+  void Construct(const std::shared_ptr<Line>& line);
+
+  void Construct(const std::shared_ptr<Conic>& conic);
+
   /**
    * Member data.
    */
+  int current_type_ = static_cast<int>(ObjectType::kAll);
+
   Plane& plane_;  //!< Plane which we can edit.
 };
 }  // namespace Gui

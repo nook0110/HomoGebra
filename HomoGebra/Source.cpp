@@ -1,5 +1,6 @@
 #include "GUI.h"
 #include "GeometricObject.h"
+#include "GeometricObjectFactory.h"
 #include "SFML/Graphics.hpp"
 #include "imgui-SFML.h"
 #include "imgui.h"
@@ -21,8 +22,11 @@ int main()
   window.setFramerateLimit(60);
   ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-  Gui::ObjectMenu::HomogeneousCoordinateEditor coordinate(
-      HomogeneousCoordinate{Complex(1, 2), Complex(3, 4), Complex(5, 6)});
+  Plane plane;
+  PointFactory factory(plane);
+  factory.OnPlane(PointEquation{});
+
+  Gui::ObjectMenu menu(plane, std::string("Plane"));
 
   while (window.isOpen())
   {
@@ -37,9 +41,7 @@ int main()
 
     Gui::Global::Update(window);
 
-    ImGui::Begin("Test!");
-    coordinate.Construct();
-    ImGui::End();
+    menu.Construct();
 
     Gui::Global::Render(window);
 
