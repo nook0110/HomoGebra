@@ -26,3 +26,22 @@ std::vector<std::shared_ptr<GeometricObject>> Plane::GetConics() const
 {
   return implementation_.GetConics();
 }
+
+void Plane::Update(sf::RenderTarget& target)
+{
+  // Update all objects
+  for (const auto& object : implementation_.GetObjects())
+  {
+    object->UpdateBody(target);
+  }
+}
+
+void Plane::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+  // body_.Draw(target, states);
+  //  Draw all objects
+  for (const auto& object : implementation_.GetObjects())
+  {
+    target.draw(*(object.get()), states);
+  }
+}

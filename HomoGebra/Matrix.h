@@ -3,7 +3,7 @@
 #include <optional>
 #include <vector>
 
-using Complex = std::complex<long double>;
+#include "Complex.h"
 
 /**
  * \brief A squared matrix with augmentation.
@@ -108,32 +108,30 @@ class SquaredMatrix
    *
    * \param row Row of matrix
    */
-  [[nodiscard]] Row& operator[](size_t row);
+  [[nodiscard]] Row& operator[](const size_t row);
 
   /**
    * \brief operator to get row of matrix.
    *
    * \param row Row of matrix
    */
-  [[nodiscard]] const Row& operator[](size_t row) const;
+  [[nodiscard]] const Row& operator[](const size_t row) const;
 
   /**
    * \brief Return iterator to the beginning of rows
    *
    * \return Iterator to first row
    */
-  [[nodiscard]] SquaredMatrix::Matrix::const_iterator begin() const;
+  [[nodiscard]] Matrix::const_iterator begin() const;
 
   /**
    * \brief Return iterator to the end of rows
    *
    * \return Iterator to end of rows
    */
-  [[nodiscard]] SquaredMatrix::Matrix::const_iterator end() const;
+  [[nodiscard]] Matrix::const_iterator end() const;
 
  private:
-  static const long double kEpsilon;  //!< Epsilon for comparison
-
   /**
    * Default constructor.
    */

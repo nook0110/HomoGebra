@@ -47,6 +47,12 @@
     <Filter Include="Sources\Matrix">
       <UniqueIdentifier>{4cb6716f-b571-43b7-84c3-45aed2d2349c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headers\Creation">
+      <UniqueIdentifier>{535e88cb-2d34-4ba4-828f-8c5c1c56a161}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Creation">
+      <UniqueIdentifier>{94ba7c3e-f35c-4d4c-aa68-a38ad571f931}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui.cpp">
@@ -109,6 +115,9 @@
     <ClCompile Include="Matrix.cpp">
       <Filter>Sources\Matrix</Filter>
     </ClCompile>
+    <ClCompile Include="Creation.cpp">
+      <Filter>Sources\Creation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeometricObject.h">
@@ -147,8 +156,11 @@
     <ClInclude Include="Matrix.h">
       <Filter>Headers\Matrix</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="GeometricObject.h.vsspell" />
+    <ClInclude Include="Creation.h">
+      <Filter>Headers\Creation</Filter>
+    </ClInclude>
+    <ClInclude Include="Complex.h">
+      <Filter>Headers\Equation</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

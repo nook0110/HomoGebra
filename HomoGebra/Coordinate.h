@@ -1,9 +1,11 @@
 #pragma once
+// ReSharper disable once CppUnusedIncludeDirective
+#include <SFML/Graphics.hpp>
 #include <array>
 #include <complex>
 #include <optional>
 
-using Complex = std::complex<long double>;
+#include "Complex.h"
 
 class TransformationMatrix
 {
@@ -218,6 +220,33 @@ enum class Var
 struct HomogeneousCoordinate
 {
   /**
+   * \brief Default constructor.
+   *
+   */
+  HomogeneousCoordinate() = default;
+
+  /**
+   * \brief Constructor like list-initialization.
+   *
+   * \param x X coordinate
+   * \param y Y coordinate
+   * \param z Z coordinate
+   */
+  HomogeneousCoordinate(const Complex x, const Complex y, const Complex z)
+      : x(x), y(y), z(z)
+  {}
+
+  /**
+   * \brief Constructor from position on a plane.
+   *
+   * \param position Position on a plane.
+   */
+  explicit HomogeneousCoordinate(const sf::Vector2f& position)
+      : x(static_cast<double>(position.x)),
+        y(static_cast<double>(position.y)),
+        z({1})
+  {}
+  /**
    * \breif Overload of operator[]. Returns const reference to x, y or z
    * coordinate.
    *
@@ -236,9 +265,28 @@ struct HomogeneousCoordinate
    */
   [[nodiscard]] Complex& operator[](const Var variable);
 
-  Complex x;
-  Complex y;
-  Complex z;
+  /**
+   * \brief Normalizes coordinates.
+   *
+   * \detail Divides on Z coordinate if it is non-zero, otherwise divides on Y
+   * coordinate
+   *
+   * \return Reference on this object.
+   */
+  HomogeneousCoordinate& Normalize();
+
+  /**
+   * \brief Normalizes coordinates.
+   *
+   * \detail Divides on Z coordinate, if its possible, than try on Y and X
+   *
+   * \return Gets normalized coordinates.
+   */
+  [[nodiscard]] HomogeneousCoordinate GetNormalized() const;
+
+  Complex x;  //!< X coordinate
+  Complex y;  //!< Y coordinate
+  Complex z;  //!< Z coordinate
 };
 
 /**

@@ -1,5 +1,7 @@
 ﻿#include "GeometricObjectFactory.h"
 
+#include <cassert>
+
 #include "Matrix.h"
 
 PointFactory::PointFactory(Plane& plane) : plane_(plane) {}
@@ -81,10 +83,7 @@ std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first,
   auto solution = matrix.GetSolution();
 
   // Check if solution exists
-  if (!solution)
-  {
-    throw std::runtime_error("Points are on the same line");
-  }
+  assert((solution.has_value()));
 
   // Get value
   const auto& value = *solution;

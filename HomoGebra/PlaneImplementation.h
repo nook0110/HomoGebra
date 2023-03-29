@@ -36,15 +36,30 @@ class PlaneImplementation
   /**
    * \brief Get all objects.
    *
-   * \return All objects.
+   * \return All objects on plane.
    */
   [[nodiscard]] const std::vector<std::shared_ptr<GeometricObject>>&
   GetObjects() const;
 
+  /**
+   * \brief Get all points.
+   *
+   * \return Points on a plane.
+   */
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetPoints() const;
 
+  /**
+   * \brief Get all lines.
+   *
+   * \return Lines on a plane.
+   */
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetLines() const;
 
+  /**
+   * \breif Get all conics.
+   *
+   * \return Conics on a plane.
+   */
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetConics() const;
 
  private:

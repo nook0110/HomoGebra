@@ -16,13 +16,13 @@
  * \see Line
  * \see Conic
  */
-class GeometricObject
+class GeometricObject : public sf::Drawable
 {
  public:
   /**
    * \brief Default destructor.
    */
-  virtual ~GeometricObject() = default;
+  ~GeometricObject() override = default;
 
   /**
    * \brief Destroy this object.
@@ -30,6 +30,17 @@ class GeometricObject
    * \param plane Plane, where this object is located.
    */
   virtual void Destroy(Plane& plane) = 0;
+
+  virtual void UpdateBody(sf::RenderTarget& target) = 0;
+
+  /**
+   * \brief Draw the point.
+   *
+   * \param target Render target to draw to.
+   * \param states Current render states.
+   */
+  void draw(sf::RenderTarget& target,
+            sf::RenderStates states) const override = 0;
 
  protected:
   /**
@@ -87,6 +98,16 @@ class Point final : public GeometricObject
    */
   [[nodiscard]] const PointEquation& GetEquation() const;
 
+  void UpdateBody(sf::RenderTarget& target) override;
+
+  /**
+   * \brief Draw the point.
+   *
+   * \param target Render target to draw to.
+   * \param states Current render states.
+   */
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
  private:
   /**
    * \brief Notify observers that this objected is destroyed.
@@ -95,6 +116,7 @@ class Point final : public GeometricObject
    */
   void Notify(const Event::Destroyed& event) const;
 
+  static float CalculateSizeOfBody(const sf::RenderTarget& target);
   /*
    * Member data
    */
@@ -150,6 +172,16 @@ class Line final : public GeometricObject
    */
   [[nodiscard]] const LineEquation& GetEquation() const;
 
+  void UpdateBody(sf::RenderTarget& target) override{};
+
+  /**
+   * \brief Draw the line.
+   *
+   * \param target Render target to draw to.
+   * \param states Current render states.
+   */
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
  private:
   /**
    * \brief Notify observers that this objected is destroyed
@@ -200,6 +232,16 @@ class Conic final : public GeometricObject
    * \param event Event
    */
   void Notify(const Event::Destroyed& event) const;
+
+  void UpdateBody(sf::RenderTarget& target) override{};
+
+  /**
+   * \brief Draw the conic.
+   *
+   * \param target Render target to draw to.
+   * \param states Current render states.
+   */
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
   /*

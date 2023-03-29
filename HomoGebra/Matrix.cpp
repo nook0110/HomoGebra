@@ -1,9 +1,7 @@
 #include "Matrix.h"
 
 #include <algorithm>
-
-// Static member init
-const long double SquaredMatrix::kEpsilon = 1e-12L;
+#include <cassert>
 
 SquaredMatrix::SquaredMatrix(const size_t size)
     : matrix_(size, Row(size)), augmentation_(size), size_(size)
@@ -14,63 +12,47 @@ SquaredMatrix::SquaredMatrix(const Matrix& matrix,
     : matrix_(matrix), augmentation_(augmentation), size_(matrix.size())
 {
   // Check if matrix is squared
-  if (std::any_of(matrix.begin(), matrix.end(),
-                  [this](const Row& row) { return row.size() != size_; }))
-  {
-    throw std::invalid_argument("Matrix is not squared");
-  }
+  assert((std::any_of(matrix.begin(), matrix.end(),
+                      [this](const Row& row) { return row.size() != size_; })));
 
   // Check if augmentation is correct
-  if (augmentation.size() != size_)
-  {
-    throw std::invalid_argument("Augmentation is not correct");
-  }
+  assert((augmentation.size() != size_));
 
   // Check if matrix contains NaN
-  if (std::any_of(matrix.begin(), matrix.end(),
-                  [](const Row& row)
-                  {
-                    return std::any_of(row.begin(), row.end(),
-                                       [](const Complex& value) {
-                                         return std::isnan(value.real()) ||
-                                                std::isnan(value.imag());
-                                       });
-                  }))
-  {
-    throw std::invalid_argument("Matrix contains NaN");
-  }
+  assert((std::any_of(matrix.begin(), matrix.end(),
+                      [](const Row& row)
+                      {
+                        return std::any_of(row.begin(), row.end(),
+                                           [](const Complex& value) {
+                                             return std::isnan(value.real()) ||
+                                                    std::isnan(value.imag());
+                                           });
+                      })));
 
   // Check if augmentation contains NaN or Inf
-  if (std::any_of(augmentation.begin(), augmentation.end(),
-                  [](const Complex& value) {
-                    return std::isnan(value.real()) || std::isnan(value.imag());
-                  }))
-  {
-    throw std::invalid_argument("Augmentation contains NaN");
-  }
+  assert((std::any_of(augmentation.begin(), augmentation.end(),
+                      [](const Complex& value) {
+                        return std::isnan(value.real()) ||
+                               std::isnan(value.imag());
+                      })));
 
   // Check if matrix contains Inf
-  if (std::any_of(matrix.begin(), matrix.end(),
-                  [](const Row& row)
-                  {
-                    return std::any_of(row.begin(), row.end(),
-                                       [](const Complex& value) {
-                                         return std::isinf(value.real()) ||
-                                                std::isinf(value.imag());
-                                       });
-                  }))
-  {
-    throw std::invalid_argument("Matrix contains Inf");
-  }
+  assert((std::any_of(matrix.begin(), matrix.end(),
+                      [](const Row& row)
+                      {
+                        return std::any_of(row.begin(), row.end(),
+                                           [](const Complex& value) {
+                                             return std::isinf(value.real()) ||
+                                                    std::isinf(value.imag());
+                                           });
+                      })));
 
   // Check if augmentation contains Inf
-  if (std::any_of(augmentation.begin(), augmentation.end(),
-                  [](const Complex& value) {
-                    return std::isinf(value.real()) || std::isinf(value.imag());
-                  }))
-  {
-    throw std::invalid_argument("Augmentation contains Inf");
-  }
+  assert((std::any_of(augmentation.begin(), augmentation.end(),
+                      [](const Complex& value) {
+                        return std::isinf(value.real()) ||
+                               std::isinf(value.imag());
+                      })));
 }
 
 std::optional<SquaredMatrix> SquaredMatrix::GetInverse() const
@@ -113,7 +95,7 @@ std::optional<SquaredMatrix> SquaredMatrix::GetInverse() const
     std::swap(inverse_augmentation[step], inverse_augmentation[pivot]);
 
     // Check if matrix is singular with precision [epsilon]
-    if (std::abs(matrix[step][step]) < kEpsilon)
+    if (IsZero(matrix[step][step]))
     {
       return std::nullopt;
     }
@@ -175,7 +157,7 @@ Complex SquaredMatrix::GetDeterminant() const
     std::swap(matrix[step], matrix[pivot]);
 
     // Check if matrix is singular with precision [epsilon]
-    if (std::abs(matrix[step][step]) < kEpsilon)
+    if (IsZero(matrix[step][step]))
     {
       return 0;
     }
@@ -245,10 +227,7 @@ SquaredMatrix& SquaredMatrix::operator*=(const SquaredMatrix& other)
 SquaredMatrix SquaredMatrix::operator*(const SquaredMatrix& other) const
 {
   // Check if matrices are compatible
-  if (size_ != other.size_)
-  {
-    throw std::invalid_argument("Matrices are not compatible");
-  }
+  assert((size_ != other.size_));
 
   // Construct new matrix filled with zeros
   SquaredMatrix result(size_);
@@ -273,10 +252,7 @@ std::vector<Complex> SquaredMatrix::operator*(
     const std::vector<Complex>& vector) const
 {
   // Check if vector is compatible
-  if (vector.size() != size_)
-  {
-    throw std::invalid_argument("Vector is not compatible");
-  }
+  assert((vector.size() != size_));
 
   // Construct new vector filled with zeros
   std::vector<Complex> result(size_);
@@ -294,12 +270,12 @@ std::vector<Complex> SquaredMatrix::operator*(
   return result;
 }
 
-SquaredMatrix::Row& SquaredMatrix::operator[](size_t row)
+SquaredMatrix::Row& SquaredMatrix::operator[](const size_t row)
 {
   return matrix_[row];
 }
 
-const SquaredMatrix::Row& SquaredMatrix::operator[](size_t row) const
+const SquaredMatrix::Row& SquaredMatrix::operator[](const size_t row) const
 {
   return matrix_[row];
 }

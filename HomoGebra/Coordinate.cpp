@@ -1,5 +1,6 @@
 ﻿#include "Coordinate.h"
 
+#include <cassert>
 #include <optional>
 
 #include "Equation.h"
@@ -128,7 +129,8 @@ Transformation::Transformation(
     const PointEquation& first_preimage, const PointEquation& second_preimage,
     const PointEquation& third_preimage, const PointEquation& fourth_preimage,
     const PointEquation& first_image, const PointEquation& second_image,
-    const PointEquation& third_image, const PointEquation& fourth_image)
+    const PointEquation& third_image,
+    const PointEquation& fourth_image) noexcept(false)
 {
   // Get equation of all images and preimages
   auto& first_preimage_equation = first_preimage.GetEquation();
@@ -236,10 +238,7 @@ Transformation::Transformation(
   const auto solution = matrix.GetSolution();
 
   // Check if solution exists
-  if (!solution)
-  {
-    throw std::invalid_argument("No solution");
-  }
+  assert((solution.has_value()));
 
   // Init transformation
   transformation_ = TransformationMatrix(
@@ -323,8 +322,9 @@ const Complex& HomogeneousCoordinate::operator[](const Var variable) const
       return y;
     case Var::kZ:
       return z;
+    default:
+      assert(false);
   }
-  throw std::invalid_argument("No such variable!");
 }
 
 Complex& HomogeneousCoordinate::operator[](const Var variable)
@@ -338,6 +338,45 @@ Complex& HomogeneousCoordinate::operator[](const Var variable)
       return y;
     case Var::kZ:
       return z;
+    default:
+      assert(false);
   }
-  throw std::invalid_argument("No such variable!");
+}
+
+HomogeneousCoordinate& HomogeneousCoordinate::Normalize()
+{
+  // Check if z is non-zero
+  if (!IsZero(z))
+  {
+    // Normalize
+    x /= z;
+    y /= z;
+    z = 1;
+    return *this;
+  }
+
+  // Check if y is non-zero
+  if (!IsZero(y))
+  {
+    // Normalize
+    x /= y;
+    y = 1;
+    z = 0;
+    return *this;
+  }
+
+  assert((IsZero(x)));
+
+  // "Normalize"
+  x = 1;
+  y = 0;
+  z = 0;
+
+  return *this;
+}
+
+HomogeneousCoordinate HomogeneousCoordinate::GetNormalized() const
+{
+  auto copy = *this;
+  return copy.Normalize();
 }

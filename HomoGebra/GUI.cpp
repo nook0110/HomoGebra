@@ -4,6 +4,8 @@
 #include <imgui.h>
 #include <imgui_stdlib.h>
 
+#include <cassert>
+
 using namespace Gui;
 
 sf::Clock Global::delta_clock_;
@@ -106,8 +108,9 @@ std::vector<std::shared_ptr<GeometricObject>> Gui::ObjectMenu::GetObjectsOfType(
       return plane_.GetLines();
     case ObjectType::kConic:
       return plane_.GetConics();
+    default:
+      assert(false);
   }
-  throw std::invalid_argument("Invalid type of object");
 }
 
 ObjectMenu::HomogeneousCoordinateEditor::HomogeneousCoordinateEditor(
@@ -186,12 +189,14 @@ void Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::Construct()
   // Push id to ImGui stack
   ImGui::PushID(this);
 
+  auto real_part_copy = real_part_;
   // Construct input for real part of number
-  ImGui::InputDouble("Real part", &real_part_, 0, 0, "%.6f",
+  ImGui::InputDouble("Real part", &real_part_copy, 0, 0, "%.6f",
                      ImGuiInputTextFlags_ReadOnly);
 
+  auto imaginary_part_copy = imaginary_part_;
   // Construct input for imaginary part of number
-  ImGui::InputDouble("Imaginary part", &imaginary_part_, 0, 0, "%.6f",
+  ImGui::InputDouble("Imaginary part", &imaginary_part_copy, 0, 0, "%.6f",
                      ImGuiInputTextFlags_ReadOnly);
 
   // Pop id from ImGui stack

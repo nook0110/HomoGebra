@@ -66,13 +66,26 @@ class EditorWindow
   /**
    * \brief Default constructor.
    *
+   * \param name Name of the window.
    */
-  explicit EditorWindow(const std::string& name): name_(name) {};
+  explicit EditorWindow(std::string name) : name_(std::move(name)) {}
 
+  /**
+   * \brief Default destructor.
+   *
+   */
   virtual ~EditorWindow() = default;
 
+  /**
+   * \brief Begins constructing the window.
+   *
+   */
   void Begin() const;
 
+  /**
+   * \brief Ends constructing the window.
+   *
+   */
   void End() const;
 
   /**
@@ -96,40 +109,96 @@ class EditorWindow
 class ObjectMenu final : public EditorWindow
 {
  public:
+  /**
+   * \brief Class that represents a submenu that allows to edit a homogeneous
+   * coordinates.
+   *
+   * \author nook0110
+   *
+   * \verison 0.1
+   *
+   * \date February 2023
+   */
   class HomogeneousCoordinateEditor
   {
    public:
+    /**
+     * \breif Construct menu with given coordinate.
+     *
+     * \param coordinate Coordinate to edit.
+     */
     explicit HomogeneousCoordinateEditor(
         const HomogeneousCoordinate& coordinate = HomogeneousCoordinate{});
 
+    /**
+     * \brief Renders the menu.
+     *
+     */
     void Construct();
 
+    /**
+     * \brief Renders the menu.
+     *
+     */
     void Construct() const;
 
+    /**
+     * \brief Returns the current coordinate that was edited.
+     *
+     * \return Current coordinate.
+     */
     [[nodiscard]] HomogeneousCoordinate GetCoordinate() const;
 
    private:
+    /**
+     * \brief Class that represents a submenu that allows to edit a complex
+     * number
+     *
+     * \author nook0110
+     *
+     * \version 0.1
+     *
+     * \date February 2023
+     */
     class ComplexEditor
     {
      public:
+      /**
+       * \breif Construct menu with given number.
+       *
+       * \param number Number to edit.
+       */
       explicit ComplexEditor(const Complex& number = Complex{});
 
+      /**
+       * \brief Renders the menu.
+       *
+       */
       void Construct();
 
+      /**
+       * \brief Renders the menu.
+       *
+       */
       void Construct() const;
 
+      /**
+       * \brief Returns the current number that was edited.
+       *
+       * \return Current number.
+       */
       [[nodiscard]] Complex GetNumber() const;
 
      private:
-      mutable double real_part_;  //!< Real part of the number. (It is mutable,
-                                  //!< because ImGui::InputDouble is not const)
-      mutable double
-          imaginary_part_;  //!< Imaginary part of the number. (It is mutable,
-                            //!< because ImGui::InputDouble is not const)
+      double real_part_;       //!< Real part of the number.
+      double imaginary_part_;  //!< Imaginary part of the number.
     };
-    ComplexEditor x_variable_editor_;
-    ComplexEditor y_variable_editor_;
-    ComplexEditor z_variable_editor_;
+    /**
+     * Member data.
+     */
+    ComplexEditor x_variable_editor_;  //!< Editor for x variable.
+    ComplexEditor y_variable_editor_;  //!< Editor for y variable.
+    ComplexEditor z_variable_editor_;  //!< Editor for z variable.
   };
 
   /**
@@ -144,13 +213,30 @@ class ObjectMenu final : public EditorWindow
   class PointSubmenu
   {
    public:
+    /**
+     * \breif Construct menu with given point.
+     *
+     * \param point Point to edit.
+     */
     explicit PointSubmenu(const std::shared_ptr<Point>& point);
 
+    /**
+     * \brief Renders the menu.
+     *
+     */
     void Construct();
 
    private:
+    /**
+     * \brief Render variables, that can be edited.
+     *
+     */
     void ConstructEditableValues();
 
+    /**
+     * \brief Render current variables
+     *
+     */
     void ConstructCurrentValues() const;
 
     /**
@@ -160,7 +246,13 @@ class ObjectMenu final : public EditorWindow
     std::shared_ptr<Point> point_;                   //!< Point to edit.
   };
 
-  explicit ObjectMenu(Plane& plane, const std::string& name) : plane_(plane), EditorWindow(name){}
+  /**
+   * \brief Constructs a menu for given plane and name.
+   *
+   */
+  explicit ObjectMenu(Plane& plane, const std::string& name)
+      : EditorWindow(name), plane_(plane)
+  {}
 
   void Construct() override;
 

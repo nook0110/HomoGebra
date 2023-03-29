@@ -1,41 +1,17 @@
-#pragma once
+﻿#pragma once
 
 #include <SFML/Graphics.hpp>
 
-class GeometricObjectBody : public sf::Drawable
+#include "GeometricObjectImplementation.h"
+
+class PointBody final : public sf::Drawable
 {
  public:
   /**
    * \brief Default constructor.
    *
    */
-  GeometricObjectBody() = default;
-
-  /**
-   * \brief Destructor.
-   *
-   */
-  ~GeometricObjectBody() override;
-
- private:
-  /**
-   * \brief Draw the object to a render target.
-   *
-   * \param target Render target to draw to.
-   * \param states Current render states.
-   */
-  void draw(sf::RenderTarget& target,
-            sf::RenderStates states) const override = 0;
-};
-
-class PointBody : public GeometricObjectBody
-{
- public:
-  /**
-   * \brief Default constructor.
-   *
-   */
-  PointBody() = default;
+  PointBody();
 
   /**
    * \brief Destructor.
@@ -43,17 +19,30 @@ class PointBody : public GeometricObjectBody
    */
   ~PointBody() override = default;
 
+  void Update(const PointEquation& equation, const float size = 0);
+
+  void draw(sf::RenderTarget& target, sf::RenderStates) const override;
+
  private:
   /**
-   * \brief Draw the point to a render target.
-   *
-   * \param target Render target to draw to.
-   * \param states Current render states.
+   * Member data.
    */
-  void draw(sf::RenderTarget& target, sf::RenderStates states) const final;
+
+  struct ProjectivePosition
+  {
+    sf::Vector2f position;
+
+    bool is_at_infinity = false;
+  };
+
+  static std::optional<ProjectivePosition> CalculatePosition(
+      const PointEquation& equation);
+
+  std::optional<ProjectivePosition> position_;
+  sf::CircleShape body_;
 };
 
-class LineBody : public GeometricObjectBody
+class LineBody
 {
  public:
   /**
@@ -66,19 +55,10 @@ class LineBody : public GeometricObjectBody
    * \brief Destructor.
    *
    */
-  ~LineBody() override = default;
-
- private:
-  /**
-   * \brief Draw the line to a render target.
-   *
-   * \param target Render target to draw to.
-   * \param states Current render states.
-   */
-  void draw(sf::RenderTarget& target, sf::RenderStates states) const final;
+  ~LineBody() = default;
 };
 
-class ConicBody : public GeometricObjectBody
+class ConicBody
 {
  public:
   /**
@@ -91,14 +71,5 @@ class ConicBody : public GeometricObjectBody
    * \brief Destructor.
    *
    */
-  ~ConicBody() override = default;
-
- private:
-  /**
-   * \brief Draw the conic to a render target.
-   *
-   * \param target Render target to draw to.
-   * \param states Current render states.
-   */
-  void draw(sf::RenderTarget& target, sf::RenderStates states) const final;
+  ~ConicBody() = default;
 };

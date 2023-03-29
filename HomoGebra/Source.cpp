@@ -1,3 +1,4 @@
+#include "Creation.h"
 #include "GUI.h"
 #include "GeometricObject.h"
 #include "GeometricObjectFactory.h"
@@ -26,13 +27,23 @@ int main()
   PointFactory factory(plane);
   factory.OnPlane(PointEquation{});
 
+  CreationDirector director{std::make_unique<PointCreator>(plane, window)};
+
   Gui::ObjectMenu menu(plane, std::string("Plane"));
 
   while (window.isOpen())
   {
     sf::Event event{};
+
     while (window.pollEvent(event))
     {
+      if (auto const& io = ImGui::GetIO();
+          io.WantCaptureMouse || io.WantCaptureKeyboard)
+      {
+        break;
+      }
+
+      director.Update(event);
       Gui::Global::ProcessEvent(event);
       if (event.type == sf::Event::Closed) window.close();
     }
@@ -40,6 +51,9 @@ int main()
     window.clear(sf::Color::White);
 
     Gui::Global::Update(window);
+
+    plane.Update(window);
+    window.draw(plane);
 
     menu.Construct();
 

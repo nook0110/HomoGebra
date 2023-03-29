@@ -1,8 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-class PlaneBody final : public sf::Drawable
+class PlaneBody
 {
  public:
-  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+  // void Draw(sf::RenderTarget& target, const sf::RenderStates states&) const;
 };

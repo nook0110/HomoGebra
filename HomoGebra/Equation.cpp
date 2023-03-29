@@ -1,5 +1,7 @@
 #include "Equation.h"
 
+#include <cassert>
+
 const std::array<Var, 3> ConicEquation::kPrev = {Var::kZ, Var::kX, Var::kY};
 
 const std::array<Var, 3> ConicEquation::kNext = {Var::kY, Var::kZ, Var::kX};
@@ -36,11 +38,6 @@ void LineEquation::Apply(const Transformation& transformation)
   const auto inverse = transformation.GetInverse();
 
   // Check if it exists
-  if (!inverse.has_value())
-  {
-    // Throw exception
-    throw std::logic_error("Transformation has no inverse.");
-  }
 
   // Apply transformation to equation
   equation *= inverse.value();
@@ -51,8 +48,7 @@ void ConicEquation::Apply(const Transformation& transformation)
   /*
    * This function is not implemented yet, because it is not needed.
    */
-
-  throw std::logic_error("The method or operation is not implemented.");
+  assert(false);
 
   // TODO: Implement this function
 }
