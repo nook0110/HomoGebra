@@ -108,16 +108,22 @@ class CreationDirector
   /**
    * \brief Constructor.
    *
+   * \param creator Creator of geometric objects.
    */
   explicit CreationDirector(
       std::unique_ptr<Creator>&& creator = std::unique_ptr<Creator>{nullptr});
 
+  /**
+   * \brief Updates the creator.
+   *
+   * \param event Event to process.
+   */
   void Update(const sf::Event& event) const;
 
  private:
   /**
    * Member data.
    */
-  size_t step_ = 0;
-  std::unique_ptr<Creator> creator_{nullptr};
+  std::unique_ptr<Creator> creator_{
+      nullptr};  //!< Creator of geometric objects.
 };

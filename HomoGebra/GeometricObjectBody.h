@@ -60,18 +60,35 @@ class PointBody final : public sf::Drawable
    */
   struct ProjectivePosition
   {
-    sf::Vector2f position;
+    sf::Vector2f position;  //!< Position of the point.
 
-    bool is_at_infinity = false;
+    bool is_at_infinity = false;  //!< Is the point at infinity?
   };
 
+  /**
+   * \brief Calculates the projective position of the point.
+   *
+   * \param equation Equation of the point.
+   *
+   * \return Projective position of the point.
+   */
   static std::optional<ProjectivePosition> CalculatePosition(
       const PointEquation& equation);
 
-  std::optional<ProjectivePosition> position_;
-  sf::CircleShape body_;
+  std::optional<ProjectivePosition>
+      position_;          //!< Projective position of the point.
+  sf::CircleShape body_;  //!< Body of the point.
 };
 
+/**
+ * \brief Body of a line.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ */
 class LineBody
 {
  public:
@@ -88,6 +105,15 @@ class LineBody
   ~LineBody() = default;
 };
 
+/**
+ * \brief Body of a conic.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ */
 class ConicBody
 {
  public:

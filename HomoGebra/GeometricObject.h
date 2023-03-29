@@ -126,6 +126,13 @@ class Point final : public GeometricObject
    */
   void Notify(const Event::Destroyed& event) const;
 
+  /**
+   * \brief Calculates size of a body
+   *
+   * \detail Calculates size of pixel and than multiply size on a const
+   *
+   * \param target Render target to draw to.
+   */
   static float CalculateSizeOfBody(const sf::RenderTarget& target);
   /*
    * Member data
