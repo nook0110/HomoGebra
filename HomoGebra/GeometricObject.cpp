@@ -17,7 +17,7 @@ void Point::Notify(const Event::Destroyed& event) const
 float Point::CalculateSizeOfBody(const sf::RenderTarget& target)
 {
   // Ratio of size of body to size of pixel
-  constexpr float kRatio = 6.28318530718;
+  constexpr float kRatio = 6.28318530718f;
 
   // Calculate size of body
   return target.mapPixelToCoords(sf::Vector2i(1, 0)).x * kRatio;

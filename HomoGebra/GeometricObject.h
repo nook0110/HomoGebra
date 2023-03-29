@@ -31,6 +31,11 @@ class GeometricObject : public sf::Drawable
    */
   virtual void Destroy(Plane& plane) = 0;
 
+  /**
+   * \brief Update the body of the object.
+   *
+   * \param target Render target to draw to.
+   */
   virtual void UpdateBody(sf::RenderTarget& target) = 0;
 
   /**
@@ -98,6 +103,11 @@ class Point final : public GeometricObject
    */
   [[nodiscard]] const PointEquation& GetEquation() const;
 
+  /**
+   * \brief Update the body of the point.
+   *
+   * \param target Render target to draw to.
+   */
   void UpdateBody(sf::RenderTarget& target) override;
 
   /**
@@ -172,6 +182,11 @@ class Line final : public GeometricObject
    */
   [[nodiscard]] const LineEquation& GetEquation() const;
 
+  /**
+   * \brief Update the body of the line.
+   *
+   * \param target Render target to draw to.
+   */
   void UpdateBody(sf::RenderTarget& target) override{};
 
   /**
@@ -233,6 +248,11 @@ class Conic final : public GeometricObject
    */
   void Notify(const Event::Destroyed& event) const;
 
+  /**
+   * \brief Update the body of the conic.
+   *
+   * \param target Render target to draw to.
+   */
   void UpdateBody(sf::RenderTarget& target) override{};
 
   /**
