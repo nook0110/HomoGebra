@@ -18,14 +18,14 @@ class Plane final : public sf::Drawable
 {
  public:
   /**
-   * \brief Add object to plane.
+   * \brief Adds object to plane.
    *
    * \param object Pointer to an object.
    */
   void AddObject(const std::shared_ptr<GeometricObject>& object);
 
   /**
-   * \brief Get all objects.
+   * \brief Returns all objects.
    *
    * \return All objects on plane.
    */
@@ -33,27 +33,39 @@ class Plane final : public sf::Drawable
   GetObjects() const;
 
   /**
-   * \brief Get all points.
+   * \brief Returns all points.
    *
    * \return Points on a plane.
    */
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetPoints() const;
 
   /**
-   * \brief Get all lines.
+   * \brief Returns all lines.
    *
    * \return Lines on a plane.
    */
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetLines() const;
 
   /**
-   * \brief Get all conics.
+   * \brief Returns all conics.
    *
    * \return Conics on a plane.
    */
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetConics() const;
 
-  void Update(sf::RenderTarget& target);
+  /**
+   * \brief Updates plane.
+   *
+   * \param event Event to update plane.
+   */
+  void Update(const sf::Event& event);
+
+  /**
+   * \brief Updates plane.
+   *
+   * \param target Render target to draw to.
+   */
+  void Update(sf::RenderTarget& target) const;
 
   /**
    * \brief Draws plane and all objects on it.

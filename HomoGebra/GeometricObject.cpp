@@ -1,5 +1,7 @@
 #include "GeometricObject.h"
 
+#include <iostream>
+
 Point::Point(const PointEquation& equation) : implementation_(equation) {}
 
 void Point::Destroy(Plane& plane)
@@ -16,11 +18,24 @@ void Point::Notify(const Event::Destroyed& event) const
 
 float Point::CalculateSizeOfBody(const sf::RenderTarget& target)
 {
+  // Calculate position of pixel with coordinate (0, 0)
+  const auto first_pixel_position = target.mapPixelToCoords({0, 0});
+
+  // Calculate position of pixel with coordinate (1, 0)
+  const auto second_pixel_position = target.mapPixelToCoords({1, 0});
+
+  // Calculate size of pixel
+  const auto pixel_size =
+      std::abs(second_pixel_position.x - first_pixel_position.x);
+
   // Ratio of size of body to size of pixel
   constexpr float kRatio = 6.28318530718f;
 
   // Calculate size of body
-  return target.mapPixelToCoords(sf::Vector2i(1, 0)).x * kRatio;
+  const auto size = pixel_size * kRatio;
+
+  // Return size of body
+  return size;
 }
 
 void Point::SetEquation(const PointEquation& equation)
@@ -50,6 +65,12 @@ void Point::UpdateBody(sf::RenderTarget& target)
 void Point::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
   target.draw(body_, states);
+}
+
+const std::string& Point::GetName() const
+{
+  // Return name
+  return body_.GetName();
 }
 
 Line::Line(const LineEquation& equation) : implementation_(equation) {}

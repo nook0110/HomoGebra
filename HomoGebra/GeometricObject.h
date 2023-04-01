@@ -47,6 +47,15 @@ class GeometricObject : public sf::Drawable
   void draw(sf::RenderTarget& target,
             sf::RenderStates states) const override = 0;
 
+  virtual void SetName(const std::string& name) = 0;
+
+  /**
+   * \brief Gets name of object.
+   *
+   * \return Name of object.
+   */
+  [[nodiscard]] virtual const std::string& GetName() const = 0;
+
  protected:
   /**
    * \brief Default constructor.
@@ -83,6 +92,12 @@ class Point final : public GeometricObject
   ~Point() override = default;
 
   /**
+   *  \brief Implementation interface.
+   */
+  ///@{
+  /* */
+
+  /**
    * \brief Destroy this object.
    *
    * \param plane Plane, where this object is located.
@@ -103,6 +118,14 @@ class Point final : public GeometricObject
    */
   [[nodiscard]] const PointEquation& GetEquation() const;
 
+  ///@}
+
+  /**
+   *  \brief Body interface.
+   */
+  ///@{
+  /* */
+
   /**
    * \brief Update the body of the point.
    *
@@ -118,6 +141,16 @@ class Point final : public GeometricObject
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  void SetName(const std::string& name) override;
+
+  /**
+   * \brief Gets name of object.
+   *
+   * \return Name of object.
+   */
+  [[nodiscard]] const std::string& GetName() const override;
+
+  ///@}
  private:
   /**
    * \brief Notify observers that this objected is destroyed.

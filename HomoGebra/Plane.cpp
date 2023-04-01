@@ -27,7 +27,13 @@ std::vector<std::shared_ptr<GeometricObject>> Plane::GetConics() const
   return implementation_.GetConics();
 }
 
-void Plane::Update(sf::RenderTarget& target)
+void Plane::Update(const sf::Event& event)
+{
+  // Update plane body
+  body_.Update(event);
+}
+
+void Plane::Update(sf::RenderTarget& target) const
 {
   // Update all objects
   for (const auto& object : implementation_.GetObjects())
@@ -38,7 +44,11 @@ void Plane::Update(sf::RenderTarget& target)
 
 void Plane::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-  // body_.Draw(target, states);
+  target.draw(body_, states);
+
+  // Set view
+  target.setView(body_.GetView());
+
   //  Draw all objects
   for (const auto& object : implementation_.GetObjects())
   {

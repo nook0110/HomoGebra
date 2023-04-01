@@ -5,6 +5,10 @@
 
 PointBody::PointBody() { body_.setFillColor(sf::Color::Red); }
 
+void PointBody::SetName(const std::string& name) { name_.setString(name); }
+
+std::string PointBody::GetName() const { return name_.getString(); }
+
 void PointBody::Update(const PointEquation& equation, const float size)
 {
   // Calculate position

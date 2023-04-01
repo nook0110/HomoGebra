@@ -44,6 +44,9 @@ int main()
       }
 
       director.Update(event);
+
+      plane.Update(event);
+
       Gui::Global::ProcessEvent(event);
       if (event.type == sf::Event::Closed) window.close();
     }
