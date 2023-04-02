@@ -136,6 +136,15 @@ class ConicFactory
   Plane& plane_;  //!< Plane to add objects.
 };
 
+/**
+ * \brief Class that finds objects.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ */
 class ConstructedObjectFactory
 {
  public:

@@ -28,8 +28,18 @@ class PointBody final : public sf::Drawable
    */
   ~PointBody() override = default;
 
+  /**
+   * \brief Set name of the point.
+   *
+   * \param name Name of the point.
+   */
   void SetName(const std::string& name);
 
+  /**
+   * \brief Gets name of the point.
+   *
+   * \return Name of the point.
+   */
   [[nodiscard]] const std::string& GetName() const;
 
   /**
@@ -53,8 +63,8 @@ class PointBody final : public sf::Drawable
    * Member data.
    */
 
-  std::string name_;
-  sf::Text text_;  //!< Text of the name.
+  std::string name_;  //!< Name of the point.
+  sf::Text text_;     //!< Text of the name.
 
   /**
    * \brief Projective position of the point.

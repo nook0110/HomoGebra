@@ -45,6 +45,7 @@ void ObjectMenu::Construct()
   ImGui::ListBox("Type of objects", &current_type_, kTypesOfObjects.data(),
                  kTypesOfObjects.size());
 
+  // Construct selector of objects by their names
   ConstructObjectSelector();
 
   // Pop id
@@ -271,7 +272,7 @@ Complex Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::GetNumber()
 }
 
 ObjectMenu::PointSubmenu::PointSubmenu(const std::shared_ptr<Point>& point)
-  : point_(point)
+    : point_(point)
 {}
 
 void ObjectMenu::PointSubmenu::SetPoint(const std::shared_ptr<Point>& point)

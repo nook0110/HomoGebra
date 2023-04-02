@@ -24,6 +24,13 @@ class Plane final : public sf::Drawable
    */
   void AddObject(const std::shared_ptr<GeometricObject>& object);
 
+  /**
+   * \brief Returns objects of GeometricObjectType.
+   *
+   * \tparam GeometricObjectType Type of geometric object to get.
+   *
+   * \return Objects of GeometricObjectType.
+   */
   template <class GeometricObjectType>
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetObjects()
       const;

@@ -6,7 +6,7 @@
 #include "GeometricObjectFactory.h"
 
 /**
- * \brief Gets the last object that user clicked on.
+ * \brief Class to get the last object that user clicked on.
  *
  * \tparam GeometricObjectType Type of the geometric object.
  *
@@ -20,15 +20,36 @@ template <class GeometricObjectType>
 class NearbyObjectGetter
 {
  public:
+  /**
+   * \brief Constructor.
+   *
+   * \param plane Plane, where the object is located.
+   * \param window Render window.
+   * \param last_object Last object that user clicked on.
+   */
   explicit NearbyObjectGetter(
       Plane& plane, sf::RenderWindow& window,
       std::shared_ptr<GeometricObjectType> last_object = nullptr);
 
+  /**
+   * \brief Gets the last object that user clicked on.
+   *
+   * \return Last object that user clicked on.
+   */
   std::shared_ptr<GeometricObjectType> GetLastObject();
 
+  /**
+   * \brief Updates the object.
+   *
+   * \param event Event that user've done.
+   */
   void Update(const sf::Event& event);
 
  private:
+  /**
+   * \brief Actions that user do.
+   *
+   */
   enum class Action
   {
     kClick
@@ -40,13 +61,18 @@ class NearbyObjectGetter
    */
   void InitActionMap();
 
+  /**
+   * \brief Finds the nearest object to the mouse.
+   *
+   */
   void FindNearestObject();
 
   thor::ActionMap<Action> action_map_;  //!< Map with actions that user do.
 
-  sf::RenderWindow& window_;
+  sf::RenderWindow& window_;  //!< Render window.
 
-  std::shared_ptr<GeometricObjectType> last_object_;
+  std::shared_ptr<GeometricObjectType>
+      last_object_;  //!< Last object that user clicked on.
 
-  ConstructedObjectFactory factory_;
+  ConstructedObjectFactory factory_;  //!< Factory to find objects.
 };

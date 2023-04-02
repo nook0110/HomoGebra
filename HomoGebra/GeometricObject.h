@@ -56,6 +56,13 @@ class GeometricObject : public sf::Drawable
    */
   [[nodiscard]] virtual const std::string& GetName() const = 0;
 
+  /**
+   * \brief Gets distance from object to position.
+   *
+   * \param position Position to calculate distance.
+   *
+   * \return Distance from object to position.
+   */
   [[nodiscard]] virtual float GetDistance(sf::Vector2f position) const
   {
     return 0;
@@ -146,6 +153,11 @@ class Point final : public GeometricObject
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  /**
+   * \brief Sets new name of object.
+   *
+   * \param name New name of object.
+   */
   void SetName(const std::string& name) override{};
 
   /**
@@ -242,6 +254,11 @@ class Line final : public GeometricObject
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  /**
+   * \brief Sets new name of object.
+   *
+   * \param name New name of object.
+   */
   void SetName(const std::string& name) override{};
 
   /**
@@ -317,6 +334,11 @@ class Conic final : public GeometricObject
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  /**
+   * \brief Sets new name of object.
+   *
+   * \param name New name of object.
+   */
   void SetName(const std::string& name) override{};
 
   /**
