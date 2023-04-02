@@ -1,6 +1,0 @@
-<map id="Equation" name="Equation">
-<area shape="rect" id="node1" title="Struct that defines position of the objects." alt="" coords="149,5,251,97"/>
-<area shape="rect" id="node2" href="$struct_conic_equation.html" title="Struct that defines position of the conic." alt="" coords="5,145,117,325"/>
-<area shape="rect" id="node3" href="$struct_line_equation.html" title="Struct that defines position of the line." alt="" coords="141,189,259,281"/>
-<area shape="rect" id="node4" href="$struct_point_equation.html" title="Struct that defines position of the point." alt="" coords="283,175,405,296"/>
-</map>

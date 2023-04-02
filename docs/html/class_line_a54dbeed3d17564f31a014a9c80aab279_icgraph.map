@@ -1,4 +1,0 @@
-<map id="Line::Notify" name="Line::Notify">
-<area shape="rect" id="node1" title="Notify observers that this objected is destroyed." alt="" coords="152,5,239,31"/>
-<area shape="rect" id="node2" href="$class_line.html#a1ed21ff0cf32c1cf8d691c5bd1f4085c" title="Destroy this object." alt="" coords="5,5,104,31"/>
-</map>

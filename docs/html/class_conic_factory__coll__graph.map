@@ -1,8 +1,0 @@
-<map id="ConicFactory" name="ConicFactory">
-<area shape="rect" id="node1" title="Class that constructs conics." alt="" coords="109,572,227,664"/>
-<area shape="rect" id="node2" href="$class_plane.html" title="Container for all objects, which you can draw." alt="" coords="114,373,222,509"/>
-<area shape="rect" id="node3" href="$class_plane_implementation.html" title="Implementation of Plane." alt="" coords="29,160,171,311"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,5,184,97"/>
-<area shape="rect" id="node5" href="$class_plane_body.html" title=" " alt="" coords="207,197,292,274"/>
-<area shape="rect" id="node6" title=" " alt="" coords="208,13,301,90"/>
-</map>

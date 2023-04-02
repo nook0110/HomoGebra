@@ -1,4 +1,0 @@
-<map id="Point::Notify" name="Point::Notify">
-<area shape="rect" id="node1" title="Notify observers that this objected is destroyed." alt="" coords="5,13,99,38"/>
-<area shape="rect" id="node2" href="$class_observable_geometric_object.html#a15d865c4eb09e61691db40d1ff103f13" title="Notify all subscribed observers that object was moved." alt="" coords="147,5,331,45"/>
-</map>

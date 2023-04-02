@@ -1,9 +1,0 @@
-<map id="ConstructionOnPlane" name="ConstructionOnPlane">
-<area shape="rect" id="node1" title="Construction of a casual point on a plane." alt="" coords="169,685,342,777"/>
-<area shape="rect" id="node2" href="$class_construction_point.html" title="Defines how point is created." alt="" coords="89,471,251,636"/>
-<area shape="rect" id="node3" href="$class_construction.html" title="Defines how object is created." alt="" coords="31,316,154,408"/>
-<area shape="rect" id="node4" href="$class_construction_observer.html" title="Makes Construction an observer." alt="" coords="5,160,180,267"/>
-<area shape="rect" id="node5" title=" " alt="" coords="13,5,173,97"/>
-<area shape="rect" id="node6" title=" " alt="" coords="179,323,316,401"/>
-<area shape="rect" id="node7" href="$class_strong_construction.html" title=" " alt="" coords="275,515,409,592"/>
-</map>

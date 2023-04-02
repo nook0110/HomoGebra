@@ -1,5 +1,0 @@
-<map id="ConicImplementation" name="ConicImplementation">
-<area shape="rect" id="node1" title=" " alt="" coords="42,315,205,421"/>
-<area shape="rect" id="node2" href="$class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="5,189,241,267"/>
-<area shape="rect" id="node3" href="$class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="17,5,229,141"/>
-</map>

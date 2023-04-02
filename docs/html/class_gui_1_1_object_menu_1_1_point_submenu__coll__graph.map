@@ -1,7 +1,0 @@
-<map id="Gui::ObjectMenu::PointSubmenu" name="Gui::ObjectMenu::PointSubmenu">
-<area shape="rect" id="node1" title="Class that represents a submenu that allows to edit points." alt="" coords="111,616,324,737"/>
-<area shape="rect" id="node2" href="$class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor.html" title=" " alt="" coords="5,417,227,553"/>
-<area shape="rect" id="node3" href="$class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor.html" title=" " alt="" coords="11,160,221,296"/>
-<area shape="rect" id="node4" title=" " alt="" coords="86,5,146,83"/>
-<area shape="rect" id="node5" title=" " alt="" coords="251,447,389,524"/>
-</map>

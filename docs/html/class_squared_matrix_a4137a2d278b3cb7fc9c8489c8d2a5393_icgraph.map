@@ -1,5 +1,0 @@
-<map id="SquaredMatrix::GetInverse" name="SquaredMatrix::GetInverse">
-<area shape="rect" id="node1" title="Finds inversion of matrix." alt="" coords="484,5,659,31"/>
-<area shape="rect" id="node2" href="$class_squared_matrix.html#aecc105efa6ff85b4941df3a4a3124606" title="Find solution of linear equations." alt="" coords="253,5,436,31"/>
-<area shape="rect" id="node3" href="$class_transformation.html#a5b23f62e7697c24191cbadede00b875a" title="Construct transformation from movement of 4 points." alt="" coords="5,5,205,31"/>
-</map>

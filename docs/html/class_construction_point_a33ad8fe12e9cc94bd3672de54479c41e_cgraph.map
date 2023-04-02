@@ -1,5 +1,0 @@
-<map id="ConstructionPoint::Update" name="ConstructionPoint::Update">
-<area shape="rect" id="node1" title="Update the object because sth was moved." alt="" coords="5,37,139,77"/>
-<area shape="rect" id="node2" href="$class_construction_point.html#a83ee0b44834b4ef52821224b6c92b5a5" title="Recalculate equation of point." alt="" coords="187,5,328,45"/>
-<area shape="rect" id="node3" href="$class_construction_point.html#ac41cd3bf9089b5b2172e7e51c729cd96" title="Set equation of point." alt="" coords="191,69,324,109"/>
-</map>

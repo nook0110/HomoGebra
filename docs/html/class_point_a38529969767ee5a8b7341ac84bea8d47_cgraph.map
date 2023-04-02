@@ -1,5 +1,0 @@
-<map id="Point::SetEquation" name="Point::SetEquation">
-<area shape="rect" id="node1" title="Set new equation of point." alt="" coords="5,13,136,38"/>
-<area shape="rect" id="node2" href="$class_point_implementation.html#a0c7491c3bbb4aefe4bf54ef0092f403a" title="Sets new equation of point." alt="" coords="184,5,324,45"/>
-<area shape="rect" id="node3" href="$class_observable_geometric_object.html#a15d865c4eb09e61691db40d1ff103f13" title="Notify all subscribed observers that object was moved." alt="" coords="372,5,556,45"/>
-</map>

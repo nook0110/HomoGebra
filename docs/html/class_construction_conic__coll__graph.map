@@ -1,6 +1,0 @@
-<map id="ConstructionConic" name="ConstructionConic">
-<area shape="rect" id="node1" title=" " alt="" coords="29,457,157,535"/>
-<area shape="rect" id="node2" href="$class_construction.html" title="Defines how object is created." alt="" coords="31,316,154,408"/>
-<area shape="rect" id="node3" href="$class_construction_observer.html" title="Makes Construction an observer." alt="" coords="5,160,180,267"/>
-<area shape="rect" id="node4" title=" " alt="" coords="13,5,173,97"/>
-</map>

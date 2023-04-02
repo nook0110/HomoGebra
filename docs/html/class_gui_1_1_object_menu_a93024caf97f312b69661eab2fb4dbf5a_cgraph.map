@@ -1,6 +1,0 @@
-<map id="Gui::ObjectMenu::Construct" name="Gui::ObjectMenu::Construct">
-<area shape="rect" id="node1" title="Constructs the window." alt="" coords="5,70,189,95"/>
-<area shape="rect" id="node2" href="$class_gui_1_1_editor_window.html#adac25427817a7bae5a5c4f93ff451de8" title=" " alt="" coords="265,5,404,45"/>
-<area shape="rect" id="node3" href="$class_gui_1_1_editor_window.html#a7df203905029c8bb16a3195bcc0c9439" title=" " alt="" coords="254,70,415,95"/>
-<area shape="rect" id="node4" href="$class_gui_1_1_object_menu.html#a8525088109bd3e63b9c8e8006b8a157b" title=" " alt="" coords="237,120,432,160"/>
-</map>
