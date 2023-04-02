@@ -5,6 +5,8 @@
 #include <imgui_stdlib.h>
 
 #include <cassert>
+#include <functional>
+#include <iostream>
 
 using namespace Gui;
 
@@ -43,24 +45,43 @@ void ObjectMenu::Construct()
   ImGui::ListBox("Type of objects", &current_type_, kTypesOfObjects.data(),
                  kTypesOfObjects.size());
 
-  const auto objects = GetObjectsOfType(static_cast<ObjectType>(current_type_));
+  ConstructObjectSelector();
 
-  Construct(objects);
-
-  // Pop id from ImGui stack
+  // Pop id
   ImGui::PopID();
 
   // End constructing
   End();
 }
 
+void ObjectMenu::Construct(const std::shared_ptr<GeometricObject>& object)
+{
+  // Go through all types of objects
+  if (std::dynamic_pointer_cast<Point>(object))
+  {
+    Construct(std::dynamic_pointer_cast<Point>(object));
+  }
+  else if (std::dynamic_pointer_cast<Line>(object))
+  {
+    Construct(std::dynamic_pointer_cast<Line>(object));
+  }
+  else if (std::dynamic_pointer_cast<Conic>(object))
+  {
+    Construct(std::dynamic_pointer_cast<Conic>(object));
+  }
+  else
+  {
+    assert(false);
+  }
+}
+
 void Gui::ObjectMenu::Construct(const std::shared_ptr<Point>& object)
 {
-  // Construct point submenu
-  PointSubmenu submenu(object);
+  // Set current point
+  point_submenu_.SetPoint(object);
 
   // Construct submenu
-  submenu.Construct();
+  point_submenu_.Construct();
 }
 
 void ObjectMenu::Construct(const std::shared_ptr<Line>& line)
@@ -74,44 +95,84 @@ void ObjectMenu::Construct(const std::shared_ptr<Line>& line)
 
 void ObjectMenu::Construct(const std::shared_ptr<Conic>& conic) {}
 
-void Gui::ObjectMenu::Construct(
-    const std::vector<std::shared_ptr<GeometricObject>>& objects)
-{
-  for (auto& object : objects)
-  {
-    // Check type of object with dynamic_cast
-    if (std::shared_ptr<Point> point = std::dynamic_pointer_cast<Point>(object))
-    {
-      Construct(point);
-    }
-    if (std::shared_ptr<Line> line = std::dynamic_pointer_cast<Line>(object))
-    {
-      Construct(line);
-    }
-    if (std::shared_ptr<Conic> conic = std::dynamic_pointer_cast<Conic>(object))
-    {
-      Construct(conic);
-    }
-  }
-}
-
 std::vector<std::shared_ptr<GeometricObject>> Gui::ObjectMenu::GetObjectsOfType(
     const ObjectType type) const
 {
   switch (type)
   {
     case ObjectType::kAll:
-      return plane_.GetObjects();
+      return plane_.GetObjects<GeometricObject>();
     case ObjectType::kPoint:
-      return plane_.GetPoints();
+      return plane_.GetObjects<Point>();
     case ObjectType::kLine:
-      return plane_.GetLines();
+      return plane_.GetObjects<Line>();
     case ObjectType::kConic:
-      return plane_.GetConics();
+      return plane_.GetObjects<Conic>();
     default:
       assert(false);
   }
 }
+
+bool ObjectMenu::ObjectsNameGetter(void* data, int index, const char** name)
+{
+  // Convert data to std::vector<std::shared_ptr<GeometricObject>> pointer
+  const std::vector<std::shared_ptr<GeometricObject>> objects =
+      *static_cast<std::vector<std::shared_ptr<GeometricObject>>*>(data);
+
+  // Check if index is valid
+  if (index < 0 || index >= static_cast<int>(objects.size()))
+  {
+    return false;
+  }
+
+  // Set name
+  *name = objects[index]->GetName().data();
+
+  return true;
+}
+
+void ObjectMenu::ConstructObjectSelector()
+{
+  switch (static_cast<ObjectType>(current_type_))
+  {
+    case ObjectType::kAll:
+      ConstructObjectSelector<GeometricObject>();
+      break;
+    case ObjectType::kPoint:
+      ConstructObjectSelector<Point>();
+      break;
+    case ObjectType::kLine:
+      ConstructObjectSelector<Line>();
+      break;
+    case ObjectType::kConic:
+      ConstructObjectSelector<Conic>();
+      break;
+  }
+}
+
+template <typename GeometricObjectType>
+void Gui::ObjectMenu::ConstructObjectSelector()
+{
+  // Get objects of type
+  std::vector<std::shared_ptr<GeometricObject>> objects =
+      plane_.GetObjects<GeometricObjectType>();
+
+  // Construct object selector
+  ImGui::ListBox("Objects", &current_object_, ObjectsNameGetter, &objects,
+                 objects.size());
+
+  // Construct object editor
+  if (current_object_ >= 0 && current_object_ < objects.size())
+  {
+    Construct(std::dynamic_pointer_cast<GeometricObjectType>(
+        objects[current_object_]));
+  }
+}
+
+template void Gui::ObjectMenu::ConstructObjectSelector<GeometricObject>();
+template void Gui::ObjectMenu::ConstructObjectSelector<Point>();
+template void Gui::ObjectMenu::ConstructObjectSelector<Line>();
+template void Gui::ObjectMenu::ConstructObjectSelector<Conic>();
 
 ObjectMenu::HomogeneousCoordinateEditor::HomogeneousCoordinateEditor(
     const HomogeneousCoordinate& coordinate)
@@ -210,8 +271,13 @@ Complex Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::GetNumber()
 }
 
 ObjectMenu::PointSubmenu::PointSubmenu(const std::shared_ptr<Point>& point)
-    : coordinate_editor_(point->GetEquation().GetEquation()), point_(point)
+  : point_(point)
 {}
+
+void ObjectMenu::PointSubmenu::SetPoint(const std::shared_ptr<Point>& point)
+{
+  point_ = point;
+}
 
 void ObjectMenu::PointSubmenu::Construct()
 {
@@ -236,7 +302,7 @@ void ObjectMenu::PointSubmenu::ConstructEditableValues()
   coordinate_editor_.Construct();
 
   // ImGui button that sets coordinate
-  if (ImGui::Button("Set coordinate:"))
+  if (ImGui::Button("Set coordinates"))
   {
     // Set point coordinate
     point_->SetEquation(PointEquation(coordinate_editor_.GetCoordinate()));

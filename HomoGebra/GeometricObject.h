@@ -56,6 +56,11 @@ class GeometricObject : public sf::Drawable
    */
   [[nodiscard]] virtual const std::string& GetName() const = 0;
 
+  [[nodiscard]] virtual float GetDistance(sf::Vector2f position) const
+  {
+    return 0;
+  };
+
  protected:
   /**
    * \brief Default constructor.
@@ -141,7 +146,7 @@ class Point final : public GeometricObject
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
-  void SetName(const std::string& name) override;
+  void SetName(const std::string& name) override{};
 
   /**
    * \brief Gets name of object.
@@ -237,6 +242,15 @@ class Line final : public GeometricObject
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  void SetName(const std::string& name) override{};
+
+  /**
+   * \brief Gets name of object.
+   *
+   * \return Name of object.
+   */
+  [[nodiscard]] const std::string& GetName() const override { return {}; };
+
  private:
   /**
    * \brief Notify observers that this objected is destroyed
@@ -302,6 +316,15 @@ class Conic final : public GeometricObject
    * \param states Current render states.
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
+  void SetName(const std::string& name) override{};
+
+  /**
+   * \brief Gets name of object.
+   *
+   * \return Name of object.
+   */
+  [[nodiscard]] const std::string& GetName() const override { return {}; };
 
  private:
   /*

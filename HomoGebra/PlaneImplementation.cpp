@@ -58,3 +58,34 @@ std::vector<std::shared_ptr<GeometricObject>> PlaneImplementation::GetConics()
                { return std::dynamic_pointer_cast<Conic>(object); });
   return conics;
 }
+
+template <class GeometricObjectType>
+std::vector<std::shared_ptr<GeometricObject>> PlaneImplementation::GetObjects()
+    const
+{
+  // GeometricObjectType must be base of GeometricObject
+  static_assert(std::is_base_of_v<GeometricObject, GeometricObjectType>);
+
+  // Return only GeometricObjectType from vector of all objects_
+  auto objects = std::vector<std::shared_ptr<GeometricObject>>();
+  std::copy_if(
+      objects_.begin(), objects_.end(), std::back_inserter(objects),
+      [](const std::shared_ptr<GeometricObject>& object)
+      {
+        return std::dynamic_pointer_cast<GeometricObjectType, GeometricObject>(
+            object);
+      });
+  return objects;
+}
+
+template std::vector<std::shared_ptr<GeometricObject>>
+PlaneImplementation::GetObjects<GeometricObject>() const;
+
+template std::vector<std::shared_ptr<GeometricObject>>
+PlaneImplementation::GetObjects<Point>() const;
+
+template std::vector<std::shared_ptr<GeometricObject>>
+PlaneImplementation::GetObjects<Line>() const;
+
+template std::vector<std::shared_ptr<GeometricObject>>
+PlaneImplementation::GetObjects<Conic>() const;

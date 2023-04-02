@@ -118,6 +118,9 @@
     <ClCompile Include="Creation.cpp">
       <Filter>Sources\Creation</Filter>
     </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Sources\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeometricObject.h">
@@ -161,6 +164,9 @@
     </ClInclude>
     <ClInclude Include="Complex.h">
       <Filter>Headers\Equation</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Headers\GUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

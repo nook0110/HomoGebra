@@ -5,9 +5,13 @@
 
 PointBody::PointBody() { body_.setFillColor(sf::Color::Red); }
 
-void PointBody::SetName(const std::string& name) { name_.setString(name); }
+void PointBody::SetName(const std::string& name)
+{
+  name_ = name;
+  text_.setString(name);
+}
 
-std::string PointBody::GetName() const { return name_.getString(); }
+const std::string& PointBody::GetName() const { return name_; }
 
 void PointBody::Update(const PointEquation& equation, const float size)
 {

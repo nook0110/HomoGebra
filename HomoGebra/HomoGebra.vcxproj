@@ -132,7 +132,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SFML_DYNAMIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SFML_DYNAMIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>C:\thor-v2.0-msvc2015\include;C:\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\include;C:\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -143,7 +143,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib; %(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>C:\thor-v2.0-msvc2015\bin\thor-d.lib;C:\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib\sfml-audio-d.lib;C:\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib\sfml-graphics-d.lib;C:\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib\sfml-window-d.lib;C:\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib\sfml-system-d.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\thor-v2.0-msvc2015\bin\thor.lib;sfml-graphics.lib;sfml-window.lib;sfml-audio.lib;sfml-system.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -163,6 +163,7 @@
     <ClCompile Include="GeometricObjectFactory.cpp" />
     <ClCompile Include="GeometricObjectImplementation.cpp" />
     <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="PlaneBody.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="GeometricObjectFactory.h" />
     <ClInclude Include="GUI.h" />
     <ClInclude Include="GeometricObjectImplementation.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="PlaneBody.h" />

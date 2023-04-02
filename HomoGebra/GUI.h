@@ -221,6 +221,13 @@ class ObjectMenu final : public EditorWindow
     explicit PointSubmenu(const std::shared_ptr<Point>& point);
 
     /**
+     * \brief Sets new point to edit.
+     *
+     * \param point New point to edit.
+     */
+    void SetPoint(const std::shared_ptr<Point>& point);
+
+    /**
      * \brief Renders the menu.
      *
      */
@@ -270,18 +277,67 @@ class ObjectMenu final : public EditorWindow
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetObjectsOfType(
       const ObjectType type) const;
 
-  void Construct(const std::vector<std::shared_ptr<GeometricObject>>& objects);
+  /**
+   * \brief Getter for objects names.
+   *
+   * \param [in] data Pointer to the vector of objects.
+   * \param [in] index Index of the object.
+   * \param [out] name Name of the object.
+   *
+   * \return True if the object exists, false otherwise.
+   */
+  static bool ObjectsNameGetter(void* data, int index, const char** name);
 
-  void Construct(const std::shared_ptr<Point>& object);
+  /**
+   * \brief Constructs menu to select object by name.
+   *
+   */
+  void ConstructObjectSelector();
 
+  /**
+   * \brief Constructs menu to select object by name.
+   *
+   * \tparam GeometricObjectType Type of the object.
+   */
+  template <typename GeometricObjectType>
+  void ConstructObjectSelector();
+
+  /**
+   * \brief Constructs editor of object.
+   *
+   * \param object Object to edit.
+   */
+  void Construct(const std::shared_ptr<GeometricObject>& object);
+
+  /**
+   * \brief Constructs editor of point.
+   *
+   * \param point Point to edit.
+   */
+  void Construct(const std::shared_ptr<Point>& point);
+
+  /**
+   * \brief Constructs editor of line.
+   *
+   * \param line Object to edit.
+   */
   void Construct(const std::shared_ptr<Line>& line);
 
+  /**
+   * \brief Constructs editor of conic.
+   *
+   * \param conic Line to edit.
+   */
   void Construct(const std::shared_ptr<Conic>& conic);
 
   /**
    * Member data.
    */
   int current_type_ = static_cast<int>(ObjectType::kAll);
+
+  int current_object_ = 0;  //!< Index of the current object.
+
+  PointSubmenu point_submenu_{nullptr};  //!< Submenu for points.
 
   Plane& plane_;  //!< Plane which we can edit.
 };

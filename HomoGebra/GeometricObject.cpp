@@ -1,7 +1,5 @@
 #include "GeometricObject.h"
 
-#include <iostream>
-
 Point::Point(const PointEquation& equation) : implementation_(equation) {}
 
 void Point::Destroy(Plane& plane)

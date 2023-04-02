@@ -31,12 +31,18 @@ int main()
 
   Gui::ObjectMenu menu(plane, std::string("Plane"));
 
+  auto objects = plane.GetObjects<Line>();
+
+  double real_part_ = 0;
+
   while (window.isOpen())
   {
     sf::Event event{};
 
     while (window.pollEvent(event))
     {
+      Gui::Global::ProcessEvent(event);
+
       if (auto const& io = ImGui::GetIO();
           io.WantCaptureMouse || io.WantCaptureKeyboard)
       {
@@ -47,7 +53,6 @@ int main()
 
       plane.Update(event);
 
-      Gui::Global::ProcessEvent(event);
       if (event.type == sf::Event::Closed) window.close();
     }
 

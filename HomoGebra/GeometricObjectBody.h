@@ -30,7 +30,7 @@ class PointBody final : public sf::Drawable
 
   void SetName(const std::string& name);
 
-  [[nodiscard]] std::string GetName() const;
+  [[nodiscard]] const std::string& GetName() const;
 
   /**
    * \brief Updates the point body.
@@ -53,7 +53,8 @@ class PointBody final : public sf::Drawable
    * Member data.
    */
 
-  sf::Text name_;  //!< Text of the name.
+  std::string name_;
+  sf::Text text_;  //!< Text of the name.
 
   /**
    * \brief Projective position of the point.

@@ -33,6 +33,10 @@ class PlaneImplementation
    */
   void RemoveObject(const GeometricObject* object);
 
+  template <class GeometricObjectType>
+  [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetObjects()
+      const;
+
   /**
    * \brief Get all objects.
    *

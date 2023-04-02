@@ -6,6 +6,24 @@ void Plane::AddObject(const std::shared_ptr<GeometricObject>& object)
   implementation_.AddObject(object);
 }
 
+template <class GeometricObjectType>
+std::vector<std::shared_ptr<GeometricObject>> Plane::GetObjects() const
+{
+  return implementation_.GetObjects<GeometricObjectType>();
+}
+
+template std::vector<std::shared_ptr<GeometricObject>>
+Plane::GetObjects<GeometricObject>() const;
+
+template std::vector<std::shared_ptr<GeometricObject>>
+Plane::GetObjects<Point>() const;
+
+template std::vector<std::shared_ptr<GeometricObject>> Plane::GetObjects<Line>()
+    const;
+
+template std::vector<std::shared_ptr<GeometricObject>>
+Plane::GetObjects<Conic>() const;
+
 const std::vector<std::shared_ptr<GeometricObject>>& Plane::GetObjects() const
 {
   // Return all objects
@@ -52,6 +70,6 @@ void Plane::draw(sf::RenderTarget& target, sf::RenderStates states) const
   //  Draw all objects
   for (const auto& object : implementation_.GetObjects())
   {
-    target.draw(*(object.get()), states);
+    target.draw(*object.get(), states);
   }
 }
