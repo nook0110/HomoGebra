@@ -135,34 +135,3 @@ class ConicFactory
    */
   Plane& plane_;  //!< Plane to add objects.
 };
-
-/**
- * \brief Class that finds objects.
- *
- * \author nook0110
- *
- * \version 0.1
- *
- * \date February 2023
- */
-class ConstructedObjectFactory
-{
- public:
-  /**
-   * \brief Construct a factory from the plane.
-   *
-   * \param plane Instance where to place objects.
-   */
-  explicit ConstructedObjectFactory(Plane& plane);
-
-  template <class GeometricObjectType>
-  std::shared_ptr<GeometricObjectType> GetNearestObject(
-      const sf::Vector2f& position,
-      const float max_distance = std::numeric_limits<float>::max());
-
- private:
-  /**
-   * Member data.
-   */
-  Plane& plane_;  //!< Plane to add objects.
-};

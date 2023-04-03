@@ -2,10 +2,6 @@
 
 #include <cassert>
 
-const std::array<Var, 3> ConicEquation::kPrev = {Var::kZ, Var::kX, Var::kY};
-
-const std::array<Var, 3> ConicEquation::kNext = {Var::kY, Var::kZ, Var::kX};
-
 PointEquation::PointEquation(const HomogeneousCoordinate& _equation)
     : equation(_equation)
 {}

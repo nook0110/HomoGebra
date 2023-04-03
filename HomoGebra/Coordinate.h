@@ -7,12 +7,22 @@
 
 #include "Complex.h"
 
+/**
+ * \brief A 3x3 matrix.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date April 2023
+ */
 class TransformationMatrix
 {
  public:
-  using MatrixRow = std::array<Complex, 3>;
-  using MatrixColumn = std::array<Complex, 3>;
-  using MatrixContainer = std::array<std::array<Complex, 3>, 3>;
+  using MatrixRow = std::array<Complex, 3>;     //!< Row of matrix.
+  using MatrixColumn = std::array<Complex, 3>;  //!< Column of matrix.
+  using MatrixContainer =
+      std::array<std::array<Complex, 3>, 3>;  //!< Container of matrix.
 
   /**
    * \brief Default Constructor. Creates identity matrix.
@@ -23,6 +33,15 @@ class TransformationMatrix
   /**
    *  \brief Constructor that initializes all elements in matrix.
    *
+   * \param a00 First element of matrix (0,0)
+   * \param a01 Second element of matrix (0,1)
+   * \param a02 Third element of matrix (0,2)
+   * \param a10 Fourth element of matrix (1,0)
+   * \param a11 Fifth element of matrix (1,1)
+   * \param a12 Sixth element of matrix (1,2)
+   * \param a20 Seventh element of matrix (2,0)
+   * \param a21 Eighth element of matrix (2,1)
+   * \param a22 Ninth element of matrix (2,2)
    */
   TransformationMatrix(const Complex& a00, const Complex& a01,
                        const Complex& a02, const Complex& a10,
@@ -126,6 +145,8 @@ class Transformation
   /**
    *  \brief Constructs transformation from matrix. For default transformation
    * use identity matrix.
+   *
+   * \param transformation Matrix of transformation
    */
   explicit Transformation(
       const TransformationMatrix& transformation = TransformationMatrix());
@@ -133,7 +154,7 @@ class Transformation
   /**
    * \brief Construct transformation from movement of 4 points.
    *
-   * \detail This transformation will do homography (preimage->image)
+   * \details This transformation will do homography (preimage->image)
    * A projective transformation of the plane is defined by specifying four
    * pairs of corresponding mapping points. For correct homography three points
    * of the four images or preimages should not lie on the same line. (Otherwise
@@ -194,7 +215,16 @@ class Transformation
 };
 
 /**
- * \brief Name of axes/variables.
+ * \enum Var Name of axes/variables.
+ *
+ * \var Var::kX
+ * X axis
+ *
+ * \var Var::kY
+ * Y axis
+ *
+ * \var Var::kZ
+ * Z axis
  */
 enum class Var
 {
@@ -247,7 +277,7 @@ struct HomogeneousCoordinate
         z({1})
   {}
   /**
-   * \breif Overload of operator[]. Returns const reference to x, y or z
+   * \brief Overload of operator[]. Returns const reference to x, y or z
    * coordinate.
    *
    * \param variable Variable to get reference to
@@ -268,7 +298,7 @@ struct HomogeneousCoordinate
   /**
    * \brief Normalizes coordinates.
    *
-   * \detail Divides on Z coordinate if it is non-zero, otherwise divides on Y
+   * \details Divides on Z coordinate if it is non-zero, otherwise divides on Y
    * coordinate
    *
    * \return Reference on this object.
@@ -278,7 +308,7 @@ struct HomogeneousCoordinate
   /**
    * \brief Normalizes coordinates.
    *
-   * \detail Divides on Z coordinate, if its possible, than try on Y and X
+   * \details Divides on Z coordinate, if its possible, than try on Y and X
    *
    * \return Gets normalized coordinates.
    */

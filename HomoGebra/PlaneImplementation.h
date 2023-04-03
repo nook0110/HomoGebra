@@ -67,7 +67,7 @@ class PlaneImplementation
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetLines() const;
 
   /**
-   * \breif Get all conics.
+   * \brief Get all conics.
    *
    * \return Conics on a plane.
    */

@@ -15,9 +15,9 @@ class SquaredMatrix
    * \brief Type aliases.
    *
    */
-  using Row = std::vector<Complex>;
-  using Column = std::vector<Complex>;
-  using Matrix = std::vector<Row>;
+  using Row = std::vector<Complex>;     //!< Row of matrix
+  using Column = std::vector<Complex>;  //!< Column of matrix
+  using Matrix = std::vector<Row>;      //!< Matrix
 
   /**
    * \brief Construct from size. Matrix and augmentation will be filled with
@@ -107,6 +107,8 @@ class SquaredMatrix
    * \brief operator to get row of matrix.
    *
    * \param row Row of matrix
+   *
+   * \return Row of matrix
    */
   [[nodiscard]] Row& operator[](const size_t row);
 
@@ -114,6 +116,8 @@ class SquaredMatrix
    * \brief operator to get row of matrix.
    *
    * \param row Row of matrix
+   *
+   * \return Row of matrix
    */
   [[nodiscard]] const Row& operator[](const size_t row) const;
 

@@ -115,7 +115,7 @@ class ObjectMenu final : public EditorWindow
    *
    * \author nook0110
    *
-   * \verison 0.1
+   * \version 0.1
    *
    * \date February 2023
    */
@@ -123,7 +123,7 @@ class ObjectMenu final : public EditorWindow
   {
    public:
     /**
-     * \breif Construct menu with given coordinate.
+     * \brief Construct menu with given coordinate.
      *
      * \param coordinate Coordinate to edit.
      */
@@ -164,7 +164,7 @@ class ObjectMenu final : public EditorWindow
     {
      public:
       /**
-       * \breif Construct menu with given number.
+       * \brief Construct menu with given number.
        *
        * \param number Number to edit.
        */
@@ -214,7 +214,7 @@ class ObjectMenu final : public EditorWindow
   {
    public:
     /**
-     * \breif Construct menu with given point.
+     * \brief Construct menu with given point.
      *
      * \param point Point to edit.
      */
@@ -256,6 +256,8 @@ class ObjectMenu final : public EditorWindow
   /**
    * \brief Constructs a menu for given plane and name.
    *
+   * \param plane Plane to edit.
+   * \param name Name of the menu.
    */
   explicit ObjectMenu(Plane& plane, const std::string& name)
       : EditorWindow(name), plane_(plane)
@@ -264,6 +266,21 @@ class ObjectMenu final : public EditorWindow
   void Construct() override;
 
  private:
+  /**
+   * \enum ObjectType Type of object
+   *
+   * \var ObjectType::kAll
+   * All objects (similar to GeometricObject)
+   *
+   * \var ObjectType::kPoint
+   * Only points (similar to Point)
+   *
+   * \var ObjectType::kLine
+   * Only lines (similar to Line)
+   *
+   * \var ObjectType::kConic
+   * Only conics (similar to Conic)
+   */
   enum class ObjectType : int
   {
     kAll,
@@ -271,9 +288,17 @@ class ObjectMenu final : public EditorWindow
     kLine,
     kConic
   };
-  static constexpr std::array<const char*, 4> kTypesOfObjects = {
-      "All", "Points", "Lines", "Conics"};
 
+  static constexpr std::array<const char*, 4> kTypesOfObjects = {
+      "All", "Points", "Lines", "Conics"};  //!< Names of types of objects.
+
+  /**
+   * \brief Getter for objects of given type.
+   *
+   * \param type Type of the object.
+   *
+   * \return Vector of objects of given type.
+   */
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetObjectsOfType(
       const ObjectType type) const;
 

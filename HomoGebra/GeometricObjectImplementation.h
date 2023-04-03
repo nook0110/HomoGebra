@@ -39,7 +39,7 @@ struct Destroyed
  *
  * \date February 2023
  *
- * \detail Implements pattern called 'Observer'.
+ * \details Implements pattern called 'Observer'.
  *
  * \see ObservableGeometricObject
  * \see Construction
@@ -80,7 +80,7 @@ class ConstructionObserver
  *
  * \date February 2023
  *
- * \detail Implements pattern called 'Observer'.
+ * \details Implements pattern called 'Observer'.
  *
  * \see ConstructionObserver
  * \see GeometricObjectImplementation
@@ -107,14 +107,16 @@ class ObservableGeometricObject
   /**
    * \brief Notify all subscribed observers that object was moved.
    *
+   * \param event Tag for tag dispatch.
    */
-  void Notify(const Event::Moved&) const;
+  void Notify(const Event::Moved& event) const;
 
   /**
    * \brief Notify all subscribed observers that object was destroyed.
    *
+   * \param event Tag with some information (Plane where it was destroyed).
    */
-  void Notify(const Event::Destroyed&) const;
+  void Notify(const Event::Destroyed& event) const;
 
  private:
   /**
@@ -148,6 +150,17 @@ class GeometricObjectImplementation : public ObservableGeometricObject
   ~GeometricObjectImplementation() override = default;
 };
 
+/**
+ * \brief Implementation of Point
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date April 2023
+ *
+ * \see Point
+ */
 class PointImplementation final : public GeometricObjectImplementation
 {
  public:
@@ -179,6 +192,17 @@ class PointImplementation final : public GeometricObjectImplementation
   PointEquation equation_;  //!< Point equation.
 };
 
+/**
+ * \brief Implementation of Line
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date April 2023
+ *
+ * \see Line
+ */
 class LineImplementation : public GeometricObjectImplementation
 {
  public:
@@ -210,6 +234,17 @@ class LineImplementation : public GeometricObjectImplementation
   LineEquation equation_;  //!< Line equation.
 };
 
+/**
+ * \brief Implementation of Conic
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date April 2023
+ *
+ * \see Conic
+ */
 class ConicImplementation final : public GeometricObjectImplementation
 {
  public:

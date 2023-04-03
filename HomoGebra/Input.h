@@ -3,7 +3,7 @@
 #include <Thor/Input.hpp>
 
 #include "GeometricObject.h"
-#include "GeometricObjectFactory.h"
+#include "PlaneHelper.h"
 
 /**
  * \brief Class to get the last object that user clicked on.
@@ -47,8 +47,10 @@ class NearbyObjectGetter
 
  private:
   /**
-   * \brief Actions that user do.
+   * \enum Action Actions that user do.
    *
+   * \var Action::kClick
+   * Action showing that user clicked.
    */
   enum class Action
   {
@@ -74,5 +76,5 @@ class NearbyObjectGetter
   std::shared_ptr<GeometricObjectType>
       last_object_;  //!< Last object that user clicked on.
 
-  ConstructedObjectFactory factory_;  //!< Factory to find objects.
+  PlaneHelper finder_;  //!< Helper to find objects.
 };

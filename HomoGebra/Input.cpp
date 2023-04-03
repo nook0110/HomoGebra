@@ -4,7 +4,7 @@ template <class GeometricObjectType>
 NearbyObjectGetter<GeometricObjectType>::NearbyObjectGetter(
     Plane& plane, sf::RenderWindow& window,
     std::shared_ptr<GeometricObjectType> last_object)
-    : window_(window), last_object_(std::move(last_object)), factory_(plane)
+    : window_(window), last_object_(std::move(last_object)), finder_(plane)
 {}
 
 template <class GeometricObjectType>
@@ -47,7 +47,7 @@ void NearbyObjectGetter<GeometricObjectType>::FindNearestObject()
 
   // Find nearest object
   last_object_ =
-      factory_.GetNearestObject<GeometricObjectType>(mouse_world_position);
+      finder_.GetNearestObject<GeometricObjectType>(mouse_world_position);
 }
 
 template class NearbyObjectGetter<GeometricObject>;

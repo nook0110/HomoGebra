@@ -156,7 +156,6 @@
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Construction.cpp" />
     <ClCompile Include="Coordinate.cpp" />
-    <ClCompile Include="Creation.cpp" />
     <ClCompile Include="Equation.cpp" />
     <ClCompile Include="GeometricObject.cpp" />
     <ClCompile Include="GeometricObjectBody.cpp" />
@@ -167,6 +166,7 @@
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="PlaneBody.cpp" />
+    <ClCompile Include="PlaneHelper.cpp" />
     <ClCompile Include="PlaneImplementation.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
@@ -174,7 +174,6 @@
     <ClInclude Include="Complex.h" />
     <ClInclude Include="Construction.h" />
     <ClInclude Include="Coordinate.h" />
-    <ClInclude Include="Creation.h" />
     <ClInclude Include="Equation.h" />
     <ClInclude Include="GeometricObject.h" />
     <ClInclude Include="GeometricObjectBody.h" />
@@ -185,6 +184,7 @@
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="PlaneBody.h" />
+    <ClInclude Include="PlaneHelper.h" />
     <ClInclude Include="PlaneImplementation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

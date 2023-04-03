@@ -4,7 +4,7 @@
 #include "Coordinate.h"
 
 /**
- * \brief Struct that defines position of the objects
+ * \brief Struct that defines position of the objects.
  *
  * \author nook0110
  *
@@ -29,7 +29,7 @@ struct Equation
 };
 
 /**
- * \brief Struct that defines position of the point
+ * \brief Struct that defines position of the point.
  *
  * \author nook0110
  *
@@ -44,6 +44,8 @@ struct PointEquation final : public Equation
 {
   /**
    * \brief Constructor.
+   *
+   * \param equation Equation of point.
    */
   explicit PointEquation(
       const HomogeneousCoordinate& equation = HomogeneousCoordinate{});
@@ -55,10 +57,21 @@ struct PointEquation final : public Equation
    */
   void Apply(const Transformation& transformation) override;
 
+  /**
+   * \brief Return current equation of point.
+   *
+   * \return Point equation.
+   */
   [[nodiscard]] HomogeneousCoordinate& GetEquation();
+
+  /**
+   * \brief Return current equation of point.
+   *
+   * \return Point equation.
+   */
   [[nodiscard]] const HomogeneousCoordinate& GetEquation() const;
 
-  HomogeneousCoordinate equation;
+  HomogeneousCoordinate equation;  //!< Equation of point.
 };
 
 /**
@@ -77,6 +90,8 @@ struct LineEquation final : public Equation
 {
   /**
    * \brief Constructor.
+   *
+   * \param equation Equation of line.
    */
   explicit LineEquation(
       const HomogeneousCoordinate& equation = HomogeneousCoordinate{});
@@ -91,7 +106,7 @@ struct LineEquation final : public Equation
    */
   void Apply(const Transformation& transformation) override;
 
-  HomogeneousCoordinate equation;
+  HomogeneousCoordinate equation;  //!< Equation of line
 };
 
 /**
@@ -115,8 +130,10 @@ struct ConicEquation final : public Equation
    */
 
   /// @{
-  static const std::array<Var, 3> kPrev;
-  static const std::array<Var, 3> kNext;
+  static constexpr std::array<Var, 3> kPrev = {Var::kZ, Var::kX,
+                                               Var::kY};  //!< Previous var
+  static constexpr std::array<Var, 3> kNext = {Var::kY, Var::kZ,
+                                               Var::kX};  //!< Next var
   /// @}
 
   /**
@@ -136,7 +153,7 @@ struct ConicEquation final : public Equation
    * \cdot xy \f$
    */
   /// @{
-  std::array<Complex, 3> squares;
-  std::array<Complex, 3> pair_products;
+  std::array<Complex, 3> squares;        //!< \f$ a, b, c \f$
+  std::array<Complex, 3> pair_products;  //!< \f$ d, e, f \f$
   /// @}
 };

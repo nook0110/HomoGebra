@@ -47,6 +47,11 @@ class GeometricObject : public sf::Drawable
   void draw(sf::RenderTarget& target,
             sf::RenderStates states) const override = 0;
 
+  /**
+   * \brief Sets new name of object.
+   *
+   * \param name New name of object.
+   */
   virtual void SetName(const std::string& name) = 0;
 
   /**
@@ -179,9 +184,11 @@ class Point final : public GeometricObject
   /**
    * \brief Calculates size of a body
    *
-   * \detail Calculates size of pixel and than multiply size on a const
+   * \details Calculates size of pixel and than multiply size on a const
    *
    * \param target Render target to draw to.
+   *
+   * \return Size of body.
    */
   static float CalculateSizeOfBody(const sf::RenderTarget& target);
   /*

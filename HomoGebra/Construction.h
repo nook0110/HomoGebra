@@ -1,15 +1,45 @@
 #pragma once
 #include "GeometricObject.h"
 
+/**
+ * \brief Construction that loses its properties after projective
+ * transformation.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date April 2023
+ *
+ * \see StrongTransformation
+ */
 class WeekConstruction
 {
  public:
+  /**
+   * \brief Gets transformation which was applied on the object.
+   *
+   * \return Transformation which was applied on the object.
+   */
   [[nodiscard]] const Transformation& GetTransformation() const;
 
  private:
-  Transformation transformation_;
+  Transformation
+      transformation_;  //!< Transformation which was applied on the object.
 };
 
+/**
+ * \brief Construction that does not lose its properties after projective
+ * transformation.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date April 2023
+ *
+ * \see WeekTransformation
+ */
 class StrongConstruction
 {};
 
@@ -132,9 +162,29 @@ class ConstructionOnPlane : public ConstructionPoint, public StrongConstruction
   [[nodiscard]] PointEquation RecalculateEquation() const override;
 };
 
+/**
+ * \brief Construction of a point by intersection of two lines.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date April 2023
+ */
 class ConstructionFromTwoLines : public ConstructionPoint
 {};
 
+/**
+ * \brief Defines how line is created.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date April 2023
+ *
+ * \details Updates position of line
+ */
 class ConstructionLine : public Construction
 {
  public:

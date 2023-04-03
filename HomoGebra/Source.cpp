@@ -1,4 +1,3 @@
-#include "Creation.h"
 #include "GUI.h"
 #include "GeometricObject.h"
 #include "GeometricObjectFactory.h"
@@ -27,8 +26,6 @@ int main()
   PointFactory factory(plane);
   factory.OnPlane(PointEquation{});
 
-  CreationDirector director{std::make_unique<PointCreator>(plane, window)};
-
   Gui::ObjectMenu menu(plane, std::string("Plane"));
 
   auto objects = plane.GetObjects<Line>();
@@ -48,8 +45,6 @@ int main()
       {
         break;
       }
-
-      director.Update(event);
 
       plane.Update(event);
 

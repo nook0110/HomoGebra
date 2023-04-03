@@ -47,10 +47,10 @@
     <Filter Include="Sources\Matrix">
       <UniqueIdentifier>{4cb6716f-b571-43b7-84c3-45aed2d2349c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headers\Creation">
+    <Filter Include="Headers\GUI\Creation">
       <UniqueIdentifier>{535e88cb-2d34-4ba4-828f-8c5c1c56a161}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\Creation">
+    <Filter Include="Sources\GUI\Creation">
       <UniqueIdentifier>{94ba7c3e-f35c-4d4c-aa68-a38ad571f931}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -115,11 +115,11 @@
     <ClCompile Include="Matrix.cpp">
       <Filter>Sources\Matrix</Filter>
     </ClCompile>
-    <ClCompile Include="Creation.cpp">
-      <Filter>Sources\Creation</Filter>
-    </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>Sources\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaneHelper.cpp">
+      <Filter>Sources\Plane</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -159,14 +159,14 @@
     <ClInclude Include="Matrix.h">
       <Filter>Headers\Matrix</Filter>
     </ClInclude>
-    <ClInclude Include="Creation.h">
-      <Filter>Headers\Creation</Filter>
-    </ClInclude>
     <ClInclude Include="Complex.h">
       <Filter>Headers\Equation</Filter>
     </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>Headers\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaneHelper.h">
+      <Filter>Headers\Plane</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
