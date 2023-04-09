@@ -97,8 +97,11 @@ class EditorWindow
   std::string name_;  //!< Name of the window.
 };
 
+namespace Editor
+{
 /**
- * \brief Class that represents a window that allows to edit objects.
+ * \brief Class that represents a submenu that allows to edit a homogeneous
+ * coordinates.
  *
  * \author nook0110
  *
@@ -106,12 +109,40 @@ class EditorWindow
  *
  * \date February 2023
  */
-class ObjectMenu final : public EditorWindow
+class HomogeneousCoordinateEditor
 {
  public:
   /**
-   * \brief Class that represents a submenu that allows to edit a homogeneous
-   * coordinates.
+   * \brief Construct menu with given coordinate.
+   *
+   * \param coordinate Coordinate to edit.
+   */
+  explicit HomogeneousCoordinateEditor(
+      const HomogeneousCoordinate& coordinate = HomogeneousCoordinate{});
+
+  /**
+   * \brief Renders the menu.
+   *
+   */
+  void Construct();
+
+  /**
+   * \brief Renders the menu.
+   *
+   */
+  void Construct() const;
+
+  /**
+   * \brief Returns the current coordinate that was edited.
+   *
+   * \return Current coordinate.
+   */
+  [[nodiscard]] HomogeneousCoordinate GetCoordinate() const;
+
+ private:
+  /**
+   * \brief Class that represents a submenu that allows to edit a complex
+   * number
    *
    * \author nook0110
    *
@@ -119,16 +150,15 @@ class ObjectMenu final : public EditorWindow
    *
    * \date February 2023
    */
-  class HomogeneousCoordinateEditor
+  class ComplexEditor
   {
    public:
     /**
-     * \brief Construct menu with given coordinate.
+     * \brief Construct menu with given number.
      *
-     * \param coordinate Coordinate to edit.
+     * \param number Number to edit.
      */
-    explicit HomogeneousCoordinateEditor(
-        const HomogeneousCoordinate& coordinate = HomogeneousCoordinate{});
+    explicit ComplexEditor(const Complex& number = Complex{});
 
     /**
      * \brief Renders the menu.
@@ -143,116 +173,89 @@ class ObjectMenu final : public EditorWindow
     void Construct() const;
 
     /**
-     * \brief Returns the current coordinate that was edited.
+     * \brief Returns the current number that was edited.
      *
-     * \return Current coordinate.
+     * \return Current number.
      */
-    [[nodiscard]] HomogeneousCoordinate GetCoordinate() const;
+    [[nodiscard]] Complex GetNumber() const;
 
    private:
-    /**
-     * \brief Class that represents a submenu that allows to edit a complex
-     * number
-     *
-     * \author nook0110
-     *
-     * \version 0.1
-     *
-     * \date February 2023
-     */
-    class ComplexEditor
-    {
-     public:
-      /**
-       * \brief Construct menu with given number.
-       *
-       * \param number Number to edit.
-       */
-      explicit ComplexEditor(const Complex& number = Complex{});
-
-      /**
-       * \brief Renders the menu.
-       *
-       */
-      void Construct();
-
-      /**
-       * \brief Renders the menu.
-       *
-       */
-      void Construct() const;
-
-      /**
-       * \brief Returns the current number that was edited.
-       *
-       * \return Current number.
-       */
-      [[nodiscard]] Complex GetNumber() const;
-
-     private:
-      double real_part_;       //!< Real part of the number.
-      double imaginary_part_;  //!< Imaginary part of the number.
-    };
-    /**
-     * Member data.
-     */
-    ComplexEditor x_variable_editor_;  //!< Editor for x variable.
-    ComplexEditor y_variable_editor_;  //!< Editor for y variable.
-    ComplexEditor z_variable_editor_;  //!< Editor for z variable.
+    double real_part_;       //!< Real part of the number.
+    double imaginary_part_;  //!< Imaginary part of the number.
   };
+  /**
+   * Member data.
+   */
+  ComplexEditor x_variable_editor_;  //!< Editor for x variable.
+  ComplexEditor y_variable_editor_;  //!< Editor for y variable.
+  ComplexEditor z_variable_editor_;  //!< Editor for z variable.
+};
+
+/**
+ * \brief Class that represents a submenu that allows to edit points.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ */
+class PointSubmenu
+{
+ public:
+  /**
+   * \brief Construct menu with given point.
+   *
+   * \param point Point to edit.
+   */
+  explicit PointSubmenu(const std::shared_ptr<Point>& point);
 
   /**
-   * \brief Class that represents a submenu that allows to edit points.
+   * \brief Sets new point to edit.
    *
-   * \author nook0110
-   *
-   * \version 0.1
-   *
-   * \date February 2023
+   * \param point New point to edit.
    */
-  class PointSubmenu
-  {
-   public:
-    /**
-     * \brief Construct menu with given point.
-     *
-     * \param point Point to edit.
-     */
-    explicit PointSubmenu(const std::shared_ptr<Point>& point);
+  void SetPoint(const std::shared_ptr<Point>& point);
 
-    /**
-     * \brief Sets new point to edit.
-     *
-     * \param point New point to edit.
-     */
-    void SetPoint(const std::shared_ptr<Point>& point);
+  /**
+   * \brief Renders the menu.
+   *
+   */
+  void Construct();
 
-    /**
-     * \brief Renders the menu.
-     *
-     */
-    void Construct();
+ private:
+  /**
+   * \brief Render variables, that can be edited.
+   *
+   */
+  void ConstructEditableValues();
 
-   private:
-    /**
-     * \brief Render variables, that can be edited.
-     *
-     */
-    void ConstructEditableValues();
+  /**
+   * \brief Render current variables
+   *
+   */
+  void ConstructCurrentValues() const;
 
-    /**
-     * \brief Render current variables
-     *
-     */
-    void ConstructCurrentValues() const;
+  /**
+   * Member data.
+   */
+  HomogeneousCoordinateEditor coordinate_editor_;  //!< Editor for coordinates
+  std::shared_ptr<Point> point_;                   //!< Point to edit.
+};
+}  // namespace Editor
 
-    /**
-     * Member data.
-     */
-    HomogeneousCoordinateEditor coordinate_editor_;  //!< Editor for coordinates
-    std::shared_ptr<Point> point_;                   //!< Point to edit.
-  };
-
+/**
+ * \brief Class that represents a window that allows to edit objects.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ */
+class ObjectMenu final : public EditorWindow
+{
+ public:
   /**
    * \brief Constructs a menu for given plane and name.
    *
@@ -324,7 +327,7 @@ class ObjectMenu final : public EditorWindow
    *
    * \tparam GeometricObjectType Type of the object.
    */
-  template <typename GeometricObjectType>
+  template <class GeometricObjectType>
   void ConstructObjectSelector();
 
   /**
@@ -362,7 +365,7 @@ class ObjectMenu final : public EditorWindow
 
   int current_object_ = 0;  //!< Index of the current object.
 
-  PointSubmenu point_submenu_{nullptr};  //!< Submenu for points.
+  Editor::PointSubmenu point_submenu_{nullptr};  //!< Submenu for points.
 
   Plane& plane_;  //!< Plane which we can edit.
 };

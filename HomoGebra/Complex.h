@@ -2,7 +2,7 @@
 
 using Complex = std::complex<long double>;
 
-inline constexpr long double kEpsilon = 1e-12L;
+inline constexpr long double kEpsilon = 1e-10L;
 
 /**
  * \brief Checks if complex number is zero.

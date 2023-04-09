@@ -9,6 +9,7 @@
 #include <iostream>
 
 using namespace Gui;
+using namespace Editor;
 
 sf::Clock Global::delta_clock_;
 
@@ -175,14 +176,14 @@ template void Gui::ObjectMenu::ConstructObjectSelector<Point>();
 template void Gui::ObjectMenu::ConstructObjectSelector<Line>();
 template void Gui::ObjectMenu::ConstructObjectSelector<Conic>();
 
-ObjectMenu::HomogeneousCoordinateEditor::HomogeneousCoordinateEditor(
+HomogeneousCoordinateEditor::HomogeneousCoordinateEditor(
     const HomogeneousCoordinate& coordinate)
     : x_variable_editor_(coordinate.x),
       y_variable_editor_(coordinate.y),
       z_variable_editor_(coordinate.z)
 {}
 
-void ObjectMenu::HomogeneousCoordinateEditor::Construct()
+void HomogeneousCoordinateEditor::Construct()
 {
   // Construct ComplexEditors
 
@@ -199,7 +200,7 @@ void ObjectMenu::HomogeneousCoordinateEditor::Construct()
   z_variable_editor_.Construct();
 }
 
-void ObjectMenu::HomogeneousCoordinateEditor::Construct() const
+void HomogeneousCoordinateEditor::Construct() const
 {
   // Construct ComplexEditors
 
@@ -216,21 +217,19 @@ void ObjectMenu::HomogeneousCoordinateEditor::Construct() const
   z_variable_editor_.Construct();
 }
 
-HomogeneousCoordinate ObjectMenu::HomogeneousCoordinateEditor::GetCoordinate()
-    const
+HomogeneousCoordinate HomogeneousCoordinateEditor::GetCoordinate() const
 {
   return HomogeneousCoordinate{x_variable_editor_.GetNumber(),
                                y_variable_editor_.GetNumber(),
                                z_variable_editor_.GetNumber()};
 }
 
-Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::ComplexEditor(
-    const Complex& number)
+HomogeneousCoordinateEditor::ComplexEditor::ComplexEditor(const Complex& number)
     : real_part_(static_cast<double>(number.real())),
       imaginary_part_(static_cast<double>(number.imag()))
 {}
 
-void Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::Construct()
+void HomogeneousCoordinateEditor::ComplexEditor::Construct()
 {
   // Push id to ImGui stack
   ImGui::PushID(this);
@@ -245,8 +244,7 @@ void Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::Construct()
   ImGui::PopID();
 }
 
-void Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::Construct()
-    const
+void HomogeneousCoordinateEditor::ComplexEditor::Construct() const
 {
   // Push id to ImGui stack
   ImGui::PushID(this);
@@ -265,22 +263,20 @@ void Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::Construct()
   ImGui::PopID();
 }
 
-Complex Gui::ObjectMenu::HomogeneousCoordinateEditor::ComplexEditor::GetNumber()
-    const
+Complex HomogeneousCoordinateEditor::ComplexEditor::GetNumber() const
 {
   return Complex{real_part_, imaginary_part_};
 }
 
-ObjectMenu::PointSubmenu::PointSubmenu(const std::shared_ptr<Point>& point)
-    : point_(point)
+PointSubmenu::PointSubmenu(const std::shared_ptr<Point>& point) : point_(point)
 {}
 
-void ObjectMenu::PointSubmenu::SetPoint(const std::shared_ptr<Point>& point)
+void PointSubmenu::SetPoint(const std::shared_ptr<Point>& point)
 {
   point_ = point;
 }
 
-void ObjectMenu::PointSubmenu::Construct()
+void PointSubmenu::Construct()
 {
   // Push id to ImGui stack
   ImGui::PushID(this);
@@ -295,7 +291,7 @@ void ObjectMenu::PointSubmenu::Construct()
   ImGui::PopID();
 }
 
-void ObjectMenu::PointSubmenu::ConstructEditableValues()
+void PointSubmenu::ConstructEditableValues()
 {
   ImGui::TextColored(sf::Color::Cyan, "New point coordinates");
 
@@ -310,7 +306,7 @@ void ObjectMenu::PointSubmenu::ConstructEditableValues()
   }
 }
 
-void ObjectMenu::PointSubmenu::ConstructCurrentValues() const
+void PointSubmenu::ConstructCurrentValues() const
 {
   ImGui::TextColored(sf::Color::Red, "Current point coordinates:");
 

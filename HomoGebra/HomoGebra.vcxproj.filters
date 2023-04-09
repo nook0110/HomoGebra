@@ -53,6 +53,12 @@
     <Filter Include="Sources\GUI\Creation">
       <UniqueIdentifier>{94ba7c3e-f35c-4d4c-aa68-a38ad571f931}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headers\NameGen">
+      <UniqueIdentifier>{d0e489cd-542b-4478-b4a0-7e5b70cebaa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\NameGen">
+      <UniqueIdentifier>{c0522fe4-4791-4da8-9901-f10fe2ee47ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui.cpp">
@@ -121,6 +127,9 @@
     <ClCompile Include="PlaneHelper.cpp">
       <Filter>Sources\Plane</Filter>
     </ClCompile>
+    <ClCompile Include="NameGenerator.cpp">
+      <Filter>Sources\NameGen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeometricObject.h">
@@ -167,6 +176,9 @@
     </ClInclude>
     <ClInclude Include="PlaneHelper.h">
       <Filter>Headers\Plane</Filter>
+    </ClInclude>
+    <ClInclude Include="NameGenerator.h">
+      <Filter>Headers\NameGen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <iostream>
 
 SquaredMatrix::SquaredMatrix(const size_t size)
     : matrix_(size, Row(size)), augmentation_(size), size_(size)
@@ -12,47 +13,48 @@ SquaredMatrix::SquaredMatrix(const Matrix& matrix,
     : matrix_(matrix), augmentation_(augmentation), size_(matrix.size())
 {
   // Check if matrix is squared
-  assert((std::any_of(matrix.begin(), matrix.end(),
-                      [this](const Row& row) { return row.size() != size_; })));
+  assert(
+      !(std::any_of(matrix.begin(), matrix.end(),
+                    [this](const Row& row) { return row.size() != size_; })));
 
   // Check if augmentation is correct
-  assert((augmentation.size() != size_));
+  assert((augmentation.size() == size_));
 
   // Check if matrix contains NaN
-  assert((std::any_of(matrix.begin(), matrix.end(),
-                      [](const Row& row)
-                      {
-                        return std::any_of(row.begin(), row.end(),
-                                           [](const Complex& value) {
-                                             return std::isnan(value.real()) ||
-                                                    std::isnan(value.imag());
-                                           });
-                      })));
+  assert(!(std::any_of(matrix.begin(), matrix.end(),
+                       [](const Row& row)
+                       {
+                         return std::any_of(row.begin(), row.end(),
+                                            [](const Complex& value) {
+                                              return std::isnan(value.real()) ||
+                                                     std::isnan(value.imag());
+                                            });
+                       })));
 
   // Check if augmentation contains NaN or Inf
-  assert((std::any_of(augmentation.begin(), augmentation.end(),
-                      [](const Complex& value) {
-                        return std::isnan(value.real()) ||
-                               std::isnan(value.imag());
-                      })));
+  assert(!(std::any_of(augmentation.begin(), augmentation.end(),
+                       [](const Complex& value) {
+                         return std::isnan(value.real()) ||
+                                std::isnan(value.imag());
+                       })));
 
   // Check if matrix contains Inf
-  assert((std::any_of(matrix.begin(), matrix.end(),
-                      [](const Row& row)
-                      {
-                        return std::any_of(row.begin(), row.end(),
-                                           [](const Complex& value) {
-                                             return std::isinf(value.real()) ||
-                                                    std::isinf(value.imag());
-                                           });
-                      })));
+  assert(!(std::any_of(matrix.begin(), matrix.end(),
+                       [](const Row& row)
+                       {
+                         return std::any_of(row.begin(), row.end(),
+                                            [](const Complex& value) {
+                                              return std::isinf(value.real()) ||
+                                                     std::isinf(value.imag());
+                                            });
+                       })));
 
   // Check if augmentation contains Inf
-  assert((std::any_of(augmentation.begin(), augmentation.end(),
-                      [](const Complex& value) {
-                        return std::isinf(value.real()) ||
-                               std::isinf(value.imag());
-                      })));
+  assert(!(std::any_of(augmentation.begin(), augmentation.end(),
+                       [](const Complex& value) {
+                         return std::isinf(value.real()) ||
+                                std::isinf(value.imag());
+                       })));
 }
 
 std::optional<SquaredMatrix> SquaredMatrix::GetInverse() const

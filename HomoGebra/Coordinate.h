@@ -1,6 +1,5 @@
 #pragma once
 // ReSharper disable once CppUnusedIncludeDirective
-#include <SFML/Graphics.hpp>
 #include <array>
 #include <complex>
 #include <optional>
@@ -262,20 +261,10 @@ struct HomogeneousCoordinate
    * \param y Y coordinate
    * \param z Z coordinate
    */
-  HomogeneousCoordinate(const Complex x, const Complex y, const Complex z)
+  HomogeneousCoordinate(const Complex x, const Complex y, const Complex z = 1)
       : x(x), y(y), z(z)
   {}
 
-  /**
-   * \brief Constructor from position on a plane.
-   *
-   * \param position Position on a plane.
-   */
-  explicit HomogeneousCoordinate(const sf::Vector2f& position)
-      : x(static_cast<double>(position.x)),
-        y(static_cast<double>(position.y)),
-        z({1})
-  {}
   /**
    * \brief Overload of operator[]. Returns const reference to x, y or z
    * coordinate.
