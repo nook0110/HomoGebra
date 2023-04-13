@@ -682,46 +682,49 @@ TEST(Subname, ParseSubname)
   const std::string subname_without_digits = "W/O digits";
 
   // Parse a subname
-  const auto parsed_subname_wo_digits = ParsedSubname(subname_without_digits);
+  const auto parsed_subname_wo_digits =
+      NameGenerator::ParseSubname(subname_without_digits);
 
   // Check
-  ASSERT_EQ(parsed_subname_wo_digits.subname, subname_without_digits);
-  ASSERT_TRUE(!parsed_subname_wo_digits.number.has_value());
+  EXPECT_EQ(parsed_subname_wo_digits.item, subname_without_digits);
+  ASSERT_TRUE(!parsed_subname_wo_digits.sub_item.item.has_value());
 
   // Create a subname with only digits
   constexpr size_t number = 239932239;
   const std::string subname_only_digits = std::to_string(number);
 
   // Parse a subname
-  const auto parsed_subname_only_digits = ParsedSubname(subname_only_digits);
+  const auto parsed_subname_only_digits =
+      NameGenerator::ParseSubname(subname_only_digits);
 
   // Check
-  ASSERT_EQ(parsed_subname_only_digits.subname, std::string{});
-  ASSERT_TRUE(parsed_subname_only_digits.number.has_value());
-  ASSERT_EQ(parsed_subname_only_digits.number.value(), number);
+  EXPECT_EQ(parsed_subname_only_digits.item, std::string{});
+  ASSERT_TRUE(parsed_subname_only_digits.sub_item.item.has_value());
+  EXPECT_EQ(parsed_subname_only_digits.sub_item.item.value(), number);
 
   // Create subname with some text and number
   const std::string silly_text = "Some silly text";
   const std::string subname = silly_text + std::to_string(number);
 
   // Parse
-  const auto parsed_subname = ParsedSubname(subname);
+  const auto parsed_subname = NameGenerator::ParseSubname(subname);
 
   // Check
-  ASSERT_EQ(parsed_subname.subname, silly_text);
-  ASSERT_TRUE(parsed_subname.number.has_value());
-  ASSERT_EQ(parsed_subname.number.value(), number);
+  EXPECT_EQ(parsed_subname.item, silly_text);
+  ASSERT_TRUE(parsed_subname.sub_item.item.has_value());
+  EXPECT_EQ(parsed_subname.sub_item.item.value(), number);
 
   // Create subname with some text and number, again text and again number
   const std::string multi_number_subname = subname + subname;
 
   // Parse
-  const auto parsed_multi_subname = ParsedSubname(multi_number_subname);
+  const auto parsed_multi_subname =
+      NameGenerator::ParseSubname(multi_number_subname);
 
   // Check
-  ASSERT_EQ(parsed_multi_subname.subname, subname + silly_text);
-  ASSERT_TRUE(parsed_multi_subname.number.has_value());
-  ASSERT_EQ(parsed_multi_subname.number.value(), number);
+  EXPECT_EQ(parsed_multi_subname.item, subname + silly_text);
+  ASSERT_TRUE(parsed_multi_subname.sub_item.item.has_value());
+  EXPECT_EQ(parsed_multi_subname.sub_item.item.value(), number);
 }
 
 TEST(Name, ParseName)
@@ -731,11 +734,11 @@ TEST(Name, ParseName)
 
   // Parse a subname
   const auto parsed_name_without_underscore =
-      ParsedName(name_without_underscore);
+      NameGenerator::ParseName(name_without_underscore);
 
   // Check
-  ASSERT_EQ(parsed_name_without_underscore.name, name_without_underscore);
-  ASSERT_EQ(parsed_name_without_underscore.subname, ParsedSubname());
+  EXPECT_EQ(parsed_name_without_underscore.item, name_without_underscore);
+  EXPECT_EQ(parsed_name_without_underscore.sub_item, ParsedSubname());
 
   // Create a subname without digits but with underscore
   constexpr auto kUnderscore = '_';
@@ -744,12 +747,12 @@ TEST(Name, ParseName)
 
   // Parse a subname
   const auto parsed_name_wo_digits_with_underscore =
-      ParsedName(name_without_digits_with_underscore);
+      NameGenerator::ParseName(name_without_digits_with_underscore);
 
   // Check
-  ASSERT_EQ(parsed_name_wo_digits_with_underscore.name,
+  EXPECT_EQ(parsed_name_wo_digits_with_underscore.item,
             name_without_underscore);
-  ASSERT_EQ(parsed_name_wo_digits_with_underscore.subname, ParsedSubname());
+  EXPECT_EQ(parsed_name_wo_digits_with_underscore.sub_item, ParsedSubname());
 
   constexpr size_t number = 239;
   const std::string silly_text = "Some silly text";
@@ -760,21 +763,21 @@ TEST(Name, ParseName)
       silly_text + kUnderscore + std::to_string(number);
 
   // Parse
-  const auto first_parsed_name = ParsedName(first_name);
+  const auto first_parsed_name = NameGenerator::ParseName(first_name);
 
-  ASSERT_EQ(first_parsed_name.name, silly_text);
-  ASSERT_EQ(first_parsed_name.subname, ParsedSubname({"", number}));
+  EXPECT_EQ(first_parsed_name.item, silly_text);
+  EXPECT_EQ(first_parsed_name.sub_item, ParsedSubname({"", number}));
 
   // Test 2
   // Init
   const std::string second_name = silly_text + kUnderscore + silly_text;
 
   // Parse
-  const auto second_parsed_name = ParsedName(second_name);
+  const auto second_parsed_name = NameGenerator::ParseName(second_name);
 
   // Check
-  ASSERT_EQ(second_parsed_name.name, silly_text);
-  ASSERT_EQ(second_parsed_name.subname, ParsedSubname({silly_text, {}}));
+  EXPECT_EQ(second_parsed_name.item, silly_text);
+  EXPECT_EQ(second_parsed_name.sub_item, ParsedSubname({silly_text, {}}));
 
   // Test 3
   // Init
@@ -782,11 +785,11 @@ TEST(Name, ParseName)
       silly_text + kUnderscore + silly_text + std::to_string(number);
 
   // Parse
-  const auto third_parsed_name = ParsedName(third_name);
+  const auto third_parsed_name = NameGenerator::ParseName(third_name);
 
   // Check
-  ASSERT_EQ(third_parsed_name.name, silly_text);
-  ASSERT_EQ(third_parsed_name.subname, ParsedSubname({silly_text, number}));
+  EXPECT_EQ(third_parsed_name.item, silly_text);
+  EXPECT_EQ(third_parsed_name.sub_item, ParsedSubname({silly_text, number}));
 }
 
 TEST(Name, GenName)
@@ -811,11 +814,11 @@ TEST(Name, GenName)
       name_with_subname + std::to_string(number);
 
   // Check
-  EXPECT_EQ(name_generator.GenerateName(name), ParsedName(name));
+  EXPECT_EQ(name_generator.GenerateName(name), NameGenerator::ParseName(name));
   EXPECT_EQ(name_generator.GenerateName(name_with_subname),
-            ParsedName(name_with_subname));
+            NameGenerator::ParseName(name_with_subname));
   EXPECT_EQ(name_generator.GenerateName(name_with_subname_and_number),
-            ParsedName(name_with_subname_and_number));
+            NameGenerator::ParseName(name_with_subname_and_number));
 
   // Save used name
   name_generator.AddName(name_with_subname_and_number);
@@ -827,7 +830,7 @@ TEST(Name, GenName)
 
   // Check
   EXPECT_EQ(name_generator.GenerateName(name_with_subname_and_number),
-            ParsedName(name_with_subname));
+            NameGenerator::ParseName(name_with_subname));
 
   // Save used name
   name_generator.AddName(name_with_subname);
@@ -839,10 +842,10 @@ TEST(Name, GenName)
    */
 
   // Parse name
-  auto parsed_name = ParsedName(name_with_subname);
+  auto parsed_name = NameGenerator::ParseName(name_with_subname);
 
   auto adjusted_name = parsed_name;
-  adjusted_name.subname.number = 0;
+  adjusted_name.sub_item.sub_item.item = 0;
 
   // Check
   EXPECT_EQ(name_generator.GenerateName(name_with_subname), adjusted_name);
@@ -855,30 +858,30 @@ TEST(Name, GenName)
    */
 
   EXPECT_EQ(name_generator.GenerateName(name_with_subname),
-            ParsedName(name_with_subname));
+            NameGenerator::ParseName(name_with_subname));
 }
 
 TEST(Name, EmptyNameGen)
 {
   NameGenerator name_generator;
 
-  EXPECT_EQ(name_generator.GenerateName(), ParsedName("A"));
+  EXPECT_EQ(name_generator.GenerateName(), NameGenerator::ParseName("A"));
 
   // Save name
-  name_generator.AddName(ParsedName("A"));
+  name_generator.AddName(NameGenerator::ParseName("A"));
 
   /*
    * Saved names:
    * | "A"
    */
 
-  EXPECT_EQ(name_generator.GenerateName(), ParsedName("B"));
+  EXPECT_EQ(name_generator.GenerateName(), NameGenerator::ParseName("B"));
 
   constexpr std::string_view kAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   for (const auto character : kAlphabet)
   {
-    name_generator.AddName(ParsedName(std::string{character}));
+    name_generator.AddName(NameGenerator::ParseName(std::string{character}));
   }
 
   /*
@@ -890,20 +893,20 @@ TEST(Name, EmptyNameGen)
    */
 
   // Check
-  EXPECT_EQ(name_generator.GenerateName(), ParsedName("A_0"));
+  EXPECT_EQ(name_generator.GenerateName(), NameGenerator::ParseName("A_0"));
 
   constexpr char kDelimiter = '_';
   constexpr char kTestingCharacter = 'K';
   for (const auto character : kAlphabet)
   {
     if (character != kTestingCharacter)
-      name_generator.AddName(
-          ParsedName(std::string{character} + kDelimiter + std::to_string(0)));
+      name_generator.AddName(NameGenerator::ParseName(
+          std::string{character} + kDelimiter + std::to_string(0)));
   }
 
   EXPECT_EQ(name_generator.GenerateName(),
-            ParsedName(std::string{kTestingCharacter} + kDelimiter +
-                       std::to_string(0)));
+            NameGenerator::ParseName(std::string{kTestingCharacter} +
+                                     kDelimiter + std::to_string(0)));
 }
 }  // namespace NameGen
 }  // namespace HomogebraTest

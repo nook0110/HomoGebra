@@ -1,6 +1,7 @@
 #include "GUI.h"
 #include "GeometricObject.h"
 #include "GeometricObjectFactory.h"
+#include "NameGenerator.h"
 #include "SFML/Graphics.hpp"
 #include "imgui-SFML.h"
 #include "imgui.h"
