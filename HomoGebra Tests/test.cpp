@@ -682,11 +682,10 @@ TEST(Subname, ParseSubname)
   const std::string subname_without_digits = "W/O digits";
 
   // Parse a subname
-  const auto parsed_subname_wo_digits =
-      NameGenerator::Name::Subname::ParseSubname(subname_without_digits);
+  const auto parsed_subname_wo_digits = ParsedSubname(subname_without_digits);
 
   // Check
-  ASSERT_EQ(parsed_subname_wo_digits.name, subname_without_digits);
+  ASSERT_EQ(parsed_subname_wo_digits.subname, subname_without_digits);
   ASSERT_TRUE(!parsed_subname_wo_digits.number.has_value());
 
   // Create a subname with only digits
@@ -694,11 +693,10 @@ TEST(Subname, ParseSubname)
   const std::string subname_only_digits = std::to_string(number);
 
   // Parse a subname
-  const auto parsed_subname_only_digits =
-      NameGenerator::Name::Subname::ParseSubname(subname_only_digits);
+  const auto parsed_subname_only_digits = ParsedSubname(subname_only_digits);
 
   // Check
-  ASSERT_EQ(parsed_subname_only_digits.name, std::string{});
+  ASSERT_EQ(parsed_subname_only_digits.subname, std::string{});
   ASSERT_TRUE(parsed_subname_only_digits.number.has_value());
   ASSERT_EQ(parsed_subname_only_digits.number.value(), number);
 
@@ -707,11 +705,10 @@ TEST(Subname, ParseSubname)
   const std::string subname = silly_text + std::to_string(number);
 
   // Parse
-  const auto parsed_subname =
-      NameGenerator::Name::Subname::ParseSubname(subname);
+  const auto parsed_subname = ParsedSubname(subname);
 
   // Check
-  ASSERT_EQ(parsed_subname.name, silly_text);
+  ASSERT_EQ(parsed_subname.subname, silly_text);
   ASSERT_TRUE(parsed_subname.number.has_value());
   ASSERT_EQ(parsed_subname.number.value(), number);
 
@@ -719,43 +716,40 @@ TEST(Subname, ParseSubname)
   const std::string multi_number_subname = subname + subname;
 
   // Parse
-  const auto parsed_multi_subname =
-      NameGenerator::Name::Subname::ParseSubname(multi_number_subname);
+  const auto parsed_multi_subname = ParsedSubname(multi_number_subname);
 
   // Check
-  ASSERT_EQ(parsed_multi_subname.name, subname + silly_text);
+  ASSERT_EQ(parsed_multi_subname.subname, subname + silly_text);
   ASSERT_TRUE(parsed_multi_subname.number.has_value());
   ASSERT_EQ(parsed_multi_subname.number.value(), number);
 }
 
 TEST(Name, ParseName)
 {
-  // Create a name without digits
+  // Create a subname without digits
   const std::string name_without_underscore = "W/O underscore";
 
-  // Parse a name
+  // Parse a subname
   const auto parsed_name_without_underscore =
-      NameGenerator::Name::ParseName(name_without_underscore);
+      ParsedName(name_without_underscore);
 
   // Check
   ASSERT_EQ(parsed_name_without_underscore.name, name_without_underscore);
-  ASSERT_EQ(parsed_name_without_underscore.subname,
-            NameGenerator::ParsedSubname());
+  ASSERT_EQ(parsed_name_without_underscore.subname, ParsedSubname());
 
-  // Create a name without digits but with underscore
+  // Create a subname without digits but with underscore
   constexpr auto kUnderscore = '_';
   const std::string name_without_digits_with_underscore =
       name_without_underscore + kUnderscore;
 
-  // Parse a name
+  // Parse a subname
   const auto parsed_name_wo_digits_with_underscore =
-      NameGenerator::Name::ParseName(name_without_digits_with_underscore);
+      ParsedName(name_without_digits_with_underscore);
 
   // Check
   ASSERT_EQ(parsed_name_wo_digits_with_underscore.name,
             name_without_underscore);
-  ASSERT_EQ(parsed_name_wo_digits_with_underscore.subname,
-            NameGenerator::ParsedSubname());
+  ASSERT_EQ(parsed_name_wo_digits_with_underscore.subname, ParsedSubname());
 
   constexpr size_t number = 239;
   const std::string silly_text = "Some silly text";
@@ -766,23 +760,21 @@ TEST(Name, ParseName)
       silly_text + kUnderscore + std::to_string(number);
 
   // Parse
-  const auto first_parsed_name = NameGenerator::Name::ParseName(first_name);
+  const auto first_parsed_name = ParsedName(first_name);
 
   ASSERT_EQ(first_parsed_name.name, silly_text);
-  ASSERT_EQ(first_parsed_name.subname,
-            NameGenerator::ParsedSubname({"", number}));
+  ASSERT_EQ(first_parsed_name.subname, ParsedSubname({"", number}));
 
   // Test 2
   // Init
   const std::string second_name = silly_text + kUnderscore + silly_text;
 
   // Parse
-  const auto second_parsed_name = NameGenerator::Name::ParseName(second_name);
+  const auto second_parsed_name = ParsedName(second_name);
 
   // Check
   ASSERT_EQ(second_parsed_name.name, silly_text);
-  ASSERT_EQ(second_parsed_name.subname,
-            NameGenerator::ParsedSubname({silly_text, {}}));
+  ASSERT_EQ(second_parsed_name.subname, ParsedSubname({silly_text, {}}));
 
   // Test 3
   // Init
@@ -790,12 +782,128 @@ TEST(Name, ParseName)
       silly_text + kUnderscore + silly_text + std::to_string(number);
 
   // Parse
-  const auto third_parsed_name = NameGenerator::Name::ParseName(third_name);
+  const auto third_parsed_name = ParsedName(third_name);
 
   // Check
   ASSERT_EQ(third_parsed_name.name, silly_text);
-  ASSERT_EQ(third_parsed_name.subname,
-            NameGenerator::ParsedSubname({silly_text, number}));
+  ASSERT_EQ(third_parsed_name.subname, ParsedSubname({silly_text, number}));
+}
+
+TEST(Name, GenName)
+{
+  // Create a name gen
+  NameGenerator name_generator;
+
+  // Create a name
+  const std::string name = "name";
+
+  // Create a subname
+  const std::string subname = "subname";
+
+  // Create a number
+  constexpr size_t number = 239;
+
+  // Create a name with subname
+  const std::string name_with_subname = name + "_" + subname;
+
+  // Create a name with subname and number
+  const std::string name_with_subname_and_number =
+      name_with_subname + std::to_string(number);
+
+  // Check
+  EXPECT_EQ(name_generator.GenerateName(name), ParsedName(name));
+  EXPECT_EQ(name_generator.GenerateName(name_with_subname),
+            ParsedName(name_with_subname));
+  EXPECT_EQ(name_generator.GenerateName(name_with_subname_and_number),
+            ParsedName(name_with_subname_and_number));
+
+  // Save used name
+  name_generator.AddName(name_with_subname_and_number);
+
+  /*
+   * Saved names:
+   * | "name_subname239"
+   */
+
+  // Check
+  EXPECT_EQ(name_generator.GenerateName(name_with_subname_and_number),
+            ParsedName(name_with_subname));
+
+  // Save used name
+  name_generator.AddName(name_with_subname);
+
+  /*
+   * Saved names:
+   * | "name_subname239"
+   * | "name_subname"
+   */
+
+  // Parse name
+  auto parsed_name = ParsedName(name_with_subname);
+
+  auto adjusted_name = parsed_name;
+  adjusted_name.subname.number = 0;
+
+  // Check
+  EXPECT_EQ(name_generator.GenerateName(name_with_subname), adjusted_name);
+
+  // Delete name
+  name_generator.DeleteName(name_with_subname);
+  /*
+   * Saved names:
+   * | "name_subname239"
+   */
+
+  EXPECT_EQ(name_generator.GenerateName(name_with_subname),
+            ParsedName(name_with_subname));
+}
+
+TEST(Name, EmptyNameGen)
+{
+  NameGenerator name_generator;
+
+  EXPECT_EQ(name_generator.GenerateName(), ParsedName("A"));
+
+  // Save name
+  name_generator.AddName(ParsedName("A"));
+
+  /*
+   * Saved names:
+   * | "A"
+   */
+
+  EXPECT_EQ(name_generator.GenerateName(), ParsedName("B"));
+
+  constexpr std::string_view kAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  for (const auto character : kAlphabet)
+  {
+    name_generator.AddName(ParsedName(std::string{character}));
+  }
+
+  /*
+   * Saved names:
+   * | "A"
+   * | "B"
+   * | ...
+   * | "Z"
+   */
+
+  // Check
+  EXPECT_EQ(name_generator.GenerateName(), ParsedName("A_0"));
+
+  constexpr char kDelimiter = '_';
+  constexpr char kTestingCharacter = 'K';
+  for (const auto character : kAlphabet)
+  {
+    if (character != kTestingCharacter)
+      name_generator.AddName(
+          ParsedName(std::string{character} + kDelimiter + std::to_string(0)));
+  }
+
+  EXPECT_EQ(name_generator.GenerateName(),
+            ParsedName(std::string{kTestingCharacter} + kDelimiter +
+                       std::to_string(0)));
 }
 }  // namespace NameGen
 }  // namespace HomogebraTest

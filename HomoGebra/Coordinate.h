@@ -214,7 +214,7 @@ class Transformation
 };
 
 /**
- * \enum Var Name of axes/variables.
+ * \enum Var NameSaver of axes/variables.
  *
  * \var Var::kX
  * X axis

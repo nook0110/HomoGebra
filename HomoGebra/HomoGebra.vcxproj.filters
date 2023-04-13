@@ -180,5 +180,8 @@
     <ClInclude Include="NameGenerator.h">
       <Filter>Headers\NameGen</Filter>
     </ClInclude>
+    <ClInclude Include="Dictionary.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
