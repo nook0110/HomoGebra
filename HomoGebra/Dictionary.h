@@ -26,16 +26,7 @@ class DefaultDictionary
    *
    * \return True if item was added, false otherwise.
    */
-  bool AddItem(const ParsedItem& item)
-  {
-    // Check if item was used
-    if (is_item_used_)
-    {
-      return false;
-    }
-
-    return is_item_used_ = true;
-  }
+  bool AddItem(const ParsedItem& item);
 
   /**
    * \brief Deletes item from dictionary.
@@ -44,16 +35,7 @@ class DefaultDictionary
    *
    * \return True if item was deleted, false otherwise.
    */
-  bool DeleteItem(const ParsedItem& item)
-  {
-    if (!is_item_used_)
-    {
-      return false;
-    }
-
-    is_item_used_ = false;
-    return true;
-  }
+  bool DeleteItem(const ParsedItem& item);
 
   /**
    * \brief Checks if item is in dictionary.
@@ -62,10 +44,7 @@ class DefaultDictionary
    *
    * \return True if item is in, false otherwise.
    */
-  [[nodiscard]] bool IsItemUsed(const ParsedItem& item) const
-  {
-    return is_item_used_;
-  }
+  [[nodiscard]] bool IsItemUsed(const ParsedItem& item) const;
 
  private:
   bool is_item_used_ = true;  //!< Is item used?
@@ -130,6 +109,33 @@ class Dictionary
   std::map<Key, SubDictionary> used_items_;  //!< Used items.
 };
 
+inline bool DefaultDictionary::AddItem(const ParsedItem& item)
+{
+  // Check if item was used
+  if (is_item_used_)
+  {
+    return false;
+  }
+
+  return is_item_used_ = true;
+}
+
+inline bool DefaultDictionary::DeleteItem(const ParsedItem& item)
+{
+  if (!is_item_used_)
+  {
+    return false;
+  }
+
+  is_item_used_ = false;
+  return true;
+}
+
+inline bool DefaultDictionary::IsItemUsed(const ParsedItem& item) const
+{
+  return is_item_used_;
+}
+
 template <class Item, class SubDictionary>
 bool Dictionary<Item, SubDictionary>::AddItem(const ParsedItem& parsed_item)
 {
@@ -146,15 +152,7 @@ bool Dictionary<Item, SubDictionary>::DeleteItem(const ParsedItem& parsed_item)
   }
 
   // Delete item
-  if constexpr (std::is_member_function_pointer_v<
-                    decltype(&SubDictionary::DeleteItem)>)
-  {
-    return used_items_.at(parsed_item.item).DeleteItem(parsed_item.sub_item);
-  }
-  else
-  {
-    return used_items_.erase(parsed_item.item);
-  }
+  return used_items_.at(parsed_item.item).DeleteItem(parsed_item.sub_item);
 }
 
 template <class Item, class SubDictionary>
@@ -168,13 +166,5 @@ bool Dictionary<Item, SubDictionary>::IsItemUsed(
   }
 
   // Check if sub item is used
-  if constexpr (std::is_member_function_pointer_v<
-                    decltype(&SubDictionary::IsItemUsed)>)
-  {
-    return used_items_.at(parsed_item.item).IsItemUsed(parsed_item.sub_item);
-  }
-  else
-  {
-    return true;
-  }
+  return used_items_.at(parsed_item.item).IsItemUsed(parsed_item.sub_item);
 }

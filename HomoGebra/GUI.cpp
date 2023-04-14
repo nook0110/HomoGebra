@@ -281,6 +281,9 @@ void PointSubmenu::Construct()
   // Push id to ImGui stack
   ImGui::PushID(this);
 
+  // Construct name editor
+  ConstructNameEditor();
+
   // Construct current values
   ConstructCurrentValues();
 
@@ -289,6 +292,19 @@ void PointSubmenu::Construct()
 
   // Pop id from ImGui stack
   ImGui::PopID();
+}
+
+void PointSubmenu::ConstructNameEditor()
+{
+  // Construct name editor
+  ImGui::InputText("Name", &name_);
+
+  // ImGui button that sets name
+  if (ImGui::Button("Set name"))
+  {
+    // Set point name
+    point_->SetName(name_);
+  }
 }
 
 void PointSubmenu::ConstructEditableValues()

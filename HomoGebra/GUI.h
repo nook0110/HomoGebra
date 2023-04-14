@@ -224,6 +224,8 @@ class PointSubmenu
   void Construct();
 
  private:
+  void ConstructNameEditor();
+
   /**
    * \brief Render variables, that can be edited.
    *
@@ -239,6 +241,7 @@ class PointSubmenu
   /**
    * Member data.
    */
+  std::string name_;
   HomogeneousCoordinateEditor coordinate_editor_;  //!< Editor for coordinates
   std::shared_ptr<Point> point_;                   //!< Point to edit.
 };

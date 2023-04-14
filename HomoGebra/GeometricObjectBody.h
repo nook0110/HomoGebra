@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "GeometricObjectImplementation.h"
+#include "NameGenerator.h"
 
 /**
  * \brief Body of a point

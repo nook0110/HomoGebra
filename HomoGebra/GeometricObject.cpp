@@ -65,6 +65,8 @@ void Point::draw(sf::RenderTarget& target, sf::RenderStates states) const
   target.draw(body_, states);
 }
 
+void Point::SetName(const std::string& name) { body_.SetName(name); }
+
 const std::string& Point::GetName() const
 {
   // Return name

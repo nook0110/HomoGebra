@@ -181,7 +181,7 @@
       <Filter>Headers\NameGen</Filter>
     </ClInclude>
     <ClInclude Include="Dictionary.h">
-      <Filter>Headers</Filter>
+      <Filter>Headers\NameGen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

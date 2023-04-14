@@ -163,7 +163,7 @@ class Point final : public GeometricObject
    *
    * \param name New name of object.
    */
-  void SetName(const std::string& name) override{};
+  void SetName(const std::string& name) override;
 
   /**
    * \brief Gets name of object.

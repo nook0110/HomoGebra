@@ -21,6 +21,7 @@ void PointBody::Update(const PointEquation& equation, const float size)
   if (position_)
   {
     body_.setPosition(position_.value().position);
+    text_.setPosition(position_.value().position);
   }
 
   // Set size
@@ -44,6 +45,7 @@ void PointBody::draw(sf::RenderTarget& target, sf::RenderStates) const
   {
     // Draw point
     target.draw(body_);
+    target.draw(text_);
   }
 }
 
@@ -56,12 +58,15 @@ std::optional<PointBody::ProjectivePosition> PointBody::CalculatePosition(
   // Normalize equation
   const auto normalized_eq = eq.GetNormalized();
 
+  // Check if point lies on the "R-plane" which we see
+  if (!IsReal(normalized_eq.x) || !IsReal(normalized_eq.y))
+  {
+    return std::nullopt;
+  }
+
   // Check if point is at infinity
   if (IsZero(normalized_eq[Var::kZ]))
   {
-    // Check if point lies on the "R-plane" which we see
-    if (!IsReal(normalized_eq.x)) return std::nullopt;
-
     return ProjectivePosition{
         sf::Vector2f(static_cast<float>(normalized_eq.x.real()),
                      static_cast<float>(normalized_eq.y.real())),

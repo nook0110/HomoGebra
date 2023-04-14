@@ -895,7 +895,7 @@ TEST(Name, EmptyNameGen)
   // Check
   EXPECT_EQ(name_generator.GenerateName(), NameGenerator::ParseName("A_0"));
 
-  constexpr char kDelimiter = '_';
+  constexpr char kDelimiter = NameGenerator::kDelimiter;
   constexpr char kTestingCharacter = 'K';
   for (const auto character : kAlphabet)
   {

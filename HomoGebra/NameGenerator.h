@@ -15,21 +15,6 @@ using ParsedSubname = SubnameDictionary::ParsedItem;
 using NameDictionary = Dictionary<std::string, SubnameDictionary>;
 using ParsedName = NameDictionary::ParsedItem;
 
-inline bool operator==(const ParsedNumber& first, const ParsedNumber& second)
-{
-  return first.item == second.item;
-}
-
-inline bool operator==(const ParsedSubname& first, const ParsedSubname& second)
-{
-  return first.item == second.item && first.sub_item == second.sub_item;
-}
-
-inline bool operator==(const ParsedName& first, const ParsedName& second)
-{
-  return first.item == second.item && first.sub_item == second.sub_item;
-}
-
 /**
  * \brief Class to generate new names.
  *
@@ -45,6 +30,8 @@ inline bool operator==(const ParsedName& first, const ParsedName& second)
 class NameGenerator
 {
  public:
+  static constexpr char kDelimiter = '_';
+
   /**
    * \brief Default constructor.
    *
@@ -141,3 +128,39 @@ class NameGenerator
 
   NameDictionary used_names_;  //!< Dictionary of used names.
 };
+
+inline bool operator==(const ParsedNumber& first, const ParsedNumber& second)
+{
+  return first.item == second.item;
+}
+
+inline bool operator==(const ParsedSubname& first, const ParsedSubname& second)
+{
+  return first.item == second.item && first.sub_item == second.sub_item;
+}
+
+inline bool operator==(const ParsedName& first, const ParsedName& second)
+{
+  return first.item == second.item && first.sub_item == second.sub_item;
+}
+
+inline std::string ToString(const ParsedNumber& parsed_number)
+{
+  // Check if number is empty
+  if (!parsed_number.item.has_value())
+  {
+    return {};
+  }
+  return std::to_string(parsed_number.item.value());
+}
+
+inline std::string ToString(const ParsedSubname& parsed_subname)
+{
+  return parsed_subname.item + ToString(parsed_subname.sub_item);
+}
+
+inline std::string ToString(const ParsedName& parsed_name)
+{
+  return parsed_name.item + NameGenerator::kDelimiter +
+         ToString(parsed_name.sub_item);
+}

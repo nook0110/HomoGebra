@@ -72,8 +72,6 @@ ParsedName NameGenerator::GenerateName(const std::string& name) const
 
 ParsedName NameGenerator::ParseName(const std::string& name)
 {
-  constexpr char kDelimiter = '_';
-
   // Find delimiter in subname
   const auto delimiter_position = name.find(kDelimiter);
 
