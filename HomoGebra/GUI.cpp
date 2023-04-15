@@ -2,6 +2,7 @@
 
 #include <imgui-SFML.h>
 #include <imgui.h>
+#include <imgui_internal.h>
 #include <imgui_stdlib.h>
 
 #include <cassert>
@@ -300,10 +301,55 @@ void PointSubmenu::ConstructNameEditor()
   // Construct name editor
   ImGui::InputText("Name", &name_);
 
+  // Construct name suggestions
+  ConstructNameSuggestions();
+
   // ImGui button that sets name
   if (ImGui::Button("Set name"))
   {
     // Set point name
+    plane_.Rename(point_, name_);
+  }
+}
+
+void PointSubmenu::ConstructNameSuggestions()
+{
+  // Check if user inputs text
+  if (ImGui::IsItemActive())
+  {
+    const auto& name_generator = plane_.GetNameGenerator();
+
+    // Add suggestions constructed on user input
+    std::vector<std::string> suggestions;
+    suggestions.push_back(
+        static_cast<std::string>(name_generator.GenerateName(name_)));
+
+    // Add suggestions constructed on point name
+    suggestions.push_back(static_cast<std::string>(
+        name_generator.GenerateName(point_->GetName())));
+
+    // Add suggestion from generator
+    suggestions.push_back(
+        static_cast<std::string>(name_generator.GenerateName()));
+
+    // Make suggestions unique
+    std::sort(suggestions.begin(), suggestions.end());
+    suggestions.erase(std::unique(suggestions.begin(), suggestions.end()),
+                      suggestions.end());
+
+    // Set suggestions positions
+    ImGui::SetNextWindowPos(
+        ImVec2(ImGui::GetItemRectMin().x, ImGui::GetItemRectMax().y));
+
+    ImGui::BeginTooltip();
+
+    for (const auto& suggestion : suggestions)
+    {
+      // "Print" suggestion
+      ImGui::TextUnformatted(suggestion.data());
+    }
+
+    ImGui::EndTooltip();
   }
 }
 

@@ -17,6 +17,11 @@ std::shared_ptr<Point> PointFactory::OnPlane(const PointEquation& coordinate)
   // Add point to plane
   plane_.AddObject(point);
 
+  const auto& name_generator = plane_.GetNameGenerator();
+
+  // Rename point
+  plane_.Rename(point, static_cast<std::string>(name_generator.GenerateName()));
+
   // Return point
   return point;
 }

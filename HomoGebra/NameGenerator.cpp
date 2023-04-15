@@ -29,6 +29,11 @@ bool ParsedSubname::operator<(const ParsedSubname& other) const
   return number.value() < other.number;
 }
 
+ParsedSubname::operator std::string() const
+{
+  return subname + (number.has_value() ? std::to_string(number.value()) : "");
+}
+
 bool ParsedName::operator==(const ParsedName& other) const
 {
   return name == other.name && parsed_subname == other.parsed_subname;
@@ -43,6 +48,16 @@ bool ParsedName::operator<(const ParsedName& other) const
   return name < other.name;
 }
 
+ParsedName::operator std::string() const
+{
+  if (static_cast<std::string>(parsed_subname).empty())
+  {
+    return name;
+  }
+  return name + NameGenerator::kDelimiter +
+         static_cast<std::string>(parsed_subname);
+}
+
 bool NameGenerator::AddName(const std::string& name)
 {
   // Parse subname
@@ -53,6 +68,11 @@ bool NameGenerator::AddName(const std::string& name)
 
 bool NameGenerator::AddName(const ParsedName& name)
 {
+  if (IsNameEmpty(name))
+  {
+    return false;
+  }
+
   return used_names_.AddItem(name);
 }
 
@@ -66,6 +86,10 @@ bool NameGenerator::DeleteName(const std::string& name)
 
 bool NameGenerator::DeleteName(const ParsedName& name)
 {
+  if (IsNameEmpty(name))
+  {
+    return false;
+  }
   return used_names_.DeleteItem(name);
 }
 
@@ -76,6 +100,10 @@ bool NameGenerator::IsNameUsed(const std::string& name) const
 
 bool NameGenerator::IsNameUsed(const ParsedName& name) const
 {
+  if (IsNameEmpty(name))
+  {
+    return false;
+  }
   return used_names_.IsItemUsed(name);
 }
 
@@ -88,6 +116,16 @@ bool NameGenerator::Rename(const std::string& old_name,
 bool NameGenerator::Rename(const ParsedName& old_name,
                            const ParsedName& new_name)
 {
+  if (IsNameEmpty(old_name))
+  {
+    return false;
+  }
+
+  if (IsNameEmpty(new_name))
+  {
+    return false;
+  }
+
   // Check if old name is used
   if (!IsNameUsed(old_name))
   {
@@ -138,6 +176,9 @@ ParsedName NameGenerator::GenerateName() const
 ParsedName NameGenerator::GenerateName(const std::string& name) const
 {
   auto parsed_name = ParseName(name);
+
+  if (IsNameEmpty(parsed_name)) return GenerateName();
+
   // Check if name is used
   if (!used_names_.IsItemUsed(parsed_name))
   {
@@ -233,4 +274,9 @@ ParsedName NameGenerator::GenerateNumber(const ParsedName& parsed_name) const
       return adjusted_name;
     }
   }
+}
+
+bool NameGenerator::IsNameEmpty(const ParsedName& parsed_name) const
+{
+  return parsed_name.name.empty();
 }

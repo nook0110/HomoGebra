@@ -93,8 +93,15 @@ class PlaneImplementation
    *
    * \return True if object was renamed, false otherwise.
    */
-  bool Rename(std::shared_ptr<GeometricObject> object,
+  bool Rename(const std::shared_ptr<GeometricObject>& object,
               const std::string& new_name);
+
+  /**
+   * \brief Get name generator.
+   *
+   * \return Name generator.
+   */
+  [[nodiscard]] const NameGenerator& GetNameGenerator() const;
 
  private:
   /**

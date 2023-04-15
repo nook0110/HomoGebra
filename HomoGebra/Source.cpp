@@ -25,7 +25,7 @@ int main()
 
   Plane plane;
   PointFactory factory(plane);
-  factory.OnPlane(PointEquation{});
+  factory.OnPlane(PointEquation{HomogeneousCoordinate{100, 100}});
 
   Gui::ObjectMenu menu(plane, std::string("Plane"));
 

@@ -3,15 +3,43 @@
 #include <SFML/Graphics.hpp>
 #include <Thor/Shapes.hpp>
 
-PointBody::PointBody() { body_.setFillColor(sf::Color::Red); }
+ObjectName::ObjectName(const std::string& name)
+{
+  // Load font
+  font_.loadFromFile(kFontPath);
 
-void PointBody::SetName(const std::string& name)
+  // Set font
+  text_.setFont(font_);
+  text_.setCharacterSize(kCharacterSize);
+
+  // Set color
+  text_.setFillColor(kTextColor);
+
+  // Set name
+  SetName(name);
+}
+
+void ObjectName::SetName(const std::string& name)
 {
   name_ = name;
   text_.setString(name);
 }
 
-const std::string& PointBody::GetName() const { return name_; }
+const std::string& ObjectName::GetName() const { return name_; }
+
+void ObjectName::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+  // Apply transform
+  states.transform *= getTransform();
+  // Draw
+  target.draw(text_, states);
+}
+
+PointBody::PointBody() { body_.setFillColor(sf::Color::Red); }
+
+void PointBody::SetName(const std::string& name) { text_.SetName(name); }
+
+const std::string& PointBody::GetName() const { return text_.GetName(); }
 
 void PointBody::Update(const PointEquation& equation, const float size)
 {

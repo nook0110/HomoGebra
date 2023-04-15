@@ -76,8 +76,13 @@ void Plane::draw(sf::RenderTarget& target, sf::RenderStates states) const
   }
 }
 
-bool Plane::Rename(std::shared_ptr<GeometricObject> object,
+bool Plane::Rename(const std::shared_ptr<GeometricObject>& object,
                    const std::string& new_name)
 {
   return implementation_.Rename(object, new_name);
+}
+
+const NameGenerator& Plane::GetNameGenerator() const
+{
+  return implementation_.GetNameGenerator();
 }

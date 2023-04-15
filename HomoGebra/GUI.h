@@ -233,6 +233,12 @@ class PointSubmenu
   void ConstructNameEditor();
 
   /**
+   * \brief Render name suggestions.
+   *
+   */
+  void ConstructNameSuggestions();
+
+  /**
    * \brief Render variables, that can be edited.
    *
    */

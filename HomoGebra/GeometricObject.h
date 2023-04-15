@@ -173,8 +173,8 @@ class Point final : public GeometricObject
    *
    * \brief Friend class PlaneImplementation.
    */
-  friend bool PlaneImplementation::Rename(std::shared_ptr<GeometricObject>,
-                                          const std::string&);
+  friend bool PlaneImplementation::Rename(
+      const std::shared_ptr<GeometricObject>&, const std::string&);
 
   /**
    * \brief Sets new name of object.

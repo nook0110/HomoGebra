@@ -6,6 +6,64 @@
 #include "NameGenerator.h"
 
 /**
+ * \brief Name of object that you can draw.
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date April 2023
+ */
+class ObjectName final : public sf::Drawable, public sf::Transformable
+{
+ public:
+  /**
+   * \brief Constructs an object name.
+   *
+   * \param name Name of the object.
+   */
+  explicit ObjectName(const std::string& name = {});
+  /**
+   * \brief Destructor.
+   *
+   */
+  ~ObjectName() override = default;
+
+  /**
+   * \brief Sets name of the object.
+   *
+   * \param name Name of the object.
+   */
+  void SetName(const std::string& name);
+  /**
+   * \brief Gets name of the object.
+   *
+   * \return Name of the object.
+   */
+  [[nodiscard]] const std::string& GetName() const;
+
+  /**
+   * \brief Draw the object name to a render target.
+   *
+   * \param target Render target to draw to.
+   * \param states States of the render.
+   */
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
+ private:
+  inline static const std::string kFontPath =
+      "Resources/font.ttf";                       //!< Path to font
+  static constexpr unsigned kCharacterSize = 20;  //!< Character size
+  inline static const sf::Color kTextColor =
+      sf::Color::Black;  //!< Color of the text
+
+  std::string name_;  //!< Name of the object
+
+  sf::Font font_;  //!< Font of the text
+  sf::Text text_;  //!< Text of the name
+};
+
+/**
  * \brief Body of a point
  *
  * \author nook0110
@@ -64,8 +122,7 @@ class PointBody final : public sf::Drawable
    * Member data.
    */
 
-  std::string name_;  //!< Name of the point.
-  sf::Text text_;     //!< Text of the name.
+  ObjectName text_;  //!< Name of the name.
 
   /**
    * \brief Projective position of the point.

@@ -70,7 +70,7 @@ std::vector<std::shared_ptr<GeometricObject>> PlaneImplementation::GetConics()
   return conics;
 }
 
-bool PlaneImplementation::Rename(std::shared_ptr<GeometricObject> object,
+bool PlaneImplementation::Rename(const std::shared_ptr<GeometricObject>& object,
                                  const std::string& new_name)
 {
   // Check that plane contains object
@@ -80,11 +80,26 @@ bool PlaneImplementation::Rename(std::shared_ptr<GeometricObject> object,
     return false;
   }
 
-  const auto old_name = object->GetName();
+  // Check if object has no name
+  if (object->GetName().empty())
+  {
+    object->SetName(new_name);
+    name_generator_.AddName(new_name);
+    return true;
+  }
+
+  if (!name_generator_.Rename(object->GetName(), new_name))
+  {
+    return false;
+  }
 
   object->SetName(new_name);
+  return true;
+}
 
-  return name_generator_.Rename(old_name, new_name);
+const NameGenerator& PlaneImplementation::GetNameGenerator() const
+{
+  return name_generator_;
 }
 
 template <class GeometricObjectType>

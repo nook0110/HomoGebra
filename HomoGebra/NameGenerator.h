@@ -39,6 +39,13 @@ struct ParsedSubname
    * \return True if this is less than other, false otherwise.
    */
   bool operator<(const ParsedSubname& other) const;
+
+  /**
+   * \brief Converts parsed subname to string.
+   *
+   * \return [SUBNAME][NUMBER] if number is not empty, [SUBNAME] otherwise.
+   */
+  explicit operator std::string() const;
 };
 
 /**
@@ -74,6 +81,14 @@ struct ParsedName
    * \return True if this is less than other, false otherwise.
    */
   bool operator<(const ParsedName& other) const;
+
+  /**
+   * \brief Converts parsed name to string.
+   *
+   * \return [NAME]_[SUBNAME][NUMBER] if number is not empty, [NAME]_[SUBNAME],
+   * if subname is not empty, [NAME] otherwise.
+   */
+  explicit operator std::string() const;
 };
 
 using NameDictionary = Dictionary<ParsedName>;
@@ -226,6 +241,15 @@ class NameGenerator
    * \return Adjusted subname (to avoid duplicates).
    */
   [[nodiscard]] ParsedName GenerateNumber(const ParsedName& parsed_name) const;
+
+  /**
+   * \brief Checks if name is empty.
+   *
+   * \param parsed_name Name to check.
+   *
+   * \return True if name is empty, false otherwise.
+   */
+  [[nodiscard]] bool IsNameEmpty(const ParsedName& parsed_name) const;
 
   NameDictionary used_names_;  //!< Dictionary of used names.
 };
