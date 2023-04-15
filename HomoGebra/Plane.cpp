@@ -1,5 +1,7 @@
 #include "Plane.h"
 
+#include "GeometricObject.h"
+
 void Plane::AddObject(const std::shared_ptr<GeometricObject>& object)
 {
   // Add object to plane
@@ -72,4 +74,10 @@ void Plane::draw(sf::RenderTarget& target, sf::RenderStates states) const
   {
     target.draw(*object.get(), states);
   }
+}
+
+bool Plane::Rename(std::shared_ptr<GeometricObject> object,
+                   const std::string& new_name)
+{
+  return implementation_.Rename(object, new_name);
 }

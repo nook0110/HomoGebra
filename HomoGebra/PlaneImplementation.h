@@ -1,7 +1,10 @@
 #pragma once
+#include <memory>
 #include <vector>
 
-#include "GeometricObject.h"
+#include "NameGenerator.h"
+
+class GeometricObject;
 
 /**
  * \brief Implementation of Plane.
@@ -32,6 +35,15 @@ class PlaneImplementation
    * \param object Object to destroy.
    */
   void RemoveObject(const GeometricObject* object);
+
+  /**
+   * \brief Check if object is contained.
+   *
+   * \param object Object to check.
+   *
+   * \return True if object is contained, false otherwise.
+   */
+  [[nodiscard]] bool IsContained(const GeometricObject* object) const;
 
   /**
    * \brief Get all objects of GeometricObjectType.
@@ -73,6 +85,17 @@ class PlaneImplementation
    */
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetConics() const;
 
+  /**
+   * \brief Renames object.
+   *
+   * \param object Object to rename.
+   * \param new_name New name.
+   *
+   * \return True if object was renamed, false otherwise.
+   */
+  bool Rename(std::shared_ptr<GeometricObject> object,
+              const std::string& new_name);
+
  private:
   /**
    * Member data.
@@ -80,4 +103,6 @@ class PlaneImplementation
 
   std::vector<std::shared_ptr<GeometricObject>>
       objects_;  //!< All objects on the plane.
+
+  NameGenerator name_generator_;  //!< Name generator.
 };

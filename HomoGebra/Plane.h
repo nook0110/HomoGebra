@@ -86,6 +86,17 @@ class Plane final : public sf::Drawable
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  /**
+   * \brief Renames object.
+   *
+   * \param object Object to rename.
+   * \param new_name New name of object.
+   *
+   * \return True if object was renamed, false otherwise.
+   */
+  bool Rename(std::shared_ptr<GeometricObject> object,
+              const std::string& new_name);
+
  private:
   PlaneImplementation implementation_;  //!< Implementation of plane
   PlaneBody body_;                      //!< Body of plane

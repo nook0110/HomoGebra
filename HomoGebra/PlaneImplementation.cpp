@@ -1,6 +1,9 @@
 ﻿#include "PlaneImplementation.h"
 
+#include <cassert>
 #include <functional>
+
+#include "GeometricObject.h"
 
 void PlaneImplementation::AddObject(
     const std::shared_ptr<GeometricObject>& object)
@@ -17,6 +20,14 @@ void PlaneImplementation::RemoveObject(const GeometricObject* object)
                      [object](const std::shared_ptr<GeometricObject>& obj)
                      { return obj.get() == object; }),
       objects_.end());
+}
+
+bool PlaneImplementation::IsContained(const GeometricObject* object) const
+{
+  // Check if object is in vector of all objects
+  return std::find_if(objects_.begin(), objects_.end(),
+                      [object](const std::shared_ptr<GeometricObject>& obj)
+                      { return obj.get() == object; }) != objects_.end();
 }
 
 const std::vector<std::shared_ptr<GeometricObject>>&
@@ -57,6 +68,23 @@ std::vector<std::shared_ptr<GeometricObject>> PlaneImplementation::GetConics()
                [](const std::shared_ptr<GeometricObject>& object)
                { return std::dynamic_pointer_cast<Conic>(object); });
   return conics;
+}
+
+bool PlaneImplementation::Rename(std::shared_ptr<GeometricObject> object,
+                                 const std::string& new_name)
+{
+  // Check that plane contains object
+  if (!IsContained(object.get()))
+  {
+    assert(false);
+    return false;
+  }
+
+  const auto old_name = object->GetName();
+
+  object->SetName(new_name);
+
+  return name_generator_.Rename(old_name, new_name);
 }
 
 template <class GeometricObjectType>

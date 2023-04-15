@@ -4,16 +4,79 @@
 
 #include "Dictionary.h"
 
-using OptionalNumber = std::optional<size_t>;
+using ParsedNumber = std::optional<size_t>;
 
-using NumberDictionary = Dictionary<OptionalNumber>;
-using ParsedNumber = NumberDictionary::ParsedItem;
+/**
+ * \brief Struct that contains parsed subname
+ *
+ * \author nook0110
+ *
+ * \version 0.3
+ *
+ * \date April 2023
+ */
+struct ParsedSubname
+{
+  std::string subname;  //!< Subname.
+  ParsedNumber number;  //!< Number.
 
-using SubnameDictionary = Dictionary<std::string, NumberDictionary>;
-using ParsedSubname = SubnameDictionary::ParsedItem;
+  /**
+   * \brief Compares two parsed subnames.
+   *
+   * \param other Other parsed subname.
+   *
+   * \return True if parsed subnames are equal, false otherwise.
+   */
+  bool operator==(const ParsedSubname& other) const;
 
-using NameDictionary = Dictionary<std::string, SubnameDictionary>;
-using ParsedName = NameDictionary::ParsedItem;
+  /**
+   * \brief Compares two parsed subnames.
+   *
+   * \details Compare them by lexicographical order.
+   *
+   * \param other Other parsed subname.
+   *
+   * \return True if this is less than other, false otherwise.
+   */
+  bool operator<(const ParsedSubname& other) const;
+};
+
+/**
+ * \brief Struct that contains parsed name
+ *
+ * \author nook0110
+ *
+ * \version 0.3
+ *
+ * \date April 2023
+ */
+struct ParsedName
+{
+  std::string name;              //!< Name.
+  ParsedSubname parsed_subname;  //!< Parsed subname.
+
+  /**
+   * \brief Compares two parsed names.
+   *
+   * \param other Other parsed name.
+   *
+   * \return True if parsed names are equal, false otherwise.
+   */
+  bool operator==(const ParsedName& other) const;
+
+  /**
+   * \brief Compares two parsed names.
+   *
+   * \details Compare them by lexicographical order.
+   *
+   * \param other Other parsed name.
+   *
+   * \return True if this is less than other, false otherwise.
+   */
+  bool operator<(const ParsedName& other) const;
+};
+
+using NameDictionary = Dictionary<ParsedName>;
 
 /**
  * \brief Class to generate new names.
@@ -23,14 +86,14 @@ using ParsedName = NameDictionary::ParsedItem;
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 0.3
  *
  * \date April 2023
  */
 class NameGenerator
 {
  public:
-  static constexpr char kDelimiter = '_';
+  static constexpr char kDelimiter = '_';  //!< Delimiter for subnames.
 
   /**
    * \brief Default constructor.
@@ -71,6 +134,44 @@ class NameGenerator
    * \return True if name was deleted, false otherwise.
    */
   bool DeleteName(const ParsedName& name);
+
+  /**
+   * \brief Checks if name is used.
+   *
+   * \param name Name to check.
+   *
+   * \return True if name is used, false otherwise.
+   */
+  [[nodiscard]] bool IsNameUsed(const std::string& name) const;
+
+  /**
+   * \brief Checks if name is used.
+   *
+   * \param name Name to check.
+   *
+   * \return True if name is used, false otherwise.
+   */
+  [[nodiscard]] bool IsNameUsed(const ParsedName& name) const;
+
+  /**
+   * \brief Renames name.
+   *
+   * \param old_name Old name.
+   * \param new_name New name.
+   *
+   * \return True if name was renamed, false otherwise.
+   */
+  bool Rename(const std::string& old_name, const std::string& new_name);
+
+  /**
+   * \brief Renames name.
+   *
+   * \param old_name Old name.
+   * \param new_name New name.
+   *
+   * \return True if name was renamed, false otherwise.
+   */
+  bool Rename(const ParsedName& old_name, const ParsedName& new_name);
 
   /**
    * \brief Generate new name.
@@ -128,39 +229,3 @@ class NameGenerator
 
   NameDictionary used_names_;  //!< Dictionary of used names.
 };
-
-inline bool operator==(const ParsedNumber& first, const ParsedNumber& second)
-{
-  return first.item == second.item;
-}
-
-inline bool operator==(const ParsedSubname& first, const ParsedSubname& second)
-{
-  return first.item == second.item && first.sub_item == second.sub_item;
-}
-
-inline bool operator==(const ParsedName& first, const ParsedName& second)
-{
-  return first.item == second.item && first.sub_item == second.sub_item;
-}
-
-inline std::string ToString(const ParsedNumber& parsed_number)
-{
-  // Check if number is empty
-  if (!parsed_number.item.has_value())
-  {
-    return {};
-  }
-  return std::to_string(parsed_number.item.value());
-}
-
-inline std::string ToString(const ParsedSubname& parsed_subname)
-{
-  return parsed_subname.item + ToString(parsed_subname.sub_item);
-}
-
-inline std::string ToString(const ParsedName& parsed_name)
-{
-  return parsed_name.item + NameGenerator::kDelimiter +
-         ToString(parsed_name.sub_item);
-}

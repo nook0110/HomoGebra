@@ -4,6 +4,45 @@
 #include <array>
 #include <functional>
 
+bool ParsedSubname::operator==(const ParsedSubname& other) const
+{
+  return subname == other.subname && number == other.number;
+}
+
+bool ParsedSubname::operator<(const ParsedSubname& other) const
+{
+  if (subname != other.subname)
+  {
+    return subname < other.subname;
+  }
+
+  if (!other.number.has_value())
+  {
+    return false;
+  }
+
+  if (!number.has_value())
+  {
+    return true;
+  }
+
+  return number.value() < other.number;
+}
+
+bool ParsedName::operator==(const ParsedName& other) const
+{
+  return name == other.name && parsed_subname == other.parsed_subname;
+}
+
+bool ParsedName::operator<(const ParsedName& other) const
+{
+  if (name == other.name)
+  {
+    return parsed_subname < other.parsed_subname;
+  }
+  return name < other.name;
+}
+
 bool NameGenerator::AddName(const std::string& name)
 {
   // Parse subname
@@ -30,6 +69,46 @@ bool NameGenerator::DeleteName(const ParsedName& name)
   return used_names_.DeleteItem(name);
 }
 
+bool NameGenerator::IsNameUsed(const std::string& name) const
+{
+  return IsNameUsed(ParseName(name));
+}
+
+bool NameGenerator::IsNameUsed(const ParsedName& name) const
+{
+  return used_names_.IsItemUsed(name);
+}
+
+bool NameGenerator::Rename(const std::string& old_name,
+                           const std::string& new_name)
+{
+  return Rename(ParseName(old_name), ParseName(new_name));
+}
+
+bool NameGenerator::Rename(const ParsedName& old_name,
+                           const ParsedName& new_name)
+{
+  // Check if old name is used
+  if (!IsNameUsed(old_name))
+  {
+    return false;
+  }
+
+  // Check if new name is not used
+  if (IsNameUsed(new_name))
+  {
+    return false;
+  }
+
+  // Delete old name
+  DeleteName(old_name);
+
+  // Add new name
+  AddName(new_name);
+
+  return true;
+}
+
 ParsedName NameGenerator::GenerateName() const
 {
   // We will go through all alphabet
@@ -44,7 +123,7 @@ ParsedName NameGenerator::GenerateName() const
     const auto& [subname, parsed_number] = parsed_subname;
 
     amount_of_uses[character] =
-        static_cast<signed long long>(parsed_number.item.value_or(-1));
+        static_cast<signed long long>(parsed_number.value_or(-1));
   }
 
   // Find first character with the smallest number
@@ -133,9 +212,9 @@ ParsedName NameGenerator::GenerateSubname(const ParsedName& parsed_name) const
 ParsedName NameGenerator::GenerateNumber(const ParsedName& parsed_name) const
 {
   auto adjusted_name = parsed_name;
-  auto& adjusted_subname = adjusted_name.sub_item;
+  auto& [name, parsed_number] = adjusted_name.parsed_subname;
 
-  adjusted_subname.sub_item = {std::nullopt};
+  parsed_number = {std::nullopt};
 
   // Check if empty is not used
   if (!used_names_.IsItemUsed(adjusted_name))
@@ -146,7 +225,7 @@ ParsedName NameGenerator::GenerateNumber(const ParsedName& parsed_name) const
   // Start to check all numbers from 0
   for (size_t number = 0;; ++number)
   {
-    adjusted_subname.sub_item = {number};
+    parsed_number = {number};
 
     // Check if number was used
     if (!used_names_.IsItemUsed(adjusted_name))

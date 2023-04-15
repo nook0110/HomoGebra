@@ -46,6 +46,4 @@ class PlaneBody final : public sf::Drawable
   void MouseEventUpdate(const sf::Event& event);
 
   sf::View view_;  //!< View of the plane.
-
-  NameGenerator name_generator_;  //!< Name generator.
 };

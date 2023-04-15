@@ -1,5 +1,7 @@
 #include "PlaneHelper.h"
 
+#include "GeometricObject.h"
+
 PlaneHelper::PlaneHelper(Plane& plane) : plane_(plane) {}
 
 template <class GeometricObjectType>

@@ -2,6 +2,7 @@
 
 #include "GeometricObjectBody.h"
 #include "GeometricObjectImplementation.h"
+#include "PlaneImplementation.h"
 
 /**
  * \brief Base class for geometric objects.
@@ -159,13 +160,6 @@ class Point final : public GeometricObject
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
   /**
-   * \brief Sets new name of object.
-   *
-   * \param name New name of object.
-   */
-  void SetName(const std::string& name) override;
-
-  /**
    * \brief Gets name of object.
    *
    * \return Name of object.
@@ -174,6 +168,21 @@ class Point final : public GeometricObject
 
   ///@}
  private:
+  /**
+   * \relates PlaneImplementation
+   *
+   * \brief Friend class PlaneImplementation.
+   */
+  friend bool PlaneImplementation::Rename(std::shared_ptr<GeometricObject>,
+                                          const std::string&);
+
+  /**
+   * \brief Sets new name of object.
+   *
+   * \param name New name of object.
+   */
+  void SetName(const std::string& name) override;
+
   /**
    * \brief Notify observers that this objected is destroyed.
    *

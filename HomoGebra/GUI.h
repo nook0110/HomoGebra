@@ -206,9 +206,11 @@ class PointSubmenu
   /**
    * \brief Construct menu with given point.
    *
+   * \param plane Plane where point is located.
    * \param point Point to edit.
    */
-  explicit PointSubmenu(const std::shared_ptr<Point>& point);
+  explicit PointSubmenu(Plane& plane,
+                        const std::shared_ptr<Point>& point = nullptr);
 
   /**
    * \brief Sets new point to edit.
@@ -224,6 +226,10 @@ class PointSubmenu
   void Construct();
 
  private:
+  /**
+   * \brief Render name editor.
+   *
+   */
   void ConstructNameEditor();
 
   /**
@@ -241,9 +247,11 @@ class PointSubmenu
   /**
    * Member data.
    */
-  std::string name_;
+
+  std::string name_;                               //!< Name of the point.
   HomogeneousCoordinateEditor coordinate_editor_;  //!< Editor for coordinates
   std::shared_ptr<Point> point_;                   //!< Point to edit.
+  Plane& plane_;  //!< Plane where point is located.
 };
 }  // namespace Editor
 
@@ -266,7 +274,7 @@ class ObjectMenu final : public EditorWindow
    * \param name Name of the menu.
    */
   explicit ObjectMenu(Plane& plane, const std::string& name)
-      : EditorWindow(name), plane_(plane)
+      : EditorWindow(name), point_submenu_(plane), plane_(plane)
   {}
 
   void Construct() override;
@@ -368,7 +376,7 @@ class ObjectMenu final : public EditorWindow
 
   int current_object_ = 0;  //!< Index of the current object.
 
-  Editor::PointSubmenu point_submenu_{nullptr};  //!< Submenu for points.
+  Editor::PointSubmenu point_submenu_;  //!< Submenu for points.
 
   Plane& plane_;  //!< Plane which we can edit.
 };

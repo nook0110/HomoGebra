@@ -268,7 +268,8 @@ Complex HomogeneousCoordinateEditor::ComplexEditor::GetNumber() const
   return Complex{real_part_, imaginary_part_};
 }
 
-PointSubmenu::PointSubmenu(const std::shared_ptr<Point>& point) : point_(point)
+PointSubmenu::PointSubmenu(Plane& plane, const std::shared_ptr<Point>& point)
+    : point_(point), plane_(plane)
 {}
 
 void PointSubmenu::SetPoint(const std::shared_ptr<Point>& point)
@@ -303,7 +304,6 @@ void PointSubmenu::ConstructNameEditor()
   if (ImGui::Button("Set name"))
   {
     // Set point name
-    point_->SetName(name_);
   }
 }
 
