@@ -209,15 +209,14 @@ class PointSubmenu
    * \param plane Plane where point is located.
    * \param point Point to edit.
    */
-  explicit PointSubmenu(Plane& plane,
-                        const std::shared_ptr<Point>& point = nullptr);
+  explicit PointSubmenu(Plane& plane, std::shared_ptr<Point> point = nullptr);
 
   /**
    * \brief Sets new point to edit.
    *
    * \param point New point to edit.
    */
-  void SetPoint(const std::shared_ptr<Point>& point);
+  void SetPoint(std::shared_ptr<Point> point);
 
   /**
    * \brief Renders the menu.
@@ -359,21 +358,21 @@ class ObjectMenu final : public EditorWindow
    *
    * \param point Point to edit.
    */
-  void Construct(const std::shared_ptr<Point>& point);
+  void Construct(std::shared_ptr<Point> point);
 
   /**
    * \brief Constructs editor of line.
    *
    * \param line Object to edit.
    */
-  void Construct(const std::shared_ptr<Line>& line);
+  void Construct(std::shared_ptr<Line> line);
 
   /**
    * \brief Constructs editor of conic.
    *
    * \param conic Line to edit.
    */
-  void Construct(const std::shared_ptr<Conic>& conic);
+  void Construct(std::shared_ptr<Conic> conic);
 
   /**
    * Member data.

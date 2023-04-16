@@ -20,7 +20,7 @@ std::shared_ptr<Point> PointFactory::OnPlane(const PointEquation& coordinate)
   const auto& name_generator = plane_.GetNameGenerator();
 
   // Rename point
-  plane_.Rename(point, static_cast<std::string>(name_generator.GenerateName()));
+  point->SetName(static_cast<std::string>(name_generator.GenerateName()));
 
   // Return point
   return point;
@@ -85,7 +85,7 @@ std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first,
   augmentation.back() = Complex{1};
 
   // Get solution
-  auto solution = matrix.GetSolution();
+  const auto solution = matrix.GetSolution();
 
   // Check if solution exists
   assert((solution.has_value()));

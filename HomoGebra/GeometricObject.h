@@ -72,7 +72,9 @@ class GeometricObject : public sf::Drawable
   [[nodiscard]] virtual float GetDistance(sf::Vector2f position) const
   {
     return 0;
-  };
+  }
+
+  virtual void Attach(std::shared_ptr<GeometricObjectObserver> observer) = 0;
 
  protected:
   /**
@@ -136,6 +138,8 @@ class Point final : public GeometricObject
    */
   [[nodiscard]] const PointEquation& GetEquation() const;
 
+  void Attach(std::shared_ptr<GeometricObjectObserver> observer) override;
+
   ///@}
 
   /**
@@ -160,6 +164,13 @@ class Point final : public GeometricObject
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
   /**
+   * \brief Sets new name of object.
+   *
+   * \param name New name of object.
+   */
+  void SetName(const std::string& name) override;
+
+  /**
    * \brief Gets name of object.
    *
    * \return Name of object.
@@ -169,26 +180,13 @@ class Point final : public GeometricObject
   ///@}
  private:
   /**
-   * \relates PlaneImplementation
-   *
-   * \brief Friend class PlaneImplementation.
-   */
-  friend bool PlaneImplementation::Rename(
-      const std::shared_ptr<GeometricObject>&, const std::string&);
-
-  /**
-   * \brief Sets new name of object.
-   *
-   * \param name New name of object.
-   */
-  void SetName(const std::string& name) override;
-
-  /**
    * \brief Notify observers that this objected is destroyed.
    *
    * \param event Event of destruction.
    */
   void Notify(const Event::Destroyed& event) const;
+
+  void Notify(const Event::Renamed& event) const;
 
   /**
    * \brief Calculates size of a body
@@ -284,6 +282,8 @@ class Line final : public GeometricObject
    */
   [[nodiscard]] const std::string& GetName() const override { return {}; };
 
+  void Attach(std::shared_ptr<GeometricObjectObserver> observer) override {}
+
  private:
   /**
    * \brief Notify observers that this objected is destroyed
@@ -326,7 +326,7 @@ class Conic final : public GeometricObject
    *
    * \param plane Plane, where this object is located.
    */
-  void Destroy(Plane& plane) final;
+  void Destroy(Plane& plane) override;
 
   /**
    * \brief Notify observers that this objected is destroyed
@@ -362,7 +362,9 @@ class Conic final : public GeometricObject
    *
    * \return Name of object.
    */
-  [[nodiscard]] const std::string& GetName() const override { return {}; };
+  [[nodiscard]] const std::string& GetName() const override { return {}; }
+
+  void Attach(std::shared_ptr<GeometricObjectObserver> observer) override {}
 
  private:
   /*

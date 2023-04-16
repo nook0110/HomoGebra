@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "NameGenerator.h"
+#include "Observer.h"
 
 class GeometricObject;
 
@@ -19,7 +20,7 @@ class GeometricObject;
  *
  * \see Plane
  */
-class PlaneImplementation
+class PlaneImplementation : public GeometricObjectObserver
 {
  public:
   /**
@@ -86,22 +87,15 @@ class PlaneImplementation
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetConics() const;
 
   /**
-   * \brief Renames object.
-   *
-   * \param object Object to rename.
-   * \param new_name New name.
-   *
-   * \return True if object was renamed, false otherwise.
-   */
-  bool Rename(const std::shared_ptr<GeometricObject>& object,
-              const std::string& new_name);
-
-  /**
    * \brief Get name generator.
    *
    * \return Name generator.
    */
   [[nodiscard]] const NameGenerator& GetNameGenerator() const;
+
+  void Update(const Event::Moved& moved_event) override;
+  void Update(const Event::Destroyed& destroyed_event) override;
+  void Update(const Event::Renamed& renamed_event) override;
 
  private:
   /**

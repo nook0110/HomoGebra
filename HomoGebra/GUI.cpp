@@ -2,12 +2,11 @@
 
 #include <imgui-SFML.h>
 #include <imgui.h>
-#include <imgui_internal.h>
 #include <imgui_stdlib.h>
 
 #include <cassert>
 #include <functional>
-#include <iostream>
+#include <utility>
 
 using namespace Gui;
 using namespace Editor;
@@ -78,16 +77,16 @@ void ObjectMenu::Construct(const std::shared_ptr<GeometricObject>& object)
   }
 }
 
-void Gui::ObjectMenu::Construct(const std::shared_ptr<Point>& object)
+void Gui::ObjectMenu::Construct(std::shared_ptr<Point> point)
 {
   // Set current point
-  point_submenu_.SetPoint(object);
+  point_submenu_.SetPoint(std::move(point));
 
   // Construct submenu
   point_submenu_.Construct();
 }
 
-void ObjectMenu::Construct(const std::shared_ptr<Line>& line)
+void ObjectMenu::Construct(std::shared_ptr<Line> line)
 {
   // Construct line submenu
   // LineSubmenu submenu(line);
@@ -96,7 +95,7 @@ void ObjectMenu::Construct(const std::shared_ptr<Line>& line)
   // submenu.Construct();
 }
 
-void ObjectMenu::Construct(const std::shared_ptr<Conic>& conic) {}
+void ObjectMenu::Construct(std::shared_ptr<Conic> conic) {}
 
 std::vector<std::shared_ptr<GeometricObject>> Gui::ObjectMenu::GetObjectsOfType(
     const ObjectType type) const
@@ -113,13 +112,14 @@ std::vector<std::shared_ptr<GeometricObject>> Gui::ObjectMenu::GetObjectsOfType(
       return plane_.GetObjects<Conic>();
     default:
       assert(false);
+      return {};
   }
 }
 
 bool ObjectMenu::ObjectsNameGetter(void* data, int index, const char** name)
 {
   // Convert data to std::vector<std::shared_ptr<GeometricObject>> pointer
-  const std::vector<std::shared_ptr<GeometricObject>> objects =
+  const std::vector<std::shared_ptr<GeometricObject>>& objects =
       *static_cast<std::vector<std::shared_ptr<GeometricObject>>*>(data);
 
   // Check if index is valid
@@ -162,7 +162,7 @@ void Gui::ObjectMenu::ConstructObjectSelector()
 
   // Construct object selector
   ImGui::ListBox("Objects", &current_object_, ObjectsNameGetter, &objects,
-                 objects.size());
+                 static_cast<int>(objects.size()));
 
   // Construct object editor
   if (current_object_ >= 0 && current_object_ < objects.size())
@@ -269,13 +269,13 @@ Complex HomogeneousCoordinateEditor::ComplexEditor::GetNumber() const
   return Complex{real_part_, imaginary_part_};
 }
 
-PointSubmenu::PointSubmenu(Plane& plane, const std::shared_ptr<Point>& point)
-    : point_(point), plane_(plane)
+PointSubmenu::PointSubmenu(Plane& plane, std::shared_ptr<Point> point)
+    : point_(std::move(point)), plane_(plane)
 {}
 
-void PointSubmenu::SetPoint(const std::shared_ptr<Point>& point)
+void PointSubmenu::SetPoint(std::shared_ptr<Point> point)
 {
-  point_ = point;
+  point_ = std::move(point);
 }
 
 void PointSubmenu::Construct()
@@ -308,7 +308,7 @@ void PointSubmenu::ConstructNameEditor()
   if (ImGui::Button("Set name"))
   {
     // Set point name
-    plane_.Rename(point_, name_);
+    point_->SetName(name_);
   }
 }
 

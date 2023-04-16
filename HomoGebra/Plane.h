@@ -1,4 +1,5 @@
 #pragma once
+#include "Observer.h"
 #include "PlaneBody.h"
 #include "PlaneImplementation.h"
 
@@ -94,8 +95,7 @@ class Plane final : public sf::Drawable
    *
    * \return True if object was renamed, false otherwise.
    */
-  bool Rename(const std::shared_ptr<GeometricObject>& object,
-              const std::string& new_name);
+  bool Rename(GeometricObject* object, const std::string& new_name);
 
   /**
    * \brief Returns name generator.

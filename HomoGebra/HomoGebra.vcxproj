@@ -165,6 +165,7 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="NameGenerator.cpp" />
+    <ClCompile Include="Observer.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="PlaneBody.cpp" />
     <ClCompile Include="PlaneHelper.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="NameGenerator.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="PlaneBody.h" />
     <ClInclude Include="PlaneHelper.h" />

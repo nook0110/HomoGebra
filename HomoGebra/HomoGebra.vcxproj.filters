@@ -130,6 +130,7 @@
     <ClCompile Include="NameGenerator.cpp">
       <Filter>Sources\NameGen</Filter>
     </ClCompile>
+    <ClCompile Include="Observer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeometricObject.h">
@@ -182,6 +183,9 @@
     </ClInclude>
     <ClInclude Include="Dictionary.h">
       <Filter>Headers\NameGen</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

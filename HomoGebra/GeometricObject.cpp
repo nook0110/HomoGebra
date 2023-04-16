@@ -14,6 +14,12 @@ void Point::Notify(const Event::Destroyed& event) const
   implementation_.Notify(event);
 }
 
+void Point::Notify(const Event::Renamed& event) const
+{
+  // Call implementation method
+  implementation_.Notify(event);
+}
+
 float Point::CalculateSizeOfBody(const sf::RenderTarget& target)
 {
   // Calculate position of pixel with coordinate (0, 0)
@@ -51,6 +57,12 @@ const PointEquation& Point::GetEquation() const
   return implementation_.GetEquation();
 }
 
+void Point::Attach(std::shared_ptr<GeometricObjectObserver> observer)
+{
+  // Call implementation method
+  implementation_.Attach(observer);
+}
+
 void Point::UpdateBody(sf::RenderTarget& target)
 {
   // Calculate size of body
@@ -65,7 +77,12 @@ void Point::draw(sf::RenderTarget& target, sf::RenderStates states) const
   target.draw(body_, states);
 }
 
-void Point::SetName(const std::string& name) { body_.SetName(name); }
+void Point::SetName(const std::string& name)
+{
+  Notify(Event::Renamed{this, body_.GetName(), name});
+
+  body_.SetName(name);
+}
 
 const std::string& Point::GetName() const
 {

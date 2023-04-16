@@ -1,5 +1,6 @@
 #pragma once
 #include "GeometricObject.h"
+#include "Observer.h"
 
 /**
  * \brief Construction that loses its properties after projective
@@ -55,7 +56,7 @@ class StrongConstruction
  * \details Updates positions of objects
  * \see GeometricObjectImplementation
  */
-class Construction : public ConstructionObserver
+class Construction : public GeometricObjectObserver
 {
  public:
   /**
@@ -112,6 +113,8 @@ class ConstructionPoint : public Construction
    * \param event Tag [Event::Destroyed] for tag dispatch.
    */
   void Update(const Event::Destroyed& event) override;
+
+  void Update(const Event::Renamed& event) override;
 
  protected:
   /**
