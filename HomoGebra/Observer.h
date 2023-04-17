@@ -16,7 +16,7 @@ namespace Event
  */
 struct Moved
 {
-  GeometricObject* object;
+  GeometricObject* object;  //!< Object which was moved.
 };
 
 /**
@@ -31,6 +31,9 @@ struct Destroyed
   Plane& plane;             //!< Plane where object was destroyed.
 };
 
+/**
+ * \brief Tag that shows that objects was renamed.
+ */
 struct Renamed
 {
   /*
@@ -88,6 +91,13 @@ class GeometricObjectObserver
    */
   virtual void Update(const Event::Destroyed& destroyed_event) = 0;
 
+  /**
+   * \brief Update the object, because sth was renamed.
+   *
+   * \param renamed_event Tag with some information
+   *
+   * \see Event::Renamed
+   */
   virtual void Update(const Event::Renamed& renamed_event) = 0;
 };
 
@@ -108,6 +118,9 @@ class GeometricObjectObserver
 class ObservableGeometricObject
 {
  public:
+  /**
+   * \brief Default destructor.
+   */
   virtual ~ObservableGeometricObject() = default;
 
   /**
@@ -127,17 +140,28 @@ class ObservableGeometricObject
   /**
    * \brief Notify all subscribed observers that object was moved.
    *
-   * \param event Tag for tag dispatch.
+   * \param moved_event Tag with some information.
+   *
+   * \see Event::Moved
    */
-  void Notify(const Event::Moved& event) const;
+  void Notify(const Event::Moved& moved_event) const;
 
   /**
    * \brief Notify all subscribed observers that object was destroyed.
    *
-   * \param event Tag with some information (Plane where it was destroyed).
+   * \param destroyed Tag with some information (Plane where it was destroyed).
+   *
+   * \see Event:Destroyed
    */
-  void Notify(const Event::Destroyed& event) const;
+  void Notify(const Event::Destroyed& destroyed) const;
 
+  /**
+   * \brief Notify all subscribed observers that object was renamed.
+   *
+   * \param renamed_event Tag with some information.
+   *
+   * \see Event::Renamed
+   */
   void Notify(const Event::Renamed& renamed_event) const;
 
  private:

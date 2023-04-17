@@ -31,9 +31,9 @@ void Global::ProcessEvent(const sf::Event& event)
   ImGui::SFML::ProcessEvent(event);
 }
 
-void EditorWindow::Begin() const { ImGui::Begin(name_.data()); }
+void MenuWindow::Begin() const { ImGui::Begin(name_.data()); }
 
-void EditorWindow::End() const { ImGui::End(); }
+void MenuWindow::End() const { ImGui::End(); }
 
 void ObjectMenu::Construct()
 {
@@ -116,24 +116,6 @@ std::vector<std::shared_ptr<GeometricObject>> Gui::ObjectMenu::GetObjectsOfType(
   }
 }
 
-bool ObjectMenu::ObjectsNameGetter(void* data, int index, const char** name)
-{
-  // Convert data to std::vector<std::shared_ptr<GeometricObject>> pointer
-  const std::vector<std::shared_ptr<GeometricObject>>& objects =
-      *static_cast<std::vector<std::shared_ptr<GeometricObject>>*>(data);
-
-  // Check if index is valid
-  if (index < 0 || index >= static_cast<int>(objects.size()))
-  {
-    return false;
-  }
-
-  // Set name
-  *name = objects[index]->GetName().data();
-
-  return true;
-}
-
 void ObjectMenu::ConstructObjectSelector()
 {
   switch (static_cast<ObjectType>(current_type_))
@@ -160,15 +142,38 @@ void Gui::ObjectMenu::ConstructObjectSelector()
   std::vector<std::shared_ptr<GeometricObject>> objects =
       plane_.GetObjects<GeometricObjectType>();
 
+  static int current_object = 0;
+
   // Construct object selector
-  ImGui::ListBox("Objects", &current_object_, ObjectsNameGetter, &objects,
+  ImGui::ListBox("Objects", &current_object, ObjectsNameGetter, &objects,
                  static_cast<int>(objects.size()));
 
   // Construct object editor
-  if (current_object_ >= 0 && current_object_ < objects.size())
+  if (current_object >= 0 && current_object < static_cast<int>(objects.size()))
   {
     Construct(std::dynamic_pointer_cast<GeometricObjectType>(
-        objects[current_object_]));
+        objects[current_object]));
+  }
+}
+
+template <class GeometricObjectType>
+void Constructor::ObjectSelector<GeometricObjectType>::Construct()
+{
+  // Get objects of type
+  std::vector<std::shared_ptr<GeometricObject>> objects =
+      plane_.GetObjects<GeometricObjectType>();
+
+  static int current_object = 0;
+
+  // Construct object selector
+   ImGui::ListBox("Objects", &current_object, ObjectsNameGetter, &objects,
+                static_cast<int>(objects.size()));
+
+  // Construct object editor
+  if (current_object >= 0 && current_object < static_cast<int>(objects.size()))
+  {
+    Construct(std::dynamic_pointer_cast<GeometricObjectType>(
+        objects[current_object]));
   }
 }
 

@@ -2,10 +2,10 @@
 
 #include "GeometricObject.h"
 
-void Plane::AddObject(const std::shared_ptr<GeometricObject>& object)
+void Plane::AddObject(std::shared_ptr<GeometricObject> object)
 {
   // Add object to plane
-  implementation_.AddObject(object);
+  implementation_.AddObject(std::move(object));
 }
 
 template <class GeometricObjectType>

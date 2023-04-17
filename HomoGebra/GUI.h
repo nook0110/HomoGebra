@@ -6,6 +6,33 @@
 #include "Plane.h"
 #include "SFML/Graphics.hpp"
 
+/**
+ * \brief Getter for objects names.
+ *
+ * \param [in] data Pointer to the vector of objects.
+ * \param [in] index Index of the object.
+ * \param [out] name Name of the object.
+ *
+ * \return True if the object exists, false otherwise.
+ */
+inline bool ObjectsNameGetter(void* data, int index, const char** name)
+{
+  // Convert data to std::vector<std::shared_ptr<GeometricObject>> pointer
+  const std::vector<std::shared_ptr<GeometricObject>>& objects =
+      *static_cast<std::vector<std::shared_ptr<GeometricObject>>*>(data);
+
+  // Check if index is valid
+  if (index < 0 || index >= static_cast<int>(objects.size()))
+  {
+    return false;
+  }
+
+  // Set name
+  *name = objects[index]->GetName().data();
+
+  return true;
+}
+
 namespace Gui
 {
 /**
@@ -60,7 +87,7 @@ class Global
  *
  * \date February 2023
  */
-class EditorWindow
+class MenuWindow
 {
  public:
   /**
@@ -68,13 +95,13 @@ class EditorWindow
    *
    * \param name Name of the window.
    */
-  explicit EditorWindow(std::string name) : name_(std::move(name)) {}
+  explicit MenuWindow(std::string name) : name_(std::move(name)) {}
 
   /**
    * \brief Default destructor.
    *
    */
-  virtual ~EditorWindow() = default;
+  virtual ~MenuWindow() = default;
 
   /**
    * \brief Begins constructing the window.
@@ -269,7 +296,7 @@ class PointSubmenu
  *
  * \date February 2023
  */
-class ObjectMenu final : public EditorWindow
+class ObjectMenu final : public MenuWindow
 {
  public:
   /**
@@ -278,8 +305,8 @@ class ObjectMenu final : public EditorWindow
    * \param plane Plane to edit.
    * \param name Name of the menu.
    */
-  explicit ObjectMenu(Plane& plane, const std::string& name)
-      : EditorWindow(name), point_submenu_(plane), plane_(plane)
+  explicit ObjectMenu(Plane& plane, const std::string& name = "Object menu.")
+      : MenuWindow(name), point_submenu_(plane), plane_(plane)
   {}
 
   void Construct() override;
@@ -320,17 +347,6 @@ class ObjectMenu final : public EditorWindow
    */
   [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetObjectsOfType(
       const ObjectType type) const;
-
-  /**
-   * \brief Getter for objects names.
-   *
-   * \param [in] data Pointer to the vector of objects.
-   * \param [in] index Index of the object.
-   * \param [out] name Name of the object.
-   *
-   * \return True if the object exists, false otherwise.
-   */
-  static bool ObjectsNameGetter(void* data, int index, const char** name);
 
   /**
    * \brief Constructs menu to select object by name.
@@ -379,10 +395,38 @@ class ObjectMenu final : public EditorWindow
    */
   int current_type_ = static_cast<int>(ObjectType::kAll);
 
-  int current_object_ = 0;  //!< Index of the current object.
-
   Editor::PointSubmenu point_submenu_;  //!< Submenu for points.
 
   Plane& plane_;  //!< Plane which we can edit.
+};
+
+namespace Constructor
+{
+template <class GeometricObjectType>
+class ObjectSelector
+{
+ public:
+  explicit ObjectSelector(Plane& plane) : plane_(plane) {}
+
+  void Construct();
+
+  [[nodiscard]] std::shared_ptr<GeometricObjectType> GetObject() const;
+
+ private:
+  Plane& plane_;
+  std::shared_ptr<GeometricObjectType> object_;
+};
+}  // namespace Constructor
+class ConstructMenu final : public MenuWindow
+{
+ public:
+  explicit ConstructMenu(Plane& plane, const std::string& name = "Object menu.")
+      : MenuWindow(name), plane_(plane)
+  {}
+
+  void Construct() override;
+
+ private:
+  Plane& plane_;
 };
 }  // namespace Gui

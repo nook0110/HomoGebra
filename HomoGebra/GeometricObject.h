@@ -74,6 +74,11 @@ class GeometricObject : public sf::Drawable
     return 0;
   }
 
+  /**
+   * \brief Attaches observer to this object.
+   *
+   * \param observer Observer to attach.
+   */
   virtual void Attach(std::shared_ptr<GeometricObjectObserver> observer) = 0;
 
  protected:
@@ -180,12 +185,17 @@ class Point final : public GeometricObject
   ///@}
  private:
   /**
-   * \brief Notify observers that this objected is destroyed.
+   * \brief Notify observers that this objected was destroyed.
    *
    * \param event Event of destruction.
    */
   void Notify(const Event::Destroyed& event) const;
 
+  /**
+   * \brief Notify observers that this objected was renamed.
+   *
+   * \param event Event of renaming.
+   */
   void Notify(const Event::Renamed& event) const;
 
   /**
@@ -282,6 +292,11 @@ class Line final : public GeometricObject
    */
   [[nodiscard]] const std::string& GetName() const override { return {}; };
 
+  /**
+   * \brief Attaches observer to this object.
+   *
+   * \param observer Observer to attach.
+   */
   void Attach(std::shared_ptr<GeometricObjectObserver> observer) override {}
 
  private:
@@ -364,6 +379,11 @@ class Conic final : public GeometricObject
    */
   [[nodiscard]] const std::string& GetName() const override { return {}; }
 
+  /**
+   * \brief Attaches observer to this object.
+   *
+   * \param observer Observer to attach.
+   */
   void Attach(std::shared_ptr<GeometricObjectObserver> observer) override {}
 
  private:

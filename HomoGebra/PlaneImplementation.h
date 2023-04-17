@@ -28,7 +28,7 @@ class PlaneImplementation : public GeometricObjectObserver
    *
    * \param object Object to add
    */
-  void AddObject(const std::shared_ptr<GeometricObject>& object);
+  void AddObject(std::shared_ptr<GeometricObject> object);
 
   /**
    * \brief Remove object.

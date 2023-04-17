@@ -23,7 +23,7 @@ class Plane final : public sf::Drawable
    *
    * \param object Pointer to an object.
    */
-  void AddObject(const std::shared_ptr<GeometricObject>& object);
+  void AddObject(std::shared_ptr<GeometricObject> object);
 
   /**
    * \brief Returns objects of GeometricObjectType.

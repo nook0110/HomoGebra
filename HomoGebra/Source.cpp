@@ -1,7 +1,6 @@
 #include "GUI.h"
 #include "GeometricObject.h"
 #include "GeometricObjectFactory.h"
-#include "NameGenerator.h"
 #include "SFML/Graphics.hpp"
 #include "imgui-SFML.h"
 #include "imgui.h"
@@ -24,14 +23,11 @@ int main()
   ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
   Plane plane;
+
   PointFactory factory(plane);
   factory.OnPlane(PointEquation{HomogeneousCoordinate{100, 100}});
 
-  Gui::ObjectMenu menu(plane, std::string("Plane"));
-
-  auto objects = plane.GetObjects<Line>();
-
-  double real_part_ = 0;
+  Gui::ObjectMenu menu(plane);
 
   while (window.isOpen())
   {
@@ -39,6 +35,8 @@ int main()
 
     while (window.pollEvent(event))
     {
+      if (event.type == sf::Event::Closed) window.close();
+
       Gui::Global::ProcessEvent(event);
 
       if (auto const& io = ImGui::GetIO();
@@ -48,8 +46,6 @@ int main()
       }
 
       plane.Update(event);
-
-      if (event.type == sf::Event::Closed) window.close();
     }
 
     window.clear(sf::Color::White);

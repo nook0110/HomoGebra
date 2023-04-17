@@ -59,6 +59,12 @@
     <Filter Include="Sources\NameGen">
       <UniqueIdentifier>{c0522fe4-4791-4da8-9901-f10fe2ee47ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headers\Observer">
+      <UniqueIdentifier>{4f50adfa-55f5-423e-9166-ffb9541f1405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Observer">
+      <UniqueIdentifier>{dce818d7-fb40-4255-81ad-6d277ded8abb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui.cpp">
@@ -130,7 +136,9 @@
     <ClCompile Include="NameGenerator.cpp">
       <Filter>Sources\NameGen</Filter>
     </ClCompile>
-    <ClCompile Include="Observer.cpp" />
+    <ClCompile Include="Observer.cpp">
+      <Filter>Sources\Observer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeometricObject.h">
@@ -185,7 +193,7 @@
       <Filter>Headers\NameGen</Filter>
     </ClInclude>
     <ClInclude Include="Observer.h">
-      <Filter>Headers</Filter>
+      <Filter>Headers\Observer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

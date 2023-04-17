@@ -1,17 +1,16 @@
 ﻿#include "PlaneImplementation.h"
 
-#include <cassert>
 #include <functional>
 
 #include "GeometricObject.h"
 
-void PlaneImplementation::AddObject(
-    const std::shared_ptr<GeometricObject>& object)
+void PlaneImplementation::AddObject(std::shared_ptr<GeometricObject> object)
 {
-  // Add object to vector of all objects
-  objects_.push_back(object);
-
+  // Attach plane as an observer to object
   object->Attach(std::shared_ptr<GeometricObjectObserver>(this));
+
+  // Add object to vector of all objects
+  objects_.push_back(std::move(object));
 }
 
 void PlaneImplementation::RemoveObject(const GeometricObject* object)
