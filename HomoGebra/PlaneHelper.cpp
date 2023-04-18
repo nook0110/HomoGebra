@@ -5,13 +5,13 @@
 PlaneHelper::PlaneHelper(Plane& plane) : plane_(plane) {}
 
 template <class GeometricObjectType>
-std::shared_ptr<GeometricObjectType> PlaneHelper::GetNearestObject(
-    const sf::Vector2f& position, const float max_distance)
+GeometricObjectType* PlaneHelper::GetNearestObject(const sf::Vector2f& position,
+                                                   const float max_distance)
 {
   // Get all GeometricObjectType objects
   auto objects = plane_.GetObjects<GeometricObjectType>();
 
-  std::shared_ptr<GeometricObjectType> nearest_object{nullptr};
+  GeometricObjectType* nearest_object{nullptr};
   float current_distance = std::numeric_limits<float>::max();
 
   // Find nearest
@@ -27,7 +27,7 @@ std::shared_ptr<GeometricObjectType> PlaneHelper::GetNearestObject(
       current_distance = distance;
 
       // Update nearest object
-      nearest_object = std::dynamic_pointer_cast<GeometricObjectType>(object);
+      nearest_object = dynamic_cast<GeometricObjectType*>(object);
     }
   }
 
@@ -42,11 +42,11 @@ std::shared_ptr<GeometricObjectType> PlaneHelper::GetNearestObject(
   return nullptr;
 }
 
-template std::shared_ptr<GeometricObject> PlaneHelper::GetNearestObject(
+template GeometricObject* PlaneHelper::GetNearestObject(
     const sf::Vector2f& position, const float max_distance);
-template std::shared_ptr<Point> PlaneHelper::GetNearestObject(
-    const sf::Vector2f& position, const float max_distance);
-template std::shared_ptr<Line> PlaneHelper::GetNearestObject(
-    const sf::Vector2f& position, const float max_distance);
-template std::shared_ptr<Conic> PlaneHelper::GetNearestObject(
-    const sf::Vector2f& position, const float max_distance);
+template Point* PlaneHelper::GetNearestObject(const sf::Vector2f& position,
+                                              const float max_distance);
+template Line* PlaneHelper::GetNearestObject(const sf::Vector2f& position,
+                                             const float max_distance);
+template Conic* PlaneHelper::GetNearestObject(const sf::Vector2f& position,
+                                              const float max_distance);

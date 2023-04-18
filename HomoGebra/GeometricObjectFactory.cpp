@@ -6,36 +6,36 @@
 
 PointFactory::PointFactory(Plane& plane) : plane_(plane) {}
 
-std::shared_ptr<Point> PointFactory::OnPlane(const PointEquation& coordinate)
+Point* PointFactory::OnPlane(const PointEquation& coordinate)
 {
   // Construct equation
   PointEquation equation(coordinate);
 
   // Create point
-  auto point = std::make_shared<Point>(equation);
+  auto point = std::make_unique<Point>(equation);
+
+  auto point_ptr = point.get();
 
   // Add point to plane
-  plane_.AddObject(point);
+  plane_.AddObject(std::move(point));
 
   const auto& name_generator = plane_.GetNameGenerator();
 
   // Rename point
-  point->SetName(static_cast<std::string>(name_generator.GenerateName()));
+  point_ptr->SetName(static_cast<std::string>(name_generator.GenerateName()));
 
   // Return point
-  return point;
+  return point_ptr;
 }
 
-std::shared_ptr<Point> PointFactory::Projection(const Point& from,
-                                                const Line& to)
+Point* PointFactory::Projection(const Point& from, const Line& to)
 {
-  return std::shared_ptr<Point>();
+  return nullptr;
 }
 
 LineFactory::LineFactory(Plane& plane) : plane_(plane) {}
 
-std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first,
-                                               const Point& second)
+Line* LineFactory::ByTwoPoints(const Point& first, const Point& second)
 {
   // Construct equation
 
@@ -97,22 +97,20 @@ std::shared_ptr<Line> LineFactory::ByTwoPoints(const Point& first,
   LineEquation equation{{value[0], value[1], value[2]}};
 
   // Create line
-  auto line = std::make_shared<Line>(equation);
+  auto line = std::make_unique<Line>(equation);
 
   // Add line to plane
-  plane_.AddObject(line);
+  plane_.AddObject(std::move(line));
 
   // Return line
-  return line;
+  return nullptr;
 }
 
 ConicFactory::ConicFactory(Plane& plane) : plane_(plane) {}
 
-std::shared_ptr<Conic> ConicFactory::ByFivePoints(const Point& first,
-                                                  const Point& second,
-                                                  const Point& third,
-                                                  const Point& fourth,
-                                                  const Point& fifth)
+Conic* ConicFactory::ByFivePoints(const Point& first, const Point& second,
+                                  const Point& third, const Point& fourth,
+                                  const Point& fifth)
 {
-  return std::make_shared<Conic>(ConicEquation());
+  return nullptr;
 }

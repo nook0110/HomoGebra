@@ -2,8 +2,7 @@
 
 using namespace Event;
 
-void ObservableGeometricObject::Attach(
-    const std::shared_ptr<GeometricObjectObserver>& observer)
+void ObservableGeometricObject::Attach(GeometricObjectObserver* observer)
 {
   // Add observer to list
   observers_.push_back(observer);
@@ -12,15 +11,14 @@ void ObservableGeometricObject::Attach(
 void ObservableGeometricObject::Detach(const GeometricObjectObserver* observer)
 {
   // Remove observer from list
-  observers_.remove_if(
-      [observer](const std::shared_ptr<GeometricObjectObserver>& ptr)
-      { return ptr.get() == observer; });
+  observers_.remove_if([observer](const GeometricObjectObserver* obs)
+                       { return obs == observer; });
 }
 
-void ObservableGeometricObject::Notify(const Event::Moved& moved) const
+void ObservableGeometricObject::Notify(const Event::Moved& moved_event) const
 {
   // Update all observers
-  for (const auto& observer : observers_) observer->Update(moved);
+  for (const auto& observer : observers_) observer->Update(moved_event);
 }
 
 void ObservableGeometricObject::Notify(const Event::Destroyed& destroyed) const

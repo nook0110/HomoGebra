@@ -128,7 +128,7 @@ class ObservableGeometricObject
    *
    * \param observer Observer to add.
    */
-  void Attach(const std::shared_ptr<GeometricObjectObserver>& observer);
+  void Attach(GeometricObjectObserver* observer);
 
   /**
    * \brief Unsubscribe an observer on this object.
@@ -168,6 +168,6 @@ class ObservableGeometricObject
   /**
    * Member data.
    */
-  std::list<std::shared_ptr<GeometricObjectObserver>>
+  std::list<GeometricObjectObserver*>
       observers_;  //!< List of subscribed observers.
 };

@@ -57,7 +57,7 @@ const PointEquation& Point::GetEquation() const
   return implementation_.GetEquation();
 }
 
-void Point::Attach(std::shared_ptr<GeometricObjectObserver> observer)
+void Point::Attach(GeometricObjectObserver* observer)
 {
   // Call implementation method
   implementation_.Attach(observer);

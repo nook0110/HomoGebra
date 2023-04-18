@@ -32,7 +32,7 @@ class PointFactory
    *
    * \return Pointer to a constructed point.
    */
-  std::shared_ptr<Point> OnPlane(const PointEquation& coordinate);
+  Point* OnPlane(const PointEquation& coordinate);
 
   /**
    * \brief Constructs point on a plane.
@@ -42,7 +42,7 @@ class PointFactory
    *
    * \return Pointer to a constructed point.
    */
-  std::shared_ptr<Point> Projection(const Point& from, const Line& to);
+  Point* Projection(const Point& from, const Line& to);
 
  private:
   /**
@@ -83,7 +83,7 @@ class LineFactory
    *
    * \return Pointer to a constructed line.
    */
-  std::shared_ptr<Line> ByTwoPoints(const Point& first, const Point& second);
+  Line* ByTwoPoints(const Point& first, const Point& second);
 
  private:
   /**
@@ -125,9 +125,9 @@ class ConicFactory
    * \param fifth Fifth point to go through.
    * \return Reference to a constructed conic.
    */
-  std::shared_ptr<Conic> ByFivePoints(const Point& first, const Point& second,
-                                      const Point& third, const Point& fourth,
-                                      const Point& fifth);
+  Conic* ByFivePoints(const Point& first, const Point& second,
+                      const Point& third, const Point& fourth,
+                      const Point& fifth);
 
  private:
   /**

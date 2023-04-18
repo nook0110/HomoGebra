@@ -79,7 +79,7 @@ class GeometricObject : public sf::Drawable
    *
    * \param observer Observer to attach.
    */
-  virtual void Attach(std::shared_ptr<GeometricObjectObserver> observer) = 0;
+  virtual void Attach(GeometricObjectObserver* observer) = 0;
 
  protected:
   /**
@@ -143,7 +143,7 @@ class Point final : public GeometricObject
    */
   [[nodiscard]] const PointEquation& GetEquation() const;
 
-  void Attach(std::shared_ptr<GeometricObjectObserver> observer) override;
+  void Attach(GeometricObjectObserver* observer) override;
 
   ///@}
 
@@ -297,7 +297,7 @@ class Line final : public GeometricObject
    *
    * \param observer Observer to attach.
    */
-  void Attach(std::shared_ptr<GeometricObjectObserver> observer) override {}
+  void Attach(GeometricObjectObserver* observer) override {}
 
  private:
   /**
@@ -384,7 +384,7 @@ class Conic final : public GeometricObject
    *
    * \param observer Observer to attach.
    */
-  void Attach(std::shared_ptr<GeometricObjectObserver> observer) override {}
+  void Attach(GeometricObjectObserver* observer) override {}
 
  private:
   /*

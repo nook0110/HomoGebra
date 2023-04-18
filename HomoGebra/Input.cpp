@@ -2,14 +2,12 @@
 
 template <class GeometricObjectType>
 NearbyObjectGetter<GeometricObjectType>::NearbyObjectGetter(
-    Plane& plane, sf::RenderWindow& window,
-    std::shared_ptr<GeometricObjectType> last_object)
+    Plane& plane, sf::RenderWindow& window, GeometricObjectType* last_object)
     : window_(window), last_object_(std::move(last_object)), finder_(plane)
 {}
 
 template <class GeometricObjectType>
-std::shared_ptr<GeometricObjectType>
-NearbyObjectGetter<GeometricObjectType>::GetLastObject()
+GeometricObjectType* NearbyObjectGetter<GeometricObjectType>::GetLastObject()
 {
   return last_object_;
 }

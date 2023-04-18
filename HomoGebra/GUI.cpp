@@ -6,7 +6,6 @@
 
 #include <cassert>
 #include <functional>
-#include <utility>
 
 using namespace Gui;
 using namespace Editor;
@@ -44,7 +43,7 @@ void ObjectMenu::Construct()
   ImGui::PushID(this);
 
   ImGui::ListBox("Type of objects", &current_type_, kTypesOfObjects.data(),
-                 kTypesOfObjects.size());
+                 static_cast<int>(kTypesOfObjects.size()));
 
   // Construct selector of objects by their names
   ConstructObjectSelector();
@@ -56,20 +55,20 @@ void ObjectMenu::Construct()
   End();
 }
 
-void ObjectMenu::Construct(const std::shared_ptr<GeometricObject>& object)
+void ObjectMenu::Construct(GeometricObject* object)
 {
   // Go through all types of objects
-  if (std::dynamic_pointer_cast<Point>(object))
+  if (dynamic_cast<Point*>(object))
   {
-    Construct(std::dynamic_pointer_cast<Point>(object));
+    Construct(dynamic_cast<Point*>(object));
   }
-  else if (std::dynamic_pointer_cast<Line>(object))
+  else if (dynamic_cast<Line*>(object))
   {
-    Construct(std::dynamic_pointer_cast<Line>(object));
+    Construct(dynamic_cast<Line*>(object));
   }
-  else if (std::dynamic_pointer_cast<Conic>(object))
+  else if (dynamic_cast<Conic*>(object))
   {
-    Construct(std::dynamic_pointer_cast<Conic>(object));
+    Construct(dynamic_cast<Conic*>(object));
   }
   else
   {
@@ -77,16 +76,16 @@ void ObjectMenu::Construct(const std::shared_ptr<GeometricObject>& object)
   }
 }
 
-void Gui::ObjectMenu::Construct(std::shared_ptr<Point> point)
+void Gui::ObjectMenu::Construct(Point* point)
 {
   // Set current point
-  point_submenu_.SetPoint(std::move(point));
+  point_submenu_.SetPoint(point);
 
   // Construct submenu
   point_submenu_.Construct();
 }
 
-void ObjectMenu::Construct(std::shared_ptr<Line> line)
+void ObjectMenu::Construct(Line* line)
 {
   // Construct line submenu
   // LineSubmenu submenu(line);
@@ -95,9 +94,9 @@ void ObjectMenu::Construct(std::shared_ptr<Line> line)
   // submenu.Construct();
 }
 
-void ObjectMenu::Construct(std::shared_ptr<Conic> conic) {}
+void ObjectMenu::Construct(Conic* conic) {}
 
-std::vector<std::shared_ptr<GeometricObject>> Gui::ObjectMenu::GetObjectsOfType(
+std::vector<GeometricObject*> Gui::ObjectMenu::GetObjectsOfType(
     const ObjectType type) const
 {
   switch (type)
@@ -139,8 +138,7 @@ template <typename GeometricObjectType>
 void Gui::ObjectMenu::ConstructObjectSelector()
 {
   // Get objects of type
-  std::vector<std::shared_ptr<GeometricObject>> objects =
-      plane_.GetObjects<GeometricObjectType>();
+  auto objects = plane_.GetObjects<GeometricObjectType>();
 
   static int current_object = 0;
 
@@ -151,8 +149,7 @@ void Gui::ObjectMenu::ConstructObjectSelector()
   // Construct object editor
   if (current_object >= 0 && current_object < static_cast<int>(objects.size()))
   {
-    Construct(std::dynamic_pointer_cast<GeometricObjectType>(
-        objects[current_object]));
+    Construct(dynamic_cast<GeometricObjectType*>(objects[current_object]));
   }
 }
 
@@ -160,14 +157,14 @@ template <class GeometricObjectType>
 void Constructor::ObjectSelector<GeometricObjectType>::Construct()
 {
   // Get objects of type
-  std::vector<std::shared_ptr<GeometricObject>> objects =
+  std::vector<GeometricObject*> objects =
       plane_.GetObjects<GeometricObjectType>();
 
   static int current_object = 0;
 
   // Construct object selector
-   ImGui::ListBox("Objects", &current_object, ObjectsNameGetter, &objects,
-                static_cast<int>(objects.size()));
+  ImGui::ListBox("Objects", &current_object, ObjectsNameGetter, &objects,
+                 static_cast<int>(objects.size()));
 
   // Construct object editor
   if (current_object >= 0 && current_object < static_cast<int>(objects.size()))
@@ -274,14 +271,11 @@ Complex HomogeneousCoordinateEditor::ComplexEditor::GetNumber() const
   return Complex{real_part_, imaginary_part_};
 }
 
-PointSubmenu::PointSubmenu(Plane& plane, std::shared_ptr<Point> point)
-    : point_(std::move(point)), plane_(plane)
+PointSubmenu::PointSubmenu(Plane& plane, Point* point)
+    : point_(point), plane_(plane)
 {}
 
-void PointSubmenu::SetPoint(std::shared_ptr<Point> point)
-{
-  point_ = std::move(point);
-}
+void PointSubmenu::SetPoint(Point* point) { point_ = point; }
 
 void PointSubmenu::Construct()
 {

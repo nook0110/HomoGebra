@@ -27,16 +27,15 @@ class NearbyObjectGetter
    * \param window Render window.
    * \param last_object Last object that user clicked on.
    */
-  explicit NearbyObjectGetter(
-      Plane& plane, sf::RenderWindow& window,
-      std::shared_ptr<GeometricObjectType> last_object = nullptr);
+  explicit NearbyObjectGetter(Plane& plane, sf::RenderWindow& window,
+                              GeometricObjectType* last_object = nullptr);
 
   /**
    * \brief Gets the last object that user clicked on.
    *
    * \return Last object that user clicked on.
    */
-  std::shared_ptr<GeometricObjectType> GetLastObject();
+  GeometricObjectType* GetLastObject();
 
   /**
    * \brief Updates the object.
@@ -73,8 +72,7 @@ class NearbyObjectGetter
 
   sf::RenderWindow& window_;  //!< Render window.
 
-  std::shared_ptr<GeometricObjectType>
-      last_object_;  //!< Last object that user clicked on.
+  GeometricObjectType* last_object_;  //!< Last object that user clicked on.
 
   PlaneHelper finder_;  //!< Helper to find objects.
 };

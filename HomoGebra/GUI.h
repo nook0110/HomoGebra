@@ -17,9 +17,9 @@
  */
 inline bool ObjectsNameGetter(void* data, int index, const char** name)
 {
-  // Convert data to std::vector<std::shared_ptr<GeometricObject>> pointer
-  const std::vector<std::shared_ptr<GeometricObject>>& objects =
-      *static_cast<std::vector<std::shared_ptr<GeometricObject>>*>(data);
+  // Convert data to std::vector<GeometricObject*> pointer
+  const std::vector<GeometricObject*>& objects =
+      *static_cast<std::vector<GeometricObject*>*>(data);
 
   // Check if index is valid
   if (index < 0 || index >= static_cast<int>(objects.size()))
@@ -236,14 +236,14 @@ class PointSubmenu
    * \param plane Plane where point is located.
    * \param point Point to edit.
    */
-  explicit PointSubmenu(Plane& plane, std::shared_ptr<Point> point = nullptr);
+  explicit PointSubmenu(Plane& plane, Point* point = nullptr);
 
   /**
    * \brief Sets new point to edit.
    *
    * \param point New point to edit.
    */
-  void SetPoint(std::shared_ptr<Point> point);
+  void SetPoint(Point* point);
 
   /**
    * \brief Renders the menu.
@@ -282,7 +282,7 @@ class PointSubmenu
 
   std::string name_;                               //!< Name of the point.
   HomogeneousCoordinateEditor coordinate_editor_;  //!< Editor for coordinates
-  std::shared_ptr<Point> point_;                   //!< Point to edit.
+  Point* point_;                                   //!< Point to edit.
   Plane& plane_;  //!< Plane where point is located.
 };
 }  // namespace Editor
@@ -345,7 +345,7 @@ class ObjectMenu final : public MenuWindow
    *
    * \return Vector of objects of given type.
    */
-  [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetObjectsOfType(
+  [[nodiscard]] std::vector<GeometricObject*> GetObjectsOfType(
       const ObjectType type) const;
 
   /**
@@ -367,28 +367,28 @@ class ObjectMenu final : public MenuWindow
    *
    * \param object Object to edit.
    */
-  void Construct(const std::shared_ptr<GeometricObject>& object);
+  void Construct(GeometricObject* object);
 
   /**
    * \brief Constructs editor of point.
    *
    * \param point Point to edit.
    */
-  void Construct(std::shared_ptr<Point> point);
+  void Construct(Point* point);
 
   /**
    * \brief Constructs editor of line.
    *
    * \param line Object to edit.
    */
-  void Construct(std::shared_ptr<Line> line);
+  void Construct(Line* line);
 
   /**
    * \brief Constructs editor of conic.
    *
    * \param conic Line to edit.
    */
-  void Construct(std::shared_ptr<Conic> conic);
+  void Construct(Conic* conic);
 
   /**
    * Member data.
@@ -410,11 +410,11 @@ class ObjectSelector
 
   void Construct();
 
-  [[nodiscard]] std::shared_ptr<GeometricObjectType> GetObject() const;
+  [[nodiscard]] GeometricObjectType* GetObject() const;
 
  private:
   Plane& plane_;
-  std::shared_ptr<GeometricObjectType> object_;
+  GeometricObjectType* object_;
 };
 }  // namespace Constructor
 class ConstructMenu final : public MenuWindow

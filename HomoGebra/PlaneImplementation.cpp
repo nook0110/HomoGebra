@@ -4,10 +4,10 @@
 
 #include "GeometricObject.h"
 
-void PlaneImplementation::AddObject(std::shared_ptr<GeometricObject> object)
+void PlaneImplementation::AddObject(std::unique_ptr<GeometricObject> object)
 {
   // Attach plane as an observer to object
-  object->Attach(std::shared_ptr<GeometricObjectObserver>(this));
+  object->Attach(this);
 
   // Add object to vector of all objects
   objects_.push_back(std::move(object));
@@ -18,8 +18,8 @@ void PlaneImplementation::RemoveObject(const GeometricObject* object)
   // Delete object from vector of all objects
   objects_.erase(
       std::remove_if(objects_.begin(), objects_.end(),
-                     [object](const std::shared_ptr<GeometricObject>& obj)
-                     { return obj.get() == object; }),
+                     [object](const std::unique_ptr<GeometricObject>& ptr)
+                     { return ptr.get() == object; }),
       objects_.end());
 }
 
@@ -27,48 +27,8 @@ bool PlaneImplementation::IsContained(const GeometricObject* object) const
 {
   // Check if object is in vector of all objects
   return std::find_if(objects_.begin(), objects_.end(),
-                      [object](const std::shared_ptr<GeometricObject>& obj)
-                      { return obj.get() == object; }) != objects_.end();
-}
-
-const std::vector<std::shared_ptr<GeometricObject>>&
-PlaneImplementation::GetObjects() const
-{
-  // Return vector of all objects
-  return objects_;
-}
-
-std::vector<std::shared_ptr<GeometricObject>> PlaneImplementation::GetPoints()
-    const
-{
-  // Return only points from vector of all objects_
-  auto points = std::vector<std::shared_ptr<GeometricObject>>();
-  std::copy_if(objects_.begin(), objects_.end(), std::back_inserter(points),
-               [](const std::shared_ptr<GeometricObject>& object)
-               { return std::dynamic_pointer_cast<Point>(object); });
-  return points;
-}
-
-std::vector<std::shared_ptr<GeometricObject>> PlaneImplementation::GetLines()
-    const
-{
-  // Return only lines from vector of all objects_
-  auto lines = std::vector<std::shared_ptr<GeometricObject>>();
-  std::copy_if(objects_.begin(), objects_.end(), std::back_inserter(lines),
-               [](const std::shared_ptr<GeometricObject>& object)
-               { return std::dynamic_pointer_cast<Line>(object); });
-  return lines;
-}
-
-std::vector<std::shared_ptr<GeometricObject>> PlaneImplementation::GetConics()
-    const
-{
-  // Return only conics from vector of all objects_
-  auto conics = std::vector<std::shared_ptr<GeometricObject>>();
-  std::copy_if(objects_.begin(), objects_.end(), std::back_inserter(conics),
-               [](const std::shared_ptr<GeometricObject>& object)
-               { return std::dynamic_pointer_cast<Conic>(object); });
-  return conics;
+                      [object](const std::unique_ptr<GeometricObject>& ptr)
+                      { return ptr.get() == object; }) != objects_.end();
 }
 
 const NameGenerator& PlaneImplementation::GetNameGenerator() const
@@ -111,32 +71,38 @@ void PlaneImplementation::Update(const Event::Renamed& renamed_event)
 }
 
 template <class GeometricObjectType>
-std::vector<std::shared_ptr<GeometricObject>> PlaneImplementation::GetObjects()
-    const
+std::vector<GeometricObject*> PlaneImplementation::GetObjects() const
 {
   // GeometricObjectType must be base of GeometricObject
   static_assert(std::is_base_of_v<GeometricObject, GeometricObjectType>);
 
   // Return only GeometricObjectType from vector of all objects_
-  auto objects = std::vector<std::shared_ptr<GeometricObject>>();
-  std::copy_if(
-      objects_.begin(), objects_.end(), std::back_inserter(objects),
-      [](const std::shared_ptr<GeometricObject>& object)
-      {
-        return std::dynamic_pointer_cast<GeometricObjectType, GeometricObject>(
-            object);
-      });
+  auto objects = std::vector<GeometricObject*>();
+
+  // Transform vector of unique ptr-s to raw ptr-s
+  std::transform(objects_.begin(), objects_.end(), std::back_inserter(objects),
+                 [](const std::unique_ptr<GeometricObject>& object)
+                 { return object.get(); });
+
+  // Remove objects that are not of type GeometricObjectType
+  objects.erase(
+      std::remove_if(objects.begin(), objects.end(),
+                     [](const GeometricObject* object) {
+                       return !dynamic_cast<const GeometricObjectType*>(object);
+                     }),
+      objects.end());
+
   return objects;
 }
 
-template std::vector<std::shared_ptr<GeometricObject>>
+template std::vector<GeometricObject*>
 PlaneImplementation::GetObjects<GeometricObject>() const;
 
-template std::vector<std::shared_ptr<GeometricObject>>
-PlaneImplementation::GetObjects<Point>() const;
+template std::vector<GeometricObject*> PlaneImplementation::GetObjects<Point>()
+    const;
 
-template std::vector<std::shared_ptr<GeometricObject>>
-PlaneImplementation::GetObjects<Line>() const;
+template std::vector<GeometricObject*> PlaneImplementation::GetObjects<Line>()
+    const;
 
-template std::vector<std::shared_ptr<GeometricObject>>
-PlaneImplementation::GetObjects<Conic>() const;
+template std::vector<GeometricObject*> PlaneImplementation::GetObjects<Conic>()
+    const;

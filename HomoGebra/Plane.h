@@ -23,7 +23,7 @@ class Plane final : public sf::Drawable
    *
    * \param object Pointer to an object.
    */
-  void AddObject(std::shared_ptr<GeometricObject> object);
+  void AddObject(std::unique_ptr<GeometricObject> object);
 
   /**
    * \brief Returns objects of GeometricObjectType.
@@ -33,37 +33,7 @@ class Plane final : public sf::Drawable
    * \return Objects of GeometricObjectType.
    */
   template <class GeometricObjectType>
-  [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetObjects()
-      const;
-
-  /**
-   * \brief Returns all objects.
-   *
-   * \return All objects on plane.
-   */
-  [[nodiscard]] const std::vector<std::shared_ptr<GeometricObject>>&
-  GetObjects() const;
-
-  /**
-   * \brief Returns all points.
-   *
-   * \return Points on a plane.
-   */
-  [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetPoints() const;
-
-  /**
-   * \brief Returns all lines.
-   *
-   * \return Lines on a plane.
-   */
-  [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetLines() const;
-
-  /**
-   * \brief Returns all conics.
-   *
-   * \return Conics on a plane.
-   */
-  [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetConics() const;
+  [[nodiscard]] std::vector<GeometricObject*> GetObjects() const;
 
   /**
    * \brief Updates plane.

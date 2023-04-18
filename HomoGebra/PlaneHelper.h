@@ -31,7 +31,7 @@ class PlaneHelper
    * \return Nearest object.
    */
   template <class GeometricObjectType>
-  std::shared_ptr<GeometricObjectType> GetNearestObject(
+  GeometricObjectType* GetNearestObject(
       const sf::Vector2f& position,
       const float max_distance = std::numeric_limits<float>::max());
 

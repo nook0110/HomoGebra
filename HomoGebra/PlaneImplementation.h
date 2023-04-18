@@ -28,7 +28,7 @@ class PlaneImplementation : public GeometricObjectObserver
    *
    * \param object Object to add
    */
-  void AddObject(std::shared_ptr<GeometricObject> object);
+  void AddObject(std::unique_ptr<GeometricObject> object);
 
   /**
    * \brief Remove object.
@@ -54,37 +54,7 @@ class PlaneImplementation : public GeometricObjectObserver
    * \return Objects of GeometricObjectType.
    */
   template <class GeometricObjectType>
-  [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetObjects()
-      const;
-
-  /**
-   * \brief Get all objects.
-   *
-   * \return All objects on plane.
-   */
-  [[nodiscard]] const std::vector<std::shared_ptr<GeometricObject>>&
-  GetObjects() const;
-
-  /**
-   * \brief Get all points.
-   *
-   * \return Points on a plane.
-   */
-  [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetPoints() const;
-
-  /**
-   * \brief Get all lines.
-   *
-   * \return Lines on a plane.
-   */
-  [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetLines() const;
-
-  /**
-   * \brief Get all conics.
-   *
-   * \return Conics on a plane.
-   */
-  [[nodiscard]] std::vector<std::shared_ptr<GeometricObject>> GetConics() const;
+  [[nodiscard]] std::vector<GeometricObject*> GetObjects() const;
 
   /**
    * \brief Get name generator.
@@ -102,7 +72,7 @@ class PlaneImplementation : public GeometricObjectObserver
    * Member data.
    */
 
-  std::vector<std::shared_ptr<GeometricObject>>
+  std::vector<std::unique_ptr<GeometricObject>>
       objects_;  //!< All objects on the plane.
 
   NameGenerator name_generator_;  //!< Name generator.
