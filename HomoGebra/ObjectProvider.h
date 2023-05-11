@@ -10,15 +10,15 @@
  *
  * \date February 2023
  */
-class PlaneHelper
+class ObjectProvider
 {
  public:
   /**
-   * \brief Construct a factory from the plane.
+   * \brief Constructs an object provider from the plane.
    *
    * \param plane Instance where to place objects.
    */
-  explicit PlaneHelper(Plane& plane);
+  explicit ObjectProvider(Plane& plane);
 
   /**
    * \brief Gets a nearest object.

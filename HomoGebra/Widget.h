@@ -1,11 +1,10 @@
 #pragma once
-
-#include <vector>
-
+#include "Complex.h"
 #include "GeometricObject.h"
-#include "Plane.h"
-#include "SFML/Graphics.hpp"
+#include "Input.h"
 
+namespace Gui
+{
 /**
  * \brief Getter for objects names.
  *
@@ -33,99 +32,59 @@ inline bool ObjectsNameGetter(void* data, int index, const char** name)
   return true;
 }
 
-namespace Gui
-{
-/**
- * \brief Global functions needed for Dear ImGui to work.
- *
- * \author nook0110
- *
- * \version 0.1
- *
- * \date February 2023
- *
- * \details Wraps Dear ImGui global methods and a clock for rendering.
- *
- * \see <a href="https://github.com/ocornut/imgui">Dear ImGui</a>
- * \see <a href="https://github.com/eliasdaler/imgui-sfml">ImGui-SFML v2.5</a>
- */
-class Global
+class Widget
 {
  public:
-  /**
-   * \brief Updates all Dear ImGui windows in sf::RenderWindow instance.
-   *
-   * \param window sf::RenderWindow where to update Dear ImGui windows.
-   */
-  static void Update(sf::RenderWindow& window);
-  /**
-   * \brief Renders all Dear ImGui windows in sf::RenderWindow instance.
-   *
-   * \param window sf::RenderWindow where to render Dear ImGui windows.
-   */
-  static void Render(sf::RenderWindow& window);
-  /**
-   * \brief Process event happened to update Dear ImGui windows.
-   *
-   * \param event Event that happened.
-   */
-  static void ProcessEvent(const sf::Event& event);
-
- private:
-  /**
-   * Static member data.
-   */
-  static sf::Clock delta_clock_;  //!< Clock that counts time for updates.
-};
-
-/**
- * \brief Interface that represents a window in Dear ImGui.
- *
- * \author nook0110
- *
- * \version 0.1
- *
- * \date February 2023
- */
-class MenuWindow
-{
- public:
-  /**
-   * \brief Default constructor.
-   *
-   * \param name Name of the window.
-   */
-  explicit MenuWindow(std::string name) : name_(std::move(name)) {}
-
-  /**
-   * \brief Default destructor.
-   *
-   */
-  virtual ~MenuWindow() = default;
-
-  /**
-   * \brief Begins constructing the window.
-   *
-   */
-  void Begin() const;
-
-  /**
-   * \brief Ends constructing the window.
-   *
-   */
-  void End() const;
-
-  /**
-   * \brief Constructs the window
-   */
+  virtual ~Widget() = default;
   virtual void Construct() = 0;
-
- private:
-  std::string name_;  //!< Name of the window.
 };
 
 namespace Editor
 {
+/**
+ * \brief Class that represents a submenu that allows to edit a complex
+ * number
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ */
+class ComplexEditor final : public Widget
+{
+ public:
+  /**
+   * \brief Construct menu with given number.
+   *
+   * \param number Number to edit.
+   */
+  explicit ComplexEditor(const Complex& number = Complex{});
+
+  /**
+   * \brief Renders the menu.
+   *
+   */
+  void Construct();
+
+  /**
+   * \brief Renders the menu.
+   *
+   */
+  void Construct() const;
+
+  /**
+   * \brief Returns the current number that was edited.
+   *
+   * \return Current number.
+   */
+  [[nodiscard]] Complex GetNumber() const;
+
+ private:
+  double real_part_;       //!< Real part of the number.
+  double imaginary_part_;  //!< Imaginary part of the number.
+};
+
 /**
  * \brief Class that represents a submenu that allows to edit a homogeneous
  * coordinates.
@@ -136,7 +95,7 @@ namespace Editor
  *
  * \date February 2023
  */
-class HomogeneousCoordinateEditor
+class HomogeneousCoordinateEditor final : public Widget
 {
  public:
   /**
@@ -168,49 +127,6 @@ class HomogeneousCoordinateEditor
 
  private:
   /**
-   * \brief Class that represents a submenu that allows to edit a complex
-   * number
-   *
-   * \author nook0110
-   *
-   * \version 0.1
-   *
-   * \date February 2023
-   */
-  class ComplexEditor
-  {
-   public:
-    /**
-     * \brief Construct menu with given number.
-     *
-     * \param number Number to edit.
-     */
-    explicit ComplexEditor(const Complex& number = Complex{});
-
-    /**
-     * \brief Renders the menu.
-     *
-     */
-    void Construct();
-
-    /**
-     * \brief Renders the menu.
-     *
-     */
-    void Construct() const;
-
-    /**
-     * \brief Returns the current number that was edited.
-     *
-     * \return Current number.
-     */
-    [[nodiscard]] Complex GetNumber() const;
-
-   private:
-    double real_part_;       //!< Real part of the number.
-    double imaginary_part_;  //!< Imaginary part of the number.
-  };
-  /**
    * Member data.
    */
   ComplexEditor x_variable_editor_;  //!< Editor for x variable.
@@ -227,7 +143,7 @@ class HomogeneousCoordinateEditor
  *
  * \date February 2023
  */
-class PointSubmenu
+class PointSubmenu : public Widget
 {
  public:
   /**
@@ -296,20 +212,17 @@ class PointSubmenu
  *
  * \date February 2023
  */
-class ObjectMenu final : public MenuWindow
+class ObjectMenu final : public Widget
 {
  public:
   /**
    * \brief Constructs a menu for given plane and name.
    *
    * \param plane Plane to edit.
-   * \param name Name of the menu.
    */
-  explicit ObjectMenu(Plane& plane, const std::string& name = "Object menu.")
-      : MenuWindow(name), point_submenu_(plane), plane_(plane)
-  {}
+  ObjectMenu(Plane& plane) : point_submenu_(plane), plane_(plane) {}
 
-  void Construct() override;
+  void Construct();
 
  private:
   /**
@@ -406,27 +319,24 @@ template <class GeometricObjectType>
 class ObjectSelector
 {
  public:
-  explicit ObjectSelector(Plane& plane) : plane_(plane) {}
-
-  void Construct();
+  explicit ObjectSelector(Plane& plane, sf::RenderWindow& window)
+      : plane_(plane), finder_(plane, window)
+  {}
 
   [[nodiscard]] GeometricObjectType* GetObject() const;
 
+  void Construct();
+
  private:
+  void ConstructList();
+
+  void ConstructSetter();
+
   Plane& plane_;
-  GeometricObjectType* object_;
+  GeometricObjectType* object_{};  //!< Object that was selected.
+  NearbyObjectGetter<GeometricObjectType> finder_;
+
+  int current_object_ = 0;
 };
 }  // namespace Constructor
-class ConstructMenu final : public MenuWindow
-{
- public:
-  explicit ConstructMenu(Plane& plane, const std::string& name = "Object menu.")
-      : MenuWindow(name), plane_(plane)
-  {}
-
-  void Construct() override;
-
- private:
-  Plane& plane_;
-};
 }  // namespace Gui

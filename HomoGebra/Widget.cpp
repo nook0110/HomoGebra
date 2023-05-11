@@ -1,44 +1,14 @@
-﻿#include "GUI.h"
+#include "Widget.h"
 
-#include <imgui-SFML.h>
 #include <imgui.h>
 #include <imgui_stdlib.h>
 
-#include <cassert>
-#include <functional>
+#include <SFML/Graphics/Color.hpp>
 
 using namespace Gui;
-using namespace Editor;
-
-sf::Clock Global::delta_clock_;
-
-void Global::Update(sf::RenderWindow& window)
-{
-  // Just calls ImGui ImGui::SFML::Update method
-  ImGui::SFML::Update(window, delta_clock_.restart());
-}
-
-void Global::Render(sf::RenderWindow& window)
-{
-  // Just calls ImGui ImGui::SFML::Render method
-  ImGui::SFML::Render(window);
-}
-
-void Global::ProcessEvent(const sf::Event& event)
-{
-  // Just calls ImGui ImGui::SFML::ProcessEvent method
-  ImGui::SFML::ProcessEvent(event);
-}
-
-void MenuWindow::Begin() const { ImGui::Begin(name_.data()); }
-
-void MenuWindow::End() const { ImGui::End(); }
 
 void ObjectMenu::Construct()
 {
-  // Begin constructing
-  Begin();
-
   // Push id to ImGui stack
   ImGui::PushID(this);
 
@@ -50,9 +20,6 @@ void ObjectMenu::Construct()
 
   // Pop id
   ImGui::PopID();
-
-  // End constructing
-  End();
 }
 
 void ObjectMenu::Construct(GeometricObject* object)
@@ -76,7 +43,7 @@ void ObjectMenu::Construct(GeometricObject* object)
   }
 }
 
-void Gui::ObjectMenu::Construct(Point* point)
+void ObjectMenu::Construct(Point* point)
 {
   // Set current point
   point_submenu_.SetPoint(point);
@@ -96,7 +63,7 @@ void ObjectMenu::Construct(Line* line)
 
 void ObjectMenu::Construct(Conic* conic) {}
 
-std::vector<GeometricObject*> Gui::ObjectMenu::GetObjectsOfType(
+std::vector<GeometricObject*> ObjectMenu::GetObjectsOfType(
     const ObjectType type) const
 {
   switch (type)
@@ -135,7 +102,7 @@ void ObjectMenu::ConstructObjectSelector()
 }
 
 template <typename GeometricObjectType>
-void Gui::ObjectMenu::ConstructObjectSelector()
+void ObjectMenu::ConstructObjectSelector()
 {
   // Get objects of type
   auto objects = plane_.GetObjects<GeometricObjectType>();
@@ -154,30 +121,55 @@ void Gui::ObjectMenu::ConstructObjectSelector()
 }
 
 template <class GeometricObjectType>
+GeometricObjectType*
+Constructor::ObjectSelector<GeometricObjectType>::GetObject() const
+{
+  return object_;
+}
+
+template <class GeometricObjectType>
 void Constructor::ObjectSelector<GeometricObjectType>::Construct()
+{
+  // Construct list of objects
+  ConstructList();
+
+  // Construct setter of object
+  ConstructSetter();
+}
+
+template <class GeometricObjectType>
+void Constructor::ObjectSelector<GeometricObjectType>::ConstructList()
 {
   // Get objects of type
   std::vector<GeometricObject*> objects =
       plane_.GetObjects<GeometricObjectType>();
 
-  static int current_object = 0;
-
   // Construct object selector
-  ImGui::ListBox("Objects", &current_object, ObjectsNameGetter, &objects,
+  ImGui::ListBox("Objects", &current_object_, ObjectsNameGetter, &objects,
                  static_cast<int>(objects.size()));
 
   // Construct object editor
-  if (current_object >= 0 && current_object < static_cast<int>(objects.size()))
+  if (current_object_ >= 0 &&
+      current_object_ < static_cast<int>(objects.size()))
   {
     Construct(std::dynamic_pointer_cast<GeometricObjectType>(
-        objects[current_object]));
+        objects[current_object_]));
   }
 }
 
-template void Gui::ObjectMenu::ConstructObjectSelector<GeometricObject>();
-template void Gui::ObjectMenu::ConstructObjectSelector<Point>();
-template void Gui::ObjectMenu::ConstructObjectSelector<Line>();
-template void Gui::ObjectMenu::ConstructObjectSelector<Conic>();
+template <class GeometricObjectType>
+void Constructor::ObjectSelector<GeometricObjectType>::ConstructSetter()
+{
+  // Create button to select object
+  ImGui::Button("Select object");
+}
+
+template void ObjectMenu::ConstructObjectSelector<GeometricObject>();
+template void ObjectMenu::ConstructObjectSelector<Point>();
+template void ObjectMenu::ConstructObjectSelector<Line>();
+template void ObjectMenu::ConstructObjectSelector<Conic>();
+
+using namespace Editor;
 
 HomogeneousCoordinateEditor::HomogeneousCoordinateEditor(
     const HomogeneousCoordinate& coordinate)
@@ -227,12 +219,12 @@ HomogeneousCoordinate HomogeneousCoordinateEditor::GetCoordinate() const
                                z_variable_editor_.GetNumber()};
 }
 
-HomogeneousCoordinateEditor::ComplexEditor::ComplexEditor(const Complex& number)
+ComplexEditor::ComplexEditor(const Complex& number)
     : real_part_(static_cast<double>(number.real())),
       imaginary_part_(static_cast<double>(number.imag()))
 {}
 
-void HomogeneousCoordinateEditor::ComplexEditor::Construct()
+void ComplexEditor::Construct()
 {
   // Push id to ImGui stack
   ImGui::PushID(this);
@@ -247,7 +239,7 @@ void HomogeneousCoordinateEditor::ComplexEditor::Construct()
   ImGui::PopID();
 }
 
-void HomogeneousCoordinateEditor::ComplexEditor::Construct() const
+void ComplexEditor::Construct() const
 {
   // Push id to ImGui stack
   ImGui::PushID(this);
@@ -266,7 +258,7 @@ void HomogeneousCoordinateEditor::ComplexEditor::Construct() const
   ImGui::PopID();
 }
 
-Complex HomogeneousCoordinateEditor::ComplexEditor::GetNumber() const
+Complex ComplexEditor::GetNumber() const
 {
   return Complex{real_part_, imaginary_part_};
 }

@@ -1,12 +1,12 @@
-#include "PlaneHelper.h"
+#include "ObjectProvider.h"
 
 #include "GeometricObject.h"
 
-PlaneHelper::PlaneHelper(Plane& plane) : plane_(plane) {}
+ObjectProvider::ObjectProvider(Plane& plane) : plane_(plane) {}
 
 template <class GeometricObjectType>
-GeometricObjectType* PlaneHelper::GetNearestObject(const sf::Vector2f& position,
-                                                   const float max_distance)
+GeometricObjectType* ObjectProvider::GetNearestObject(
+    const sf::Vector2f& position, const float max_distance)
 {
   // Get all GeometricObjectType objects
   auto objects = plane_.GetObjects<GeometricObjectType>();
@@ -42,11 +42,11 @@ GeometricObjectType* PlaneHelper::GetNearestObject(const sf::Vector2f& position,
   return nullptr;
 }
 
-template GeometricObject* PlaneHelper::GetNearestObject(
+template GeometricObject* ObjectProvider::GetNearestObject(
     const sf::Vector2f& position, const float max_distance);
-template Point* PlaneHelper::GetNearestObject(const sf::Vector2f& position,
-                                              const float max_distance);
-template Line* PlaneHelper::GetNearestObject(const sf::Vector2f& position,
-                                             const float max_distance);
-template Conic* PlaneHelper::GetNearestObject(const sf::Vector2f& position,
-                                              const float max_distance);
+template Point* ObjectProvider::GetNearestObject(const sf::Vector2f& position,
+                                                 const float max_distance);
+template Line* ObjectProvider::GetNearestObject(const sf::Vector2f& position,
+                                                const float max_distance);
+template Conic* ObjectProvider::GetNearestObject(const sf::Vector2f& position,
+                                                 const float max_distance);

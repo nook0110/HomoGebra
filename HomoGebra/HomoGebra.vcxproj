@@ -161,27 +161,29 @@
     <ClCompile Include="GeometricObjectBody.cpp" />
     <ClCompile Include="GeometricObjectFactory.cpp" />
     <ClCompile Include="GeometricObjectImplementation.cpp" />
-    <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="GuiHandler.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="NameGenerator.cpp" />
     <ClCompile Include="Observer.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="PlaneBody.cpp" />
-    <ClCompile Include="PlaneHelper.cpp" />
+    <ClCompile Include="ObjectProvider.cpp" />
     <ClCompile Include="PlaneImplementation.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Widget.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Complex.h" />
     <ClInclude Include="Construction.h" />
     <ClInclude Include="Coordinate.h" />
     <ClInclude Include="Dictionary.h" />
+    <ClInclude Include="Widget.h" />
     <ClInclude Include="Equation.h" />
     <ClInclude Include="GeometricObject.h" />
     <ClInclude Include="GeometricObjectBody.h" />
     <ClInclude Include="GeometricObjectFactory.h" />
-    <ClInclude Include="GUI.h" />
+    <ClInclude Include="GuiHandler.h" />
     <ClInclude Include="GeometricObjectImplementation.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Matrix.h" />
@@ -189,7 +191,7 @@
     <ClInclude Include="Observer.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="PlaneBody.h" />
-    <ClInclude Include="PlaneHelper.h" />
+    <ClInclude Include="ObjectProvider.h" />
     <ClInclude Include="PlaneImplementation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

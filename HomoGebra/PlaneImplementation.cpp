@@ -1,5 +1,6 @@
 ﻿#include "PlaneImplementation.h"
 
+#include <cassert>
 #include <functional>
 
 #include "GeometricObject.h"
@@ -51,22 +52,22 @@ void PlaneImplementation::Update(const Event::Destroyed& destroyed_event)
 
 void PlaneImplementation::Update(const Event::Renamed& renamed_event)
 {
-  // Check if object has no name
-  if (renamed_event.object->GetName().empty())
-  {
-    if (!name_generator_.AddName(renamed_event.new_name))
-    {
-      renamed_event.object->SetName(static_cast<std::string>(
-          name_generator_.GenerateName(renamed_event.new_name)));
-    }
-    return;
-  }
+  assert(renamed_event.object->GetName() == renamed_event.new_name);
 
-  if (!name_generator_.Rename(renamed_event.object->GetName(),
-                              renamed_event.new_name))
+  name_generator_.DeleteName(renamed_event.old_name);
+
+  auto adjust_name = [this, renamed_event]
   {
-    renamed_event.object->SetName(static_cast<std::string>(
-        name_generator_.GenerateName(renamed_event.new_name)));
+    const auto new_name = name_generator_.GenerateName(renamed_event.new_name);
+
+    name_generator_.AddName(new_name);
+
+    renamed_event.object->SetName(static_cast<std::string>(new_name));
+  };
+
+  if (!name_generator_.AddName(renamed_event.new_name))
+  {
+    adjust_name();
   }
 }
 

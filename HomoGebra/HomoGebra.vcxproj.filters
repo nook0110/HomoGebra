@@ -100,7 +100,7 @@
     <ClCompile Include="GeometricObjectImplementation.cpp">
       <Filter>Sources\GeomObject</Filter>
     </ClCompile>
-    <ClCompile Include="GUI.cpp">
+    <ClCompile Include="GuiHandler.cpp">
       <Filter>Sources\GUI</Filter>
     </ClCompile>
     <ClCompile Include="PlaneImplementation.cpp">
@@ -130,7 +130,7 @@
     <ClCompile Include="Input.cpp">
       <Filter>Sources\GUI</Filter>
     </ClCompile>
-    <ClCompile Include="PlaneHelper.cpp">
+    <ClCompile Include="ObjectProvider.cpp">
       <Filter>Sources\Plane</Filter>
     </ClCompile>
     <ClCompile Include="NameGenerator.cpp">
@@ -139,6 +139,7 @@
     <ClCompile Include="Observer.cpp">
       <Filter>Sources\Observer</Filter>
     </ClCompile>
+    <ClCompile Include="Widget.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeometricObject.h">
@@ -153,7 +154,7 @@
     <ClInclude Include="GeometricObjectImplementation.h">
       <Filter>Headers\GeomObject</Filter>
     </ClInclude>
-    <ClInclude Include="GUI.h">
+    <ClInclude Include="GuiHandler.h">
       <Filter>Headers\GUI</Filter>
     </ClInclude>
     <ClInclude Include="Plane.h">
@@ -183,7 +184,7 @@
     <ClInclude Include="Input.h">
       <Filter>Headers\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="PlaneHelper.h">
+    <ClInclude Include="ObjectProvider.h">
       <Filter>Headers\Plane</Filter>
     </ClInclude>
     <ClInclude Include="NameGenerator.h">
@@ -194,6 +195,9 @@
     </ClInclude>
     <ClInclude Include="Observer.h">
       <Filter>Headers\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget.h">
+      <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

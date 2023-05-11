@@ -3,7 +3,7 @@
 #include <Thor/Input.hpp>
 
 #include "GeometricObject.h"
-#include "PlaneHelper.h"
+#include "ObjectProvider.h"
 
 /**
  * \brief Class to get the last object that user clicked on.
@@ -74,5 +74,5 @@ class NearbyObjectGetter
 
   GeometricObjectType* last_object_;  //!< Last object that user clicked on.
 
-  PlaneHelper finder_;  //!< Helper to find objects.
+  ObjectProvider finder_;  //!< Helper to find objects.
 };

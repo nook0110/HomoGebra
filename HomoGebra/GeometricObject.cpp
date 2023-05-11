@@ -79,9 +79,11 @@ void Point::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void Point::SetName(const std::string& name)
 {
-  Notify(Event::Renamed{this, body_.GetName(), name});
+  const Event::Renamed renamed{this, body_.GetName(), name};
 
   body_.SetName(name);
+
+  Notify(renamed);
 }
 
 const std::string& Point::GetName() const
