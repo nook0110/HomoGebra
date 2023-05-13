@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <Thor/Input.hpp>
 
+#include "EventNotifier.h"
 #include "GeometricObject.h"
 #include "ObjectProvider.h"
 
@@ -17,7 +18,7 @@
  * \date April 2023
  */
 template <class GeometricObjectType>
-class NearbyObjectGetter
+class NearbyObjectGetter : public EventListener
 {
  public:
   /**
@@ -36,6 +37,10 @@ class NearbyObjectGetter
    * \return Last object that user clicked on.
    */
   GeometricObjectType* GetLastObject();
+
+  void Release();
+
+  void SetObject(GeometricObjectType* object);
 
   /**
    * \brief Updates the object.

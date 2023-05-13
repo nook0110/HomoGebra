@@ -13,6 +13,19 @@ GeometricObjectType* NearbyObjectGetter<GeometricObjectType>::GetLastObject()
 }
 
 template <class GeometricObjectType>
+void NearbyObjectGetter<GeometricObjectType>::Release()
+{
+  SetObject(nullptr);
+}
+
+template <class GeometricObjectType>
+void NearbyObjectGetter<GeometricObjectType>::SetObject(
+    GeometricObjectType* object)
+{
+  last_object_ = object;
+}
+
+template <class GeometricObjectType>
 void NearbyObjectGetter<GeometricObjectType>::Update(const sf::Event& event)
 {
   // Update the action map.
@@ -20,7 +33,9 @@ void NearbyObjectGetter<GeometricObjectType>::Update(const sf::Event& event)
 
   // Check if mouse was clicked
   if (action_map_.isActive(Action::kClick))
-  {}
+  {
+    FindNearestObject();
+  }
 
   // Clear last event
   action_map_.clearEvents();
@@ -44,8 +59,8 @@ void NearbyObjectGetter<GeometricObjectType>::FindNearestObject()
   const auto mouse_world_position = window_.mapPixelToCoords(mouse_position);
 
   // Find nearest object
-  last_object_ =
-      finder_.GetNearestObject<GeometricObjectType>(mouse_world_position);
+  SetObject(
+      finder_.GetNearestObject<GeometricObjectType>(mouse_world_position));
 }
 
 template class NearbyObjectGetter<GeometricObject>;

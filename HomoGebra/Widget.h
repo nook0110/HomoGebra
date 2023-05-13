@@ -316,25 +316,30 @@ class ObjectMenu final : public Widget
 namespace Constructor
 {
 template <class GeometricObjectType>
-class ObjectSelector
+class ObjectSelector : public Widget
 {
  public:
   explicit ObjectSelector(Plane& plane, sf::RenderWindow& window)
-      : plane_(plane), finder_(plane, window)
+      : plane_(plane), object_getter_(plane, window)
   {}
 
   [[nodiscard]] GeometricObjectType* GetObject() const;
 
-  void Construct();
+  void SetObject(GeometricObjectType* object);
+
+  void Construct() override;
 
  private:
+  void ConstructSelectedObject();
+
   void ConstructList();
 
   void ConstructSetter();
 
   Plane& plane_;
   GeometricObjectType* object_{};  //!< Object that was selected.
-  NearbyObjectGetter<GeometricObjectType> finder_;
+  NearbyObjectGetter<GeometricObjectType>
+      object_getter_;  //!< Helper to find specific objects.
 
   int current_object_ = 0;
 };

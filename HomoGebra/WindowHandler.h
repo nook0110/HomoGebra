@@ -50,42 +50,16 @@ class Global
   static sf::Clock delta_clock_;  //!< Clock that counts time for updates.
 };
 
-class Constructable
-{
- public:
-  virtual ~Constructable() = default;
-  virtual void Construct() = 0;
-};
-
-class GuiHandler : public Constructable
-{
- public:
-  explicit GuiHandler(sf::RenderWindow& window);
-
-  ~GuiHandler() = default;
-
-  void Construct() override;
-
-  void AddConstructable(std::unique_ptr<Constructable> constructable);
-
-  void DeleteConstructable(Constructable* constructable);
-
- private:
-  static std::unique_ptr<GuiHandler> instance_;
-
-  sf::RenderWindow& window_;
-
-  std::list<std::unique_ptr<Constructable>> constructable_objects_;
-};
-
-class Window final : public Constructable
+class Window
 {
  public:
   Window(std::string name, std::unique_ptr<Widget> widget)
       : name_(std::move(name)), widget_(std::move(widget))
   {}
 
-  void Construct() override;
+  void Construct();
+
+  [[nodiscard]] Widget* GetWidget() const;
 
  private:
   void Begin() const;
@@ -94,5 +68,26 @@ class Window final : public Constructable
   std::string name_;
 
   std::unique_ptr<Widget> widget_;
+};
+
+class WindowHandler
+{
+ public:
+  explicit WindowHandler(sf::RenderWindow& window);
+
+  ~WindowHandler() = default;
+
+  void Construct();
+
+  void AddWindow(std::unique_ptr<Window> window);
+
+  void DeleteWindow(Window* window);
+
+ private:
+  static std::unique_ptr<WindowHandler> instance_;
+
+  sf::RenderWindow& window_;
+
+  std::list<std::unique_ptr<Window>> constructable_objects_;
 };
 }  // namespace Gui

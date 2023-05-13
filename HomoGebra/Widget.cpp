@@ -25,17 +25,17 @@ void ObjectMenu::Construct()
 void ObjectMenu::Construct(GeometricObject* object)
 {
   // Go through all types of objects
-  if (dynamic_cast<Point*>(object))
+  if (const auto point = dynamic_cast<Point*>(object))
   {
-    Construct(dynamic_cast<Point*>(object));
+    Construct(point);
   }
-  else if (dynamic_cast<Line*>(object))
+  else if (const auto line = dynamic_cast<Line*>(object))
   {
-    Construct(dynamic_cast<Line*>(object));
+    Construct(line);
   }
-  else if (dynamic_cast<Conic*>(object))
+  else if (const auto conic = dynamic_cast<Conic*>(object))
   {
-    Construct(dynamic_cast<Conic*>(object));
+    Construct(conic);
   }
   else
   {
@@ -128,13 +128,35 @@ Constructor::ObjectSelector<GeometricObjectType>::GetObject() const
 }
 
 template <class GeometricObjectType>
+void Constructor::ObjectSelector<GeometricObjectType>::SetObject(
+    GeometricObjectType* object)
+{
+  object_ = object;
+}
+
+template <class GeometricObjectType>
 void Constructor::ObjectSelector<GeometricObjectType>::Construct()
 {
+  // Construct which object is selected
+  ConstructSelectedObject();
+
   // Construct list of objects
   ConstructList();
 
   // Construct setter of object
   ConstructSetter();
+}
+
+template <class GeometricObjectType>
+void Constructor::ObjectSelector<GeometricObjectType>::ConstructSelectedObject()
+{
+  if (!object_)
+  {
+    ImGui::Text("nullptr");
+    return;
+  }
+
+  ImGui::Text(object_->GetName().c_str());
 }
 
 template <class GeometricObjectType>
@@ -145,15 +167,15 @@ void Constructor::ObjectSelector<GeometricObjectType>::ConstructList()
       plane_.GetObjects<GeometricObjectType>();
 
   // Construct object selector
-  ImGui::ListBox("Objects", &current_object_, ObjectsNameGetter, &objects,
-                 static_cast<int>(objects.size()));
-
-  // Construct object editor
-  if (current_object_ >= 0 &&
-      current_object_ < static_cast<int>(objects.size()))
+  if (ImGui::ListBox("Objects", &current_object_, ObjectsNameGetter, &objects,
+                     static_cast<int>(objects.size())))
   {
-    Construct(std::dynamic_pointer_cast<GeometricObjectType>(
-        objects[current_object_]));
+    // Select object
+    if (current_object_ >= 0 &&
+        current_object_ < static_cast<int>(objects.size()))
+    {
+      object_ = dynamic_cast<GeometricObjectType*>(objects[current_object_]);
+    }
   }
 }
 
@@ -161,8 +183,13 @@ template <class GeometricObjectType>
 void Constructor::ObjectSelector<GeometricObjectType>::ConstructSetter()
 {
   // Create button to select object
-  ImGui::Button("Select object");
+  if (ImGui::Button("Select object"))
+  {
+    SetObject(object_getter_.GetLastObject());
+  }
 }
+
+template class Gui::Constructor::ObjectSelector<Point>;
 
 template void ObjectMenu::ConstructObjectSelector<GeometricObject>();
 template void ObjectMenu::ConstructObjectSelector<Point>();

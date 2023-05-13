@@ -100,7 +100,7 @@
     <ClCompile Include="GeometricObjectImplementation.cpp">
       <Filter>Sources\GeomObject</Filter>
     </ClCompile>
-    <ClCompile Include="GuiHandler.cpp">
+    <ClCompile Include="WindowHandler.cpp">
       <Filter>Sources\GUI</Filter>
     </ClCompile>
     <ClCompile Include="PlaneImplementation.cpp">
@@ -140,6 +140,7 @@
       <Filter>Sources\Observer</Filter>
     </ClCompile>
     <ClCompile Include="Widget.cpp" />
+    <ClCompile Include="EventNotifier.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeometricObject.h">
@@ -154,7 +155,7 @@
     <ClInclude Include="GeometricObjectImplementation.h">
       <Filter>Headers\GeomObject</Filter>
     </ClInclude>
-    <ClInclude Include="GuiHandler.h">
+    <ClInclude Include="WindowHandler.h">
       <Filter>Headers\GUI</Filter>
     </ClInclude>
     <ClInclude Include="Plane.h">
@@ -197,6 +198,9 @@
       <Filter>Headers\Observer</Filter>
     </ClInclude>
     <ClInclude Include="Widget.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="EventNotifier.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

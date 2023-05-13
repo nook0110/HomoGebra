@@ -1,7 +1,7 @@
 #include "GeometricObject.h"
 #include "GeometricObjectFactory.h"
-#include "GuiHandler.h"
 #include "SFML/Graphics.hpp"
+#include "WindowHandler.h"
 #include "imgui-SFML.h"
 #include "imgui.h"
 int main()
@@ -27,13 +27,13 @@ int main()
   PointFactory factory(plane);
   factory.OnPlane(PointEquation{HomogeneousCoordinate{100, 100}});
 
-  auto menu = std::make_unique<Gui::ObjectMenu>(plane);
+  auto menu =
+      std::make_unique<Gui::Constructor::ObjectSelector<Point>>(plane, window);
 
   Gui::Window gui_window("Hello", std::move(menu));
 
-  Gui::GuiHandler handler(window);
-  handler.AddConstructable(
-      std::make_unique<Gui::Window>(std::move(gui_window)));
+  Gui::WindowHandler handler(window);
+  handler.AddWindow(std::make_unique<Gui::Window>(std::move(gui_window)));
 
   while (window.isOpen())
   {
