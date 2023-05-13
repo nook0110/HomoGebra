@@ -5,7 +5,7 @@
 class EventListener
 {
  public:
-  virtual void Update(const sf::Event& event);
+  virtual void Update(const sf::Event& event) = 0;
 };
 
 class EventNotifier

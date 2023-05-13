@@ -47,7 +47,7 @@ class NearbyObjectGetter : public EventListener
    *
    * \param event Event that user've done.
    */
-  void Update(const sf::Event& event);
+  void Update(const sf::Event& event) override;
 
  private:
   /**
