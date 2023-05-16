@@ -148,6 +148,14 @@ void Constructor::ObjectSelector<GeometricObjectType>::Construct()
 }
 
 template <class GeometricObjectType>
+void Constructor::ObjectSelector<GeometricObjectType>::Update(
+    const sf::Event& event)
+{
+  // Update object getter
+  object_getter_.Update(event);
+}
+
+template <class GeometricObjectType>
 void Constructor::ObjectSelector<GeometricObjectType>::ConstructSelectedObject()
 {
   if (!object_)
@@ -182,10 +190,25 @@ void Constructor::ObjectSelector<GeometricObjectType>::ConstructList()
 template <class GeometricObjectType>
 void Constructor::ObjectSelector<GeometricObjectType>::ConstructSetter()
 {
+  std::string last_used_object_text = "Last used object: ";
+
+  const auto object = object_getter_.GetLastObject();
+
+  if (object)
+  {
+    last_used_object_text += object->GetName();
+  }
+  else
+  {
+    last_used_object_text += "nullptr";
+  }
+
+  ImGui::Text(last_used_object_text.c_str());
+
   // Create button to select object
   if (ImGui::Button("Select object"))
   {
-    SetObject(object_getter_.GetLastObject());
+    SetObject(object);
   }
 }
 

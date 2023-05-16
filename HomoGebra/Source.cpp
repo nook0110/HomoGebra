@@ -1,9 +1,11 @@
+#include "EventNotifier.h"
 #include "GeometricObject.h"
 #include "GeometricObjectFactory.h"
 #include "SFML/Graphics.hpp"
 #include "WindowHandler.h"
 #include "imgui-SFML.h"
 #include "imgui.h"
+
 int main()
 {
   sf::ContextSettings settings;
@@ -23,17 +25,23 @@ int main()
   ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
   Plane plane;
+  EventNotifier notifier;
+
+  Gui::WindowHandler gui_handler{window};
+
+  auto selector =
+      std::make_unique<Gui::Constructor::ObjectSelector<Point>>(plane, window);
+
+  notifier.Attach(selector.get());
+
+  auto selector_window =
+      std::make_unique<Gui::Window>("Hello", std::move(selector));
+
+  gui_handler.AddWindow(std::move(selector_window));
 
   PointFactory factory(plane);
   factory.OnPlane(PointEquation{HomogeneousCoordinate{100, 100}});
-
-  auto menu =
-      std::make_unique<Gui::Constructor::ObjectSelector<Point>>(plane, window);
-
-  Gui::Window gui_window("Hello", std::move(menu));
-
-  Gui::WindowHandler handler(window);
-  handler.AddWindow(std::make_unique<Gui::Window>(std::move(gui_window)));
+  factory.OnPlane(PointEquation{HomogeneousCoordinate{300, 300}});
 
   while (window.isOpen())
   {
@@ -51,6 +59,8 @@ int main()
         break;
       }
 
+      notifier.Notify(event);
+
       plane.Update(event);
     }
 
@@ -62,7 +72,7 @@ int main()
 
     window.draw(plane);
 
-    handler.Construct();
+    gui_handler.Construct();
 
     Gui::Global::Render(window);
 

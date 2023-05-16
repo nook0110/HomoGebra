@@ -139,8 +139,12 @@
     <ClCompile Include="Observer.cpp">
       <Filter>Sources\Observer</Filter>
     </ClCompile>
-    <ClCompile Include="Widget.cpp" />
-    <ClCompile Include="EventNotifier.cpp" />
+    <ClCompile Include="Widget.cpp">
+      <Filter>Sources\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="EventNotifier.cpp">
+      <Filter>Sources\Observer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeometricObject.h">
@@ -198,10 +202,10 @@
       <Filter>Headers\Observer</Filter>
     </ClInclude>
     <ClInclude Include="Widget.h">
-      <Filter>Headers</Filter>
+      <Filter>Headers\GUI</Filter>
     </ClInclude>
     <ClInclude Include="EventNotifier.h">
-      <Filter>Headers</Filter>
+      <Filter>Headers\Observer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

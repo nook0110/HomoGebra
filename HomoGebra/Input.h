@@ -38,8 +38,16 @@ class NearbyObjectGetter : public EventListener
    */
   GeometricObjectType* GetLastObject();
 
-  void Release();
+  /**
+   * \brief Rests current object.
+   */
+  void Reset();
 
+  /**
+   * \brief Sets current object.
+   *
+   * \param object Object to set.
+   */
   void SetObject(GeometricObjectType* object);
 
   /**

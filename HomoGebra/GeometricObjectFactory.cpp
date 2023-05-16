@@ -8,13 +8,10 @@ PointFactory::PointFactory(Plane& plane) : plane_(plane) {}
 
 Point* PointFactory::OnPlane(const PointEquation& coordinate)
 {
-  // Construct equation
-  PointEquation equation(coordinate);
-
   // Create point
-  auto point = std::make_unique<Point>(equation);
+  auto point = std::make_unique<Point>(coordinate);
 
-  auto point_ptr = point.get();
+  const auto point_ptr = point.get();
 
   // Add point to plane
   plane_.AddObject(std::move(point));

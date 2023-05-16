@@ -43,7 +43,7 @@ void Window::End() const { ImGui::End(); }
 
 void WindowHandler::Construct()
 {
-  for (const auto& renderable : constructable_objects_)
+  for (const auto& renderable : windows_)
   {
     renderable->Construct();
   }
@@ -51,13 +51,11 @@ void WindowHandler::Construct()
 
 void Gui::WindowHandler::AddWindow(std::unique_ptr<Window> window)
 {
-  constructable_objects_.push_back(std::move(window));
+  windows_.push_back(std::move(window));
 }
 
 void WindowHandler::DeleteWindow(Window* window)
 {
-  constructable_objects_.remove_if([window](std::unique_ptr<Window> const& ptr)
-                                   { return ptr.get() == window; });
+  windows_.remove_if([window](std::unique_ptr<Window> const& ptr)
+                     { return ptr.get() == window; });
 }
-
-WindowHandler::WindowHandler(sf::RenderWindow& window) : window_(window) {}

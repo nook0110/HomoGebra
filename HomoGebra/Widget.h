@@ -32,10 +32,24 @@ inline bool ObjectsNameGetter(void* data, int index, const char** name)
   return true;
 }
 
+/**
+ * \brief Mix-In for widgets.
+ *
+ * \author nook0110
+ */
 class Widget
 {
  public:
+  /**
+   * \brief Default destructor.
+   *
+   */
   virtual ~Widget() = default;
+
+  /**
+   * \brief Constructs widget.
+   *
+   */
   virtual void Construct() = 0;
 };
 
@@ -315,33 +329,82 @@ class ObjectMenu final : public Widget
 
 namespace Constructor
 {
+/**
+ * \brief Widget to select object.
+ *
+ * \details By name or nearest to last click object.
+ *
+ * \tparam GeometricObjectType Type of object to select.
+ *
+ * \author nook0110
+ */
 template <class GeometricObjectType>
-class ObjectSelector : public Widget
+class ObjectSelector : public Widget, public EventListener
 {
  public:
+  /**
+   * \brief Constructor.
+   *
+   * \param plane Plane where to select object.
+   * \param window Window where clicks are happening.
+   *
+   */
   explicit ObjectSelector(Plane& plane, sf::RenderWindow& window)
       : plane_(plane), object_getter_(plane, window)
   {}
 
+  /**
+   * \brief Get selected object.
+   *
+   * \return Pointer to selected object.
+   */
   [[nodiscard]] GeometricObjectType* GetObject() const;
 
+  /**
+   * \brief Set selected object.
+   *
+   * \param object Object to set with.
+   */
   void SetObject(GeometricObjectType* object);
 
+  /**
+   * \brief Constructs the widget.
+   *
+   */
   void Construct() override;
 
+  /**
+   * \brief Process the event.
+   *
+   * \param event Event to process.
+   */
+  void Update(const sf::Event& event) override;
+
  private:
+  /**
+   * \brief Constructs name of selected object.
+   *
+   */
   void ConstructSelectedObject();
 
+  /**
+   * \brief Construct list to choose object from.
+   *
+   */
   void ConstructList();
 
+  /**
+   * \brief Construct setter through last nearest object.
+   *
+   */
   void ConstructSetter();
 
-  Plane& plane_;
+  Plane& plane_;                   //!< Plane where to choose objects.
   GeometricObjectType* object_{};  //!< Object that was selected.
   NearbyObjectGetter<GeometricObjectType>
       object_getter_;  //!< Helper to find specific objects.
 
-  int current_object_ = 0;
+  int current_object_ = 0;  //!< Index in list of all objects.
 };
 }  // namespace Constructor
 }  // namespace Gui

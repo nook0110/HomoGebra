@@ -4,7 +4,9 @@ template <class GeometricObjectType>
 NearbyObjectGetter<GeometricObjectType>::NearbyObjectGetter(
     Plane& plane, sf::RenderWindow& window, GeometricObjectType* last_object)
     : window_(window), last_object_(std::move(last_object)), finder_(plane)
-{}
+{
+  InitActionMap();
+}
 
 template <class GeometricObjectType>
 GeometricObjectType* NearbyObjectGetter<GeometricObjectType>::GetLastObject()
@@ -13,7 +15,7 @@ GeometricObjectType* NearbyObjectGetter<GeometricObjectType>::GetLastObject()
 }
 
 template <class GeometricObjectType>
-void NearbyObjectGetter<GeometricObjectType>::Release()
+void NearbyObjectGetter<GeometricObjectType>::Reset()
 {
   SetObject(nullptr);
 }
