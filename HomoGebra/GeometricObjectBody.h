@@ -117,6 +117,8 @@ class PointBody final : public sf::Drawable
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  void DrawArrow(sf::RenderTarget& target, sf::RenderStates states) const;
+
  private:
   /**
    * Member data.
@@ -164,7 +166,7 @@ class PointBody final : public sf::Drawable
  *
  * \date February 2023
  */
-class LineBody
+class LineBody : public sf::Drawable
 {
  public:
   /**
@@ -178,6 +180,8 @@ class LineBody
    *
    */
   ~LineBody() = default;
+
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };
 
 /**

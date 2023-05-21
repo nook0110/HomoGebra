@@ -27,17 +27,21 @@ int main()
   Plane plane;
   EventNotifier notifier;
 
-  Gui::WindowHandler gui_handler{window};
+  Gui::WindowHandler gui_handler;
 
   auto selector =
       std::make_unique<Gui::Constructor::ObjectSelector<Point>>(plane, window);
+
+  auto editor = std::make_unique<Gui::ObjectMenu>(plane);
 
   notifier.Attach(selector.get());
 
   auto selector_window =
       std::make_unique<Gui::Window>("Hello", std::move(selector));
+  auto editor_window = std::make_unique<Gui::Window>("Test", std::move(editor));
 
   gui_handler.AddWindow(std::move(selector_window));
+  gui_handler.AddWindow(std::move(editor_window));
 
   PointFactory factory(plane);
   factory.OnPlane(PointEquation{HomogeneousCoordinate{100, 100}});

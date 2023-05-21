@@ -4,12 +4,14 @@
 #include <cassert>
 #include <iostream>
 
-SquaredMatrix::SquaredMatrix(const size_t size)
+template <typename UnderlyingType>
+SquaredMatrix<UnderlyingType>::SquaredMatrix(const size_t size)
     : matrix_(size, Row(size)), augmentation_(size), size_(size)
 {}
 
-SquaredMatrix::SquaredMatrix(const Matrix& matrix,
-                             const Row& augmentation = Row())
+template <typename UnderlyingType>
+SquaredMatrix<UnderlyingType>::SquaredMatrix(const Matrix& matrix,
+                                             const Row& augmentation)
     : matrix_(matrix), augmentation_(augmentation), size_(matrix.size())
 {
   // Check if matrix is squared
@@ -19,45 +21,11 @@ SquaredMatrix::SquaredMatrix(const Matrix& matrix,
 
   // Check if augmentation is correct
   assert((augmentation.size() == size_));
-
-  // Check if matrix contains NaN
-  assert(!(std::any_of(matrix.begin(), matrix.end(),
-                       [](const Row& row)
-                       {
-                         return std::any_of(row.begin(), row.end(),
-                                            [](const Complex& value) {
-                                              return std::isnan(value.real()) ||
-                                                     std::isnan(value.imag());
-                                            });
-                       })));
-
-  // Check if augmentation contains NaN or Inf
-  assert(!(std::any_of(augmentation.begin(), augmentation.end(),
-                       [](const Complex& value) {
-                         return std::isnan(value.real()) ||
-                                std::isnan(value.imag());
-                       })));
-
-  // Check if matrix contains Inf
-  assert(!(std::any_of(matrix.begin(), matrix.end(),
-                       [](const Row& row)
-                       {
-                         return std::any_of(row.begin(), row.end(),
-                                            [](const Complex& value) {
-                                              return std::isinf(value.real()) ||
-                                                     std::isinf(value.imag());
-                                            });
-                       })));
-
-  // Check if augmentation contains Inf
-  assert(!(std::any_of(augmentation.begin(), augmentation.end(),
-                       [](const Complex& value) {
-                         return std::isinf(value.real()) ||
-                                std::isinf(value.imag());
-                       })));
 }
 
-std::optional<SquaredMatrix> SquaredMatrix::GetInverse() const
+template <typename UnderlyingType>
+std::optional<SquaredMatrix<UnderlyingType>>
+SquaredMatrix<UnderlyingType>::GetInverse() const
 {
   // Construct ID matrix
   Matrix inverse(size_, Row(size_));
@@ -103,7 +71,7 @@ std::optional<SquaredMatrix> SquaredMatrix::GetInverse() const
     }
 
     // Divide row by pivot
-    const Complex pivot_value = matrix[step][step];
+    const UnderlyingType pivot_value = matrix[step][step];
     for (size_t column = 0; column < size_; ++column)
     {
       matrix[step][column] /= pivot_value;
@@ -119,7 +87,7 @@ std::optional<SquaredMatrix> SquaredMatrix::GetInverse() const
       // Skip current row
       if (step != row)
       {
-        Complex multiplier = matrix[row][step];
+        UnderlyingType multiplier = matrix[row][step];
 
         for (size_t column = 0; column < size_; ++column)
         {
@@ -137,7 +105,8 @@ std::optional<SquaredMatrix> SquaredMatrix::GetInverse() const
   return SquaredMatrix(inverse, augmentation);
 }
 
-Complex SquaredMatrix::GetDeterminant() const
+template <typename UnderlyingType>
+UnderlyingType SquaredMatrix<UnderlyingType>::GetDeterminant() const
 {
   // Construct copy of our matrix
   Matrix matrix = matrix_;
@@ -171,7 +140,7 @@ Complex SquaredMatrix::GetDeterminant() const
       if (step != row)
       {
         // Calculate multiplier
-        Complex multiplier = matrix[row][step] / matrix[step][step];
+        UnderlyingType multiplier = matrix[row][step] / matrix[step][step];
 
         for (size_t column = 0; column < size_; ++column)
         {
@@ -182,7 +151,7 @@ Complex SquaredMatrix::GetDeterminant() const
   }
 
   // Calculate determinant
-  Complex determinant = 1;
+  UnderlyingType determinant = 1;
   for (size_t i = 0; i < size_; ++i)
   {
     determinant *= matrix[i][i];
@@ -192,7 +161,9 @@ Complex SquaredMatrix::GetDeterminant() const
   return determinant;
 }
 
-std::optional<SquaredMatrix::Column> SquaredMatrix::GetSolution() const
+template <typename UnderlyingType>
+typename std::optional<typename SquaredMatrix<UnderlyingType>::Column>
+SquaredMatrix<UnderlyingType>::GetSolution() const
 {
   // Find inverse
   auto inverse = GetInverse();
@@ -207,26 +178,38 @@ std::optional<SquaredMatrix::Column> SquaredMatrix::GetSolution() const
   return inverse->GetAugmentation();
 }
 
-size_t SquaredMatrix::GetSize() const { return size_; }
+template <typename UnderlyingType>
+size_t SquaredMatrix<UnderlyingType>::GetSize() const
+{
+  return size_;
+}
 
-SquaredMatrix::Column& SquaredMatrix::GetAugmentation()
+template <typename UnderlyingType>
+typename SquaredMatrix<UnderlyingType>::Column&
+SquaredMatrix<UnderlyingType>::GetAugmentation()
 {
   return augmentation_;
 }
 
-const SquaredMatrix::Column& SquaredMatrix::GetAugmentation() const
+template <typename UnderlyingType>
+const typename SquaredMatrix<UnderlyingType>::Column&
+SquaredMatrix<UnderlyingType>::GetAugmentation() const
 {
   return augmentation_;
 }
 
-SquaredMatrix& SquaredMatrix::operator*=(const SquaredMatrix& other)
+template <typename UnderlyingType>
+SquaredMatrix<UnderlyingType>& SquaredMatrix<UnderlyingType>::operator*=(
+    const SquaredMatrix& other)
 {
   (*this) = (*this) * other;
 
   return *this;
 }
 
-SquaredMatrix SquaredMatrix::operator*(const SquaredMatrix& other) const
+template <typename UnderlyingType>
+SquaredMatrix<UnderlyingType> SquaredMatrix<UnderlyingType>::operator*(
+    const SquaredMatrix& other) const
 {
   // Check if matrices are compatible
   assert((size_ != other.size_));
@@ -250,14 +233,15 @@ SquaredMatrix SquaredMatrix::operator*(const SquaredMatrix& other) const
   return result;
 }
 
-std::vector<Complex> SquaredMatrix::operator*(
-    const std::vector<Complex>& vector) const
+template <typename UnderlyingType>
+std::vector<UnderlyingType> SquaredMatrix<UnderlyingType>::operator*(
+    const std::vector<UnderlyingType>& vector) const
 {
   // Check if vector is compatible
   assert((vector.size() != size_));
 
   // Construct new vector filled with zeros
-  std::vector<Complex> result(size_);
+  std::vector<UnderlyingType> result(size_);
 
   // Multiply
   for (size_t i = 0; i < size_; ++i)
@@ -272,24 +256,35 @@ std::vector<Complex> SquaredMatrix::operator*(
   return result;
 }
 
-SquaredMatrix::Row& SquaredMatrix::operator[](const size_t row)
+template <typename UnderlyingType>
+typename SquaredMatrix<UnderlyingType>::Row&
+SquaredMatrix<UnderlyingType>::operator[](const size_t row)
 {
   return matrix_[row];
 }
 
-const SquaredMatrix::Row& SquaredMatrix::operator[](const size_t row) const
+template <typename UnderlyingType>
+const typename SquaredMatrix<UnderlyingType>::Row&
+SquaredMatrix<UnderlyingType>::operator[](const size_t row) const
 {
   return matrix_[row];
 }
 
-SquaredMatrix::Matrix::const_iterator SquaredMatrix::begin() const
+template <typename UnderlyingType>
+typename SquaredMatrix<UnderlyingType>::Matrix::const_iterator
+SquaredMatrix<UnderlyingType>::begin() const
 {
   // Return iterator to first row
   return matrix_.begin();
 }
 
-SquaredMatrix::Matrix::const_iterator SquaredMatrix::end() const
+template <typename UnderlyingType>
+typename SquaredMatrix<UnderlyingType>::Matrix::const_iterator
+SquaredMatrix<UnderlyingType>::end() const
 {
   // Return iterator to last row
   return matrix_.end();
 }
+
+template class SquaredMatrix<Complex>;
+template class SquaredMatrix<float>;

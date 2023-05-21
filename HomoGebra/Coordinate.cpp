@@ -188,7 +188,7 @@ Transformation::Transformation(
    * linear equations.
    */
 
-  const SquaredMatrix matrix(
+  const ComplexSquaredMatrix matrix(
       // Matrix
       {
           // First three rows

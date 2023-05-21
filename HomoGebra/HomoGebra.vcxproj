@@ -180,6 +180,7 @@
     <ClInclude Include="Coordinate.h" />
     <ClInclude Include="Dictionary.h" />
     <ClInclude Include="EventNotifier.h" />
+    <ClInclude Include="Helpers.h" />
     <ClInclude Include="Widget.h" />
     <ClInclude Include="Equation.h" />
     <ClInclude Include="GeometricObject.h" />

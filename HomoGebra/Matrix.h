@@ -8,6 +8,7 @@
 /**
  * \brief A squared matrix with augmentation.
  */
+template <typename UnderlyingType>
 class SquaredMatrix
 {
  public:
@@ -15,9 +16,9 @@ class SquaredMatrix
    * \brief Type aliases.
    *
    */
-  using Row = std::vector<Complex>;     //!< Row of matrix
-  using Column = std::vector<Complex>;  //!< Column of matrix
-  using Matrix = std::vector<Row>;      //!< Matrix
+  using Row = std::vector<UnderlyingType>;     //!< Row of matrix
+  using Column = std::vector<UnderlyingType>;  //!< Column of matrix
+  using Matrix = std::vector<Row>;             //!< Matrix
 
   /**
    * \brief Construct from size. Matrix and augmentation will be filled with
@@ -48,7 +49,7 @@ class SquaredMatrix
    *
    * \return Determinant
    */
-  [[nodiscard]] Complex GetDeterminant() const;
+  [[nodiscard]] UnderlyingType GetDeterminant() const;
 
   /**
    * \brief Find solution of linear equations.
@@ -100,8 +101,8 @@ class SquaredMatrix
    * \param vector Vector
    * \return New vector equals to result of multiplication
    */
-  [[nodiscard]] std::vector<Complex> operator*(
-      const std::vector<Complex>& vector) const;
+  [[nodiscard]] std::vector<UnderlyingType> operator*(
+      const std::vector<UnderlyingType>& vector) const;
 
   /**
    * \brief operator to get row of matrix.
@@ -126,14 +127,14 @@ class SquaredMatrix
    *
    * \return Iterator to first row
    */
-  [[nodiscard]] Matrix::const_iterator begin() const;
+  [[nodiscard]] typename Matrix::const_iterator begin() const;
 
   /**
    * \brief Return iterator to the end of rows
    *
    * \return Iterator to end of rows
    */
-  [[nodiscard]] Matrix::const_iterator end() const;
+  [[nodiscard]] typename Matrix::const_iterator end() const;
 
  private:
   /**
@@ -149,3 +150,6 @@ class SquaredMatrix
   Column augmentation_{};  //!< Augmentation
   size_t size_{};          //!< Size of matrix
 };
+
+using ComplexSquaredMatrix = SquaredMatrix<Complex>;
+using FloatSquaredMatrix = SquaredMatrix<float>;

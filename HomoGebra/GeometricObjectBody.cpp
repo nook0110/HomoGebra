@@ -2,6 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <Thor/Shapes.hpp>
+#include <cassert>
+
+#include "Helpers.h"
 
 ObjectName::ObjectName(const std::string& name)
 {
@@ -57,7 +60,7 @@ void PointBody::Update(const PointEquation& equation, const float size)
   body_.setOrigin(size, size);
 }
 
-void PointBody::draw(sf::RenderTarget& target, sf::RenderStates) const
+void PointBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
   if (!position_) return;
 
@@ -65,16 +68,41 @@ void PointBody::draw(sf::RenderTarget& target, sf::RenderStates) const
       is_at_infinity)
   {
     // Draw point at infinity
-    thor::Arrow arrow;
-    arrow.setDirection(position * 100.f);
-    target.draw(arrow);
+    DrawArrow(target, states);
   }
   else
   {
     // Draw point
-    target.draw(body_);
-    target.draw(text_);
+    target.draw(body_, states);
+    target.draw(text_, states);
   }
+}
+
+void PointBody::DrawArrow(sf::RenderTarget& target,
+                          sf::RenderStates states) const
+{
+  assert(position_);
+
+  const auto& [position, is_at_infinity] =
+      position_.value();  // NOLINT(bugprone-unchecked-optional-access)
+
+  assert(is_at_infinity);
+
+  const auto& view = target.getView();
+  const auto intersection = Helpers::IntersectRayWithRectangle(
+      view.getCenter(), position, view.getViewport());
+
+  assert(intersection.has_value());
+
+  // Coefficient for start of line.
+  constexpr auto kStartShift = 0.9f;
+  const auto arrow_start = intersection.value() * kStartShift +
+                           view.getCenter() * (1.f - kStartShift);
+  constexpr auto kEndShift = 0.95f;
+  const auto arrow_end =
+      intersection.value() * kEndShift + view.getCenter() * (1.f - kEndShift);
+
+  thor::Arrow arrow{arrow_start, arrow_end, sf::Color::Black, 10};
 }
 
 std::optional<PointBody::ProjectivePosition> PointBody::CalculatePosition(
@@ -107,3 +135,5 @@ std::optional<PointBody::ProjectivePosition> PointBody::CalculatePosition(
                    static_cast<float>(normalized_eq.y.real())),
       false};
 }
+
+void LineBody::draw(sf::RenderTarget& target, sf::RenderStates states) const {}

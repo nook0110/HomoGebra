@@ -48,7 +48,7 @@ Line* LineFactory::ByTwoPoints(const Point& first, const Point& second)
   const auto& s_equation = second.GetEquation().GetEquation();
 
   // Create matrix
-  SquaredMatrix matrix{3};
+  ComplexSquaredMatrix matrix{3};
 
   // Get first row
   auto& first_row = matrix[0];

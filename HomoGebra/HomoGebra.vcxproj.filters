@@ -207,5 +207,8 @@
     <ClInclude Include="EventNotifier.h">
       <Filter>Headers\Observer</Filter>
     </ClInclude>
+    <ClInclude Include="Helpers.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
