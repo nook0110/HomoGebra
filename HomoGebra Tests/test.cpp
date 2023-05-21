@@ -64,9 +64,9 @@ using namespace HelpFunctions;
 namespace Matrix
 {
 // Checks that two squared matrix are equal with precision [abs_error]
-testing::AssertionResult check_two_squared_matrix(const SquaredMatrix& first,
-                                                  const SquaredMatrix& second,
-                                                  long double abs_error)
+testing::AssertionResult check_two_squared_matrix(
+    const ComplexSquaredMatrix& first, const ComplexSquaredMatrix& second,
+    long double abs_error)
 {
   if (first.GetSize() != second.GetSize())
   {
@@ -96,9 +96,9 @@ testing::AssertionResult check_two_squared_matrix(const SquaredMatrix& first,
 
 // Checks that augmentations of two squared matrices are equal with precision
 // [abs_error]
-testing::AssertionResult check_two_augmentation(const SquaredMatrix& first,
-                                                const SquaredMatrix& second,
-                                                long double abs_error)
+testing::AssertionResult check_two_augmentation(
+    const ComplexSquaredMatrix& first, const ComplexSquaredMatrix& second,
+    long double abs_error)
 {
   if (first.GetSize() != second.GetSize())
   {
@@ -121,19 +121,19 @@ testing::AssertionResult check_two_augmentation(const SquaredMatrix& first,
 
   return testing::AssertionSuccess() << "Augmentations are near equal!";
 }
-TEST(SquaredMatrix, Inverse)
+TEST(ComplexSquaredMatrix, Inverse)
 {
   // Generate random matrix 3 * 3 with determinant 0
-  const SquaredMatrix matrix(
-      SquaredMatrix::Matrix{
-          SquaredMatrix::Row{Complex(1.0, 2.0), Complex(3.0, 4.0),
-                             Complex(5.0, 6.0)},
-          SquaredMatrix::Row{Complex(7.0, 8.0), Complex(9.0, 10.0),
-                             Complex(11.0, 12.0)},
-          SquaredMatrix::Row{Complex(8.0, 10.0), Complex(12.0, 14.0),
-                             Complex(16.0, 18.0)}},
-      SquaredMatrix::Row{Complex(19.0, 20.0), Complex(21.0, 22.0),
-                         Complex(23.0, 24.0)});
+  const ComplexSquaredMatrix matrix(
+      ComplexSquaredMatrix::Matrix{
+          ComplexSquaredMatrix::Row{Complex(1.0, 2.0), Complex(3.0, 4.0),
+                                    Complex(5.0, 6.0)},
+          ComplexSquaredMatrix::Row{Complex(7.0, 8.0), Complex(9.0, 10.0),
+                                    Complex(11.0, 12.0)},
+          ComplexSquaredMatrix::Row{Complex(8.0, 10.0), Complex(12.0, 14.0),
+                                    Complex(16.0, 18.0)}},
+      ComplexSquaredMatrix::Row{Complex(19.0, 20.0), Complex(21.0, 22.0),
+                                Complex(23.0, 24.0)});
 
   // Get inverse matrix
   const auto inverse_matrix = matrix.GetInverse();
@@ -143,29 +143,29 @@ TEST(SquaredMatrix, Inverse)
 
   // Generate another random matrix 3 * 3 with determinant 1
 
-  const SquaredMatrix second_matrix(
-      {SquaredMatrix::Row{Complex(1.0, 1.2), Complex(2.0, 4.12),
-                          Complex(3.0, 7.636)},
-       SquaredMatrix::Row{Complex(1.0, 2.8), Complex(5.0, 5.521),
-                          Complex(6.0, 8.616)},
-       SquaredMatrix::Row{Complex(1.0, 3.8), Complex(8.0, 6.1234),
-                          Complex(9.0, 9.93)}},
-      SquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
-                         Complex(12.0, 0.0)});
+  const ComplexSquaredMatrix second_matrix(
+      {ComplexSquaredMatrix::Row{Complex(1.0, 1.2), Complex(2.0, 4.12),
+                                 Complex(3.0, 7.636)},
+       ComplexSquaredMatrix::Row{Complex(1.0, 2.8), Complex(5.0, 5.521),
+                                 Complex(6.0, 8.616)},
+       ComplexSquaredMatrix::Row{Complex(1.0, 3.8), Complex(8.0, 6.1234),
+                                 Complex(9.0, 9.93)}},
+      ComplexSquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
+                                Complex(12.0, 0.0)});
 
-  const SquaredMatrix real_inverse_of_matrix(
-      {SquaredMatrix::Row{Complex(-0.162603872026L, 0.547316949016L),
-                          Complex(1.29642322808L, -0.91383483088),
-                          Complex(-0.887012829208L, 0.302306240654L)},
-       SquaredMatrix::Row{Complex(0.104126199172L, 0.608370065879L),
-                          Complex(-0.83038879224L, -1.40436460852),
-                          Complex(0.577032792198L, 0.8034071115L)},
-       SquaredMatrix::Row{Complex(-0.043135151367L, -0.556184119699L),
-                          Complex(0.343429483128L, 0.988543488361L),
-                          Complex(-0.213740448132L, -0.529986036879L)}},
-      SquaredMatrix::Row{Complex(3.45389768638, -5.87719130279),
-                         Complex(-2.10575700912, -5.19875528911),
-                         Complex(1.16970378546, 3.95796180972)});
+  const ComplexSquaredMatrix real_inverse_of_matrix(
+      {ComplexSquaredMatrix::Row{Complex(-0.162603872026L, 0.547316949016L),
+                                 Complex(1.29642322808L, -0.91383483088),
+                                 Complex(-0.887012829208L, 0.302306240654L)},
+       ComplexSquaredMatrix::Row{Complex(0.104126199172L, 0.608370065879L),
+                                 Complex(-0.83038879224L, -1.40436460852),
+                                 Complex(0.577032792198L, 0.8034071115L)},
+       ComplexSquaredMatrix::Row{Complex(-0.043135151367L, -0.556184119699L),
+                                 Complex(0.343429483128L, 0.988543488361L),
+                                 Complex(-0.213740448132L, -0.529986036879L)}},
+      ComplexSquaredMatrix::Row{Complex(3.45389768638, -5.87719130279),
+                                Complex(-2.10575700912, -5.19875528911),
+                                Complex(1.16970378546, 3.95796180972)});
 
   // Get inverse matrix
   const auto second_inverse_matrix = second_matrix.GetInverse();
@@ -188,18 +188,18 @@ TEST(SquaredMatrix, Inverse)
       kEpsilon));
 }
 
-TEST(SquaredMatrix, Solution)
+TEST(ComplexSquaredMatrix, Solution)
 {
   // Create a random matrix 3 * 3 with determinant not 0
-  const SquaredMatrix matrix(
-      {SquaredMatrix::Row{Complex(1.0, 1.2), Complex(2.0, 4.12),
-                          Complex(3.0, 7.636)},
-       SquaredMatrix::Row{Complex(1.0, 2.8), Complex(5.0, 5.521),
-                          Complex(6.0, 8.616)},
-       SquaredMatrix::Row{Complex(1.0, 3.8), Complex(8.0, 6.1234),
-                          Complex(9.0, 9.93)}},
-      SquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
-                         Complex(12.0, 0.0)});
+  const ComplexSquaredMatrix matrix(
+      {ComplexSquaredMatrix::Row{Complex(1.0, 1.2), Complex(2.0, 4.12),
+                                 Complex(3.0, 7.636)},
+       ComplexSquaredMatrix::Row{Complex(1.0, 2.8), Complex(5.0, 5.521),
+                                 Complex(6.0, 8.616)},
+       ComplexSquaredMatrix::Row{Complex(1.0, 3.8), Complex(8.0, 6.1234),
+                                 Complex(9.0, 9.93)}},
+      ComplexSquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
+                                Complex(12.0, 0.0)});
 
   // Get solution
   const auto solution = matrix.GetSolution();
@@ -220,18 +220,18 @@ TEST(SquaredMatrix, Solution)
       kEpsilon));
 }
 
-TEST(SquaredMatrix, Determinant)
+TEST(ComplexSquaredMatrix, Determinant)
 {
   // Create a random matrix 3 * 3 with determinant not 0
-  const SquaredMatrix matrix(
-      {SquaredMatrix::Row{Complex(1.0, 1.2), Complex(2.0, 4.12),
-                          Complex(3.0, 7.636)},
-       SquaredMatrix::Row{Complex(1.0, 2.8), Complex(5.0, 5.521),
-                          Complex(6.0, 8.616)},
-       SquaredMatrix::Row{Complex(1.0, 3.8), Complex(8.0, 6.1234),
-                          Complex(9.0, 9.93)}},
-      SquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
-                         Complex(12.0, 0.0)});
+  const ComplexSquaredMatrix matrix(
+      {ComplexSquaredMatrix::Row{Complex(1.0, 1.2), Complex(2.0, 4.12),
+                                 Complex(3.0, 7.636)},
+       ComplexSquaredMatrix::Row{Complex(1.0, 2.8), Complex(5.0, 5.521),
+                                 Complex(6.0, 8.616)},
+       ComplexSquaredMatrix::Row{Complex(1.0, 3.8), Complex(8.0, 6.1234),
+                                 Complex(9.0, 9.93)}},
+      ComplexSquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
+                                Complex(12.0, 0.0)});
 
   // Get determinant
   const auto determinant = matrix.GetDeterminant();
@@ -244,15 +244,15 @@ TEST(SquaredMatrix, Determinant)
   ASSERT_TRUE(check_two_complex(real_determinant, determinant, kEpsilon));
 
   // Create a random matrix 3 * 3 with determinant 0
-  const SquaredMatrix matrix_with_zero_determinant(
-      {SquaredMatrix::Row{Complex(1.0, 2.0), Complex(3.0, 4.0),
-                          Complex(5.0, 6.0)},
-       SquaredMatrix::Row{Complex(7.0, 8.0), Complex(9.0, 10.0),
-                          Complex(11.0, 12.0)},
-       SquaredMatrix::Row{Complex(13.0, 14.0), Complex(15.0, 16.0),
-                          Complex(17.0, 18.0)}},
-      SquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
-                         Complex(12.0, 0.0)});
+  const ComplexSquaredMatrix matrix_with_zero_determinant(
+      {ComplexSquaredMatrix::Row{Complex(1.0, 2.0), Complex(3.0, 4.0),
+                                 Complex(5.0, 6.0)},
+       ComplexSquaredMatrix::Row{Complex(7.0, 8.0), Complex(9.0, 10.0),
+                                 Complex(11.0, 12.0)},
+       ComplexSquaredMatrix::Row{Complex(13.0, 14.0), Complex(15.0, 16.0),
+                                 Complex(17.0, 18.0)}},
+      ComplexSquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
+                                Complex(12.0, 0.0)});
 
   // Get determinant
   const auto determinant_with_zero_determinant =
