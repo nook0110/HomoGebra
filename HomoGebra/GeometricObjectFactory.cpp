@@ -14,7 +14,7 @@ Point* PointFactory::OnPlane(const PointEquation& coordinate)
   const auto point_ptr = point.get();
 
   // Add point to plane
-  plane_.AddObject(std::move(point));
+  // plane_.AddConstruction(std::move(point));
 
   const auto& name_generator = plane_.GetNameGenerator();
 
@@ -97,13 +97,27 @@ Line* LineFactory::ByTwoPoints(const Point& first, const Point& second)
   auto line = std::make_unique<Line>(equation);
 
   // Add line to plane
-  plane_.AddObject(std::move(line));
+  // plane_.AddConstruction(std::move(line));
 
   // Return line
   return nullptr;
 }
 
 ConicFactory::ConicFactory(Plane& plane) : plane_(plane) {}
+
+Conic* ConicFactory::OnPlane(const ConicEquation& equation)
+{
+  // Create conic
+  auto conic = std::make_unique<Conic>(equation);
+
+  const auto conic_ptr = conic.get();
+
+  // Add conic to plane
+  // plane_.AddConstruction(std::move(conic));
+
+  // Return conic
+  return conic_ptr;
+}
 
 Conic* ConicFactory::ByFivePoints(const Point& first, const Point& second,
                                   const Point& third, const Point& fourth,

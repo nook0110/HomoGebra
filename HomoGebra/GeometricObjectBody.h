@@ -181,6 +181,12 @@ class LineBody : public sf::Drawable
    */
   ~LineBody() = default;
 
+  /**
+   * \brief Draw line to a render target.
+   *
+   *
+   *
+   */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };
 
@@ -193,7 +199,7 @@ class LineBody : public sf::Drawable
  *
  * \date February 2023
  */
-class ConicBody
+class ConicBody : public sf::Drawable
 {
  public:
   /**
@@ -207,4 +213,30 @@ class ConicBody
    *
    */
   ~ConicBody() = default;
+
+  /**
+   * \brief Updates the conic body.
+   *
+   * \param equation Equation of the conic.
+   */
+  void Update(const ConicEquation& equation);
+
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
+ private:
+  struct Equation
+  {
+    static constexpr std::array<Var, 2> kAnother = {Var::kY, Var::kX};
+
+    using Solution = std::array<std::optional<Complex>, 2>;
+
+    [[nodiscard]] Solution Solve(Var var, const Complex& another) const;
+
+    std::array<Complex, 2> squares;
+    Complex pair_product;
+    std::array<Complex, 2> linears;
+    Complex constant;
+  };
+
+  Equation equation_;
 };

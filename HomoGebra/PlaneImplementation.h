@@ -6,6 +6,7 @@
 #include "Observer.h"
 
 class GeometricObject;
+class Construction;
 
 /**
  * \brief Implementation of Plane.
@@ -26,9 +27,9 @@ class PlaneImplementation : public GeometricObjectObserver
   /**
    * \brief Adds object
    *
-   * \param object Object to add
+   * \param construction Object to add
    */
-  void AddObject(std::unique_ptr<GeometricObject> object);
+  void AddConstruction(std::unique_ptr<Construction> construction);
 
   /**
    * \brief Remove object.
@@ -72,8 +73,8 @@ class PlaneImplementation : public GeometricObjectObserver
    * Member data.
    */
 
-  std::vector<std::unique_ptr<GeometricObject>>
-      objects_;  //!< All objects on the plane.
+  std::vector<std::unique_ptr<Construction>>
+      construction_;  //!< All constructions on the plane.
 
   NameGenerator name_generator_;  //!< Name generator.
 };

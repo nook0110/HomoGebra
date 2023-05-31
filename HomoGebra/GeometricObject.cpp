@@ -1,5 +1,8 @@
 #include "GeometricObject.h"
 
+#include "Equation.h"
+#include "GeometricObjectImplementation.h"
+
 Point::Point(const PointEquation& equation) : implementation_(equation) {}
 
 void Point::Destroy(Plane& plane)
@@ -137,4 +140,12 @@ void Conic::Notify(const Event::Destroyed& event) const
   implementation_.Notify(event);
 }
 
-void Conic::draw(sf::RenderTarget& target, sf::RenderStates states) const {}
+void Conic::UpdateBody(sf::RenderTarget& target)
+{
+  body_.Update(implementation_.GetEquation());
+}
+
+void Conic::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+  target.draw(body_, states);
+}

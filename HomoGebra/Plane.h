@@ -3,6 +3,8 @@
 #include "PlaneBody.h"
 #include "PlaneImplementation.h"
 
+class Construction;
+
 /**
  * \brief Container for all objects, which you can draw.
  *
@@ -21,9 +23,9 @@ class Plane final : public sf::Drawable
   /**
    * \brief Adds object to plane.
    *
-   * \param object Pointer to an object.
+   * \param construction Pointer to an object.
    */
-  void AddObject(std::unique_ptr<GeometricObject> object);
+  void AddConstruction(std::unique_ptr<Construction> construction);
 
   /**
    * \brief Returns objects of GeometricObjectType.
@@ -56,16 +58,6 @@ class Plane final : public sf::Drawable
    * \param states Current render states.
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
-
-  /**
-   * \brief Renames object.
-   *
-   * \param object Object to rename.
-   * \param new_name New name of object.
-   *
-   * \return True if object was renamed, false otherwise.
-   */
-  bool Rename(GeometricObject* object, const std::string& new_name);
 
   /**
    * \brief Returns name generator.

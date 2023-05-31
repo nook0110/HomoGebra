@@ -43,9 +43,16 @@ int main()
   gui_handler.AddWindow(std::move(selector_window));
   gui_handler.AddWindow(std::move(editor_window));
 
-  PointFactory factory(plane);
-  factory.OnPlane(PointEquation{HomogeneousCoordinate{100, 100}});
-  factory.OnPlane(PointEquation{HomogeneousCoordinate{300, 300}});
+  PointFactory point_factory(plane);
+  point_factory.OnPlane(PointEquation{HomogeneousCoordinate{100, 100}});
+  point_factory.OnPlane(PointEquation{HomogeneousCoordinate{300, 300}});
+
+  ConicFactory conic_factory(plane);
+
+  ConicEquation equation;
+  equation.squares = {1, 1, -10000};
+  equation.pair_products = {1, 1, 1};
+  conic_factory.OnPlane(equation);
 
   while (window.isOpen())
   {

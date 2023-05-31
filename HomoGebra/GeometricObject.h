@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+
 #include "GeometricObjectBody.h"
 #include "GeometricObjectImplementation.h"
 #include "PlaneImplementation.h"
@@ -215,6 +217,9 @@ class Point final : public GeometricObject
   PointImplementation implementation_;  //!< Implementation.
 };
 
+class LineImplementation;
+class LineBody;
+
 /**
  * \brief Line on a plane.
  *
@@ -314,6 +319,9 @@ class Line final : public GeometricObject
   LineImplementation implementation_;  //!< Implementation.
 };
 
+class ConicImplementation;
+class ConicBody;
+
 /**
  * \brief Conic on a plane.
  *
@@ -355,7 +363,7 @@ class Conic final : public GeometricObject
    *
    * \param target Render target to draw to.
    */
-  void UpdateBody(sf::RenderTarget& target) override{};
+  void UpdateBody(sf::RenderTarget& target) override;
 
   /**
    * \brief Draw the conic.

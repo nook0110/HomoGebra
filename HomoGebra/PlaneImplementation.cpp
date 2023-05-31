@@ -3,33 +3,37 @@
 #include <cassert>
 #include <functional>
 
+#include "Construction.h"
 #include "GeometricObject.h"
 
-void PlaneImplementation::AddObject(std::unique_ptr<GeometricObject> object)
+void PlaneImplementation::AddConstruction(
+    std::unique_ptr<Construction> construction)
 {
   // Attach plane as an observer to object
-  object->Attach(this);
+  construction->GetObject()->Attach(this);
 
   // Add object to vector of all objects
-  objects_.push_back(std::move(object));
+  construction_.push_back(std::move(construction));
 }
 
 void PlaneImplementation::RemoveObject(const GeometricObject* object)
 {
   // Delete object from vector of all objects
-  objects_.erase(
-      std::remove_if(objects_.begin(), objects_.end(),
-                     [object](const std::unique_ptr<GeometricObject>& ptr)
-                     { return ptr.get() == object; }),
-      objects_.end());
+  construction_.erase(
+      std::remove_if(construction_.begin(), construction_.end(),
+                     [object](const std::unique_ptr<Construction>& construction)
+                     { return construction->GetObject() == object; }),
+      construction_.end());
 }
 
 bool PlaneImplementation::IsContained(const GeometricObject* object) const
 {
   // Check if object is in vector of all objects
-  return std::find_if(objects_.begin(), objects_.end(),
-                      [object](const std::unique_ptr<GeometricObject>& ptr)
-                      { return ptr.get() == object; }) != objects_.end();
+  return std::find_if(
+             construction_.begin(), construction_.end(),
+             [object](const std::unique_ptr<Construction>& construction) {
+               return construction->GetObject() == object;
+             }) != construction_.end();
 }
 
 const NameGenerator& PlaneImplementation::GetNameGenerator() const
@@ -81,9 +85,10 @@ std::vector<GeometricObject*> PlaneImplementation::GetObjects() const
   auto objects = std::vector<GeometricObject*>();
 
   // Transform vector of unique ptr-s to raw ptr-s
-  std::transform(objects_.begin(), objects_.end(), std::back_inserter(objects),
-                 [](const std::unique_ptr<GeometricObject>& object)
-                 { return object.get(); });
+  std::transform(construction_.begin(), construction_.end(),
+                 std::back_inserter(objects),
+                 [](const std::unique_ptr<Construction>& construction)
+                 { return construction->GetObject(); });
 
   // Remove objects that are not of type GeometricObjectType
   objects.erase(

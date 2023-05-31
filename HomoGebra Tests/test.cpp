@@ -911,4 +911,55 @@ TEST(Name, EmptyNameGen)
                                      kDelimiter + std::to_string(0)));
 }
 }  // namespace NameGen
+
+namespace Functions
+{
+TEST(SolveQuadraticEquation, NoSolution)
+{
+  constexpr Complex a = 0;
+  constexpr Complex b = 0;
+  constexpr Complex c = 0;
+
+  const auto answer = SolveQuadraticEquation(a, b, c);
+
+  const std::array<std::optional<Complex>, 2> correct_answer;
+
+  EXPECT_EQ(answer, correct_answer);
+}
+
+TEST(SolveQuadraticEquation, LinearEquation)
+{
+  constexpr Complex a = 0;
+  constexpr Complex b = Complex{1, 2};
+  constexpr Complex c = Complex{3, 4};
+
+  const auto answer = SolveQuadraticEquation(a, b, c);
+
+  const std::array<std::optional<Complex>, 2> correct_answer = {
+      -Complex{3, 4} / Complex{1, 2}, std::nullopt};
+
+  EXPECT_EQ(answer, correct_answer);
+}
+
+TEST(SolveQuadraticEquation, QuadraticEquation)
+{
+  constexpr auto a = Complex{1, 2};
+  constexpr auto b = Complex{3, 4};
+  constexpr auto c = Complex{5, 6};
+
+  const auto answer = SolveQuadraticEquation(a, b, c);
+
+  const std::array<Complex, 2> correct_answer = {
+      Complex{-1.22014865711964, -1.29814408512921},
+      Complex{-0.97985134288036, 1.69814408512921}};
+
+  ASSERT_TRUE(answer[0].has_value());
+  ASSERT_TRUE(answer[1].has_value());
+
+  EXPECT_TRUE(
+      check_two_complex(answer[0].value(), correct_answer[0], kEpsilon));
+  EXPECT_TRUE(
+      check_two_complex(answer[1].value(), correct_answer[1], kEpsilon));
+}
+}  // namespace Functions
 }  // namespace HomogebraTest

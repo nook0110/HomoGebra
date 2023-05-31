@@ -1,9 +1,8 @@
 #pragma once
+#include "Construction.h"
 #include "Equation.h"
 #include "Observer.h"
-
 class GeometricObject;
-class Plane;
 
 /**
  * \brief Base class for implementations of geometric objects.
@@ -27,6 +26,9 @@ class GeometricObjectImplementation : public ObservableGeometricObject
    *
    */
   ~GeometricObjectImplementation() override = default;
+
+ private:
+  std::unique_ptr<Construction> construction_;  //!< Construction of object.
 };
 
 /**

@@ -1,11 +1,12 @@
 #include "Plane.h"
 
+#include "Construction.h"
 #include "GeometricObject.h"
 
-void Plane::AddObject(std::unique_ptr<GeometricObject> object)
+void Plane::AddConstruction(std::unique_ptr<Construction> construction)
 {
   // Add object to plane
-  implementation_.AddObject(std::move(object));
+  implementation_.AddConstruction(std::move(construction));
 }
 
 template <class GeometricObjectType>

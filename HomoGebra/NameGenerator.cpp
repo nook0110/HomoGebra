@@ -217,12 +217,12 @@ ParsedSubname NameGenerator::ParseSubname(const std::string& subname)
     // Check if subname consists only of characters
     if (std::all_of(subname.begin(), subname.end(), std::not_fn(std::isdigit)))
     {
-      // Return subname with number 0
       return {subname, {std::nullopt}};
     }
 
     // Check if subname consists only of digits
-    if (std::all_of(subname.begin(), subname.end(), std::isdigit))
+    if (std::all_of(subname.begin(), subname.end(),
+                    [](const char c) { return std::isdigit(c); }))
     {
       return {{}, {std::stoull(subname)}};
     }
@@ -234,7 +234,7 @@ ParsedSubname NameGenerator::ParseSubname(const std::string& subname)
 
     // Get subname without number
     const auto name_without_number =
-        std::string(subname.begin(), position_of_number);
+        std::string{subname.begin(), position_of_number};
 
     // Get number
     const auto number =

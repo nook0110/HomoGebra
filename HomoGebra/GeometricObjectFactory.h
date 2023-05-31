@@ -115,6 +115,8 @@ class ConicFactory
    */
   explicit ConicFactory(Plane& plane);
 
+  Conic* OnPlane(const ConicEquation& equation);
+
   /**
    * \brief Constructs a conic through five given points.
    *
