@@ -65,8 +65,7 @@ class Construction : public GeometricObjectObserver
    */
   ~Construction() override = default;
 
-  [[nodiscard]] virtual const GeometricObject* GetObject() const = 0;
-  virtual GeometricObject* GetObject() = 0;
+  [[nodiscard]] virtual GeometricObject* GetObject() = 0;
 
  protected:
   /**

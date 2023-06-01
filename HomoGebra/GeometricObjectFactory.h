@@ -42,7 +42,7 @@ class PointFactory
    *
    * \return Pointer to a constructed point.
    */
-  Point* Projection(const Point& from, const Line& to);
+  Point* Projection(Point* from, Line* to);
 
  private:
   /**
@@ -83,7 +83,7 @@ class LineFactory
    *
    * \return Pointer to a constructed line.
    */
-  Line* ByTwoPoints(const Point& first, const Point& second);
+  Line* ByTwoPoints(Point* first, Point* second);
 
  private:
   /**
@@ -127,9 +127,8 @@ class ConicFactory
    * \param fifth Fifth point to go through.
    * \return Reference to a constructed conic.
    */
-  Conic* ByFivePoints(const Point& first, const Point& second,
-                      const Point& third, const Point& fourth,
-                      const Point& fifth);
+  Conic* ByFivePoints(Point* first, Point* second, Point* third, Point* fourth,
+                      Point* fifth);
 
  private:
   /**

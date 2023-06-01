@@ -23,6 +23,10 @@ class ConstructionPoint : public Construction
    */
   ~ConstructionPoint() override = default;
 
+  [[nodiscard]] GeometricObject* GetObject() override;
+
+  [[nodiscard]] Point* GetPoint();
+
   /**
    * \brief Recalculate equation of point.
    *
@@ -30,25 +34,15 @@ class ConstructionPoint : public Construction
    */
   [[nodiscard]] virtual PointEquation RecalculateEquation() const = 0;
 
-  /**
-   * \brief Update the object because sth was moved.
-   *
-   * \param event Tag [Event::Moved] for tag dispatch
-   */
   void Update(const Event::Moved& event) override;
 
-  /**
-   * \brief Update the object because sth was destroyed.
-   *
-   * \param event Tag [Event::Destroyed] for tag dispatch.
-   */
   void Update(const Event::Destroyed& event) override;
 
   void Update(const Event::Renamed& event) override;
 
  protected:
   /**
-   * \brief Constructor deleted.
+   * \brief Default constructor.
    *
    */
   ConstructionPoint() = default;
@@ -68,7 +62,7 @@ class ConstructionPoint : public Construction
   void SetEquation(const PointEquation& equation);
 
  private:
-  std::unique_ptr<Point> point_;  //!< Point, which is created.
+  Point point_;  //!< Point, which is created.
 };
 
 /**
@@ -124,35 +118,24 @@ class ConstructionLine : public Construction
 {
  public:
   /**
-   * \brief Constructor deleted.
-   */
-  ConstructionLine() = delete;
-
-  /**
    * \brief Default destructor.
    */
   ~ConstructionLine() override = default;
 
-  /**
-   * Recalculate equation of point.
-   *
-   * \return New equation of point.
-   */
-  [[nodiscard]] virtual LineEquation RecalculateEquation() const = 0;
+  GeometricObject* GetObject() override;
+
+  Line* GetLine();
 
   /**
-   * \brief Update object because sth moved.
-   *
-   * \param event Tag for tag dispatch
+   * Recalculate equation of line.
    */
+  virtual void RecalculateEquation() = 0;
+
   void Update(const Event::Moved& event) override;
 
-  /**
-   * \brief Update object because sth destroyed.
-   *
-   * \param event Tag for tag dispatch
-   */
   void Update(const Event::Destroyed& event) override;
+
+  void Update(const Event::Renamed& event) override;
 
  protected:
   /**
@@ -170,5 +153,24 @@ class ConstructionLine : public Construction
   void SetEquation(const LineEquation& equation);
 
  private:
-  std::unique_ptr<Line> line_;  //!< Line, which is created.
+  Line line_;  //!< Line, which is created.
+};
+
+class ByTwoPoints : public ConstructionLine, public StrongConstruction
+{
+ public:
+  ByTwoPoints(Point* first_point, Point* second_point);
+
+  void RecalculateEquation() override;
+
+ private:
+  Point* first_point_;
+  Point* second_point_;
+};
+
+class ConstructionConic : public Construction
+{
+ public:
+ private:
+  Conic conic_;
 };
