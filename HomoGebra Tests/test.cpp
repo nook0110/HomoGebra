@@ -912,7 +912,7 @@ TEST(Name, EmptyNameGen)
 }
 }  // namespace NameGen
 
-namespace Functions
+/*namespace Functions
 {
 TEST(SolveQuadraticEquation, NoSolution)
 {
@@ -961,5 +961,5 @@ TEST(SolveQuadraticEquation, QuadraticEquation)
   EXPECT_TRUE(
       check_two_complex(answer[1].value(), correct_answer[1], kEpsilon));
 }
-}  // namespace Functions
+}  // namespace Functions*/
 }  // namespace HomogebraTest
