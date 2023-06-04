@@ -28,7 +28,6 @@ struct Destroyed
    * Member data.
    */
   GeometricObject* object;  //!< Object which was destroyed.
-  Plane& plane;             //!< Plane where object was destroyed.
 };
 
 /**

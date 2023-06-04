@@ -5,10 +5,10 @@
 
 Point::Point(const PointEquation& equation) : implementation_(equation) {}
 
-void Point::Destroy(Plane& plane)
+void Point::Destroy()
 {
   // Notify observers that object was destroyed
-  Notify(Event::Destroyed{this, plane});
+  Notify(Event::Destroyed{this});
 }
 
 void Point::Notify(const Event::Destroyed& event) const
@@ -97,10 +97,10 @@ const std::string& Point::GetName() const
 
 Line::Line(const LineEquation& equation) : implementation_(equation) {}
 
-void Line::Destroy(Plane& plane)
+void Line::Destroy()
 {
   // Notify observers that object was destroyed
-  Notify(Event::Destroyed{this, plane});
+  Notify(Event::Destroyed{this});
 }
 
 void Line::Notify(const Event::Destroyed& event) const
@@ -128,10 +128,10 @@ void Line::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 Conic::Conic(const ConicEquation& equation) : implementation_(equation) {}
 
-void Conic::Destroy(Plane& plane)
+void Conic::Destroy()
 {
   // Notify observers that object was destroyed
-  Notify(Event::Destroyed{this, plane});
+  Notify(Event::Destroyed{this});
 }
 
 void Conic::Notify(const Event::Destroyed& event) const

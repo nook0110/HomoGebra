@@ -30,9 +30,8 @@ class GeometricObject : public sf::Drawable
   /**
    * \brief Destroy this object.
    *
-   * \param plane Plane, where this object is located.
    */
-  virtual void Destroy(Plane& plane) = 0;
+  virtual void Destroy() = 0;
 
   /**
    * \brief Update the body of the object.
@@ -127,9 +126,8 @@ class Point final : public GeometricObject
   /**
    * \brief Destroy this object.
    *
-   * \param plane Plane, where this object is located.
    */
-  void Destroy(Plane& plane) override;
+  void Destroy() override;
 
   /**
    * \brief Set new equation of point.
@@ -250,9 +248,8 @@ class Line final : public GeometricObject
   /**
    * \brief Destroy this object.
    *
-   * \param plane Plane, where this object is located.
    */
-  void Destroy(Plane& plane) override;
+  void Destroy() override;
 
   /**
    * \brief Set new equation of line.
@@ -347,9 +344,8 @@ class Conic final : public GeometricObject
   /**
    * \brief Destroy this object.
    *
-   * \param plane Plane, where this object is located.
    */
-  void Destroy(Plane& plane) override;
+  void Destroy() override;
 
   /**
    * \brief Notify observers that this objected is destroyed

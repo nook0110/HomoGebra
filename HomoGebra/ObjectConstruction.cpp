@@ -30,7 +30,7 @@ void ConstructionPoint::Update(const Event::Destroyed& event)
   }
 
   // Destroy the point
-  point_.Destroy(event.plane);
+  point_.Destroy();
 }
 
 void ConstructionPoint::Update(const Event::Renamed& event) {}
@@ -82,7 +82,7 @@ void ConstructionLine::Update(const Event::Destroyed& event)
   }
 
   // Destroy the line
-  line_.Destroy(event.plane);
+  line_.Destroy();
 }
 
 void ConstructionLine::Update(const Event::Renamed& event) {}
