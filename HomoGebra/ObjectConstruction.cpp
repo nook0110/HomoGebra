@@ -41,18 +41,20 @@ const PointEquation& ConstructionPoint::GetEquation() const
   return point_.GetEquation();
 }
 
-void ConstructionPoint::SetEquation(const PointEquation& equation)
+void ConstructionPoint::SetEquation(PointEquation equation)
 {
   // Set new equation
-  point_.SetEquation(equation);
+  point_.SetEquation(std::move(equation));
 }
 
-ConstructionOnPlane::ConstructionOnPlane(const PointEquation& equation)
+PointOnPlane::PointOnPlane(PointEquation equation)
+    : equation_(std::move(equation))
 {
-  SetEquation(equation);
+  // Set equation
+  SetEquation(equation_);
 }
 
-PointEquation ConstructionOnPlane::RecalculateEquation() const
+PointEquation PointOnPlane::RecalculateEquation() const
 {
   // Return point equation, because it has no dependencies
   return GetEquation();

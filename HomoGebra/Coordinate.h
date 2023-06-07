@@ -1,5 +1,4 @@
 #pragma once
-// ReSharper disable once CppUnusedIncludeDirective
 #include <array>
 #include <complex>
 #include <optional>
@@ -42,11 +41,9 @@ class TransformationMatrix
    * \param a21 Eighth element of matrix (2,1)
    * \param a22 Ninth element of matrix (2,2)
    */
-  TransformationMatrix(const Complex& a00, const Complex& a01,
-                       const Complex& a02, const Complex& a10,
-                       const Complex& a11, const Complex& a12,
-                       const Complex& a20, const Complex& a21,
-                       const Complex& a22);
+  TransformationMatrix(Complex a00, Complex a01, Complex a02, Complex a10,
+                       Complex a11, Complex a12, Complex a20, Complex a21,
+                       Complex a22);
 
   /**
    * \brief Finds inversion of matrix.
@@ -138,8 +135,7 @@ class Transformation
   using Column = TransformationMatrix::MatrixColumn;  //!< Column of matrix
 
   friend HomogeneousCoordinate operator*(
-      const Transformation& transformation,
-      const HomogeneousCoordinate& coordinate);
+      Transformation transformation, const HomogeneousCoordinate& coordinate);
 
   /**
    *  \brief Constructs transformation from matrix. For default transformation
@@ -148,7 +144,7 @@ class Transformation
    * \param transformation Matrix of transformation
    */
   explicit Transformation(
-      const TransformationMatrix& transformation = TransformationMatrix());
+      TransformationMatrix transformation = TransformationMatrix());
 
   /**
    * \brief Construct transformation from movement of 4 points.
@@ -273,7 +269,7 @@ struct HomogeneousCoordinate
    *
    * \return Returns const reference to x, y or z coordinate.
    */
-  [[nodiscard]] const Complex& operator[](const Var variable) const;
+  [[nodiscard]] const Complex& operator[](Var variable) const;
 
   /**
    * \brief Overload of operator[]. Returns reference to x, y or z coordinate.
@@ -282,7 +278,7 @@ struct HomogeneousCoordinate
    *
    * \return Returns reference to x, y or z coordinate.
    */
-  [[nodiscard]] Complex& operator[](const Var variable);
+  [[nodiscard]] Complex& operator[](Var variable);
 
   /**
    * \brief Normalizes coordinates.
@@ -330,5 +326,4 @@ HomogeneousCoordinate& operator*=(HomogeneousCoordinate& coordinate,
  * \return Coordinate after transformation
  */
 [[nodiscard]] HomogeneousCoordinate operator*(
-    const Transformation& transformation,
-    const HomogeneousCoordinate& coordinate);
+    Transformation transformation, const HomogeneousCoordinate& coordinate);

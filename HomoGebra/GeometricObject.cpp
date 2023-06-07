@@ -1,9 +1,11 @@
 #include "GeometricObject.h"
 
+#include <utility>
+
 #include "Equation.h"
 #include "GeometricObjectImplementation.h"
 
-Point::Point(const PointEquation& equation) : implementation_(equation) {}
+Point::Point(PointEquation equation) : implementation_(std::move(equation)) {}
 
 void Point::Destroy()
 {
@@ -45,13 +47,13 @@ float Point::CalculateSizeOfBody(const sf::RenderTarget& target)
   return size;
 }
 
-void Point::SetEquation(const PointEquation& equation)
+void Point::SetEquation(PointEquation equation)
 {
   // Set equation in implementation
-  implementation_.SetEquation(equation);
+  implementation_.SetEquation(std::move(equation));
 
   // Update body
-  body_.Update(equation);
+  body_.Update(implementation_.GetEquation());
 }
 
 const PointEquation& Point::GetEquation() const
@@ -80,11 +82,11 @@ void Point::draw(sf::RenderTarget& target, sf::RenderStates states) const
   target.draw(body_, states);
 }
 
-void Point::SetName(const std::string& name)
+void Point::SetName(std::string name)
 {
   const Event::Renamed renamed{this, body_.GetName(), name};
 
-  body_.SetName(name);
+  body_.SetName(std::move(name));
 
   Notify(renamed);
 }
@@ -95,7 +97,7 @@ const std::string& Point::GetName() const
   return body_.GetName();
 }
 
-Line::Line(const LineEquation& equation) : implementation_(equation) {}
+Line::Line(LineEquation equation) : implementation_(std::move(equation)) {}
 
 void Line::Destroy()
 {
@@ -109,10 +111,10 @@ void Line::Notify(const Event::Destroyed& event) const
   implementation_.Notify(event);
 }
 
-void Line::SetEquation(const LineEquation& equation)
+void Line::SetEquation(LineEquation equation)
 {
   // Set equation in implementation
-  implementation_.SetEquation(equation);
+  implementation_.SetEquation(std::move(equation));
 }
 
 const LineEquation& Line::GetEquation() const
@@ -126,7 +128,7 @@ void Line::draw(sf::RenderTarget& target, sf::RenderStates states) const
   // body_.Draw(sf::RenderTarget & target, sf::RenderStates states);
 }
 
-Conic::Conic(const ConicEquation& equation) : implementation_(equation) {}
+Conic::Conic(ConicEquation equation) : implementation_(std::move(equation)) {}
 
 void Conic::Destroy()
 {

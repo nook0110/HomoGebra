@@ -48,7 +48,7 @@ struct PointEquation final : public Equation
    * \param equation Equation of point.
    */
   explicit PointEquation(
-      const HomogeneousCoordinate& equation = HomogeneousCoordinate{});
+      HomogeneousCoordinate equation = HomogeneousCoordinate{});
 
   /**
    * \brief Apply transformation to a point equation.
@@ -94,7 +94,7 @@ struct LineEquation final : public Equation
    * \param equation Equation of line.
    */
   explicit LineEquation(
-      const HomogeneousCoordinate& equation = HomogeneousCoordinate{});
+      HomogeneousCoordinate equation = HomogeneousCoordinate{});
 
   /**
    * \brief Apply transformation to a conic equation.

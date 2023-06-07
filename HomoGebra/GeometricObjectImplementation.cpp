@@ -1,13 +1,15 @@
 #include "GeometricObjectImplementation.h"
 
-PointImplementation::PointImplementation(const PointEquation& equation)
-    : equation_(equation)
+#include <utility>
+
+PointImplementation::PointImplementation(PointEquation equation)
+    : equation_(std::move(equation))
 {}
 
-void PointImplementation::SetEquation(const PointEquation& equation)
+void PointImplementation::SetEquation(PointEquation equation)
 {
   // Set equation
-  equation_ = equation;
+  equation_ = std::move(equation);
 
   // Notify observers
   Notify(Event::Moved());
@@ -19,14 +21,14 @@ const PointEquation& PointImplementation::GetEquation() const
   return equation_;
 }
 
-LineImplementation::LineImplementation(const LineEquation& equation)
-    : equation_(equation)
+LineImplementation::LineImplementation(LineEquation equation)
+    : equation_(std::move(equation))
 {}
 
-void LineImplementation::SetEquation(const LineEquation& equation)
+void LineImplementation::SetEquation(LineEquation equation)
 {
   // Set equation
-  equation_ = equation;
+  equation_ = std::move(equation);
 
   // Notify observers
   Notify(Event::Moved());
@@ -38,14 +40,14 @@ const LineEquation& LineImplementation::GetEquation() const
   return equation_;
 }
 
-ConicImplementation::ConicImplementation(const ConicEquation& equation)
-    : equation_(equation)
+ConicImplementation::ConicImplementation(ConicEquation equation)
+    : equation_(std::move(equation))
 {}
 
-void ConicImplementation::SetEquation(const ConicEquation& equation)
+void ConicImplementation::SetEquation(ConicEquation equation)
 {
   // Set equation
-  equation_ = equation;
+  equation_ = std::move(equation);
 
   // Notify observers
   Notify(Event::Moved());

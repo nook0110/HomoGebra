@@ -16,10 +16,11 @@ TransformationMatrix::TransformationMatrix()
   }
 }
 
-TransformationMatrix::TransformationMatrix(
-    const Complex& a00, const Complex& a01, const Complex& a02,
-    const Complex& a10, const Complex& a11, const Complex& a12,
-    const Complex& a20, const Complex& a21, const Complex& a22)
+TransformationMatrix::TransformationMatrix(const Complex a00, const Complex a01,
+                                           const Complex a02, const Complex a10,
+                                           const Complex a11, const Complex a12,
+                                           const Complex a20, const Complex a21,
+                                           const Complex a22)
     : matrix_(MatrixContainer{MatrixRow{a00, a01, a02},
                               MatrixRow{a10, a11, a12},
                               MatrixRow{a20, a21, a22}})
@@ -99,12 +100,13 @@ TransformationMatrix TransformationMatrix::operator*(
 }
 
 const TransformationMatrix::MatrixRow& TransformationMatrix::operator[](
-    size_t row) const
+    const size_t row) const
 {
   return matrix_[row];
 }
 
-TransformationMatrix::MatrixRow& TransformationMatrix::operator[](size_t row)
+TransformationMatrix::MatrixRow& TransformationMatrix::operator[](
+    const size_t row)
 {
   return matrix_[row];
 }
@@ -121,7 +123,7 @@ TransformationMatrix::end() const
   return matrix_.end();
 }
 
-Transformation::Transformation(const TransformationMatrix& transformation)
+Transformation::Transformation(TransformationMatrix transformation)
     : transformation_(transformation)
 {}
 
@@ -285,11 +287,10 @@ HomogeneousCoordinate& operator*=(HomogeneousCoordinate& coordinate,
   return coordinate;
 }
 
-HomogeneousCoordinate operator*(const Transformation& transformation,
+HomogeneousCoordinate operator*(Transformation transformation,
                                 const HomogeneousCoordinate& coordinate)
 {
-  // Copy coordinate
-  auto copy = coordinate;
+  HomogeneousCoordinate result;
 
   // Apply transformation
   for (size_t row = 0; row < std::tuple_size_v<Transformation::Column>; ++row)
@@ -304,11 +305,11 @@ HomogeneousCoordinate operator*(const Transformation& transformation,
     }
 
     // Set element
-    copy[static_cast<Var>(row)] = element;
+    result[static_cast<Var>(row)] = element;
   }
 
   // Return copy
-  return copy;
+  return result;
 }
 
 const Complex& HomogeneousCoordinate::operator[](const Var variable) const

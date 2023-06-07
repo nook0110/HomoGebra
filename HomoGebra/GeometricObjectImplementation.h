@@ -50,14 +50,14 @@ class PointImplementation final : public GeometricObjectImplementation
    *
    * \param equation Equation of point.
    */
-  explicit PointImplementation(const PointEquation& equation = PointEquation());
+  explicit PointImplementation(PointEquation equation = PointEquation());
 
   /**
    * \brief Sets new equation of point.
    *
    * \param equation Equation of point.
    */
-  void SetEquation(const PointEquation& equation);
+  void SetEquation(PointEquation equation);
 
   /**
    * \brief Return current equation of point.
@@ -92,14 +92,14 @@ class LineImplementation : public GeometricObjectImplementation
    *
    * \param equation Equation of line.
    */
-  explicit LineImplementation(const LineEquation& equation = LineEquation());
+  explicit LineImplementation(LineEquation equation = LineEquation());
 
   /**
    * \brief Sets new equation of line.
    *
    * \param equation Equation of line.
    */
-  void SetEquation(const LineEquation& equation);
+  void SetEquation(LineEquation equation);
 
   /**
    * \brief Return equation of line.
@@ -134,14 +134,14 @@ class ConicImplementation final : public GeometricObjectImplementation
    *
    * \param equation Equation of conic.
    */
-  explicit ConicImplementation(const ConicEquation& equation = ConicEquation());
+  explicit ConicImplementation(ConicEquation equation = ConicEquation());
 
   /**
    * \brief Sets new equation of conic.
    *
    * \param equation Equation of conic.
    */
-  void SetEquation(const ConicEquation& equation);
+  void SetEquation(ConicEquation equation);
 
   /**
    * \brief Return equation of conic.

@@ -59,7 +59,7 @@ class ConstructionPoint : public Construction
    *
    * \param equation Equation of point.
    */
-  void SetEquation(const PointEquation& equation);
+  void SetEquation(PointEquation equation);
 
  private:
   Point point_;  //!< Point, which is created.
@@ -76,12 +76,12 @@ class ConstructionPoint : public Construction
  *
  * \details Have no dependence on other objects
  */
-class ConstructionOnPlane : public ConstructionPoint, public StrongConstruction
+class PointOnPlane : public ConstructionPoint, public StrongConstruction
 {
  public:
-  explicit ConstructionOnPlane(const PointEquation& equation);
+  explicit PointOnPlane(PointEquation equation);
 
-  ~ConstructionOnPlane() override = default;
+  ~PointOnPlane() override = default;
 
   /**
    * \brief Recalculate equation of point.
@@ -89,6 +89,9 @@ class ConstructionOnPlane : public ConstructionPoint, public StrongConstruction
    * \return New equation of point.
    */
   [[nodiscard]] PointEquation RecalculateEquation() const override;
+
+ private:
+  PointEquation equation_;  //!< Equation of point.
 };
 
 /**
@@ -156,7 +159,7 @@ class ConstructionLine : public Construction
   Line line_;  //!< Line, which is created.
 };
 
-class ByTwoPoints : public ConstructionLine, public StrongConstruction
+class ByTwoPoints final : public ConstructionLine, public StrongConstruction
 {
  public:
   ByTwoPoints(Point* first_point, Point* second_point);
@@ -173,4 +176,19 @@ class ConstructionConic : public Construction
  public:
  private:
   Conic conic_;
+};
+
+class ConicOnPlane final : public ConstructionConic, public StrongConstruction
+{
+ public:
+  explicit ConicOnPlane(ConicEquation equation);
+
+  void Update(const Event::Moved& event) override;
+
+  void Update(const Event::Destroyed& event) override;
+
+  void Update(const Event::Renamed& event) override;
+
+ private:
+  ConicEquation equation_;
 };

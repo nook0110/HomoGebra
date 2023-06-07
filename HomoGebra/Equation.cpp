@@ -2,7 +2,7 @@
 
 #include <cassert>
 
-PointEquation::PointEquation(const HomogeneousCoordinate& _equation)
+PointEquation::PointEquation(HomogeneousCoordinate _equation)
     : equation(_equation)
 {}
 
@@ -24,7 +24,7 @@ const HomogeneousCoordinate& PointEquation::GetEquation() const
   return equation;
 }
 
-LineEquation::LineEquation(const HomogeneousCoordinate& _equation)
+LineEquation::LineEquation(HomogeneousCoordinate _equation)
     : equation(_equation)
 {}
 

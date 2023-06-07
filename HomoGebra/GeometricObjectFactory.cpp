@@ -10,7 +10,7 @@ PointFactory::PointFactory(Plane& plane) : plane_(plane) {}
 Point* PointFactory::OnPlane(const PointEquation& coordinate)
 {
   // Create construction
-  auto construction = std::make_unique<ConstructionOnPlane>(coordinate);
+  auto construction = std::make_unique<PointOnPlane>(coordinate);
 
   const auto point = construction->GetPoint();
 
@@ -39,6 +39,11 @@ Line* LineFactory::ByTwoPoints(Point* first, Point* second)
 
   // Add line to plane
   plane_.AddConstruction(std::move(construction));
+
+  const auto& name_generator = plane_.GetNameGenerator();
+
+  line->SetName(static_cast<std::string>(
+      name_generator.GenerateName(first->GetName() + second->GetName())));
 
   // Return line
   return line;

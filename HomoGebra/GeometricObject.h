@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <cassert>
 
 #include "GeometricObjectBody.h"
 #include "GeometricObjectImplementation.h"
@@ -54,7 +55,7 @@ class GeometricObject : public sf::Drawable
    *
    * \param name New name of object.
    */
-  virtual void SetName(const std::string& name) = 0;
+  virtual void SetName(std::string name) = 0;
 
   /**
    * \brief Gets name of object.
@@ -109,7 +110,7 @@ class Point final : public GeometricObject
    *
    * \param equation Equation of point.
    */
-  explicit Point(const PointEquation& equation = PointEquation{});
+  explicit Point(PointEquation equation = PointEquation{});
 
   /**
    * \brief Default destructor.
@@ -134,7 +135,7 @@ class Point final : public GeometricObject
    *
    * \param equation Equation of point
    */
-  void SetEquation(const PointEquation& equation);
+  void SetEquation(PointEquation equation);
 
   /**
    * \brief Return current equation of point.
@@ -173,7 +174,7 @@ class Point final : public GeometricObject
    *
    * \param name New name of object.
    */
-  void SetName(const std::string& name) override;
+  void SetName(std::string name) override;
 
   /**
    * \brief Gets name of object.
@@ -238,7 +239,7 @@ class Line final : public GeometricObject
    *
    * \param equation Equation of line.
    */
-  explicit Line(const LineEquation& equation = LineEquation{});
+  explicit Line(LineEquation equation = LineEquation{});
 
   /**
    * \brief Default destructor.
@@ -256,7 +257,7 @@ class Line final : public GeometricObject
    *
    * \param equation Equation of line.
    */
-  void SetEquation(const LineEquation& equation);
+  void SetEquation(LineEquation equation);
 
   /**
    * \brief Return current equation of point.
@@ -285,7 +286,7 @@ class Line final : public GeometricObject
    *
    * \param name New name of object.
    */
-  void SetName(const std::string& name) override{};
+  void SetName(std::string name) override{};
 
   /**
    * \brief Gets name of object.
@@ -339,7 +340,7 @@ class Conic final : public GeometricObject
    *
    * \param equation Equation of conic.
    */
-  explicit Conic(const ConicEquation& equation = ConicEquation{});
+  explicit Conic(ConicEquation equation = ConicEquation{});
 
   /**
    * \brief Destroy this object.
@@ -374,14 +375,18 @@ class Conic final : public GeometricObject
    *
    * \param name New name of object.
    */
-  void SetName(const std::string& name) override{};
+  void SetName(std::string name) override { assert(false); }
 
   /**
    * \brief Gets name of object.
    *
    * \return Name of object.
    */
-  [[nodiscard]] const std::string& GetName() const override { return {}; }
+  [[nodiscard]] const std::string& GetName() const override
+  {
+    assert(false);
+    return {};
+  }
 
   /**
    * \brief Attaches observer to this object.

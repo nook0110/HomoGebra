@@ -3,10 +3,11 @@
 #include <SFML/Graphics.hpp>
 #include <Thor/Shapes.hpp>
 #include <cassert>
+#include <utility>
 
 #include "Matrix.h"
 
-ObjectName::ObjectName(const std::string& name)
+ObjectName::ObjectName(std::string name)
 {
   // Load font
   font_.loadFromFile(kFontPath);
@@ -19,13 +20,13 @@ ObjectName::ObjectName(const std::string& name)
   text_.setFillColor(kTextColor);
 
   // Set name
-  SetName(name);
+  SetName(std::move(name));
 }
 
-void ObjectName::SetName(const std::string& name)
+void ObjectName::SetName(std::string name)
 {
-  name_ = name;
-  text_.setString(name);
+  name_ = std::move(name);
+  text_.setString(name_);
 }
 
 const std::string& ObjectName::GetName() const { return name_; }
@@ -40,7 +41,7 @@ void ObjectName::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 PointBody::PointBody() { body_.setFillColor(sf::Color::Red); }
 
-void PointBody::SetName(const std::string& name) { text_.SetName(name); }
+void PointBody::SetName(std::string name) { text_.SetName(std::move(name)); }
 
 const std::string& PointBody::GetName() const { return text_.GetName(); }
 
@@ -169,28 +170,28 @@ void ConicBody::Update(const ConicEquation& equation)
 
    Transforms into:
 
-   A*x^2 + B*y^2 + // squares
-   F*xy +          // pair product
-   E*x*1 + D*y*1 + // linears
-   C*1^2 = 0       // constant
+   A*x^2 + B*y^2 + || squares
+   F*xy +          || pair product
+   E*x*1 + D*y*1 + || linears
+   C*1^2 = 0       || constant
    */
 
-  // A*x^2 + B*y^2 + // squares
+  // A*x^2 + B*y^2 + || squares
   equation_.squares[static_cast<size_t>(Var::kX)] =
       equation.squares[static_cast<size_t>(Var::kX)];
   equation_.squares[static_cast<size_t>(Var::kY)] =
       equation.squares[static_cast<size_t>(Var::kY)];
 
-  // F*xy +          // pair product
+  // F*xy +          || pair product
   equation_.pair_product = equation.pair_products[static_cast<size_t>(Var::kZ)];
 
-  // E*x*1 + D*y*1 + // linears
+  // E*x*1 + D*y*1 + || linears
   equation_.linears[static_cast<size_t>(Var::kX)] =
       equation.pair_products[static_cast<size_t>(Var::kY)] * Complex{1};
   equation_.linears[static_cast<size_t>(Var::kY)] =
       equation.pair_products[static_cast<size_t>(Var::kX)] * Complex{1};
 
-  // C*1^2 = 0       // constant
+  // C*1^2 = 0       || constant
   equation_.constant =
       equation.squares[static_cast<size_t>(Var::kZ)] * Complex{1} * Complex{1};
 }
@@ -202,7 +203,7 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
   const auto corner = window_center - window_size / 2.f;
 
-  // calculates distance between
+  // Calculates distance between
   auto find_distance =
       [](const sf::Vector2f first, const sf::Vector2f second = sf::Vector2f{})
   {

@@ -22,7 +22,7 @@ class ObjectName final : public sf::Drawable, public sf::Transformable
    *
    * \param name Name of the object.
    */
-  explicit ObjectName(const std::string& name = {});
+  explicit ObjectName(std::string name = {});
   /**
    * \brief Destructor.
    *
@@ -34,7 +34,7 @@ class ObjectName final : public sf::Drawable, public sf::Transformable
    *
    * \param name Name of the object.
    */
-  void SetName(const std::string& name);
+  void SetName(std::string name);
   /**
    * \brief Gets name of the object.
    *
@@ -92,7 +92,7 @@ class PointBody final : public sf::Drawable
    *
    * \param name Name of the point.
    */
-  void SetName(const std::string& name);
+  void SetName(std::string name);
 
   /**
    * \brief Gets name of the point.
