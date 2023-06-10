@@ -122,7 +122,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>C:\thor-v2.0-msvc2015\bin\thor-d.lib;C:\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib\sfml-audio-d.lib;C:\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib\sfml-graphics-d.lib;C:\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib\sfml-window-d.lib;C:\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib\sfml-system-d.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

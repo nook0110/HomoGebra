@@ -23,18 +23,14 @@ class ConstructionPoint : public Construction
    */
   ~ConstructionPoint() override = default;
 
-  [[nodiscard]] GeometricObject* GetObject() override;
+  [[nodiscard]] GeometricObject* GetObject() const override;
 
-  [[nodiscard]] Point* GetPoint();
+  [[nodiscard]] Point* GetPoint() const;
 
   /**
    * \brief Recalculate equation of point.
-   *
-   * \return New equation of point.
    */
-  [[nodiscard]] virtual PointEquation RecalculateEquation() const = 0;
-
-  void Update(const Event::Moved& event) override;
+  void RecalculateEquation() override = 0;
 
   void Update(const Event::Destroyed& event) override;
 
@@ -45,7 +41,7 @@ class ConstructionPoint : public Construction
    * \brief Default constructor.
    *
    */
-  ConstructionPoint() = default;
+  ConstructionPoint();
 
   /**
    * \brief Get equation of point.
@@ -62,7 +58,7 @@ class ConstructionPoint : public Construction
   void SetEquation(PointEquation equation);
 
  private:
-  Point point_;  //!< Point, which is created.
+  std::unique_ptr<Point> point_;  //!< Point, which is created.
 };
 
 /**
@@ -86,9 +82,8 @@ class PointOnPlane : public ConstructionPoint, public StrongConstruction
   /**
    * \brief Recalculate equation of point.
    *
-   * \return New equation of point.
    */
-  [[nodiscard]] PointEquation RecalculateEquation() const override;
+  void RecalculateEquation() override;
 
  private:
   PointEquation equation_;  //!< Equation of point.
@@ -125,22 +120,22 @@ class ConstructionLine : public Construction
    */
   ~ConstructionLine() override = default;
 
-  GeometricObject* GetObject() override;
+  GeometricObject* GetObject() const override;
 
-  Line* GetLine();
+  Line* GetLine() const;
 
   /**
    * Recalculate equation of line.
    */
-  virtual void RecalculateEquation() = 0;
-
-  void Update(const Event::Moved& event) override;
+  void RecalculateEquation() override = 0;
 
   void Update(const Event::Destroyed& event) override;
 
   void Update(const Event::Renamed& event) override;
 
  protected:
+  ConstructionLine();
+
   /**
    * \brief Get equation of line.
    *
@@ -156,7 +151,7 @@ class ConstructionLine : public Construction
   void SetEquation(const LineEquation& equation);
 
  private:
-  Line line_;  //!< Line, which is created.
+  std::unique_ptr<Line> line_;  //!< Line, which is created.
 };
 
 class ByTwoPoints final : public ConstructionLine, public StrongConstruction
@@ -174,8 +169,26 @@ class ByTwoPoints final : public ConstructionLine, public StrongConstruction
 class ConstructionConic : public Construction
 {
  public:
+  [[nodiscard]] GeometricObject* GetObject() const override;
+
+  Conic* GetConic() const;
+
+  /**
+   * \brief Recalculate equation of conic.
+   */
+  void RecalculateEquation() override = 0;
+
+  void Update(const Event::Destroyed& event) override;
+
+  void Update(const Event::Renamed& event) override;
+
+ protected:
+  ConstructionConic();
+
+  void SetEquation(ConicEquation equation);
+
  private:
-  Conic conic_;
+  std::unique_ptr<Conic> conic_;
 };
 
 class ConicOnPlane final : public ConstructionConic, public StrongConstruction
@@ -183,11 +196,7 @@ class ConicOnPlane final : public ConstructionConic, public StrongConstruction
  public:
   explicit ConicOnPlane(ConicEquation equation);
 
-  void Update(const Event::Moved& event) override;
-
-  void Update(const Event::Destroyed& event) override;
-
-  void Update(const Event::Renamed& event) override;
+  void RecalculateEquation() override;
 
  private:
   ConicEquation equation_;

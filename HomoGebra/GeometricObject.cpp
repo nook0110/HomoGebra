@@ -136,6 +136,11 @@ void Conic::Destroy()
   Notify(Event::Destroyed{this});
 }
 
+void Conic::SetEquation(ConicEquation equation)
+{
+  implementation_.SetEquation(std::move(equation));
+}
+
 void Conic::Notify(const Event::Destroyed& event) const
 {
   // Call implementation method

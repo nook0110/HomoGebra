@@ -28,11 +28,11 @@ class PointFactory
   /**
    * \brief Constructs a point with given coordinates.
    *
-   * \param coordinate A place where point will be constructed.
+   * \param equation A place where point will be constructed.
    *
    * \return Pointer to a constructed point.
    */
-  Point* OnPlane(const PointEquation& coordinate);
+  Point* OnPlane(PointEquation equation);
 
   /**
    * \brief Constructs point on a plane.
@@ -115,7 +115,7 @@ class ConicFactory
    */
   explicit ConicFactory(Plane& plane);
 
-  Conic* OnPlane(const ConicEquation& equation);
+  Conic* OnPlane(ConicEquation equation);
 
   /**
    * \brief Constructs a conic through five given points.

@@ -124,8 +124,6 @@ class PointBody final : public sf::Drawable
    * Member data.
    */
 
-  ObjectName text_;  //!< Name of the name.
-
   /**
    * \brief Projective position of the point.
    *
@@ -155,6 +153,8 @@ class PointBody final : public sf::Drawable
   std::optional<ProjectivePosition>
       position_;          //!< Projective position of the point.
   sf::CircleShape body_;  //!< Body of the point.
+
+  ObjectName text_;  //!< Name of the name.
 };
 
 /**

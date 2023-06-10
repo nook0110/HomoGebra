@@ -348,6 +348,8 @@ class Conic final : public GeometricObject
    */
   void Destroy() override;
 
+  void SetEquation(ConicEquation equation);
+
   /**
    * \brief Notify observers that this objected is destroyed
    *
@@ -384,7 +386,6 @@ class Conic final : public GeometricObject
    */
   [[nodiscard]] const std::string& GetName() const override
   {
-    assert(false);
     return {};
   }
 

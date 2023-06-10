@@ -1,104 +1,90 @@
 #include "ObjectConstruction.h"
 
 #include <cassert>
+#include <utility>
 
 #include "Matrix.h"
 
-GeometricObject* ConstructionPoint::GetObject() { return GetPoint(); }
+GeometricObject* ConstructionPoint::GetObject() const { return GetPoint(); }
 
-Point* ConstructionPoint::GetPoint()
+Point* ConstructionPoint::GetPoint() const
 {
   // Return point
-  return std::addressof(point_);
+  return point_.get();
 }
-
-void ConstructionPoint::Update(const Event::Moved&)
-{
-  // Recalculate equation
-  const auto equation = RecalculateEquation();
-
-  // Set new equation
-  SetEquation(equation);
-}
-
 void ConstructionPoint::Update(const Event::Destroyed& event)
 {
   // Check if event object is point that we contain
-  if (event.object == std::addressof(point_))
+  if (event.object == GetObject())
   {
+    point_.reset();
     return;
   }
 
   // Destroy the point
-  point_.Destroy();
+  point_->Destroy();
 }
 
 void ConstructionPoint::Update(const Event::Renamed& event) {}
 
+ConstructionPoint::ConstructionPoint() : point_(std::make_unique<Point>()) {}
+
 const PointEquation& ConstructionPoint::GetEquation() const
 {
   // Return point equation
-  return point_.GetEquation();
+  return point_->GetEquation();
 }
 
 void ConstructionPoint::SetEquation(PointEquation equation)
 {
   // Set new equation
-  point_.SetEquation(std::move(equation));
+  point_->SetEquation(std::move(equation));
 }
 
 PointOnPlane::PointOnPlane(PointEquation equation)
     : equation_(std::move(equation))
 {
   // Set equation
-  SetEquation(equation_);
+  PointOnPlane::RecalculateEquation();
 }
 
-PointEquation PointOnPlane::RecalculateEquation() const
-{
-  // Return point equation, because it has no dependencies
-  return GetEquation();
-}
+void PointOnPlane::RecalculateEquation() { SetEquation(equation_); }
 
-GeometricObject* ConstructionLine::GetObject() { return GetLine(); }
+GeometricObject* ConstructionLine::GetObject() const { return GetLine(); }
 
-Line* ConstructionLine::GetLine()
+Line* ConstructionLine::GetLine() const
 {
   // Return line
-  return std::addressof(line_);
-}
-
-void ConstructionLine::Update(const Event::Moved&)
-{
-  // Recalculate equation
-  RecalculateEquation();
+  return line_.get();
 }
 
 void ConstructionLine::Update(const Event::Destroyed& event)
 {
   // Check if event object is line that we contain
-  if (event.object == std::addressof(line_))
+  if (event.object == GetObject())
   {
-    // Release the ownership
+    line_.reset();
     return;
   }
 
   // Destroy the line
-  line_.Destroy();
+  line_->Destroy();
 }
 
 void ConstructionLine::Update(const Event::Renamed& event) {}
 
+inline ConstructionLine::ConstructionLine() : line_(std::make_unique<Line>()) {}
+
 const LineEquation& ConstructionLine::GetEquation() const
 {
   // Return line equation
-  return line_.GetEquation();
+  return line_->GetEquation();
 }
 
 void ConstructionLine::SetEquation(const LineEquation& equation)
 {
   // Set new equation
-  line_.SetEquation(equation);
+  line_->SetEquation(equation);
 }
 
 ByTwoPoints::ByTwoPoints(Point* first_point, Point* second_point)
@@ -165,4 +151,38 @@ void ByTwoPoints::RecalculateEquation()
 
   // Create equation
   SetEquation(LineEquation({value[0], value[1], value[2]}));
+}
+
+GeometricObject* ConstructionConic::GetObject() const { return GetConic(); }
+
+Conic* ConstructionConic::GetConic() const { return conic_.get(); }
+
+void ConstructionConic::Update(const Event::Destroyed& event)
+{
+  // Check if event object is line that we are containing
+  if (event.object == GetObject())
+  {
+    conic_.reset();
+    return;
+  }
+
+  // Destroy the conic
+  conic_->Destroy();
+}
+
+void ConstructionConic::Update(const Event::Renamed& event) {}
+
+ConstructionConic::ConstructionConic() : conic_(std::make_unique<Conic>()) {}
+
+ConicOnPlane::ConicOnPlane(ConicEquation equation)
+    : equation_(std::move(equation))
+{
+  ConicOnPlane::RecalculateEquation();
+}
+
+void ConicOnPlane::RecalculateEquation() { SetEquation(equation_); }
+
+void ConstructionConic::SetEquation(ConicEquation equation)
+{
+  conic_->SetEquation(std::move(equation));
 }

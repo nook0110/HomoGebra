@@ -7,10 +7,10 @@
 
 PointFactory::PointFactory(Plane& plane) : plane_(plane) {}
 
-Point* PointFactory::OnPlane(const PointEquation& coordinate)
+Point* PointFactory::OnPlane(PointEquation equation)
 {
   // Create construction
-  auto construction = std::make_unique<PointOnPlane>(coordinate);
+  auto construction = std::make_unique<PointOnPlane>(std::move(equation));
 
   const auto point = construction->GetPoint();
 
@@ -42,8 +42,8 @@ Line* LineFactory::ByTwoPoints(Point* first, Point* second)
 
   const auto& name_generator = plane_.GetNameGenerator();
 
-  line->SetName(static_cast<std::string>(
-      name_generator.GenerateName(first->GetName() + second->GetName())));
+  // line->SetName(static_cast<std::string>(
+  //     name_generator.GenerateName(first->GetName() + second->GetName())));
 
   // Return line
   return line;
@@ -51,10 +51,23 @@ Line* LineFactory::ByTwoPoints(Point* first, Point* second)
 
 ConicFactory::ConicFactory(Plane& plane) : plane_(plane) {}
 
-Conic* ConicFactory::OnPlane(const ConicEquation& equation)
+Conic* ConicFactory::OnPlane(ConicEquation equation)
 {
-  assert(false);
-  return nullptr;
+  // Create construction
+  auto construction = std::make_unique<ConicOnPlane>(std::move(equation));
+
+  const auto conic = construction->GetConic();
+
+  // Add construction to plane
+  plane_.AddConstruction(std::move(construction));
+
+  const auto& name_generator = plane_.GetNameGenerator();
+
+  // Rename conic
+  // conic->SetName(static_cast<std::string>(name_generator.GenerateName()));
+
+  // Return conic
+  return conic;
 }
 
 Conic* ConicFactory::ByFivePoints(Point* first, Point* second, Point* third,

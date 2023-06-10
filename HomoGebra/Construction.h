@@ -65,7 +65,11 @@ class Construction : public GeometricObjectObserver
    */
   ~Construction() override = default;
 
-  [[nodiscard]] virtual GeometricObject* GetObject() = 0;
+  [[nodiscard]] virtual GeometricObject* GetObject() const = 0;
+
+  virtual void RecalculateEquation() = 0;
+
+  void Update(const Event::Moved& moved_event) override;
 
  protected:
   /**
