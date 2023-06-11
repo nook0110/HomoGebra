@@ -347,7 +347,7 @@ Complex& HomogeneousCoordinate::operator[](const Var variable)
 HomogeneousCoordinate& HomogeneousCoordinate::Normalize()
 {
   // Check if z is non-zero
-  if (!IsZero(z))
+  if (!z.IsZero())
   {
     // Normalize
     x /= z;
@@ -357,7 +357,7 @@ HomogeneousCoordinate& HomogeneousCoordinate::Normalize()
   }
 
   // Check if y is non-zero
-  if (!IsZero(y))
+  if (!y.IsZero())
   {
     // Normalize
     x /= y;
@@ -366,7 +366,7 @@ HomogeneousCoordinate& HomogeneousCoordinate::Normalize()
     return *this;
   }
 
-  assert((IsZero(x)));
+  assert(!(x.IsZero()));
 
   // "Normalize"
   x = 1;

@@ -286,5 +286,17 @@ SquaredMatrix<UnderlyingType>::end() const
   return matrix_.end();
 }
 
+template <>
+bool SquaredMatrix<Complex>::IsZero(const Complex& value) const
+{
+  return value.IsZero();
+}
+
+template <>
+bool SquaredMatrix<float>::IsZero(const float& value) const
+{
+  return Complex{value}.IsZero();
+}
+
 template class SquaredMatrix<Complex>;
 template class SquaredMatrix<float>;

@@ -1,3 +1,5 @@
+#include "../HomoGebra/Complex.cpp"
+#include "../HomoGebra/Complex.h"
 #include "../HomoGebra/Coordinate.cpp"  // NOLINT(bugprone-suspicious-include)
 #include "../HomoGebra/Coordinate.h"
 #include "../HomoGebra/Equation.cpp"
@@ -10,6 +12,7 @@
 
 namespace HomogebraTest
 {
+inline constexpr auto kEpsilon = 1e-10L;
 namespace HelpFunctions
 {
 // Checks that two complex number are equal with precision [abs_error]

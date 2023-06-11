@@ -181,6 +181,8 @@ class LineBody : public sf::Drawable
    */
   ~LineBody() = default;
 
+  void Update(const LineEquation& equation);
+
   /**
    * \brief Draw line to a render target.
    *
@@ -188,6 +190,18 @@ class LineBody : public sf::Drawable
    *
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
+ private:
+  struct Equation
+  {
+    float a;
+    float b;
+    float c;
+
+    [[nodiscard]] float Solve(Var var, float another) const;
+  };
+
+  std::optional<Equation> equation_;
 };
 
 /**

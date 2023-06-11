@@ -154,6 +154,7 @@
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_stdlib.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Complex.cpp" />
     <ClCompile Include="Construction.cpp" />
     <ClCompile Include="Coordinate.cpp" />
     <ClCompile Include="Equation.cpp" />

@@ -1,30 +1,57 @@
 #pragma once
+#include <cassert>
 #include <complex>
 
-using Complex = std::complex<long double>;
-
-inline constexpr long double kEpsilon = 1e-10L;
-
-/**
- * \brief Checks if complex number is zero.
- *
- * \param complex Complex number to check.
- *
- * \return True if complex number is zero, otherwise false.
- */
-inline bool IsZero(const Complex& complex)
+class Complex : public std::complex<long double>
 {
-  return std::abs(complex) < kEpsilon;
-}
+ public:
+  using std::complex<long double>::complex;
 
-/**
- * \brief Checks if complex number is real.
- *
- * \param complex Complex number to check.
- *
- * \return True if complex number is real, otherwise false.
- */
-inline bool IsReal(const Complex& complex)
+  explicit Complex(std::complex<long double> value);
+
+  /**
+   * \brief Checks if complex number is zero.
+   *
+   * \return True if complex number is zero, otherwise false.
+   */
+  [[nodiscard]] bool IsZero() const;
+
+  /**
+   * \brief Checks if complex number is real.
+   *
+   *
+   * \return True if complex number is real, otherwise false.
+   */
+
+  [[nodiscard]] bool IsReal() const;
+
+  explicit operator long double() const;
+
+  Complex& operator*=(const Complex& other);
+
+  Complex operator*(const Complex& other) const;
+
+  Complex& operator/=(const Complex& other);
+
+  Complex operator/(const Complex& other) const;
+
+  Complex& operator+=(const Complex& other);
+
+  Complex operator+(const Complex& other) const;
+
+  Complex& operator-=(const Complex& other);
+
+  Complex operator-(const Complex& other) const;
+
+  Complex operator-() const;
+
+ private:
+  static constexpr long double kEpsilon = 1e-10L;
+};
+
+inline Complex sqrt(const Complex& value)
 {
-  return std::abs(complex.imag()) < kEpsilon;
+  const std::complex<long double> copy = value;
+
+  return Complex{sqrt(copy)};
 }

@@ -139,13 +139,13 @@ std::optional<PointBody::ProjectivePosition> PointBody::CalculatePosition(
   const auto normalized_eq = eq.GetNormalized();
 
   // Check if point lies on the "R-plane" which we see
-  if (!IsReal(normalized_eq.x) || !IsReal(normalized_eq.y))
+  if (!normalized_eq.x.IsReal() || !normalized_eq.y.IsReal())
   {
     return std::nullopt;
   }
 
   // Check if point is at infinity
-  if (IsZero(normalized_eq[Var::kZ]))
+  if (normalized_eq[Var::kZ].IsZero())
   {
     return ProjectivePosition{
         sf::Vector2f(static_cast<float>(normalized_eq.x.real()),
@@ -160,7 +160,37 @@ std::optional<PointBody::ProjectivePosition> PointBody::CalculatePosition(
       false};
 }
 
+void LineBody::Update(const LineEquation& equation)
+{
+  auto normalized_equation = equation.equation.GetNormalized();
+
+  // Check if line is in 'real' plane
+  if (!(normalized_equation.x.IsReal() && normalized_equation.y.IsReal()))
+  {
+    equation_ = std::nullopt;
+  }
+
+  Equation body_equation;
+  body_equation.a =
+      static_cast<float>(static_cast<long double>(normalized_equation.x));
+}
+
 void LineBody::draw(sf::RenderTarget& target, sf::RenderStates states) const {}
+
+float LineBody::Equation::Solve(const Var var, const float another) const
+{
+  switch (var)
+  {
+    case Var::kX:
+      return (-c - b * another) / a;
+    case Var::kY:
+      return (-c - a * another) / b;
+    case Var::kZ:
+    default:
+      assert(false);
+      return 0.f;
+  }
+}
 
 void ConicBody::Update(const ConicEquation& equation)
 {
@@ -232,7 +262,7 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
     std::vector<sf::Vector2f> points_to_add;
     for (auto& root : roots_y)
     {
-      if (root && IsReal(root.value()))
+      if (root && root.value().IsReal())
       {
         points_to_add.emplace_back(pos.x, root.value().real());
       }
@@ -240,7 +270,7 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
     for (auto& root : roots_x)
     {
-      if (root && IsReal(root.value()))
+      if (root && root.value().IsReal())
       {
         points_to_add.emplace_back(root.value().real(), pos.y);
       }
@@ -283,9 +313,9 @@ SolveQuadraticEquation(const Complex& quadratic_coefficient,
                        const Complex& constant_coefficient)
 {
   // Check if a is zero
-  if (IsZero(quadratic_coefficient))
+  if (quadratic_coefficient.IsZero())
   {
-    if (IsZero(linear_coefficient))
+    if (linear_coefficient.IsZero())
     {
       return {std::nullopt, std::nullopt};
     }

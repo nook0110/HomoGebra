@@ -142,6 +142,7 @@ class SquaredMatrix
    */
   SquaredMatrix() = default;
 
+  bool IsZero(const UnderlyingType& value) const;
   /**
    * Member data.
    */

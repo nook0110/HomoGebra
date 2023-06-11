@@ -148,6 +148,7 @@
     <ClCompile Include="ObjectConstruction.cpp">
       <Filter>Sources\Construcction</Filter>
     </ClCompile>
+    <ClCompile Include="Complex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeometricObject.h">
