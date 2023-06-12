@@ -1,6 +1,7 @@
 #include "ObjectConstruction.h"
 
 #include <cassert>
+#include <random>
 #include <utility>
 
 #include "Matrix.h"
@@ -100,7 +101,12 @@ void LineOnPlane::RecalculateEquation()
 
 ByTwoPoints::ByTwoPoints(Point* first_point, Point* second_point)
     : first_point_(first_point), second_point_(second_point)
-{}
+{
+  first_point->Attach(this);
+  second_point->Attach(this);
+
+  RecalculateEquation();
+}
 
 void ByTwoPoints::RecalculateEquation()
 {
@@ -109,9 +115,10 @@ void ByTwoPoints::RecalculateEquation()
   // Calculate equation of a line that goes through 2 points
   // We need to solve the system of equations [matrix]:
   // f_ is first, s_ is second
+  // and r is random number
   // | f_x f_y f_z | 0 |
   // | s_x s_y s_z | 0 |
-  // |  1   1   1  | 1 |
+  // |  r   r   r  | 1 |
 
   // Get equations of points
   const auto& f_equation = first_point_->GetEquation().GetEquation();
@@ -141,8 +148,16 @@ void ByTwoPoints::RecalculateEquation()
   // Get third row
   auto& third_row = matrix[2];
 
+  constexpr long double kLowerBound = -10000;
+  constexpr long double kUpperBound = 10000;
+  std::uniform_real_distribution<double> unif(kLowerBound, kUpperBound);
+  std::default_random_engine re;
+
   // Set third row
-  std::fill(third_row.begin(), third_row.end(), Complex{1});
+  std::for_each(third_row.begin(), third_row.end(),
+                [&unif, &re](Complex& value) {
+                  value = Complex{unif(re), unif(re)};
+                });
 
   // Get augmentation
   auto& augmentation = matrix.GetAugmentation();

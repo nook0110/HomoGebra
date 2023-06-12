@@ -69,7 +69,7 @@ void PointBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
       is_at_infinity)
   {
     // Draw point at infinity
-    DrawArrow(target, states);
+    // DrawArrow(target, states);
   }
   else
   {

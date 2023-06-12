@@ -44,8 +44,10 @@ int main()
   gui_handler.AddWindow(std::move(editor_window));
 
   PointFactory point_factory(plane);
-  point_factory.OnPlane(PointEquation{HomogeneousCoordinate{100, 100}});
-  point_factory.OnPlane(PointEquation{HomogeneousCoordinate{300, 300}});
+  auto first =
+      point_factory.OnPlane(PointEquation{HomogeneousCoordinate{100, 100}});
+  auto second =
+      point_factory.OnPlane(PointEquation{HomogeneousCoordinate{300, 300}});
 
   ConicFactory conic_factory(plane);
 
@@ -56,7 +58,7 @@ int main()
 
   LineFactory line_factory(plane);
 
-  line_factory.OnPlane(LineEquation{HomogeneousCoordinate{1, 2, -100}});
+  line_factory.ByTwoPoints(first, second);
 
   while (window.isOpen())
   {
