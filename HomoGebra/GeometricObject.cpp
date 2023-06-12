@@ -123,9 +123,14 @@ const LineEquation& Line::GetEquation() const
   return implementation_.GetEquation();
 }
 
+void Line::UpdateBody(sf::RenderTarget& target)
+{
+  body_.Update(implementation_.GetEquation());
+}
+
 void Line::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-  // body_.Draw(sf::RenderTarget & target, sf::RenderStates states);
+  target.draw(body_, states);
 }
 
 Conic::Conic(ConicEquation equation) : implementation_(std::move(equation)) {}

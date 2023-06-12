@@ -87,6 +87,17 @@ void ConstructionLine::SetEquation(const LineEquation& equation)
   line_->SetEquation(equation);
 }
 
+LineOnPlane::LineOnPlane(LineEquation equation) : equation_(std::move(equation))
+{
+  LineOnPlane::RecalculateEquation();
+}
+
+void LineOnPlane::RecalculateEquation()
+{
+  // Set equation
+  SetEquation(equation_);
+}
+
 ByTwoPoints::ByTwoPoints(Point* first_point, Point* second_point)
     : first_point_(first_point), second_point_(second_point)
 {}

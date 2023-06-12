@@ -162,7 +162,7 @@ std::optional<PointBody::ProjectivePosition> PointBody::CalculatePosition(
 
 void LineBody::Update(const LineEquation& equation)
 {
-  auto normalized_equation = equation.equation.GetNormalized();
+  const auto normalized_equation = equation.equation.GetNormalized();
 
   // Check if line is in 'real' plane
   if (!(normalized_equation.x.IsReal() && normalized_equation.y.IsReal()))
@@ -170,12 +170,65 @@ void LineBody::Update(const LineEquation& equation)
     equation_ = std::nullopt;
   }
 
-  Equation body_equation;
+  Equation body_equation{};
   body_equation.a =
       static_cast<float>(static_cast<long double>(normalized_equation.x));
+  body_equation.b =
+      static_cast<float>(static_cast<long double>(normalized_equation.y));
+  body_equation.c =
+      static_cast<float>(static_cast<long double>(normalized_equation.z));
+
+  equation_ = body_equation;
 }
 
-void LineBody::draw(sf::RenderTarget& target, sf::RenderStates states) const {}
+void LineBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+  // Check ig line is in 'real' plane
+  if (!equation_)
+  {
+    return;
+  }
+  const auto& a = equation_.value().a;
+  const auto& b = equation_.value().b;
+  const auto& c = equation_.value().c;
+
+  const auto& center = target.getView().getCenter();
+  const auto& size = target.getView().getSize();
+
+  const auto left = center.x - size.x / 2.f;
+  const auto right = center.x + size.x / 2.f;
+  const auto up = center.y + size.y / 2.f;
+  const auto down = center.y - size.y / 2.f;
+
+  std::array<sf::Vertex, 2> line_vertices;
+
+  std::for_each(line_vertices.begin(), line_vertices.end(),
+                [](sf::Vertex& vertex) { vertex.color = sf::Color::Black; });
+
+  constexpr size_t first = 0;
+  constexpr size_t second = 1;
+
+  if (abs(a / b) > size.y / size.x)
+  {
+    line_vertices[first].position.y = center.y - (size.y / 2);
+    line_vertices[second].position.y = center.y + (size.y / 2);
+    line_vertices[first].position.x =
+        -(line_vertices[first].position.y * b + c) / a;
+    line_vertices[second].position.x =
+        -(line_vertices[second].position.y * b + c) / a;
+  }
+  else
+  {
+    line_vertices[first].position.x = left;
+    line_vertices[second].position.x = right;
+    line_vertices[first].position.y =
+        -(line_vertices[first].position.x * a + c) / b;
+    line_vertices[second].position.y =
+        -(line_vertices[second].position.x * a + c) / b;
+  }
+
+  target.draw(line_vertices.data(), 2, sf::Lines);
+}
 
 float LineBody::Equation::Solve(const Var var, const float another) const
 {

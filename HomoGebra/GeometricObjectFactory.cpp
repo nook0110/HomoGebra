@@ -30,6 +30,26 @@ Point* PointFactory::Projection(Point* from, Line* to) { return nullptr; }
 
 LineFactory::LineFactory(Plane& plane) : plane_(plane) {}
 
+Line* LineFactory::OnPlane(LineEquation equation)
+{
+  // Create construction
+  auto construction = std::make_unique<LineOnPlane>(std::move(equation));
+
+  const auto line = construction->GetLine();
+
+  // Add construction to plane
+  plane_.AddConstruction(std::move(construction));
+
+  const auto& name_generator = plane_.GetNameGenerator();
+
+  // Rename line
+  // line->SetName(static_cast<std::string>(
+  //     name_generator.GenerateName(first->GetName() + second->GetName())));
+
+  // Return line
+  return line;
+}
+
 Line* LineFactory::ByTwoPoints(Point* first, Point* second)
 {
   // Create construction

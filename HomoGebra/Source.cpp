@@ -51,8 +51,12 @@ int main()
 
   ConicEquation equation;
   equation.squares = {1, 1, -10000};
-  equation.pair_products = {1, 1, 1};
+  equation.pair_products = {0, 1, 1};
   conic_factory.OnPlane(equation);
+
+  LineFactory line_factory(plane);
+
+  line_factory.OnPlane(LineEquation{HomogeneousCoordinate{1, 2, -100}});
 
   while (window.isOpen())
   {

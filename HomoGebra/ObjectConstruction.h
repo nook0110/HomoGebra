@@ -154,6 +154,17 @@ class ConstructionLine : public Construction
   std::unique_ptr<Line> line_;  //!< Line, which is created.
 };
 
+class LineOnPlane final : public ConstructionLine
+{
+ public:
+  explicit LineOnPlane(LineEquation equation);
+
+  void RecalculateEquation() override;
+
+ private:
+  LineEquation equation_;
+};
+
 class ByTwoPoints final : public ConstructionLine, public StrongConstruction
 {
  public:

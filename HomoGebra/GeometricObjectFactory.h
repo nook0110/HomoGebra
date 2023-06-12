@@ -74,6 +74,8 @@ class LineFactory
    */
   explicit LineFactory(Plane& plane);
 
+  Line* OnPlane(LineEquation equation);
+
   /**
    * \brief Constructs line through two given points.
    *

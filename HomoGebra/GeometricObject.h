@@ -271,7 +271,7 @@ class Line final : public GeometricObject
    *
    * \param target Render target to draw to.
    */
-  void UpdateBody(sf::RenderTarget& target) override{};
+  void UpdateBody(sf::RenderTarget& target) override;
 
   /**
    * \brief Draw the line.
@@ -384,10 +384,7 @@ class Conic final : public GeometricObject
    *
    * \return Name of object.
    */
-  [[nodiscard]] const std::string& GetName() const override
-  {
-    return {};
-  }
+  [[nodiscard]] const std::string& GetName() const override { return {}; }
 
   /**
    * \brief Attaches observer to this object.
