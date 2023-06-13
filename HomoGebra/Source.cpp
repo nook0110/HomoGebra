@@ -15,7 +15,8 @@ int main()
   settings.majorVersion = 3;
   settings.minorVersion = 0;
   sf::RenderWindow window(sf::VideoMode(1000, 1000), "Window Title",
-                          sf::Style::Default, settings);
+                          sf::Style::Titlebar, settings);
+
   if (!ImGui::SFML::Init(window))
   {
     return 1;

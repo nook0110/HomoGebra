@@ -42,6 +42,13 @@ class ObjectName final : public sf::Drawable, public sf::Transformable
    */
   [[nodiscard]] const std::string& GetName() const;
 
+  void SetSize(const float size)
+  {
+    const auto height = text_.getLocalBounds().height;
+    auto factor = size / height;
+    text_.setScale({factor, factor});
+  }
+
   /**
    * \brief Draw the object name to a render target.
    *
@@ -53,7 +60,7 @@ class ObjectName final : public sf::Drawable, public sf::Transformable
  private:
   inline static const std::string kFontPath =
       "Resources/font.ttf";                       //!< Path to font
-  static constexpr unsigned kCharacterSize = 20;  //!< Character size
+  static constexpr unsigned kCharacterSize = 50;  //!< Character size
   inline static const sf::Color kTextColor =
       sf::Color::Black;  //!< Color of the text
 

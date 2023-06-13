@@ -43,7 +43,7 @@ class PlaneBody final : public sf::Drawable
    *
    * \param event Mouse event to update the plane body.
    */
-  void MouseEventUpdate(const sf::Event& event);
+  void UpdateZoom(const sf::Event& event);
 
   sf::View view_;  //!< View of the plane.
 };

@@ -57,6 +57,9 @@ void PointBody::Update(const PointEquation& equation, const float size)
   }
 
   // Set size
+  constexpr auto kTextFactor = 2.f;
+  text_.SetSize(size * kTextFactor);
+
   body_.setRadius(size);
   body_.setOrigin(size, size);
 }
@@ -294,8 +297,8 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
     return std::hypot(delta.x, delta.y);
   };
 
-  constexpr size_t kSteps = 1000;
-  const auto step_size = window_size / static_cast<float>(kSteps);
+  const size_t steps = std::max(target.getSize().x, target.getSize().y) / 4;
+  const auto step_size = window_size / static_cast<float>(steps);
 
   const auto max_distance = find_distance(step_size) * 2.f;
 
@@ -304,7 +307,7 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
   Lines lines;
 
-  for (size_t step = 0; step < kSteps; ++step)
+  for (size_t step = 0; step < steps; ++step)
   {
     const auto pos = corner + step_size * static_cast<float>(step);
 
@@ -331,14 +334,20 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
     auto find_line = [&](const sf::Vector2f& point)
     {
-      return std::find_if(lines.begin(), lines.end(),
-                          [&](const Line& line)
-                          {
-                            if (line.empty()) return true;
+      auto best = lines.end();
+      auto distance = INFINITY;
 
-                            return find_distance(line.back().position, point) <
-                                   max_distance;
-                          });
+      for (auto it = lines.begin(); it != lines.end(); ++it)
+      {
+        if (find_distance(it->back().position, point) <
+            std::min(distance, max_distance))
+        {
+          best = it;
+          distance = find_distance(it->back().position, point);
+        }
+      }
+
+      return best;
     };
 
     for (auto& point : points_to_add)

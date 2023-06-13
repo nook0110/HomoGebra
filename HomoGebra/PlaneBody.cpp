@@ -2,7 +2,7 @@
 
 void PlaneBody::draw(sf::RenderTarget& target, sf::RenderStates states) const {}
 
-void PlaneBody::Update(const sf::Event& event) { MouseEventUpdate(event); }
+void PlaneBody::Update(const sf::Event& event) { UpdateZoom(event); }
 
 const sf::View& PlaneBody::GetView() const
 {
@@ -10,7 +10,7 @@ const sf::View& PlaneBody::GetView() const
   return view_;
 }
 
-void PlaneBody::MouseEventUpdate(const sf::Event& event)
+void PlaneBody::UpdateZoom(const sf::Event& event)
 {
   // Check if mouse button was pressed
   if (event.type == sf::Event::MouseWheelScrolled)
