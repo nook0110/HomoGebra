@@ -39,11 +39,11 @@ void ObjectName::draw(sf::RenderTarget& target, sf::RenderStates states) const
   target.draw(text_, states);
 }
 
+void ObjectBody::SetName(std::string name) { text_.SetName(std::move(name)); }
+
+const std::string& ObjectBody::GetName() const { return text_.GetName(); }
+
 PointBody::PointBody() { body_.setFillColor(sf::Color::Red); }
-
-void PointBody::SetName(std::string name) { text_.SetName(std::move(name)); }
-
-const std::string& PointBody::GetName() const { return text_.GetName(); }
 
 void PointBody::Update(const PointEquation& equation, const float size)
 {

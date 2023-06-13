@@ -62,8 +62,8 @@ Line* LineFactory::ByTwoPoints(Point* first, Point* second)
 
   const auto& name_generator = plane_.GetNameGenerator();
 
-  // line->SetName(static_cast<std::string>(
-  //     name_generator.GenerateName(first->GetName() + second->GetName())));
+  line->SetName(static_cast<std::string>(
+      name_generator.GenerateName(first->GetName() + second->GetName())));
 
   // Return line
   return line;
@@ -84,7 +84,7 @@ Conic* ConicFactory::OnPlane(ConicEquation equation)
   const auto& name_generator = plane_.GetNameGenerator();
 
   // Rename conic
-  // conic->SetName(static_cast<std::string>(name_generator.GenerateName()));
+  conic->SetName(static_cast<std::string>(name_generator.GenerateName()));
 
   // Return conic
   return conic;

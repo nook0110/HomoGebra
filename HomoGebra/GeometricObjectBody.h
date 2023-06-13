@@ -70,30 +70,9 @@ class ObjectName final : public sf::Drawable, public sf::Transformable
   sf::Text text_;  //!< Text of the name
 };
 
-/**
- * \brief Body of a point
- *
- * \author nook0110
- *
- * \version 0.1
- *
- * \date February 2023
- */
-class PointBody final : public sf::Drawable
+class ObjectBody : public sf::Drawable
 {
  public:
-  /**
-   * \brief Default constructor.
-   *
-   */
-  PointBody();
-
-  /**
-   * \brief Destructor.
-   *
-   */
-  ~PointBody() override = default;
-
   /**
    * \brief Set name of the point.
    *
@@ -107,6 +86,34 @@ class PointBody final : public sf::Drawable
    * \return Name of the point.
    */
   [[nodiscard]] const std::string& GetName() const;
+
+ protected:
+  ObjectName text_;  //!< Name of the name.
+};
+
+/**
+ * \brief Body of a point
+ *
+ * \author nook0110
+ *
+ * \version 0.1
+ *
+ * \date February 2023
+ */
+class PointBody final : public ObjectBody
+{
+ public:
+  /**
+   * \brief Default constructor.
+   *
+   */
+  PointBody();
+
+  /**
+   * \brief Destructor.
+   *
+   */
+  ~PointBody() override = default;
 
   /**
    * \brief Updates the point body.
@@ -160,8 +167,6 @@ class PointBody final : public sf::Drawable
   std::optional<ProjectivePosition>
       position_;          //!< Projective position of the point.
   sf::CircleShape body_;  //!< Body of the point.
-
-  ObjectName text_;  //!< Name of the name.
 };
 
 /**
@@ -173,7 +178,7 @@ class PointBody final : public sf::Drawable
  *
  * \date February 2023
  */
-class LineBody : public sf::Drawable
+class LineBody : public ObjectBody
 {
  public:
   /**
@@ -220,7 +225,7 @@ class LineBody : public sf::Drawable
  *
  * \date February 2023
  */
-class ConicBody : public sf::Drawable
+class ConicBody : public ObjectBody
 {
  public:
   /**

@@ -286,21 +286,21 @@ class Line final : public GeometricObject
    *
    * \param name New name of object.
    */
-  void SetName(std::string name) override{};
+  void SetName(std::string name) override;
 
   /**
    * \brief Gets name of object.
    *
    * \return Name of object.
    */
-  [[nodiscard]] const std::string& GetName() const override { return {}; };
+  [[nodiscard]] const std::string& GetName() const override;
 
   /**
    * \brief Attaches observer to this object.
    *
    * \param observer Observer to attach.
    */
-  void Attach(GeometricObjectObserver* observer) override {}
+  void Attach(GeometricObjectObserver* observer) override;
 
  private:
   /**
@@ -309,6 +309,13 @@ class Line final : public GeometricObject
    * \param event Event
    */
   void Notify(const Event::Destroyed& event) const;
+
+  /**
+   * \brief Notify observers that this objected was renamed.
+   *
+   * \param event Event of renaming.
+   */
+  void Notify(const Event::Renamed& event) const;
 
   /*
    * Member data
@@ -351,13 +358,6 @@ class Conic final : public GeometricObject
   void SetEquation(ConicEquation equation);
 
   /**
-   * \brief Notify observers that this objected is destroyed
-   *
-   * \param event Event
-   */
-  void Notify(const Event::Destroyed& event) const;
-
-  /**
    * \brief Update the body of the conic.
    *
    * \param target Render target to draw to.
@@ -377,23 +377,37 @@ class Conic final : public GeometricObject
    *
    * \param name New name of object.
    */
-  void SetName(std::string name) override { assert(false); }
+  void SetName(std::string name) override;
 
   /**
    * \brief Gets name of object.
    *
    * \return Name of object.
    */
-  [[nodiscard]] const std::string& GetName() const override { return {}; }
+  [[nodiscard]] const std::string& GetName() const override;
 
   /**
    * \brief Attaches observer to this object.
    *
    * \param observer Observer to attach.
    */
-  void Attach(GeometricObjectObserver* observer) override {}
+  void Attach(GeometricObjectObserver* observer) override;
 
  private:
+  /**
+   * \brief Notify observers that this objected is destroyed
+   *
+   * \param event Event
+   */
+  void Notify(const Event::Destroyed& event) const;
+
+  /**
+   * \brief Notify observers that this objected was renamed.
+   *
+   * \param event Event of renaming.
+   */
+  void Notify(const Event::Renamed& event) const;
+
   /*
    * Member data
    */

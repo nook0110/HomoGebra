@@ -105,12 +105,6 @@ void Line::Destroy()
   Notify(Event::Destroyed{this});
 }
 
-void Line::Notify(const Event::Destroyed& event) const
-{
-  // Call implementation method
-  implementation_.Notify(event);
-}
-
 void Line::SetEquation(LineEquation equation)
 {
   // Set equation in implementation
@@ -133,6 +127,39 @@ void Line::draw(sf::RenderTarget& target, sf::RenderStates states) const
   target.draw(body_, states);
 }
 
+void Line::SetName(std::string name)
+{
+  const Event::Renamed renamed{this, body_.GetName(), name};
+
+  body_.SetName(std::move(name));
+
+  Notify(renamed);
+}
+
+const std::string& Line::GetName() const
+{
+  // Return name
+  return body_.GetName();
+}
+
+void Line::Attach(GeometricObjectObserver* observer)
+{
+  // Call implementation method
+  implementation_.Attach(observer);
+}
+
+void Line::Notify(const Event::Destroyed& event) const
+{
+  // Call implementation method
+  implementation_.Notify(event);
+}
+
+void Line::Notify(const Event::Renamed& event) const
+{
+  // Call implementation method
+  implementation_.Notify(event);
+}
+
 Conic::Conic(ConicEquation equation) : implementation_(std::move(equation)) {}
 
 void Conic::Destroy()
@@ -146,12 +173,6 @@ void Conic::SetEquation(ConicEquation equation)
   implementation_.SetEquation(std::move(equation));
 }
 
-void Conic::Notify(const Event::Destroyed& event) const
-{
-  // Call implementation method
-  implementation_.Notify(event);
-}
-
 void Conic::UpdateBody(sf::RenderTarget& target)
 {
   body_.Update(implementation_.GetEquation());
@@ -160,4 +181,37 @@ void Conic::UpdateBody(sf::RenderTarget& target)
 void Conic::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
   target.draw(body_, states);
+}
+
+void Conic::SetName(std::string name)
+{
+  const Event::Renamed renamed{this, body_.GetName(), name};
+
+  body_.SetName(std::move(name));
+
+  Notify(renamed);
+}
+
+const std::string& Conic::GetName() const
+{
+  // Return name
+  return body_.GetName();
+}
+
+void Conic::Attach(GeometricObjectObserver* observer)
+{
+  // Call implementation method
+  implementation_.Attach(observer);
+}
+
+void Conic::Notify(const Event::Destroyed& event) const
+{
+  // Call implementation method
+  implementation_.Notify(event);
+}
+
+void Conic::Notify(const Event::Renamed& event) const
+{
+  // Call implementation method
+  implementation_.Notify(event);
 }
