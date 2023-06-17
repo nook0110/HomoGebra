@@ -216,6 +216,9 @@
     <ClInclude Include="ObjectConstruction.h">
       <Filter>Headers\Construction</Filter>
     </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
