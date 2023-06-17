@@ -3,7 +3,7 @@
 #include <cassert>
 
 PointEquation::PointEquation(HomogeneousCoordinate _equation)
-    : equation(_equation)
+    : equation(std::move(_equation))
 {}
 
 void PointEquation::Apply(const Transformation& transformation)

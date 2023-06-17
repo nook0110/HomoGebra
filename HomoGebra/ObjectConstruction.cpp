@@ -26,9 +26,10 @@ void ConstructionPoint::Update(const ObjectEvent::Destroyed& event)
   point_->Destroy();
 }
 
-void ConstructionPoint::Update(const ObjectEvent::Renamed& event) {}
-
-ConstructionPoint::ConstructionPoint() : point_(std::make_unique<Point>()) {}
+void ConstructionPoint::Update(const ObjectEvent::Renamed& event)
+{
+  // Renaming has no effect on object
+}
 
 const PointEquation& ConstructionPoint::GetEquation() const
 {
@@ -73,8 +74,6 @@ void ConstructionLine::Update(const ObjectEvent::Destroyed& event)
 }
 
 void ConstructionLine::Update(const ObjectEvent::Renamed& event) {}
-
-inline ConstructionLine::ConstructionLine() : line_(std::make_unique<Line>()) {}
 
 const LineEquation& ConstructionLine::GetEquation() const
 {
@@ -197,8 +196,6 @@ void ConstructionConic::Update(const ObjectEvent::Destroyed& event)
 }
 
 void ConstructionConic::Update(const ObjectEvent::Renamed& event) {}
-
-ConstructionConic::ConstructionConic() : conic_(std::make_unique<Conic>()) {}
 
 ConicOnPlane::ConicOnPlane(ConicEquation equation)
     : equation_(std::move(equation))

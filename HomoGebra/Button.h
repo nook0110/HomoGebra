@@ -1,4 +1,5 @@
 #pragma once
+#include <utility>
 
 template <class Element, size_t index>
 class Wrapper
@@ -6,7 +7,11 @@ class Wrapper
  public:
   Wrapper() = default;
 
-  template <class T>
+  template <class T,
+            std::enable_if_t<
+                !std::is_same_v<Wrapper,
+                                std::remove_cv_t<std::remove_reference_t<T>>>,
+                int> = 0>
   Wrapper(T&& arg);
 
   template <class... Args>
@@ -22,7 +27,11 @@ class Button : public Wrapper<First, sizeof...(Rest)>, public Button<Rest...>
  public:
   Button() = default;
 
-  template <class Head, class... Tail>
+  template <class Head, class... Tail,
+            std::enable_if_t<
+                !std::is_same_v<
+                    Button, std::remove_cv_t<std::remove_reference_t<Head>>>,
+                int> = 0>
   Button(Head&& head, Tail&&... tail);
 
   template <class... Arguments>
@@ -40,8 +49,12 @@ class Button<First> : public Wrapper<First, 0>
 };
 
 template <class Element, size_t index>
-template <class T>
-Wrapper<Element, index>::Wrapper(T&& arg) : element_(arg)
+template <class T,
+          std::enable_if_t<
+              !std::is_same_v<Wrapper<Element, index>,
+                              std ::remove_cv_t<std::remove_reference_t<T>>>,
+              int>>
+Wrapper<Element, index>::Wrapper(T&& arg) : element_(std::forward<T>(arg))
 {}
 
 template <class Element, size_t index>
@@ -52,9 +65,14 @@ auto Wrapper<Element, index>::operator()(Args&&... args)
 }
 
 template <class First, class... Rest>
-template <class Head, class... Tail>
+template <class Head, class... Tail,
+          std::enable_if_t<
+              !std::is_same_v<Button<First, Rest...>,
+                              std::remove_cv_t<std::remove_reference_t<Head>>>,
+              int>>
 Button<First, Rest...>::Button(Head&& head, Tail&&... tail)
-    : Wrapper<First, sizeof...(Rest)>(head), Button<Rest...>(tail...)
+    : Wrapper<First, sizeof...(Rest)>(std::forward<Head>(head)),
+      Button<Rest...>(std::forward<Tail>(tail)...)
 {}
 
 template <class First, class... Rest>

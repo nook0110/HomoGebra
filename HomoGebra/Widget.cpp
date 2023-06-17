@@ -176,14 +176,12 @@ void Constructor::ObjectSelector<GeometricObjectType>::ConstructList()
 
   // Construct object selector
   if (ImGui::ListBox("Objects", &current_object_, ObjectsNameGetter, &objects,
-                     static_cast<int>(objects.size())))
+                     static_cast<int>(objects.size())) &&
+      (current_object_ >= 0 &&
+       current_object_ < static_cast<int>(objects.size())))
   {
     // Select object
-    if (current_object_ >= 0 &&
-        current_object_ < static_cast<int>(objects.size()))
-    {
-      object_ = dynamic_cast<GeometricObjectType*>(objects[current_object_]);
-    }
+    object_ = dynamic_cast<GeometricObjectType*>(objects[current_object_]);
   }
 }
 

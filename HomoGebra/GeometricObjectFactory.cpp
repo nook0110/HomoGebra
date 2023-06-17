@@ -26,8 +26,6 @@ Point* PointFactory::OnPlane(PointEquation equation)
   return point;
 }
 
-Point* PointFactory::Projection(Point* from, Line* to) { return nullptr; }
-
 LineFactory::LineFactory(Plane& plane) : plane_(plane) {}
 
 Line* LineFactory::OnPlane(LineEquation equation)
@@ -43,8 +41,7 @@ Line* LineFactory::OnPlane(LineEquation equation)
   const auto& name_generator = plane_.GetNameGenerator();
 
   // Rename line
-  // line->SetName(static_cast<std::string>(
-  //     name_generator.GenerateName(first->GetName() + second->GetName())));
+  line->SetName(static_cast<std::string>(name_generator.GenerateName()));
 
   // Return line
   return line;
@@ -88,11 +85,4 @@ Conic* ConicFactory::OnPlane(ConicEquation equation)
 
   // Return conic
   return conic;
-}
-
-Conic* ConicFactory::ByFivePoints(Point* first, Point* second, Point* third,
-                                  Point* fourth, Point* fifth)
-{
-  assert(false);
-  return nullptr;
 }

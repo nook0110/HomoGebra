@@ -87,7 +87,12 @@ class ObjectBody : public sf::Drawable
    */
   [[nodiscard]] const std::string& GetName() const;
 
- protected:
+  void SetNamePosition(const sf::Vector2f& position);
+  void SetNameSize(float size);
+
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
+ private:
   ObjectName text_;  //!< Name of the name.
 };
 
@@ -178,7 +183,7 @@ class PointBody final : public ObjectBody
  *
  * \date February 2023
  */
-class LineBody : public ObjectBody
+class LineBody final : public ObjectBody
 {
  public:
   /**
@@ -191,7 +196,7 @@ class LineBody : public ObjectBody
    * \brief Destructor.
    *
    */
-  ~LineBody() = default;
+  ~LineBody() override = default;
 
   void Update(const LineEquation& equation);
 

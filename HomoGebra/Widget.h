@@ -79,7 +79,7 @@ class ComplexEditor final : public Widget
    * \brief Renders the menu.
    *
    */
-  void Construct();
+  void Construct() override;
 
   /**
    * \brief Renders the menu.

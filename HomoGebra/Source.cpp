@@ -1,4 +1,3 @@
-#include "EventNotifier.h"
 #include "GeometricObject.h"
 #include "GeometricObjectFactory.h"
 #include "SFML/Graphics.hpp"

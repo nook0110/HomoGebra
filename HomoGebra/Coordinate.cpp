@@ -124,7 +124,7 @@ TransformationMatrix::end() const
 }
 
 Transformation::Transformation(TransformationMatrix transformation)
-    : transformation_(transformation)
+    : transformation_(std::move(transformation))
 {}
 
 Transformation::Transformation(
@@ -274,7 +274,7 @@ HomogeneousCoordinate Transformation::operator()(
     const HomogeneousCoordinate& coordinate) const
 {
   // Apply transformation and return result
-  return (*this) * coordinate;
+  return *this * coordinate;
 }
 
 HomogeneousCoordinate& operator*=(HomogeneousCoordinate& coordinate,

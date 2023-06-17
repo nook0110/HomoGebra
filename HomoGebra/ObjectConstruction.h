@@ -34,14 +34,14 @@ class ConstructionPoint : public Construction
 
   void Update(const ObjectEvent::Destroyed& event) override;
 
-  void Update(const ObjectEvent::Renamed& event) override;
+  void Update(const ObjectEvent::Renamed& renamed) override;
 
  protected:
   /**
    * \brief Default constructor.
    *
    */
-  ConstructionPoint();
+  ConstructionPoint() = default;
 
   /**
    * \brief Get equation of point.
@@ -120,9 +120,9 @@ class ConstructionLine : public Construction
    */
   ~ConstructionLine() override = default;
 
-  GeometricObject* GetObject() const override;
+  [[nodiscard]] GeometricObject* GetObject() const override;
 
-  Line* GetLine() const;
+  [[nodiscard]] Line* GetLine() const;
 
   /**
    * Recalculate equation of line.
@@ -134,7 +134,7 @@ class ConstructionLine : public Construction
   void Update(const ObjectEvent::Renamed& event) override;
 
  protected:
-  ConstructionLine();
+  ConstructionLine() = default;
 
   /**
    * \brief Get equation of line.
@@ -182,7 +182,7 @@ class ConstructionConic : public Construction
  public:
   [[nodiscard]] GeometricObject* GetObject() const override;
 
-  Conic* GetConic() const;
+  [[nodiscard]] Conic* GetConic() const;
 
   /**
    * \brief Recalculate equation of conic.
@@ -194,7 +194,7 @@ class ConstructionConic : public Construction
   void Update(const ObjectEvent::Renamed& event) override;
 
  protected:
-  ConstructionConic();
+  ConstructionConic() = default;
 
   void SetEquation(ConicEquation equation);
 

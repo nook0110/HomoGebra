@@ -43,6 +43,18 @@ void ObjectBody::SetName(std::string name) { text_.SetName(std::move(name)); }
 
 const std::string& ObjectBody::GetName() const { return text_.GetName(); }
 
+void ObjectBody::SetNamePosition(const sf::Vector2f& position)
+{
+  text_.setPosition(position);
+}
+
+void ObjectBody::SetNameSize(const float size) { text_.SetSize(size); }
+
+void ObjectBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+  target.draw(text_, states);
+}
+
 PointBody::PointBody() { body_.setFillColor(sf::Color::Red); }
 
 void PointBody::Update(const PointEquation& equation, const float size)
@@ -53,12 +65,12 @@ void PointBody::Update(const PointEquation& equation, const float size)
   if (position_)
   {
     body_.setPosition(position_.value().position);
-    text_.setPosition(position_.value().position);
+    SetNamePosition(position_.value().position);
   }
 
   // Set size
   constexpr auto kTextFactor = 2.f;
-  text_.SetSize(size * kTextFactor);
+  SetNameSize(size * kTextFactor);
 
   body_.setRadius(size);
   body_.setOrigin(size, size);
@@ -78,7 +90,7 @@ void PointBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
   {
     // Draw point
     target.draw(body_, states);
-    target.draw(text_, states);
+    ObjectBody::draw(target, states);
   }
 }
 
@@ -130,6 +142,8 @@ void PointBody::DrawArrow(sf::RenderTarget& target,
       intersection.value() * kEndShift + view.getCenter() * (1.f - kEndShift);
 
   thor::Arrow arrow{arrow_start, arrow_end, sf::Color::Black, 10};
+
+  target.draw(arrow, states);
 }
 
 std::optional<PointBody::ProjectivePosition> PointBody::CalculatePosition(
@@ -213,8 +227,8 @@ void LineBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
   if (abs(a / b) > size.y / size.x)
   {
-    line_vertices[first].position.y = center.y - (size.y / 2);
-    line_vertices[second].position.y = center.y + (size.y / 2);
+    line_vertices[first].position.y = down;
+    line_vertices[second].position.y = up;
     line_vertices[first].position.x =
         -(line_vertices[first].position.y * b + c) / a;
     line_vertices[second].position.x =
