@@ -1,5 +1,7 @@
 #include "Input.h"
 
+#include "GeometricObject.h"
+
 template <class GeometricObjectType>
 NearbyObjectGetter<GeometricObjectType>::NearbyObjectGetter(
     Plane& plane, sf::RenderWindow& window, GeometricObjectType* last_object)

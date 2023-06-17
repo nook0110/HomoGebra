@@ -1,5 +1,5 @@
 #pragma once
-#include <SFML/Window/Event.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <list>
 
 namespace UserEvent

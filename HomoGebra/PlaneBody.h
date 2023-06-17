@@ -1,8 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-#include "NameGenerator.h"
-
 /**
  * \brief Class that represents a plane body.
  *

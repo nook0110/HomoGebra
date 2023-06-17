@@ -1,7 +1,6 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <cassert>
 
 #include "GeometricObjectBody.h"
 #include "GeometricObjectImplementation.h"

@@ -3,7 +3,6 @@
 #include <Thor/Input.hpp>
 
 #include "EventNotifier.h"
-#include "GeometricObject.h"
 #include "ObjectProvider.h"
 
 /**

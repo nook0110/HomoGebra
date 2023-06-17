@@ -1,5 +1,4 @@
 #pragma once
-#include <cassert>
 #include <complex>
 
 class Complex : public std::complex<long double>

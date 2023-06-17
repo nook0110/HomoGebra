@@ -1,6 +1,5 @@
 #pragma once
 #include <array>
-#include <complex>
 #include <optional>
 
 #include "Complex.h"
