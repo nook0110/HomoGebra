@@ -41,20 +41,20 @@ const NameGenerator& PlaneImplementation::GetNameGenerator() const
   return name_generator_;
 }
 
-void PlaneImplementation::Update(const Event::Moved& moved_event)
+void PlaneImplementation::Update(const ObjectEvent::Moved& moved_event)
 {
   /*
    * Nothing to do here
    */
 }
 
-void PlaneImplementation::Update(const Event::Destroyed& destroyed_event)
+void PlaneImplementation::Update(const ObjectEvent::Destroyed& destroyed_event)
 {
   // Remove object from vector of all objects
   RemoveObject(destroyed_event.object);
 }
 
-void PlaneImplementation::Update(const Event::Renamed& renamed_event)
+void PlaneImplementation::Update(const ObjectEvent::Renamed& renamed_event)
 {
   assert(renamed_event.object->GetName() == renamed_event.new_name);
 

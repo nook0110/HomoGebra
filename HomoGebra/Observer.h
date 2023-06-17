@@ -7,9 +7,9 @@ class Plane;
 class GeometricObject;
 
 /**
- * \brief Events which can happen.
+ * \brief Events which can happen with objects.
  */
-namespace Event
+namespace ObjectEvent
 {
 /**
  * \brief Tag that shows that object was moved.
@@ -42,7 +42,7 @@ struct Renamed
   std::string old_name;     //!< Old name of object.
   std::string new_name;     //!< New name of object.
 };
-}  // namespace Event
+}  // namespace ObjectEvent
 
 /**
  * \brief Makes Construction an observer.
@@ -73,31 +73,31 @@ class GeometricObjectObserver
   virtual ~GeometricObjectObserver() = default;
 
   /**
-   * \brief Update the object, because sth moved.
+   * \brief Update, because sth moved.
    *
    * \param moved_event Tag with some information.
    *
-   * \see Event::Moved
+   * \see ObjectEvent::Moved
    */
-  virtual void Update(const Event::Moved& moved_event) = 0;
+  virtual void Update(const ObjectEvent::Moved& moved_event) = 0;
 
   /**
-   * \brief Update the object, because sth was destroyed.
+   * \brief Update, because sth was destroyed.
    *
    * \param destroyed_event Tag with some information
    *
-   * \see Event::Destroyed
+   * \see ObjectEvent::Destroyed
    */
-  virtual void Update(const Event::Destroyed& destroyed_event) = 0;
+  virtual void Update(const ObjectEvent::Destroyed& destroyed_event) = 0;
 
   /**
-   * \brief Update the object, because sth was renamed.
+   * \brief Update, because sth was renamed.
    *
    * \param renamed_event Tag with some information
    *
-   * \see Event::Renamed
+   * \see ObjectEvent::Renamed
    */
-  virtual void Update(const Event::Renamed& renamed_event) = 0;
+  virtual void Update(const ObjectEvent::Renamed& renamed_event) = 0;
 };
 
 /**
@@ -136,32 +136,8 @@ class ObservableGeometricObject
    */
   void Detach(const GeometricObjectObserver* observer);
 
-  /**
-   * \brief Notify all subscribed observers that object was moved.
-   *
-   * \param moved_event Tag with some information.
-   *
-   * \see Event::Moved
-   */
-  void Notify(const Event::Moved& moved_event) const;
-
-  /**
-   * \brief Notify all subscribed observers that object was destroyed.
-   *
-   * \param destroyed Tag with some information (Plane where it was destroyed).
-   *
-   * \see Event:Destroyed
-   */
-  void Notify(const Event::Destroyed& destroyed) const;
-
-  /**
-   * \brief Notify all subscribed observers that object was renamed.
-   *
-   * \param renamed_event Tag with some information.
-   *
-   * \see Event::Renamed
-   */
-  void Notify(const Event::Renamed& renamed_event) const;
+  template <class Event>
+  void Notify(const Event& event) const;
 
  private:
   /**

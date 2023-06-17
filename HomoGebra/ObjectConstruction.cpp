@@ -13,7 +13,7 @@ Point* ConstructionPoint::GetPoint() const
   // Return point
   return point_.get();
 }
-void ConstructionPoint::Update(const Event::Destroyed& event)
+void ConstructionPoint::Update(const ObjectEvent::Destroyed& event)
 {
   // Check if event object is point that we contain
   if (event.object == GetObject())
@@ -26,7 +26,7 @@ void ConstructionPoint::Update(const Event::Destroyed& event)
   point_->Destroy();
 }
 
-void ConstructionPoint::Update(const Event::Renamed& event) {}
+void ConstructionPoint::Update(const ObjectEvent::Renamed& event) {}
 
 ConstructionPoint::ConstructionPoint() : point_(std::make_unique<Point>()) {}
 
@@ -59,7 +59,7 @@ Line* ConstructionLine::GetLine() const
   return line_.get();
 }
 
-void ConstructionLine::Update(const Event::Destroyed& event)
+void ConstructionLine::Update(const ObjectEvent::Destroyed& event)
 {
   // Check if event object is line that we contain
   if (event.object == GetObject())
@@ -72,7 +72,7 @@ void ConstructionLine::Update(const Event::Destroyed& event)
   line_->Destroy();
 }
 
-void ConstructionLine::Update(const Event::Renamed& event) {}
+void ConstructionLine::Update(const ObjectEvent::Renamed& event) {}
 
 inline ConstructionLine::ConstructionLine() : line_(std::make_unique<Line>()) {}
 
@@ -183,7 +183,7 @@ GeometricObject* ConstructionConic::GetObject() const { return GetConic(); }
 
 Conic* ConstructionConic::GetConic() const { return conic_.get(); }
 
-void ConstructionConic::Update(const Event::Destroyed& event)
+void ConstructionConic::Update(const ObjectEvent::Destroyed& event)
 {
   // Check if event object is line that we are containing
   if (event.object == GetObject())
@@ -196,7 +196,7 @@ void ConstructionConic::Update(const Event::Destroyed& event)
   conic_->Destroy();
 }
 
-void ConstructionConic::Update(const Event::Renamed& event) {}
+void ConstructionConic::Update(const ObjectEvent::Renamed& event) {}
 
 ConstructionConic::ConstructionConic() : conic_(std::make_unique<Conic>()) {}
 

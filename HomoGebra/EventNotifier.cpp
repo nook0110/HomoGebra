@@ -13,8 +13,12 @@ void EventNotifier::Detach(const EventListener* listener)
                        { return obs == listener; });
 }
 
-void EventNotifier::Notify(const sf::Event& event) const
+template <class Event>
+void EventNotifier::Notify(const Event& event) const
 {
   // Update all listeners
   for (const auto& listener : listeners_) listener->Update(event);
 }
+
+template void EventNotifier::Notify<UserEvent::Clicked>(
+    const UserEvent::Clicked& event) const;

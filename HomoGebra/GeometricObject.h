@@ -185,19 +185,8 @@ class Point final : public GeometricObject
 
   ///@}
  private:
-  /**
-   * \brief Notify observers that this objected was destroyed.
-   *
-   * \param event Event of destruction.
-   */
-  void Notify(const Event::Destroyed& event) const;
-
-  /**
-   * \brief Notify observers that this objected was renamed.
-   *
-   * \param event Event of renaming.
-   */
-  void Notify(const Event::Renamed& event) const;
+  template <class Event>
+  void Notify(const Event& event) const;
 
   /**
    * \brief Calculates size of a body
@@ -303,19 +292,8 @@ class Line final : public GeometricObject
   void Attach(GeometricObjectObserver* observer) override;
 
  private:
-  /**
-   * \brief Notify observers that this objected is destroyed
-   *
-   * \param event Event
-   */
-  void Notify(const Event::Destroyed& event) const;
-
-  /**
-   * \brief Notify observers that this objected was renamed.
-   *
-   * \param event Event of renaming.
-   */
-  void Notify(const Event::Renamed& event) const;
+  template <class Event>
+  void Notify(const Event& event) const;
 
   /*
    * Member data
@@ -394,19 +372,8 @@ class Conic final : public GeometricObject
   void Attach(GeometricObjectObserver* observer) override;
 
  private:
-  /**
-   * \brief Notify observers that this objected is destroyed
-   *
-   * \param event Event
-   */
-  void Notify(const Event::Destroyed& event) const;
-
-  /**
-   * \brief Notify observers that this objected was renamed.
-   *
-   * \param event Event of renaming.
-   */
-  void Notify(const Event::Renamed& event) const;
+  template <class Event>
+  void Notify(const Event& event) const;
 
   /*
    * Member data

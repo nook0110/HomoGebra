@@ -10,20 +10,21 @@ Point::Point(PointEquation equation) : implementation_(std::move(equation)) {}
 void Point::Destroy()
 {
   // Notify observers that object was destroyed
-  Notify(Event::Destroyed{this});
+  Notify(ObjectEvent::Destroyed{this});
 }
 
-void Point::Notify(const Event::Destroyed& event) const
+template <class Event>
+void Point::Notify(const Event& event) const
 {
   // Call implementation method
   implementation_.Notify(event);
 }
 
-void Point::Notify(const Event::Renamed& event) const
-{
-  // Call implementation method
-  implementation_.Notify(event);
-}
+template void Point::Notify<ObjectEvent::Destroyed>(
+    const ObjectEvent::Destroyed& event) const;
+
+template void Point::Notify<ObjectEvent::Renamed>(
+    const ObjectEvent::Renamed& event) const;
 
 float Point::CalculateSizeOfBody(const sf::RenderTarget& target)
 {
@@ -84,7 +85,7 @@ void Point::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void Point::SetName(std::string name)
 {
-  const Event::Renamed renamed{this, body_.GetName(), name};
+  const ObjectEvent::Renamed renamed{this, body_.GetName(), name};
 
   body_.SetName(std::move(name));
 
@@ -102,7 +103,7 @@ Line::Line(LineEquation equation) : implementation_(std::move(equation)) {}
 void Line::Destroy()
 {
   // Notify observers that object was destroyed
-  Notify(Event::Destroyed{this});
+  Notify(ObjectEvent::Destroyed{this});
 }
 
 void Line::SetEquation(LineEquation equation)
@@ -129,7 +130,7 @@ void Line::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void Line::SetName(std::string name)
 {
-  const Event::Renamed renamed{this, body_.GetName(), name};
+  const ObjectEvent::Renamed renamed{this, body_.GetName(), name};
 
   body_.SetName(std::move(name));
 
@@ -148,24 +149,25 @@ void Line::Attach(GeometricObjectObserver* observer)
   implementation_.Attach(observer);
 }
 
-void Line::Notify(const Event::Destroyed& event) const
+template <class Event>
+void Line::Notify(const Event& event) const
 {
   // Call implementation method
   implementation_.Notify(event);
 }
 
-void Line::Notify(const Event::Renamed& event) const
-{
-  // Call implementation method
-  implementation_.Notify(event);
-}
+template void Line::Notify<ObjectEvent::Destroyed>(
+    const ObjectEvent::Destroyed& event) const;
+
+template void Line::Notify<ObjectEvent::Renamed>(
+    const ObjectEvent::Renamed& event) const;
 
 Conic::Conic(ConicEquation equation) : implementation_(std::move(equation)) {}
 
 void Conic::Destroy()
 {
   // Notify observers that object was destroyed
-  Notify(Event::Destroyed{this});
+  Notify(ObjectEvent::Destroyed{this});
 }
 
 void Conic::SetEquation(ConicEquation equation)
@@ -185,7 +187,7 @@ void Conic::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void Conic::SetName(std::string name)
 {
-  const Event::Renamed renamed{this, body_.GetName(), name};
+  const ObjectEvent::Renamed renamed{this, body_.GetName(), name};
 
   body_.SetName(std::move(name));
 
@@ -204,14 +206,15 @@ void Conic::Attach(GeometricObjectObserver* observer)
   implementation_.Attach(observer);
 }
 
-void Conic::Notify(const Event::Destroyed& event) const
+template <class Event>
+void Conic::Notify(const Event& event) const
 {
   // Call implementation method
   implementation_.Notify(event);
 }
 
-void Conic::Notify(const Event::Renamed& event) const
-{
-  // Call implementation method
-  implementation_.Notify(event);
-}
+template void Conic::Notify<ObjectEvent::Destroyed>(
+    const ObjectEvent::Destroyed& event) const;
+
+template void Conic::Notify<ObjectEvent::Renamed>(
+    const ObjectEvent::Renamed& event) const;

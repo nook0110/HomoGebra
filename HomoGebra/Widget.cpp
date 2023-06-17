@@ -149,7 +149,7 @@ void Constructor::ObjectSelector<GeometricObjectType>::Construct()
 
 template <class GeometricObjectType>
 void Constructor::ObjectSelector<GeometricObjectType>::Update(
-    const sf::Event& event)
+    const UserEvent::Clicked& event)
 {
   // Update object getter
   object_getter_.Update(event);

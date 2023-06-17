@@ -26,7 +26,6 @@ int main()
   ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
   Plane plane;
-  EventNotifier notifier;
 
   Gui::WindowHandler gui_handler;
 
@@ -34,8 +33,6 @@ int main()
       std::make_unique<Gui::Constructor::ObjectSelector<Point>>(plane, window);
 
   auto editor = std::make_unique<Gui::ObjectMenu>(plane);
-
-  notifier.Attach(selector.get());
 
   auto selector_window =
       std::make_unique<Gui::Window>("Hello", std::move(selector));
@@ -76,8 +73,6 @@ int main()
       {
         break;
       }
-
-      notifier.Notify(event);
 
       plane.Update(event);
     }

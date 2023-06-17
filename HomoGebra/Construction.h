@@ -69,7 +69,7 @@ class Construction : public GeometricObjectObserver
 
   virtual void RecalculateEquation() = 0;
 
-  void Update(const Event::Moved& moved_event) override;
+  void Update(const ObjectEvent::Moved& moved_event) override;
 
  protected:
   /**

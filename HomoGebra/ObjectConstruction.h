@@ -32,9 +32,9 @@ class ConstructionPoint : public Construction
    */
   void RecalculateEquation() override = 0;
 
-  void Update(const Event::Destroyed& event) override;
+  void Update(const ObjectEvent::Destroyed& event) override;
 
-  void Update(const Event::Renamed& event) override;
+  void Update(const ObjectEvent::Renamed& event) override;
 
  protected:
   /**
@@ -129,9 +129,9 @@ class ConstructionLine : public Construction
    */
   void RecalculateEquation() override = 0;
 
-  void Update(const Event::Destroyed& event) override;
+  void Update(const ObjectEvent::Destroyed& event) override;
 
-  void Update(const Event::Renamed& event) override;
+  void Update(const ObjectEvent::Renamed& event) override;
 
  protected:
   ConstructionLine();
@@ -189,9 +189,9 @@ class ConstructionConic : public Construction
    */
   void RecalculateEquation() override = 0;
 
-  void Update(const Event::Destroyed& event) override;
+  void Update(const ObjectEvent::Destroyed& event) override;
 
-  void Update(const Event::Renamed& event) override;
+  void Update(const ObjectEvent::Renamed& event) override;
 
  protected:
   ConstructionConic();

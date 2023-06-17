@@ -373,12 +373,7 @@ class ObjectSelector : public Widget, public EventListener
    */
   void Construct() override;
 
-  /**
-   * \brief Process the event.
-   *
-   * \param event Event to process.
-   */
-  void Update(const sf::Event& event) override;
+  void Update(const UserEvent::Clicked& event) override;
 
  private:
   /**

@@ -12,7 +12,7 @@ void PointImplementation::SetEquation(PointEquation equation)
   equation_ = std::move(equation);
 
   // Notify observers
-  Notify(Event::Moved());
+  Notify(ObjectEvent::Moved());
 }
 
 const PointEquation& PointImplementation::GetEquation() const
@@ -31,7 +31,7 @@ void LineImplementation::SetEquation(LineEquation equation)
   equation_ = std::move(equation);
 
   // Notify observers
-  Notify(Event::Moved());
+  Notify(ObjectEvent::Moved());
 }
 
 const LineEquation& LineImplementation::GetEquation() const
@@ -50,7 +50,7 @@ void ConicImplementation::SetEquation(ConicEquation equation)
   equation_ = std::move(equation);
 
   // Notify observers
-  Notify(Event::Moved());
+  Notify(ObjectEvent::Moved());
 }
 
 const ConicEquation& ConicImplementation::GetEquation() const

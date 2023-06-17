@@ -50,38 +50,14 @@ class NearbyObjectGetter : public EventListener
    */
   void SetObject(GeometricObjectType* object);
 
-  /**
-   * \brief Updates the object.
-   *
-   * \param event Event that user've done.
-   */
-  void Update(const sf::Event& event) override;
+  void Update(const UserEvent::Clicked& event) override;
 
  private:
-  /**
-   * \enum Action Actions that user do.
-   *
-   * \var Action::kClick
-   * Action showing that user clicked.
-   */
-  enum class Action
-  {
-    kClick
-  };
-
-  /**
-   * \brief Initializes the action map.
-   *
-   */
-  void InitActionMap();
-
   /**
    * \brief Finds the nearest object to the mouse.
    *
    */
-  void FindNearestObject();
-
-  thor::ActionMap<Action> action_map_;  //!< Map with actions that user do.
+  void FindNearestObject(const sf::Vector2f& position);
 
   sf::RenderWindow& window_;  //!< Render window.
 

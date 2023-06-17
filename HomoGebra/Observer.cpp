@@ -1,6 +1,6 @@
 #include "Observer.h"
 
-using namespace Event;
+using namespace ObjectEvent;
 
 void ObservableGeometricObject::Attach(GeometricObjectObserver* observer)
 {
@@ -15,21 +15,17 @@ void ObservableGeometricObject::Detach(const GeometricObjectObserver* observer)
                        { return obs == observer; });
 }
 
-void ObservableGeometricObject::Notify(const Event::Moved& moved_event) const
+template <class Event>
+void ObservableGeometricObject::Notify(const Event& event) const
 {
-  // Update all observers
-  for (const auto& observer : observers_) observer->Update(moved_event);
+  for (const auto& observer : observers_) observer->Update(event);
 }
 
-void ObservableGeometricObject::Notify(const Event::Destroyed& destroyed) const
-{
-  // Update all observers
-  for (const auto& observer : observers_) observer->Update(destroyed);
-}
+template void ObservableGeometricObject::Notify<ObjectEvent::Moved>(
+    const ObjectEvent::Moved& event) const;
 
-void ObservableGeometricObject::Notify(
-    const Event::Renamed& renamed_event) const
-{
-  // Update all observers
-  for (const auto& observer : observers_) observer->Update(renamed_event);
-}
+template void ObservableGeometricObject::Notify<ObjectEvent::Destroyed>(
+    const ObjectEvent::Destroyed& event) const;
+
+template void ObservableGeometricObject::Notify<ObjectEvent::Renamed>(
+    const ObjectEvent::Renamed& event) const;

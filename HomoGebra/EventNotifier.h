@@ -2,6 +2,18 @@
 #include <SFML/Window/Event.hpp>
 #include <list>
 
+namespace UserEvent
+{
+/**
+ * \brief Tag that shows that user clicked on the screen.
+ */
+
+struct Clicked
+{
+  sf::Vector2f position;
+};
+}  // namespace UserEvent
+
 /**
  * \brief Class that listens to notifier.
  *
@@ -19,11 +31,13 @@ class EventListener
   virtual ~EventListener() = default;
 
   /**
-   * \brief Process the event.
+   * \brief Update, because user clicked.
    *
-   * \param event Event to process.
+   * \param clicked_event Tag with some information
+   *
+   * \see UserEvent::clicked_event
    */
-  virtual void Update(const sf::Event& event) = 0;
+  virtual void Update(const UserEvent::Clicked& clicked_event) = 0;
 };
 
 /**
@@ -48,12 +62,8 @@ class EventNotifier
    */
   void Detach(const EventListener* listener);
 
-  /**
-   * \brief Notify all listeners of an event.
-   *
-   * \param event The event to notify.
-   */
-  void Notify(const sf::Event& event) const;
+  template <class Event>
+  void Notify(const Event& event) const;
 
  private:
   std::list<EventListener*> listeners_;  //!< List of listeners.

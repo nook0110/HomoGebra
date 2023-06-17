@@ -64,9 +64,9 @@ class PlaneImplementation : public GeometricObjectObserver
    */
   [[nodiscard]] const NameGenerator& GetNameGenerator() const;
 
-  void Update(const Event::Moved& moved_event) override;
-  void Update(const Event::Destroyed& destroyed_event) override;
-  void Update(const Event::Renamed& renamed_event) override;
+  void Update(const ObjectEvent::Moved& moved_event) override;
+  void Update(const ObjectEvent::Destroyed& destroyed_event) override;
+  void Update(const ObjectEvent::Renamed& renamed_event) override;
 
  private:
   /**
