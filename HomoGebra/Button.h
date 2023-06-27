@@ -3,7 +3,7 @@
 #include <utility>
 
 template <class T, class Arg>
-concept IsSetArgument =
+concept HasSetArgument =
     requires(T t, Arg&& arg) { t.SetArgument(std::forward<Arg>(arg)); };
 
 template <class Element, size_t index = 0>
@@ -20,7 +20,7 @@ class Wrapper
   auto operator()(Args&&... args);
 
   template <class Arg>
-    requires IsSetArgument<Element, Arg>
+    requires HasSetArgument<Element, Arg>
   void SetArgument(Arg&& arg);
 
  private:
@@ -41,11 +41,11 @@ class Button : public Wrapper<First, sizeof...(Rest)>, public Button<Rest...>
   void ConstructObject(Args&&... arguments);
 
   template <class Arg>
-    requires IsSetArgument<Wrapper<First, sizeof...(Rest)>, Arg>
+    requires HasSetArgument<Wrapper<First, sizeof...(Rest)>, Arg>
   void SetArgument(Arg&& arg);
 
   template <class Arg>
-    requires(!IsSetArgument<Wrapper<First, sizeof...(Rest)>, Arg>)
+    requires(!HasSetArgument<Wrapper<First, sizeof...(Rest)>, Arg>)
   void SetArgument(Arg&& arg);
 };
 
@@ -59,11 +59,11 @@ class Button<First> : public Wrapper<First, 0>
   void ConstructObject(Args&&... arguments);
 
   template <class Arg>
-    requires IsSetArgument<Wrapper<First, 0>, Arg>
+    requires HasSetArgument<Wrapper<First, 0>, Arg>
   void SetArgument(Arg&& arg);
 
   template <class Arg>
-    requires(!IsSetArgument<Wrapper<First, 0>, Arg>)
+    requires(!HasSetArgument<Wrapper<First, 0>, Arg>)
   void SetArgument(Arg&& arg);
 };
 
@@ -82,7 +82,7 @@ auto Wrapper<Element, index>::operator()(Args&&... args)
 
 template <class Element, size_t index>
 template <class Arg>
-  requires IsSetArgument<Element, Arg>
+  requires HasSetArgument<Element, Arg>
 void Wrapper<Element, index>::SetArgument(Arg&& arg)
 {
   element_.SetArgument(std::forward<Arg>(arg));
@@ -112,7 +112,7 @@ void Button<First, Rest...>::ConstructObject(Args&&... arguments)
 
 template <class First, class... Rest>
 template <class Arg>
-  requires IsSetArgument<Wrapper<First, sizeof...(Rest)>, Arg>
+  requires HasSetArgument<Wrapper<First, sizeof...(Rest)>, Arg>
 void Button<First, Rest...>::SetArgument(Arg&& arg)
 {
   Wrapper<First, 0>::SetArgument(std::forward<Arg>(arg));
@@ -120,7 +120,7 @@ void Button<First, Rest...>::SetArgument(Arg&& arg)
 
 template <class First, class... Rest>
 template <class Arg>
-  requires(!IsSetArgument<Wrapper<First, sizeof...(Rest)>, Arg>)
+  requires(!HasSetArgument<Wrapper<First, sizeof...(Rest)>, Arg>)
 void Button<First, Rest...>::SetArgument(Arg&& arg)
 {
   Button<Rest...>::SetArgument(std::forward<Arg>(arg));
@@ -139,7 +139,7 @@ void Button<First>::ConstructObject(Args&&... arguments)
 
 template <class First>
 template <class Arg>
-  requires IsSetArgument<Wrapper<First, 0>, Arg>
+  requires HasSetArgument<Wrapper<First, 0>, Arg>
 void Button<First>::SetArgument(Arg&& arg)
 {
   Wrapper<First, 0>::SetArgument(std::forward<Arg>(arg));
@@ -147,7 +147,7 @@ void Button<First>::SetArgument(Arg&& arg)
 
 template <class First>
 template <class Arg>
-  requires(!IsSetArgument<Wrapper<First, 0>, Arg>)
+  requires(!HasSetArgument<Wrapper<First, 0>, Arg>)
 void Button<First>::SetArgument(Arg&& arg)
 {
   assert(false);
