@@ -58,7 +58,8 @@ class ConstructionPoint : public Construction
   void SetEquation(PointEquation equation);
 
  private:
-  std::unique_ptr<Point> point_;  //!< Point, which is created.
+  std::unique_ptr<Point> point_ =
+      std::make_unique<Point>();  //!< Point, which is created.
 };
 
 /**
@@ -151,7 +152,7 @@ class ConstructionLine : public Construction
   void SetEquation(const LineEquation& equation);
 
  private:
-  std::unique_ptr<Line> line_;  //!< Line, which is created.
+  std::unique_ptr<Line> line_ = std::make_unique<Line>();  //!< Line, which is created.
 };
 
 class LineOnPlane final : public ConstructionLine
@@ -199,7 +200,7 @@ class ConstructionConic : public Construction
   void SetEquation(ConicEquation equation);
 
  private:
-  std::unique_ptr<Conic> conic_;
+  std::unique_ptr<Conic> conic_ = std::make_unique<Conic>();
 };
 
 class ConicOnPlane final : public ConstructionConic, public StrongConstruction

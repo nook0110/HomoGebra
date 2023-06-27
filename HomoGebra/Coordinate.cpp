@@ -1,8 +1,8 @@
 ﻿#include "Coordinate.h"
 
-#include <cassert>
 #include <optional>
 
+#include "Assert.h"
 #include "Equation.h"
 #include "Matrix.h"
 
@@ -240,7 +240,8 @@ Transformation::Transformation(
   const auto solution = matrix.GetSolution();
 
   // Check if solution exists
-  assert((solution.has_value()));
+  Assert(solution.has_value(),
+         "Matrix has no solution (no suitable transform)!");
 
   // Init transformation
   transformation_ = TransformationMatrix(
@@ -324,7 +325,7 @@ const Complex& HomogeneousCoordinate::operator[](const Var variable) const
     case Var::kZ:
       return z;
     default:
-      assert(false);
+      Assert(false, "No such variable!");
   }
 }
 
@@ -340,7 +341,7 @@ Complex& HomogeneousCoordinate::operator[](const Var variable)
     case Var::kZ:
       return z;
     default:
-      assert(false);
+      Assert(false, "No such variable!");
   }
 }
 
@@ -366,7 +367,7 @@ HomogeneousCoordinate& HomogeneousCoordinate::Normalize()
     return *this;
   }
 
-  assert(!(x.IsZero()));
+  Assert(!x.IsZero(), "Homogenous coordinate is (0:0:0)?!");
 
   // "Normalize"
   x = 1;

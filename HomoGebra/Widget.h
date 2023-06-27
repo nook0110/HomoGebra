@@ -50,7 +50,7 @@ class Widget
    * \brief Constructs widget.
    *
    */
-  virtual void Construct() = 0;
+  virtual void Draw() = 0;
 };
 
 namespace Editor
@@ -79,7 +79,7 @@ class ComplexEditor final : public Widget
    * \brief Renders the menu.
    *
    */
-  void Construct() override;
+  void Draw() override;
 
   /**
    * \brief Renders the menu.
@@ -124,7 +124,7 @@ class HomogeneousCoordinateEditor final : public Widget
    * \brief Renders the menu.
    *
    */
-  void Construct();
+  void Draw();
 
   /**
    * \brief Renders the menu.
@@ -179,7 +179,7 @@ class PointSubmenu : public Widget
    * \brief Renders the menu.
    *
    */
-  void Construct();
+  void Draw();
 
  private:
   /**
@@ -236,7 +236,7 @@ class ObjectMenu final : public Widget
    */
   ObjectMenu(Plane& plane) : point_submenu_(plane), plane_(plane) {}
 
-  void Construct();
+  void Draw();
 
  private:
   /**
@@ -371,7 +371,7 @@ class ObjectSelector : public Widget, public EventListener
    * \brief Constructs the widget.
    *
    */
-  void Construct() override;
+  void Draw() override;
 
   void Update(const UserEvent::Clicked& event) override;
 

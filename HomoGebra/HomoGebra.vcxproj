@@ -177,6 +177,7 @@
     <ClCompile Include="Widget.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Assert.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Complex.h" />
     <ClInclude Include="Construction.h" />

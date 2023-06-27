@@ -5,9 +5,11 @@
 
 #include <SFML/Graphics/Color.hpp>
 
+#include "Assert.h"
+
 using namespace Gui;
 
-void ObjectMenu::Construct()
+void ObjectMenu::Draw()
 {
   // Push id to ImGui stack
   ImGui::PushID(this);
@@ -39,7 +41,7 @@ void ObjectMenu::Construct(GeometricObject* object)
   }
   else
   {
-    assert(false);
+    Expect(false, "Bad pointer!");
   }
 }
 
@@ -49,7 +51,7 @@ void ObjectMenu::Construct(Point* point)
   point_submenu_.SetPoint(point);
 
   // Construct submenu
-  point_submenu_.Construct();
+  point_submenu_.Draw();
 }
 
 void ObjectMenu::Construct(Line* line)
@@ -77,7 +79,7 @@ std::vector<GeometricObject*> ObjectMenu::GetObjectsOfType(
     case ObjectType::kConic:
       return plane_.GetObjects<Conic>();
     default:
-      assert(false);
+      Assert(false, "ObjectType is incorrect");
       return {};
   }
 }
@@ -135,7 +137,7 @@ void Constructor::ObjectSelector<GeometricObjectType>::SetObject(
 }
 
 template <class GeometricObjectType>
-void Constructor::ObjectSelector<GeometricObjectType>::Construct()
+void Constructor::ObjectSelector<GeometricObjectType>::Draw()
 {
   // Construct which object is selected
   ConstructSelectedObject();
@@ -226,21 +228,21 @@ HomogeneousCoordinateEditor::HomogeneousCoordinateEditor(
       z_variable_editor_(coordinate.z)
 {}
 
-void HomogeneousCoordinateEditor::Construct()
+void HomogeneousCoordinateEditor::Draw()
 {
   // Construct ComplexEditors
 
   // Construct description to identify the variable
   ImGui::Text("Variable x");
-  x_variable_editor_.Construct();
+  x_variable_editor_.Draw();
 
   // Construct description to identify the variable
   ImGui::Text("Variable y");
-  y_variable_editor_.Construct();
+  y_variable_editor_.Draw();
 
   // Construct description to identify the variable
   ImGui::Text("Variable z");
-  z_variable_editor_.Construct();
+  z_variable_editor_.Draw();
 }
 
 void HomogeneousCoordinateEditor::Construct() const
@@ -272,7 +274,7 @@ ComplexEditor::ComplexEditor(const Complex& number)
       imaginary_part_(static_cast<double>(number.imag()))
 {}
 
-void ComplexEditor::Construct()
+void ComplexEditor::Draw()
 {
   // Push id to ImGui stack
   ImGui::PushID(this);
@@ -317,7 +319,7 @@ PointSubmenu::PointSubmenu(Plane& plane, Point* point)
 
 void PointSubmenu::SetPoint(Point* point) { point_ = point; }
 
-void PointSubmenu::Construct()
+void PointSubmenu::Draw()
 {
   // Push id to ImGui stack
   ImGui::PushID(this);
@@ -397,7 +399,7 @@ void PointSubmenu::ConstructEditableValues()
   ImGui::TextColored(sf::Color::Cyan, "New point coordinates");
 
   // Construct point coordinate editor
-  coordinate_editor_.Construct();
+  coordinate_editor_.Draw();
 
   // ImGui button that sets coordinate
   if (ImGui::Button("Set coordinates"))

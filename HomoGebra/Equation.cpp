@@ -1,6 +1,6 @@
 #include "Equation.h"
 
-#include <cassert>
+#include "Assert.h"
 
 PointEquation::PointEquation(HomogeneousCoordinate _equation)
     : equation(std::move(_equation))
@@ -44,7 +44,7 @@ void ConicEquation::Apply(const Transformation& transformation)
   /*
    * This function is not implemented yet, because it is not needed.
    */
-  assert(false);
+  Assert(false, "Calling not implemented function!");
 
   // TODO: Implement this function
 }

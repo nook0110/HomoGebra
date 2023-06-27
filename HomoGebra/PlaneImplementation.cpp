@@ -1,8 +1,8 @@
 ﻿#include "PlaneImplementation.h"
 
-#include <cassert>
 #include <functional>
 
+#include "Assert.h"
 #include "Construction.h"
 #include "GeometricObject.h"
 
@@ -56,7 +56,8 @@ void PlaneImplementation::Update(const ObjectEvent::Destroyed& destroyed_event)
 
 void PlaneImplementation::Update(const ObjectEvent::Renamed& renamed_event)
 {
-  assert(renamed_event.object->GetName() == renamed_event.new_name);
+  Expect(renamed_event.object->GetName() == renamed_event.new_name,
+         "Object name isn't correct!");
 
   name_generator_.DeleteName(renamed_event.old_name);
 

@@ -1,9 +1,9 @@
 #include "ObjectConstruction.h"
 
-#include <cassert>
 #include <random>
 #include <utility>
 
+#include "Assert.h"
 #include "Matrix.h"
 
 GeometricObject* ConstructionPoint::GetObject() const { return GetPoint(); }
@@ -44,7 +44,7 @@ void ConstructionPoint::SetEquation(PointEquation equation)
 }
 
 PointOnPlane::PointOnPlane(PointEquation equation)
-    : equation_(std::move(equation))
+    : ConstructionPoint(), equation_(std::move(equation))
 {
   // Set equation
   PointOnPlane::RecalculateEquation();
@@ -169,7 +169,7 @@ void ByTwoPoints::RecalculateEquation()
   const auto solution = matrix.GetSolution();
 
   // Check if solution exists
-  assert((solution.has_value()));
+  Assert(solution.has_value(), "Matrix has no solution!");
 
   // Get value
   const auto& value = *solution;

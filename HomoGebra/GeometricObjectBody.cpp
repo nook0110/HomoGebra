@@ -2,9 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <Thor/Shapes.hpp>
-#include <cassert>
 #include <utility>
 
+#include "Assert.h"
 #include "Matrix.h"
 
 ObjectName::ObjectName(std::string name)
@@ -121,17 +121,18 @@ inline [[nodiscard]] std::optional<sf::Vector2f> IntersectRayWithRectangle(
 void PointBody::DrawArrow(sf::RenderTarget& target,
                           sf::RenderStates states) const
 {
-  assert(position_);
+  Assert(position_, "Point has no 'real' position");
 
   const auto& [position, is_at_infinity] =
       position_.value();  // NOLINT(bugprone-unchecked-optional-access)
 
-  assert(is_at_infinity);
+  Expect(is_at_infinity, "Drawing arrow, but point isn't at infinity?!");
 
   const auto& view = target.getView();
   const auto intersection = std::optional<sf::Vector2f>{};
 
-  assert(intersection.has_value());
+  Assert(intersection.has_value(),
+         "Couldn't find an intersection with a screen!");
 
   // Coefficient for start of line.
   constexpr auto kStartShift = 0.9f;
@@ -257,8 +258,7 @@ float LineBody::Equation::Solve(const Var var, const float another) const
       return (-c - a * another) / b;
     case Var::kZ:
     default:
-      assert(false);
-      return 0.f;
+      Assert(false, "Invalid variable");
   }
 }
 
@@ -314,7 +314,7 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
   const size_t steps = std::max(target.getSize().x, target.getSize().y) / 4;
   const auto step_size = window_size / static_cast<float>(steps);
 
-  const auto max_distance = find_distance(step_size) * 2.f;
+  const auto max_distance = find_distance(step_size) * 4.f;
 
   using Line = std::vector<sf::Vertex>;
   using Lines = std::vector<Line>;
@@ -348,10 +348,10 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
     auto find_line = [&](const sf::Vector2f& point)
     {
-      auto best = lines.end();
+      auto best = lines.rend();
       auto distance = INFINITY;
 
-      for (auto it = lines.begin(); it != lines.end(); ++it)
+      for (auto it = lines.rbegin(); it != lines.rend(); ++it)
       {
         if (find_distance(it->back().position, point) <
             std::min(distance, max_distance))
@@ -366,7 +366,7 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
     for (auto& point : points_to_add)
     {
-      if (auto suitable = find_line(point); suitable == lines.end())
+      if (auto suitable = find_line(point); suitable == lines.rend())
       {
         lines.emplace_back(Line{{point, sf::Color::Black}});
       }

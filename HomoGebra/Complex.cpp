@@ -1,6 +1,6 @@
 #include "Complex.h"
 
-#include <cassert>
+#include "Assert.h"
 
 Complex::Complex(const std::complex<long double> value)
     : std::complex<long double>(value)
@@ -12,7 +12,7 @@ bool Complex::IsReal() const { return std::abs(imag()) < kEpsilon; }
 
 Complex::operator long double() const
 {
-  assert(IsReal());
+  Expect(IsReal(), "Converting non-real number to double!");
   return real();
 }
 

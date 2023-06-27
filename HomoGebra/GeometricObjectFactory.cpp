@@ -1,7 +1,5 @@
 ﻿#include "GeometricObjectFactory.h"
 
-#include <cassert>
-
 #include "Matrix.h"
 #include "ObjectConstruction.h"
 

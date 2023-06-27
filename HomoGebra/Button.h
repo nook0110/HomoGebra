@@ -1,6 +1,7 @@
 #pragma once
-#include <cassert>
 #include <utility>
+
+#include "Assert.h"
 
 template <class T, class Arg>
 concept HasSetArgument =
@@ -150,5 +151,5 @@ template <class Arg>
   requires(!HasSetArgument<Wrapper<First, 0>, Arg>)
 void Button<First>::SetArgument(Arg&& arg)
 {
-  assert(false);
+  Expect(false, "No argument was updated!");
 }

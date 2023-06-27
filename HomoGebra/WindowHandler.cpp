@@ -30,7 +30,7 @@ void Window::Construct()
 {
   Begin();
 
-  widget_->Construct();
+  widget_->Draw();
 
   End();
 }

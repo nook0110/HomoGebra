@@ -1,8 +1,9 @@
 #include "Matrix.h"
 
 #include <algorithm>
-#include <cassert>
 #include <iostream>
+
+#include "Assert.h"
 
 template <typename UnderlyingType>
 SquaredMatrix<UnderlyingType>::SquaredMatrix(const size_t size)
@@ -15,12 +16,12 @@ SquaredMatrix<UnderlyingType>::SquaredMatrix(const Matrix& matrix,
     : matrix_(matrix), augmentation_(augmentation), size_(matrix.size())
 {
   // Check if matrix is squared
-  assert(
-      !(std::any_of(matrix.begin(), matrix.end(),
-                    [this](const Row& row) { return row.size() != size_; })));
+  Assert(!(std::any_of(matrix.begin(), matrix.end(),
+                       [this](const Row& row) { return row.size() != size_; })),
+         "Matrix is not squared!");
 
   // Check if augmentation is correct
-  assert((augmentation.size() == size_));
+  Assert(augmentation.size() == size_, "Augmentation size is incorrect!");
 }
 
 template <typename UnderlyingType>
@@ -212,7 +213,7 @@ SquaredMatrix<UnderlyingType> SquaredMatrix<UnderlyingType>::operator*(
     const SquaredMatrix& other) const
 {
   // Check if matrices are compatible
-  assert((size_ != other.size_));
+  Assert(size_ != other.size_, "Matrices sizes are different!");
 
   // Construct new matrix filled with zeros
   SquaredMatrix result(size_);
@@ -238,7 +239,7 @@ std::vector<UnderlyingType> SquaredMatrix<UnderlyingType>::operator*(
     const std::vector<UnderlyingType>& vector) const
 {
   // Check if vector is compatible
-  assert((vector.size() != size_));
+  Assert(vector.size() != size_, "Vector size is incorrect!");
 
   // Construct new vector filled with zeros
   std::vector<UnderlyingType> result(size_);
