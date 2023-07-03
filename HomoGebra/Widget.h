@@ -47,7 +47,7 @@ class Widget
   virtual ~Widget() = default;
 
   /**
-   * \brief Constructs widget.
+   * \brief Draws widget.
    *
    */
   virtual void Draw() = 0;
@@ -76,13 +76,13 @@ class ComplexEditor final : public Widget
   explicit ComplexEditor(const Complex& number = Complex{});
 
   /**
-   * \brief Renders the menu.
+   * \brief Draws the menu.
    *
    */
   void Draw() override;
 
   /**
-   * \brief Renders the menu.
+   * \brief Draws the menu.
    *
    */
   void Construct() const;
@@ -121,13 +121,13 @@ class HomogeneousCoordinateEditor final : public Widget
       const HomogeneousCoordinate& coordinate = HomogeneousCoordinate{});
 
   /**
-   * \brief Renders the menu.
+   * \brief Draws the menu.
    *
    */
-  void Draw();
+  void Draw() override;
 
   /**
-   * \brief Renders the menu.
+   * \brief Draws the menu.
    *
    */
   void Construct() const;
@@ -179,32 +179,32 @@ class PointSubmenu : public Widget
    * \brief Renders the menu.
    *
    */
-  void Draw();
+  void Draw() override;
 
  private:
   /**
    * \brief Render name editor.
    *
    */
-  void ConstructNameEditor();
+  void DrawNameEditor();
 
   /**
    * \brief Render name suggestions.
    *
    */
-  void ConstructNameSuggestions();
+  void DrawNameSuggestions();
 
   /**
    * \brief Render variables, that can be edited.
    *
    */
-  void ConstructEditableValues();
+  void DrawEditableValues();
 
   /**
    * \brief Render current variables
    *
    */
-  void ConstructCurrentValues() const;
+  void DrawCurrentValues() const;
 
   /**
    * Member data.
@@ -236,7 +236,7 @@ class ObjectMenu final : public Widget
    */
   ObjectMenu(Plane& plane) : point_submenu_(plane), plane_(plane) {}
 
-  void Draw();
+  void Draw() override;
 
  private:
   /**
@@ -342,15 +342,14 @@ template <class GeometricObjectType>
 class ObjectSelector : public Widget, public EventListener
 {
  public:
+  using value_type = GeometricObjectType;
+
   /**
    * \brief Constructor.
    *
    * \param plane Plane where to select object.
-   * \param window Window where clicks are happening.
-   *
    */
-  explicit ObjectSelector(Plane& plane, sf::RenderWindow& window)
-      : plane_(plane), object_getter_(plane, window)
+  explicit ObjectSelector(Plane& plane) : plane_(plane), object_getter_(plane)
   {}
 
   /**
@@ -368,7 +367,7 @@ class ObjectSelector : public Widget, public EventListener
   void SetObject(GeometricObjectType* object);
 
   /**
-   * \brief Constructs the widget.
+   * \brief Draws the widget.
    *
    */
   void Draw() override;
@@ -377,22 +376,22 @@ class ObjectSelector : public Widget, public EventListener
 
  private:
   /**
-   * \brief Constructs name of selected object.
+   * \brief Draws name of selected object.
    *
    */
-  void ConstructSelectedObject();
+  void DrawName();
 
   /**
-   * \brief Construct list to choose object from.
+   * \brief Draws list to choose object from.
    *
    */
-  void ConstructList();
+  void DrawList();
 
   /**
-   * \brief Construct setter through last nearest object.
+   * \brief Draws setter through last nearest object.
    *
    */
-  void ConstructSetter();
+  void DrawSetter();
 
   Plane& plane_;                   //!< Plane where to choose objects.
   GeometricObjectType* object_{};  //!< Object that was selected.

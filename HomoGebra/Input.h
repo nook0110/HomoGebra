@@ -27,7 +27,7 @@ class NearbyObjectGetter : public EventListener
    * \param window Render window.
    * \param last_object Last object that user clicked on.
    */
-  explicit NearbyObjectGetter(Plane& plane, sf::RenderWindow& window,
+  explicit NearbyObjectGetter(Plane& plane,
                               GeometricObjectType* last_object = nullptr);
 
   /**
@@ -57,8 +57,6 @@ class NearbyObjectGetter : public EventListener
    *
    */
   void FindNearestObject(const sf::Vector2f& position);
-
-  sf::RenderWindow& window_;  //!< Render window.
 
   GeometricObjectType* last_object_;  //!< Last object that user clicked on.
 

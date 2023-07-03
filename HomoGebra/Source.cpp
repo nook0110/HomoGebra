@@ -1,6 +1,8 @@
-#include "Assert.h"
+#include "FactoryWrapper.h"
 #include "GeometricObject.h"
 #include "GeometricObjectFactory.h"
+#include "ObjectConstructionImplementations.h"
+#include "ObjectConstructor.h"
 #include "SFML/Graphics.hpp"
 #include "WindowHandler.h"
 #include "imgui-SFML.h"
@@ -30,7 +32,7 @@ int main()
   Gui::WindowHandler gui_handler;
 
   auto selector =
-      std::make_unique<Gui::Constructor::ObjectSelector<Point>>(plane, window);
+      std::make_unique<Gui::Constructor::ObjectSelector<Point>>(plane);
 
   auto editor = std::make_unique<Gui::ObjectMenu>(plane);
 
@@ -54,9 +56,12 @@ int main()
   equation.pair_products = {0, 1, 1};
   conic_factory.OnPlane(equation);
 
-  LineFactory line_factory(plane);
+  LineByTwoPoints line_by_two_points(plane, plane, plane);
 
-  line_factory.ByTwoPoints(first, second);
+  line_by_two_points.SetArgument(first);
+  line_by_two_points.SetArgument(second);
+
+  line_by_two_points.ConstructObject();
 
   while (window.isOpen())
   {

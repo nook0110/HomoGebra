@@ -4,8 +4,8 @@
 
 template <class GeometricObjectType>
 NearbyObjectGetter<GeometricObjectType>::NearbyObjectGetter(
-    Plane& plane, sf::RenderWindow& window, GeometricObjectType* last_object)
-    : window_(window), last_object_(std::move(last_object)), finder_(plane)
+    Plane& plane, GeometricObjectType* last_object)
+    : last_object_(std::move(last_object)), finder_(plane)
 {}
 
 template <class GeometricObjectType>

@@ -140,13 +140,13 @@ template <class GeometricObjectType>
 void Constructor::ObjectSelector<GeometricObjectType>::Draw()
 {
   // Construct which object is selected
-  ConstructSelectedObject();
+  DrawName();
 
   // Construct list of objects
-  ConstructList();
+  DrawList();
 
   // Construct setter of object
-  ConstructSetter();
+  DrawSetter();
 }
 
 template <class GeometricObjectType>
@@ -158,7 +158,7 @@ void Constructor::ObjectSelector<GeometricObjectType>::Update(
 }
 
 template <class GeometricObjectType>
-void Constructor::ObjectSelector<GeometricObjectType>::ConstructSelectedObject()
+void Constructor::ObjectSelector<GeometricObjectType>::DrawName()
 {
   if (!object_)
   {
@@ -170,7 +170,7 @@ void Constructor::ObjectSelector<GeometricObjectType>::ConstructSelectedObject()
 }
 
 template <class GeometricObjectType>
-void Constructor::ObjectSelector<GeometricObjectType>::ConstructList()
+void Constructor::ObjectSelector<GeometricObjectType>::DrawList()
 {
   // Get objects of type
   std::vector<GeometricObject*> objects =
@@ -188,7 +188,7 @@ void Constructor::ObjectSelector<GeometricObjectType>::ConstructList()
 }
 
 template <class GeometricObjectType>
-void Constructor::ObjectSelector<GeometricObjectType>::ConstructSetter()
+void Constructor::ObjectSelector<GeometricObjectType>::DrawSetter()
 {
   std::string last_used_object_text = "Last used object: ";
 
@@ -325,25 +325,25 @@ void PointSubmenu::Draw()
   ImGui::PushID(this);
 
   // Construct name editor
-  ConstructNameEditor();
+  DrawNameEditor();
 
   // Construct current values
-  ConstructCurrentValues();
+  DrawCurrentValues();
 
   // Construct values to edit
-  ConstructEditableValues();
+  DrawEditableValues();
 
   // Pop id from ImGui stack
   ImGui::PopID();
 }
 
-void PointSubmenu::ConstructNameEditor()
+void PointSubmenu::DrawNameEditor()
 {
   // Construct name editor
   ImGui::InputText("Name", &name_);
 
   // Construct name suggestions
-  ConstructNameSuggestions();
+  DrawNameSuggestions();
 
   // ImGui button that sets name
   if (ImGui::Button("Set name"))
@@ -353,7 +353,7 @@ void PointSubmenu::ConstructNameEditor()
   }
 }
 
-void PointSubmenu::ConstructNameSuggestions()
+void PointSubmenu::DrawNameSuggestions()
 {
   // Check if user inputs text
   if (ImGui::IsItemActive())
@@ -394,7 +394,7 @@ void PointSubmenu::ConstructNameSuggestions()
   }
 }
 
-void PointSubmenu::ConstructEditableValues()
+void PointSubmenu::DrawEditableValues()
 {
   ImGui::TextColored(sf::Color::Cyan, "New point coordinates");
 
@@ -409,7 +409,7 @@ void PointSubmenu::ConstructEditableValues()
   }
 }
 
-void PointSubmenu::ConstructCurrentValues() const
+void PointSubmenu::DrawCurrentValues() const
 {
   ImGui::TextColored(sf::Color::Red, "Current point coordinates:");
 

@@ -178,7 +178,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assert.h" />
-    <ClInclude Include="Button.h" />
+    <ClInclude Include="ObjectConstructionImplementations.h" />
+    <ClInclude Include="ObjectConstructor.h" />
     <ClInclude Include="Complex.h" />
     <ClInclude Include="Construction.h" />
     <ClInclude Include="Coordinate.h" />
@@ -200,6 +201,7 @@
     <ClInclude Include="PlaneBody.h" />
     <ClInclude Include="ObjectProvider.h" />
     <ClInclude Include="PlaneImplementation.h" />
+    <ClInclude Include="FactoryWrapper.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

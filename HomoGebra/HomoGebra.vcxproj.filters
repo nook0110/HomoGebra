@@ -216,11 +216,17 @@
     <ClInclude Include="ObjectConstruction.h">
       <Filter>Headers\Construction</Filter>
     </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="Assert.h">
       <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectConstructor.h">
+      <Filter>Headers\GUI\Creation</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryWrapper.h">
+      <Filter>Headers\GUI\Creation</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectConstructionImplementations.h">
+      <Filter>Headers\GUI\Creation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

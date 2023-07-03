@@ -24,19 +24,23 @@ class Wrapper
     requires HasSetArgument<Element, Arg>
   void SetArgument(Arg&& arg);
 
+  [[nodiscard]] bool IsSet();
+
  private:
   Element element_;
 };
 
 template <class First, class... Rest>
-class Button : public Wrapper<First, sizeof...(Rest)>, public Button<Rest...>
+class ObjectConstructor : public Wrapper<First, sizeof...(Rest)>,
+                          public ObjectConstructor<Rest...>
 {
  public:
-  Button();
+  ObjectConstructor();
 
   template <class Head, class... Tail>
-    requires(!std::same_as<Button<First, Rest...>, std::remove_cvref_t<Head>>)
-  explicit Button(Head&& head, Tail&&... tail);
+    requires(!std::same_as<ObjectConstructor<First, Rest...>,
+                           std::remove_cvref_t<Head>>)
+  explicit ObjectConstructor(Head&& head, Tail&&... tail);
 
   template <class... Args>
   void ConstructObject(Args&&... arguments);
@@ -51,10 +55,14 @@ class Button : public Wrapper<First, sizeof...(Rest)>, public Button<Rest...>
 };
 
 template <class First>
-class Button<First> : public Wrapper<First, 0>
+class ObjectConstructor<First> : public Wrapper<First, 0>
 {
  public:
-  Button();
+  ObjectConstructor();
+
+  template <class Arg>
+    requires(!std::same_as<ObjectConstructor<First>, std::remove_cvref_t<Arg>>)
+  explicit ObjectConstructor(Arg&& head);
 
   template <class... Args>
   void ConstructObject(Args&&... arguments);
@@ -89,24 +97,32 @@ void Wrapper<Element, index>::SetArgument(Arg&& arg)
   element_.SetArgument(std::forward<Arg>(arg));
 }
 
+template <class Element, size_t index>
+bool Wrapper<Element, index>::IsSet()
+{
+  return element_.IsSet();
+}
+
 template <class First, class... Rest>
-Button<First, Rest...>::Button()
-    : Wrapper<First, sizeof...(Rest)>(), Button<Rest...>()
+ObjectConstructor<First, Rest...>::ObjectConstructor()
+    : Wrapper<First, sizeof...(Rest)>(), ObjectConstructor<Rest...>()
 {}
 
 template <class First, class... Rest>
 template <class Head, class... Tail>
-  requires(!std::same_as<Button<First, Rest...>, std::remove_cvref_t<Head>>)
-Button<First, Rest...>::Button(Head&& head, Tail&&... tail)
+  requires(!std::same_as<ObjectConstructor<First, Rest...>,
+                         std::remove_cvref_t<Head>>)
+ObjectConstructor<First, Rest...>::ObjectConstructor(Head&& head,
+                                                     Tail&&... tail)
     : Wrapper<First, sizeof...(Rest)>(std::forward<Head>(head)),
-      Button<Rest...>(std::forward<Tail>(tail)...)
+      ObjectConstructor<Rest...>(std::forward<Tail>(tail)...)
 {}
 
 template <class First, class... Rest>
 template <class... Args>
-void Button<First, Rest...>::ConstructObject(Args&&... arguments)
+void ObjectConstructor<First, Rest...>::ConstructObject(Args&&... arguments)
 {
-  Button<Rest...>::ConstructObject(
+  ObjectConstructor<Rest...>::ConstructObject(
       std::forward<Args>(arguments)...,
       Wrapper<First, sizeof...(Rest)>::operator()());
 }
@@ -114,26 +130,36 @@ void Button<First, Rest...>::ConstructObject(Args&&... arguments)
 template <class First, class... Rest>
 template <class Arg>
   requires HasSetArgument<Wrapper<First, sizeof...(Rest)>, Arg>
-void Button<First, Rest...>::SetArgument(Arg&& arg)
+void ObjectConstructor<First, Rest...>::SetArgument(Arg&& arg)
 {
-  Wrapper<First, 0>::SetArgument(std::forward<Arg>(arg));
+  if (!(Wrapper<First, sizeof...(Rest)>::IsSet()))
+    Wrapper<First, sizeof...(Rest)>::SetArgument(std::forward<Arg>(arg));
+  else
+    ObjectConstructor<Rest...>::SetArgument(std::forward<Arg>(arg));
 }
 
 template <class First, class... Rest>
 template <class Arg>
   requires(!HasSetArgument<Wrapper<First, sizeof...(Rest)>, Arg>)
-void Button<First, Rest...>::SetArgument(Arg&& arg)
+void ObjectConstructor<First, Rest...>::SetArgument(Arg&& arg)
 {
-  Button<Rest...>::SetArgument(std::forward<Arg>(arg));
+  ObjectConstructor<Rest...>::SetArgument(std::forward<Arg>(arg));
 }
 
 template <class First>
-Button<First>::Button() : Wrapper<First, 0>()
+ObjectConstructor<First>::ObjectConstructor() : Wrapper<First, 0>()
+{}
+
+template <class First>
+template <class Arg>
+  requires(!std::same_as<ObjectConstructor<First>, std::remove_cvref_t<Arg>>)
+ObjectConstructor<First>::ObjectConstructor(Arg&& head)
+    : Wrapper<First, 0>(std::forward<Arg>(head))
 {}
 
 template <class First>
 template <class... Args>
-void Button<First>::ConstructObject(Args&&... arguments)
+void ObjectConstructor<First>::ConstructObject(Args&&... arguments)
 {
   Wrapper<First, 0>::operator()(std::forward<Args>(arguments)...);
 }
@@ -141,7 +167,7 @@ void Button<First>::ConstructObject(Args&&... arguments)
 template <class First>
 template <class Arg>
   requires HasSetArgument<Wrapper<First, 0>, Arg>
-void Button<First>::SetArgument(Arg&& arg)
+void ObjectConstructor<First>::SetArgument(Arg&& arg)
 {
   Wrapper<First, 0>::SetArgument(std::forward<Arg>(arg));
 }
@@ -149,7 +175,7 @@ void Button<First>::SetArgument(Arg&& arg)
 template <class First>
 template <class Arg>
   requires(!HasSetArgument<Wrapper<First, 0>, Arg>)
-void Button<First>::SetArgument(Arg&& arg)
+void ObjectConstructor<First>::SetArgument(Arg&& arg)
 {
   Expect(false, "No argument was updated!");
 }
