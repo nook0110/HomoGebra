@@ -2,6 +2,7 @@
 
 const Transformation& WeekConstruction::GetTransformation() const
 {
+  // Return transformation
   return transformation_;
 }
 

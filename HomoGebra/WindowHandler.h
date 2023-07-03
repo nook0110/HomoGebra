@@ -72,7 +72,7 @@ class Window
    * \brief Constructs window.
    *
    */
-  void Construct();
+  void Draw();
 
   /**
    * \brief Gets object

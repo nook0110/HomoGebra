@@ -80,6 +80,7 @@ void Point::UpdateBody(sf::RenderTarget& target)
 
 void Point::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
+  // Draw body
   target.draw(body_, states);
 }
 
@@ -87,8 +88,10 @@ void Point::SetName(std::string name)
 {
   const ObjectEvent::Renamed renamed{this, body_.GetName(), name};
 
+  // Set name in body
   body_.SetName(std::move(name));
 
+  // Notify observers that object was renamed
   Notify(renamed);
 }
 
@@ -120,11 +123,13 @@ const LineEquation& Line::GetEquation() const
 
 void Line::UpdateBody(sf::RenderTarget& target)
 {
+  // Update body
   body_.Update(implementation_.GetEquation());
 }
 
 void Line::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
+  // Draw body
   target.draw(body_, states);
 }
 
@@ -132,8 +137,10 @@ void Line::SetName(std::string name)
 {
   const ObjectEvent::Renamed renamed{this, body_.GetName(), name};
 
+  // Set name in body
   body_.SetName(std::move(name));
 
+  // Notify observers that object was renamed
   Notify(renamed);
 }
 
@@ -172,16 +179,19 @@ void Conic::Destroy()
 
 void Conic::SetEquation(ConicEquation equation)
 {
+  // Set equation in implementation
   implementation_.SetEquation(std::move(equation));
 }
 
 void Conic::UpdateBody(sf::RenderTarget& target)
 {
+  // Update body
   body_.Update(implementation_.GetEquation());
 }
 
 void Conic::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
+  // Draw body
   target.draw(body_, states);
 }
 
@@ -189,8 +199,10 @@ void Conic::SetName(std::string name)
 {
   const ObjectEvent::Renamed renamed{this, body_.GetName(), name};
 
+  // Set name in body
   body_.SetName(std::move(name));
 
+  // Notify observers that object was renamed
   Notify(renamed);
 }
 

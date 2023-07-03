@@ -25,7 +25,10 @@ ObjectName::ObjectName(std::string name)
 
 void ObjectName::SetName(std::string name)
 {
+  // Set name
   name_ = std::move(name);
+
+  // Set text
   text_.setString(name_);
 }
 
@@ -39,19 +42,33 @@ void ObjectName::draw(sf::RenderTarget& target, sf::RenderStates states) const
   target.draw(text_, states);
 }
 
-void ObjectBody::SetName(std::string name) { text_.SetName(std::move(name)); }
+void ObjectBody::SetName(std::string name)
+{
+  // Set name
+  text_.SetName(std::move(name));
+}
 
-const std::string& ObjectBody::GetName() const { return text_.GetName(); }
+const std::string& ObjectBody::GetName() const
+{
+  // Return name
+  return text_.GetName();
+}
 
 void ObjectBody::SetNamePosition(const sf::Vector2f& position)
 {
+  // Set position
   text_.setPosition(position);
 }
 
-void ObjectBody::SetNameSize(const float size) { text_.SetSize(size); }
+void ObjectBody::SetNameSize(const float size)
+{
+  // Set size
+  text_.SetSize(size);
+}
 
 void ObjectBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
+  // Draw name
   target.draw(text_, states);
 }
 
@@ -62,6 +79,7 @@ void PointBody::Update(const PointEquation& equation, const float size)
   // Calculate position
   position_ = CalculatePosition(equation);
 
+  // Point is in real projective plane
   if (position_)
   {
     body_.setPosition(position_.value().position);
@@ -72,12 +90,14 @@ void PointBody::Update(const PointEquation& equation, const float size)
   constexpr auto kTextFactor = 2.f;
   SetNameSize(size * kTextFactor);
 
+  // Set size
   body_.setRadius(size);
   body_.setOrigin(size, size);
 }
 
 void PointBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
+  // Point is not on a real plane
   if (!position_) return;
 
   if (const auto& [position, is_at_infinity] = position_.value();
@@ -180,6 +200,7 @@ std::optional<PointBody::ProjectivePosition> PointBody::CalculatePosition(
 
 void LineBody::Update(const LineEquation& equation)
 {
+  // Normalize equation
   const auto normalized_equation = equation.equation.GetNormalized();
 
   // Check if line is in 'real' plane
@@ -188,6 +209,7 @@ void LineBody::Update(const LineEquation& equation)
     equation_ = std::nullopt;
   }
 
+  // Set equation
   Equation body_equation{};
   body_equation.a =
       static_cast<float>(static_cast<long double>(normalized_equation.x));
@@ -220,8 +242,8 @@ void LineBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
   std::array<sf::Vertex, 2> line_vertices;
 
-  std::for_each(line_vertices.begin(), line_vertices.end(),
-                [](sf::Vertex& vertex) { vertex.color = sf::Color::Black; });
+  std::ranges::for_each(line_vertices, [](sf::Vertex& vertex)
+                        { vertex.color = sf::Color::Black; });
 
   constexpr size_t first = 0;
   constexpr size_t second = 1;
@@ -298,9 +320,11 @@ void ConicBody::Update(const ConicEquation& equation)
 
 void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
+  // Acquire window center and size
   const auto window_center = target.getView().getCenter();
   const auto window_size = target.getView().getSize();
 
+  // Calculate window corner
   const auto corner = window_center - window_size / 2.f;
 
   // Calculates distance between
@@ -311,9 +335,11 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
     return std::hypot(delta.x, delta.y);
   };
 
+  // Calculate amount of steps needed and their size
   const size_t steps = std::max(target.getSize().x, target.getSize().y) / 4;
   const auto step_size = window_size / static_cast<float>(steps);
 
+  // Max distance between two points on line
   const auto max_distance = find_distance(step_size) * 4.f;
 
   using Line = std::vector<sf::Vertex>;
@@ -323,13 +349,18 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
   for (size_t step = 0; step < steps; ++step)
   {
+    // Calculate position of current step
     const auto pos = corner + step_size * static_cast<float>(step);
 
+    // Calculate roots of equation
     auto roots_y = equation_.Solve(Var::kY, pos.x);
 
+    // Calculate roots of equation
     auto roots_x = equation_.Solve(Var::kX, pos.y);
 
     std::vector<sf::Vector2f> points_to_add;
+
+    // Check if roots are real and add them to points_to_add
     for (auto& root : roots_y)
     {
       if (root && root.value().IsReal())
@@ -338,6 +369,7 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
       }
     }
 
+    // Check if roots are real and add them to points_to_add
     for (auto& root : roots_x)
     {
       if (root && root.value().IsReal())
@@ -346,6 +378,7 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
       }
     }
 
+    // Find line that is closest to current point
     auto find_line = [&](const sf::Vector2f& point)
     {
       auto best = lines.rend();
@@ -364,6 +397,7 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
       return best;
     };
 
+    // Add points to lines
     for (auto& point : points_to_add)
     {
       if (auto suitable = find_line(point); suitable == lines.rend())
@@ -377,6 +411,7 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
     }
   }
 
+  // Draw lines
   for (auto& line : lines)
   {
     target.draw(line.data(), line.size(), sf::PrimitiveType::LineStrip, states);
@@ -419,9 +454,11 @@ SolveQuadraticEquation(const Complex& quadratic_coefficient,
 ConicBody::Equation::Solution ConicBody::Equation::Solve(
     Var var, const Complex& another) const
 {
+  // Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0
   const auto another_var = kAnother[static_cast<size_t>(var)];
 
   const auto quadratic_coefficient = squares[static_cast<size_t>(var)];
+
   const auto linear_coefficient = pair_product * another;
   const auto constant_coefficient =
       squares[static_cast<size_t>(another_var)] * another * another + constant;

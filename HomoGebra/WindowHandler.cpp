@@ -26,12 +26,15 @@ void Global::ProcessEvent(const sf::Event& event)
   ImGui::SFML::ProcessEvent(event);
 }
 
-void Window::Construct()
+void Window::Draw()
 {
+  // Begin window
   Begin();
 
+  // Draw widget
   widget_->Draw();
 
+  // End window
   End();
 }
 
@@ -43,9 +46,10 @@ void Window::End() const { ImGui::End(); }
 
 void WindowHandler::Construct()
 {
+  // Draw all windows
   for (const auto& renderable : windows_)
   {
-    renderable->Construct();
+    renderable->Draw();
   }
 }
 

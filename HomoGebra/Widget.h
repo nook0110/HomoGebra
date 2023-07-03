@@ -85,7 +85,7 @@ class ComplexEditor final : public Widget
    * \brief Draws the menu.
    *
    */
-  void Construct() const;
+  void Draw() const;
 
   /**
    * \brief Returns the current number that was edited.
@@ -130,7 +130,7 @@ class HomogeneousCoordinateEditor final : public Widget
    * \brief Draws the menu.
    *
    */
-  void Construct() const;
+  void Draw() const;
 
   /**
    * \brief Returns the current coordinate that was edited.

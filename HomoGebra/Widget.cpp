@@ -41,7 +41,7 @@ void ObjectMenu::Construct(GeometricObject* object)
   }
   else
   {
-    Expect(false, "Bad pointer!");
+    Assert(false, "Bad pointer!");
   }
 }
 
@@ -68,6 +68,7 @@ void ObjectMenu::Construct(Conic* conic) {}
 std::vector<GeometricObject*> ObjectMenu::GetObjectsOfType(
     const ObjectType type) const
 {
+  // Go through all types of objects
   switch (type)
   {
     case ObjectType::kAll:
@@ -86,6 +87,7 @@ std::vector<GeometricObject*> ObjectMenu::GetObjectsOfType(
 
 void ObjectMenu::ConstructObjectSelector()
 {
+  // Go through all types of objects
   switch (static_cast<ObjectType>(current_type_))
   {
     case ObjectType::kAll:
@@ -126,6 +128,7 @@ template <class GeometricObjectType>
 GeometricObjectType*
 Constructor::ObjectSelector<GeometricObjectType>::GetObject() const
 {
+  // Return object
   return object_;
 }
 
@@ -133,19 +136,20 @@ template <class GeometricObjectType>
 void Constructor::ObjectSelector<GeometricObjectType>::SetObject(
     GeometricObjectType* object)
 {
+  // Set object
   object_ = object;
 }
 
 template <class GeometricObjectType>
 void Constructor::ObjectSelector<GeometricObjectType>::Draw()
 {
-  // Construct which object is selected
+  // Draw which object is selected
   DrawName();
 
-  // Construct list of objects
+  // Draw list of objects
   DrawList();
 
-  // Construct setter of object
+  // Draw setter of object
   DrawSetter();
 }
 
@@ -162,10 +166,12 @@ void Constructor::ObjectSelector<GeometricObjectType>::DrawName()
 {
   if (!object_)
   {
+    // If there is no object selected, draw nullptr
     ImGui::Text("nullptr");
     return;
   }
 
+  // Draw name of object
   ImGui::Text(object_->GetName().c_str());
 }
 
@@ -192,8 +198,10 @@ void Constructor::ObjectSelector<GeometricObjectType>::DrawSetter()
 {
   std::string last_used_object_text = "Last used object: ";
 
+  // Get last used object
   const auto object = object_getter_.GetLastObject();
 
+  // Add name of object to text if it is not nullptr, otherwise add nullptr
   if (object)
   {
     last_used_object_text += object->GetName();
@@ -203,6 +211,7 @@ void Constructor::ObjectSelector<GeometricObjectType>::DrawSetter()
     last_used_object_text += "nullptr";
   }
 
+  // Draw last used object
   ImGui::Text(last_used_object_text.c_str());
 
   // Create button to select object
@@ -245,21 +254,21 @@ void HomogeneousCoordinateEditor::Draw()
   z_variable_editor_.Draw();
 }
 
-void HomogeneousCoordinateEditor::Construct() const
+void HomogeneousCoordinateEditor::Draw() const
 {
   // Construct ComplexEditors
 
   // Construct description to identify the variable
   ImGui::Text("Variable x");
-  x_variable_editor_.Construct();
+  x_variable_editor_.Draw();
 
   // Construct description to identify the variable
   ImGui::Text("Variable y");
-  y_variable_editor_.Construct();
+  y_variable_editor_.Draw();
 
   // Construct description to identify the variable
   ImGui::Text("Variable z");
-  z_variable_editor_.Construct();
+  z_variable_editor_.Draw();
 }
 
 HomogeneousCoordinate HomogeneousCoordinateEditor::GetCoordinate() const
@@ -289,7 +298,7 @@ void ComplexEditor::Draw()
   ImGui::PopID();
 }
 
-void ComplexEditor::Construct() const
+void ComplexEditor::Draw() const
 {
   // Push id to ImGui stack
   ImGui::PushID(this);
@@ -417,5 +426,5 @@ void PointSubmenu::DrawCurrentValues() const
   const auto current =
       HomogeneousCoordinateEditor(point_->GetEquation().GetEquation());
 
-  current.Construct();
+  current.Draw();
 }

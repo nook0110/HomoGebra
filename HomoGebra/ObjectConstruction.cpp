@@ -50,9 +50,17 @@ PointOnPlane::PointOnPlane(PointEquation equation)
   PointOnPlane::RecalculateEquation();
 }
 
-void PointOnPlane::RecalculateEquation() { SetEquation(equation_); }
+void PointOnPlane::RecalculateEquation()
+{
+  // Set equation
+  SetEquation(equation_);
+}
 
-GeometricObject* ConstructionLine::GetObject() const { return GetLine(); }
+GeometricObject* ConstructionLine::GetObject() const
+{
+  // Return line
+  return GetLine();
+}
 
 Line* ConstructionLine::GetLine() const
 {
@@ -65,6 +73,7 @@ void ConstructionLine::Update(const ObjectEvent::Destroyed& event)
   // Check if event object is line that we contain
   if (event.object == GetObject())
   {
+    // Destroy the line
     line_.reset();
     return;
   }
@@ -89,6 +98,7 @@ void ConstructionLine::SetEquation(const LineEquation& equation)
 
 LineOnPlane::LineOnPlane(LineEquation equation) : equation_(std::move(equation))
 {
+  // Set equation
   LineOnPlane::RecalculateEquation();
 }
 
@@ -101,9 +111,11 @@ void LineOnPlane::RecalculateEquation()
 ByTwoPoints::ByTwoPoints(Point* first_point, Point* second_point)
     : first_point_(first_point), second_point_(second_point)
 {
+  // Attach to points
   first_point->Attach(this);
   second_point->Attach(this);
 
+  // Recalculate equation
   RecalculateEquation();
 }
 
@@ -114,7 +126,7 @@ void ByTwoPoints::RecalculateEquation()
   // Calculate equation of a line that goes through 2 points
   // We need to solve the system of equations [matrix]:
   // f_ is first, s_ is second
-  // and r is random number
+  // and r is random numbers
   // | f_x f_y f_z | 0 |
   // | s_x s_y s_z | 0 |
   // |  r   r   r  | 1 |
@@ -147,16 +159,17 @@ void ByTwoPoints::RecalculateEquation()
   // Get third row
   auto& third_row = matrix[2];
 
+  // Set random number generator
   constexpr long double kLowerBound = -10000;
   constexpr long double kUpperBound = 10000;
   std::uniform_real_distribution<double> unif(kLowerBound, kUpperBound);
   std::default_random_engine re;
 
   // Set third row
-  std::for_each(third_row.begin(), third_row.end(),
-                [&unif, &re](Complex& value) {
-                  value = Complex{unif(re), unif(re)};
-                });
+  std::ranges::for_each(third_row,
+                        [&unif, &re](Complex& value) {
+                          value = Complex{unif(re), unif(re)};
+                        });
 
   // Get augmentation
   auto& augmentation = matrix.GetAugmentation();
@@ -178,9 +191,17 @@ void ByTwoPoints::RecalculateEquation()
   SetEquation(LineEquation({value[0], value[1], value[2]}));
 }
 
-GeometricObject* ConstructionConic::GetObject() const { return GetConic(); }
+GeometricObject* ConstructionConic::GetObject() const
+{
+  // Return conic
+  return GetConic();
+}
 
-Conic* ConstructionConic::GetConic() const { return conic_.get(); }
+Conic* ConstructionConic::GetConic() const
+{
+  // Return conic
+  return conic_.get();
+}
 
 void ConstructionConic::Update(const ObjectEvent::Destroyed& event)
 {
