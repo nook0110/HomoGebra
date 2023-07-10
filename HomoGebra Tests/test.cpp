@@ -124,10 +124,11 @@ testing::AssertionResult check_two_augmentation(
 
   return testing::AssertionSuccess() << "Augmentations are near equal!";
 }
-TEST(ComplexSquaredMatrix, Inverse)
+
+class ComplexSquaredMatrixTF : public testing::Test
 {
-  // Generate random matrix 3 * 3 with determinant 0
-  const ComplexSquaredMatrix matrix(
+ protected:
+  const ComplexSquaredMatrix singular_matrix{
       ComplexSquaredMatrix::Matrix{
           ComplexSquaredMatrix::Row{Complex(1.0, 2.0), Complex(3.0, 4.0),
                                     Complex(5.0, 6.0)},
@@ -136,25 +137,27 @@ TEST(ComplexSquaredMatrix, Inverse)
           ComplexSquaredMatrix::Row{Complex(8.0, 10.0), Complex(12.0, 14.0),
                                     Complex(16.0, 18.0)}},
       ComplexSquaredMatrix::Row{Complex(19.0, 20.0), Complex(21.0, 22.0),
-                                Complex(23.0, 24.0)});
+                                Complex(23.0, 24.0)}};
 
+  const ComplexSquaredMatrix non_singular_matrix{
+      ComplexSquaredMatrix::Matrix{
+          ComplexSquaredMatrix::Row{Complex(1.0, 1.2), Complex(2.0, 4.12),
+                                    Complex(3.0, 7.636)},
+          ComplexSquaredMatrix::Row{Complex(1.0, 2.8), Complex(5.0, 5.521),
+                                    Complex(6.0, 8.616)},
+          ComplexSquaredMatrix::Row{Complex(1.0, 3.8), Complex(8.0, 6.1234),
+                                    Complex(9.0, 9.93)}},
+      ComplexSquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
+                                Complex(12.0, 0.0)}};
+};
+
+TEST_F(ComplexSquaredMatrixTF, Inverse)
+{
   // Get inverse matrix
-  const auto inverse_matrix = matrix.GetInverse();
+  const auto inverse_matrix = singular_matrix.GetInverse();
 
   // Check that inverse matrix is empty
   ASSERT_FALSE(inverse_matrix.has_value());
-
-  // Generate another random matrix 3 * 3 with determinant 1
-
-  const ComplexSquaredMatrix second_matrix(
-      {ComplexSquaredMatrix::Row{Complex(1.0, 1.2), Complex(2.0, 4.12),
-                                 Complex(3.0, 7.636)},
-       ComplexSquaredMatrix::Row{Complex(1.0, 2.8), Complex(5.0, 5.521),
-                                 Complex(6.0, 8.616)},
-       ComplexSquaredMatrix::Row{Complex(1.0, 3.8), Complex(8.0, 6.1234),
-                                 Complex(9.0, 9.93)}},
-      ComplexSquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
-                                Complex(12.0, 0.0)});
 
   const ComplexSquaredMatrix real_inverse_of_matrix(
       {ComplexSquaredMatrix::Row{Complex(-0.162603872026L, 0.547316949016L),
@@ -171,7 +174,7 @@ TEST(ComplexSquaredMatrix, Inverse)
                                 Complex(1.16970378546, 3.95796180972)});
 
   // Get inverse matrix
-  const auto second_inverse_matrix = second_matrix.GetInverse();
+  const auto second_inverse_matrix = non_singular_matrix.GetInverse();
 
   // Check that inverse matrix is not empty
   ASSERT_TRUE(second_inverse_matrix.has_value());
@@ -191,21 +194,10 @@ TEST(ComplexSquaredMatrix, Inverse)
       kEpsilon));
 }
 
-TEST(ComplexSquaredMatrix, Solution)
+TEST_F(ComplexSquaredMatrixTF, Solution)
 {
-  // Create a random matrix 3 * 3 with determinant not 0
-  const ComplexSquaredMatrix matrix(
-      {ComplexSquaredMatrix::Row{Complex(1.0, 1.2), Complex(2.0, 4.12),
-                                 Complex(3.0, 7.636)},
-       ComplexSquaredMatrix::Row{Complex(1.0, 2.8), Complex(5.0, 5.521),
-                                 Complex(6.0, 8.616)},
-       ComplexSquaredMatrix::Row{Complex(1.0, 3.8), Complex(8.0, 6.1234),
-                                 Complex(9.0, 9.93)}},
-      ComplexSquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
-                                Complex(12.0, 0.0)});
-
   // Get solution
-  const auto solution = matrix.GetSolution();
+  const auto solution = non_singular_matrix.GetSolution();
 
   // Check that solution is not empty
   ASSERT_TRUE(solution.has_value());
@@ -223,21 +215,10 @@ TEST(ComplexSquaredMatrix, Solution)
       kEpsilon));
 }
 
-TEST(ComplexSquaredMatrix, Determinant)
+TEST_F(ComplexSquaredMatrixTF, Determinant)
 {
-  // Create a random matrix 3 * 3 with determinant not 0
-  const ComplexSquaredMatrix matrix(
-      {ComplexSquaredMatrix::Row{Complex(1.0, 1.2), Complex(2.0, 4.12),
-                                 Complex(3.0, 7.636)},
-       ComplexSquaredMatrix::Row{Complex(1.0, 2.8), Complex(5.0, 5.521),
-                                 Complex(6.0, 8.616)},
-       ComplexSquaredMatrix::Row{Complex(1.0, 3.8), Complex(8.0, 6.1234),
-                                 Complex(9.0, 9.93)}},
-      ComplexSquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
-                                Complex(12.0, 0.0)});
-
   // Get determinant
-  const auto determinant = matrix.GetDeterminant();
+  const auto determinant = non_singular_matrix.GetDeterminant();
 
   // Construct real determinant
   const auto real_determinant =
@@ -246,20 +227,9 @@ TEST(ComplexSquaredMatrix, Determinant)
   // Check that determinant is correct
   ASSERT_TRUE(check_two_complex(real_determinant, determinant, kEpsilon));
 
-  // Create a random matrix 3 * 3 with determinant 0
-  const ComplexSquaredMatrix matrix_with_zero_determinant(
-      {ComplexSquaredMatrix::Row{Complex(1.0, 2.0), Complex(3.0, 4.0),
-                                 Complex(5.0, 6.0)},
-       ComplexSquaredMatrix::Row{Complex(7.0, 8.0), Complex(9.0, 10.0),
-                                 Complex(11.0, 12.0)},
-       ComplexSquaredMatrix::Row{Complex(13.0, 14.0), Complex(15.0, 16.0),
-                                 Complex(17.0, 18.0)}},
-      ComplexSquaredMatrix::Row{Complex(1.0, 0.0), Complex(11.0, 0.0),
-                                Complex(12.0, 0.0)});
-
   // Get determinant
   const auto determinant_with_zero_determinant =
-      matrix_with_zero_determinant.GetDeterminant();
+      singular_matrix.GetDeterminant();
 
   // Check that determinant is 0
   ASSERT_TRUE(check_two_complex(Complex(0.0, 0.0),
@@ -269,7 +239,8 @@ TEST(ComplexSquaredMatrix, Determinant)
 
 namespace Coordinate
 {
-// Checks that two matrices are equal [each element] with precision [abs_error]
+// Checks that two matrices are equal [each element] with precision
+// [abs_error]
 testing::AssertionResult check_two_matrix(const TransformationMatrix& first,
                                           const TransformationMatrix& second,
                                           const long double abs_error)
@@ -297,16 +268,21 @@ testing::AssertionResult check_two_matrix(const TransformationMatrix& first,
   return testing::AssertionSuccess() << "Matrices are near equal!";
 }
 
-TEST(TransformationMatrix, Determinant)
+class TransformationMatrixTF : public testing::Test
 {
-  // Create a random matrix
-  const TransformationMatrix matrix(
-      Complex(-4.924, -2.768), Complex(0.248, 9.890), Complex(2.895, 8.700),
+ protected:
+  const TransformationMatrix matrix{
+      Complex(-4.924, -2.768), Complex(0.248, 9.890),   Complex(2.895, 8.700),
 
-      Complex(-5.526, -0.244), Complex(5.526, -3.827), Complex(-7.857, 1.492),
+      Complex(-5.526, -0.244), Complex(5.526, -3.827),  Complex(-7.857, 1.492),
 
-      Complex(7.554, 2.673), Complex(-9.136, -7.834), Complex(2.573, 0.384));
+      Complex(7.554, 2.673),   Complex(-9.136, -7.834), Complex(2.573, 0.384)};
 
+  const TransformationMatrix identity;
+};
+
+TEST_F(TransformationMatrixTF, Determinant)
+{
   //////
   /// {{-4.924+i*-2.768,
   /// 0.248+i*9.890, 2.895+i*8.700},{-5.526+i*-0.244, 5.526+i*-3.827,
@@ -322,11 +298,8 @@ TEST(TransformationMatrix, Determinant)
       check_two_complex(det, Complex{-292.293300759, 116.289449988}, kEpsilon));
 }
 
-TEST(TransformationMatrix, Inverse)
+TEST_F(TransformationMatrixTF, Inverse)
 {
-  // Create an identity matrix
-  const TransformationMatrix identity;
-
   // Find inverse matrix
   const auto inverse_of_identity = identity.GetInverse();
 
@@ -339,14 +312,6 @@ TEST(TransformationMatrix, Inverse)
       inverse_of_identity  // NOLINT(bugprone-unchecked-optional-access)
           .value(),
       kEpsilon));
-
-  // Create a random matrix
-  const TransformationMatrix matrix(
-      Complex(-4.924, -2.768), Complex(0.248, 9.890), Complex(2.895, 8.700),
-
-      Complex(-5.526, -0.244), Complex(5.526, -3.827), Complex(-7.857, 1.492),
-
-      Complex(7.554, 2.673), Complex(-9.136, -7.834), Complex(2.573, 0.384));
 
   // Compute inverse
   const auto inverse = matrix.GetInverse();
@@ -387,19 +352,8 @@ TEST(TransformationMatrix, Inverse)
   ASSERT_FALSE(inverse_of_transformation_without_inversion.has_value());
 }
 
-TEST(TransformationMatrix, Multiplication)
+TEST_F(TransformationMatrixTF, Multiplication)
 {
-  // Create an identity matrix
-  const TransformationMatrix identity;
-
-  // Create a random matrix
-  const TransformationMatrix matrix(
-      Complex(-4.924, -2.768), Complex(0.248, 9.890), Complex(2.895, 8.700),
-
-      Complex(-5.526, -0.244), Complex(5.526, -3.827), Complex(-7.857, 1.492),
-
-      Complex(7.554, 2.673), Complex(-9.136, -7.834), Complex(2.573, 0.384));
-
   // Check some simple multiplications
   EXPECT_TRUE(check_two_matrix(matrix * identity, matrix, kEpsilon));
   EXPECT_TRUE(check_two_matrix(identity * matrix, matrix, kEpsilon));

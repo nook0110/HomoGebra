@@ -29,20 +29,6 @@ int main()
 
   Plane plane;
 
-  Gui::WindowHandler gui_handler;
-
-  auto selector =
-      std::make_unique<Gui::Constructor::ObjectSelector<Point>>(plane);
-
-  auto editor = std::make_unique<Gui::ObjectMenu>(plane);
-
-  auto selector_window =
-      std::make_unique<Gui::Window>("Hello", std::move(selector));
-  auto editor_window = std::make_unique<Gui::Window>("Test", std::move(editor));
-
-  gui_handler.AddWindow(std::move(selector_window));
-  gui_handler.AddWindow(std::move(editor_window));
-
   PointFactory point_factory(plane);
   auto first =
       point_factory.OnPlane(PointEquation{HomogeneousCoordinate{100, 100}});
@@ -55,13 +41,6 @@ int main()
   equation.squares = {1, 1, -10000};
   equation.pair_products = {0, 1, 1};
   conic_factory.OnPlane(equation);
-
-  LineByTwoPoints line_by_two_points(plane, plane, plane);
-
-  line_by_two_points.SetArgument(first);
-  line_by_two_points.SetArgument(second);
-
-  line_by_two_points.ConstructObject();
 
   while (window.isOpen())
   {
@@ -89,8 +68,6 @@ int main()
     plane.Update(window);
 
     window.draw(plane);
-
-    gui_handler.Construct();
 
     Gui::Global::Render(window);
 
