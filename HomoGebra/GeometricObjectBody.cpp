@@ -34,6 +34,13 @@ void ObjectName::SetName(std::string name)
 
 const std::string& ObjectName::GetName() const { return name_; }
 
+void ObjectName::SetSize(const float size)
+{
+  const auto height = text_.getLocalBounds().height;
+  auto factor = size / height;
+  text_.setScale({factor, factor});
+}
+
 void ObjectName::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
   // Apply transform

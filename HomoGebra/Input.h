@@ -12,7 +12,7 @@
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date April 2023
  */
@@ -24,7 +24,6 @@ class NearbyObjectGetter : public EventListener
    * \brief Constructor.
    *
    * \param plane Plane, where the object is located.
-   * \param window Render window.
    * \param last_object Last object that user clicked on.
    */
   explicit NearbyObjectGetter(Plane& plane,
@@ -55,6 +54,7 @@ class NearbyObjectGetter : public EventListener
   /**
    * \brief Finds the nearest object to the mouse.
    *
+   * \param position Position of the mouse.
    */
   void FindNearestObject(const sf::Vector2f& position);
 

@@ -8,7 +8,7 @@
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -33,7 +33,7 @@ struct Equation
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -79,7 +79,7 @@ struct PointEquation final : public Equation
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -114,7 +114,7 @@ struct LineEquation final : public Equation
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *

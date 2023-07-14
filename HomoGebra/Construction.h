@@ -49,7 +49,7 @@ class StrongConstruction
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -65,8 +65,17 @@ class Construction : public GeometricObjectObserver
    */
   ~Construction() override = default;
 
+  /**
+   * \brief Gets object that is constructed.
+   *
+   * \return Object that is constructed.
+   */
   [[nodiscard]] virtual GeometricObject* GetObject() const = 0;
 
+  /**
+   * \brief Recalculates equation of the object.
+   *
+   */
   virtual void RecalculateEquation() = 0;
 
   void Update(const ObjectEvent::Moved& moved_event) override;

@@ -287,12 +287,26 @@ SquaredMatrix<UnderlyingType>::end() const
   return matrix_.end();
 }
 
+/**
+ * \brief Explicit template specialization for complex numbers
+ *
+ * \param value Value to check
+ *
+ * \return True if value is zero, false otherwise
+ */
 template <>
 bool SquaredMatrix<Complex>::IsZero(const Complex& value) const
 {
   return value.IsZero();
 }
 
+/**
+ * \brief Explicit template specialization for float numbers
+ *
+ * \param value Value to check
+ *
+ * \return True if value is zero, false otherwise
+ */
 template <>
 bool SquaredMatrix<float>::IsZero(const float& value) const
 {

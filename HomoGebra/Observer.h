@@ -135,6 +135,12 @@ class ObservableGeometricObject
    */
   void Detach(const GeometricObjectObserver* observer);
 
+  /**
+   * \brief Notify all observers about event.
+   *
+   * \tparam Event Type of event.
+   * \param event Event to notify about.
+   */
   template <class Event>
   void Notify(const Event& event) const;
 

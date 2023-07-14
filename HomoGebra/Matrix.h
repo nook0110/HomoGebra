@@ -141,7 +141,15 @@ class SquaredMatrix
    */
   SquaredMatrix() = default;
 
-  bool IsZero(const UnderlyingType& value) const;
+  /**
+   * \brief Checks if value is zero.
+   *
+   * \param value Value.
+   *
+   * \return True if value is zero, false otherwise.
+   */
+  [[nodiscard]] bool IsZero(const UnderlyingType& value) const;
+
   /**
    * Member data.
    */

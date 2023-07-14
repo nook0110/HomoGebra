@@ -155,6 +155,8 @@ class HomogeneousCoordinateEditor final : public Widget
  *
  * \version 0.1
  *
+ * \deprecated Edit all points, even if they have construction
+ *
  * \date February 2023
  */
 class PointSubmenu : public Widget
@@ -222,7 +224,7 @@ class PointSubmenu : public Widget
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  */
@@ -342,8 +344,6 @@ template <class GeometricObjectType>
 class ObjectSelector : public Widget, public EventListener
 {
  public:
-  using value_type = GeometricObjectType;
-
   /**
    * \brief Constructor.
    *
@@ -372,6 +372,11 @@ class ObjectSelector : public Widget, public EventListener
    */
   void Draw() override;
 
+  /**
+   * \brief Updates the widget.
+   *
+   * \param event Event to process.
+   */
   void Update(const UserEvent::Clicked& event) override;
 
  private:

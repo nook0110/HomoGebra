@@ -7,10 +7,9 @@ namespace UserEvent
 /**
  * \brief Tag that shows that user clicked on the screen.
  */
-
 struct Clicked
 {
-  sf::Vector2f position;
+  sf::Vector2f position;  //!< Position of the click.
 };
 }  // namespace UserEvent
 
@@ -62,6 +61,12 @@ class EventNotifier
    */
   void Detach(const EventListener* listener);
 
+  /**
+   * \brief Notify all listeners.
+   *
+   * \tparam Event Type of event.
+   * \param event Event to notify about.
+   */
   template <class Event>
   void Notify(const Event& event) const;
 

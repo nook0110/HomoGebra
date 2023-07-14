@@ -10,7 +10,7 @@
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date April 2023
  */
@@ -42,13 +42,12 @@ class ObjectName final : public sf::Drawable, public sf::Transformable
    */
   [[nodiscard]] const std::string& GetName() const;
 
-  void SetSize(const float size)
-  {
-    const auto height = text_.getLocalBounds().height;
-    auto factor = size / height;
-    text_.setScale({factor, factor});
-  }
-
+  /**
+   * \brief Sets size of the object name.
+   *
+   * \param size Size of the object name.
+   */
+  void SetSize(float size);
   /**
    * \brief Draw the object name to a render target.
    *
@@ -70,6 +69,15 @@ class ObjectName final : public sf::Drawable, public sf::Transformable
   sf::Text text_;  //!< Text of the name
 };
 
+/**
+ * \brief Base class for bodies.
+ *
+ * \author nook0110
+ *
+ * \version 1.0
+ *
+ * \date July 2023
+ */
 class ObjectBody : public sf::Drawable
 {
  public:
@@ -87,9 +95,26 @@ class ObjectBody : public sf::Drawable
    */
   [[nodiscard]] const std::string& GetName() const;
 
+  /**
+   * \brief Sets position of the name.
+   *
+   * \param position Position of the name.
+   */
   void SetNamePosition(const sf::Vector2f& position);
+
+  /**
+   * \brief Sets size of the name.
+   *
+   * \param size Size of the name.
+   */
   void SetNameSize(float size);
 
+  /**
+   * \brief Draw the object body to a render target.
+   *
+   * \param target Render target to draw to.
+   * \param states Current render states.
+   */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
@@ -101,7 +126,7 @@ class ObjectBody : public sf::Drawable
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  */
@@ -136,6 +161,12 @@ class PointBody final : public ObjectBody
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  /**
+   * \brief Draw arrow to a render target.
+   *
+   * \param target Render target to draw to.
+   * \param states Current render states.
+   */
   void DrawArrow(sf::RenderTarget& target, sf::RenderStates states) const;
 
  private:
@@ -148,7 +179,7 @@ class PointBody final : public ObjectBody
    *
    * \author nook0110
    *
-   * \version 0.1
+   * \version 1.0
    *
    * \date February 2023
    */
@@ -179,7 +210,7 @@ class PointBody final : public ObjectBody
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  */
@@ -198,27 +229,53 @@ class LineBody final : public ObjectBody
    */
   ~LineBody() override = default;
 
+  /**
+   * \brief Updates the line body.
+   *
+   * \param equation Equation of the line.
+   */
   void Update(const LineEquation& equation);
 
   /**
    * \brief Draw line to a render target.
    *
-   *
-   *
+   * \param target Render target to draw to.
+   * \param states Current render states.
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
+  /**
+   * \brief Equation of a line.
+   *
+   * \author nook0110
+   *
+   * \version 1.0
+   *
+   * \date July 2023
+   */
   struct Equation
   {
-    float a;
-    float b;
-    float c;
+    /*
+     * Line equation:
+     * a*x + b*y + c = 0
+     */
+    float a;  //!< Coefficient of x.
+    float b;  //!< Coefficient of y.
+    float c;  //!< Constant.
 
+    /**
+     * \brief Solve the equation for a variable.
+     *
+     * \param var Variable to solve for.
+     * \param another Another variable value.
+     *
+     * \return Value of the variable.
+     */
     [[nodiscard]] float Solve(Var var, float another) const;
   };
 
-  std::optional<Equation> equation_;
+  std::optional<Equation> equation_;  //!< Equation of the line.
 };
 
 /**
@@ -226,7 +283,7 @@ class LineBody final : public ObjectBody
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  */
@@ -252,22 +309,43 @@ class ConicBody : public ObjectBody
    */
   void Update(const ConicEquation& equation);
 
+  /**
+   * \brief Draw conic to a render target.
+   *
+   * \param target Render target to draw to.
+   * \param states Current render states.
+   */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
+  /**
+   * \brief Equation of a conic that lies on a real plane.
+   *
+   */
   struct Equation
   {
-    static constexpr std::array<Var, 2> kAnother = {Var::kY, Var::kX};
+    static constexpr std::array<Var, 2> kAnother = {
+        Var::kY, Var::kX};  //!< Another variable of each variable.
 
-    using Solution = std::array<std::optional<Complex>, 2>;
+    using Solution =
+        std::array<std::optional<Complex>, 2>;  //!< Solution of the equation.
 
+    /**
+     * \brief Solves the equation for variable.
+     *
+     * \param var Variable to solve for.
+     * \param another Another variable value.
+     *
+     * \return Solution of the equation.
+     */
     [[nodiscard]] Solution Solve(Var var, const Complex& another) const;
 
-    std::array<Complex, 2> squares;
-    Complex pair_product;
-    std::array<Complex, 2> linears;
-    Complex constant;
+    std::array<Complex, 2>
+        squares;           //!< Coefficient of the squares of the variables.
+    Complex pair_product;  //!< Coefficient of the product of the variables.
+    std::array<Complex, 2> linears;  //!< Coefficient of the variables.
+    Complex constant;                //!< Constant coefficient.
   };
 
-  Equation equation_;
+  Equation equation_;  //!< Equation of the conic.
 };

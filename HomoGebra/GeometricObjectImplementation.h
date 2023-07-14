@@ -9,7 +9,7 @@ class GeometricObject;
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -36,7 +36,7 @@ class GeometricObjectImplementation : public ObservableGeometricObject
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date April 2023
  *
@@ -78,7 +78,7 @@ class PointImplementation final : public GeometricObjectImplementation
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date April 2023
  *
@@ -120,7 +120,7 @@ class LineImplementation : public GeometricObjectImplementation
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date April 2023
  *

@@ -11,7 +11,7 @@
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -94,7 +94,7 @@ class GeometricObject : public sf::Drawable
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -184,6 +184,12 @@ class Point final : public GeometricObject
 
   ///@}
  private:
+  /**
+   * \brief Notify observers about event.
+   *
+   * \tparam Event Type of event.
+   * \param event Event to notify.
+   */
   template <class Event>
   void Notify(const Event& event) const;
 
@@ -212,7 +218,7 @@ class LineBody;
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -291,6 +297,12 @@ class Line final : public GeometricObject
   void Attach(GeometricObjectObserver* observer) override;
 
  private:
+  /**
+   * \brief Notify observers about event.
+   *
+   * \tparam Event Type of event.
+   * \param event Event to notify.
+   */
   template <class Event>
   void Notify(const Event& event) const;
 
@@ -309,7 +321,7 @@ class ConicBody;
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -332,6 +344,11 @@ class Conic final : public GeometricObject
    */
   void Destroy() override;
 
+  /**
+   * \brief Set new equation of conic.
+   *
+   * \param equation Equation of conic.
+   */
   void SetEquation(ConicEquation equation);
 
   /**
@@ -371,6 +388,12 @@ class Conic final : public GeometricObject
   void Attach(GeometricObjectObserver* observer) override;
 
  private:
+  /**
+   * \brief Notify observers about event.
+   *
+   * \tparam Event Type of event.
+   * \param event Event to notify.
+   */
   template <class Event>
   void Notify(const Event& event) const;
 

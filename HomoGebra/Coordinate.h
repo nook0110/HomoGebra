@@ -9,7 +9,7 @@
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date April 2023
  */
@@ -122,7 +122,7 @@ struct HomogeneousCoordinate;
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -232,7 +232,7 @@ enum class Var
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *

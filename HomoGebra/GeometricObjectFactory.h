@@ -7,7 +7,7 @@
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -56,7 +56,7 @@ class PointFactory
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -74,6 +74,13 @@ class LineFactory
    */
   explicit LineFactory(Plane& plane);
 
+  /**
+   * \brief Constructs a line with given equation.
+   *
+   * \param equation Equation of a line.
+   *
+   * \return Pointer to a constructed line.
+   */
   Line* OnPlane(LineEquation equation);
 
   /**
@@ -99,7 +106,7 @@ class LineFactory
  *
  * \author nook0110
  *
- * \version 0.1
+ * \version 1.0
  *
  * \date February 2023
  *
@@ -117,6 +124,13 @@ class ConicFactory
    */
   explicit ConicFactory(Plane& plane);
 
+  /**
+   * \brief Constructs a conic with given equation.
+   *
+   * \param equation Equation of a conic.
+   *
+   * \return Pointer to a constructed conic.
+   */
   Conic* OnPlane(ConicEquation equation);
 
   /**
