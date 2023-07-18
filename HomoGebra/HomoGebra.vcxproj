@@ -163,6 +163,7 @@
     <ClCompile Include="GeometricObjectBody.cpp" />
     <ClCompile Include="GeometricObjectFactory.cpp" />
     <ClCompile Include="GeometricObjectImplementation.cpp" />
+    <ClCompile Include="HomoHebraWindow.cpp" />
     <ClCompile Include="ObjectConstruction.cpp" />
     <ClCompile Include="WindowHandler.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -178,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assert.h" />
+    <ClInclude Include="HomoGebraWindow.h" />
     <ClInclude Include="ObjectConstructionImplementations.h" />
     <ClInclude Include="ObjectConstructor.h" />
     <ClInclude Include="Complex.h" />

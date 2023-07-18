@@ -377,7 +377,7 @@ class ObjectSelector : public Widget, public EventListener
    *
    * \param event Event to process.
    */
-  void Update(const UserEvent::Clicked& event) override;
+  void Update(const UserEvent::Click& event) override;
 
  private:
   /**

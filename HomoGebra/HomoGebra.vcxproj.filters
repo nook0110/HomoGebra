@@ -151,6 +151,7 @@
     <ClCompile Include="Complex.cpp">
       <Filter>Sources\Equation</Filter>
     </ClCompile>
+    <ClCompile Include="HomoHebraWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeometricObject.h">
@@ -227,6 +228,9 @@
     </ClInclude>
     <ClInclude Include="ObjectConstructionImplementations.h">
       <Filter>Headers\GUI\Creation</Filter>
+    </ClInclude>
+    <ClInclude Include="HomoGebraWindow.h">
+      <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

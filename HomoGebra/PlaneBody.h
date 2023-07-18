@@ -13,13 +13,7 @@
 class PlaneBody final : public sf::Drawable
 {
  public:
-  /**
-   * \brief Draw the plane to a render target.
-   *
-   * \param target Render target to draw to.
-   * \param states Current render states.
-   */
-  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+  void Resize(const sf::Vector2f& size);
 
   /**
    * \brief Update the plane body.
@@ -34,6 +28,14 @@ class PlaneBody final : public sf::Drawable
    * \return View of the plane.
    */
   const sf::View& GetView() const;
+
+  /**
+   * \brief Draw the plane to a render target.
+   *
+   * \param target Render target to draw to.
+   * \param states Current render states.
+   */
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
   /**

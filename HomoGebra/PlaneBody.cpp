@@ -2,6 +2,8 @@
 
 void PlaneBody::draw(sf::RenderTarget& target, sf::RenderStates states) const {}
 
+void PlaneBody::Resize(const sf::Vector2f& size) { view_.setSize(size); }
+
 void PlaneBody::Update(const sf::Event& event) { UpdateZoom(event); }
 
 const sf::View& PlaneBody::GetView() const

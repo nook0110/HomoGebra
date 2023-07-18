@@ -29,7 +29,7 @@ void NearbyObjectGetter<GeometricObjectType>::SetObject(
 
 template <class GeometricObjectType>
 void NearbyObjectGetter<GeometricObjectType>::Update(
-    const UserEvent::Clicked& event)
+    const UserEvent::Click& event)
 {
   FindNearestObject(event.position);
 }

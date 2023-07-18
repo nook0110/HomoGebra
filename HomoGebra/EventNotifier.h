@@ -7,9 +7,14 @@ namespace UserEvent
 /**
  * \brief Tag that shows that user clicked on the screen.
  */
-struct Clicked
+struct Click
 {
   sf::Vector2f position;  //!< Position of the click.
+};
+
+struct Unclick
+{
+  sf::Vector2f position;  //!< Position of the unclick.
 };
 }  // namespace UserEvent
 
@@ -36,7 +41,7 @@ class EventListener
    *
    * \see UserEvent::clicked_event
    */
-  virtual void Update(const UserEvent::Clicked& clicked_event) = 0;
+  virtual void Update(const UserEvent::Click& clicked_event) = 0;
 };
 
 /**

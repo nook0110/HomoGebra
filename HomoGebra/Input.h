@@ -48,7 +48,7 @@ class NearbyObjectGetter : public EventListener
    */
   void SetObject(GeometricObjectType* object);
 
-  void Update(const UserEvent::Clicked& event) override;
+  void Update(const UserEvent::Click& event) override;
 
  private:
   /**

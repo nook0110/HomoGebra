@@ -20,5 +20,5 @@ void EventNotifier::Notify(const Event& event) const
   for (const auto& listener : listeners_) listener->Update(event);
 }
 
-template void EventNotifier::Notify<UserEvent::Clicked>(
-    const UserEvent::Clicked& event) const;
+template void EventNotifier::Notify<UserEvent::Click>(
+    const UserEvent::Click& event) const;
