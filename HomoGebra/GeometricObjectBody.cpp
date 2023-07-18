@@ -217,13 +217,10 @@ void LineBody::Update(const LineEquation& equation)
   }
 
   // Set equation
-  Equation body_equation{};
-  body_equation.a =
-      static_cast<float>(static_cast<long double>(normalized_equation.x));
-  body_equation.b =
-      static_cast<float>(static_cast<long double>(normalized_equation.y));
-  body_equation.c =
-      static_cast<float>(static_cast<long double>(normalized_equation.z));
+  Equation body_equation{
+      static_cast<float>(static_cast<long double>(normalized_equation.x)),
+      static_cast<float>(static_cast<long double>(normalized_equation.y)),
+      static_cast<float>(static_cast<long double>(normalized_equation.z))};
 
   equation_ = body_equation;
 }
@@ -327,12 +324,14 @@ void ConicBody::Update(const ConicEquation& equation)
 
 void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-  // Acquire window center and size
-  const auto window_center = target.getView().getCenter();
-  const auto window_size = target.getView().getSize();
+  // Acquire render region center and size
+  const auto render_region_center = target.getView().getCenter();
+  const auto render_region_size = target.getView().getSize();
 
-  // Calculate window corner
-  const auto corner = window_center - window_size / 2.f;
+  // Calculate render region corner
+  const auto corner = render_region_center - render_region_size / 2.f;
+
+  sf::FloatRect rendering_region{corner, render_region_size};
 
   // Calculates distance between
   auto find_distance =
@@ -343,8 +342,8 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
   };
 
   // Calculate amount of steps needed and their size
-  const size_t steps = std::max(target.getSize().x, target.getSize().y) / 4;
-  const auto step_size = window_size / static_cast<float>(steps);
+  const size_t steps = std::max(target.getSize().x, target.getSize().y);
+  const auto step_size = render_region_size / static_cast<float>(steps);
 
   // Max distance between two points on line
   const auto max_distance = find_distance(step_size) * 4.f;
@@ -360,28 +359,30 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
     const auto pos = corner + step_size * static_cast<float>(step);
 
     // Calculate roots of equation
-    auto roots_y = equation_.Solve(Var::kY, pos.x);
+    auto roots_y = equation_.Solve(Var::kY, Complex{pos.x});
 
     // Calculate roots of equation
-    auto roots_x = equation_.Solve(Var::kX, pos.y);
+    auto roots_x = equation_.Solve(Var::kX, Complex{pos.y});
 
     std::vector<sf::Vector2f> points_to_add;
 
     // Check if roots are real and add them to points_to_add
     for (auto& root : roots_y)
     {
-      if (root && root.value().IsReal())
+      if (root && root.value().IsReal() &&
+          rendering_region.contains({pos.x, static_cast<float>(root.value())}))
       {
-        points_to_add.emplace_back(pos.x, root.value().real());
+        points_to_add.emplace_back(pos.x, static_cast<float>(root.value()));
       }
     }
 
     // Check if roots are real and add them to points_to_add
     for (auto& root : roots_x)
     {
-      if (root && root.value().IsReal())
+      if (root && root.value().IsReal() &&
+          rendering_region.contains({static_cast<float>(root.value()), pos.y}))
       {
-        points_to_add.emplace_back(root.value().real(), pos.y);
+        points_to_add.emplace_back(static_cast<float>(root.value()), pos.y);
       }
     }
 

@@ -39,11 +39,18 @@ class Complex : public std::complex<long double>
   [[nodiscard]] bool IsReal() const;
 
   /**
-   * \brief Converts complex number to double.
+   * \brief Converts complex number to long double.
    *
    * \warning If imaginary part is not zero, then undefined behavior.
    */
   explicit operator long double() const;
+
+  /**
+   * \brief Converts complex number to float.
+   *
+   * \warning If imaginary part is not zero, then undefined behavior.
+   */
+  explicit operator float() const;
 
   /**
    * \brief operator*= overload.

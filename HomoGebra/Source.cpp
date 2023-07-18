@@ -39,14 +39,12 @@ int main()
 
   ConicEquation equation;
   equation.squares = {1, 1, -10000};
-  equation.pair_products = {0, 1, 1};
+  equation.pair_products = {0, 1, 10};
   conic_factory.OnPlane(equation);
 
   while (window.isOpen())
   {
-    sf::Event event{};
-
-    if (window.waitEvent(event))
+    if (sf::Event event{}; window.pollEvent(event))
     {
       if (event.type == sf::Event::Closed) window.close();
 

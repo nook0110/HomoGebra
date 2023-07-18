@@ -80,6 +80,10 @@ class Construction : public GeometricObjectObserver
 
   void Update(const ObjectEvent::Moved& moved_event) override;
 
+  void Update(const ObjectEvent::Destroyed& destroyed_event) override = 0;
+
+  void Update(const ObjectEvent::Renamed& renamed_event) override = 0;
+
  protected:
   /**
    * \brief Constructor deleted.

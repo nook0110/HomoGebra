@@ -27,6 +27,11 @@ Complex::operator long double() const
   return real();
 }
 
+Complex::operator float() const
+{
+  return static_cast<float>(static_cast<long double>(*this));
+}
+
 Complex& Complex::operator*=(const Complex& other)
 {
   // Multiply

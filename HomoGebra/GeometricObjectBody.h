@@ -61,7 +61,7 @@ class ObjectName final : public sf::Drawable, public sf::Transformable
       "Resources/font.ttf";                       //!< Path to font
   static constexpr unsigned kCharacterSize = 50;  //!< Character size
   inline static const sf::Color kTextColor =
-      sf::Color::Black;  //!< Color of the text
+      sf::Color{0, 0, 0};  //!< Color of the text
 
   std::string name_;  //!< Name of the object
 
@@ -300,7 +300,7 @@ class ConicBody : public ObjectBody
    * \brief Destructor.
    *
    */
-  ~ConicBody() = default;
+  ~ConicBody() override = default;
 
   /**
    * \brief Updates the conic body.
