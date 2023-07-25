@@ -351,7 +351,10 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
   using Line = std::vector<sf::Vertex>;
   using Lines = std::vector<Line>;
 
-  Lines lines;
+  Lines lines_x(2);
+  Lines lines_y(2);
+  lines_x.reserve(4);
+  lines_y.reserve(4);
 
   for (size_t step = 0; step < steps; ++step)
   {
@@ -359,68 +362,56 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
     const auto pos = corner + step_size * static_cast<float>(step);
 
     // Calculate roots of equation
-    auto roots_y = equation_.Solve(Var::kY, Complex{pos.x});
-
-    // Calculate roots of equation
+    // Check if roots are real and add them to points_to_add
     auto roots_x = equation_.Solve(Var::kX, Complex{pos.y});
 
-    std::vector<sf::Vector2f> points_to_add;
-
-    // Check if roots are real and add them to points_to_add
-    for (auto& root : roots_y)
+    for (size_t root_number = 0; root_number < roots_x.size(); ++root_number)
     {
-      if (root && root.value().IsReal() &&
-          rendering_region.contains({pos.x, static_cast<float>(root.value())}))
-      {
-        points_to_add.emplace_back(pos.x, static_cast<float>(root.value()));
-      }
-    }
-
-    // Check if roots are real and add them to points_to_add
-    for (auto& root : roots_x)
-    {
+      auto& root = roots_x[root_number];
       if (root && root.value().IsReal() &&
           rendering_region.contains({static_cast<float>(root.value()), pos.y}))
       {
-        points_to_add.emplace_back(static_cast<float>(root.value()), pos.y);
+        lines_x[lines_x.size() - 1 - root_number].emplace_back(sf::Vertex(
+            {static_cast<float>(root.value()), pos.y}, sf::Color::Black));
+      }
+
+      if (!(root && root.value().IsReal()) && !lines_x.back().empty())
+      {
+        lines_x.resize(lines_x.size() + roots_x.size());
       }
     }
 
-    // Find line that is closest to current point
-    auto find_line = [&](const sf::Vector2f& point)
-    {
-      auto best = lines.rend();
-      auto distance = INFINITY;
+    // Calculate roots of equation
+    // Check if roots are real and add them to points_to_add
+    auto roots_y = equation_.Solve(Var::kY, Complex{pos.x});
 
-      for (auto it = lines.rbegin(); it != lines.rend(); ++it)
+    for (size_t root_number = 0; root_number < roots_y.size(); ++root_number)
+    {
+      auto& root = roots_y[root_number];
+
+      if (root && root.value().IsReal() &&
+          rendering_region.contains({pos.x, static_cast<float>(root.value())}))
       {
-        if (find_distance(it->back().position, point) <
-            std::min(distance, max_distance))
-        {
-          best = it;
-          distance = find_distance(it->back().position, point);
-        }
+        lines_y[lines_y.size() - 1 - root_number].emplace_back(sf::Vertex(
+            {pos.x, static_cast<float>(root.value())}, sf::Color::Black));
       }
 
-      return best;
-    };
-
-    // Add points to lines
-    for (auto& point : points_to_add)
-    {
-      if (auto suitable = find_line(point); suitable == lines.rend())
+      if (!(root && root.value().IsReal()) && !lines_y.back().empty())
       {
-        lines.emplace_back(Line{{point, sf::Color::Black}});
-      }
-      else
-      {
-        suitable->push_back({point, sf::Color::Black});
+        lines_y.resize(lines_y.size() + roots_y.size());
       }
     }
   }
 
+  Expect(lines_x.size() <= 4);
+  Expect(lines_y.size() <= 4);
+
   // Draw lines
-  for (auto& line : lines)
+  for (const auto& line : lines_x)
+  {
+    target.draw(line.data(), line.size(), sf::PrimitiveType::LineStrip, states);
+  }
+  for (auto& line : lines_y)
   {
     target.draw(line.data(), line.size(), sf::PrimitiveType::LineStrip, states);
   }

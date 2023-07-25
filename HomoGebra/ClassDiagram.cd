@@ -1,403 +1,697 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
   <Class Name="GeometricObject">
-    <Position X="8.75" Y="24.5" Width="3.75" />
+    <Position X="18.5" Y="27.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AAABAQBAAAAAAAAAAAIAAAAAAIBAAAEAAAAAQAAABAA=</HashCode>
       <FileName>GeometricObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Point">
-    <Position X="4.25" Y="28.25" Width="3.75" />
+    <Position X="14" Y="31.25" Width="3.75" />
     <TypeIdentifier>
       <HashCode>IAABAAAAAAAAgAACAAIAAAEAAINAAABAAAAAQAAQBAA=</HashCode>
       <FileName>GeometricObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Line">
-    <Position X="8.75" Y="28.25" Width="3.75" />
+    <Position X="18.5" Y="31.25" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AIABAAAAAAAAAAAAAAIAAAEAAINAAABAAAAAQAARBAA=</HashCode>
       <FileName>GeometricObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Conic">
-    <Position X="13.25" Y="28.25" Width="3.75" />
+    <Position X="23" Y="31.25" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAABAAAAAAAAIAAAAAAINAAABAAAAAQAAABAA=</HashCode>
+      <HashCode>AAABAAAAABAAAAAAAAIAAAAAAINAAABAAAAAQAAQBAA=</HashCode>
       <FileName>GeometricObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectName" Collapsed="true">
-    <Position X="42" Y="1.5" Width="1.5" />
+    <Position X="41.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAEABAABAAAAAAIBIAAAAAAAAAAQAAAAQAAAJAA=</HashCode>
+      <HashCode>AAEAAAEABAABAAAAAAIJIAAAAAAAAAAQAAAAQAAAJAA=</HashCode>
       <FileName>GeometricObjectBody.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="PointBody" Collapsed="true">
-    <Position X="40.25" Y="2.5" Width="1.5" />
+  <Class Name="PointBody">
+    <Position X="28" Y="9.75" Width="5.25" />
+    <NestedTypes>
+      <Struct Name="PointBody::ProjectivePosition" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GeometricObjectBody.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAABBABAAAIAIAAAAAIAAAAAAAAIQAIABAA=</HashCode>
+      <HashCode>AAQAAAAAAAAABABAAAIAIAAAAAIAAAAAAAAIAAIAAAA=</HashCode>
       <FileName>GeometricObjectBody.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="LineBody" Collapsed="true">
-    <Position X="36.75" Y="1.5" Width="1.5" />
+  <Class Name="LineBody">
+    <Position X="19" Y="9.75" Width="3.75" />
+    <NestedTypes>
+      <Struct Name="LineBody::Equation" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GeometricObjectBody.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAABIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAAAAIQAAAAAAAAAABIAAAAAAAAAAA=</HashCode>
       <FileName>GeometricObjectBody.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ConicBody" Collapsed="true">
-    <Position X="36.75" Y="0.5" Width="1.5" />
+  <Class Name="ConicBody">
+    <Position X="23.5" Y="9.75" Width="3.75" />
+    <NestedTypes>
+      <Struct Name="ConicBody::Equation" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GeometricObjectBody.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAACAAQAAAIQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GeometricObjectBody.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PointFactory" Collapsed="true">
-    <Position X="42" Y="2.5" Width="1.5" />
+    <Position X="38.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAgAAAEAAAAAAgAAAAAAAAAQAAA=</HashCode>
       <FileName>GeometricObjectFactory.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LineFactory" Collapsed="true">
-    <Position X="38.5" Y="1.5" Width="1.5" />
+    <Position X="38.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAQEAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAQkAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>GeometricObjectFactory.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConicFactory" Collapsed="true">
-    <Position X="38.5" Y="0.5" Width="1.5" />
+    <Position X="40" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAIAAgAAAAAAAAAAAAg=</HashCode>
       <FileName>GeometricObjectFactory.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GeometricObjectImplementation">
-    <Position X="28" Y="9.75" Width="3" />
+    <Position X="5" Y="25.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>GeometricObjectImplementation.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PointImplementation">
-    <Position X="23.25" Y="12.25" Width="3.75" />
+    <Position X="1" Y="27.75" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAQAAEAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>GeometricObjectImplementation.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LineImplementation">
-    <Position X="27.75" Y="12.25" Width="3.5" />
+    <Position X="5" Y="27.75" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAQQAAEAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>GeometricObjectImplementation.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConicImplementation">
-    <Position X="32" Y="12.25" Width="3.75" />
+    <Position X="8.75" Y="27.75" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAAEAAAABAAAAAAAAAAAQAAA=</HashCode>
       <FileName>GeometricObjectImplementation.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NearbyObjectGetter&lt;GeometricObjectType&gt;">
-    <Position X="0.5" Y="2.5" Width="6" />
+    <Position X="27.75" Y="2.5" Width="4.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAhAAIAgoAACAAAAAABAAAAAEAAAABAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAhAAIAggAACAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Input.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Plane" Collapsed="true">
-    <Position X="36.75" Y="2.5" Width="1.5" />
+    <Position X="45.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQQAAAAAAAAAAAAAgAIAAAAAAAMAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Plane.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PlaneBody" Collapsed="true">
-    <Position X="38.5" Y="2.5" Width="1.5" />
+    <Position X="47" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAAAAAAAIEAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <HashCode>AAQQAAAAACAAAAAAAAIAAAAAAAAAAAAAAAABAAEAAAA=</HashCode>
       <FileName>PlaneBody.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectProvider" Collapsed="true">
-    <Position X="43.75" Y="1.5" Width="1.5" />
+    <Position X="43.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAIAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>ObjectProvider.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PlaneImplementation">
-    <Position X="6.25" Y="10" Width="4.5" />
+    <Position X="4.5" Y="12" Width="4.5" />
     <TypeIdentifier>
       <HashCode>AQQAACAAAAAAEAAAgAAAAAAAAQAAAEAAAAABAAAAAAA=</HashCode>
       <FileName>PlaneImplementation.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WeekConstruction" Collapsed="true">
-    <Position X="40.25" Y="3.5" Width="1.5" />
+    <Position X="45.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Construction.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StrongConstruction">
-    <Position X="8.5" Y="15.25" Width="1.75" />
+    <Position X="6.75" Y="18.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Construction.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Construction">
-    <Position X="15.25" Y="10" Width="2.5" />
+    <Position X="13.5" Y="12" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAACA=</HashCode>
+      <HashCode>AAQAAAAAAAAAIAAAAAAAAAAEAAAAAAACAAAAAAAAACA=</HashCode>
       <FileName>Construction.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConstructionPoint">
-    <Position X="18" Y="12.75" Width="3.5" />
+    <Position X="18.75" Y="15.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAQAIACAABAAIAAAgAAAAAEAAAAAAAACAAAAAAAQAAA=</HashCode>
       <FileName>ObjectConstruction.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ConstructionOnPlane">
-    <Position X="18" Y="17.25" Width="3.75" />
-    <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAABAA=</HashCode>
-      <FileName>ObjectConstruction.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ConstructionFromTwoLines">
-    <Position X="23.25" Y="17.25" Width="2.25" />
+    <Position X="22.75" Y="19.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ObjectConstruction.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConstructionLine">
-    <Position X="11.5" Y="12.75" Width="3.5" />
+    <Position X="9.75" Y="15.5" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAUAAAAgAAAAIAAAAAAAAAEAAAAAAAACAAAAAAAQIAA=</HashCode>
+      <HashCode>AAUAAAAgAAIAIAAAAAAAAAEAAAAAAAACAAAAAAAQIAA=</HashCode>
       <FileName>ObjectConstruction.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ByTwoPoints">
-    <Position X="11.5" Y="17" Width="3.5" />
+    <Position X="9.75" Y="19.75" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAEAAAEAAAAAAAAiAAAAAAAAAAA=</HashCode>
       <FileName>ObjectConstruction.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConstructionConic">
-    <Position X="15.75" Y="12.75" Width="1.5" />
+    <Position X="14" Y="15.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAQAAAAAAAAAIAAQAAAAAAAAAAAAAAACAAAAAgAQAAA=</HashCode>
       <FileName>ObjectConstruction.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TransformationMatrix" Collapsed="true">
-    <Position X="38.5" Y="3.5" Width="1.5" />
+    <Position X="43.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAAAAAAAAAAQAQQAUAACAAAAAgAAACAAA=</HashCode>
       <FileName>Coordinate.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Transformation" Collapsed="true">
-    <Position X="36.75" Y="3.5" Width="1.5" />
+    <Position X="41.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAgBAACAAQ=</HashCode>
       <FileName>Coordinate.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SquaredMatrix&lt;UnderlyingType&gt;" Collapsed="true">
-    <Position X="43.75" Y="2.5" Width="1.5" />
+    <Position X="40" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAACAAAAAAQBQAAUAAAAAAAAkADACkAA=</HashCode>
+      <HashCode>AAAAAAACAAAAAACAAAAAAQBQAAUAAAAAAAAkADACkCA=</HashCode>
       <FileName>Matrix.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dictionary&lt;Item&gt;" Collapsed="true">
-    <Position X="40.25" Y="0.5" Width="1.5" />
+    <Position X="41.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAACAAAAAAAAAQAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Dictionary.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NameGenerator" Collapsed="true">
-    <Position X="40.25" Y="1.5" Width="1.5" />
+    <Position X="40" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAQCAgAAAEAACAAACACAAAAABAAIAAAAAAAAAIBgAA=</HashCode>
       <FileName>NameGenerator.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EventListener">
-    <Position X="18.25" Y="0.5" Width="2.5" />
+    <Position X="14.5" Y="0.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAQAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EventNotifier.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EventNotifier" Collapsed="true">
-    <Position X="42" Y="0.5" Width="1.5" />
+    <Position X="43.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAIAAAARAAAAAAAAAAAA=</HashCode>
       <FileName>EventNotifier.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GeometricObjectObserver">
-    <Position X="12.25" Y="7.5" Width="3.5" />
+    <Position X="11" Y="9.5" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAQA=</HashCode>
       <FileName>Observer.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObservableGeometricObject">
-    <Position X="27.75" Y="6.5" Width="3.75" />
+    <Position X="4.5" Y="22.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAIgAAABAAAAAAAAAAAE=</HashCode>
       <FileName>Observer.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gui::Widget">
-    <Position X="15.75" Y="0.5" Width="1.5" />
+    <Position X="12.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Widget.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gui::ObjectMenu">
-    <Position X="7.25" Y="2.5" Width="4.75" />
+    <Position X="3.75" Y="2.5" Width="4.75" />
+    <NestedTypes>
+      <Enum Name="Gui::ObjectMenu::ObjectType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Widget.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAACBAQAAAAgAAJAAAAAAAAAAAAAgAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACBAQAAAAggAJAAAAAAAAAAAAAgAACAAAAAAAAAA=</HashCode>
       <FileName>Widget.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gui::Global" Collapsed="true">
-    <Position X="43.75" Y="0.5" Width="1.5" />
+    <Position X="45.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAIAAAAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAAAAA=</HashCode>
       <FileName>WindowHandler.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gui::Window" Collapsed="true">
-    <Position X="42" Y="3.5" Width="1.5" />
+    <Position X="47" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAwAAAAAAAAAACAAAAEAAAAAAACAAAIAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAQgAAAAAAAAACAAAAEAAAAAAACAAAIAA=</HashCode>
       <FileName>WindowHandler.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gui::WindowHandler" Collapsed="true">
-    <Position X="43.75" Y="3.5" Width="1.5" />
+    <Position X="38.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAgAAAAAAEAAAAAAAAAAAAAIAAAECAAAA=</HashCode>
       <FileName>WindowHandler.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gui::Editor::ComplexEditor">
-    <Position X="12.75" Y="2.5" Width="3" />
+    <Position X="9.25" Y="2.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAgAAAAAAAAAQAAAQAAAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAAAAgAAAAAAAAQAAAQAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>Widget.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gui::Editor::HomogeneousCoordinateEditor">
-    <Position X="21.25" Y="2.5" Width="5" />
+    <Position X="17.75" Y="2.5" Width="5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAIAhAAAAAEQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAIABgAAAAEQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Widget.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gui::Editor::PointSubmenu">
-    <Position X="27" Y="2.5" Width="3.5" />
+    <Position X="23.5" Y="2.5" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAGEAggAgAAAAAAAAAAAACAAAiIAAAAAAAAAIAA=</HashCode>
+      <HashCode>AAAAAACgEggQAgAAAAAAAAAAAAAAAiIAAAAAAAAAIAA=</HashCode>
       <FileName>Widget.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gui::Constructor::ObjectSelector&lt;GeometricObjectType&gt;">
-    <Position X="16.5" Y="2.5" Width="4" />
+    <Position X="13" Y="2.5" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAQAEAAAAEAAoAAAEgCAAAAAAAEAAgAAAAAABCAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAUAAIgAAEgAAAAAAAAAAAgACAQAABCAAAAA=</HashCode>
       <FileName>Widget.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="HomoGebraWindow" Collapsed="true">
+    <Position X="47" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAABAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>HomoGebraWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectBody">
+    <Position X="24.25" Y="6.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAQAIABAAAAAAAAAAAAAAAQAAABAA=</HashCode>
+      <FileName>GeometricObjectBody.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wrapper&lt;Element, index&gt;">
+    <Position X="29.5" Y="13.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAEAAAAAAgAAAAAAAAACAAAAAAAAE=</HashCode>
+      <FileName>ObjectConstructor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectConstructor&lt;First, ...Rest&gt;">
+    <Position X="31.5" Y="19" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAIAAA=</HashCode>
+      <FileName>ObjectConstructor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectConstructor&lt;First&gt;">
+    <Position X="33.5" Y="16.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAIAAA=</HashCode>
+      <FileName>ObjectConstructor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FactoryWrapper&lt;Factory, ConstructorFunction&gt;">
+    <Position X="0.5" Y="16.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAEAAAAAAAAAgAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>FactoryWrapper.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectSelectorWrapper&lt;ObjectType&gt;">
+    <Position X="13.5" Y="7" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAABEAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>FactoryWrapper.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineByTwoPointsWrapper">
+    <Position X="1.25" Y="19.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FactoryWrapper.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PointOnPlane">
+    <Position X="19" Y="19.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAABAAAQAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectConstruction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineOnPlane">
+    <Position X="14.5" Y="19.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAQAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectConstruction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConicOnPlane">
+    <Position X="14.25" Y="22.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAAgAAA=</HashCode>
+      <FileName>ObjectConstruction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Complex" Collapsed="true">
+    <Position X="38.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAgEUAAAAAAAAAAAAAgAAAAACA=</HashCode>
+      <FileName>Complex.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="HomogeneousCoordinate" Collapsed="true">
-    <Position X="38.5" Y="4.75" Width="1.5" />
+    <Position X="47" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAEAAAAAAAEAEAAAAAAAAAEAAAAAAABgAQAAAAA=</HashCode>
       <FileName>Coordinate.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="Equation">
-    <Position X="22" Y="19.5" Width="3.5" />
+    <Position X="23.25" Y="22.5" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Equation.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="PointEquation">
-    <Position X="21.5" Y="21.5" Width="4" />
+    <Position X="23.25" Y="24.5" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABQAAAAAAAAQAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Equation.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="LineEquation">
-    <Position X="26.25" Y="21.5" Width="4" />
+    <Position X="27.5" Y="24.5" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
       <FileName>Equation.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="ConicEquation">
-    <Position X="17.25" Y="21.5" Width="3.5" />
+    <Position X="19" Y="24.5" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAAAAABAAAAABEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Equation.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="ParsedSubname" Collapsed="true">
-    <Position X="43.75" Y="4.75" Width="1.5" />
+    <Position X="47" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAAAAAAkAQAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>NameGenerator.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="ParsedName" Collapsed="true">
-    <Position X="42" Y="4.75" Width="1.5" />
+    <Position X="45.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAACAgAQAAAAAEAAAAAAAgAAAAAAA=</HashCode>
       <FileName>NameGenerator.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="Event::Moved" Collapsed="true">
-    <Position X="40.25" Y="4.75" Width="1.5" />
+  <Struct Name="ObjectEvent::Moved" Collapsed="true">
+    <Position X="40" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Observer.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="Event::Destroyed" Collapsed="true">
-    <Position X="36.75" Y="4.75" Width="1.5" />
+  <Struct Name="ObjectEvent::Destroyed" Collapsed="true">
+    <Position X="40" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Observer.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="Event::Renamed" Collapsed="true">
-    <Position X="36.75" Y="5.75" Width="1.5" />
+  <Struct Name="ObjectEvent::Renamed" Collapsed="true">
+    <Position X="38.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Observer.h</FileName>
     </TypeIdentifier>
   </Struct>
+  <Struct Name="`anonymous-namespace'::StickInfo" Collapsed="true">
+    <Position X="40" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAACAAQAAAAAAAAAAAAAAACAAAAAAAGAAAAA=</HashCode>
+      <FileName>C:\imgui\imgui-SFML.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="`anonymous-namespace'::TriggerInfo" Collapsed="true">
+    <Position X="41.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAEAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\imgui\imgui-SFML.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="`anonymous-namespace'::WindowContext" Collapsed="true">
+    <Position X="45.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECEAAAAIAAAAEAAABAEAAAIAAGAIAAAYQkAoACJAAAA=</HashCode>
+      <FileName>C:\imgui\imgui-SFML.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="`anonymous-namespace'::MyItem" Collapsed="true">
+    <Position X="43.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAgAAAAAAAAASAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>C:\imgui\imgui_demo.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ImGuiStyleVarInfo" Collapsed="true">
+    <Position X="45.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAQAAAAAAgAA=</HashCode>
+      <FileName>C:\imgui\imgui.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ImGuiResizeGripDef" Collapsed="true">
+    <Position X="43.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAABAAAAAiAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\imgui\imgui.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ImGuiResizeBorderDef" Collapsed="true">
+    <Position X="41.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAIAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\imgui\imgui.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ImGuiDockRequest" Collapsed="true">
+    <Position X="38.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAQQAACAAAAAAIAAgAIgAAAAAAAAAQAAAAAAAgA=</HashCode>
+      <FileName>C:\imgui\imgui.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ImGuiDockPreviewData" Collapsed="true">
+    <Position X="47" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgACAAAAAAAAAEAAAgABAQAAAAAAACAAAAAAAYAgAA=</HashCode>
+      <FileName>C:\imgui\imgui.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ImGuiDockNodeSettings" Collapsed="true">
+    <Position X="43.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAABAAAAgAAAAEAAAAAAAACAAAAgABIiAAAAAAA=</HashCode>
+      <FileName>C:\imgui\imgui.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ImGuiDockContextPruneNodeData" Collapsed="true">
+    <Position X="41.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAAAAAAAAAAAAAAQAAAAAQAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>C:\imgui\imgui.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ImGuiDockNodeTreeInfo" Collapsed="true">
+    <Position X="45.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAEAAQAABAAA=</HashCode>
+      <FileName>C:\imgui\imgui.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ExampleAppConsole" Collapsed="true">
+    <Position X="41.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABBgACACAAKhQAAAIAAQAAghAAQAAAAAACAgQAAAA=</HashCode>
+      <FileName>C:\imgui\imgui_demo.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ExampleAppLog" Collapsed="true">
+    <Position X="45.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAAACAAAAgAAAAAAAAAAAhAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>C:\imgui\imgui_demo.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="MyDocument" Collapsed="true">
+    <Position X="41.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACBABMgBQAAAAAgQAAAABAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>C:\imgui\imgui_demo.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ExampleAppDocuments" Collapsed="true">
+    <Position X="43.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAQAAA=</HashCode>
+      <FileName>C:\imgui\imgui_demo.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ImFontBuildSrcData" Collapsed="true">
+    <Position X="40" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAQABAAAAGAAAAAAAAAAAAAAAgIAAAAAACAAAoAAA=</HashCode>
+      <FileName>C:\imgui\imgui_draw.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ImFontBuildDstData" Collapsed="true">
+    <Position X="38.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAACAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>C:\imgui\imgui_draw.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="InputTextCallback_UserData" Collapsed="true">
+    <Position X="38.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAIAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>C:\imgui\imgui_stdlib.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ImGuiPlotArrayGetterData" Collapsed="true">
+    <Position X="40" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAQAAAAAgAAAAAAA=</HashCode>
+      <FileName>C:\imgui\imgui_widgets.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ImGuiTabBarSection" Collapsed="true">
+    <Position X="47" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\imgui\imgui_widgets.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="UserEvent::Click" Collapsed="true">
+    <Position X="38.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventNotifier.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="UserEvent::Unclick" Collapsed="true">
+    <Position X="43.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventNotifier.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="ImGuiDemoMarkerCallback" Collapsed="true">
+    <Position X="38.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\imgui\imgui_demo.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="`anonymous-namespace'::MyItemColumnID" Collapsed="true">
+    <Position X="40" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAIAAABAAABAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>C:\imgui\imgui_demo.cpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ImGuiDockRequestType" Collapsed="true">
+    <Position X="38.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIBAAAAAAEAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>C:\imgui\imgui.cpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Var" Collapsed="true">
+    <Position X="41.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAgAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Coordinate.h</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

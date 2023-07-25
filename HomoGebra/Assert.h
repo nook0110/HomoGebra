@@ -3,30 +3,68 @@
 #include <source_location>
 #include <stdexcept>
 
+namespace AssertSettings
+{
+constexpr auto kHardFailDebug = true;
+constexpr auto kAssertAsWarning = true;
+// namespace AssertSettings
+
 #if _DEBUG
 constexpr auto kDebug = true;
 #else
 constexpr auto kDebug = false;
 #endif
+}  // namespace AssertSettings
+
+template <class Assertion, class Message>
+  requires AssertSettings::kDebug
+void Assert(Assertion&& assertion, Message&& message, std::ostream& out,
+            const std::source_location location);
 
 template <class Assertion, class Message = std::string_view>
+  requires AssertSettings::kDebug
 inline void Expect(
     Assertion&& assertion, Message&& message = {},
     std::ostream& out = std::cerr,
     const std::source_location location = std::source_location::current())
 {
-  if (!assertion)
+  if constexpr (AssertSettings::kHardFailDebug)
+    Assert(assertion, message, out, std::move(location));
+  else
   {
-    out << "WARNING: file: " << location.file_name() << '(' << location.line()
-        << ':' << location.column() << ") `" << location.function_name()
-        << "`:\n"
-        << "Assertion failed with message: " << message << '\n';
-    std::cout << "Continue executing... \n";
+    if (!assertion)
+    {
+      out << "WARNING: file: " << location.file_name() << '(' << location.line()
+          << ':' << location.column() << ") `" << location.function_name()
+          << "`:\n"
+          << "Assertion failed with message: " << message << '\n';
+      std::cout << "Continue executing... \n";
+    }
   }
 }
 
 template <class Assertion, class Message = std::string_view>
-  requires kDebug
+  requires(!AssertSettings::kDebug)
+inline void Expect(
+    Assertion&& assertion, Message&& message = {},
+    std::ostream& out = std::cerr,
+    const std::source_location location = std::source_location::current())
+{
+  if constexpr (AssertSettings::kAssertAsWarning)
+  {
+    if (!assertion)
+    {
+      out << "WARNING: file: " << location.file_name() << '(' << location.line()
+          << ':' << location.column() << ") `" << location.function_name()
+          << "`:\n"
+          << "Assertion failed with message: " << message << '\n';
+      std::cout << "Continue executing... \n";
+    }
+  }
+}
+
+template <class Assertion, class Message = std::string_view>
+  requires AssertSettings::kDebug
 void Assert(
     Assertion&& assertion, Message&& message = {},
     std::ostream& out = std::cerr,
@@ -44,12 +82,15 @@ void Assert(
 }
 
 template <class Assertion, class Message = std::string_view>
-  requires(!kDebug)
+  requires(!AssertSettings::kDebug)
 void Assert(
     Assertion&& assertion, Message&& message = {},
     std::ostream& out = std::cerr,
     const std::source_location location = std::source_location::current())
 {
-  Expect(std::forward<Assertion>(assertion), std::forward<Message>(message),
-         out, std::move(location));
+  if constexpr (AssertSettings::kAssertAsWarning)
+  {
+    Expect(std::forward<Assertion>(assertion), std::forward<Message>(message),
+           out, std::move(location));
+  }
 }
