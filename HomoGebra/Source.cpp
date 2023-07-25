@@ -24,7 +24,7 @@ int main()
     return 1;
   }
 
-  window.setFramerateLimit(60);
+  // window.setFramerateLimit(60);
   ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
   Plane plane;
