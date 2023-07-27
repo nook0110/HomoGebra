@@ -7,7 +7,6 @@ namespace AssertSettings
 {
 constexpr auto kHardFailDebug = true;
 constexpr auto kAssertAsWarning = true;
-// namespace AssertSettings
 
 #if _DEBUG
 constexpr auto kDebug = true;

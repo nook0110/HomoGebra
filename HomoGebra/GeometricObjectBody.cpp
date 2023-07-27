@@ -334,7 +334,7 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
   const sf::FloatRect rendering_region{corner, render_region_size};
 
   // Calculate amount of steps needed and their size
-  const size_t steps = std::max(target.getSize().x, target.getSize().y);
+  const size_t steps = std::max(target.getSize().x, target.getSize().y) / 2;
   const auto step_size = render_region_size / static_cast<float>(steps);
 
   using Line = std::vector<sf::Vertex>;
@@ -433,9 +433,11 @@ SolveQuadraticEquation(const Complex& quadratic_coefficient,
       linear_coefficient * linear_coefficient -
       Complex{4} * quadratic_coefficient * constant_coefficient;
 
-  const auto first_root = (-linear_coefficient + sqrt(discriminant)) /
+  const auto discriminant_root = sqrt(discriminant);
+
+  const auto first_root = (-linear_coefficient + discriminant_root) /
                           (Complex{2} * quadratic_coefficient);
-  const auto second_root = (-linear_coefficient - sqrt(discriminant)) /
+  const auto second_root = (-linear_coefficient - discriminant_root) /
                            (Complex{2} * quadratic_coefficient);
 
   return {first_root, second_root};
