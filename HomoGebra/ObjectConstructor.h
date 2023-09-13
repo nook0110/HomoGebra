@@ -244,9 +244,16 @@ template <class Arg>
 void ObjectConstructor<First, Rest...>::SetArgument(Arg&& arg)
 {
   if (!(Wrapper<First, sizeof...(Rest)>::IsSet()))
+  {
     Wrapper<First, sizeof...(Rest)>::SetArgument(std::forward<Arg>(arg));
+  }
   else
-    ObjectConstructor<Rest...>::SetArgument(std::forward<Arg>(arg));
+  {
+    if constexpr (HasSetArgument<ObjectConstructor<Rest...>, Arg>)
+      ObjectConstructor<Rest...>::SetArgument(std::forward<Arg>(arg));
+    else
+      assert(false);
+  }
 }
 
 template <class First, class... Rest>
@@ -254,7 +261,10 @@ template <class Arg>
   requires(!HasSetArgument<Wrapper<First, sizeof...(Rest)>, Arg>)
 void ObjectConstructor<First, Rest...>::SetArgument(Arg&& arg)
 {
-  ObjectConstructor<Rest...>::SetArgument(std::forward<Arg>(arg));
+  if constexpr (HasSetArgument<ObjectConstructor<Rest...>, Arg>)
+    ObjectConstructor<Rest...>::SetArgument(std::forward<Arg>(arg));
+  else
+    assert(false);
 }
 
 template <class First>

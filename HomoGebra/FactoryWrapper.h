@@ -66,7 +66,7 @@ class FactoryWrapper
  * \see Gui::Constructor::ObjectSelector
  */
 template <class ObjectType>
-class ObjectSelectorWrapper
+class ObjectSelectorWrapper final
     : public Gui::Constructor::ObjectSelector<ObjectType>
 {
  public:
@@ -76,7 +76,7 @@ class ObjectSelectorWrapper
    * \param plane Plane.
    */
   explicit ObjectSelectorWrapper(Plane& plane)
-      : Gui::Constructor::ObjectSelector(plane)
+      : Gui::Constructor::ObjectSelector<ObjectType>(plane)
   {}
 
   /**

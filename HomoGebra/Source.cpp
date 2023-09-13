@@ -42,6 +42,23 @@ int main()
   equation.pair_products = {0, 0, 10};
   conic_factory.OnPlane(equation);
 
+  auto line_by_two_points =
+      std::make_unique<LineByTwoPoints>(plane, plane, plane);
+
+  Gui::WindowHandler window_handler;
+
+  auto selector =
+      std::make_unique<Gui::Constructor::ObjectSelector<Point>>(plane);
+
+  auto editor = std::make_unique<Gui::ObjectMenu>(plane);
+
+  auto selector_window =
+      std::make_unique<Gui::Window>("Hello", std::move(selector));
+  auto editor_window = std::make_unique<Gui::Window>("Test", std::move(editor));
+
+  window_handler.AddWindow(std::move(selector_window));
+  window_handler.AddWindow(std::move(editor_window));
+
   while (window.isOpen())
   {
     sf::Event event{};
@@ -65,6 +82,8 @@ int main()
     Gui::Global::Update(window);
 
     plane.Update(window);
+
+    window_handler.Construct();
 
     window.draw(plane);
 
