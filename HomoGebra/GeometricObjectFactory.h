@@ -1,29 +1,12 @@
 #pragma once
+#include "Assert.h"
 #include "GeometricObject.h"
 #include "Plane.h"
 
-/**
- * \brief Class that constructs points.
- *
- * \author nook0110
- *
- * \version 1.0
- *
- * \date February 2023
- *
- * \details Class constructs points and places them into the plane
- * automatically. It also constructs dependencies between objects. \see
- * Construction
- */
-class PointFactory
+class PointOnPlaneFactory
 {
  public:
-  /**
-   * \brief Construct a factory from the plane.
-   *
-   * \param plane Instance where to place objects.
-   */
-  explicit PointFactory(Plane& plane);
+  explicit PointOnPlaneFactory(Plane* plane) : plane_(plane) { Assert(plane); }
 
   /**
    * \brief Constructs a point with given coordinates.
@@ -32,7 +15,18 @@ class PointFactory
    *
    * \return Pointer to a constructed point.
    */
-  Point* OnPlane(PointEquation equation);
+  Point* operator()(PointEquation equation) const;
+
+ private:
+  Plane* plane_{};
+};
+
+struct PointProjectionFactory
+{
+  explicit PointProjectionFactory(Plane* plane) : plane_(plane)
+  {
+    Assert(plane);
+  }
 
   /**
    * \brief Constructs point on a plane.
@@ -42,37 +36,15 @@ class PointFactory
    *
    * \return Pointer to a constructed point.
    */
-  Point* Projection(Point* from, Line* to);
+  Point* operator()(Point* from, Line* to) const;
 
  private:
-  /**
-   * Member data.
-   */
-  Plane& plane_;  //!< Plane to add objects.
+  Plane* plane_{};
 };
 
-/**
- * \brief Class that constructs lines.
- *
- * \author nook0110
- *
- * \version 1.0
- *
- * \date February 2023
- *
- * \details Class constructs lines and places them into the plane automatically.
- * It also constructs dependencies between objects.
- * \see Construction
- */
-class LineFactory
+struct LineOnPlaneFactory
 {
- public:
-  /**
-   * \brief Construct a factory from the plane.
-   *
-   * \param plane Instance where to place objects.
-   */
-  explicit LineFactory(Plane& plane);
+  explicit LineOnPlaneFactory(Plane* plane) : plane_(plane) { Assert(plane); }
 
   /**
    * \brief Constructs a line with given equation.
@@ -81,48 +53,36 @@ class LineFactory
    *
    * \return Pointer to a constructed line.
    */
-  Line* OnPlane(LineEquation equation);
+  Line* operator()(LineEquation equation) const;
+
+ private:
+  Plane* plane_{};
+};
+
+struct LineByTwoPointsFactory
+{
+  explicit LineByTwoPointsFactory(Plane* plane) : plane_(plane)
+  {
+    Assert(plane);
+  }
 
   /**
    * \brief Constructs line through two given points.
    *
    * \param first First point to go through.
-   *
    * \param second Second point to go through.
    *
    * \return Pointer to a constructed line.
    */
-  Line* ByTwoPoints(Point* first, Point* second);
+  Line* operator()(Point* first, Point* second) const;
 
  private:
-  /**
-   * Member data.
-   */
-  Plane& plane_;  //!< Plane to add objects.
+  Plane* plane_{};
 };
 
-/**
- * \brief Class that constructs conics.
- *
- * \author nook0110
- *
- * \version 1.0
- *
- * \date February 2023
- *
- * \details Class constructs conics and places them into the plane
- * automatically. It also constructs dependencies between objects. \see
- * Construction
- */
-class ConicFactory
+struct ConicOnPlaneFactory
 {
- public:
-  /**
-   * \brief Construct a factory from the plane.
-   *
-   * \param plane Instance where to place objects.
-   */
-  explicit ConicFactory(Plane& plane);
+  explicit ConicOnPlaneFactory(Plane* plane) : plane_(plane) { Assert(plane); }
 
   /**
    * \brief Constructs a conic with given equation.
@@ -131,24 +91,8 @@ class ConicFactory
    *
    * \return Pointer to a constructed conic.
    */
-  Conic* OnPlane(ConicEquation equation);
-
-  /**
-   * \brief Constructs a conic through five given points.
-   *
-   * \param first First point to go through.
-   * \param second Second point to go through.
-   * \param third Third point to go through.
-   * \param fourth Fourth point to go through.
-   * \param fifth Fifth point to go through.
-   * \return Reference to a constructed conic.
-   */
-  Conic* ByFivePoints(Point* first, Point* second, Point* third, Point* fourth,
-                      Point* fifth);
+  Conic* operator()(ConicEquation equation) const;
 
  private:
-  /**
-   * Member data.
-   */
-  Plane& plane_;  //!< Plane to add objects.
+  Plane* plane_{};
 };

@@ -17,13 +17,13 @@ constexpr auto kDebug = false;
 
 template <class Assertion, class Message>
   requires AssertSettings::kDebug
-void Assert(Assertion&& assertion, Message&& message, std::ostream& out,
-            const std::source_location location);
+void Assert(const Assertion& assertion, const Message& message,
+            std::ostream& out, std::source_location location);
 
 template <class Assertion, class Message = std::string_view>
   requires AssertSettings::kDebug
-inline void Expect(
-    Assertion&& assertion, Message&& message = {},
+void Expect(
+    const Assertion& assertion, const Message& message = {},
     std::ostream& out = std::cerr,
     const std::source_location location = std::source_location::current())
 {
@@ -44,8 +44,8 @@ inline void Expect(
 
 template <class Assertion, class Message = std::string_view>
   requires(!AssertSettings::kDebug)
-inline void Expect(
-    Assertion&& assertion, Message&& message = {},
+void Expect(
+    const Assertion& assertion, const Message& message = {},
     std::ostream& out = std::cerr,
     const std::source_location location = std::source_location::current())
 {
@@ -65,7 +65,7 @@ inline void Expect(
 template <class Assertion, class Message = std::string_view>
   requires AssertSettings::kDebug
 void Assert(
-    Assertion&& assertion, Message&& message = {},
+    const Assertion& assertion, const Message& message = {},
     std::ostream& out = std::cerr,
     const std::source_location location = std::source_location::current())
 {
@@ -83,13 +83,12 @@ void Assert(
 template <class Assertion, class Message = std::string_view>
   requires(!AssertSettings::kDebug)
 void Assert(
-    Assertion&& assertion, Message&& message = {},
+    const Assertion& assertion, const Message& message = {},
     std::ostream& out = std::cerr,
     const std::source_location location = std::source_location::current())
 {
   if constexpr (AssertSettings::kAssertAsWarning)
   {
-    Expect(std::forward<Assertion>(assertion), std::forward<Message>(message),
-           out, std::move(location));
+    Expect(assertion, message, out, std::move(location));
   }
 }

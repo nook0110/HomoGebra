@@ -47,12 +47,6 @@
     <Filter Include="Sources\Matrix">
       <UniqueIdentifier>{4cb6716f-b571-43b7-84c3-45aed2d2349c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headers\GUI\Creation">
-      <UniqueIdentifier>{535e88cb-2d34-4ba4-828f-8c5c1c56a161}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\GUI\Creation">
-      <UniqueIdentifier>{94ba7c3e-f35c-4d4c-aa68-a38ad571f931}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Headers\NameGen">
       <UniqueIdentifier>{d0e489cd-542b-4478-b4a0-7e5b70cebaa1}</UniqueIdentifier>
     </Filter>
@@ -64,6 +58,12 @@
     </Filter>
     <Filter Include="Sources\Observer">
       <UniqueIdentifier>{dce818d7-fb40-4255-81ad-6d277ded8abb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\GUI\Button">
+      <UniqueIdentifier>{535e88cb-2d34-4ba4-828f-8c5c1c56a161}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\GUI\Button">
+      <UniqueIdentifier>{94ba7c3e-f35c-4d4c-aa68-a38ad571f931}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -100,7 +100,7 @@
     <ClCompile Include="GeometricObjectImplementation.cpp">
       <Filter>Sources\GeomObject</Filter>
     </ClCompile>
-    <ClCompile Include="WindowHandler.cpp">
+    <ClCompile Include="Gui.cpp">
       <Filter>Sources\GUI</Filter>
     </ClCompile>
     <ClCompile Include="PlaneImplementation.cpp">
@@ -139,9 +139,6 @@
     <ClCompile Include="Observer.cpp">
       <Filter>Sources\Observer</Filter>
     </ClCompile>
-    <ClCompile Include="Widget.cpp">
-      <Filter>Sources\GUI</Filter>
-    </ClCompile>
     <ClCompile Include="EventNotifier.cpp">
       <Filter>Sources\Observer</Filter>
     </ClCompile>
@@ -152,6 +149,15 @@
       <Filter>Sources\Equation</Filter>
     </ClCompile>
     <ClCompile Include="HomoHebraWindow.cpp" />
+    <ClCompile Include="ButtonBody.cpp">
+      <Filter>Sources\GUI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonElement.cpp">
+      <Filter>Sources\GUI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonElementBody.cpp">
+      <Filter>Sources\GUI\Button</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeometricObject.h">
@@ -166,7 +172,7 @@
     <ClInclude Include="GeometricObjectImplementation.h">
       <Filter>Headers\GeomObject</Filter>
     </ClInclude>
-    <ClInclude Include="WindowHandler.h">
+    <ClInclude Include="Gui.h">
       <Filter>Headers\GUI</Filter>
     </ClInclude>
     <ClInclude Include="Plane.h">
@@ -208,9 +214,6 @@
     <ClInclude Include="Observer.h">
       <Filter>Headers\Observer</Filter>
     </ClInclude>
-    <ClInclude Include="Widget.h">
-      <Filter>Headers\GUI</Filter>
-    </ClInclude>
     <ClInclude Include="EventNotifier.h">
       <Filter>Headers\Observer</Filter>
     </ClInclude>
@@ -220,17 +223,26 @@
     <ClInclude Include="Assert.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectConstructor.h">
-      <Filter>Headers\GUI\Creation</Filter>
+    <ClInclude Include="Button.h">
+      <Filter>Headers\GUI\Button</Filter>
     </ClInclude>
-    <ClInclude Include="FactoryWrapper.h">
-      <Filter>Headers\GUI\Creation</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjectConstructionImplementations.h">
-      <Filter>Headers\GUI\Creation</Filter>
+    <ClInclude Include="ButtonsImplementations.h">
+      <Filter>Headers\GUI\Button</Filter>
     </ClInclude>
     <ClInclude Include="HomoGebraWindow.h">
       <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonBody.h">
+      <Filter>Headers\GUI\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonElement.h">
+      <Filter>Headers\GUI\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonElementBody.h">
+      <Filter>Headers\GUI\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiUtilities.h">
+      <Filter>Headers\GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

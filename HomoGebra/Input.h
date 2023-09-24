@@ -1,5 +1,4 @@
 #pragma once
-#include <SFML/Graphics.hpp>
 #include <Thor/Input.hpp>
 
 #include "EventNotifier.h"
@@ -17,7 +16,7 @@
  * \date April 2023
  */
 template <class GeometricObjectType>
-class NearbyObjectGetter : public EventListener
+class NearbyObjectGetter final : public EventListener
 {
  public:
   /**
@@ -26,7 +25,7 @@ class NearbyObjectGetter : public EventListener
    * \param plane Plane, where the object is located.
    * \param last_object Last object that user clicked on.
    */
-  explicit NearbyObjectGetter(Plane& plane,
+  explicit NearbyObjectGetter(Plane* plane,
                               GeometricObjectType* last_object = nullptr);
 
   /**

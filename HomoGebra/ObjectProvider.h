@@ -18,7 +18,7 @@ class ObjectProvider
    *
    * \param plane Instance where to place objects.
    */
-  explicit ObjectProvider(Plane& plane);
+  explicit ObjectProvider(Plane* plane);
 
   /**
    * \brief Gets a nearest object.
@@ -33,11 +33,11 @@ class ObjectProvider
   template <class GeometricObjectType>
   GeometricObjectType* GetNearestObject(
       const sf::Vector2f& position,
-      const float max_distance = std::numeric_limits<float>::max());
+      float max_distance = std::numeric_limits<float>::max());
 
  private:
   /**
    * Member data.
    */
-  Plane& plane_;  //!< Plane to add objects.
+  Plane* plane_;  //!< Plane to add objects.
 };

@@ -1,10 +1,8 @@
-#include "FactoryWrapper.h"
+#include "ButtonsImplementations.h"
 #include "GeometricObject.h"
 #include "GeometricObjectFactory.h"
-#include "ObjectConstructionImplementations.h"
-#include "ObjectConstructor.h"
+#include "Gui.h"
 #include "SFML/Graphics.hpp"
-#include "WindowHandler.h"
 #include "imgui-SFML.h"
 #include "imgui.h"
 
@@ -27,37 +25,19 @@ int main()
   window.setFramerateLimit(60);
   ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-  Plane plane;
+  auto plane = std::make_unique<Plane>();
 
-  PointFactory point_factory(plane);
-  auto first =
-      point_factory.OnPlane(PointEquation{HomogeneousCoordinate{100, 100}});
-  auto second =
-      point_factory.OnPlane(PointEquation{HomogeneousCoordinate{300, 300}});
-
-  ConicFactory conic_factory(plane);
+  auto first = PointOnPlaneFactory{plane.get()}(
+      PointEquation{HomogeneousCoordinate{100, 100}});
+  auto second = PointOnPlaneFactory{plane.get()}(
+      PointEquation{HomogeneousCoordinate{300, 300}});
 
   ConicEquation equation;
   equation.squares = {1, 1, -10000};
   equation.pair_products = {0, 0, 10};
-  conic_factory.OnPlane(equation);
+  ConicOnPlaneFactory{plane.get()}(equation);
 
-  auto line_by_two_points =
-      std::make_unique<LineByTwoPoints>(plane, plane, plane);
-
-  Gui::WindowHandler window_handler;
-
-  auto selector =
-      std::make_unique<Gui::Constructor::ObjectSelector<Point>>(plane);
-
-  auto editor = std::make_unique<Gui::ObjectMenu>(plane);
-
-  auto selector_window =
-      std::make_unique<Gui::Window>("Hello", std::move(selector));
-  auto editor_window = std::make_unique<Gui::Window>("Test", std::move(editor));
-
-  window_handler.AddWindow(std::move(selector_window));
-  window_handler.AddWindow(std::move(editor_window));
+  LineByTwoPointButton line_by_two_point_button{plane.get()};
 
   while (window.isOpen())
   {
@@ -74,18 +54,17 @@ int main()
         break;
       }
 
-      plane.Update(event);
+      plane->Update(event);
     }
-
     window.clear(sf::Color::White);
 
     Gui::Global::Update(window);
 
-    plane.Update(window);
+    plane->Update(window);
 
-    window_handler.Construct();
+    window.draw(*plane);
 
-    window.draw(plane);
+    line_by_two_point_button.Draw();
 
     Gui::Global::Render(window);
 

@@ -1,3 +1,4 @@
+#include "../HomoGebra/Assert.h"
 #include "../HomoGebra/Complex.cpp"
 #include "../HomoGebra/Complex.h"
 #include "../HomoGebra/Coordinate.cpp"  // NOLINT(bugprone-suspicious-include)

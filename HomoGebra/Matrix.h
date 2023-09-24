@@ -25,7 +25,7 @@ class SquaredMatrix
    *
    * \param size Size of matrix
    */
-  explicit SquaredMatrix(const size_t size);
+  explicit SquaredMatrix(size_t size);
 
   /**
    * \brief Constructor that initializes all elements in matrix and its
@@ -110,7 +110,7 @@ class SquaredMatrix
    *
    * \return Row of matrix
    */
-  [[nodiscard]] Row& operator[](const size_t row);
+  [[nodiscard]] Row& operator[](size_t row);
 
   /**
    * \brief operator to get row of matrix.
@@ -119,7 +119,7 @@ class SquaredMatrix
    *
    * \return Row of matrix
    */
-  [[nodiscard]] const Row& operator[](const size_t row) const;
+  [[nodiscard]] const Row& operator[](size_t row) const;
 
   /**
    * \brief Return iterator to the beginning of rows

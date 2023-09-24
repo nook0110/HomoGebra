@@ -154,6 +154,9 @@
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_stdlib.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="ButtonBody.cpp" />
+    <ClCompile Include="ButtonElement.cpp" />
+    <ClCompile Include="ButtonElementBody.cpp" />
     <ClCompile Include="Complex.cpp" />
     <ClCompile Include="Construction.cpp" />
     <ClCompile Include="Coordinate.cpp" />
@@ -165,7 +168,7 @@
     <ClCompile Include="GeometricObjectImplementation.cpp" />
     <ClCompile Include="HomoHebraWindow.cpp" />
     <ClCompile Include="ObjectConstruction.cpp" />
-    <ClCompile Include="WindowHandler.cpp" />
+    <ClCompile Include="Gui.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="NameGenerator.cpp" />
@@ -175,25 +178,27 @@
     <ClCompile Include="ObjectProvider.cpp" />
     <ClCompile Include="PlaneImplementation.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Widget.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assert.h" />
+    <ClInclude Include="ButtonBody.h" />
+    <ClInclude Include="ButtonElement.h" />
+    <ClInclude Include="ButtonElementBody.h" />
+    <ClInclude Include="GuiUtilities.h" />
     <ClInclude Include="HomoGebraWindow.h" />
-    <ClInclude Include="ObjectConstructionImplementations.h" />
-    <ClInclude Include="ObjectConstructor.h" />
+    <ClInclude Include="ButtonsImplementations.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Complex.h" />
     <ClInclude Include="Construction.h" />
     <ClInclude Include="Coordinate.h" />
     <ClInclude Include="Dictionary.h" />
     <ClInclude Include="EventNotifier.h" />
     <ClInclude Include="ObjectConstruction.h" />
-    <ClInclude Include="Widget.h" />
     <ClInclude Include="Equation.h" />
     <ClInclude Include="GeometricObject.h" />
     <ClInclude Include="GeometricObjectBody.h" />
     <ClInclude Include="GeometricObjectFactory.h" />
-    <ClInclude Include="WindowHandler.h" />
+    <ClInclude Include="Gui.h" />
     <ClInclude Include="GeometricObjectImplementation.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Matrix.h" />
@@ -203,7 +208,6 @@
     <ClInclude Include="PlaneBody.h" />
     <ClInclude Include="ObjectProvider.h" />
     <ClInclude Include="PlaneImplementation.h" />
-    <ClInclude Include="FactoryWrapper.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

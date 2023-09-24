@@ -151,7 +151,7 @@ class PointBody final : public ObjectBody
    * \param equation Equation of the point.
    * \param size Size of the point.
    */
-  void Update(const PointEquation& equation, const float size = 0);
+  void Update(const PointEquation& equation, float size = 0);
 
   /**
    * \brief Draw the point to a render target.

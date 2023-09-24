@@ -3,9 +3,7 @@
 #include "Matrix.h"
 #include "ObjectConstruction.h"
 
-PointFactory::PointFactory(Plane& plane) : plane_(plane) {}
-
-Point* PointFactory::OnPlane(PointEquation equation)
+Point* PointOnPlaneFactory::operator()(PointEquation equation) const
 {
   // Create construction
   auto construction = std::make_unique<PointOnPlane>(std::move(equation));
@@ -13,9 +11,9 @@ Point* PointFactory::OnPlane(PointEquation equation)
   const auto point = construction->GetPoint();
 
   // Add construction to plane
-  plane_.AddConstruction(std::move(construction));
+  plane_->AddConstruction(std::move(construction));
 
-  const auto& name_generator = plane_.GetNameGenerator();
+  const auto& name_generator = plane_->GetNameGenerator();
 
   // Rename point
   point->SetName(static_cast<std::string>(name_generator.GenerateName()));
@@ -24,9 +22,7 @@ Point* PointFactory::OnPlane(PointEquation equation)
   return point;
 }
 
-LineFactory::LineFactory(Plane& plane) : plane_(plane) {}
-
-Line* LineFactory::OnPlane(LineEquation equation)
+Line* LineOnPlaneFactory::operator()(LineEquation equation) const
 {
   // Create construction
   auto construction = std::make_unique<LineOnPlane>(std::move(equation));
@@ -34,9 +30,9 @@ Line* LineFactory::OnPlane(LineEquation equation)
   const auto line = construction->GetLine();
 
   // Add construction to plane
-  plane_.AddConstruction(std::move(construction));
+  plane_->AddConstruction(std::move(construction));
 
-  const auto& name_generator = plane_.GetNameGenerator();
+  const auto& name_generator = plane_->GetNameGenerator();
 
   // Rename line
   line->SetName(static_cast<std::string>(name_generator.GenerateName()));
@@ -45,7 +41,7 @@ Line* LineFactory::OnPlane(LineEquation equation)
   return line;
 }
 
-Line* LineFactory::ByTwoPoints(Point* first, Point* second)
+Line* LineByTwoPointsFactory::operator()(Point* first, Point* second) const
 {
   // Create construction
   auto construction = std::make_unique<class ByTwoPoints>(first, second);
@@ -53,9 +49,9 @@ Line* LineFactory::ByTwoPoints(Point* first, Point* second)
   const auto line = construction->GetLine();
 
   // Add line to plane
-  plane_.AddConstruction(std::move(construction));
+  plane_->AddConstruction(std::move(construction));
 
-  const auto& name_generator = plane_.GetNameGenerator();
+  const auto& name_generator = plane_->GetNameGenerator();
 
   line->SetName(static_cast<std::string>(
       name_generator.GenerateName(first->GetName() + second->GetName())));
@@ -64,9 +60,7 @@ Line* LineFactory::ByTwoPoints(Point* first, Point* second)
   return line;
 }
 
-ConicFactory::ConicFactory(Plane& plane) : plane_(plane) {}
-
-Conic* ConicFactory::OnPlane(ConicEquation equation)
+Conic* ConicOnPlaneFactory::operator()(ConicEquation equation) const
 {
   // Create construction
   auto construction = std::make_unique<ConicOnPlane>(std::move(equation));
@@ -74,9 +68,9 @@ Conic* ConicFactory::OnPlane(ConicEquation equation)
   const auto conic = construction->GetConic();
 
   // Add construction to plane
-  plane_.AddConstruction(std::move(construction));
+  plane_->AddConstruction(std::move(construction));
 
-  const auto& name_generator = plane_.GetNameGenerator();
+  const auto& name_generator = plane_->GetNameGenerator();
 
   // Rename conic
   conic->SetName(static_cast<std::string>(name_generator.GenerateName()));

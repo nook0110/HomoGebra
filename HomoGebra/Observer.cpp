@@ -1,7 +1,5 @@
 #include "Observer.h"
 
-using namespace ObjectEvent;
-
 void ObservableGeometricObject::Attach(GeometricObjectObserver* observer)
 {
   // Add observer to list

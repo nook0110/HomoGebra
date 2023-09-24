@@ -2,14 +2,14 @@
 
 #include "GeometricObject.h"
 
-ObjectProvider::ObjectProvider(Plane& plane) : plane_(plane) {}
+ObjectProvider::ObjectProvider(Plane* plane) : plane_(plane) {}
 
 template <class GeometricObjectType>
 GeometricObjectType* ObjectProvider::GetNearestObject(
     const sf::Vector2f& position, const float max_distance)
 {
   // Get all GeometricObjectType objects
-  auto objects = plane_.GetObjects<GeometricObjectType>();
+  auto objects = plane_->GetObjects<GeometricObjectType>();
 
   GeometricObjectType* nearest_object{nullptr};
   float current_distance = std::numeric_limits<float>::max();
@@ -43,10 +43,10 @@ GeometricObjectType* ObjectProvider::GetNearestObject(
 }
 
 template GeometricObject* ObjectProvider::GetNearestObject(
-    const sf::Vector2f& position, const float max_distance);
+    const sf::Vector2f& position, float max_distance);
 template Point* ObjectProvider::GetNearestObject(const sf::Vector2f& position,
-                                                 const float max_distance);
+                                                 float max_distance);
 template Line* ObjectProvider::GetNearestObject(const sf::Vector2f& position,
-                                                const float max_distance);
+                                                float max_distance);
 template Conic* ObjectProvider::GetNearestObject(const sf::Vector2f& position,
-                                                 const float max_distance);
+                                                 float max_distance);
