@@ -244,6 +244,9 @@
     <ClInclude Include="GuiUtilities.h">
       <Filter>Headers\GUI</Filter>
     </ClInclude>
+    <ClInclude Include="DistanceUtilities.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

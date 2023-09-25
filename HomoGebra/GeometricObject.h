@@ -70,10 +70,8 @@ class GeometricObject : public sf::Drawable
    *
    * \return Distance from object to position.
    */
-  [[nodiscard]] virtual float GetDistance(sf::Vector2f position) const
-  {
-    return 0;
-  }
+  [[nodiscard]] virtual Distance GetDistance(
+      const sf::Vector2f& position) const = 0;
 
   /**
    * \brief Attaches observer to this object.
@@ -142,6 +140,9 @@ class Point final : public GeometricObject
    * \return Equation of point.
    */
   [[nodiscard]] const PointEquation& GetEquation() const;
+
+  [[nodiscard]] Distance GetDistance(
+      const sf::Vector2f& position) const override;
 
   void Attach(GeometricObjectObserver* observer) override;
 
@@ -296,6 +297,9 @@ class Line final : public GeometricObject
    */
   void Attach(GeometricObjectObserver* observer) override;
 
+  [[nodiscard]] Distance GetDistance(
+      const sf::Vector2f& position) const override;
+
  private:
   /**
    * \brief Notify observers about event.
@@ -386,6 +390,9 @@ class Conic final : public GeometricObject
    * \param observer Observer to attach.
    */
   void Attach(GeometricObjectObserver* observer) override;
+
+  [[nodiscard]] Distance GetDistance(
+      const sf::Vector2f& position) const override;
 
  private:
   /**

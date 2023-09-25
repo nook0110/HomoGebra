@@ -174,6 +174,16 @@ void PointBody::DrawArrow(sf::RenderTarget& target,
   target.draw(arrow, states);
 }
 
+Distance PointBody::GetDistance(const sf::Vector2f& position) const
+{
+  if (!position_) return std::numeric_limits<float>::max();
+
+  if (position_.value().is_at_infinity)
+    return std::numeric_limits<float>::max();
+
+  return Length(position_.value().position - position);
+}
+
 std::optional<PointBody::ProjectivePosition> PointBody::CalculatePosition(
     const PointEquation& equation)
 {
@@ -274,6 +284,15 @@ void LineBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
   target.draw(line_vertices.data(), 2, sf::Lines);
 }
 
+Distance LineBody::GetDistance(const sf::Vector2f& position) const
+{
+  if (!equation_) return std::numeric_limits<Distance>::max();
+
+  const auto& [a, b, c] = equation_.value();
+
+  return DistanceToLine(position, a, b, c);
+}
+
 float LineBody::Equation::Solve(const Var var, const float another) const
 {
   switch (var)
@@ -286,10 +305,14 @@ float LineBody::Equation::Solve(const Var var, const float another) const
     default:
       Assert(false, "Invalid variable");
   }
+  return float{};
 }
 
 void ConicBody::Update(const ConicEquation& equation)
 {
+  const auto normalizer = Complex{1} / equation.squares.front();
+
+  auto [squares, pair_product, linears, constant] = Equation{};
   /*
    A*x^2 + B*y^2 + C*z^2 +
    D*yz + E*xz + F*xy = 0
@@ -303,27 +326,44 @@ void ConicBody::Update(const ConicEquation& equation)
    */
 
   // A*x^2 + B*y^2 + || squares
-  equation_.squares[static_cast<size_t>(Var::kX)] =
-      equation.squares[static_cast<size_t>(Var::kX)];
-  equation_.squares[static_cast<size_t>(Var::kY)] =
-      equation.squares[static_cast<size_t>(Var::kY)];
+
+  const auto normalized_square_x =
+      equation.squares[static_cast<size_t>(Var::kX)] * normalizer;
+  if (!normalized_square_x.IsReal())
+  {
+    equation_ = std::nullopt;
+    return;
+  }
+
+  squares[static_cast<size_t>(Var::kX)] =
+      static_cast<long double>(normalized_square_x);
+  squares[static_cast<size_t>(Var::kY)] = static_cast<long double>(
+      equation.squares[static_cast<size_t>(Var::kY)] * normalizer);
 
   // F*xy +          || pair product
-  equation_.pair_product = equation.pair_products[static_cast<size_t>(Var::kZ)];
+  pair_product = static_cast<long double>(
+      equation.pair_products[static_cast<size_t>(Var::kZ)] * normalizer);
 
   // E*x*1 + D*y*1 + || linears
-  equation_.linears[static_cast<size_t>(Var::kX)] =
-      equation.pair_products[static_cast<size_t>(Var::kY)] * Complex{1};
-  equation_.linears[static_cast<size_t>(Var::kY)] =
-      equation.pair_products[static_cast<size_t>(Var::kX)] * Complex{1};
+  linears[static_cast<size_t>(Var::kX)] = static_cast<long double>(
+      equation.pair_products[static_cast<size_t>(Var::kY)] * Complex{1} *
+      normalizer);
+  linears[static_cast<size_t>(Var::kY)] = static_cast<long double>(
+      equation.pair_products[static_cast<size_t>(Var::kX)] * Complex{1} *
+      normalizer);
 
   // C*1^2 = 0       || constant
-  equation_.constant =
-      equation.squares[static_cast<size_t>(Var::kZ)] * Complex{1} * Complex{1};
+  constant =
+      static_cast<long double>(equation.squares[static_cast<size_t>(Var::kZ)] *
+                               Complex{1} * Complex{1} * normalizer);
+
+  equation_ = Equation{squares, pair_product, linears, constant};
 }
 
 void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
+  if (!equation_) return;
+
   // Acquire render region center and size
   const auto render_region_center = target.getView().getCenter();
   const auto render_region_size = target.getView().getSize();
@@ -352,8 +392,8 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
     // Calculate roots of equation
     // Check if roots are real and add them to points_to_add
-    auto roots_x =
-        equation_.Solve(Var::kX, Complex{static_cast<long double>(pos.y)});
+    auto roots_x = equation_.value().Solve(
+        Var::kX, Complex{static_cast<long double>(pos.y)});
 
     for (size_t root_number = 0; root_number < roots_x.size(); ++root_number)
     {
@@ -373,8 +413,8 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
     // Calculate roots of equation
     // Check if roots are real and add them to points_to_add
-    auto roots_y =
-        equation_.Solve(Var::kY, Complex{static_cast<long double>(pos.x)});
+    auto roots_y = equation_.value().Solve(
+        Var::kY, Complex{static_cast<long double>(pos.x)});
 
     for (size_t root_number = 0; root_number < roots_y.size(); ++root_number)
     {
@@ -406,6 +446,11 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
   {
     target.draw(line.data(), line.size(), sf::PrimitiveType::LineStrip, states);
   }
+}
+
+Distance ConicBody::GetDistance(const sf::Vector2f& position) const
+{
+  return 0;
 }
 
 inline [[nodiscard]] std::array<std::optional<Complex>, 2>
@@ -451,9 +496,9 @@ ConicBody::Equation::Solution ConicBody::Equation::Solve(
 
   const auto quadratic_coefficient = squares[static_cast<size_t>(var)];
 
-  const auto linear_coefficient = pair_product * another;
-  const auto constant_coefficient =
-      squares[static_cast<size_t>(another_var)] * another * another + constant;
+  const auto linear_coefficient = Complex{pair_product * another};
+  const auto constant_coefficient = Complex{
+      squares[static_cast<size_t>(another_var)] * another * another + constant};
 
   return SolveQuadraticEquation(quadratic_coefficient, linear_coefficient,
                                 constant_coefficient);

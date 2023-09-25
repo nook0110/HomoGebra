@@ -63,6 +63,11 @@ const PointEquation& Point::GetEquation() const
   return implementation_.GetEquation();
 }
 
+Distance Point::GetDistance(const sf::Vector2f& position) const
+{
+  return body_.GetDistance(position);
+}
+
 void Point::Attach(GeometricObjectObserver* observer)
 {
   // Call implementation method
@@ -156,6 +161,11 @@ void Line::Attach(GeometricObjectObserver* observer)
   implementation_.Attach(observer);
 }
 
+Distance Line::GetDistance(const sf::Vector2f& position) const
+{
+  return body_.GetDistance(position);
+}
+
 template <class Event>
 void Line::Notify(const Event& event) const
 {
@@ -216,6 +226,11 @@ void Conic::Attach(GeometricObjectObserver* observer)
 {
   // Call implementation method
   implementation_.Attach(observer);
+}
+
+Distance Conic::GetDistance(const sf::Vector2f& position) const
+{
+  return body_.GetDistance(position);
 }
 
 template <class Event>

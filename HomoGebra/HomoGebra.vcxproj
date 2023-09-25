@@ -184,6 +184,7 @@
     <ClInclude Include="ButtonBody.h" />
     <ClInclude Include="ButtonElement.h" />
     <ClInclude Include="ButtonElementBody.h" />
+    <ClInclude Include="DistanceUtilities.h" />
     <ClInclude Include="GuiUtilities.h" />
     <ClInclude Include="HomoGebraWindow.h" />
     <ClInclude Include="ButtonsImplementations.h" />

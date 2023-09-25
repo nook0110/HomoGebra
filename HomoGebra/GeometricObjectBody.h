@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "DistanceUtilities.h"
 #include "GeometricObjectImplementation.h"
 #include "NameGenerator.h"
 
@@ -117,6 +118,16 @@ class ObjectBody : public sf::Drawable
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  /**
+   * \brief Gets distance from object to position.
+   *
+   * \param position Position to calculate distance.
+   *
+   * \return Distance from object to position.
+   */
+  [[nodiscard]] virtual Distance GetDistance(
+      const sf::Vector2f& position) const = 0;
+
  private:
   ObjectName text_;  //!< Name of the name.
 };
@@ -168,6 +179,8 @@ class PointBody final : public ObjectBody
    * \param states Current render states.
    */
   void DrawArrow(sf::RenderTarget& target, sf::RenderStates states) const;
+
+  Distance GetDistance(const sf::Vector2f& position) const override;
 
  private:
   /**
@@ -244,6 +257,8 @@ class LineBody final : public ObjectBody
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  Distance GetDistance(const sf::Vector2f& position) const override;
+
  private:
   /**
    * \brief Equation of a line.
@@ -317,6 +332,8 @@ class ConicBody : public ObjectBody
    */
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  Distance GetDistance(const sf::Vector2f& position) const override;
+
  private:
   /**
    * \brief Equation of a conic that lies on a real plane.
@@ -327,8 +344,8 @@ class ConicBody : public ObjectBody
     static constexpr std::array<Var, 2> kAnother = {
         Var::kY, Var::kX};  //!< Another variable of each variable.
 
-    using Solution =
-        std::array<std::optional<Complex>, 2>;  //!< Solution of the equation.
+    using Solution = std::array<std::optional<Complex>,
+                                2>;  //!< Solution of the equation.
 
     /**
      * \brief Solves the equation for variable.
@@ -340,12 +357,12 @@ class ConicBody : public ObjectBody
      */
     [[nodiscard]] Solution Solve(Var var, const Complex& another) const;
 
-    std::array<Complex, 2>
-        squares;           //!< Coefficient of the squares of the variables.
-    Complex pair_product;  //!< Coefficient of the product of the variables.
-    std::array<Complex, 2> linears;  //!< Coefficient of the variables.
-    Complex constant;                //!< Constant coefficient.
+    std::array<long double, 2>
+        squares;               //!< Coefficient of the squares of the variables.
+    long double pair_product;  //!< Coefficient of the product of the variables.
+    std::array<long double, 2> linears;  //!< Coefficient of the variables.
+    long double constant;                //!< Constant coefficient.
   };
 
-  Equation equation_;  //!< Equation of the conic.
+  std::optional<Equation> equation_;  //!< Equation of the conic.
 };
