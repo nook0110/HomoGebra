@@ -35,6 +35,23 @@ class FactoryWrapper : public Factory
   void operator()() const { Assert(false); }
 };
 
+class Deleter
+{
+ public:
+  explicit Deleter(Plane* plane) : plane_(plane) {}
+
+  void Draw() {}
+
+  void operator()() const { Assert(false); }
+
+  template <class... Args>
+  void operator()(Args&&... arguments) const
+  {}
+
+ private:
+  Plane* plane_{};
+};
+
 template ObjectSelector<GeometricObject>;
 template ObjectSelector<Point>;
 template ObjectSelector<Line>;

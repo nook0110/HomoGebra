@@ -28,6 +28,20 @@ class Plane final : public sf::Drawable
   void AddConstruction(std::unique_ptr<Construction> construction);
 
   /**
+   * \brief Deletes object from plane.
+   *
+   * \param construction Pointer to an object.
+   */
+  void DeleteConstruction(Construction* construction);
+
+  /**
+   * \brief Deletes object from plane.
+   *
+   * \param object Pointer to an object.
+   */
+  void DeleteObject(const GeometricObject* object);
+
+  /**
    * \brief Returns objects of GeometricObjectType.
    *
    * \tparam GeometricObjectType Type of geometric object to get.

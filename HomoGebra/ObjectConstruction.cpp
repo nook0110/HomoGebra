@@ -162,14 +162,18 @@ void ByTwoPoints::RecalculateEquation()
   // Set random number generator
   constexpr long double kLowerBound = -10000;
   constexpr long double kUpperBound = 10000;
-  std::uniform_real_distribution<double> unif(kLowerBound, kUpperBound);
-  std::default_random_engine re;
+  std::uniform_real_distribution<double> uniform_real_distribution(kLowerBound,
+                                                                   kUpperBound);
+  std::default_random_engine default_random_engine;
 
   // Set third row
-  std::ranges::for_each(third_row,
-                        [&unif, &re](Complex& value) {
-                          value = Complex{unif(re), unif(re)};
-                        });
+  std::ranges::for_each(
+      third_row,
+      [&uniform_real_distribution, &default_random_engine](Complex& value)
+      {
+        value = Complex{uniform_real_distribution(default_random_engine),
+                        uniform_real_distribution(default_random_engine)};
+      });
 
   // Get augmentation
   auto& augmentation = matrix.GetAugmentation();

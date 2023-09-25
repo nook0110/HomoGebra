@@ -9,6 +9,11 @@ void Plane::AddConstruction(std::unique_ptr<Construction> construction)
   implementation_.AddConstruction(std::move(construction));
 }
 
+void Plane::DeleteObject(const GeometricObject* object)
+{
+  implementation_.RemoveObject(object);
+}
+
 template <class GeometricObjectType>
 std::vector<GeometricObject*> Plane::GetObjects() const
 {

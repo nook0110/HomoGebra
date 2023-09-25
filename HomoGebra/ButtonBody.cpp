@@ -2,4 +2,4 @@
 
 #include <imgui.h>
 
-bool ButtonBody::Draw() { return ImGui::Button("Construct"); }
+bool ButtonBody::Draw() { return ImGui::Button("Apply"); }

@@ -38,6 +38,7 @@ int main()
   ConicOnPlaneFactory{plane.get()}(equation);
 
   LineByTwoPointButton line_by_two_point_button{plane.get()};
+  DeleteButton delete_button{plane.get()};
 
   while (window.isOpen())
   {
@@ -65,6 +66,7 @@ int main()
     window.draw(*plane);
 
     line_by_two_point_button.Draw();
+    delete_button.Draw();
 
     Gui::Global::Render(window);
 
