@@ -6,6 +6,8 @@
 #include "Assert.h"
 #include "Matrix.h"
 
+namespace HomoGebra
+{
 GeometricObject* ConstructionPoint::GetObject() const { return GetPoint(); }
 
 Point* ConstructionPoint::GetPoint() const
@@ -13,7 +15,7 @@ Point* ConstructionPoint::GetPoint() const
   // Return point
   return point_.get();
 }
-void ConstructionPoint::Update(const ObjectEvent::Destroyed& event)
+void ConstructionPoint::Update(const ObjectEvent::GoingToBeDestroyed& event)
 {
   // Check if event object is point that we contain
   if (event.object == GetObject())
@@ -23,10 +25,10 @@ void ConstructionPoint::Update(const ObjectEvent::Destroyed& event)
   }
 
   // Destroy the point
-  point_->Destroy();
+  point_->AlertDestruction();
 }
 
-void ConstructionPoint::Update(const ObjectEvent::Renamed& event)
+void ConstructionPoint::Update(const ObjectEvent::Renamed& renamed_event)
 {
   // Renaming has no effect on object
 }
@@ -37,7 +39,7 @@ const PointEquation& ConstructionPoint::GetEquation() const
   return point_->GetEquation();
 }
 
-void ConstructionPoint::SetEquation(PointEquation equation)
+void ConstructionPoint::SetEquation(PointEquation equation) const
 {
   // Set new equation
   point_->SetEquation(std::move(equation));
@@ -68,7 +70,7 @@ Line* ConstructionLine::GetLine() const
   return line_.get();
 }
 
-void ConstructionLine::Update(const ObjectEvent::Destroyed& event)
+void ConstructionLine::Update(const ObjectEvent::GoingToBeDestroyed& event)
 {
   // Check if event object is line that we contain
   if (event.object == GetObject())
@@ -79,7 +81,7 @@ void ConstructionLine::Update(const ObjectEvent::Destroyed& event)
   }
 
   // Destroy the line
-  line_->Destroy();
+  line_->AlertDestruction();
 }
 
 void ConstructionLine::Update(const ObjectEvent::Renamed& event) {}
@@ -90,7 +92,7 @@ const LineEquation& ConstructionLine::GetEquation() const
   return line_->GetEquation();
 }
 
-void ConstructionLine::SetEquation(const LineEquation& equation)
+void ConstructionLine::SetEquation(const LineEquation& equation) const
 {
   // Set new equation
   line_->SetEquation(equation);
@@ -112,11 +114,18 @@ ByTwoPoints::ByTwoPoints(Point* first_point, Point* second_point)
     : first_point_(first_point), second_point_(second_point)
 {
   // Attach to points
-  first_point->Attach(this);
-  second_point->Attach(this);
+  first_point_->Attach(this);
+  second_point_->Attach(this);
 
   // Recalculate equation
   RecalculateEquation();
+}
+
+ByTwoPoints::~ByTwoPoints()
+{
+  // Detach from points
+  first_point_->Detach(this);
+  second_point_->Detach(this);
 }
 
 void ByTwoPoints::RecalculateEquation()
@@ -136,7 +145,7 @@ void ByTwoPoints::RecalculateEquation()
   const auto& s_equation = second_point_->GetEquation().GetEquation();
 
   // Create matrix
-  ComplexSquaredMatrix matrix{3};
+  HomoGebra::ComplexSquaredMatrix matrix{3};
 
   // Get first row
   auto& first_row = matrix[0];
@@ -207,7 +216,7 @@ Conic* ConstructionConic::GetConic() const
   return conic_.get();
 }
 
-void ConstructionConic::Update(const ObjectEvent::Destroyed& event)
+void ConstructionConic::Update(const ObjectEvent::GoingToBeDestroyed& event)
 {
   // Check if event object is line that we are containing
   if (event.object == GetObject())
@@ -217,7 +226,7 @@ void ConstructionConic::Update(const ObjectEvent::Destroyed& event)
   }
 
   // Destroy the conic
-  conic_->Destroy();
+  conic_->AlertDestruction();
 }
 
 void ConstructionConic::Update(const ObjectEvent::Renamed& event) {}
@@ -230,7 +239,8 @@ ConicOnPlane::ConicOnPlane(ConicEquation equation)
 
 void ConicOnPlane::RecalculateEquation() { SetEquation(equation_); }
 
-void ConstructionConic::SetEquation(ConicEquation equation)
+void ConstructionConic::SetEquation(ConicEquation equation) const
 {
   conic_->SetEquation(std::move(equation));
 }
+}  // namespace HomoGebra

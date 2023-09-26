@@ -1,5 +1,7 @@
 #include "PlaneBody.h"
 
+namespace HomoGebra
+{
 void PlaneBody::draw(sf::RenderTarget& target, sf::RenderStates states) const {}
 
 void PlaneBody::Resize(const sf::Vector2f& size) { view_.setSize(size); }
@@ -31,3 +33,4 @@ void PlaneBody::UpdateZoom(const sf::Event& event)
     }
   }
 }
+}  // namespace HomoGebra

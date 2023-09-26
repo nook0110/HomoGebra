@@ -3,6 +3,8 @@
 #include <source_location>
 #include <stdexcept>
 
+namespace HomoGebra
+{
 namespace AssertSettings
 {
 constexpr auto kHardFailDebug = true;
@@ -92,3 +94,4 @@ void Assert(
     Expect(assertion, message, out, std::move(location));
   }
 }
+}  // namespace HomoGebra

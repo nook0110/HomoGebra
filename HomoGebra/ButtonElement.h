@@ -2,10 +2,14 @@
 #include "Assert.h"
 #include "ButtonElementBody.h"
 
+namespace HomoGebra
+{
 template <class GeometricObjectType>
 class ObjectSelector : public ObjectSelectorBody<GeometricObjectType>
 {
  public:
+  void Update(const PlaneEvent::ObjectRemoved& object_removed) override;
+
   explicit ObjectSelector(Plane* plane)
       : ObjectSelectorBody<GeometricObjectType>(plane)
   {}
@@ -46,7 +50,14 @@ class Deleter
 
   template <class... Args>
   void operator()(Args&&... arguments) const
-  {}
+  {
+    if ((!arguments || ...))
+    {
+      return;
+    }
+
+    (plane_->DeleteObject(arguments), ...);
+  }
 
  private:
   Plane* plane_{};
@@ -56,3 +67,4 @@ template ObjectSelector<GeometricObject>;
 template ObjectSelector<Point>;
 template ObjectSelector<Line>;
 template ObjectSelector<Conic>;
+}  // namespace HomoGebra

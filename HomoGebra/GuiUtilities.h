@@ -1,6 +1,8 @@
 #pragma once
 #include "GeometricObject.h"
 
+namespace HomoGebra
+{
 inline bool ObjectsNameGetter(void* data, int index, const char** name)
 {
   // Convert data to std::vector<GeometricObject*> pointer
@@ -18,3 +20,4 @@ inline bool ObjectsNameGetter(void* data, int index, const char** name)
 
   return true;
 }
+}  // namespace HomoGebra

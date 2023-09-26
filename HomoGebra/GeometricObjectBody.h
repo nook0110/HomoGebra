@@ -6,6 +6,8 @@
 #include "GeometricObjectImplementation.h"
 #include "NameGenerator.h"
 
+namespace HomoGebra
+{
 /**
  * \brief Name of object that you can draw.
  *
@@ -366,3 +368,4 @@ class ConicBody : public ObjectBody
 
   std::optional<Equation> equation_;  //!< Equation of the conic.
 };
+}  // namespace HomoGebra

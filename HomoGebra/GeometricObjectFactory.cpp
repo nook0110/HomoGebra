@@ -3,6 +3,8 @@
 #include "Matrix.h"
 #include "ObjectConstruction.h"
 
+namespace HomoGebra
+{
 Point* PointOnPlaneFactory::operator()(PointEquation equation) const
 {
   // Create construction
@@ -78,3 +80,4 @@ Conic* ConicOnPlaneFactory::operator()(ConicEquation equation) const
   // Return conic
   return conic;
 }
+}  // namespace HomoGebra

@@ -4,6 +4,8 @@
 #include "Observer.h"
 class GeometricObject;
 
+namespace HomoGebra
+{
 /**
  * \brief Base class for implementations of geometric objects.
  *
@@ -156,3 +158,4 @@ class ConicImplementation final : public GeometricObjectImplementation
    */
   ConicEquation equation_;  //!< Conic equation.
 };
+}  // namespace HomoGebra

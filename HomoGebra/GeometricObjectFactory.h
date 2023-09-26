@@ -3,6 +3,8 @@
 #include "GeometricObject.h"
 #include "Plane.h"
 
+namespace HomoGebra
+{
 class PointOnPlaneFactory
 {
  public:
@@ -96,3 +98,4 @@ struct ConicOnPlaneFactory
  private:
   Plane* plane_{};
 };
+}  // namespace HomoGebra

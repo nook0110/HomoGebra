@@ -3,6 +3,8 @@
 
 #include "Plane.h"
 
+namespace HomoGebra
+{
 class HomoGebraWindow final : public sf::Window
 {
  public:
@@ -14,3 +16,4 @@ class HomoGebraWindow final : public sf::Window
   void onResize() override;
   void onCreate() override;
 };
+}  // namespace HomoGebra

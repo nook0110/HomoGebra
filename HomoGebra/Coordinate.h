@@ -4,6 +4,8 @@
 
 #include "Complex.h"
 
+namespace HomoGebra
+{
 /**
  * \brief A 3x3 matrix.
  *
@@ -326,3 +328,4 @@ HomogeneousCoordinate& operator*=(HomogeneousCoordinate& coordinate,
  */
 [[nodiscard]] HomogeneousCoordinate operator*(
     Transformation transformation, const HomogeneousCoordinate& coordinate);
+}  // namespace HomoGebra

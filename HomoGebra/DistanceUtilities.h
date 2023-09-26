@@ -2,6 +2,8 @@
 #include <SFML/System/Vector2.hpp>
 #include <cmath>
 
+namespace HomoGebra
+{
 using Distance = float;
 
 inline Distance Length(const sf::Vector2f& vector)
@@ -15,3 +17,4 @@ inline Distance DistanceToLine(const sf::Vector2f& position, const float a,
   return std::abs(a * position.x + b * position.y + c) /
          (std::sqrt(a * a + b * b));
 }
+}  // namespace HomoGebra

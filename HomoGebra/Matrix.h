@@ -4,6 +4,8 @@
 
 #include "Complex.h"
 
+namespace HomoGebra
+{
 /**
  * \brief A squared matrix with augmentation.
  */
@@ -161,3 +163,4 @@ class SquaredMatrix
 
 using ComplexSquaredMatrix = SquaredMatrix<Complex>;
 using FloatSquaredMatrix = SquaredMatrix<float>;
+}  // namespace HomoGebra

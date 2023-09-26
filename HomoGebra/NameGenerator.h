@@ -3,7 +3,8 @@
 #include <string>
 
 #include "Dictionary.h"
-
+namespace HomoGebra
+{
 using ParsedNumber = std::optional<size_t>;
 
 /**
@@ -253,3 +254,4 @@ class NameGenerator
 
   NameDictionary used_names_;  //!< Dictionary of used names.
 };
+}  // namespace HomoGebra

@@ -7,6 +7,8 @@
 #include "Assert.h"
 #include "Matrix.h"
 
+namespace HomoGebra
+{
 ObjectName::ObjectName(std::string name)
 {
   // Load font
@@ -136,10 +138,11 @@ inline [[nodiscard]] std::optional<sf::Vector2f> IntersectRayWithRectangle(
   {
     Line(sf::Vector2f first_point, sf::Vector2f second_point)
     {
-      const FloatSquaredMatrix matrix({{first_point.x, first_point.y, 1},
-                                       {second_point.x, second_point.y, 1},
-                                       {1, 1, 1}},
-                                      {0, 0, 1});
+      const HomoGebra::FloatSquaredMatrix matrix(
+          {{first_point.x, first_point.y, 1},
+           {second_point.x, second_point.y, 1},
+           {1, 1, 1}},
+          {0, 0, 1});
       auto solution = matrix.GetSolution();
     }
   };
@@ -503,3 +506,4 @@ ConicBody::Equation::Solution ConicBody::Equation::Solve(
   return SolveQuadraticEquation(quadratic_coefficient, linear_coefficient,
                                 constant_coefficient);
 }
+}  // namespace HomoGebra

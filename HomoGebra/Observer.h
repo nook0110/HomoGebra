@@ -2,8 +2,78 @@
 #include <list>
 #include <string>
 
+namespace HomoGebra
+{
 class Plane;
 class GeometricObject;
+
+/**
+ * \brief Interface for observers of geometric objects.
+ *
+ * \author nook0110
+ */
+template <class Observer>
+class ObservableInterface
+{
+ public:
+  /**
+   * \brief Default destructor.
+   */
+  virtual ~ObservableInterface() = default;
+
+  /**
+   * \brief Subscribe an observer on this object.
+   *
+   * \param observer Observer to add.
+   */
+  virtual void Attach(Observer* observer) = 0;
+
+  /**
+   * \brief Unsubscribe an observer on this object.
+   *
+   * \param observer Observer to delete.
+   */
+  virtual void Detach(const Observer* observer) = 0;
+};
+
+template <class Observer>
+class Observable : public ObservableInterface<Observer>
+{
+ public:
+  /**
+   * \brief Default destructor.
+   */
+  ~Observable() override = default;
+
+  /**
+   * \brief Subscribe an observer on this object.
+   *
+   * \param observer Observer to add.
+   */
+  void Attach(Observer* observer) override;
+
+  /**
+   * \brief Unsubscribe an observer on this object.
+   *
+   * \param observer Observer to delete.
+   */
+  void Detach(const Observer* observer) override;
+
+  /**
+   * \brief Notify all observers about event.
+   *
+   * \tparam Event Type of event.
+   * \param event Event to notify about.
+   */
+  template <class Event>
+  void Notify(const Event& event) const;
+
+ private:
+  /**
+   * Member data.
+   */
+  std::list<Observer*> observers_;  //!< List of subscribed observers.
+};
 
 /**
  * \brief Events which can happen with objects.
@@ -21,12 +91,12 @@ struct Moved
 /**
  * \brief Tag that shows that object was destroyed.
  */
-struct Destroyed
+struct GoingToBeDestroyed
 {
   /*
    * Member data.
    */
-  GeometricObject* object;  //!< Object which was destroyed.
+  const GeometricObject* object;  //!< Object which was destroyed.
 };
 
 /**
@@ -87,7 +157,8 @@ class GeometricObjectObserver
    *
    * \see ObjectEvent::Destroyed
    */
-  virtual void Update(const ObjectEvent::Destroyed& destroyed_event) = 0;
+  virtual void Update(
+      const ObjectEvent::GoingToBeDestroyed& destroyed_event) = 0;
 
   /**
    * \brief Update, because sth was renamed.
@@ -113,27 +184,13 @@ class GeometricObjectObserver
  * \see ConstructionObserver
  * \see GeometricObjectImplementation
  */
-class ObservableGeometricObject
+class ObservableGeometricObject : public Observable<GeometricObjectObserver>
 {
  public:
   /**
    * \brief Default destructor.
    */
-  virtual ~ObservableGeometricObject() = default;
-
-  /**
-   * \brief Subscribe an observer on this object.
-   *
-   * \param observer Observer to add.
-   */
-  void Attach(GeometricObjectObserver* observer);
-
-  /**
-   * \brief Unsubscribe an observer on this object.
-   *
-   * \param observer Observer to delete.
-   */
-  void Detach(const GeometricObjectObserver* observer);
+  ~ObservableGeometricObject() override = default;
 
   /**
    * \brief Notify all observers about event.
@@ -143,11 +200,63 @@ class ObservableGeometricObject
    */
   template <class Event>
   void Notify(const Event& event) const;
-
- private:
-  /**
-   * Member data.
-   */
-  std::list<GeometricObjectObserver*>
-      observers_;  //!< List of subscribed observers.
 };
+
+namespace PlaneEvent
+{
+/**
+ * \brief Tag that shows that object was removed.
+ *
+ * \author nook0110
+ */
+struct ObjectRemoved
+{
+  const GeometricObject* removed_object{};
+};
+}  // namespace PlaneEvent
+
+class PlaneObserver
+{
+ public:
+  /**
+   * \brief Default constructor.
+   *
+   */
+  PlaneObserver() = default;
+
+  /**
+   * \brief Default destructor.
+   */
+  virtual ~PlaneObserver() = default;
+
+  /**
+   * \brief Update, because sth was destroyed.
+   *
+   * \param object_removed Tag with some information
+   *
+   * \see ObjectEvent::Destroyed
+   */
+  virtual void Update(const PlaneEvent::ObjectRemoved& object_removed) = 0;
+};
+
+class ObservablePlane : public Observable<PlaneObserver>
+{
+ public:
+  /**
+   * \brief Default destructor.
+   */
+  ~ObservablePlane() override = default;
+
+  /**
+   * \brief Notify all observers about event.
+   *
+   * \tparam Event Type of event.
+   * \param event Event to notify about.
+   */
+  template <class Event>
+  void Notify(const Event& event) const;
+};
+
+template Observable<GeometricObjectObserver>;
+template Observable<PlaneObserver>;
+}  // namespace HomoGebra

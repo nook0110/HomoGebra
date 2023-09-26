@@ -1,6 +1,7 @@
 #pragma once
 #include <map>
-
+namespace HomoGebra
+{
 /**
  * \brief Dictionary that can store SubDictionaries.
  *
@@ -81,3 +82,4 @@ bool Dictionary<Item>::IsItemUsed(const Item& item) const
   // Check if sub item is used
   return used_items_.at(item);
 }
+}  // namespace HomoGebra

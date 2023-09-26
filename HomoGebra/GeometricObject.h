@@ -6,6 +6,8 @@
 #include "GeometricObjectImplementation.h"
 #include "PlaneImplementation.h"
 
+namespace HomoGebra
+{
 /**
  * \brief Base class for geometric objects.
  *
@@ -19,7 +21,8 @@
  * \see Line
  * \see Conic
  */
-class GeometricObject : public sf::Drawable
+class GeometricObject : public sf::Drawable,
+                        public ObservableInterface<GeometricObjectObserver>
 {
  public:
   /**
@@ -31,7 +34,7 @@ class GeometricObject : public sf::Drawable
    * \brief Destroy this object.
    *
    */
-  virtual void Destroy() = 0;
+  virtual void AlertDestruction() const = 0;
 
   /**
    * \brief Update the body of the object.
@@ -72,13 +75,6 @@ class GeometricObject : public sf::Drawable
    */
   [[nodiscard]] virtual Distance GetDistance(
       const sf::Vector2f& position) const = 0;
-
-  /**
-   * \brief Attaches observer to this object.
-   *
-   * \param observer Observer to attach.
-   */
-  virtual void Attach(GeometricObjectObserver* observer) = 0;
 
  protected:
   /**
@@ -125,7 +121,7 @@ class Point final : public GeometricObject
    * \brief Destroy this object.
    *
    */
-  void Destroy() override;
+  void AlertDestruction() const override;
 
   /**
    * \brief Set new equation of point.
@@ -146,6 +142,7 @@ class Point final : public GeometricObject
 
   void Attach(GeometricObjectObserver* observer) override;
 
+  void Detach(const GeometricObjectObserver* observer) override;
   ///@}
 
   /**
@@ -245,7 +242,7 @@ class Line final : public GeometricObject
    * \brief Destroy this object.
    *
    */
-  void Destroy() override;
+  void AlertDestruction() const override;
 
   /**
    * \brief Set new equation of line.
@@ -297,6 +294,8 @@ class Line final : public GeometricObject
    */
   void Attach(GeometricObjectObserver* observer) override;
 
+  void Detach(const GeometricObjectObserver* observer) override;
+
   [[nodiscard]] Distance GetDistance(
       const sf::Vector2f& position) const override;
 
@@ -346,7 +345,7 @@ class Conic final : public GeometricObject
    * \brief Destroy this object.
    *
    */
-  void Destroy() override;
+  void AlertDestruction() const override;
 
   /**
    * \brief Set new equation of conic.
@@ -391,6 +390,8 @@ class Conic final : public GeometricObject
    */
   void Attach(GeometricObjectObserver* observer) override;
 
+  void Detach(const GeometricObjectObserver* observer) override;
+
   [[nodiscard]] Distance GetDistance(
       const sf::Vector2f& position) const override;
 
@@ -410,3 +411,4 @@ class Conic final : public GeometricObject
   ConicBody body_;                      //!< Body, which you can draw.
   ConicImplementation implementation_;  //!< Implementation.
 };
+}  // namespace HomoGebra

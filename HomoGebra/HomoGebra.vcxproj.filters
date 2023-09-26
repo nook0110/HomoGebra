@@ -247,6 +247,9 @@
     <ClInclude Include="DistanceUtilities.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="ButtonImplementation.h">
+      <Filter>Headers\GUI\Button</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

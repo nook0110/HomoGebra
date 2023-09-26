@@ -2,6 +2,8 @@
 
 #include "Assert.h"
 
+namespace HomoGebra
+{
 PointEquation::PointEquation(HomogeneousCoordinate _equation)
     : equation(std::move(_equation))
 {}
@@ -48,3 +50,4 @@ void ConicEquation::Apply(const Transformation& transformation)
 
   // TODO: Implement this function
 }
+}  // namespace HomoGebra

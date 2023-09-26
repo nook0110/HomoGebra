@@ -2,6 +2,8 @@
 
 #include "GeometricObject.h"
 
+namespace HomoGebra
+{
 template <class GeometricObjectType>
 NearbyObjectGetter<GeometricObjectType>::NearbyObjectGetter(
     Plane* plane, GeometricObjectType* last_object)
@@ -46,3 +48,4 @@ template class NearbyObjectGetter<GeometricObject>;
 template class NearbyObjectGetter<Point>;
 template class NearbyObjectGetter<Line>;
 template class NearbyObjectGetter<Conic>;
+}  // namespace HomoGebra

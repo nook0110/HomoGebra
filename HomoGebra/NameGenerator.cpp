@@ -4,6 +4,8 @@
 #include <array>
 #include <functional>
 
+namespace HomoGebra
+{
 bool ParsedSubname::operator==(const ParsedSubname& other) const
 {
   return subname == other.subname && number == other.number;
@@ -280,3 +282,4 @@ bool NameGenerator::IsNameEmpty(const ParsedName& parsed_name) const
 {
   return parsed_name.name.empty();
 }
+}  // namespace HomoGebra

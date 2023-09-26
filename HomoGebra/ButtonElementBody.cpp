@@ -6,6 +6,8 @@
 
 #include "GuiUtilities.h"
 
+namespace HomoGebra
+{
 template <class GeometricObjectType>
 void ObjectSelectorBody<GeometricObjectType>::Draw()
 {
@@ -28,12 +30,23 @@ void ObjectSelectorBody<GeometricObjectType>::SetObject(
     GeometricObjectType* object)
 {
   object_ = object;
+  current_object_ = -1;
 }
 
 template <class GeometricObjectType>
 GeometricObjectType* ObjectSelectorBody<GeometricObjectType>::GetObject() const
 {
   return object_;
+}
+
+template <class GeometricObjectType>
+void ObjectSelectorBody<GeometricObjectType>::Update(
+    const PlaneEvent::ObjectRemoved& object_removed)
+{
+  if (GetObject() == object_removed.removed_object)
+  {
+    SetObject(nullptr);
+  }
 }
 
 template <class GeometricObjectType>
@@ -95,3 +108,4 @@ void ObjectSelectorBody<GeometricObjectType>::DrawSetter()
     SetObject(object);
   }
 }
+}  // namespace HomoGebra

@@ -3,6 +3,8 @@
 #include "PlaneBody.h"
 #include "PlaneImplementation.h"
 
+namespace HomoGebra
+{
 class Construction;
 
 /**
@@ -17,7 +19,8 @@ class Construction;
  * \see PlaneImplementation
  * \see PlaneBody
  */
-class Plane final : public sf::Drawable
+class Plane final : public sf::Drawable,
+                    public ObservableInterface<PlaneObserver>
 {
  public:
   /**
@@ -80,7 +83,12 @@ class Plane final : public sf::Drawable
    */
   [[nodiscard]] const NameGenerator& GetNameGenerator() const;
 
+  void Attach(PlaneObserver* observer) override;
+
+  void Detach(const PlaneObserver* observer) override;
+
  private:
   PlaneImplementation implementation_;  //!< Implementation of plane
   PlaneBody body_;                      //!< Body of plane
 };
+}  // namespace HomoGebra

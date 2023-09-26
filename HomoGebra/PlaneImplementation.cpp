@@ -6,6 +6,8 @@
 #include "Construction.h"
 #include "GeometricObject.h"
 
+namespace HomoGebra
+{
 void PlaneImplementation::AddConstruction(
     std::unique_ptr<Construction> construction)
 {
@@ -16,21 +18,24 @@ void PlaneImplementation::AddConstruction(
   construction_.push_back(std::move(construction));
 }
 
-void PlaneImplementation::RemoveObject(const GeometricObject* object)
+void PlaneImplementation::DestroyObject(const GeometricObject* object)
 {
+  object->AlertDestruction();
+
   // Delete object from vector of all objects
-  construction_.erase(
-      std::remove_if(construction_.begin(), construction_.end(),
-                     [object](const std::unique_ptr<Construction>& construction)
-                     { return construction->GetObject() == object; }),
-      construction_.end());
+  while (!going_to_be_destroyed_.Empty())
+  {
+    const auto destroying_object = going_to_be_destroyed_.Pop();
+
+    RemoveObject(destroying_object);
+  }
 }
 
 bool PlaneImplementation::IsContained(const GeometricObject* object) const
 {
   // Check if object is in vector of all objects
-  return std::find_if(
-             construction_.begin(), construction_.end(),
+  return std::ranges::find_if(
+             construction_,
              [object](const std::unique_ptr<Construction>& construction) {
                return construction->GetObject() == object;
              }) != construction_.end();
@@ -48,10 +53,11 @@ void PlaneImplementation::Update(const ObjectEvent::Moved& moved_event)
    */
 }
 
-void PlaneImplementation::Update(const ObjectEvent::Destroyed& destroyed_event)
+void PlaneImplementation::Update(
+    const ObjectEvent::GoingToBeDestroyed& destroyed_event)
 {
   // Remove object from vector of all objects
-  RemoveObject(destroyed_event.object);
+  going_to_be_destroyed_.Append(destroyed_event.object);
 }
 
 void PlaneImplementation::Update(const ObjectEvent::Renamed& renamed_event)
@@ -74,6 +80,17 @@ void PlaneImplementation::Update(const ObjectEvent::Renamed& renamed_event)
   {
     adjust_name();
   }
+}
+
+void PlaneImplementation::RemoveObject(const GeometricObject* object)
+{
+  Notify(PlaneEvent::ObjectRemoved{object});
+
+  name_generator_.DeleteName(object->GetName());
+
+  std::erase_if(construction_,
+                [object](const std::unique_ptr<Construction>& construction)
+                { return construction->GetObject() == object; });
 }
 
 template <class GeometricObjectType>
@@ -113,3 +130,4 @@ template std::vector<GeometricObject*> PlaneImplementation::GetObjects<Line>()
 
 template std::vector<GeometricObject*> PlaneImplementation::GetObjects<Conic>()
     const;
+}  // namespace HomoGebra

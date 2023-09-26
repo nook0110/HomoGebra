@@ -3,6 +3,8 @@
 #include "Construction.h"
 #include "GeometricObject.h"
 
+namespace HomoGebra
+{
 /**
  * \brief Base class for all point constructions.
  *
@@ -46,14 +48,14 @@ class ConstructionPoint : public Construction
    *
    * \param event Event of destruction.
    */
-  void Update(const ObjectEvent::Destroyed& event) override;
+  void Update(const ObjectEvent::GoingToBeDestroyed& event) override;
 
   /**
    * \brief Update point when something is renamed
    *
-   * \param renamed Event of renaming.
+   * \param renamed_event Event of renaming.
    */
-  void Update(const ObjectEvent::Renamed& renamed) override;
+  void Update(const ObjectEvent::Renamed& renamed_event) override;
 
  protected:
   /**
@@ -74,7 +76,7 @@ class ConstructionPoint : public Construction
    *
    * \param equation Equation of point.
    */
-  void SetEquation(PointEquation equation);
+  void SetEquation(PointEquation equation) const;
 
  private:
   std::unique_ptr<Point> point_ =
@@ -168,7 +170,7 @@ class ConstructionLine : public Construction
    */
   void RecalculateEquation() override = 0;
 
-  void Update(const ObjectEvent::Destroyed& event) override;
+  void Update(const ObjectEvent::GoingToBeDestroyed& event) override;
 
   void Update(const ObjectEvent::Renamed& event) override;
 
@@ -187,7 +189,7 @@ class ConstructionLine : public Construction
    *
    * \param equation Equation of line.
    */
-  void SetEquation(const LineEquation& equation);
+  void SetEquation(const LineEquation& equation) const;
 
  private:
   std::unique_ptr<Line> line_ =
@@ -239,6 +241,8 @@ class ByTwoPoints final : public ConstructionLine, public StrongConstruction
    */
   ByTwoPoints(Point* first_point, Point* second_point);
 
+  ~ByTwoPoints() override;
+
   void RecalculateEquation() override;
 
  private:
@@ -277,7 +281,7 @@ class ConstructionConic : public Construction
    */
   void RecalculateEquation() override = 0;
 
-  void Update(const ObjectEvent::Destroyed& event) override;
+  void Update(const ObjectEvent::GoingToBeDestroyed& event) override;
 
   void Update(const ObjectEvent::Renamed& event) override;
 
@@ -293,7 +297,7 @@ class ConstructionConic : public Construction
    *
    * \param equation Equation of conic.
    */
-  void SetEquation(ConicEquation equation);
+  void SetEquation(ConicEquation equation) const;
 
  private:
   std::unique_ptr<Conic> conic_ =
@@ -324,3 +328,4 @@ class ConicOnPlane final : public ConstructionConic, public StrongConstruction
  private:
   ConicEquation equation_;  //!< Equation of conic.
 };
+}  // namespace HomoGebra

@@ -5,6 +5,8 @@
 
 #include "Assert.h"
 
+namespace HomoGebra
+{
 template <typename UnderlyingType>
 SquaredMatrix<UnderlyingType>::SquaredMatrix(const size_t size)
     : matrix_(size, Row(size)), augmentation_(size), size_(size)
@@ -163,7 +165,7 @@ UnderlyingType SquaredMatrix<UnderlyingType>::GetDeterminant() const
 }
 
 template <typename UnderlyingType>
-typename std::optional<typename SquaredMatrix<UnderlyingType>::Column>
+std::optional<typename SquaredMatrix<UnderlyingType>::Column>
 SquaredMatrix<UnderlyingType>::GetSolution() const
 {
   // Find inverse
@@ -310,8 +312,9 @@ bool SquaredMatrix<Complex>::IsZero(const Complex& value) const
 template <>
 bool SquaredMatrix<float>::IsZero(const float& value) const
 {
-  return Complex{value}.IsZero();
+  return Complex{static_cast<long double>(value)}.IsZero();
 }
 
 template class SquaredMatrix<Complex>;
 template class SquaredMatrix<float>;
+}  // namespace HomoGebra

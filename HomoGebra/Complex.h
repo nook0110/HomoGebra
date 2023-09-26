@@ -1,6 +1,8 @@
 #pragma once
 #include <complex>
 
+namespace HomoGebra
+{
 /**
  * \brief Wrapper of std::complex
  *
@@ -148,3 +150,4 @@ inline Complex sqrt(const Complex& value)
 
   return Complex{sqrt(copy)};
 }
+}  // namespace HomoGebra

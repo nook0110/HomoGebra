@@ -2,6 +2,8 @@
 #include <SFML/System/Vector2.hpp>
 #include <list>
 
+namespace HomoGebra
+{
 namespace UserEvent
 {
 /**
@@ -78,3 +80,4 @@ class EventNotifier
  private:
   std::list<EventListener*> listeners_;  //!< List of listeners.
 };
+}  // namespace HomoGebra

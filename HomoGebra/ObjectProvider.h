@@ -1,6 +1,8 @@
 #pragma once
 #include "Plane.h"
 
+namespace HomoGebra
+{
 /**
  * \brief Class that finds objects.
  *
@@ -41,3 +43,4 @@ class ObjectProvider
    */
   Plane* plane_;  //!< Plane to add objects.
 };
+}  // namespace HomoGebra

@@ -5,8 +5,30 @@
 #include "NameGenerator.h"
 #include "Observer.h"
 
+namespace HomoGebra
+{
 class GeometricObject;
 class Construction;
+
+class GarbageObjectCollector
+{
+ public:
+  [[nodiscard]] bool Empty() const { return objects_.empty(); }
+
+  void Append(const GeometricObject* object) { objects_.emplace_back(object); }
+
+  const GeometricObject* Pop()
+  {
+    const auto last = objects_.back();
+    objects_.pop_back();
+    return last;
+  }
+
+  void Clear() { objects_.clear(); }
+
+ private:
+  std::vector<const GeometricObject*> objects_;
+};
 
 /**
  * \brief Implementation of Plane.
@@ -21,7 +43,8 @@ class Construction;
  *
  * \see Plane
  */
-class PlaneImplementation : public GeometricObjectObserver
+class PlaneImplementation : public GeometricObjectObserver,
+                            public ObservablePlane
 {
  public:
   /**
@@ -36,7 +59,7 @@ class PlaneImplementation : public GeometricObjectObserver
    *
    * \param object Object to destroy.
    */
-  void RemoveObject(const GeometricObject* object);
+  void DestroyObject(const GeometricObject* object);
 
   /**
    * \brief Check if object is contained.
@@ -65,10 +88,12 @@ class PlaneImplementation : public GeometricObjectObserver
   [[nodiscard]] const NameGenerator& GetNameGenerator() const;
 
   void Update(const ObjectEvent::Moved& moved_event) override;
-  void Update(const ObjectEvent::Destroyed& destroyed_event) override;
+  void Update(const ObjectEvent::GoingToBeDestroyed& destroyed_event) override;
   void Update(const ObjectEvent::Renamed& renamed_event) override;
 
  private:
+  void RemoveObject(const GeometricObject* object);
+
   /**
    * Member data.
    */
@@ -77,4 +102,7 @@ class PlaneImplementation : public GeometricObjectObserver
       construction_;  //!< All constructions on the plane.
 
   NameGenerator name_generator_;  //!< Name generator.
+
+  GarbageObjectCollector going_to_be_destroyed_;
 };
+}  // namespace HomoGebra

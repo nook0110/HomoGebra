@@ -2,6 +2,8 @@
 
 #include "GeometricObject.h"
 
+namespace HomoGebra
+{
 ObjectProvider::ObjectProvider(Plane* plane) : plane_(plane) {}
 
 template <class GeometricObjectType>
@@ -50,3 +52,4 @@ template Line* ObjectProvider::GetNearestObject(const sf::Vector2f& position,
                                                 float max_distance);
 template Conic* ObjectProvider::GetNearestObject(const sf::Vector2f& position,
                                                  float max_distance);
+}  // namespace HomoGebra

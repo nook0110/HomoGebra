@@ -5,12 +5,14 @@
 #include "Equation.h"
 #include "GeometricObjectImplementation.h"
 
+namespace HomoGebra
+{
 Point::Point(PointEquation equation) : implementation_(std::move(equation)) {}
 
-void Point::Destroy()
+void Point::AlertDestruction() const
 {
   // Notify observers that object was destroyed
-  Notify(ObjectEvent::Destroyed{this});
+  Notify(ObjectEvent::GoingToBeDestroyed{this});
 }
 
 template <class Event>
@@ -20,8 +22,8 @@ void Point::Notify(const Event& event) const
   implementation_.Notify(event);
 }
 
-template void Point::Notify<ObjectEvent::Destroyed>(
-    const ObjectEvent::Destroyed& event) const;
+template void Point::Notify<ObjectEvent::GoingToBeDestroyed>(
+    const ObjectEvent::GoingToBeDestroyed& event) const;
 
 template void Point::Notify<ObjectEvent::Renamed>(
     const ObjectEvent::Renamed& event) const;
@@ -74,6 +76,11 @@ void Point::Attach(GeometricObjectObserver* observer)
   implementation_.Attach(observer);
 }
 
+void Point::Detach(const GeometricObjectObserver* observer)
+{
+  implementation_.Detach(observer);
+}
+
 void Point::UpdateBody(sf::RenderTarget& target)
 {
   // Calculate size of body
@@ -108,10 +115,10 @@ const std::string& Point::GetName() const
 
 Line::Line(LineEquation equation) : implementation_(std::move(equation)) {}
 
-void Line::Destroy()
+void Line::AlertDestruction() const
 {
   // Notify observers that object was destroyed
-  Notify(ObjectEvent::Destroyed{this});
+  Notify(ObjectEvent::GoingToBeDestroyed{this});
 }
 
 void Line::SetEquation(LineEquation equation)
@@ -161,6 +168,11 @@ void Line::Attach(GeometricObjectObserver* observer)
   implementation_.Attach(observer);
 }
 
+void Line::Detach(const GeometricObjectObserver* observer)
+{
+  implementation_.Detach(observer);
+}
+
 Distance Line::GetDistance(const sf::Vector2f& position) const
 {
   return body_.GetDistance(position);
@@ -173,18 +185,18 @@ void Line::Notify(const Event& event) const
   implementation_.Notify(event);
 }
 
-template void Line::Notify<ObjectEvent::Destroyed>(
-    const ObjectEvent::Destroyed& event) const;
+template void Line::Notify<ObjectEvent::GoingToBeDestroyed>(
+    const ObjectEvent::GoingToBeDestroyed& event) const;
 
 template void Line::Notify<ObjectEvent::Renamed>(
     const ObjectEvent::Renamed& event) const;
 
 Conic::Conic(ConicEquation equation) : implementation_(std::move(equation)) {}
 
-void Conic::Destroy()
+void Conic::AlertDestruction() const
 {
   // Notify observers that object was destroyed
-  Notify(ObjectEvent::Destroyed{this});
+  Notify(ObjectEvent::GoingToBeDestroyed{this});
 }
 
 void Conic::SetEquation(ConicEquation equation)
@@ -224,8 +236,12 @@ const std::string& Conic::GetName() const
 
 void Conic::Attach(GeometricObjectObserver* observer)
 {
-  // Call implementation method
   implementation_.Attach(observer);
+}
+
+void Conic::Detach(const GeometricObjectObserver* observer)
+{
+  implementation_.Detach(observer);
 }
 
 Distance Conic::GetDistance(const sf::Vector2f& position) const
@@ -240,8 +256,9 @@ void Conic::Notify(const Event& event) const
   implementation_.Notify(event);
 }
 
-template void Conic::Notify<ObjectEvent::Destroyed>(
-    const ObjectEvent::Destroyed& event) const;
+template void Conic::Notify<ObjectEvent::GoingToBeDestroyed>(
+    const ObjectEvent::GoingToBeDestroyed& event) const;
 
 template void Conic::Notify<ObjectEvent::Renamed>(
     const ObjectEvent::Renamed& event) const;
+}  // namespace HomoGebra

@@ -4,6 +4,8 @@
 #include "GeometricObjectFactory.h"
 #include "imgui.h"
 
+namespace HomoGebra
+{
 template <class ButtonClass>
 class WindowButton : public ButtonClass
 {
@@ -23,9 +25,10 @@ class WindowButton : public ButtonClass
   std::string name_;
 };
 
-class LineByTwoPointButton
-    : public WindowButton<Button<ObjectSelector<Point>, ObjectSelector<Point>,
-                                 FactoryWrapper<LineByTwoPointsFactory>>>
+class LineByTwoPointButton final
+    : public WindowButton<
+          ButtonBase<ObjectSelector<Point>, ObjectSelector<Point>,
+                     FactoryWrapper<LineByTwoPointsFactory>>>
 {
  public:
   explicit LineByTwoPointButton(Plane* plane)
@@ -33,9 +36,10 @@ class LineByTwoPointButton
   {}
 };
 
-class DeleteButton
-    : public WindowButton<Button<ObjectSelector<GeometricObject>, Deleter>>
+class DeleteButton final
+    : public WindowButton<ButtonBase<ObjectSelector<GeometricObject>, Deleter>>
 {
  public:
   explicit DeleteButton(Plane* plane) : WindowButton("Delete button", plane) {}
 };
+}  // namespace HomoGebra

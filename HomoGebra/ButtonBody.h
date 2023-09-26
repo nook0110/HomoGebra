@@ -1,5 +1,7 @@
 #pragma once
 
+namespace HomoGebra
+{
 class ButtonBody
 {
  public:
@@ -9,3 +11,4 @@ class ButtonBody
    */
   bool Draw();
 };
+}  // namespace HomoGebra

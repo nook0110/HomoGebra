@@ -3,13 +3,17 @@
 #include "Input.h"
 #include "Plane.h"
 
+namespace HomoGebra
+{
 template <class GeometricObjectType>
-class ObjectSelectorBody
+class ObjectSelectorBody : public PlaneObserver
 {
  public:
   explicit ObjectSelectorBody(Plane* plane)
       : plane_(plane), object_getter_(plane)
-  {}
+  {
+    plane->Attach(this);
+  }
 
   /**
    * \brief Draws the body.
@@ -30,6 +34,8 @@ class ObjectSelectorBody
    * \return Selected object.
    */
   [[nodiscard]] GeometricObjectType* GetObject() const;
+
+  void Update(const PlaneEvent::ObjectRemoved& object_removed) override;
 
  private:
   /**
@@ -54,10 +60,11 @@ class ObjectSelectorBody
   Plane* plane_;
   NearbyObjectGetter<GeometricObjectType> object_getter_;
 
-  int current_object_ = 0;
+  int current_object_ = -1;
 };
 
 template ObjectSelectorBody<GeometricObject>;
 template ObjectSelectorBody<Point>;
 template ObjectSelectorBody<Line>;
 template ObjectSelectorBody<Conic>;
+}  // namespace HomoGebra

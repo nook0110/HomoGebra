@@ -1,29 +1,51 @@
 #include "Observer.h"
 
-void ObservableGeometricObject::Attach(GeometricObjectObserver* observer)
+namespace HomoGebra
+{
+template <class Observer>
+void Observable<Observer>::Attach(Observer* observer)
 {
   // Add observer to list
   observers_.push_back(observer);
 }
 
-void ObservableGeometricObject::Detach(const GeometricObjectObserver* observer)
+template <class Observer>
+void Observable<Observer>::Detach(const Observer* observer)
 {
   // Remove observer from list
-  observers_.remove_if([observer](const GeometricObjectObserver* obs)
+  observers_.remove_if([observer](const Observer* obs)
                        { return obs == observer; });
+}
+
+template <class Observer>
+template <class Event>
+void Observable<Observer>::Notify(const Event& event) const
+{
+  for (const auto& observer : observers_) observer->Update(event);
 }
 
 template <class Event>
 void ObservableGeometricObject::Notify(const Event& event) const
 {
-  for (const auto& observer : observers_) observer->Update(event);
+  Observable::Notify(event);
 }
 
 template void ObservableGeometricObject::Notify<ObjectEvent::Moved>(
     const ObjectEvent::Moved& event) const;
 
-template void ObservableGeometricObject::Notify<ObjectEvent::Destroyed>(
-    const ObjectEvent::Destroyed& event) const;
+template void
+ObservableGeometricObject::Notify<ObjectEvent::GoingToBeDestroyed>(
+    const ObjectEvent::GoingToBeDestroyed& event) const;
 
 template void ObservableGeometricObject::Notify<ObjectEvent::Renamed>(
     const ObjectEvent::Renamed& event) const;
+
+template <class Event>
+void ObservablePlane::Notify(const Event& event) const
+{
+  Observable::Notify(event);
+}
+
+template void ObservablePlane::Notify<PlaneEvent::ObjectRemoved>(
+    const PlaneEvent::ObjectRemoved& event) const;
+}  // namespace HomoGebra

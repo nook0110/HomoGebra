@@ -1,5 +1,7 @@
 #include "EventNotifier.h"
 
+namespace HomoGebra
+{
 void EventNotifier::Attach(EventListener* listener)
 {
   // Add listener to list
@@ -22,3 +24,4 @@ void EventNotifier::Notify(const Event& event) const
 
 template void EventNotifier::Notify<UserEvent::Click>(
     const UserEvent::Click& event) const;
+}  // namespace HomoGebra

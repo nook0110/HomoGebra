@@ -25,20 +25,20 @@ int main()
   window.setFramerateLimit(60);
   ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-  auto plane = std::make_unique<Plane>();
+  auto plane = std::make_unique<HomoGebra::Plane>();
 
-  auto first = PointOnPlaneFactory{plane.get()}(
-      PointEquation{HomogeneousCoordinate{100, 100}});
-  auto second = PointOnPlaneFactory{plane.get()}(
-      PointEquation{HomogeneousCoordinate{300, 300}});
+  auto first = HomoGebra::PointOnPlaneFactory{plane.get()}(
+      HomoGebra::PointEquation{HomoGebra::HomogeneousCoordinate{100, 100}});
+  auto second = HomoGebra::PointOnPlaneFactory{plane.get()}(
+      HomoGebra::PointEquation{HomoGebra::HomogeneousCoordinate{300, 300}});
 
-  ConicEquation equation;
+  HomoGebra::ConicEquation equation;
   equation.squares = {1, 1, -10000};
   equation.pair_products = {0, 0, 10};
-  ConicOnPlaneFactory{plane.get()}(equation);
+  HomoGebra::ConicOnPlaneFactory{plane.get()}(equation);
 
-  LineByTwoPointButton line_by_two_point_button{plane.get()};
-  DeleteButton delete_button{plane.get()};
+  HomoGebra::LineByTwoPointButton line_by_two_point_button{plane.get()};
+  HomoGebra::DeleteButton delete_button{plane.get()};
 
   while (window.isOpen())
   {
@@ -47,7 +47,7 @@ int main()
     {
       if (event.type == sf::Event::Closed) window.close();
 
-      Gui::Global::ProcessEvent(event);
+      HomoGebra::Gui::Global::ProcessEvent(event);
 
       if (auto const& io = ImGui::GetIO();
           io.WantCaptureMouse || io.WantCaptureKeyboard)
@@ -59,7 +59,7 @@ int main()
     }
     window.clear(sf::Color::White);
 
-    Gui::Global::Update(window);
+    HomoGebra::Gui::Global::Update(window);
 
     plane->Update(window);
 
@@ -68,7 +68,7 @@ int main()
     line_by_two_point_button.Draw();
     delete_button.Draw();
 
-    Gui::Global::Render(window);
+    HomoGebra::Gui::Global::Render(window);
 
     window.display();
   }

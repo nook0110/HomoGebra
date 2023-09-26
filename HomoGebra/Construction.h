@@ -2,6 +2,8 @@
 #include "Coordinate.h"
 #include "Observer.h"
 
+namespace HomoGebra
+{
 /**
  * \brief Construction that loses its properties after projective
  * transformation.
@@ -80,7 +82,8 @@ class Construction : public GeometricObjectObserver
 
   void Update(const ObjectEvent::Moved& moved_event) override;
 
-  void Update(const ObjectEvent::Destroyed& destroyed_event) override = 0;
+  void Update(const ObjectEvent::GoingToBeDestroyed& destroyed_event) override =
+      0;
 
   void Update(const ObjectEvent::Renamed& renamed_event) override = 0;
 
@@ -91,3 +94,4 @@ class Construction : public GeometricObjectObserver
    */
   Construction() = default;
 };
+}  // namespace HomoGebra

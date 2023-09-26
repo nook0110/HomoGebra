@@ -2,6 +2,8 @@
 
 #include <utility>
 
+namespace HomoGebra
+{
 PointImplementation::PointImplementation(PointEquation equation)
     : equation_(std::move(equation))
 {}
@@ -58,3 +60,4 @@ const ConicEquation& ConicImplementation::GetEquation() const
   // Return equation
   return equation_;
 }
+}  // namespace HomoGebra

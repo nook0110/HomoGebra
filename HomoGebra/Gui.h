@@ -2,6 +2,8 @@
 
 #include "SFML/Graphics.hpp"
 
+namespace HomoGebra
+{
 namespace Gui
 {
 /**
@@ -47,3 +49,4 @@ class Global
   static sf::Clock delta_clock_;  //!< Clock that counts time for updates.
 };
 }  // namespace Gui
+}  // namespace HomoGebra

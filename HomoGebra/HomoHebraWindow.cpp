@@ -1,5 +1,7 @@
 #include "HomoGebraWindow.h"
 
+namespace HomoGebra
+{
 HomoGebraWindow::HomoGebraWindow(const sf::VideoMode mode,
                                  const sf::String& title,
                                  const sf::Uint32 style,
@@ -10,3 +12,4 @@ HomoGebraWindow::HomoGebraWindow(const sf::VideoMode mode,
 void HomoGebraWindow::onResize() { Window::onResize(); }
 
 void HomoGebraWindow::onCreate() { Window::onCreate(); }
+}  // namespace HomoGebra

@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+namespace HomoGebra
+{
 /**
  * \brief Class that represents a plane body.
  *
@@ -47,3 +49,4 @@ class PlaneBody final : public sf::Drawable
 
   sf::View view_;  //!< View of the plane.
 };
+}  // namespace HomoGebra

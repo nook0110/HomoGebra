@@ -3,6 +3,8 @@
 
 #include "Coordinate.h"
 
+namespace HomoGebra
+{
 /**
  * \brief Struct that defines position of the objects.
  *
@@ -13,12 +15,12 @@
  * \date February 2023
  *
  */
-struct Equation
+struct EquationBase
 {
   /**
    * Default destructor.
    */
-  virtual ~Equation() = default;
+  virtual ~EquationBase() = default;
 
   /**
    * \brief Apply transformation to an equation.
@@ -40,7 +42,7 @@ struct Equation
  * \see PointImplementation
  *
  */
-struct PointEquation final : public Equation
+struct PointEquation final : public EquationBase
 {
   /**
    * \brief Constructor.
@@ -86,7 +88,7 @@ struct PointEquation final : public Equation
  * \see LineImplementation
  *
  */
-struct LineEquation final : public Equation
+struct LineEquation final : public EquationBase
 {
   /**
    * \brief Constructor.
@@ -121,7 +123,7 @@ struct LineEquation final : public Equation
  * \see ConicImplementation
  *
  */
-struct ConicEquation final : public Equation
+struct ConicEquation final : public EquationBase
 {
   /**
    * \name Static arrays to get next o previous vars.
@@ -157,3 +159,4 @@ struct ConicEquation final : public Equation
   std::array<Complex, 3> pair_products;  //!< \f$ d, e, f \f$
   /// @}
 };
+}  // namespace HomoGebra

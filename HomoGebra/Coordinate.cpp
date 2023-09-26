@@ -6,6 +6,8 @@
 #include "Equation.h"
 #include "Matrix.h"
 
+namespace HomoGebra
+{
 TransformationMatrix::TransformationMatrix()
 {
   // Make Identity matrix
@@ -382,3 +384,4 @@ HomogeneousCoordinate HomogeneousCoordinate::GetNormalized() const
   auto copy = *this;
   return copy.Normalize();
 }
+}  // namespace HomoGebra

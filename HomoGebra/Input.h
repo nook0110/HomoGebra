@@ -4,6 +4,8 @@
 #include "EventNotifier.h"
 #include "ObjectProvider.h"
 
+namespace HomoGebra
+{
 /**
  * \brief Class to get the last object that user clicked on.
  *
@@ -61,3 +63,4 @@ class NearbyObjectGetter final : public EventListener
 
   ObjectProvider finder_;  //!< Helper to find objects.
 };
+}  // namespace HomoGebra

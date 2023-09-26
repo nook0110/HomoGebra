@@ -2,6 +2,8 @@
 
 #include "Assert.h"
 
+namespace HomoGebra
+{
 Complex::Complex(const std::complex<long double> value)
     : std::complex<long double>(value)
 {}
@@ -100,3 +102,4 @@ Complex Complex::operator-() const
 {
   return Complex{-std::complex<long double>(*this)};
 }
+}  // namespace HomoGebra

@@ -3,6 +3,8 @@
 #include "Construction.h"
 #include "GeometricObject.h"
 
+namespace HomoGebra
+{
 void Plane::AddConstruction(std::unique_ptr<Construction> construction)
 {
   // Add object to plane
@@ -11,7 +13,7 @@ void Plane::AddConstruction(std::unique_ptr<Construction> construction)
 
 void Plane::DeleteObject(const GeometricObject* object)
 {
-  implementation_.RemoveObject(object);
+  implementation_.DestroyObject(object);
 }
 
 template <class GeometricObjectType>
@@ -62,3 +64,14 @@ const NameGenerator& Plane::GetNameGenerator() const
 {
   return implementation_.GetNameGenerator();
 }
+
+void Plane::Attach(PlaneObserver* observer)
+{
+  implementation_.Attach(observer);
+}
+
+void Plane::Detach(const PlaneObserver* observer)
+{
+  implementation_.Detach(observer);
+}
+}  // namespace HomoGebra
