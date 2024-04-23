@@ -1,8 +1,9 @@
+env:
+  TESTSPATH: HomoGebra\HomoGebra Tests
+
 name: CMake Tests
 
 on: [push]
-
-TESTSPATH: HomoGebra\HomoGebra Tests
 
 jobs:
   build:
