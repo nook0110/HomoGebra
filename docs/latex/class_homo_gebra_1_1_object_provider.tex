@@ -1,0 +1,121 @@
+\hypertarget{class_homo_gebra_1_1_object_provider}{}\doxysection{Homo\+Gebra\+::Object\+Provider Class Reference}
+\label{class_homo_gebra_1_1_object_provider}\index{HomoGebra::ObjectProvider@{HomoGebra::ObjectProvider}}
+
+
+Class that finds objects.  
+
+
+
+
+{\ttfamily \#include $<$Object\+Provider.\+h$>$}
+
+
+
+Collaboration diagram for Homo\+Gebra\+::Object\+Provider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_provider__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_homo_gebra_1_1_object_provider_a9e47e1ae3294a4f8d60c9d7cd0f5b399}{Object\+Provider}} (\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}} $\ast$plane)
+\begin{DoxyCompactList}\small\item\em Constructs an object provider from the plane. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Geometric\+Object\+Type $>$ }\\Geometric\+Object\+Type $\ast$ \mbox{\hyperlink{class_homo_gebra_1_1_object_provider_a22ae7008d94bbfbdc7244a8820414061}{Get\+Nearest\+Object}} (const sf\+::\+Vector2f \&position, Distance max\+\_\+distance=std\+::numeric\+\_\+limits$<$ Distance $>$\+::max())
+\begin{DoxyCompactList}\small\item\em Gets a nearest object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}} $\ast$ \mbox{\hyperlink{class_homo_gebra_1_1_object_provider_a0e95fa84d223c4f272ac43e73db421b2}{plane\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}} to add objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that finds objects. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_provider_a9e47e1ae3294a4f8d60c9d7cd0f5b399}\label{class_homo_gebra_1_1_object_provider_a9e47e1ae3294a4f8d60c9d7cd0f5b399}} 
+\index{HomoGebra::ObjectProvider@{HomoGebra::ObjectProvider}!ObjectProvider@{ObjectProvider}}
+\index{ObjectProvider@{ObjectProvider}!HomoGebra::ObjectProvider@{HomoGebra::ObjectProvider}}
+\doxysubsubsection{\texorpdfstring{ObjectProvider()}{ObjectProvider()}}
+{\footnotesize\ttfamily Homo\+Gebra\+::\+Object\+Provider\+::\+Object\+Provider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}} $\ast$}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs an object provider from the plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plane} & Instance where to place objects. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_provider_a22ae7008d94bbfbdc7244a8820414061}\label{class_homo_gebra_1_1_object_provider_a22ae7008d94bbfbdc7244a8820414061}} 
+\index{HomoGebra::ObjectProvider@{HomoGebra::ObjectProvider}!GetNearestObject@{GetNearestObject}}
+\index{GetNearestObject@{GetNearestObject}!HomoGebra::ObjectProvider@{HomoGebra::ObjectProvider}}
+\doxysubsubsection{\texorpdfstring{GetNearestObject()}{GetNearestObject()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+template \mbox{\hyperlink{class_homo_gebra_1_1_conic}{Conic}} $\ast$ Homo\+Gebra\+::\+Object\+Provider\+::\+Get\+Nearest\+Object (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position,  }\item[{Distance}]{max\+\_\+distance = {\ttfamily std\+:\+:numeric\+\_\+limits$<$~Distance~$>$\+:\+:max()} }\end{DoxyParamCaption})}
+
+
+
+Gets a nearest object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Geometric\+Object\+Type} & Type of object to get.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position to find object. \\
+\hline
+{\em max\+\_\+distance} & Maximum distance to find object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nearest object. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_provider_a22ae7008d94bbfbdc7244a8820414061_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_provider_a0e95fa84d223c4f272ac43e73db421b2}\label{class_homo_gebra_1_1_object_provider_a0e95fa84d223c4f272ac43e73db421b2}} 
+\index{HomoGebra::ObjectProvider@{HomoGebra::ObjectProvider}!plane\_@{plane\_}}
+\index{plane\_@{plane\_}!HomoGebra::ObjectProvider@{HomoGebra::ObjectProvider}}
+\doxysubsubsection{\texorpdfstring{plane\_}{plane\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}}$\ast$ Homo\+Gebra\+::\+Object\+Provider\+::plane\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}} to add objects. 
+
+Member data. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Object\+Provider.\+h\item 
+Homo\+Gebra/Object\+Provider.\+cpp\end{DoxyCompactItemize}

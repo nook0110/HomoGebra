@@ -1,0 +1,12 @@
+<map id="ConstructionPoint::SetEquation" name="ConstructionPoint::SetEquation">
+<area shape="rect" id="node1" title="Set equation of point." alt="" coords="5,69,139,109"/>
+<area shape="rect" id="node2" href="$class_point.html#aced26fabfb342a696916729589d86a39" title="Set new equation of point." alt="" coords="187,77,317,102"/>
+<area shape="rect" id="node3" href="$class_point_implementation.html#acf2070120f5877ed5e73a0aa3eb9cf46" title="Return current equation of point." alt="" coords="365,5,505,45"/>
+<area shape="rect" id="node4" href="$class_point_implementation.html#af54d0792a17ff23f95da5a32e20110d0" title="Sets new equation of point." alt="" coords="365,69,505,109"/>
+<area shape="rect" id="node6" href="$class_point_body.html#a7b35cb92d76a51c2923ce3647a715560" title="Updates the point body." alt="" coords="370,134,501,159"/>
+<area shape="rect" id="node5" href="$class_observable_geometric_object.html#abf94b42c7cfec3b868b0d97f56257006" title="Notify all subscribed observers that object was moved." alt="" coords="557,69,741,109"/>
+<area shape="rect" id="node7" href="$class_point_body.html#a7f1f6a7a61e1de7bcceede30dee02da1" title="Calculates the projective position of the point." alt="" coords="553,134,744,159"/>
+<area shape="rect" id="node8" href="$struct_point_equation.html#ab4e9d4eb7db520d259dc3e4afead36d8" title="Return current equation of point." alt="" coords="792,105,975,130"/>
+<area shape="rect" id="node9" href="$struct_homogeneous_coordinate.html#ac03f29c6b631bd4309cc8e0f774aa226" title="Normalizes coordinates." alt="" coords="800,155,967,195"/>
+<area shape="rect" id="node10" href="$struct_homogeneous_coordinate.html#ac20e34767f6cb9f6b2e1da0dfe24fb46" title="Normalizes coordinates." alt="" coords="1023,155,1189,195"/>
+</map>

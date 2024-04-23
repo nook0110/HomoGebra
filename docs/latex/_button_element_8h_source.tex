@@ -1,0 +1,71 @@
+\hypertarget{_button_element_8h_source}{}\doxysection{Button\+Element.\+h}
+\label{_button_element_8h_source}\index{HomoGebra/ButtonElement.h@{HomoGebra/ButtonElement.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Assert.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ButtonElementBody.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }HomoGebra}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ GeometricObjectType>}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_object_selector}{ObjectSelector}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body}{ObjectSelectorBody}}<GeometricObjectType>}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_a0d6f9b806258e1eb37bea59f6d47ba78}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_plane_event_1_1_object_removed}{PlaneEvent::ObjectRemoved}}\&\ object\_removed)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_selector}{ObjectSelector}}(\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}}*\ plane)}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body}{ObjectSelectorBody<GeometricObjectType>}}(plane)}
+\DoxyCodeLine{00015\ \ \ \{\}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ [[nodiscard]]\ GeometricObjectType*\ operator()()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Factory>}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_factory_wrapper}{FactoryWrapper}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_factory}{Factory}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_homo_gebra_1_1_factory_wrapper}{FactoryWrapper}}(\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}}*\ plane)\ :\ \mbox{\hyperlink{class_factory}{Factory}}(plane)\ \{\}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ Draw()\ \{\}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ Args>}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ operator()(Args\&\&...\ arguments)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ ((!arguments\ ||\ ...))}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ Factory::operator()(std::forward<Args>(arguments)...);}
+\DoxyCodeLine{00037\ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{void}\ operator()()\textcolor{keyword}{\ const\ }\{\ Assert(\textcolor{keyword}{false});\ \}}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_deleter}{Deleter}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_homo_gebra_1_1_deleter}{Deleter}}(\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}}*\ plane)\ :\ plane\_(plane)\ \{\}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ Draw()\ \{\}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ operator()()\textcolor{keyword}{\ const\ }\{\ Assert(\textcolor{keyword}{false});\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ Args>}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ operator()(Args\&\&...\ arguments)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00053\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}\ ((!arguments\ ||\ ...))}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ (plane\_-\/>\mbox{\hyperlink{class_homo_gebra_1_1_plane_ae5b7381c1ad41a40622232e4839ee590}{DeleteObject}}(arguments),\ ...);}
+\DoxyCodeLine{00060\ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}}*\ plane\_\{\};}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ \}\ \ \textcolor{comment}{//\ namespace\ HomoGebra}}
+
+\end{DoxyCode}

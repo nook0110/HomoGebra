@@ -1,0 +1,6 @@
+<map id="Conic::SetEquation" name="Conic::SetEquation">
+<area shape="rect" id="node1" title="Set new equation of conic." alt="" coords="5,13,140,38"/>
+<area shape="rect" id="node2" href="$class_conic_implementation.html#aa35c384c0abdf8b5c4f5bad02665973e" title="Sets new equation of conic." alt="" coords="188,5,331,45"/>
+<area shape="rect" id="node3" href="$class_observable_geometric_object.html#a97256ef7a4dba562ebc5cc2301d344ea" title="Notify all observers about event." alt="" coords="379,5,563,45"/>
+<area shape="rect" id="node4" href="$class_observable.html#a3c17caf423ec7c6d08cb197ee4bb526e" title="Notify all observers about event." alt="" coords="611,13,737,38"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Gui::Constructor::ObjectSelector&lt; GeometricObjectType &gt;" name="Gui::Constructor::ObjectSelector&lt; GeometricObjectType &gt;">
+<area shape="rect" id="node1" title="Widget to select object." alt="" coords="7,145,227,384"/>
+<area shape="rect" id="node2" href="$class_gui_1_1_widget.html" title="Mix&#45;In for widgets." alt="" coords="5,5,96,97"/>
+<area shape="rect" id="node3" href="$class_event_listener.html" title="Class that listens to notifier." alt="" coords="120,5,248,97"/>
+</map>

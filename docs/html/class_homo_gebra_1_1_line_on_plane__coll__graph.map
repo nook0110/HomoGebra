@@ -1,0 +1,13 @@
+<map id="HomoGebra::LineOnPlane" name="HomoGebra::LineOnPlane">
+<area shape="rect" id="node1" title="Construction of a casual line on a plane." alt="" coords="311,1005,485,1097"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_construction_line.html" title="Base class for all line constructions." alt="" coords="196,748,392,943"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_construction.html" title="Defines how object is created." alt="" coords="19,520,191,685"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_geometric_object_observer.html" title="Makes Construction an observer." alt="" coords="5,219,204,369"/>
+<area shape="rect" id="node5" title=" " alt="" coords="215,557,378,649"/>
+<area shape="rect" id="node6" href="$struct_homo_gebra_1_1_line_equation.html" title="Struct that defines position of the line." alt="" coords="416,799,591,891"/>
+<area shape="rect" id="node7" href="$struct_homo_gebra_1_1_equation_base.html" title="Struct that defines position of the objects." alt="" coords="409,557,589,649"/>
+<area shape="rect" id="node8" href="$struct_homo_gebra_1_1_homogeneous_coordinate.html" title="Coordinates in ." alt="" coords="613,527,857,678"/>
+<area shape="rect" id="node9" href="$class_homo_gebra_1_1_complex.html" title="Wrapper of std::complex." alt="" coords="656,160,815,428"/>
+<area shape="rect" id="node10" title=" " alt="" coords="587,5,721,97"/>
+<area shape="rect" id="node11" title=" " alt="" coords="745,5,888,97"/>
+</map>

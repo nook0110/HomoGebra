@@ -1,0 +1,4 @@
+<map id="Line::Detach" name="Line::Detach">
+<area shape="rect" id="node1" title="Unsubscribe an observer on this object." alt="" coords="5,5,100,31"/>
+<area shape="rect" id="node2" href="$class_observable.html#a2cf2a349bae1729595ff44ef9b1fe004" title="Unsubscribe an observer on this object." alt="" coords="148,5,283,31"/>
+</map>

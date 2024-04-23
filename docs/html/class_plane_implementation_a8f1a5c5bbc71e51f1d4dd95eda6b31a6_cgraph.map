@@ -1,0 +1,10 @@
+<map id="PlaneImplementation::Update" name="PlaneImplementation::Update">
+<area shape="rect" id="node1" title="Update, because sth was renamed." alt="" coords="5,169,148,209"/>
+<area shape="rect" id="node2" href="$class_name_generator.html#a5b533fdcf703b4228f51b7414f86f5cf" title="Add name to used names." alt="" coords="211,29,389,55"/>
+<area shape="rect" id="node5" href="$class_name_generator.html#a5ac6459eec0253511b32e75a4a2db2c5" title="Deletes name from dictionary." alt="" coords="204,103,396,128"/>
+<area shape="rect" id="node6" href="$class_name_generator.html#aac7a85f2c6bf9252b4251d45f1ce1f31" title="Generate new name." alt="" coords="196,176,404,201"/>
+<area shape="rect" id="node7" href="$class_geometric_object.html#a55afb45cc454d1ee76c47491c70d831b" title="Gets name of object." alt="" coords="209,225,391,251"/>
+<area shape="rect" id="node8" href="$class_geometric_object.html#aabd5c66bc1f019801678ef471ba9e544" title="Sets new name of object." alt="" coords="209,275,391,300"/>
+<area shape="rect" id="node3" href="$class_name_generator.html#a9044e8db372f29bd89167667f1ba5442" title="Parses name." alt="" coords="452,67,641,92"/>
+<area shape="rect" id="node4" href="$class_name_generator.html#a55a2dce19f5e88f51a781d3982e46c85" title="Parses subname." alt="" coords="689,67,900,92"/>
+</map>

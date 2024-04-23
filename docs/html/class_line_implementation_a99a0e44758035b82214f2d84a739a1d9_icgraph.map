@@ -1,0 +1,5 @@
+<map id="LineImplementation::GetEquation" name="LineImplementation::GetEquation">
+<area shape="rect" id="node1" title="Return equation of line." alt="" coords="180,23,315,63"/>
+<area shape="rect" id="node2" href="$class_line.html#a355fed79f6ee957f9dc4f663156ad194" title="Return current equation of point." alt="" coords="5,5,132,31"/>
+<area shape="rect" id="node3" href="$class_line.html#a7991d734b54de41ff87e1db296184223" title="Update the body of the line." alt="" coords="6,55,131,80"/>
+</map>

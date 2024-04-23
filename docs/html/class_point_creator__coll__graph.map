@@ -1,0 +1,13 @@
+<map id="PointCreator" name="PointCreator">
+<area shape="rect" id="node1" title="Creator of points." alt="" coords="214,815,331,936"/>
+<area shape="rect" id="node2" href="$class_creator.html" title="Base class for creators of geometric objects using mouse." alt="" coords="5,653,97,745"/>
+<area shape="rect" id="node3" title=" " alt="" coords="121,660,267,737"/>
+<area shape="rect" id="node4" title=" " alt="" coords="291,660,414,737"/>
+<area shape="rect" id="node5" href="$class_point_factory.html" title="Class that constructs points." alt="" coords="439,645,555,752"/>
+<area shape="rect" id="node6" href="$class_plane.html" title="Container for all objects, which you can draw." alt="" coords="443,388,551,583"/>
+<area shape="rect" id="node7" title=" " alt="" coords="346,13,439,90"/>
+<area shape="rect" id="node10" href="$class_plane_body.html" title=" " alt="" coords="421,182,572,303"/>
+<area shape="rect" id="node8" href="$class_plane_implementation.html" title="Implementation of Plane." alt="" coords="596,160,739,325"/>
+<area shape="rect" id="node9" title=" " alt="" coords="578,5,757,97"/>
+<area shape="rect" id="node11" title=" " alt="" coords="471,13,522,90"/>
+</map>

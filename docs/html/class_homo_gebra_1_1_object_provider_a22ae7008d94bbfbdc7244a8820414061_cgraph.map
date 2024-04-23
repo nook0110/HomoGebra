@@ -1,0 +1,5 @@
+<map id="HomoGebra::ObjectProvider::GetNearestObject" name="HomoGebra::ObjectProvider::GetNearestObject">
+<area shape="rect" id="node1" title="Gets a nearest object." alt="" coords="5,5,188,45"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_plane.html#a7367279948a50f5b622fd50d2a668892" title="Returns objects of GeometricObjectType." alt="" coords="236,13,443,38"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_plane_implementation.html#a25b15e0a6e25b2fb85d32d3abc45bb27" title="Get all objects of GeometricObjectType." alt="" coords="491,5,711,45"/>
+</map>

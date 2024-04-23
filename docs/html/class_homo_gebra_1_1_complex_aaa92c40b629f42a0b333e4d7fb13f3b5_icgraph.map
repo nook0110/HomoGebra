@@ -1,0 +1,12 @@
+<map id="HomoGebra::Complex::IsZero" name="HomoGebra::Complex::IsZero">
+<area shape="rect" id="node1" title="Checks if complex number is zero." alt="" coords="1303,37,1453,77"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_squared_matrix.html#a6e7ed5b63b528ab3079a79e826468537" title="Explicit template specialization for complex numbers." alt="" coords="1041,5,1224,45"/>
+<area shape="rect" id="node3" href="$struct_homo_gebra_1_1_homogeneous_coordinate.html#a8b7f938f1ce2e3cf64d453fe42c00af6" title="Normalizes coordinates." alt="" coords="1011,69,1255,109"/>
+<area shape="rect" id="node4" href="$struct_homo_gebra_1_1_homogeneous_coordinate.html#a37ab9d7956eaf156ba7cef5f9916aaed" title="Normalizes coordinates." alt="" coords="719,69,963,109"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_point_body.html#a9562275775158d6ad4d9a585ef778b9c" title="Calculates the projective position of the point." alt="" coords="512,37,671,77"/>
+<area shape="rect" id="node9" href="$class_homo_gebra_1_1_line_body.html#ad9b1a3baabcfe4a49cd81b34affa74a6" title="Updates the line body." alt="" coords="515,101,668,141"/>
+<area shape="rect" id="node6" href="$class_homo_gebra_1_1_point_body.html#a8879057f8a42f0b3044cb5f1a39d04b0" title="Updates the point body." alt="" coords="283,37,442,77"/>
+<area shape="rect" id="node7" href="$class_homo_gebra_1_1_point.html#a1343df45b3cf35e6353711d40c8000c0" title="Set new equation of point." alt="" coords="5,21,213,46"/>
+<area shape="rect" id="node8" href="$class_homo_gebra_1_1_point.html#acf17961cf1e121a2d3c6285e521b0aca" title="Body interface." alt="" coords="5,70,213,95"/>
+<area shape="rect" id="node10" href="$class_homo_gebra_1_1_line.html#a44d52395109353108f025aa2024e99cf" title="Update the body of the line." alt="" coords="261,109,464,134"/>
+</map>

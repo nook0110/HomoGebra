@@ -1,0 +1,7 @@
+<map id="HomoGebra::PointImplementation" name="HomoGebra::PointImplementation">
+<area shape="rect" id="node1" title="Implementation of Point." alt="" coords="15,653,232,760"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="5,513,241,605"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="12,359,235,465"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_observable.html" title=" " alt="" coords="26,175,221,311"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_observable_interface.html" title="Interface for observers of geometric objects." alt="" coords="17,5,229,127"/>
+</map>

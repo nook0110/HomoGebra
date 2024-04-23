@@ -1,0 +1,56 @@
+\hypertarget{_dictionary_8h_source}{}\doxysection{Dictionary.\+h}
+\label{_dictionary_8h_source}\index{HomoGebra/Dictionary.h@{HomoGebra/Dictionary.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00003\ \textcolor{keyword}{namespace\ }HomoGebra}
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Item>}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_dictionary}{Dictionary}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_dictionary_ac492bd8296fba5c138fc906722f2013d}{AddItem}}(\textcolor{keyword}{const}\ Item\&\ item);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_dictionary_aec962ae338ae7cf7a7373106801ea815}{DeleteItem}}(\textcolor{keyword}{const}\ Item\&\ item);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00048\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_dictionary_a3e19e48b25b351964ab453572f9129a1}{IsItemUsed}}(\textcolor{keyword}{const}\ Item\&\ item)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ std::map<Item,\ bool>\ \mbox{\hyperlink{class_homo_gebra_1_1_dictionary_ab5ec939e4b4073970ee5de5ac5360cdf}{used\_items\_}};\ \ }
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Item>}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_dictionary_ac492bd8296fba5c138fc906722f2013d}{Dictionary<Item>::AddItem}}(\textcolor{keyword}{const}\ Item\&\ item)}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordflow}{return}\ used\_items\_[item]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Item>}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_dictionary_aec962ae338ae7cf7a7373106801ea815}{Dictionary<Item>::DeleteItem}}(\textcolor{keyword}{const}\ Item\&\ item)}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \ \ \textcolor{comment}{//\ Check\ if\ item\ is\ used}}
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordflow}{if}\ (!used\_items\_.count(item))}
+\DoxyCodeLine{00065\ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00067\ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{comment}{//\ Delete\ item}}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordflow}{return}\ used\_items\_.erase(item);}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Item>}
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_dictionary_a3e19e48b25b351964ab453572f9129a1}{Dictionary<Item>::IsItemUsed}}(\textcolor{keyword}{const}\ Item\&\ item)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00075\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00076\ \ \ \textcolor{comment}{//\ Check\ if\ item\ is\ used}}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordflow}{if}\ (!used\_items\_.count(item))}
+\DoxyCodeLine{00078\ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00080\ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \textcolor{comment}{//\ Check\ if\ sub\ item\ is\ used}}
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordflow}{return}\ used\_items\_.at(item);}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ \}\ \ \textcolor{comment}{//\ namespace\ HomoGebra}}
+
+\end{DoxyCode}

@@ -1,0 +1,11 @@
+<map id="PointBody::Update" name="PointBody::Update">
+<area shape="rect" id="node1" title="Updates the point body." alt="" coords="5,91,136,116"/>
+<area shape="rect" id="node2" href="$class_point_body.html#a7f1f6a7a61e1de7bcceede30dee02da1" title="Calculates the projective position of the point." alt="" coords="188,41,379,67"/>
+<area shape="rect" id="node7" href="$class_object_body.html#a4ba61510565da9d2484e32af05fa5ea9" title="Sets position of the name." alt="" coords="184,91,383,116"/>
+<area shape="rect" id="node8" href="$class_object_body.html#a834064754b9cc1ddccfa76de57825573" title="Sets size of the name." alt="" coords="194,140,373,165"/>
+<area shape="rect" id="node3" href="$struct_point_equation.html#ab4e9d4eb7db520d259dc3e4afead36d8" title="Return current equation of point." alt="" coords="431,5,613,31"/>
+<area shape="rect" id="node4" href="$struct_homogeneous_coordinate.html#ac03f29c6b631bd4309cc8e0f774aa226" title="Normalizes coordinates." alt="" coords="439,55,605,95"/>
+<area shape="rect" id="node5" href="$struct_homogeneous_coordinate.html#ac20e34767f6cb9f6b2e1da0dfe24fb46" title="Normalizes coordinates." alt="" coords="661,55,828,95"/>
+<area shape="rect" id="node6" href="$class_complex.html#ac1a16636807edf8b0271c9b543bdf21c" title="Checks if complex number is zero." alt="" coords="876,63,992,88"/>
+<area shape="rect" id="node9" href="$class_object_name.html#a1366c3d02169c876fa90aa894de34be2" title="Sets size of the object name." alt="" coords="448,140,596,165"/>
+</map>

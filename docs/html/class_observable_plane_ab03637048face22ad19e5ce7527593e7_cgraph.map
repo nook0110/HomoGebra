@@ -1,0 +1,4 @@
+<map id="ObservablePlane::Notify" name="ObservablePlane::Notify">
+<area shape="rect" id="node1" title="Notify all observers about event." alt="" coords="5,5,165,31"/>
+<area shape="rect" id="node2" href="$class_observable.html#a3c17caf423ec7c6d08cb197ee4bb526e" title="Notify all observers about event." alt="" coords="213,5,340,31"/>
+</map>

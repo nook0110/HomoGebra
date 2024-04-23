@@ -1,0 +1,10 @@
+<map id="ObjectBody::GetName" name="ObjectBody::GetName">
+<area shape="rect" id="node1" title="Gets name of the point." alt="" coords="387,137,540,162"/>
+<area shape="rect" id="node2" href="$class_point.html#a389f5b17eb9fff86d1fd975fa83bf501" title="Gets name of object." alt="" coords="222,13,337,38"/>
+<area shape="rect" id="node4" href="$class_line.html#a03e750716b278a8894b5a1fd68020fcb" title="Gets name of object." alt="" coords="225,62,334,87"/>
+<area shape="rect" id="node5" href="$class_conic.html#a0f606897c1316d2232e9b89fc4b49b77" title="Gets name of object." alt="" coords="220,111,339,137"/>
+<area shape="rect" id="node6" href="$class_point.html#af524277e47dc92389c924ad0dc6cfd81" title="Sets new name of object." alt="" coords="222,161,337,186"/>
+<area shape="rect" id="node7" href="$class_line.html#a04169415270d805b615fa68a4e394191" title="Sets new name of object." alt="" coords="225,210,333,235"/>
+<area shape="rect" id="node8" href="$class_conic.html#adcd87373cfe42bee264b5e21ca05745b" title="Sets new name of object." alt="" coords="221,259,338,285"/>
+<area shape="rect" id="node3" href="$struct_line_by_two_points_factory.html#ab03f51b65bd0a48c6aceb4e4b07829a9" title="Constructs line through two given points." alt="" coords="5,5,172,45"/>
+</map>

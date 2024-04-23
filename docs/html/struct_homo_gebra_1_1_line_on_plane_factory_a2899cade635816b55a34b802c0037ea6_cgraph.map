@@ -1,0 +1,7 @@
+<map id="HomoGebra::LineOnPlaneFactory::operator()" name="HomoGebra::LineOnPlaneFactory::operator()">
+<area shape="rect" id="node1" title="Constructs a line with given equation." alt="" coords="5,39,223,79"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_plane.html#a2726b0d90a21efd75c29ac0bd3a7df64" title="Adds object to plane." alt="" coords="271,15,507,41"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_plane.html#a25821e22dc985c697890f3bbb8f46ae2" title="Returns name generator." alt="" coords="291,67,486,107"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_plane_implementation.html#a89562b5170ec50cd21b59f201b3ccbdb" title="Adds object." alt="" coords="555,5,775,45"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_plane_implementation.html#af75dae912e7e6f2efba0c368a3bc8f8f" title="Get name generator." alt="" coords="555,69,775,109"/>
+</map>

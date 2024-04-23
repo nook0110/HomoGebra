@@ -1,0 +1,238 @@
+\hypertarget{class_gui_1_1_constructor_1_1_object_selector}{}\doxysection{Gui\+::Constructor\+::Object\+Selector\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_gui_1_1_constructor_1_1_object_selector}\index{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}}
+
+
+\mbox{\hyperlink{class_gui_1_1_widget}{Widget}} to select object.  
+
+
+
+
+{\ttfamily \#include $<$Widget.\+h$>$}
+
+
+
+Inheritance diagram for Gui\+::Constructor\+::Object\+Selector\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{class_gui_1_1_constructor_1_1_object_selector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Gui\+::Constructor\+::Object\+Selector\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gui_1_1_constructor_1_1_object_selector__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_a124d5d999ebb2edcaf4aa37fd884c555}{Object\+Selector}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+Geometric\+Object\+Type $\ast$ \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_a707401d0d3abac380fa022a9ae9d105f}{Get\+Object}} () const
+\begin{DoxyCompactList}\small\item\em Get selected object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_acf6622153f2dac31148e6baa791e22ef}{Set\+Object}} (Geometric\+Object\+Type $\ast$object)
+\begin{DoxyCompactList}\small\item\em Set selected object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_ae722bc494a76a87bc5efd828c7903315}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em Draws the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_a4d71cb4b7601f81e6fcd3a5172e1502c}{Update}} (const \mbox{\hyperlink{struct_user_event_1_1_click}{User\+Event\+::\+Click}} \&event) override
+\begin{DoxyCompactList}\small\item\em Updates the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_gui_1_1_widget}{Gui\+::\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_gui_1_1_widget_aad17178fe1a5582f2ed2e2ce676abcf1}{$\sim$\+Widget}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_gui_1_1_widget_a22ea5c1928b958a0eab5d2dbd80c8c61}{Draw}} ()=0
+\begin{DoxyCompactList}\small\item\em Draws widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_event_listener}{Event\+Listener}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_event_listener_a224801ef2f0a3c0ddfd18baf4ca52118}{$\sim$\+Event\+Listener}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_event_listener_a44b18bc65587eb2ed590dff5767adb36}{Update}} (const \mbox{\hyperlink{struct_user_event_1_1_click}{User\+Event\+::\+Click}} \&clicked\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because user clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_ab1e770f3e94d38e67e577777f3fbbad3}{Draw\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Draws name of selected object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_a7e6fd0dd73e729c65c36ad2bcba8df8d}{Draw\+List}} ()
+\begin{DoxyCompactList}\small\item\em Draws list to choose object from. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_a21fc998913b9859646c8d60d74d17ea5}{Draw\+Setter}} ()
+\begin{DoxyCompactList}\small\item\em Draws setter through last nearest object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gui_1_1_constructor_1_1_object_selector_aa11f019459ab1c5abf96d67aee3e35c0}\label{class_gui_1_1_constructor_1_1_object_selector_aa11f019459ab1c5abf96d67aee3e35c0}} 
+\mbox{\hyperlink{class_plane}{Plane}} \& {\bfseries plane\+\_\+}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_plane}{Plane}} where to choose objects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_gui_1_1_constructor_1_1_object_selector_a1cf73358036a22440daa80d7802bc4b7}\label{class_gui_1_1_constructor_1_1_object_selector_a1cf73358036a22440daa80d7802bc4b7}} 
+Geometric\+Object\+Type $\ast$ {\bfseries object\+\_\+} \{\}
+\begin{DoxyCompactList}\small\item\em Object that was selected. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_gui_1_1_constructor_1_1_object_selector_a294987e8370fbd989b0d453d397dfd20}\label{class_gui_1_1_constructor_1_1_object_selector_a294987e8370fbd989b0d453d397dfd20}} 
+\mbox{\hyperlink{class_nearby_object_getter}{Nearby\+Object\+Getter}}$<$ Geometric\+Object\+Type $>$ {\bfseries object\+\_\+getter\+\_\+}
+\begin{DoxyCompactList}\small\item\em Helper to find specific objects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_gui_1_1_constructor_1_1_object_selector_a4a90577402ab4f3c77cbb0a25c74811d}\label{class_gui_1_1_constructor_1_1_object_selector_a4a90577402ab4f3c77cbb0a25c74811d}} 
+\mbox{\hyperlink{classint}{int}} {\bfseries current\+\_\+object\+\_\+} = 0
+\begin{DoxyCompactList}\small\item\em Index in list of all objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Geometric\+Object\+Type$>$\newline
+class Gui\+::\+Constructor\+::\+Object\+Selector$<$ Geometric\+Object\+Type $>$}
+\mbox{\hyperlink{class_gui_1_1_widget}{Widget}} to select object. 
+
+By name or nearest to last click object.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Geometric\+Object\+Type} & Type of object to select.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyAuthor}{Author}
+nook0110 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gui_1_1_constructor_1_1_object_selector_a124d5d999ebb2edcaf4aa37fd884c555}\label{class_gui_1_1_constructor_1_1_object_selector_a124d5d999ebb2edcaf4aa37fd884c555}} 
+\index{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}!ObjectSelector@{ObjectSelector}}
+\index{ObjectSelector@{ObjectSelector}!Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{ObjectSelector()}{ObjectSelector()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+\mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector}{Gui\+::\+Constructor\+::\+Object\+Selector}}$<$ Geometric\+Object\+Type $>$\+::\+Object\+Selector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} \&}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plane} & \mbox{\hyperlink{class_plane}{Plane}} where to select object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gui_1_1_constructor_1_1_object_selector_ae722bc494a76a87bc5efd828c7903315}\label{class_gui_1_1_constructor_1_1_object_selector_ae722bc494a76a87bc5efd828c7903315}} 
+\index{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}!Draw@{Draw}}
+\index{Draw@{Draw}!Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void Constructor\+::\+Object\+Selector\+::\+Draw\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draws the widget. 
+
+
+
+Implements \mbox{\hyperlink{class_gui_1_1_widget_a22ea5c1928b958a0eab5d2dbd80c8c61}{Gui\+::\+Widget}}.
+
+\mbox{\Hypertarget{class_gui_1_1_constructor_1_1_object_selector_a7e6fd0dd73e729c65c36ad2bcba8df8d}\label{class_gui_1_1_constructor_1_1_object_selector_a7e6fd0dd73e729c65c36ad2bcba8df8d}} 
+\index{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}!DrawList@{DrawList}}
+\index{DrawList@{DrawList}!Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{DrawList()}{DrawList()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void Constructor\+::\+Object\+Selector\+::\+Draw\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws list to choose object from. 
+
+\mbox{\Hypertarget{class_gui_1_1_constructor_1_1_object_selector_ab1e770f3e94d38e67e577777f3fbbad3}\label{class_gui_1_1_constructor_1_1_object_selector_ab1e770f3e94d38e67e577777f3fbbad3}} 
+\index{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}!DrawName@{DrawName}}
+\index{DrawName@{DrawName}!Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{DrawName()}{DrawName()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void Constructor\+::\+Object\+Selector\+::\+Draw\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws name of selected object. 
+
+\mbox{\Hypertarget{class_gui_1_1_constructor_1_1_object_selector_a21fc998913b9859646c8d60d74d17ea5}\label{class_gui_1_1_constructor_1_1_object_selector_a21fc998913b9859646c8d60d74d17ea5}} 
+\index{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}!DrawSetter@{DrawSetter}}
+\index{DrawSetter@{DrawSetter}!Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{DrawSetter()}{DrawSetter()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void Constructor\+::\+Object\+Selector\+::\+Draw\+Setter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws setter through last nearest object. 
+
+\mbox{\Hypertarget{class_gui_1_1_constructor_1_1_object_selector_a707401d0d3abac380fa022a9ae9d105f}\label{class_gui_1_1_constructor_1_1_object_selector_a707401d0d3abac380fa022a9ae9d105f}} 
+\index{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}!GetObject@{GetObject}}
+\index{GetObject@{GetObject}!Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{GetObject()}{GetObject()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+Geometric\+Object\+Type $\ast$ Constructor\+::\+Object\+Selector\+::\+Get\+Object}
+
+
+
+Get selected object. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to selected object. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gui_1_1_constructor_1_1_object_selector_a707401d0d3abac380fa022a9ae9d105f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gui_1_1_constructor_1_1_object_selector_acf6622153f2dac31148e6baa791e22ef}\label{class_gui_1_1_constructor_1_1_object_selector_acf6622153f2dac31148e6baa791e22ef}} 
+\index{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}!SetObject@{SetObject}}
+\index{SetObject@{SetObject}!Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{SetObject()}{SetObject()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void Constructor\+::\+Object\+Selector\+::\+Set\+Object (\begin{DoxyParamCaption}\item[{Geometric\+Object\+Type $\ast$}]{object }\end{DoxyParamCaption})}
+
+
+
+Set selected object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Object to set with. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gui_1_1_constructor_1_1_object_selector_acf6622153f2dac31148e6baa791e22ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gui_1_1_constructor_1_1_object_selector_a4d71cb4b7601f81e6fcd3a5172e1502c}\label{class_gui_1_1_constructor_1_1_object_selector_a4d71cb4b7601f81e6fcd3a5172e1502c}} 
+\index{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}!Update@{Update}}
+\index{Update@{Update}!Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$@{Gui::Constructor::ObjectSelector$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void Constructor\+::\+Object\+Selector\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_user_event_1_1_click}{User\+Event\+::\+Click}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Event to process. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_event_listener_a44b18bc65587eb2ed590dff5767adb36}{Event\+Listener}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Widget.\+h\item 
+Homo\+Gebra/Widget.\+cpp\end{DoxyCompactItemize}

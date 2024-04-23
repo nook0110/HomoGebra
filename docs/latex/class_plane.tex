@@ -1,0 +1,346 @@
+\hypertarget{class_plane}{}\doxysection{Plane Class Reference}
+\label{class_plane}\index{Plane@{Plane}}
+
+
+Container for all objects, which you can draw.  
+
+
+
+
+{\ttfamily \#include $<$Plane.\+h$>$}
+
+
+
+Inheritance diagram for Plane\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{class_plane__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Plane\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plane__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_plane_a8c42cc904048e6ff57c57cca0139d1ec}{Add\+Construction}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_construction}{Construction}} $>$ construction)
+\begin{DoxyCompactList}\small\item\em Adds object to plane. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_a6d8df6e8d99fcc20bebf6083269bbe10}{Delete\+Construction}} (\mbox{\hyperlink{class_construction}{Construction}} $\ast$construction)
+\begin{DoxyCompactList}\small\item\em Deletes object from plane. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_a57eaffe9d1f10bf58ff73c545b82b743}{Delete\+Object}} (const \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$object)
+\begin{DoxyCompactList}\small\item\em Deletes object from plane. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Geometric\+Object\+Type $>$ }\\std\+::vector$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$ $>$ \mbox{\hyperlink{class_plane_a63aa7353ef2a3bea5172b0a627e62831}{Get\+Objects}} () const
+\begin{DoxyCompactList}\small\item\em Returns objects of Geometric\+Object\+Type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_a982ddbe6530a2383cdf49f165296b319}{Update}} (const sf\+::\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Updates plane. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_a2489b8fc3c209fdca87caa41e4027934}{Update}} (sf\+::\+Render\+Target \&target) const
+\begin{DoxyCompactList}\small\item\em Updates plane. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_a10f7c8fcc9b97544ea6606ea76c040fc}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
+\begin{DoxyCompactList}\small\item\em Draws plane and all objects on it. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_name_generator}{Name\+Generator}} \& \mbox{\hyperlink{class_plane_ae98911299e85a283b89200f1e2607de1}{Get\+Name\+Generator}} () const
+\begin{DoxyCompactList}\small\item\em Returns name generator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_a28b2668e69cfd90d6fafad211ef15a28}{Attach}} (\mbox{\hyperlink{class_plane_observer}{Plane\+Observer}} $\ast$observer) override
+\begin{DoxyCompactList}\small\item\em Subscribe an observer on this object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_aeb4adf343748f16c0d08c06c75c70212}{Detach}} (const \mbox{\hyperlink{class_plane_observer}{Plane\+Observer}} $\ast$observer) override
+\begin{DoxyCompactList}\small\item\em Unsubscribe an observer on this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable_interface}{Observable\+Interface$<$ Plane\+Observer $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_observable_interface_a264d2edac170c359a1766bd24efe66be}\label{class_observable_interface_a264d2edac170c359a1766bd24efe66be}} 
+virtual {\bfseries $\sim$\+Observable\+Interface} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_observable_interface_aa087ce193a2a61a8ca02efb1a86144c8}{Attach}} (\mbox{\hyperlink{class_plane_observer}{Plane\+Observer}} $\ast$observer)=0
+\begin{DoxyCompactList}\small\item\em Subscribe an observer on this object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_observable_interface_a165f354631b599d81ade095f8b2e4a97}{Detach}} (const \mbox{\hyperlink{class_plane_observer}{Plane\+Observer}} $\ast$observer)=0
+\begin{DoxyCompactList}\small\item\em Unsubscribe an observer on this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_plane_acc86f8aae09b055699688b1c50ad7501}\label{class_plane_acc86f8aae09b055699688b1c50ad7501}} 
+\mbox{\hyperlink{class_plane_implementation}{Plane\+Implementation}} {\bfseries implementation\+\_\+}
+\begin{DoxyCompactList}\small\item\em Implementation of plane. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_plane_aa45a1ee353c3eab80ec049db4a02c4f8}\label{class_plane_aa45a1ee353c3eab80ec049db4a02c4f8}} 
+\mbox{\hyperlink{class_plane_body}{Plane\+Body}} {\bfseries body\+\_\+}
+\begin{DoxyCompactList}\small\item\em Body of plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container for all objects, which you can draw. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_plane_implementation}{Plane\+Implementation}} 
+
+\mbox{\hyperlink{class_plane_body}{Plane\+Body}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_plane_a8c42cc904048e6ff57c57cca0139d1ec}\label{class_plane_a8c42cc904048e6ff57c57cca0139d1ec}} 
+\index{Plane@{Plane}!AddConstruction@{AddConstruction}}
+\index{AddConstruction@{AddConstruction}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{AddConstruction()}{AddConstruction()}}
+{\footnotesize\ttfamily void Plane\+::\+Add\+Construction (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_construction}{Construction}} $>$}]{construction }\end{DoxyParamCaption})}
+
+
+
+Adds object to plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em construction} & Pointer to an object. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_plane_a8c42cc904048e6ff57c57cca0139d1ec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plane_a8c42cc904048e6ff57c57cca0139d1ec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_a28b2668e69cfd90d6fafad211ef15a28}\label{class_plane_a28b2668e69cfd90d6fafad211ef15a28}} 
+\index{Plane@{Plane}!Attach@{Attach}}
+\index{Attach@{Attach}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{Attach()}{Attach()}}
+{\footnotesize\ttfamily void Plane\+::\+Attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane_observer}{Plane\+Observer}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Subscribe an observer on this object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Observer to add. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_observable_interface_aa087ce193a2a61a8ca02efb1a86144c8}{Observable\+Interface$<$ Plane\+Observer $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{class_plane_a28b2668e69cfd90d6fafad211ef15a28_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_a6d8df6e8d99fcc20bebf6083269bbe10}\label{class_plane_a6d8df6e8d99fcc20bebf6083269bbe10}} 
+\index{Plane@{Plane}!DeleteConstruction@{DeleteConstruction}}
+\index{DeleteConstruction@{DeleteConstruction}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{DeleteConstruction()}{DeleteConstruction()}}
+{\footnotesize\ttfamily void Plane\+::\+Delete\+Construction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_construction}{Construction}} $\ast$}]{construction }\end{DoxyParamCaption})}
+
+
+
+Deletes object from plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em construction} & Pointer to an object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_plane_a57eaffe9d1f10bf58ff73c545b82b743}\label{class_plane_a57eaffe9d1f10bf58ff73c545b82b743}} 
+\index{Plane@{Plane}!DeleteObject@{DeleteObject}}
+\index{DeleteObject@{DeleteObject}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{DeleteObject()}{DeleteObject()}}
+{\footnotesize\ttfamily void Plane\+::\+Delete\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$}]{object }\end{DoxyParamCaption})}
+
+
+
+Deletes object from plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Pointer to an object. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_plane_a57eaffe9d1f10bf58ff73c545b82b743_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_aeb4adf343748f16c0d08c06c75c70212}\label{class_plane_aeb4adf343748f16c0d08c06c75c70212}} 
+\index{Plane@{Plane}!Detach@{Detach}}
+\index{Detach@{Detach}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{Detach()}{Detach()}}
+{\footnotesize\ttfamily void Plane\+::\+Detach (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_plane_observer}{Plane\+Observer}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Unsubscribe an observer on this object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Observer to delete. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_observable_interface_a165f354631b599d81ade095f8b2e4a97}{Observable\+Interface$<$ Plane\+Observer $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{class_plane_aeb4adf343748f16c0d08c06c75c70212_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_a10f7c8fcc9b97544ea6606ea76c040fc}\label{class_plane_a10f7c8fcc9b97544ea6606ea76c040fc}} 
+\index{Plane@{Plane}!draw@{draw}}
+\index{draw@{draw}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Plane\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Draws plane and all objects on it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to. \\
+\hline
+{\em states} & Current render states. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{class_plane_a10f7c8fcc9b97544ea6606ea76c040fc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_ae98911299e85a283b89200f1e2607de1}\label{class_plane_ae98911299e85a283b89200f1e2607de1}} 
+\index{Plane@{Plane}!GetNameGenerator@{GetNameGenerator}}
+\index{GetNameGenerator@{GetNameGenerator}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{GetNameGenerator()}{GetNameGenerator()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_name_generator}{Name\+Generator}} \& Plane\+::\+Get\+Name\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns name generator. 
+
+\begin{DoxyReturn}{Returns}
+Name generator. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plane_ae98911299e85a283b89200f1e2607de1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plane_ae98911299e85a283b89200f1e2607de1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_a63aa7353ef2a3bea5172b0a627e62831}\label{class_plane_a63aa7353ef2a3bea5172b0a627e62831}} 
+\index{Plane@{Plane}!GetObjects@{GetObjects}}
+\index{GetObjects@{GetObjects}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{GetObjects()}{GetObjects()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+template std\+::vector$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$ $>$ Plane\+::\+Get\+Objects$<$ \mbox{\hyperlink{class_conic}{Conic}} $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns objects of Geometric\+Object\+Type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Geometric\+Object\+Type} & Type of geometric object to get.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Objects of Geometric\+Object\+Type. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_plane_a63aa7353ef2a3bea5172b0a627e62831_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_plane_a63aa7353ef2a3bea5172b0a627e62831_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_a982ddbe6530a2383cdf49f165296b319}\label{class_plane_a982ddbe6530a2383cdf49f165296b319}} 
+\index{Plane@{Plane}!Update@{Update}}
+\index{Update@{Update}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Plane\+::\+Update (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})}
+
+
+
+Updates plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Event to update plane. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plane_a982ddbe6530a2383cdf49f165296b319_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_a2489b8fc3c209fdca87caa41e4027934}\label{class_plane_a2489b8fc3c209fdca87caa41e4027934}} 
+\index{Plane@{Plane}!Update@{Update}}
+\index{Update@{Update}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Plane\+::\+Update (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target }\end{DoxyParamCaption}) const}
+
+
+
+Updates plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Plane.\+h\item 
+Homo\+Gebra/Plane.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="HomoGebra::ButtonBody::Draw" name="HomoGebra::ButtonBody::Draw">
+<area shape="rect" id="node1" title="Draws the body." alt="" coords="220,5,387,45"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_button_base.html#ac1bf4426e6882807743688a8a475566e" title="Draws button." alt="" coords="5,5,172,45"/>
+</map>

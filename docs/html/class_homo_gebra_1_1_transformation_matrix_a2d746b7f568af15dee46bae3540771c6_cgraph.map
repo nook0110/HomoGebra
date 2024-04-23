@@ -1,0 +1,5 @@
+<map id="HomoGebra::TransformationMatrix::GetInverse" name="HomoGebra::TransformationMatrix::GetInverse">
+<area shape="rect" id="node1" title="Finds inversion of matrix." alt="" coords="5,37,189,77"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_transformation_matrix.html#a45829ca959dd95eaa4b9b4d1d4fd9659" title="Default Constructor. Creates identity matrix." alt="" coords="237,5,424,45"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_transformation_matrix.html#a6a685dcb5a762e11981acbc420e9612d" title="Calculates determinant." alt="" coords="239,69,423,109"/>
+</map>

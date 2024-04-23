@@ -1,0 +1,15 @@
+var searchData=
+[
+  ['b_0',['b',['../struct_homo_gebra_1_1_line_body_1_1_equation.html#a7b58fec349489ebe65aa404f744f1272',1,'HomoGebra::LineBody::Equation']]],
+  ['begin_1',['begin',['../class_homo_gebra_1_1_transformation_matrix.html#ab886b752d742beaa29a335d92b5e3b53',1,'HomoGebra::TransformationMatrix::begin()'],['../class_homo_gebra_1_1_squared_matrix.html#afa7ba0071dce23aa195dfddf8b881969',1,'HomoGebra::SquaredMatrix::begin()']]],
+  ['body_5f_2',['body_',['../class_homo_gebra_1_1_point.html#a179903815abfd84a456f3b59ff467bf3',1,'HomoGebra::Point::body_()'],['../class_homo_gebra_1_1_line.html#a5466cb703002ff2593d44205159fcb3b',1,'HomoGebra::Line::body_()'],['../class_homo_gebra_1_1_conic.html#a2bd9d5ceb912e5764803748d8e95f6bb',1,'HomoGebra::Conic::body_()'],['../class_homo_gebra_1_1_point_body.html#a9bdc26766703b82a37c2d7213e013429',1,'HomoGebra::PointBody::body_()'],['../class_homo_gebra_1_1_plane.html#a22dcf28331aeac31e2785b1c07b04df4',1,'HomoGebra::Plane::body_()']]],
+  ['buttonbase_3',['ButtonBase',['../class_homo_gebra_1_1_button_base.html#aab3b10653b28fb5f7aeb3f4ccf6fa0b2',1,'HomoGebra::ButtonBase::ButtonBase()'],['../class_homo_gebra_1_1_button_base.html',1,'HomoGebra::ButtonBase&lt; Elements &gt;']]],
+  ['buttonbase_3c_20objectselector_3c_20geometricobject_20_3e_2c_20deleter_20_3e_4',['ButtonBase&lt; ObjectSelector&lt; GeometricObject &gt;, Deleter &gt;',['../class_homo_gebra_1_1_button_base.html',1,'HomoGebra']]],
+  ['buttonbase_3c_20objectselector_3c_20point_20_3e_2c_20objectselector_3c_20point_20_3e_2c_20factorywrapper_3c_20linebytwopointsfactory_20_3e_20_3e_5',['ButtonBase&lt; ObjectSelector&lt; Point &gt;, ObjectSelector&lt; Point &gt;, FactoryWrapper&lt; LineByTwoPointsFactory &gt; &gt;',['../class_homo_gebra_1_1_button_base.html',1,'HomoGebra']]],
+  ['buttonbody_6',['ButtonBody',['../class_homo_gebra_1_1_button_body.html',1,'HomoGebra']]],
+  ['buttonclass_7',['ButtonClass',['../class_button_class.html',1,'']]],
+  ['buttonimplementation_8',['ButtonImplementation',['../class_homo_gebra_1_1_button_implementation.html#a09971896170a5b1b088d574d9b5711f3',1,'HomoGebra::ButtonImplementation::ButtonImplementation()'],['../class_homo_gebra_1_1_button_implementation_3_01_first_01_4.html#a9705ae0b8febc411c165f47bcfbb9e0a',1,'HomoGebra::ButtonImplementation&lt; First &gt;::ButtonImplementation()'],['../class_homo_gebra_1_1_button_implementation.html',1,'HomoGebra::ButtonImplementation&lt; First, Rest &gt;']]],
+  ['buttonimplementation_3c_20elements_2e_2e_2e_20_3e_9',['ButtonImplementation&lt; Elements... &gt;',['../class_homo_gebra_1_1_button_implementation.html',1,'HomoGebra']]],
+  ['buttonimplementation_3c_20first_20_3e_10',['ButtonImplementation&lt; First &gt;',['../class_homo_gebra_1_1_button_implementation_3_01_first_01_4.html',1,'HomoGebra']]],
+  ['bytwopoints_11',['ByTwoPoints',['../class_homo_gebra_1_1_by_two_points.html#ac50ca8544c02b8d77c8c250e367fcc5b',1,'HomoGebra::ByTwoPoints::ByTwoPoints()'],['../class_homo_gebra_1_1_by_two_points.html',1,'HomoGebra::ByTwoPoints']]]
+];

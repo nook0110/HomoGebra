@@ -1,0 +1,5 @@
+<map id="NameGenerator::DeleteName" name="NameGenerator::DeleteName">
+<area shape="rect" id="node1" title="Deletes name from dictionary." alt="" coords="5,29,197,55"/>
+<area shape="rect" id="node2" href="$class_name_generator.html#a9044e8db372f29bd89167667f1ba5442" title="Parses name." alt="" coords="245,29,435,55"/>
+<area shape="rect" id="node3" href="$class_name_generator.html#a55a2dce19f5e88f51a781d3982e46c85" title="Parses subname." alt="" coords="483,29,693,55"/>
+</map>

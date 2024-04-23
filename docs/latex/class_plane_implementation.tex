@@ -1,0 +1,337 @@
+\hypertarget{class_plane_implementation}{}\doxysection{Plane\+Implementation Class Reference}
+\label{class_plane_implementation}\index{PlaneImplementation@{PlaneImplementation}}
+
+
+Implementation of \mbox{\hyperlink{class_plane}{Plane}}.  
+
+
+
+
+{\ttfamily \#include $<$Plane\+Implementation.\+h$>$}
+
+
+
+Inheritance diagram for Plane\+Implementation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_plane_implementation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Plane\+Implementation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plane_implementation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_plane_implementation_a0ed78a69679545bea8ed989299805081}{Add\+Construction}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_construction}{Construction}} $>$ construction)
+\begin{DoxyCompactList}\small\item\em Adds object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_implementation_aed24cee4ac9521354a85795f2343a5c7}{Destroy\+Object}} (const \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$object)
+\begin{DoxyCompactList}\small\item\em Remove object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_plane_implementation_ac79057167137e22be8df300b4ec9d75a}{Is\+Contained}} (const \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$object) const
+\begin{DoxyCompactList}\small\item\em Check if object is contained. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Geometric\+Object\+Type $>$ }\\std\+::vector$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$ $>$ \mbox{\hyperlink{class_plane_implementation_aadc5370b598b23685b72a5818f3564b6}{Get\+Objects}} () const
+\begin{DoxyCompactList}\small\item\em Get all objects of Geometric\+Object\+Type. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_name_generator}{Name\+Generator}} \& \mbox{\hyperlink{class_plane_implementation_ad38f67696ba3974ce847cd051e62a64c}{Get\+Name\+Generator}} () const
+\begin{DoxyCompactList}\small\item\em Get name generator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_implementation_a1d7df263ad171e2f81ab74c978eba382}{Update}} (const \mbox{\hyperlink{struct_object_event_1_1_moved}{Object\+Event\+::\+Moved}} \&moved\+\_\+event) override
+\begin{DoxyCompactList}\small\item\em Update, because sth moved. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_implementation_a62b4d30b59123a4aba1355b9e8b06f96}{Update}} (const \mbox{\hyperlink{struct_object_event_1_1_going_to_be_destroyed}{Object\+Event\+::\+Going\+To\+Be\+Destroyed}} \&destroyed\+\_\+event) override
+\begin{DoxyCompactList}\small\item\em Update, because sth was destroyed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_implementation_a8f1a5c5bbc71e51f1d4dd95eda6b31a6}{Update}} (const \mbox{\hyperlink{struct_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} \&renamed\+\_\+event) override
+\begin{DoxyCompactList}\small\item\em Update, because sth was renamed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_geometric_object_observer}{Geometric\+Object\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometric_object_observer_a9324c32d02500a191de6d5ed1ff7e82c}{Geometric\+Object\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometric_object_observer_afb8eac874b30b302a977fa7a2ada4605}\label{class_geometric_object_observer_afb8eac874b30b302a977fa7a2ada4605}} 
+virtual {\bfseries $\sim$\+Geometric\+Object\+Observer} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometric_object_observer_a617b3090c0ab5aee48c9af20ffde611d}{Update}} (const \mbox{\hyperlink{struct_object_event_1_1_moved}{Object\+Event\+::\+Moved}} \&moved\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth moved. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometric_object_observer_adc2ccc27a401b848141693da993f0e98}{Update}} (const \mbox{\hyperlink{struct_object_event_1_1_going_to_be_destroyed}{Object\+Event\+::\+Going\+To\+Be\+Destroyed}} \&destroyed\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth was destroyed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometric_object_observer_a31f78d46caebf7be3fa901fc074a69eb}{Update}} (const \mbox{\hyperlink{struct_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} \&renamed\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth was renamed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable_plane}{Observable\+Plane}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_observable_plane_ad3e967907d4ae302797d148595fe5012}\label{class_observable_plane_ad3e967907d4ae302797d148595fe5012}} 
+{\bfseries $\sim$\+Observable\+Plane} () override=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Event $>$ }\\void \mbox{\hyperlink{class_observable_plane_ab03637048face22ad19e5ce7527593e7}{Notify}} (const Event \&event) const
+\begin{DoxyCompactList}\small\item\em Notify all observers about event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable}{Observable$<$ Plane\+Observer $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_observable_a5f2b7d927c23dc84a936ad208a6227da}\label{class_observable_a5f2b7d927c23dc84a936ad208a6227da}} 
+{\bfseries $\sim$\+Observable} () override=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_a8ba8ec9993265b2a02af443b8fe09d3f}{Attach}} (\mbox{\hyperlink{class_plane_observer}{Plane\+Observer}} $\ast$observer) override
+\begin{DoxyCompactList}\small\item\em Subscribe an observer on this object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_a2cf2a349bae1729595ff44ef9b1fe004}{Detach}} (const \mbox{\hyperlink{class_plane_observer}{Plane\+Observer}} $\ast$observer) override
+\begin{DoxyCompactList}\small\item\em Unsubscribe an observer on this object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_a3c17caf423ec7c6d08cb197ee4bb526e}{Notify}} (const Event \&event) const
+\begin{DoxyCompactList}\small\item\em Notify all observers about event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable_interface}{Observable\+Interface$<$ Observer $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_observable_interface_a264d2edac170c359a1766bd24efe66be}\label{class_observable_interface_a264d2edac170c359a1766bd24efe66be}} 
+virtual {\bfseries $\sim$\+Observable\+Interface} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_observable_interface_aa087ce193a2a61a8ca02efb1a86144c8}{Attach}} (Observer $\ast$observer)=0
+\begin{DoxyCompactList}\small\item\em Subscribe an observer on this object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_observable_interface_a165f354631b599d81ade095f8b2e4a97}{Detach}} (const Observer $\ast$observer)=0
+\begin{DoxyCompactList}\small\item\em Unsubscribe an observer on this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_plane_implementation_a2a9c3910cacd11df659a3e743996871b}\label{class_plane_implementation_a2a9c3910cacd11df659a3e743996871b}} 
+void {\bfseries Remove\+Object} (const \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$object)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_construction}{Construction}} $>$ $>$ \mbox{\hyperlink{class_plane_implementation_a9a3997e40e81e35dc3cdecbda2362858}{construction\+\_\+}}
+\begin{DoxyCompactList}\small\item\em All constructions on the plane. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_plane_implementation_a10b621aa8c2dfc10f704313fc0e3bcc6}\label{class_plane_implementation_a10b621aa8c2dfc10f704313fc0e3bcc6}} 
+\mbox{\hyperlink{class_name_generator}{Name\+Generator}} {\bfseries name\+\_\+generator\+\_\+}
+\begin{DoxyCompactList}\small\item\em Name generator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_plane_implementation_a390f1260f38c23c81426c59fa1e93530}\label{class_plane_implementation_a390f1260f38c23c81426c59fa1e93530}} 
+\mbox{\hyperlink{class_garbage_object_collector}{Garbage\+Object\+Collector}} {\bfseries going\+\_\+to\+\_\+be\+\_\+destroyed\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of \mbox{\hyperlink{class_plane}{Plane}}. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+Class that manages all objects.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_plane}{Plane}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_plane_implementation_a0ed78a69679545bea8ed989299805081}\label{class_plane_implementation_a0ed78a69679545bea8ed989299805081}} 
+\index{PlaneImplementation@{PlaneImplementation}!AddConstruction@{AddConstruction}}
+\index{AddConstruction@{AddConstruction}!PlaneImplementation@{PlaneImplementation}}
+\doxysubsubsection{\texorpdfstring{AddConstruction()}{AddConstruction()}}
+{\footnotesize\ttfamily void Plane\+Implementation\+::\+Add\+Construction (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_construction}{Construction}} $>$}]{construction }\end{DoxyParamCaption})}
+
+
+
+Adds object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em construction} & Object to add \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plane_implementation_a0ed78a69679545bea8ed989299805081_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_implementation_aed24cee4ac9521354a85795f2343a5c7}\label{class_plane_implementation_aed24cee4ac9521354a85795f2343a5c7}} 
+\index{PlaneImplementation@{PlaneImplementation}!DestroyObject@{DestroyObject}}
+\index{DestroyObject@{DestroyObject}!PlaneImplementation@{PlaneImplementation}}
+\doxysubsubsection{\texorpdfstring{DestroyObject()}{DestroyObject()}}
+{\footnotesize\ttfamily void Plane\+Implementation\+::\+Destroy\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$}]{object }\end{DoxyParamCaption})}
+
+
+
+Remove object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Object to destroy. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_plane_implementation_aed24cee4ac9521354a85795f2343a5c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_implementation_ad38f67696ba3974ce847cd051e62a64c}\label{class_plane_implementation_ad38f67696ba3974ce847cd051e62a64c}} 
+\index{PlaneImplementation@{PlaneImplementation}!GetNameGenerator@{GetNameGenerator}}
+\index{GetNameGenerator@{GetNameGenerator}!PlaneImplementation@{PlaneImplementation}}
+\doxysubsubsection{\texorpdfstring{GetNameGenerator()}{GetNameGenerator()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_name_generator}{Name\+Generator}} \& Plane\+Implementation\+::\+Get\+Name\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get name generator. 
+
+\begin{DoxyReturn}{Returns}
+Name generator. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plane_implementation_ad38f67696ba3974ce847cd051e62a64c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_implementation_aadc5370b598b23685b72a5818f3564b6}\label{class_plane_implementation_aadc5370b598b23685b72a5818f3564b6}} 
+\index{PlaneImplementation@{PlaneImplementation}!GetObjects@{GetObjects}}
+\index{GetObjects@{GetObjects}!PlaneImplementation@{PlaneImplementation}}
+\doxysubsubsection{\texorpdfstring{GetObjects()}{GetObjects()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+template std\+::vector$<$ \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$ $>$ Plane\+Implementation\+::\+Get\+Objects$<$ \mbox{\hyperlink{class_conic}{Conic}} $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get all objects of Geometric\+Object\+Type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Geometric\+Object\+Type} & Type of geometric object to get.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Objects of Geometric\+Object\+Type. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plane_implementation_aadc5370b598b23685b72a5818f3564b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_implementation_ac79057167137e22be8df300b4ec9d75a}\label{class_plane_implementation_ac79057167137e22be8df300b4ec9d75a}} 
+\index{PlaneImplementation@{PlaneImplementation}!IsContained@{IsContained}}
+\index{IsContained@{IsContained}!PlaneImplementation@{PlaneImplementation}}
+\doxysubsubsection{\texorpdfstring{IsContained()}{IsContained()}}
+{\footnotesize\ttfamily bool Plane\+Implementation\+::\+Is\+Contained (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometric_object}{Geometric\+Object}} $\ast$}]{object }\end{DoxyParamCaption}) const}
+
+
+
+Check if object is contained. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Object to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if object is contained, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_plane_implementation_a62b4d30b59123a4aba1355b9e8b06f96}\label{class_plane_implementation_a62b4d30b59123a4aba1355b9e8b06f96}} 
+\index{PlaneImplementation@{PlaneImplementation}!Update@{Update}}
+\index{Update@{Update}!PlaneImplementation@{PlaneImplementation}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Plane\+Implementation\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_object_event_1_1_going_to_be_destroyed}{Object\+Event\+::\+Going\+To\+Be\+Destroyed}} \&}]{destroyed\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update, because sth was destroyed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destroyed\+\_\+event} & Tag with some information\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Object\+Event\+::\+Destroyed 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_geometric_object_observer_adc2ccc27a401b848141693da993f0e98}{Geometric\+Object\+Observer}}.
+
+\mbox{\Hypertarget{class_plane_implementation_a1d7df263ad171e2f81ab74c978eba382}\label{class_plane_implementation_a1d7df263ad171e2f81ab74c978eba382}} 
+\index{PlaneImplementation@{PlaneImplementation}!Update@{Update}}
+\index{Update@{Update}!PlaneImplementation@{PlaneImplementation}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Plane\+Implementation\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_object_event_1_1_moved}{Object\+Event\+::\+Moved}} \&}]{moved\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update, because sth moved. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em moved\+\_\+event} & Tag with some information.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_object_event_1_1_moved}{Object\+Event\+::\+Moved}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_geometric_object_observer_a617b3090c0ab5aee48c9af20ffde611d}{Geometric\+Object\+Observer}}.
+
+\mbox{\Hypertarget{class_plane_implementation_a8f1a5c5bbc71e51f1d4dd95eda6b31a6}\label{class_plane_implementation_a8f1a5c5bbc71e51f1d4dd95eda6b31a6}} 
+\index{PlaneImplementation@{PlaneImplementation}!Update@{Update}}
+\index{Update@{Update}!PlaneImplementation@{PlaneImplementation}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Plane\+Implementation\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} \&}]{renamed\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update, because sth was renamed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renamed\+\_\+event} & Tag with some information\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_geometric_object_observer_a31f78d46caebf7be3fa901fc074a69eb}{Geometric\+Object\+Observer}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plane_implementation_a8f1a5c5bbc71e51f1d4dd95eda6b31a6_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_plane_implementation_a9a3997e40e81e35dc3cdecbda2362858}\label{class_plane_implementation_a9a3997e40e81e35dc3cdecbda2362858}} 
+\index{PlaneImplementation@{PlaneImplementation}!construction\_@{construction\_}}
+\index{construction\_@{construction\_}!PlaneImplementation@{PlaneImplementation}}
+\doxysubsubsection{\texorpdfstring{construction\_}{construction\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_construction}{Construction}}$>$ $>$ Plane\+Implementation\+::construction\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+All constructions on the plane. 
+
+Member data. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Plane\+Implementation.\+h\item 
+Homo\+Gebra/Plane\+Implementation.\+cpp\end{DoxyCompactItemize}

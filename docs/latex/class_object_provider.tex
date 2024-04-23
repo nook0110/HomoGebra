@@ -1,0 +1,121 @@
+\hypertarget{class_object_provider}{}\doxysection{Object\+Provider Class Reference}
+\label{class_object_provider}\index{ObjectProvider@{ObjectProvider}}
+
+
+Class that finds objects.  
+
+
+
+
+{\ttfamily \#include $<$Object\+Provider.\+h$>$}
+
+
+
+Collaboration diagram for Object\+Provider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_provider__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_object_provider_a51ada1942da51e272af5fad43f03239c}{Object\+Provider}} (\mbox{\hyperlink{class_plane}{Plane}} $\ast$plane)
+\begin{DoxyCompactList}\small\item\em Constructs an object provider from the plane. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Geometric\+Object\+Type $>$ }\\Geometric\+Object\+Type $\ast$ \mbox{\hyperlink{class_object_provider_a0f80df6adb0d41806dd4c233f4a8b8e1}{Get\+Nearest\+Object}} (const sf\+::\+Vector2f \&position, float max\+\_\+distance=std\+::numeric\+\_\+limits$<$ float $>$\+::max())
+\begin{DoxyCompactList}\small\item\em Gets a nearest object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_plane}{Plane}} $\ast$ \mbox{\hyperlink{class_object_provider_a8bf23321e5dfcd794aa30f128687f8d2}{plane\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_plane}{Plane}} to add objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that finds objects. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_object_provider_a51ada1942da51e272af5fad43f03239c}\label{class_object_provider_a51ada1942da51e272af5fad43f03239c}} 
+\index{ObjectProvider@{ObjectProvider}!ObjectProvider@{ObjectProvider}}
+\index{ObjectProvider@{ObjectProvider}!ObjectProvider@{ObjectProvider}}
+\doxysubsubsection{\texorpdfstring{ObjectProvider()}{ObjectProvider()}}
+{\footnotesize\ttfamily Object\+Provider\+::\+Object\+Provider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} $\ast$}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs an object provider from the plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plane} & Instance where to place objects. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_object_provider_a0f80df6adb0d41806dd4c233f4a8b8e1}\label{class_object_provider_a0f80df6adb0d41806dd4c233f4a8b8e1}} 
+\index{ObjectProvider@{ObjectProvider}!GetNearestObject@{GetNearestObject}}
+\index{GetNearestObject@{GetNearestObject}!ObjectProvider@{ObjectProvider}}
+\doxysubsubsection{\texorpdfstring{GetNearestObject()}{GetNearestObject()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+template \mbox{\hyperlink{class_conic}{Conic}} $\ast$ Object\+Provider\+::\+Get\+Nearest\+Object (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position,  }\item[{float}]{max\+\_\+distance = {\ttfamily std\+:\+:numeric\+\_\+limits$<$~float~$>$\+:\+:max()} }\end{DoxyParamCaption})}
+
+
+
+Gets a nearest object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Geometric\+Object\+Type} & Type of object to get.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position to find object. \\
+\hline
+{\em max\+\_\+distance} & Maximum distance to find object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nearest object. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_provider_a0f80df6adb0d41806dd4c233f4a8b8e1_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_object_provider_a8bf23321e5dfcd794aa30f128687f8d2}\label{class_object_provider_a8bf23321e5dfcd794aa30f128687f8d2}} 
+\index{ObjectProvider@{ObjectProvider}!plane\_@{plane\_}}
+\index{plane\_@{plane\_}!ObjectProvider@{ObjectProvider}}
+\doxysubsubsection{\texorpdfstring{plane\_}{plane\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_plane}{Plane}}$\ast$ Object\+Provider\+::plane\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_plane}{Plane}} to add objects. 
+
+Member data. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Object\+Provider.\+h\item 
+Homo\+Gebra/Object\+Provider.\+cpp\end{DoxyCompactItemize}

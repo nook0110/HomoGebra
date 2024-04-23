@@ -1,0 +1,113 @@
+\hypertarget{class_homo_gebra_1_1_event_notifier}{}\doxysection{Homo\+Gebra\+::Event\+Notifier Class Reference}
+\label{class_homo_gebra_1_1_event_notifier}\index{HomoGebra::EventNotifier@{HomoGebra::EventNotifier}}
+
+
+Class that listens to events and notifies listens.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Notifier.\+h$>$}
+
+
+
+Inheritance diagram for Homo\+Gebra\+::Event\+Notifier\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{class_homo_gebra_1_1_event_notifier__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Homo\+Gebra\+::Event\+Notifier\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_homo_gebra_1_1_event_notifier__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_event_notifier_a97d894d0386760bfa7f53e3a7837d832}{Attach}} (\mbox{\hyperlink{class_homo_gebra_1_1_event_listener}{Event\+Listener}} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Attach a listener to the notifier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_event_notifier_a728afd6c8ff05a3b5eadb560620efec8}{Detach}} (const \mbox{\hyperlink{class_homo_gebra_1_1_event_listener}{Event\+Listener}} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Detach a listener from the notifier. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Event $>$ }\\void \mbox{\hyperlink{class_homo_gebra_1_1_event_notifier_aa656aac8a5d2551f097a015bb95f6d5c}{Notify}} (const Event \&event) const
+\begin{DoxyCompactList}\small\item\em Notify all listeners. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_event_notifier_a4fd4ff6a0ce1ea054b78b20b851b371e}\label{class_homo_gebra_1_1_event_notifier_a4fd4ff6a0ce1ea054b78b20b851b371e}} 
+std\+::list$<$ \mbox{\hyperlink{class_homo_gebra_1_1_event_listener}{Event\+Listener}} $\ast$ $>$ {\bfseries listeners\+\_\+}
+\begin{DoxyCompactList}\small\item\em List of listeners. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that listens to events and notifies listens. 
+
+\begin{DoxyAuthor}{Author}
+nook0110 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_event_notifier_a97d894d0386760bfa7f53e3a7837d832}\label{class_homo_gebra_1_1_event_notifier_a97d894d0386760bfa7f53e3a7837d832}} 
+\index{HomoGebra::EventNotifier@{HomoGebra::EventNotifier}!Attach@{Attach}}
+\index{Attach@{Attach}!HomoGebra::EventNotifier@{HomoGebra::EventNotifier}}
+\doxysubsubsection{\texorpdfstring{Attach()}{Attach()}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Event\+Notifier\+::\+Attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_homo_gebra_1_1_event_listener}{Event\+Listener}} $\ast$}]{listener }\end{DoxyParamCaption})}
+
+
+
+Attach a listener to the notifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener} & The listener to attach. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_homo_gebra_1_1_event_notifier_a728afd6c8ff05a3b5eadb560620efec8}\label{class_homo_gebra_1_1_event_notifier_a728afd6c8ff05a3b5eadb560620efec8}} 
+\index{HomoGebra::EventNotifier@{HomoGebra::EventNotifier}!Detach@{Detach}}
+\index{Detach@{Detach}!HomoGebra::EventNotifier@{HomoGebra::EventNotifier}}
+\doxysubsubsection{\texorpdfstring{Detach()}{Detach()}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Event\+Notifier\+::\+Detach (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_homo_gebra_1_1_event_listener}{Event\+Listener}} $\ast$}]{listener }\end{DoxyParamCaption})}
+
+
+
+Detach a listener from the notifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener} & The listener to detach. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_homo_gebra_1_1_event_notifier_aa656aac8a5d2551f097a015bb95f6d5c}\label{class_homo_gebra_1_1_event_notifier_aa656aac8a5d2551f097a015bb95f6d5c}} 
+\index{HomoGebra::EventNotifier@{HomoGebra::EventNotifier}!Notify@{Notify}}
+\index{Notify@{Notify}!HomoGebra::EventNotifier@{HomoGebra::EventNotifier}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily template$<$class Event $>$ \\
+void Homo\+Gebra\+::\+Event\+Notifier\+::\+Notify (\begin{DoxyParamCaption}\item[{const Event \&}]{event }\end{DoxyParamCaption}) const}
+
+
+
+Notify all listeners. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Event} & Type of event. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Event to notify about. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Event\+Notifier.\+h\item 
+Homo\+Gebra/Event\+Notifier.\+cpp\end{DoxyCompactItemize}

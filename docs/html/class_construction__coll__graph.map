@@ -1,0 +1,4 @@
+<map id="Construction" name="Construction">
+<area shape="rect" id="node1" title="Defines how object is created." alt="" coords="24,189,185,355"/>
+<area shape="rect" id="node2" href="$class_geometric_object_observer.html" title="Makes Construction an observer." alt="" coords="5,5,204,141"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="Complex::IsZero" name="Complex::IsZero">
+<area shape="rect" id="node1" title="Checks if complex number is zero." alt="" coords="1031,35,1147,60"/>
+<area shape="rect" id="node2" href="$class_squared_matrix.html#a33a9e0b9bca13d56f08ac410f9acace3" title="Explicit template specialization for complex numbers." alt="" coords="825,5,974,31"/>
+<area shape="rect" id="node3" href="$struct_homogeneous_coordinate.html#ac20e34767f6cb9f6b2e1da0dfe24fb46" title="Normalizes coordinates." alt="" coords="816,55,983,95"/>
+<area shape="rect" id="node4" href="$struct_homogeneous_coordinate.html#ac03f29c6b631bd4309cc8e0f774aa226" title="Normalizes coordinates." alt="" coords="601,55,768,95"/>
+<area shape="rect" id="node5" href="$class_point_body.html#a7f1f6a7a61e1de7bcceede30dee02da1" title="Calculates the projective position of the point." alt="" coords="363,37,553,63"/>
+<area shape="rect" id="node9" href="$class_line_body.html#ae6ae1e8a549ad2382f90c0d5e63c916f" title="Updates the line body." alt="" coords="395,87,521,112"/>
+<area shape="rect" id="node6" href="$class_point_body.html#a18793feccde9eab2d64dd9249caf73b9" title="Updates the point body." alt="" coords="184,37,315,63"/>
+<area shape="rect" id="node7" href="$class_point.html#aced26fabfb342a696916729589d86a39" title="Set new equation of point." alt="" coords="5,13,136,39"/>
+<area shape="rect" id="node8" href="$class_point.html#aec58dc94755612be2e404e56b1a65b02" title="Body interface." alt="" coords="5,63,136,88"/>
+<area shape="rect" id="node10" href="$class_line.html#a7991d734b54de41ff87e1db296184223" title="Update the body of the line." alt="" coords="187,87,312,112"/>
+</map>

@@ -1,0 +1,128 @@
+\hypertarget{class_construction_on_plane}{}\doxysection{Construction\+On\+Plane Class Reference}
+\label{class_construction_on_plane}\index{ConstructionOnPlane@{ConstructionOnPlane}}
+
+
+\mbox{\hyperlink{class_construction}{Construction}} of a casual point on a plane.  
+
+
+
+
+{\ttfamily \#include $<$Construction.\+h$>$}
+
+
+
+Inheritance diagram for Construction\+On\+Plane\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_construction_on_plane__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Construction\+On\+Plane\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_construction_on_plane__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \mbox{\hyperlink{class_construction_on_plane_a04ef2106058f09fb32d08c16779b48ef}{Recalculate\+Equation}} () const override
+\begin{DoxyCompactList}\small\item\em Recalculate equation of point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_construction_point}{Construction\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_construction_point_aab10fae305c5d9cc2d5f13d44859d6bb}{$\sim$\+Construction\+Point}} () override=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \mbox{\hyperlink{class_construction_point_a83ee0b44834b4ef52821224b6c92b5a5}{Recalculate\+Equation}} () const =0
+\begin{DoxyCompactList}\small\item\em Recalculate equation of point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_construction_point_aeb6510d6b922fd23dbaf24cd583314f3}{Update}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&event) override
+\begin{DoxyCompactList}\small\item\em Update the object because sth was moved. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_construction_point_a17a4172623768e3f0eaa84ae30ac86e0}{Update}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&event) override
+\begin{DoxyCompactList}\small\item\em Update the object because sth was destroyed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_construction_point_a5a54f49a2fce561a1dfc0690d8d2c614}{Update}} (const \mbox{\hyperlink{struct_event_1_1_renamed}{Event\+::\+Renamed}} \&event) override
+\begin{DoxyCompactList}\small\item\em Update the object, because sth was renamed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_construction}{Construction}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_construction_ae4966d1b922fae8b24038ba42d0e86d6}{$\sim$\+Construction}} () override=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_geometric_object_observer}{Geometric\+Object\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometric_object_observer_a9324c32d02500a191de6d5ed1ff7e82c}{Geometric\+Object\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometric_object_observer_afb8eac874b30b302a977fa7a2ada4605}\label{class_geometric_object_observer_afb8eac874b30b302a977fa7a2ada4605}} 
+virtual {\bfseries $\sim$\+Geometric\+Object\+Observer} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometric_object_observer_aaf06c9b99ea14f301ec6d0e8e26cfbd6}{Update}} (const \mbox{\hyperlink{struct_event_1_1_moved}{Event\+::\+Moved}} \&moved\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update the object, because sth moved. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometric_object_observer_a60edde8692bd88cd22879230fb02c253}{Update}} (const \mbox{\hyperlink{struct_event_1_1_destroyed}{Event\+::\+Destroyed}} \&destroyed\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update the object, because sth was destroyed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometric_object_observer_a0d8a4197670e096c9f875c433a57fe93}{Update}} (const \mbox{\hyperlink{struct_event_1_1_renamed}{Event\+::\+Renamed}} \&renamed\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update the object, because sth was renamed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_construction_point}{Construction\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_construction_point_a7688301f929aa2ebad1f4f07bd34c005}{Construction\+Point}} ()=default
+\begin{DoxyCompactList}\small\item\em Constructor deleted. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \& \mbox{\hyperlink{class_construction_point_a2c01aefc0f452ef9a54472b651ae5b9d}{Get\+Equation}} () const
+\begin{DoxyCompactList}\small\item\em Get equation of point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_construction_point_ac41cd3bf9089b5b2172e7e51c729cd96}{Set\+Equation}} (const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&equation)
+\begin{DoxyCompactList}\small\item\em Set equation of point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_construction}{Construction}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_construction_ace7677ff2aed8a88b4ceb25e1d773565}{Construction}} ()=default
+\begin{DoxyCompactList}\small\item\em Constructor deleted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_construction}{Construction}} of a casual point on a plane. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+Have no dependence on other objects 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_construction_on_plane_a04ef2106058f09fb32d08c16779b48ef}\label{class_construction_on_plane_a04ef2106058f09fb32d08c16779b48ef}} 
+\index{ConstructionOnPlane@{ConstructionOnPlane}!RecalculateEquation@{RecalculateEquation}}
+\index{RecalculateEquation@{RecalculateEquation}!ConstructionOnPlane@{ConstructionOnPlane}}
+\doxysubsubsection{\texorpdfstring{RecalculateEquation()}{RecalculateEquation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} Construction\+On\+Plane\+::\+Recalculate\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Recalculate equation of point. 
+
+\begin{DoxyReturn}{Returns}
+New equation of point. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_construction_point_a83ee0b44834b4ef52821224b6c92b5a5}{Construction\+Point}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_construction_on_plane_a04ef2106058f09fb32d08c16779b48ef_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Construction.\+h\item 
+Homo\+Gebra/Construction.\+cpp\end{DoxyCompactItemize}

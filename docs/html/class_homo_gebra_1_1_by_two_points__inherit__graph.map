@@ -1,0 +1,7 @@
+<map id="HomoGebra::ByTwoPoints" name="HomoGebra::ByTwoPoints">
+<area shape="rect" id="node1" title="Construction of a line by two points." alt="" coords="131,660,305,781"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_construction_line.html" title="Base class for all line constructions." alt="" coords="7,417,203,612"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_construction.html" title="Defines how object is created." alt="" coords="19,204,191,369"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_geometric_object_observer.html" title="Makes Construction an observer." alt="" coords="5,5,204,156"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_strong_construction.html" title="Construction that does not lose its properties after projective transformation." alt="" coords="227,476,438,553"/>
+</map>

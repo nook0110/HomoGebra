@@ -1,0 +1,236 @@
+\hypertarget{class_point_creator}{}\doxysection{Point\+Creator Class Reference}
+\label{class_point_creator}\index{PointCreator@{PointCreator}}
+
+
+\mbox{\hyperlink{class_creator}{Creator}} of points.  
+
+
+
+
+{\ttfamily \#include $<$Creation.\+h$>$}
+
+
+
+Inheritance diagram for Point\+Creator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{class_point_creator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Point\+Creator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_creator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point_creator_ac444cb4092eaee9be8e20e0543fe60c7}{Point\+Creator}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_creator_a32a2389b4ff14244443285573d06025c}{Update}} (const sf\+::\+Event \&event) override
+\begin{DoxyCompactList}\small\item\em Updates the creator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_creator}{Creator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_creator_a2d9d4263abb9492d1b4caeec26320031}{$\sim$\+Creator}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_creator_a1f86b37637f1f2dc3174c8ce302abf7d}{Update}} (const sf\+::\+Event \&event)=0
+\begin{DoxyCompactList}\small\item\em Updates the creator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_point_creator_a99fb120b0e69f03759018eda82e2014f}{Action}} \{ \mbox{\hyperlink{class_point_creator_a99fb120b0e69f03759018eda82e2014fa7041e1624dc1947d6f7db771bdd3d0f2}{k\+Create\+Point}}
+ \}
+\begin{DoxyCompactList}\small\item\em Actions that can be performed by the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_point_creator_adb04d56632bf20faa6fe3b6af5bd508e}{Init\+Action\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the action map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_creator_a1f93d29727f178d5da488ac783f6882d}{Create\+Point}} ()
+\begin{DoxyCompactList}\small\item\em Creates a point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+thor\+::\+Action\+Map$<$ \mbox{\hyperlink{class_point_creator_a99fb120b0e69f03759018eda82e2014f}{Action}} $>$ \mbox{\hyperlink{class_point_creator_a2808e1bed25e19e29da42023ecc94c1b}{action\+\_\+map\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Map with actions that user do. \end{DoxyCompactList}\item 
+sf\+::\+Render\+Window \& \mbox{\hyperlink{class_point_creator_a6fa4384af16a8508a90fa0175ffcb390}{window\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Window, where the point will be created. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point_factory}{Point\+Factory}} \mbox{\hyperlink{class_point_creator_a97c0e2c6892ac96201e746014b7b485e}{factory\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Factory for creating points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_creator}{Creator}} of points. 
+
+\textbackslash{}detail Click once to create a point.
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_point_creator_a99fb120b0e69f03759018eda82e2014f}\label{class_point_creator_a99fb120b0e69f03759018eda82e2014f}} 
+\index{PointCreator@{PointCreator}!Action@{Action}}
+\index{Action@{Action}!PointCreator@{PointCreator}}
+\doxysubsubsection{\texorpdfstring{Action}{Action}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_point_creator_a99fb120b0e69f03759018eda82e2014f}{Point\+Creator\+::\+Action}}\hspace{0.3cm}{\ttfamily [strong]}, {\ttfamily [private]}}
+
+
+
+Actions that can be performed by the user. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kCreatePoint@{kCreatePoint}!PointCreator@{PointCreator}}\index{PointCreator@{PointCreator}!kCreatePoint@{kCreatePoint}}}\mbox{\Hypertarget{class_point_creator_a99fb120b0e69f03759018eda82e2014fa7041e1624dc1947d6f7db771bdd3d0f2}\label{class_point_creator_a99fb120b0e69f03759018eda82e2014fa7041e1624dc1947d6f7db771bdd3d0f2}} 
+k\+Create\+Point&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_point_creator_ac444cb4092eaee9be8e20e0543fe60c7}\label{class_point_creator_ac444cb4092eaee9be8e20e0543fe60c7}} 
+\index{PointCreator@{PointCreator}!PointCreator@{PointCreator}}
+\index{PointCreator@{PointCreator}!PointCreator@{PointCreator}}
+\doxysubsubsection{\texorpdfstring{PointCreator()}{PointCreator()}}
+{\footnotesize\ttfamily Point\+Creator\+::\+Point\+Creator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} \&}]{plane,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plane} & \mbox{\hyperlink{class_plane}{Plane}}, where the point will be created. \\
+\hline
+{\em window} & Window, where the point will be created. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_creator_ac444cb4092eaee9be8e20e0543fe60c7_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_point_creator_a1f93d29727f178d5da488ac783f6882d}\label{class_point_creator_a1f93d29727f178d5da488ac783f6882d}} 
+\index{PointCreator@{PointCreator}!CreatePoint@{CreatePoint}}
+\index{CreatePoint@{CreatePoint}!PointCreator@{PointCreator}}
+\doxysubsubsection{\texorpdfstring{CreatePoint()}{CreatePoint()}}
+{\footnotesize\ttfamily void Point\+Creator\+::\+Create\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates a point. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_creator_a1f93d29727f178d5da488ac783f6882d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_creator_a1f93d29727f178d5da488ac783f6882d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_point_creator_adb04d56632bf20faa6fe3b6af5bd508e}\label{class_point_creator_adb04d56632bf20faa6fe3b6af5bd508e}} 
+\index{PointCreator@{PointCreator}!InitActionMap@{InitActionMap}}
+\index{InitActionMap@{InitActionMap}!PointCreator@{PointCreator}}
+\doxysubsubsection{\texorpdfstring{InitActionMap()}{InitActionMap()}}
+{\footnotesize\ttfamily void Point\+Creator\+::\+Init\+Action\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the action map. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_creator_adb04d56632bf20faa6fe3b6af5bd508e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_point_creator_a32a2389b4ff14244443285573d06025c}\label{class_point_creator_a32a2389b4ff14244443285573d06025c}} 
+\index{PointCreator@{PointCreator}!Update@{Update}}
+\index{Update@{Update}!PointCreator@{PointCreator}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Point\+Creator\+::\+Update (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the creator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \mbox{\hyperlink{namespace_event}{Event}} to process. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_creator_a1f86b37637f1f2dc3174c8ce302abf7d}{Creator}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_creator_a32a2389b4ff14244443285573d06025c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_point_creator_a2808e1bed25e19e29da42023ecc94c1b}\label{class_point_creator_a2808e1bed25e19e29da42023ecc94c1b}} 
+\index{PointCreator@{PointCreator}!action\_map\_@{action\_map\_}}
+\index{action\_map\_@{action\_map\_}!PointCreator@{PointCreator}}
+\doxysubsubsection{\texorpdfstring{action\_map\_}{action\_map\_}}
+{\footnotesize\ttfamily thor\+::\+Action\+Map$<$\mbox{\hyperlink{class_point_creator_a99fb120b0e69f03759018eda82e2014f}{Action}}$>$ Point\+Creator\+::action\+\_\+map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map with actions that user do. 
+
+\mbox{\Hypertarget{class_point_creator_a97c0e2c6892ac96201e746014b7b485e}\label{class_point_creator_a97c0e2c6892ac96201e746014b7b485e}} 
+\index{PointCreator@{PointCreator}!factory\_@{factory\_}}
+\index{factory\_@{factory\_}!PointCreator@{PointCreator}}
+\doxysubsubsection{\texorpdfstring{factory\_}{factory\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point_factory}{Point\+Factory}} Point\+Creator\+::factory\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Factory for creating points. 
+
+\mbox{\Hypertarget{class_point_creator_a6fa4384af16a8508a90fa0175ffcb390}\label{class_point_creator_a6fa4384af16a8508a90fa0175ffcb390}} 
+\index{PointCreator@{PointCreator}!window\_@{window\_}}
+\index{window\_@{window\_}!PointCreator@{PointCreator}}
+\doxysubsubsection{\texorpdfstring{window\_}{window\_}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window\& Point\+Creator\+::window\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Window, where the point will be created. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/\mbox{\hyperlink{_creation_8h}{Creation.\+h}}\item 
+Homo\+Gebra/\mbox{\hyperlink{_creation_8cpp}{Creation.\+cpp}}\end{DoxyCompactItemize}

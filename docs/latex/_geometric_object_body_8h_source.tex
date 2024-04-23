@@ -1,0 +1,156 @@
+\hypertarget{_geometric_object_body_8h_source}{}\doxysection{Geometric\+Object\+Body.\+h}
+\label{_geometric_object_body_8h_source}\index{HomoGebra/GeometricObjectBody.h@{HomoGebra/GeometricObjectBody.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}DistanceUtilities.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}GeometricObjectImplementation.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}NameGenerator.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }HomoGebra}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_object_name}{ObjectName}}\ final\ :\ \textcolor{keyword}{public}\ sf::Drawable,\ \textcolor{keyword}{public}\ sf::Transformable}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_name}{ObjectName}}(std::string\ name\ =\ \{\});}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_object_name_ae1917b698dae0a1e9bdc69c62050b2fa}{\string~ObjectName}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_name_a9b229a835dd5c0cd1ecac97b013eed8a}{SetName}}(std::string\ name);}
+\DoxyCodeLine{00046\ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_homo_gebra_1_1_object_name_a523893aa842bed24ec4da3c7a01cdc69}{GetName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_name_a04ae200eb001a84eca8f511c33809210}{SetSize}}(\textcolor{keywordtype}{float}\ size);}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_name_adad89d31b4413c96cb05e1a73d46b692}{draw}}(sf::RenderTarget\&\ target,\ sf::RenderStates\ states)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{class_homo_gebra_1_1_object_name_a6e84a7b892964e3428c526cabfa11874}{kFontPath}}\ =}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Resources/font.ttf"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_name_aa455c5c4ae761a3f3cdcc02f583a9c1d}{kCharacterSize}}\ =\ 50;\ \ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ sf::Color\ \mbox{\hyperlink{class_homo_gebra_1_1_object_name_ab0d40590df8178aec2e5ef327e494e78}{kTextColor}}\ =}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ sf::Color\{0,\ 0,\ 0\};\ \ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ std::string\ \mbox{\hyperlink{class_homo_gebra_1_1_object_name_a2fbefbfb24437b8dc34e93a58e3f17ea}{name\_}};\ \ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ sf::Font\ \mbox{\hyperlink{class_homo_gebra_1_1_object_name_a136bcc9f1f2ed8f9f8104ff6e38a73c9}{font\_}};\ \ }
+\DoxyCodeLine{00072\ \ \ sf::Text\ \mbox{\hyperlink{class_homo_gebra_1_1_object_name_a8e123812df76404ea956e328e6b84444}{text\_}};\ \ }
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_object_body}{ObjectBody}}\ :\ \textcolor{keyword}{public}\ sf::Drawable}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_body_af5784fedc9f9166db2bd70a1da21092e}{SetName}}(std::string\ name);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_homo_gebra_1_1_object_body_a518fa9b849bee6befeed9b12a1e70532}{GetName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_body_a76b2fcbb56db65584508e40247a08a05}{SetNamePosition}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ position);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00113\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_body_ab7efa84f52244be8ddd28a081c1fa544}{SetNameSize}}(\textcolor{keywordtype}{float}\ size);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00121\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_body_a8dd5d0766059c8fd5acbeb62ba442c0c}{draw}}(sf::RenderTarget\&\ target,\ sf::RenderStates\ states)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00130\ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ Distance\ \mbox{\hyperlink{class_homo_gebra_1_1_object_body_ac25010af3d00fede33a4c04317f15ecb}{GetDistance}}(}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \textcolor{keyword}{const}\ sf::Vector2f\&\ position)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00134\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_object_name}{ObjectName}}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_body_a3fb931f6915fd0c7fa777e4fe4b8e6b5}{text\_}};\ \ }
+\DoxyCodeLine{00135\ \};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_point_body}{PointBody}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_body}{ObjectBody}}}
+\DoxyCodeLine{00147\ \{}
+\DoxyCodeLine{00148\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00153\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_point_body_af3901de4d73caf04895dd3df3f4cff93}{PointBody}}();}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00159\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_point_body_a6261a4c20b0a49150d1ddc555e330db5}{\string~PointBody}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00167\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_point_body_a8879057f8a42f0b3044cb5f1a39d04b0}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_point_equation}{PointEquation}}\&\ equation,\ \textcolor{keywordtype}{float}\ size\ =\ 0);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_point_body_a55c6a914015286a1de8bca2c5849e01c}{draw}}(sf::RenderTarget\&\ target,\ sf::RenderStates\ states)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00183\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_point_body_ad55225ba3f94eab55f888fbe4d79696f}{DrawArrow}}(sf::RenderTarget\&\ target,\ sf::RenderStates\ states)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ Distance\ \mbox{\hyperlink{class_homo_gebra_1_1_point_body_a02f4b6649dabb2ea5e1b025e3f775a62}{GetDistance}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ position)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00201\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_homo_gebra_1_1_point_body_1_1_projective_position}{ProjectivePosition}}}
+\DoxyCodeLine{00202\ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{struct_homo_gebra_1_1_point_body_1_1_projective_position_a6b383f32b8b8ae0ff4f794f20b0c143f}{position}};\ \ }
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_homo_gebra_1_1_point_body_1_1_projective_position_a21a908007629587656dcfd26aaa4774b}{is\_at\_infinity}}\ =\ \textcolor{keyword}{false};\ \ }
+\DoxyCodeLine{00206\ \ \ \};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00215\ \ \ \textcolor{keyword}{static}\ std::optional<ProjectivePosition>\ \mbox{\hyperlink{class_homo_gebra_1_1_point_body_a9562275775158d6ad4d9a585ef778b9c}{CalculatePosition}}(}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_point_equation}{PointEquation}}\&\ equation);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ std::optional<ProjectivePosition>}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_point_body_a83b8fb3cff1a12a97ec96f3a223665fd}{position\_}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00220\ \ \ sf::CircleShape\ \mbox{\hyperlink{class_homo_gebra_1_1_point_body_a9bdc26766703b82a37c2d7213e013429}{body\_}};\ \ }
+\DoxyCodeLine{00221\ \};}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00232\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_line_body}{LineBody}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_body}{ObjectBody}}}
+\DoxyCodeLine{00233\ \{}
+\DoxyCodeLine{00234\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00239\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_line_body_ab6112525c3073305ecc6095c6eb3b1d2}{LineBody}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00245\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_line_body_a41f0b13010e56387818159a449168994}{\string~LineBody}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00252\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_line_body_ad9b1a3baabcfe4a49cd81b34affa74a6}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_line_equation}{LineEquation}}\&\ equation);}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00260\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_line_body_ac8366953d5ba3608a138e97250f4b00e}{draw}}(sf::RenderTarget\&\ target,\ sf::RenderStates\ states)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ Distance\ \mbox{\hyperlink{class_homo_gebra_1_1_line_body_a58e73da95d790d9f57afcd3b0b288051}{GetDistance}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ position)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00274\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_homo_gebra_1_1_line_body_1_1_equation}{Equation}}}
+\DoxyCodeLine{00275\ \ \ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00277\ \textcolor{comment}{\ \ \ \ \ *\ Line\ equation:}}
+\DoxyCodeLine{00278\ \textcolor{comment}{\ \ \ \ \ *\ a*x\ +\ b*y\ +\ c\ =\ 0}}
+\DoxyCodeLine{00279\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_homo_gebra_1_1_line_body_1_1_equation_a47e3b668e0afecbd2ffda5bccb7aa483}{a}};\ \ }
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_homo_gebra_1_1_line_body_1_1_equation_a7b58fec349489ebe65aa404f744f1272}{b}};\ \ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_homo_gebra_1_1_line_body_1_1_equation_a2f2eb393a38f0fb9f62bcf4c6af3945e}{c}};\ \ }
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00292\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_homo_gebra_1_1_line_body_1_1_equation_a5766b7844c845515c30f99bb6eae54f7}{Solve}}(Var\ var,\ \textcolor{keywordtype}{float}\ another)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00293\ \ \ \};}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \ \ std::optional<Equation>\ \mbox{\hyperlink{class_homo_gebra_1_1_line_body_a422e5936b0c6ef14c791ba32133ecc9c}{equation\_}};\ \ }
+\DoxyCodeLine{00296\ \};}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00307\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_conic_body}{ConicBody}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_object_body}{ObjectBody}}}
+\DoxyCodeLine{00308\ \{}
+\DoxyCodeLine{00309\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00314\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_conic_body_adba7c5f851f62d6b72d1bb1bd2a765f2}{ConicBody}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00320\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_conic_body_a8649cda45f4a0fb7da48917242fb873f}{\string~ConicBody}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00327\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_conic_body_a72a3b20523b9599632ea72c6f981f3e1}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_equation}{ConicEquation}}\&\ equation);}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00335\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_conic_body_a036d7ddf83bf5b7ed04c491bfe6e68c7}{draw}}(sf::RenderTarget\&\ target,\ sf::RenderStates\ states)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ Distance\ \mbox{\hyperlink{class_homo_gebra_1_1_conic_body_ad4bf572a5c580f30d0d5c2270083c360}{GetDistance}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ position)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00344\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_homo_gebra_1_1_conic_body_1_1_equation}{Equation}}}
+\DoxyCodeLine{00345\ \ \ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::array<Var,\ 2>\ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_body_1_1_equation_ac289daea4bf6c01ab643e0cbd69a1604}{kAnother}}\ =\ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ Var::kY,\ Var::kX\};\ \ }
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{struct_homo_gebra_1_1_conic_body_1_1_equation_a9e31f74095d80f66c2b4417013498a2b}{Solution}}\ =\ std::array<std::optional<Complex>,}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2>;\ \ }
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00360\ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_body_1_1_equation_a9e31f74095d80f66c2b4417013498a2b}{Solution}}\ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_body_1_1_equation_a7ee89d947db75e7b9abc26613c050510}{Solve}}(Var\ var,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ another)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ std::array<long\ double,\ 2>}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_body_1_1_equation_a03f0ccc24e0c7dcb99bf5bdb1bc9cc29}{squares}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_body_1_1_equation_a89660551cbc55249e98fa065bd215a40}{pair\_product}};\ \ }
+\DoxyCodeLine{00365\ \ \ \ \ std::array<long\ double,\ 2>\ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_body_1_1_equation_a6ea8d2bab2e50e5c137376f87b190228}{linears}};\ \ }
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_body_1_1_equation_af409b415c4d40df511b49dba4a6facca}{constant}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00367\ \ \ \};}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ std::optional<Equation>\ \mbox{\hyperlink{class_homo_gebra_1_1_conic_body_ad653a95a9aa5ef9203aea37e1d1a47fc}{equation\_}};\ \ }
+\DoxyCodeLine{00370\ \};}
+\DoxyCodeLine{00371\ \}\ \ \textcolor{comment}{//\ namespace\ HomoGebra}}
+
+\end{DoxyCode}

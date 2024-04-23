@@ -1,0 +1,143 @@
+\hypertarget{class_conic_factory}{}\doxysection{Conic\+Factory Class Reference}
+\label{class_conic_factory}\index{ConicFactory@{ConicFactory}}
+
+
+Class that constructs conics.  
+
+
+
+
+{\ttfamily \#include $<$Geometric\+Object\+Factory.\+h$>$}
+
+
+
+Collaboration diagram for Conic\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_conic_factory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_conic_factory_a6b2ed1dd10f9f432a9c17b4785cf6653}{Conic\+Factory}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane)
+\begin{DoxyCompactList}\small\item\em Construct a factory from the plane. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_conic}{Conic}} $\ast$ \mbox{\hyperlink{class_conic_factory_a5361d6c60724985bdb5d32ac71f3fb7c}{On\+Plane}} (\mbox{\hyperlink{struct_conic_equation}{Conic\+Equation}} equation)
+\begin{DoxyCompactList}\small\item\em Constructs a conic with given equation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_conic}{Conic}} $\ast$ \mbox{\hyperlink{class_conic_factory_a17bda8da68974fc79784830dfca3ba4d}{By\+Five\+Points}} (\mbox{\hyperlink{class_point}{Point}} $\ast$first, \mbox{\hyperlink{class_point}{Point}} $\ast$second, \mbox{\hyperlink{class_point}{Point}} $\ast$third, \mbox{\hyperlink{class_point}{Point}} $\ast$fourth, \mbox{\hyperlink{class_point}{Point}} $\ast$fifth)
+\begin{DoxyCompactList}\small\item\em Constructs a conic through five given points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_plane}{Plane}} \& \mbox{\hyperlink{class_conic_factory_aae78e85d161fa5a4508c8626c1826fe9}{plane\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_plane}{Plane}} to add objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that constructs conics. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+Class constructs conics and places them into the plane automatically. It also constructs dependencies between objects. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_construction}{Construction}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_conic_factory_a6b2ed1dd10f9f432a9c17b4785cf6653}\label{class_conic_factory_a6b2ed1dd10f9f432a9c17b4785cf6653}} 
+\index{ConicFactory@{ConicFactory}!ConicFactory@{ConicFactory}}
+\index{ConicFactory@{ConicFactory}!ConicFactory@{ConicFactory}}
+\doxysubsubsection{\texorpdfstring{ConicFactory()}{ConicFactory()}}
+{\footnotesize\ttfamily Conic\+Factory\+::\+Conic\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} \&}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a factory from the plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plane} & Instance where to place objects. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_conic_factory_a17bda8da68974fc79784830dfca3ba4d}\label{class_conic_factory_a17bda8da68974fc79784830dfca3ba4d}} 
+\index{ConicFactory@{ConicFactory}!ByFivePoints@{ByFivePoints}}
+\index{ByFivePoints@{ByFivePoints}!ConicFactory@{ConicFactory}}
+\doxysubsubsection{\texorpdfstring{ByFivePoints()}{ByFivePoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_conic}{Conic}} $\ast$ Conic\+Factory\+::\+By\+Five\+Points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}} $\ast$}]{first,  }\item[{\mbox{\hyperlink{class_point}{Point}} $\ast$}]{second,  }\item[{\mbox{\hyperlink{class_point}{Point}} $\ast$}]{third,  }\item[{\mbox{\hyperlink{class_point}{Point}} $\ast$}]{fourth,  }\item[{\mbox{\hyperlink{class_point}{Point}} $\ast$}]{fifth }\end{DoxyParamCaption})}
+
+
+
+Constructs a conic through five given points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & First point to go through. \\
+\hline
+{\em second} & Second point to go through. \\
+\hline
+{\em third} & Third point to go through. \\
+\hline
+{\em fourth} & Fourth point to go through. \\
+\hline
+{\em fifth} & Fifth point to go through. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to a constructed conic. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_conic_factory_a5361d6c60724985bdb5d32ac71f3fb7c}\label{class_conic_factory_a5361d6c60724985bdb5d32ac71f3fb7c}} 
+\index{ConicFactory@{ConicFactory}!OnPlane@{OnPlane}}
+\index{OnPlane@{OnPlane}!ConicFactory@{ConicFactory}}
+\doxysubsubsection{\texorpdfstring{OnPlane()}{OnPlane()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_conic}{Conic}} $\ast$ Conic\+Factory\+::\+On\+Plane (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_conic_equation}{Conic\+Equation}}}]{equation }\end{DoxyParamCaption})}
+
+
+
+Constructs a conic with given equation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of a conic.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a constructed conic. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_conic_factory_a5361d6c60724985bdb5d32ac71f3fb7c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_conic_factory_aae78e85d161fa5a4508c8626c1826fe9}\label{class_conic_factory_aae78e85d161fa5a4508c8626c1826fe9}} 
+\index{ConicFactory@{ConicFactory}!plane\_@{plane\_}}
+\index{plane\_@{plane\_}!ConicFactory@{ConicFactory}}
+\doxysubsubsection{\texorpdfstring{plane\_}{plane\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_plane}{Plane}}\& Conic\+Factory\+::plane\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_plane}{Plane}} to add objects. 
+
+Member data. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Geometric\+Object\+Factory.\+h\item 
+Homo\+Gebra/Geometric\+Object\+Factory.\+cpp\end{DoxyCompactItemize}

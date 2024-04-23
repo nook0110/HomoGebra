@@ -1,0 +1,122 @@
+\hypertarget{class_homo_gebra_1_1_gui_1_1_global}{}\doxysection{Homo\+Gebra\+::Gui\+::Global Class Reference}
+\label{class_homo_gebra_1_1_gui_1_1_global}\index{HomoGebra::Gui::Global@{HomoGebra::Gui::Global}}
+
+
+\mbox{\hyperlink{class_homo_gebra_1_1_gui_1_1_global}{Global}} functions needed for Dear Im\+Gui to work.  
+
+
+
+
+{\ttfamily \#include $<$Gui.\+h$>$}
+
+
+
+Collaboration diagram for Homo\+Gebra\+::Gui\+::Global\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_homo_gebra_1_1_gui_1_1_global__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_homo_gebra_1_1_gui_1_1_global_a67bc8b94f2a89dad051056be5162b79c}{Update}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Updates all Dear Im\+Gui windows in sf\+::\+Render\+Window instance. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_homo_gebra_1_1_gui_1_1_global_a928d32a27f9a3c3e1a08ab49cb8a3428}{Render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders all Dear Im\+Gui windows in sf\+::\+Render\+Window instance. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_homo_gebra_1_1_gui_1_1_global_a44b71dadf97d89e6bf74200e508dbbb9}{Process\+Event}} (const sf\+::\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Process event happened to update Dear Im\+Gui windows. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static sf\+::\+Clock \mbox{\hyperlink{class_homo_gebra_1_1_gui_1_1_global_aa3b8a8d57ee7140fe06c3dfd4400a172}{delta\+\_\+clock\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Clock that counts time for updates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_homo_gebra_1_1_gui_1_1_global}{Global}} functions needed for Dear Im\+Gui to work. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+Wraps Dear Im\+Gui global methods and a clock for rendering.
+
+\begin{DoxySeeAlso}{See also}
+\href{https://github.com/ocornut/imgui}{\texttt{ Dear Im\+Gui}} 
+
+\href{https://github.com/eliasdaler/imgui-sfml}{\texttt{ Im\+Gui-\/\+SFML v2.\+5}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_gui_1_1_global_a44b71dadf97d89e6bf74200e508dbbb9}\label{class_homo_gebra_1_1_gui_1_1_global_a44b71dadf97d89e6bf74200e508dbbb9}} 
+\index{HomoGebra::Gui::Global@{HomoGebra::Gui::Global}!ProcessEvent@{ProcessEvent}}
+\index{ProcessEvent@{ProcessEvent}!HomoGebra::Gui::Global@{HomoGebra::Gui::Global}}
+\doxysubsubsection{\texorpdfstring{ProcessEvent()}{ProcessEvent()}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Gui\+::\+Global\+::\+Process\+Event (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process event happened to update Dear Im\+Gui windows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Event that happened. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_homo_gebra_1_1_gui_1_1_global_a928d32a27f9a3c3e1a08ab49cb8a3428}\label{class_homo_gebra_1_1_gui_1_1_global_a928d32a27f9a3c3e1a08ab49cb8a3428}} 
+\index{HomoGebra::Gui::Global@{HomoGebra::Gui::Global}!Render@{Render}}
+\index{Render@{Render}!HomoGebra::Gui::Global@{HomoGebra::Gui::Global}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Gui\+::\+Global\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Renders all Dear Im\+Gui windows in sf\+::\+Render\+Window instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & sf\+::\+Render\+Window where to render Dear Im\+Gui windows. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_homo_gebra_1_1_gui_1_1_global_a67bc8b94f2a89dad051056be5162b79c}\label{class_homo_gebra_1_1_gui_1_1_global_a67bc8b94f2a89dad051056be5162b79c}} 
+\index{HomoGebra::Gui::Global@{HomoGebra::Gui::Global}!Update@{Update}}
+\index{Update@{Update}!HomoGebra::Gui::Global@{HomoGebra::Gui::Global}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Gui\+::\+Global\+::\+Update (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Updates all Dear Im\+Gui windows in sf\+::\+Render\+Window instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & sf\+::\+Render\+Window where to update Dear Im\+Gui windows. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_gui_1_1_global_aa3b8a8d57ee7140fe06c3dfd4400a172}\label{class_homo_gebra_1_1_gui_1_1_global_aa3b8a8d57ee7140fe06c3dfd4400a172}} 
+\index{HomoGebra::Gui::Global@{HomoGebra::Gui::Global}!delta\_clock\_@{delta\_clock\_}}
+\index{delta\_clock\_@{delta\_clock\_}!HomoGebra::Gui::Global@{HomoGebra::Gui::Global}}
+\doxysubsubsection{\texorpdfstring{delta\_clock\_}{delta\_clock\_}}
+{\footnotesize\ttfamily sf\+::\+Clock Homo\+Gebra\+::\+Gui\+::\+Global\+::delta\+\_\+clock\+\_\+\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Clock that counts time for updates. 
+
+Static member data. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Gui.\+h\item 
+Homo\+Gebra/Gui.\+cpp\end{DoxyCompactItemize}

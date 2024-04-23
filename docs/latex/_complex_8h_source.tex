@@ -1,0 +1,55 @@
+\hypertarget{_complex_8h_source}{}\doxysection{Complex.\+h}
+\label{_complex_8h_source}\index{HomoGebra/Complex.h@{HomoGebra/Complex.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{namespace\ }HomoGebra}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\ :\ \textcolor{keyword}{public}\ std::complex<long\ double>}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{using\ }std::complex<\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}>::complex;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}(std::complex<long\ double>\ value);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex_aaa92c40b629f42a0b333e4d7fb13f3b5}{IsZero}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00041\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex_afa050b02f7906deb17887058ddd048b6}{IsReal}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ \textcolor{keywordtype}{long}\ double()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ float()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ \mbox{\hyperlink{class_homo_gebra_1_1_complex_aba6f0bfe2e6163e2220f30223b072caa}{operator*=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ other);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex_a8272a72a16e33be24b2b3a6d8069983a}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ \mbox{\hyperlink{class_homo_gebra_1_1_complex_a8ec8fdd88fcfca80a5cdb6c68b12b90d}{operator/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ other);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex_a2b0a32b5f63cba2c009d381227957112}{operator/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ \mbox{\hyperlink{class_homo_gebra_1_1_complex_a4518a58de9c497f111a39b9c559d1a92}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ other);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00109\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex_aebf8b156e38b1b92c5c9b8a161f360fa}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ \mbox{\hyperlink{class_homo_gebra_1_1_complex_a442b167dd35497f80e7d5b5f9072f3e6}{operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ other);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00127\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex_ac9ac4baaca1a3c2de4bb90a78487b197}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00134\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex_ac9ac4baaca1a3c2de4bb90a78487b197}{operator-\/}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00137\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex_aeceb717fa838257f2e104150d2c9ee55}{kEpsilon}}\ =\ 1e-\/10L;\ \ }
+\DoxyCodeLine{00138\ \};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\ sqrt(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\&\ value)}
+\DoxyCodeLine{00148\ \{}
+\DoxyCodeLine{00149\ \ \ \textcolor{keyword}{const}\ std::complex<long\ double>\ copy\ =\ value;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}\{sqrt(copy)\};}
+\DoxyCodeLine{00152\ \}}
+\DoxyCodeLine{00153\ \}\ \ \textcolor{comment}{//\ namespace\ HomoGebra}}
+
+\end{DoxyCode}

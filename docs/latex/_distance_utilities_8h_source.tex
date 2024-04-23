@@ -1,0 +1,26 @@
+\hypertarget{_distance_utilities_8h_source}{}\doxysection{Distance\+Utilities.\+h}
+\label{_distance_utilities_8h_source}\index{HomoGebra/DistanceUtilities.h@{HomoGebra/DistanceUtilities.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/System/Vector2.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }HomoGebra}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ }Distance\ =\ float;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{inline}\ Distance\ Length(\textcolor{keyword}{const}\ sf::Vector2f\&\ vector)}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordflow}{return}\ std::hypot(vector.x,\ vector.y);}
+\DoxyCodeLine{00012\ \}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{inline}\ Distance\ DistanceToLine(\textcolor{keyword}{const}\ sf::Vector2f\&\ position,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ c)}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordflow}{return}\ std::abs(a\ *\ position.x\ +\ b\ *\ position.y\ +\ c)\ /}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ (std::sqrt(a\ *\ a\ +\ b\ *\ b));}
+\DoxyCodeLine{00019\ \}}
+\DoxyCodeLine{00020\ \}\ \ \textcolor{comment}{//\ namespace\ HomoGebra}}
+
+\end{DoxyCode}

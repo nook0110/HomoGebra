@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['transformation_0',['Transformation',['../class_homo_gebra_1_1_transformation.html#a16648cf4e0c37652f75707100f15249d',1,'HomoGebra::Transformation::Transformation(TransformationMatrix transformation=TransformationMatrix())'],['../class_homo_gebra_1_1_transformation.html#aab31f0c3f5b0468c0b57dfacaf435535',1,'HomoGebra::Transformation::Transformation(const PointEquation &amp;first_preimage, const PointEquation &amp;second_preimage, const PointEquation &amp;third_preimage, const PointEquation &amp;fourth_preimage, const PointEquation &amp;first_image, const PointEquation &amp;second_image, const PointEquation &amp;third_image, const PointEquation &amp;fourth_image)']]],
+  ['transformationmatrix_1',['TransformationMatrix',['../class_homo_gebra_1_1_transformation_matrix.html#a45829ca959dd95eaa4b9b4d1d4fd9659',1,'HomoGebra::TransformationMatrix::TransformationMatrix()'],['../class_homo_gebra_1_1_transformation_matrix.html#a2dc82f405bf9a45aa11878d768fda50c',1,'HomoGebra::TransformationMatrix::TransformationMatrix(Complex a00, Complex a01, Complex a02, Complex a10, Complex a11, Complex a12, Complex a20, Complex a21, Complex a22)']]]
+];

@@ -1,0 +1,7 @@
+<map id="HomoGebra::ConstructionLine::SetEquation" name="HomoGebra::ConstructionLine::SetEquation">
+<area shape="rect" id="node1" title="Set equation of line." alt="" coords="451,37,647,77"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_line_on_plane.html#aa6712f07622496d0a48ebb546eff23f9" title=" " alt="" coords="229,5,402,45"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_by_two_points.html#aa70697e002d867ee34d433abcaa26e92" title=" " alt="" coords="228,69,403,109"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_line_on_plane.html#a13e50988f2c26aa59b153da24dfc346d" title="Constructs line by equation." alt="" coords="6,5,179,45"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_by_two_points.html#ac50ca8544c02b8d77c8c250e367fcc5b" title="Constructs line by two points." alt="" coords="5,69,180,109"/>
+</map>

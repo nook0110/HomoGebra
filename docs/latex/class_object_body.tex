@@ -1,0 +1,231 @@
+\hypertarget{class_object_body}{}\doxysection{Object\+Body Class Reference}
+\label{class_object_body}\index{ObjectBody@{ObjectBody}}
+
+
+Base class for bodies.  
+
+
+
+
+{\ttfamily \#include $<$Geometric\+Object\+Body.\+h$>$}
+
+
+
+Inheritance diagram for Object\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Object\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_body__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_object_body_a15e86b3f178e1d31574c0fd7e525ee95}{Set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set name of the point. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_object_body_a5617125b2310d79d493cd8a768b548c1}{Get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets name of the point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_body_a4ba61510565da9d2484e32af05fa5ea9}{Set\+Name\+Position}} (const sf\+::\+Vector2f \&position)
+\begin{DoxyCompactList}\small\item\em Sets position of the name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_body_a834064754b9cc1ddccfa76de57825573}{Set\+Name\+Size}} (float size)
+\begin{DoxyCompactList}\small\item\em Sets size of the name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_body_adad033f7876832f4e823908324c2d530}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
+\begin{DoxyCompactList}\small\item\em Draw the object body to a render target. \end{DoxyCompactList}\item 
+virtual Distance \mbox{\hyperlink{class_object_body_a9eded52fd0e326f4837112dda2632df3}{Get\+Distance}} (const sf\+::\+Vector2f \&position) const =0
+\begin{DoxyCompactList}\small\item\em Gets distance from object to position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_object_body_a922bce6eca75d03ce02743874734922c}\label{class_object_body_a922bce6eca75d03ce02743874734922c}} 
+\mbox{\hyperlink{class_object_name}{Object\+Name}} {\bfseries text\+\_\+}
+\begin{DoxyCompactList}\small\item\em Name of the name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for bodies. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+July 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_object_body_adad033f7876832f4e823908324c2d530}\label{class_object_body_adad033f7876832f4e823908324c2d530}} 
+\index{ObjectBody@{ObjectBody}!draw@{draw}}
+\index{draw@{draw}!ObjectBody@{ObjectBody}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Object\+Body\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Draw the object body to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to. \\
+\hline
+{\em states} & Current render states. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_object_body_adad033f7876832f4e823908324c2d530_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_body_a9eded52fd0e326f4837112dda2632df3}\label{class_object_body_a9eded52fd0e326f4837112dda2632df3}} 
+\index{ObjectBody@{ObjectBody}!GetDistance@{GetDistance}}
+\index{GetDistance@{GetDistance}!ObjectBody@{ObjectBody}}
+\doxysubsubsection{\texorpdfstring{GetDistance()}{GetDistance()}}
+{\footnotesize\ttfamily virtual Distance Object\+Body\+::\+Get\+Distance (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets distance from object to position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position to calculate distance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance from object to position. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_point_body_a8ba1423a831bd85462951a4cc4db07ad}{Point\+Body}}, \mbox{\hyperlink{class_line_body_a14892ea292677aeb2a293de6699f5f6f}{Line\+Body}}, and \mbox{\hyperlink{class_conic_body_ab91ca911b8cdccdcf537b1658877e5de}{Conic\+Body}}.
+
+\mbox{\Hypertarget{class_object_body_a5617125b2310d79d493cd8a768b548c1}\label{class_object_body_a5617125b2310d79d493cd8a768b548c1}} 
+\index{ObjectBody@{ObjectBody}!GetName@{GetName}}
+\index{GetName@{GetName}!ObjectBody@{ObjectBody}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily const std\+::string \& Object\+Body\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets name of the point. 
+
+\begin{DoxyReturn}{Returns}
+Name of the point. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_object_body_a5617125b2310d79d493cd8a768b548c1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_body_a5617125b2310d79d493cd8a768b548c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_body_a15e86b3f178e1d31574c0fd7e525ee95}\label{class_object_body_a15e86b3f178e1d31574c0fd7e525ee95}} 
+\index{ObjectBody@{ObjectBody}!SetName@{SetName}}
+\index{SetName@{SetName}!ObjectBody@{ObjectBody}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}}
+{\footnotesize\ttfamily void Object\+Body\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Set name of the point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the point. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_object_body_a15e86b3f178e1d31574c0fd7e525ee95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_object_body_a15e86b3f178e1d31574c0fd7e525ee95_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_body_a4ba61510565da9d2484e32af05fa5ea9}\label{class_object_body_a4ba61510565da9d2484e32af05fa5ea9}} 
+\index{ObjectBody@{ObjectBody}!SetNamePosition@{SetNamePosition}}
+\index{SetNamePosition@{SetNamePosition}!ObjectBody@{ObjectBody}}
+\doxysubsubsection{\texorpdfstring{SetNamePosition()}{SetNamePosition()}}
+{\footnotesize\ttfamily void Object\+Body\+::\+Set\+Name\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption})}
+
+
+
+Sets position of the name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the name. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_body_a4ba61510565da9d2484e32af05fa5ea9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_body_a834064754b9cc1ddccfa76de57825573}\label{class_object_body_a834064754b9cc1ddccfa76de57825573}} 
+\index{ObjectBody@{ObjectBody}!SetNameSize@{SetNameSize}}
+\index{SetNameSize@{SetNameSize}!ObjectBody@{ObjectBody}}
+\doxysubsubsection{\texorpdfstring{SetNameSize()}{SetNameSize()}}
+{\footnotesize\ttfamily void Object\+Body\+::\+Set\+Name\+Size (\begin{DoxyParamCaption}\item[{float}]{size }\end{DoxyParamCaption})}
+
+
+
+Sets size of the name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Size of the name. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_body_a834064754b9cc1ddccfa76de57825573_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_body_a834064754b9cc1ddccfa76de57825573_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Geometric\+Object\+Body.\+h\item 
+Homo\+Gebra/Geometric\+Object\+Body.\+cpp\end{DoxyCompactItemize}

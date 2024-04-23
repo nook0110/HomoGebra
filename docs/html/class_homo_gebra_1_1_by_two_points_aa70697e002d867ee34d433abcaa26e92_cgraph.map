@@ -1,0 +1,7 @@
+<map id="HomoGebra::ByTwoPoints::RecalculateEquation" name="HomoGebra::ByTwoPoints::RecalculateEquation">
+<area shape="rect" id="node1" title=" " alt="" coords="5,63,180,103"/>
+<area shape="rect" id="node2" href="$struct_homo_gebra_1_1_point_equation.html#aab3975952db2879c9070e4b457ca8397" title="Return current equation of point." alt="" coords="243,5,423,45"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_point.html#aa6c52b57849f0ba2280356ed1c2312d7" title="Return current equation of point." alt="" coords="228,70,437,95"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_construction_line.html#a3d2b693751ef796a15ce03a4d7c35737" title="Set equation of line." alt="" coords="235,120,431,160"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_point_implementation.html#ac77deb118f03a5e00d761231f0282b76" title="Return current equation of point." alt="" coords="485,63,703,103"/>
+</map>

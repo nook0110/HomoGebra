@@ -1,0 +1,7 @@
+<map id="HomoGebra::PointBody::CalculatePosition" name="HomoGebra::PointBody::CalculatePosition">
+<area shape="rect" id="node1" title="Calculates the projective position of the point." alt="" coords="5,37,164,77"/>
+<area shape="rect" id="node2" href="$struct_homo_gebra_1_1_point_equation.html#aab3975952db2879c9070e4b457ca8397" title="Return current equation of point." alt="" coords="244,5,424,45"/>
+<area shape="rect" id="node3" href="$struct_homo_gebra_1_1_homogeneous_coordinate.html#a37ab9d7956eaf156ba7cef5f9916aaed" title="Normalizes coordinates." alt="" coords="212,69,456,109"/>
+<area shape="rect" id="node4" href="$struct_homo_gebra_1_1_homogeneous_coordinate.html#a8b7f938f1ce2e3cf64d453fe42c00af6" title="Normalizes coordinates." alt="" coords="504,69,748,109"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_complex.html#aaa92c40b629f42a0b333e4d7fb13f3b5" title="Checks if complex number is zero." alt="" coords="796,69,947,109"/>
+</map>

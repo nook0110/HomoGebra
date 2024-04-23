@@ -1,0 +1,4 @@
+<map id="LineFactory::ByTwoPoints" name="LineFactory::ByTwoPoints">
+<area shape="rect" id="node1" title="Constructs line through two given points." alt="" coords="232,13,407,38"/>
+<area shape="rect" id="node2" href="$class_line_by_two_points_wrapper.html#ad7ba1eff031982c9b49126fdabc1b42e" title="Constructor by plane." alt="" coords="5,5,184,45"/>
+</map>

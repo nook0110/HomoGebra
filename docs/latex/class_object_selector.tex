@@ -1,0 +1,97 @@
+\hypertarget{class_object_selector}{}\doxysection{Object\+Selector\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_object_selector}\index{ObjectSelector$<$ GeometricObjectType $>$@{ObjectSelector$<$ GeometricObjectType $>$}}
+
+
+Inheritance diagram for Object\+Selector\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_object_selector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Object\+Selector\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_selector__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_object_selector_addac38f324315b379104b9ecd463ddb7}{Update}} (const \mbox{\hyperlink{struct_plane_event_1_1_object_removed}{Plane\+Event\+::\+Object\+Removed}} \&object\+\_\+removed) override
+\begin{DoxyCompactList}\small\item\em Update, because sth was destroyed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_object_selector_ae78ca13d94051aeb75bb4583adc91e80}\label{class_object_selector_ae78ca13d94051aeb75bb4583adc91e80}} 
+{\bfseries Object\+Selector} (\mbox{\hyperlink{class_plane}{Plane}} $\ast$plane)
+\item 
+\mbox{\Hypertarget{class_object_selector_a173bc88b8331b9fb94bb1a767b70fd53}\label{class_object_selector_a173bc88b8331b9fb94bb1a767b70fd53}} 
+Geometric\+Object\+Type $\ast$ {\bfseries operator()} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_object_selector_body}{Object\+Selector\+Body$<$ Geometric\+Object\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_object_selector_body_af90511d2034a65d62a5f0fbaad5323f0}\label{class_object_selector_body_af90511d2034a65d62a5f0fbaad5323f0}} 
+{\bfseries Object\+Selector\+Body} (\mbox{\hyperlink{class_plane}{Plane}} $\ast$plane)
+\item 
+void \mbox{\hyperlink{class_object_selector_body_aa0d87fb6e6a7348e648cda790e9c3972}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em Draws the body. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_selector_body_aeb8f9d6e535c46ca818cc41e3a56acab}{Set\+Object}} (Geometric\+Object\+Type $\ast$object)
+\begin{DoxyCompactList}\small\item\em Set selected object. \end{DoxyCompactList}\item 
+Geometric\+Object\+Type $\ast$ \mbox{\hyperlink{class_object_selector_body_adac8a8b8749a75c8373976c5cedde881}{Get\+Object}} () const
+\begin{DoxyCompactList}\small\item\em Get selected object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_selector_body_a66c243c7290056192e324edbfa24d7f4}{Update}} (const \mbox{\hyperlink{struct_plane_event_1_1_object_removed}{Plane\+Event\+::\+Object\+Removed}} \&object\+\_\+removed) override
+\begin{DoxyCompactList}\small\item\em Update, because sth was destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_plane_observer}{Plane\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_plane_observer_a22dd3e4ea6c79d0fbaba3860dc1fbc9d}{Plane\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_plane_observer_a4e5a1b41dce1089a8137790bdfa162d8}\label{class_plane_observer_a4e5a1b41dce1089a8137790bdfa162d8}} 
+virtual {\bfseries $\sim$\+Plane\+Observer} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_plane_observer_af66f720ed54cbf9ce43f84fb7b37b168}{Update}} (const \mbox{\hyperlink{struct_plane_event_1_1_object_removed}{Plane\+Event\+::\+Object\+Removed}} \&object\+\_\+removed)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth was destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_object_selector_addac38f324315b379104b9ecd463ddb7}\label{class_object_selector_addac38f324315b379104b9ecd463ddb7}} 
+\index{ObjectSelector$<$ GeometricObjectType $>$@{ObjectSelector$<$ GeometricObjectType $>$}!Update@{Update}}
+\index{Update@{Update}!ObjectSelector$<$ GeometricObjectType $>$@{ObjectSelector$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_object_selector}{Object\+Selector}}$<$ Geometric\+Object\+Type $>$\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_plane_event_1_1_object_removed}{Plane\+Event\+::\+Object\+Removed}} \&}]{object\+\_\+removed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update, because sth was destroyed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+\_\+removed} & Tag with some information\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Object\+Event\+::\+Destroyed 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_plane_observer_af66f720ed54cbf9ce43f84fb7b37b168}{Plane\+Observer}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_object_selector_addac38f324315b379104b9ecd463ddb7_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Button\+Element.\+h\item 
+Homo\+Gebra/Button\+Element.\+cpp\end{DoxyCompactItemize}

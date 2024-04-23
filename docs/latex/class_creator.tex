@@ -1,0 +1,90 @@
+\hypertarget{class_creator}{}\doxysection{Creator Class Reference}
+\label{class_creator}\index{Creator@{Creator}}
+
+
+Base class for creators of geometric objects using mouse.  
+
+
+
+
+{\ttfamily \#include $<$Creation.\+h$>$}
+
+
+
+Inheritance diagram for Creator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{class_creator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Creator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{class_creator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_creator_a2d9d4263abb9492d1b4caeec26320031}{$\sim$\+Creator}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_creator_a1f86b37637f1f2dc3174c8ce302abf7d}{Update}} (const sf\+::\+Event \&event)=0
+\begin{DoxyCompactList}\small\item\em Updates the creator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for creators of geometric objects using mouse. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_creator_a2d9d4263abb9492d1b4caeec26320031}\label{class_creator_a2d9d4263abb9492d1b4caeec26320031}} 
+\index{Creator@{Creator}!````~Creator@{$\sim$Creator}}
+\index{````~Creator@{$\sim$Creator}!Creator@{Creator}}
+\doxysubsubsection{\texorpdfstring{$\sim$Creator()}{~Creator()}}
+{\footnotesize\ttfamily virtual Creator\+::$\sim$\+Creator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_creator_a1f86b37637f1f2dc3174c8ce302abf7d}\label{class_creator_a1f86b37637f1f2dc3174c8ce302abf7d}} 
+\index{Creator@{Creator}!Update@{Update}}
+\index{Update@{Update}!Creator@{Creator}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Creator\+::\+Update (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the creator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \mbox{\hyperlink{namespace_event}{Event}} to process. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_point_creator_a32a2389b4ff14244443285573d06025c}{Point\+Creator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/\mbox{\hyperlink{_creation_8h}{Creation.\+h}}\end{DoxyCompactItemize}

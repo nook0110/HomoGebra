@@ -1,0 +1,152 @@
+\hypertarget{class_geometric_object_observer}{}\doxysection{Geometric\+Object\+Observer Class Reference}
+\label{class_geometric_object_observer}\index{GeometricObjectObserver@{GeometricObjectObserver}}
+
+
+Makes \mbox{\hyperlink{class_construction}{Construction}} an observer.  
+
+
+
+
+{\ttfamily \#include $<$Observer.\+h$>$}
+
+
+
+Inheritance diagram for Geometric\+Object\+Observer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_geometric_object_observer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Geometric\+Object\+Observer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{class_geometric_object_observer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometric_object_observer_a9324c32d02500a191de6d5ed1ff7e82c}{Geometric\+Object\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometric_object_observer_afb8eac874b30b302a977fa7a2ada4605}\label{class_geometric_object_observer_afb8eac874b30b302a977fa7a2ada4605}} 
+virtual {\bfseries $\sim$\+Geometric\+Object\+Observer} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometric_object_observer_a617b3090c0ab5aee48c9af20ffde611d}{Update}} (const \mbox{\hyperlink{struct_object_event_1_1_moved}{Object\+Event\+::\+Moved}} \&moved\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth moved. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometric_object_observer_adc2ccc27a401b848141693da993f0e98}{Update}} (const \mbox{\hyperlink{struct_object_event_1_1_going_to_be_destroyed}{Object\+Event\+::\+Going\+To\+Be\+Destroyed}} \&destroyed\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth was destroyed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometric_object_observer_a31f78d46caebf7be3fa901fc074a69eb}{Update}} (const \mbox{\hyperlink{struct_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} \&renamed\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth was renamed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Makes \mbox{\hyperlink{class_construction}{Construction}} an observer. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+Implements pattern called \textquotesingle{}Observer\textquotesingle{}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_observable_geometric_object}{Observable\+Geometric\+Object}} 
+
+\mbox{\hyperlink{class_construction}{Construction}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometric_object_observer_a9324c32d02500a191de6d5ed1ff7e82c}\label{class_geometric_object_observer_a9324c32d02500a191de6d5ed1ff7e82c}} 
+\index{GeometricObjectObserver@{GeometricObjectObserver}!GeometricObjectObserver@{GeometricObjectObserver}}
+\index{GeometricObjectObserver@{GeometricObjectObserver}!GeometricObjectObserver@{GeometricObjectObserver}}
+\doxysubsubsection{\texorpdfstring{GeometricObjectObserver()}{GeometricObjectObserver()}}
+{\footnotesize\ttfamily Geometric\+Object\+Observer\+::\+Geometric\+Object\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometric_object_observer_adc2ccc27a401b848141693da993f0e98}\label{class_geometric_object_observer_adc2ccc27a401b848141693da993f0e98}} 
+\index{GeometricObjectObserver@{GeometricObjectObserver}!Update@{Update}}
+\index{Update@{Update}!GeometricObjectObserver@{GeometricObjectObserver}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void Geometric\+Object\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_object_event_1_1_going_to_be_destroyed}{Object\+Event\+::\+Going\+To\+Be\+Destroyed}} \&}]{destroyed\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update, because sth was destroyed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destroyed\+\_\+event} & Tag with some information\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Object\+Event\+::\+Destroyed 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{class_plane_implementation_a62b4d30b59123a4aba1355b9e8b06f96}{Plane\+Implementation}}, \mbox{\hyperlink{class_construction_aad76fc409f0d78be5d98070d85a67b23}{Construction}}, \mbox{\hyperlink{class_construction_point_a7b28592e653051614e6a3c05e2fa1dff}{Construction\+Point}}, \mbox{\hyperlink{class_construction_line_a94617f44c1dbcc61b0eb43baaccbf6bc}{Construction\+Line}}, and \mbox{\hyperlink{class_construction_conic_af811a356250def70a699d512f1da59f8}{Construction\+Conic}}.
+
+\mbox{\Hypertarget{class_geometric_object_observer_a617b3090c0ab5aee48c9af20ffde611d}\label{class_geometric_object_observer_a617b3090c0ab5aee48c9af20ffde611d}} 
+\index{GeometricObjectObserver@{GeometricObjectObserver}!Update@{Update}}
+\index{Update@{Update}!GeometricObjectObserver@{GeometricObjectObserver}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void Geometric\+Object\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_object_event_1_1_moved}{Object\+Event\+::\+Moved}} \&}]{moved\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update, because sth moved. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em moved\+\_\+event} & Tag with some information.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_object_event_1_1_moved}{Object\+Event\+::\+Moved}} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{class_construction_aba054bb3478f008a9b2773666f075542}{Construction}}, and \mbox{\hyperlink{class_plane_implementation_a1d7df263ad171e2f81ab74c978eba382}{Plane\+Implementation}}.
+
+\mbox{\Hypertarget{class_geometric_object_observer_a31f78d46caebf7be3fa901fc074a69eb}\label{class_geometric_object_observer_a31f78d46caebf7be3fa901fc074a69eb}} 
+\index{GeometricObjectObserver@{GeometricObjectObserver}!Update@{Update}}
+\index{Update@{Update}!GeometricObjectObserver@{GeometricObjectObserver}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual void Geometric\+Object\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} \&}]{renamed\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update, because sth was renamed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renamed\+\_\+event} & Tag with some information\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{class_construction_line_a5aec42fd74fe62741693bede71dc4dc0}{Construction\+Line}}, \mbox{\hyperlink{class_construction_conic_a96a1ecf9f337dde21028e5514dc95af7}{Construction\+Conic}}, \mbox{\hyperlink{class_construction_point_aee96b307faab65c3878b111fde437dce}{Construction\+Point}}, \mbox{\hyperlink{class_plane_implementation_a8f1a5c5bbc71e51f1d4dd95eda6b31a6}{Plane\+Implementation}}, and \mbox{\hyperlink{class_construction_ab8e77dceb53334672ae5da928411aea6}{Construction}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Observer.\+h\end{DoxyCompactItemize}

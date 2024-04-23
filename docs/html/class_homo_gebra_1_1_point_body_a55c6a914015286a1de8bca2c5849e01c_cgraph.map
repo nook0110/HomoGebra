@@ -1,0 +1,4 @@
+<map id="HomoGebra::PointBody::draw" name="HomoGebra::PointBody::draw">
+<area shape="rect" id="node1" title="Draw the point to a render target." alt="" coords="5,5,164,45"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_object_body.html#a8dd5d0766059c8fd5acbeb62ba442c0c" title="Draw the object body to a render target." alt="" coords="212,5,379,45"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Gui::ObjectMenu::HomogeneousCoordinateEditor" name="Gui::ObjectMenu::HomogeneousCoordinateEditor">
+<area shape="rect" id="node1" title="Class that represents a submenu that allows to edit a homogeneous coordinates." alt="" coords="5,417,227,553"/>
+<area shape="rect" id="node2" href="$class_gui_1_1_object_menu_1_1_homogeneous_coordinate_editor_1_1_complex_editor.html" title="Class that represents a submenu that allows to edit a complex number." alt="" coords="11,160,221,296"/>
+<area shape="rect" id="node3" title=" " alt="" coords="86,5,146,83"/>
+</map>

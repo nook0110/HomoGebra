@@ -1,0 +1,5 @@
+<map id="Plane::AddObject" name="Plane::AddObject">
+<area shape="rect" id="node1" title="Adds object to plane." alt="" coords="228,31,352,56"/>
+<area shape="rect" id="node2" href="$class_line_factory.html#a60dab536db842e93f1815eec76b4ecf6" title="Constructs line through two given points." alt="" coords="5,5,180,31"/>
+<area shape="rect" id="node3" href="$class_point_factory.html#a3255fe4805130ef407c9578c12e45a01" title="Constructs a point with given coordinates." alt="" coords="15,55,170,80"/>
+</map>

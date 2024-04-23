@@ -1,0 +1,8 @@
+<map id="HomoGebra::GeometricObject" name="HomoGebra::GeometricObject">
+<area shape="rect" id="node1" title="Base class for geometric objects." alt="" coords="133,175,330,355"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_conic.html" title="Conic on a plane." alt="" coords="5,498,140,737"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_line.html" title="Line on a plane." alt="" coords="164,483,299,751"/>
+<area shape="rect" id="node6" href="$class_homo_gebra_1_1_point.html" title="Point on a plane." alt="" coords="323,403,484,832"/>
+<area shape="rect" id="node2" title=" " alt="" coords="97,27,190,105"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable_interface.html" title=" " alt="" coords="215,5,427,127"/>
+</map>

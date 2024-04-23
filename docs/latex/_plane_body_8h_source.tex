@@ -1,0 +1,32 @@
+\hypertarget{_plane_body_8h_source}{}\doxysection{Plane\+Body.\+h}
+\label{_plane_body_8h_source}\index{HomoGebra/PlaneBody.h@{HomoGebra/PlaneBody.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}EventNotifier.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }HomoGebra}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_plane_body}{PlaneBody}}\ final\ :\ \textcolor{keyword}{public}\ sf::Drawable,\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_event_notifier}{EventNotifier}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{void}\ Resize(\textcolor{keyword}{const}\ sf::Vector2f\&\ size);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_plane_body_a7813c523a3191c90135a5c635a4a6999}{Update}}(\textcolor{keyword}{const}\ sf::Event\&\ event);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{const}\ sf::View\&\ \mbox{\hyperlink{class_homo_gebra_1_1_plane_body_ad8542366aa3bcc8f5f69be755e9d9f71}{GetView}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_plane_body_adf6b1c4775f18ba922b45f9154d418b5}{draw}}(sf::RenderTarget\&\ target,\ sf::RenderStates\ states)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_plane_body_a29a5ccdc6fca41f472593db578b2a283}{UpdateZoom}}(\textcolor{keyword}{const}\ sf::Event\&\ event);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ UpdateClick(\textcolor{keyword}{const}\ sf::Event\&\ event);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ sf::View\ \mbox{\hyperlink{class_homo_gebra_1_1_plane_body_a213c9a28020f4c001cfe7f71ca30fe40}{view\_}};\ \ }
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ \}\ \ \textcolor{comment}{//\ namespace\ HomoGebra}}
+
+\end{DoxyCode}

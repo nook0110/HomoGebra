@@ -1,0 +1,5 @@
+<map id="TransformationMatrix::GetInverse" name="TransformationMatrix::GetInverse">
+<area shape="rect" id="node1" title="Finds inversion of matrix." alt="" coords="5,37,148,77"/>
+<area shape="rect" id="node2" href="$class_transformation_matrix.html#aa188aa955061de541799126a392a56b0" title="Default Constructor. Creates identity matrix." alt="" coords="196,5,347,45"/>
+<area shape="rect" id="node3" href="$class_transformation_matrix.html#ac744f99ddc0b4dc27a443cfffb947f22" title="Calculates determinant." alt="" coords="200,69,343,109"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Line::GetDistance" name="Line::GetDistance">
+<area shape="rect" id="node1" title="Gets distance from object to position." alt="" coords="5,5,132,31"/>
+<area shape="rect" id="node2" href="$class_line_body.html#a14892ea292677aeb2a293de6699f5f6f" title="Gets distance from object to position." alt="" coords="180,5,336,31"/>
+</map>

@@ -1,0 +1,112 @@
+\hypertarget{struct_parsed_subname}{}\doxysection{Parsed\+Subname Struct Reference}
+\label{struct_parsed_subname}\index{ParsedSubname@{ParsedSubname}}
+
+
+Struct that contains parsed subname.  
+
+
+
+
+{\ttfamily \#include $<$Name\+Generator.\+h$>$}
+
+
+
+Collaboration diagram for Parsed\+Subname\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{struct_parsed_subname__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{struct_parsed_subname_ac151d910c9ce85c9a69becb885abb82c}{operator==}} (const \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares two parsed subnames. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_parsed_subname_a1761ecf37a1f8535eee2426ddec46a17}{operator$<$}} (const \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares two parsed subnames. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_parsed_subname_ac78ba73900afcfd1c457721bf422f628}{operator std\+::string}} () const
+\begin{DoxyCompactList}\small\item\em Converts parsed subname to string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_parsed_subname_ab6da99b80341c47dbec32461898c0a6b}\label{struct_parsed_subname_ab6da99b80341c47dbec32461898c0a6b}} 
+std\+::string {\bfseries subname}
+\begin{DoxyCompactList}\small\item\em Subname. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_parsed_subname_a84d3efc6cb4a08b44725ac348e0c5368}\label{struct_parsed_subname_a84d3efc6cb4a08b44725ac348e0c5368}} 
+Parsed\+Number {\bfseries number}
+\begin{DoxyCompactList}\small\item\em Number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct that contains parsed subname. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+3
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_parsed_subname_ac78ba73900afcfd1c457721bf422f628}\label{struct_parsed_subname_ac78ba73900afcfd1c457721bf422f628}} 
+\index{ParsedSubname@{ParsedSubname}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!ParsedSubname@{ParsedSubname}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily Parsed\+Subname\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Converts parsed subname to string. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{[}SUBNAME\mbox{]}\mbox{[}NUMBER\mbox{]} if number is not empty, \mbox{[}SUBNAME\mbox{]} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_parsed_subname_a1761ecf37a1f8535eee2426ddec46a17}\label{struct_parsed_subname_a1761ecf37a1f8535eee2426ddec46a17}} 
+\index{ParsedSubname@{ParsedSubname}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!ParsedSubname@{ParsedSubname}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Parsed\+Subname\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares two parsed subnames. 
+
+Compare them by lexicographical order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Other parsed subname.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this is less than other, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_parsed_subname_ac151d910c9ce85c9a69becb885abb82c}\label{struct_parsed_subname_ac151d910c9ce85c9a69becb885abb82c}} 
+\index{ParsedSubname@{ParsedSubname}!operator==@{operator==}}
+\index{operator==@{operator==}!ParsedSubname@{ParsedSubname}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Parsed\+Subname\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares two parsed subnames. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Other parsed subname.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if parsed subnames are equal, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Name\+Generator.\+h\item 
+Homo\+Gebra/Name\+Generator.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="ObjectSelectorWrapper::IsSet" name="ObjectSelectorWrapper::IsSet">
+<area shape="rect" id="node1" title="Is object selected?" alt="" coords="5,5,163,45"/>
+<area shape="rect" id="node2" href="$class_object_selector_wrapper.html#a72f46ebb8f8bd6898f6e4824769daa60" title="Wrap of GetObject();." alt="" coords="211,5,368,45"/>
+<area shape="rect" id="node3" href="$class_gui_1_1_constructor_1_1_object_selector.html#a707401d0d3abac380fa022a9ae9d105f" title="Get selected object." alt="" coords="416,5,579,45"/>
+</map>

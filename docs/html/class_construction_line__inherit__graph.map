@@ -1,0 +1,7 @@
+<map id="ConstructionLine" name="ConstructionLine">
+<area shape="rect" id="node1" title="Base class for all line constructions." alt="" coords="97,403,259,597"/>
+<area shape="rect" id="node4" href="$class_by_two_points.html" title="Construction of a line by two points." alt="" coords="5,645,167,767"/>
+<area shape="rect" id="node5" href="$class_line_on_plane.html" title="Construction of a casual line on a plane." alt="" coords="191,660,352,752"/>
+<area shape="rect" id="node2" href="$class_construction.html" title="Defines how object is created." alt="" coords="97,189,259,355"/>
+<area shape="rect" id="node3" href="$class_geometric_object_observer.html" title="Makes Construction an observer." alt="" coords="79,5,277,141"/>
+</map>

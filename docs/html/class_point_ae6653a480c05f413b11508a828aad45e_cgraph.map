@@ -1,0 +1,4 @@
+<map id="Point::Attach" name="Point::Attach">
+<area shape="rect" id="node1" title="Attaches observer to this object." alt="" coords="5,13,104,38"/>
+<area shape="rect" id="node2" href="$class_observable_geometric_object.html#a9a1ad84310eb1c66df09475e6a1256f0" title="Subscribe an observer on this object." alt="" coords="152,5,336,45"/>
+</map>

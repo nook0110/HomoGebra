@@ -1,0 +1,4 @@
+<map id="Gui::Editor::PointSubmenu" name="Gui::Editor::PointSubmenu">
+<area shape="rect" id="node1" title="Class that represents a submenu that allows to edit points." alt="" coords="5,145,183,355"/>
+<area shape="rect" id="node2" href="$class_gui_1_1_widget.html" title="Mix&#45;In for widgets." alt="" coords="49,5,139,97"/>
+</map>

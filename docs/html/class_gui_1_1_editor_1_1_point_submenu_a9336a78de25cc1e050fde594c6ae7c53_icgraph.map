@@ -1,0 +1,4 @@
+<map id="Gui::Editor::PointSubmenu::SetPoint" name="Gui::Editor::PointSubmenu::SetPoint">
+<area shape="rect" id="node1" title="Sets new point to edit." alt="" coords="237,5,415,45"/>
+<area shape="rect" id="node2" href="$class_gui_1_1_object_menu.html#a7637c226cf849991fb09166f7def6db5" title="Constructs editor of point." alt="" coords="5,13,189,38"/>
+</map>

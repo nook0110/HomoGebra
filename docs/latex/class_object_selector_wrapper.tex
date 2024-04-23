@@ -1,0 +1,182 @@
+\hypertarget{class_object_selector_wrapper}{}\doxysection{Object\+Selector\+Wrapper\texorpdfstring{$<$}{<} Object\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_object_selector_wrapper}\index{ObjectSelectorWrapper$<$ ObjectType $>$@{ObjectSelectorWrapper$<$ ObjectType $>$}}
+
+
+\mbox{\hyperlink{class_wrapper}{Wrapper}} of Object\+Selector to rename some functions.  
+
+
+
+
+{\ttfamily \#include $<$Factory\+Wrapper.\+h$>$}
+
+
+
+Inheritance diagram for Object\+Selector\+Wrapper\texorpdfstring{$<$}{<} Object\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{class_object_selector_wrapper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Object\+Selector\+Wrapper\texorpdfstring{$<$}{<} Object\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_object_selector_wrapper__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_object_selector_wrapper_a6e4650337fd98583a67154a0eca0c038}{Object\+Selector\+Wrapper}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane)
+\begin{DoxyCompactList}\small\item\em Constructor by plane. \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{class_object_selector_wrapper_a72f46ebb8f8bd6898f6e4824769daa60}{operator()}} ()
+\begin{DoxyCompactList}\small\item\em Wrap of \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_a707401d0d3abac380fa022a9ae9d105f}{Get\+Object()}};. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_selector_wrapper_a4a281c98f28c8db2dd53da8c980f5f87}{Set\+Argument}} (Object\+Type $\ast$object)
+\begin{DoxyCompactList}\small\item\em Wrap of Set\+Object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_object_selector_wrapper_aa3045dd2118acb38ddfd873d4ecba9c6}{Is\+Set}} ()
+\begin{DoxyCompactList}\small\item\em Is object selected? \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector}{Gui\+::\+Constructor\+::\+Object\+Selector$<$ Object\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_a124d5d999ebb2edcaf4aa37fd884c555}{Object\+Selector}} (\mbox{\hyperlink{class_plane}{Plane}} \&plane)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+Object\+Type $\ast$ \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_a707401d0d3abac380fa022a9ae9d105f}{Get\+Object}} () const
+\begin{DoxyCompactList}\small\item\em Get selected object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_acf6622153f2dac31148e6baa791e22ef}{Set\+Object}} (Object\+Type $\ast$object)
+\begin{DoxyCompactList}\small\item\em Set selected object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_ae722bc494a76a87bc5efd828c7903315}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em Draws the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_a4d71cb4b7601f81e6fcd3a5172e1502c}{Update}} (const \mbox{\hyperlink{struct_user_event_1_1_click}{User\+Event\+::\+Click}} \&event) override
+\begin{DoxyCompactList}\small\item\em Updates the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_gui_1_1_widget}{Gui\+::\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_gui_1_1_widget_aad17178fe1a5582f2ed2e2ce676abcf1}{$\sim$\+Widget}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_gui_1_1_widget_a22ea5c1928b958a0eab5d2dbd80c8c61}{Draw}} ()=0
+\begin{DoxyCompactList}\small\item\em Draws widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_event_listener}{Event\+Listener}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_event_listener_a224801ef2f0a3c0ddfd18baf4ca52118}{$\sim$\+Event\+Listener}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_event_listener_a44b18bc65587eb2ed590dff5767adb36}{Update}} (const \mbox{\hyperlink{struct_user_event_1_1_click}{User\+Event\+::\+Click}} \&clicked\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because user clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Object\+Type$>$\newline
+class Object\+Selector\+Wrapper$<$ Object\+Type $>$}
+\mbox{\hyperlink{class_wrapper}{Wrapper}} of Object\+Selector to rename some functions. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Object\+Type} & Type of object.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector}{Gui\+::\+Constructor\+::\+Object\+Selector}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_object_selector_wrapper_a6e4650337fd98583a67154a0eca0c038}\label{class_object_selector_wrapper_a6e4650337fd98583a67154a0eca0c038}} 
+\index{ObjectSelectorWrapper$<$ ObjectType $>$@{ObjectSelectorWrapper$<$ ObjectType $>$}!ObjectSelectorWrapper@{ObjectSelectorWrapper}}
+\index{ObjectSelectorWrapper@{ObjectSelectorWrapper}!ObjectSelectorWrapper$<$ ObjectType $>$@{ObjectSelectorWrapper$<$ ObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{ObjectSelectorWrapper()}{ObjectSelectorWrapper()}}
+{\footnotesize\ttfamily template$<$class Object\+Type $>$ \\
+\mbox{\hyperlink{class_object_selector_wrapper}{Object\+Selector\+Wrapper}}$<$ Object\+Type $>$\mbox{\hyperlink{class_object_selector_wrapper}{\+::\+Object\+Selector\+Wrapper}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} \&}]{plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor by plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plane} & \mbox{\hyperlink{class_plane}{Plane}}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_object_selector_wrapper_aa3045dd2118acb38ddfd873d4ecba9c6}\label{class_object_selector_wrapper_aa3045dd2118acb38ddfd873d4ecba9c6}} 
+\index{ObjectSelectorWrapper$<$ ObjectType $>$@{ObjectSelectorWrapper$<$ ObjectType $>$}!IsSet@{IsSet}}
+\index{IsSet@{IsSet}!ObjectSelectorWrapper$<$ ObjectType $>$@{ObjectSelectorWrapper$<$ ObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{IsSet()}{IsSet()}}
+{\footnotesize\ttfamily template$<$class Object\+Type $>$ \\
+bool \mbox{\hyperlink{class_object_selector_wrapper}{Object\+Selector\+Wrapper}}$<$ Object\+Type $>$\+::\+Is\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is object selected? 
+
+\begin{DoxyReturn}{Returns}
+True if object is selected, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_selector_wrapper_aa3045dd2118acb38ddfd873d4ecba9c6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_selector_wrapper_a72f46ebb8f8bd6898f6e4824769daa60}\label{class_object_selector_wrapper_a72f46ebb8f8bd6898f6e4824769daa60}} 
+\index{ObjectSelectorWrapper$<$ ObjectType $>$@{ObjectSelectorWrapper$<$ ObjectType $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!ObjectSelectorWrapper$<$ ObjectType $>$@{ObjectSelectorWrapper$<$ ObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$class Object\+Type $>$ \\
+auto \mbox{\hyperlink{class_object_selector_wrapper}{Object\+Selector\+Wrapper}}$<$ Object\+Type $>$\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wrap of \mbox{\hyperlink{class_gui_1_1_constructor_1_1_object_selector_a707401d0d3abac380fa022a9ae9d105f}{Get\+Object()}};. 
+
+\begin{DoxyReturn}{Returns}
+Object that was selected. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_selector_wrapper_a72f46ebb8f8bd6898f6e4824769daa60_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_selector_wrapper_a72f46ebb8f8bd6898f6e4824769daa60_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_selector_wrapper_a4a281c98f28c8db2dd53da8c980f5f87}\label{class_object_selector_wrapper_a4a281c98f28c8db2dd53da8c980f5f87}} 
+\index{ObjectSelectorWrapper$<$ ObjectType $>$@{ObjectSelectorWrapper$<$ ObjectType $>$}!SetArgument@{SetArgument}}
+\index{SetArgument@{SetArgument}!ObjectSelectorWrapper$<$ ObjectType $>$@{ObjectSelectorWrapper$<$ ObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{SetArgument()}{SetArgument()}}
+{\footnotesize\ttfamily template$<$class Object\+Type $>$ \\
+void \mbox{\hyperlink{class_object_selector_wrapper}{Object\+Selector\+Wrapper}}$<$ Object\+Type $>$\+::\+Set\+Argument (\begin{DoxyParamCaption}\item[{Object\+Type $\ast$}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wrap of Set\+Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Object to select. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_selector_wrapper_a4a281c98f28c8db2dd53da8c980f5f87_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Factory\+Wrapper.\+h\end{DoxyCompactItemize}

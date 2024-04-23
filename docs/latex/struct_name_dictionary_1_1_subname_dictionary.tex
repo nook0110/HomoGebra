@@ -1,0 +1,211 @@
+\hypertarget{struct_name_dictionary_1_1_subname_dictionary}{}\doxysection{Name\+Dictionary\+::Subname\+Dictionary Struct Reference}
+\label{struct_name_dictionary_1_1_subname_dictionary}\index{NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}}
+
+
+Struct to save subnames.  
+
+
+
+
+{\ttfamily \#include $<$Name\+Generator.\+h$>$}
+
+
+
+Collaboration diagram for Name\+Dictionary\+::Subname\+Dictionary\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{struct_name_dictionary_1_1_subname_dictionary__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary}{Number\+Dictionary}}
+\begin{DoxyCompactList}\small\item\em Struct to save numbers of subnames. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_af3997bc9d25b38c8e80886fea7f18077}{Add\+Subname}} (const std\+::string \&subname)
+\begin{DoxyCompactList}\small\item\em Adds subname to dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_a08fa0400e13dc80914aa810548d6a38a}{Add\+Subname}} (const \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} \&parsed\+\_\+subname)
+\begin{DoxyCompactList}\small\item\em Adds subname to dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_aa984e428a88096f61b114e792fcb6f31}{Delete\+Subname}} (const std\+::string \&subname)
+\begin{DoxyCompactList}\small\item\em Deletes subname from dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_a6e733c3ec377fba5d076703232caab14}{Delete\+Subname}} (const \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} \&parsed\+\_\+subname)
+\begin{DoxyCompactList}\small\item\em Deletes subname from dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_aaab61ffd39ecaafcc7c66f1c6ab9ec71}{Is\+Subname\+Used}} (const std\+::string \&subname) const
+\begin{DoxyCompactList}\small\item\em Checks if subname is used. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_af50bbaf4e930569f6c8585709a7b3f80}{Is\+Subname\+Used}} (const \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} \&parsed\+\_\+subname) const
+\begin{DoxyCompactList}\small\item\em Checks if subname is used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_a9c2e32c933c2e1b2ce0c6bb536624af5}{Parse\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Parse name from string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_a424be4b1c196be56f30ed0d8a3b10a25}\label{struct_name_dictionary_1_1_subname_dictionary_a424be4b1c196be56f30ed0d8a3b10a25}} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary}{Number\+Dictionary}} $>$ {\bfseries used\+\_\+subnames\+\_\+}
+\begin{DoxyCompactList}\small\item\em Map of used subnames. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct to save subnames. 
+
+Subname parses into \mbox{[}SUBNAME\mbox{]}\mbox{[}NUMBER\mbox{]}.
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_a08fa0400e13dc80914aa810548d6a38a}\label{struct_name_dictionary_1_1_subname_dictionary_a08fa0400e13dc80914aa810548d6a38a}} 
+\index{NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}!AddSubname@{AddSubname}}
+\index{AddSubname@{AddSubname}!NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}}
+\doxysubsubsection{\texorpdfstring{AddSubname()}{AddSubname()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Subname\+Dictionary\+::\+Add\+Subname (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} \&}]{parsed\+\_\+subname }\end{DoxyParamCaption})}
+
+
+
+Adds subname to dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+\_\+subname} & Subname to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if subname was added, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_af3997bc9d25b38c8e80886fea7f18077}\label{struct_name_dictionary_1_1_subname_dictionary_af3997bc9d25b38c8e80886fea7f18077}} 
+\index{NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}!AddSubname@{AddSubname}}
+\index{AddSubname@{AddSubname}!NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}}
+\doxysubsubsection{\texorpdfstring{AddSubname()}{AddSubname()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Subname\+Dictionary\+::\+Add\+Subname (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{subname }\end{DoxyParamCaption})}
+
+
+
+Adds subname to dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subname} & Subname to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if subname was added, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_a6e733c3ec377fba5d076703232caab14}\label{struct_name_dictionary_1_1_subname_dictionary_a6e733c3ec377fba5d076703232caab14}} 
+\index{NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}!DeleteSubname@{DeleteSubname}}
+\index{DeleteSubname@{DeleteSubname}!NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}}
+\doxysubsubsection{\texorpdfstring{DeleteSubname()}{DeleteSubname()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Subname\+Dictionary\+::\+Delete\+Subname (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} \&}]{parsed\+\_\+subname }\end{DoxyParamCaption})}
+
+
+
+Deletes subname from dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+\_\+subname} & Subname to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if subname was deleted, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_aa984e428a88096f61b114e792fcb6f31}\label{struct_name_dictionary_1_1_subname_dictionary_aa984e428a88096f61b114e792fcb6f31}} 
+\index{NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}!DeleteSubname@{DeleteSubname}}
+\index{DeleteSubname@{DeleteSubname}!NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}}
+\doxysubsubsection{\texorpdfstring{DeleteSubname()}{DeleteSubname()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Subname\+Dictionary\+::\+Delete\+Subname (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{subname }\end{DoxyParamCaption})}
+
+
+
+Deletes subname from dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subname} & Subname to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if subname was deleted, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_af50bbaf4e930569f6c8585709a7b3f80}\label{struct_name_dictionary_1_1_subname_dictionary_af50bbaf4e930569f6c8585709a7b3f80}} 
+\index{NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}!IsSubnameUsed@{IsSubnameUsed}}
+\index{IsSubnameUsed@{IsSubnameUsed}!NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}}
+\doxysubsubsection{\texorpdfstring{IsSubnameUsed()}{IsSubnameUsed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Subname\+Dictionary\+::\+Is\+Subname\+Used (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} \&}]{parsed\+\_\+subname }\end{DoxyParamCaption}) const}
+
+
+
+Checks if subname is used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+\_\+subname} & Subname to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if subname is used, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_aaab61ffd39ecaafcc7c66f1c6ab9ec71}\label{struct_name_dictionary_1_1_subname_dictionary_aaab61ffd39ecaafcc7c66f1c6ab9ec71}} 
+\index{NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}!IsSubnameUsed@{IsSubnameUsed}}
+\index{IsSubnameUsed@{IsSubnameUsed}!NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}}
+\doxysubsubsection{\texorpdfstring{IsSubnameUsed()}{IsSubnameUsed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Subname\+Dictionary\+::\+Is\+Subname\+Used (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{subname }\end{DoxyParamCaption}) const}
+
+
+
+Checks if subname is used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subname} & Subname to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if subname is used, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_a9c2e32c933c2e1b2ce0c6bb536624af5}\label{struct_name_dictionary_1_1_subname_dictionary_a9c2e32c933c2e1b2ce0c6bb536624af5}} 
+\index{NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}!ParseName@{ParseName}}
+\index{ParseName@{ParseName}!NameDictionary::SubnameDictionary@{NameDictionary::SubnameDictionary}}
+\doxysubsubsection{\texorpdfstring{ParseName()}{ParseName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} Name\+Dictionary\+::\+Subname\+Dictionary\+::\+Parse\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parse name from string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to parse.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Parsed name. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_name_dictionary_1_1_subname_dictionary_a9c2e32c933c2e1b2ce0c6bb536624af5_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Name\+Generator.\+h\item 
+Homo\+Gebra/Name\+Generator.\+cpp\end{DoxyCompactItemize}

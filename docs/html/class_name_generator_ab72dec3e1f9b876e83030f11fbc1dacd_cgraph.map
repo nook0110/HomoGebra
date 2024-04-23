@@ -1,0 +1,9 @@
+<map id="NameGenerator::Rename" name="NameGenerator::Rename">
+<area shape="rect" id="node1" title="Renames name." alt="" coords="5,128,175,153"/>
+<area shape="rect" id="node2" href="$class_name_generator.html#a5b533fdcf703b4228f51b7414f86f5cf" title="Add name to used names." alt="" coords="235,29,413,55"/>
+<area shape="rect" id="node5" href="$class_name_generator.html#a5ac6459eec0253511b32e75a4a2db2c5" title="Deletes name from dictionary." alt="" coords="228,103,420,128"/>
+<area shape="rect" id="node6" href="$class_name_generator.html#a742676aa06e4d7240dd04d3ab0171848" title="Checks if name is empty." alt="" coords="223,152,425,177"/>
+<area shape="rect" id="node7" href="$class_name_generator.html#a66cd33de4457d30c98cc1641fdb901ba" title="Checks if name is used." alt="" coords="227,225,421,251"/>
+<area shape="rect" id="node3" href="$class_name_generator.html#a9044e8db372f29bd89167667f1ba5442" title="Parses name." alt="" coords="473,103,663,128"/>
+<area shape="rect" id="node4" href="$class_name_generator.html#a55a2dce19f5e88f51a781d3982e46c85" title="Parses subname." alt="" coords="711,103,921,128"/>
+</map>

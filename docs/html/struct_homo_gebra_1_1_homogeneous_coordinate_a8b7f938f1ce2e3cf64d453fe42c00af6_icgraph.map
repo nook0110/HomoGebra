@@ -1,0 +1,10 @@
+<map id="HomoGebra::HomogeneousCoordinate::Normalize" name="HomoGebra::HomogeneousCoordinate::Normalize">
+<area shape="rect" id="node1" title="Normalizes coordinates." alt="" coords="1011,54,1255,94"/>
+<area shape="rect" id="node2" href="$struct_homo_gebra_1_1_homogeneous_coordinate.html#a37ab9d7956eaf156ba7cef5f9916aaed" title="Normalizes coordinates." alt="" coords="719,54,963,94"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_point_body.html#a9562275775158d6ad4d9a585ef778b9c" title="Calculates the projective position of the point." alt="" coords="512,22,671,62"/>
+<area shape="rect" id="node7" href="$class_homo_gebra_1_1_line_body.html#ad9b1a3baabcfe4a49cd81b34affa74a6" title="Updates the line body." alt="" coords="515,86,668,126"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_point_body.html#a8879057f8a42f0b3044cb5f1a39d04b0" title="Updates the point body." alt="" coords="283,22,442,62"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_point.html#a1343df45b3cf35e6353711d40c8000c0" title="Set new equation of point." alt="" coords="5,5,213,31"/>
+<area shape="rect" id="node6" href="$class_homo_gebra_1_1_point.html#acf17961cf1e121a2d3c6285e521b0aca" title="Body interface." alt="" coords="5,55,213,80"/>
+<area shape="rect" id="node8" href="$class_homo_gebra_1_1_line.html#a44d52395109353108f025aa2024e99cf" title="Update the body of the line." alt="" coords="261,93,464,119"/>
+</map>

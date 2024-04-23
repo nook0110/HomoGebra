@@ -1,0 +1,8 @@
+<map id="HomoGebra::PlaneImplementation::AddConstruction" name="HomoGebra::PlaneImplementation::AddConstruction">
+<area shape="rect" id="node1" title="Adds object." alt="" coords="564,101,784,141"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_plane.html#a2726b0d90a21efd75c29ac0bd3a7df64" title="Adds object to plane." alt="" coords="280,109,516,134"/>
+<area shape="rect" id="node3" href="$struct_homo_gebra_1_1_conic_on_plane_factory.html#ae3ccea2cd1b9694514c030fd640ace91" title="Constructs a conic with given equation." alt="" coords="5,5,232,45"/>
+<area shape="rect" id="node4" href="$struct_homo_gebra_1_1_line_on_plane_factory.html#a2899cade635816b55a34b802c0037ea6" title="Constructs a line with given equation." alt="" coords="10,69,227,109"/>
+<area shape="rect" id="node5" href="$struct_homo_gebra_1_1_line_by_two_points_factory.html#a6739bb6247d37908d2675c10250c0480" title="Constructs line through two given points." alt="" coords="19,133,218,173"/>
+<area shape="rect" id="node6" href="$class_homo_gebra_1_1_point_on_plane_factory.html#a690793fd4fd9a00492a44549f742eca8" title="Constructs a point with given coordinates." alt="" coords="7,197,230,237"/>
+</map>

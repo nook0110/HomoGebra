@@ -1,0 +1,6 @@
+<map id="LineBody::Update" name="LineBody::Update">
+<area shape="rect" id="node1" title="Updates the line body." alt="" coords="5,13,131,38"/>
+<area shape="rect" id="node2" href="$struct_homogeneous_coordinate.html#ac03f29c6b631bd4309cc8e0f774aa226" title="Normalizes coordinates." alt="" coords="179,5,345,45"/>
+<area shape="rect" id="node3" href="$struct_homogeneous_coordinate.html#ac20e34767f6cb9f6b2e1da0dfe24fb46" title="Normalizes coordinates." alt="" coords="393,5,560,45"/>
+<area shape="rect" id="node4" href="$class_complex.html#ac1a16636807edf8b0271c9b543bdf21c" title="Checks if complex number is zero." alt="" coords="608,13,724,38"/>
+</map>

@@ -1,0 +1,163 @@
+\hypertarget{_object_constructor_8h_source}{}\doxysection{Object\+Constructor.\+h}
+\label{_object_constructor_8h_source}\index{HomoGebra/ObjectConstructor.h@{HomoGebra/ObjectConstructor.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Assert.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ Arg>}
+\DoxyCodeLine{00013\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{concept_has_set_argument}{HasSetArgument}}\ =}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{requires}(T\ t,\ Arg\&\&\ arg)\ \{\ t.SetArgument(std::forward<Arg>(arg));\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Element,\ \textcolor{keywordtype}{size\_t}\ index\ =\ 0>}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_wrapper}{Wrapper}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{class_wrapper_a75b37b5560985bfdf64f577a3b1ffed2}{Wrapper}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{requires}(!std::same\_as<Wrapper<Element,\ index>,\ std::remove\_cvref\_t<T>>)}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_wrapper_abeea16e2736d261d5dea83c6ab135a20}{Wrapper}}(T\&\&\ arg);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ Args>}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_wrapper_afdf89c475461b159c4625699b0a42633}{operator()}}(Args\&\&...\ args);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Arg>}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{requires}\ \mbox{\hyperlink{concept_has_set_argument}{HasSetArgument<Element,\ Arg>}}}
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wrapper_a75e2ee96d02ddcf068b9fba47b36c94c}{SetArgument}}(Arg\&\&\ arg);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_wrapper_a4bb6a3c384bc9e49587c53522779c996}{IsSet}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ Element\ \mbox{\hyperlink{class_wrapper_a70ea869d06f0a641134be5f9b16b841d}{element\_}};\ \ }
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class\ }\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{class}...\ Rest>}
+\DoxyCodeLine{00090\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_object_constructor}{ObjectConstructor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_wrapper}{Wrapper}}<First,\ sizeof...(Rest)>,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_object_constructor}{ObjectConstructor}}<Rest...>}
+\DoxyCodeLine{00092\ \{}
+\DoxyCodeLine{00093\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00098\ \ \ \mbox{\hyperlink{class_object_constructor_aa62604bbfec5153c9b8410601847dc88}{ObjectConstructor}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class\ }Head,\ \textcolor{keyword}{class}...\ Tail>}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{requires}(!std::same\_as<\mbox{\hyperlink{class_object_constructor}{ObjectConstructor}}<\mbox{\hyperlink{class_first}{First}},\ Rest...>,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::remove\_cvref\_t<Head>>)}
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_object_constructor_aa62604bbfec5153c9b8410601847dc88}{ObjectConstructor}}(Head\&\&\ head,\ Tail\&\&...\ tail);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00121\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ Args>}
+\DoxyCodeLine{00122\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_constructor_a5c5632d851b8b2870f4f22141f70a5b9}{ConstructObject}}(Args\&\&...\ arguments);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00130\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Arg>}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{requires}\ \mbox{\hyperlink{concept_has_set_argument}{HasSetArgument}}<\mbox{\hyperlink{class_wrapper}{Wrapper}}<\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{sizeof}...(Rest)>,\ Arg>}
+\DoxyCodeLine{00132\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_constructor_a9fb9e4522026252f3ab0237d1f2b4b26}{SetArgument}}(Arg\&\&\ arg);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00142\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Arg>}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{requires}(!\mbox{\hyperlink{concept_has_set_argument}{HasSetArgument}}<\mbox{\hyperlink{class_wrapper}{Wrapper}}<\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{sizeof}...(Rest)>,\ Arg>)}
+\DoxyCodeLine{00144\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_constructor_aac1715a3705f8505b08a454bd8ae93a7}{SetArgument}}(Arg\&\&\ arg);}
+\DoxyCodeLine{00145\ \};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00160\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ First>}
+\DoxyCodeLine{00161\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_object_constructor}{ObjectConstructor}}<\mbox{\hyperlink{class_first}{First}}>\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_wrapper}{Wrapper}}<First,\ 0>}
+\DoxyCodeLine{00162\ \{}
+\DoxyCodeLine{00163\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00168\ \ \ \mbox{\hyperlink{class_object_constructor_aa62604bbfec5153c9b8410601847dc88}{ObjectConstructor}}();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00176\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Arg>}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{requires}(!std::same\_as<ObjectConstructor<First>,\ std::remove\_cvref\_t<Arg>>)}
+\DoxyCodeLine{00178\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_object_constructor_aa62604bbfec5153c9b8410601847dc88}{ObjectConstructor}}(Arg\&\&\ arg);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00186\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ Args>}
+\DoxyCodeLine{00187\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_constructor_a5c5632d851b8b2870f4f22141f70a5b9}{ConstructObject}}(Args\&\&...\ arguments);}
+\DoxyCodeLine{00188\ \};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Element,\ \textcolor{keywordtype}{size\_t}\ index>}
+\DoxyCodeLine{00191\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00192\ \ \ \textcolor{keyword}{requires}(!std::same\_as<Wrapper<Element,\ index>,\ std::remove\_cvref\_t<T>>)}
+\DoxyCodeLine{00193\ \mbox{\hyperlink{class_wrapper}{Wrapper<Element,\ index>::Wrapper}}(T\&\&\ arg)\ :\ element\_(std::forward<T>(arg))}
+\DoxyCodeLine{00194\ \{\}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Element,\ \textcolor{keywordtype}{size\_t}\ index>}
+\DoxyCodeLine{00197\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ Args>}
+\DoxyCodeLine{00198\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_wrapper_afdf89c475461b159c4625699b0a42633}{Wrapper<Element,\ index>::operator()}}(Args\&\&...\ args)}
+\DoxyCodeLine{00199\ \{}
+\DoxyCodeLine{00200\ \ \ \textcolor{keywordflow}{return}\ element\_(std::forward<Args>(args)...);}
+\DoxyCodeLine{00201\ \}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Element,\ \textcolor{keywordtype}{size\_t}\ index>}
+\DoxyCodeLine{00204\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Arg>}
+\DoxyCodeLine{00205\ \ \ \textcolor{keyword}{requires}\ \mbox{\hyperlink{concept_has_set_argument}{HasSetArgument<Element,\ Arg>}}}
+\DoxyCodeLine{00206\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wrapper_a75e2ee96d02ddcf068b9fba47b36c94c}{Wrapper<Element,\ index>::SetArgument}}(Arg\&\&\ arg)}
+\DoxyCodeLine{00207\ \{}
+\DoxyCodeLine{00208\ \ \ element\_.SetArgument(std::forward<Arg>(arg));}
+\DoxyCodeLine{00209\ \}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Element,\ \textcolor{keywordtype}{size\_t}\ index>}
+\DoxyCodeLine{00212\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_wrapper_a4bb6a3c384bc9e49587c53522779c996}{Wrapper<Element,\ index>::IsSet}}()}
+\DoxyCodeLine{00213\ \{}
+\DoxyCodeLine{00214\ \ \ \textcolor{keywordflow}{return}\ element\_.IsSet();}
+\DoxyCodeLine{00215\ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class\ }\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{class}...\ Rest>}
+\DoxyCodeLine{00218\ \mbox{\hyperlink{class_object_constructor_aa62604bbfec5153c9b8410601847dc88}{ObjectConstructor<First,\ Rest...>::ObjectConstructor}}()}
+\DoxyCodeLine{00219\ \ \ \ \ :\ \mbox{\hyperlink{class_wrapper}{Wrapper}}<\mbox{\hyperlink{class_first}{First}},\ sizeof...(Rest)>(),\ \mbox{\hyperlink{class_object_constructor}{ObjectConstructor}}<Rest...>()}
+\DoxyCodeLine{00220\ \{\}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class\ }\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{class}...\ Rest>}
+\DoxyCodeLine{00223\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class\ }Head,\ \textcolor{keyword}{class}...\ Tail>}
+\DoxyCodeLine{00224\ \ \ \textcolor{keyword}{requires}(!std::same\_as<\mbox{\hyperlink{class_object_constructor}{ObjectConstructor}}<\mbox{\hyperlink{class_first}{First}},\ Rest...>,}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::remove\_cvref\_t<Head>>)}
+\DoxyCodeLine{00226\ \mbox{\hyperlink{class_object_constructor}{ObjectConstructor<First,\ Rest...>::ObjectConstructor}}(Head\&\&\ head,}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Tail\&\&...\ tail)}
+\DoxyCodeLine{00228\ \ \ \ \ :\ \mbox{\hyperlink{class_wrapper}{Wrapper}}<\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{sizeof}...(Rest)>(std::forward<Head>(head)),}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \mbox{\hyperlink{class_object_constructor}{ObjectConstructor<Rest...>}}(std::forward<Tail>(tail)...)}
+\DoxyCodeLine{00230\ \{\}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class\ }\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{class}...\ Rest>}
+\DoxyCodeLine{00233\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ Args>}
+\DoxyCodeLine{00234\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_constructor_a5c5632d851b8b2870f4f22141f70a5b9}{ObjectConstructor<First,\ Rest...>::ConstructObject}}(Args\&\&...\ arguments)}
+\DoxyCodeLine{00235\ \{}
+\DoxyCodeLine{00236\ \ \ \mbox{\hyperlink{class_object_constructor_a5c5632d851b8b2870f4f22141f70a5b9}{ObjectConstructor<Rest...>::ConstructObject}}(}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ std::forward<Args>(arguments)...,}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \mbox{\hyperlink{class_wrapper}{Wrapper}}<\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{sizeof}...(Rest)>::operator()());}
+\DoxyCodeLine{00239\ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class\ }\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{class}...\ Rest>}
+\DoxyCodeLine{00242\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Arg>}
+\DoxyCodeLine{00243\ \ \ \textcolor{keyword}{requires}\ \mbox{\hyperlink{concept_has_set_argument}{HasSetArgument}}<\mbox{\hyperlink{class_wrapper}{Wrapper}}<\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{sizeof}...(Rest)>,\ Arg>}
+\DoxyCodeLine{00244\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_constructor}{ObjectConstructor<First,\ Rest...>::SetArgument}}(Arg\&\&\ arg)}
+\DoxyCodeLine{00245\ \{}
+\DoxyCodeLine{00246\ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{class_wrapper}{Wrapper}}<\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{sizeof}...(Rest)>::IsSet()))}
+\DoxyCodeLine{00247\ \ \ \ \ \mbox{\hyperlink{class_wrapper}{Wrapper}}<\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{sizeof}...(Rest)>::SetArgument(std::forward<Arg>(arg));}
+\DoxyCodeLine{00248\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{class_object_constructor_a9fb9e4522026252f3ab0237d1f2b4b26}{ObjectConstructor<Rest...>::SetArgument}}(std::forward<Arg>(arg));}
+\DoxyCodeLine{00250\ \}}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class\ }\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{class}...\ Rest>}
+\DoxyCodeLine{00253\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Arg>}
+\DoxyCodeLine{00254\ \ \ \textcolor{keyword}{requires}(!\mbox{\hyperlink{concept_has_set_argument}{HasSetArgument}}<\mbox{\hyperlink{class_wrapper}{Wrapper}}<\mbox{\hyperlink{class_first}{First}},\ \textcolor{keyword}{sizeof}...(Rest)>,\ Arg>)}
+\DoxyCodeLine{00255\ void\ \mbox{\hyperlink{class_object_constructor}{ObjectConstructor}}<\mbox{\hyperlink{class_first}{First}},\ Rest...>::SetArgument(Arg\&\&\ arg)}
+\DoxyCodeLine{00256\ \{}
+\DoxyCodeLine{00257\ \ \ \mbox{\hyperlink{class_object_constructor_a9fb9e4522026252f3ab0237d1f2b4b26}{ObjectConstructor<Rest...>::SetArgument}}(std::forward<Arg>(arg));}
+\DoxyCodeLine{00258\ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ First>}
+\DoxyCodeLine{00261\ \mbox{\hyperlink{class_object_constructor_aa62604bbfec5153c9b8410601847dc88}{ObjectConstructor<First>::ObjectConstructor}}()\ :\ \mbox{\hyperlink{class_wrapper}{Wrapper}}<\mbox{\hyperlink{class_first}{First}},\ 0>()}
+\DoxyCodeLine{00262\ \{\}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ First>}
+\DoxyCodeLine{00265\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Arg>}
+\DoxyCodeLine{00266\ \ \ \textcolor{keyword}{requires}(!std::same\_as<ObjectConstructor<First>,\ std::remove\_cvref\_t<Arg>>)}
+\DoxyCodeLine{00267\ \mbox{\hyperlink{class_object_constructor}{ObjectConstructor<First>::ObjectConstructor}}(Arg\&\&\ arg)}
+\DoxyCodeLine{00268\ \ \ \ \ :\ \mbox{\hyperlink{class_wrapper}{Wrapper<First,\ 0>}}(std::forward<Arg>(arg))}
+\DoxyCodeLine{00269\ \{\}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ First>}
+\DoxyCodeLine{00272\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ Args>}
+\DoxyCodeLine{00273\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_constructor_a5c5632d851b8b2870f4f22141f70a5b9}{ObjectConstructor<First>::ConstructObject}}(Args\&\&...\ arguments)}
+\DoxyCodeLine{00274\ \{}
+\DoxyCodeLine{00275\ \ \ \mbox{\hyperlink{class_wrapper_afdf89c475461b159c4625699b0a42633}{Wrapper<First,\ 0>::operator()}}(std::forward<Args>(arguments)...);}
+\DoxyCodeLine{00276\ \}}
+
+\end{DoxyCode}

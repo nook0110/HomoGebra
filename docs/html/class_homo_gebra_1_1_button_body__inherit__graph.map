@@ -1,0 +1,10 @@
+<map id="HomoGebra::ButtonBody" name="HomoGebra::ButtonBody">
+<area shape="rect" id="node1" title=" " alt="" coords="275,5,441,83"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_button_base.html" title=" " alt="" coords="18,145,210,267"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_button_base.html" title=" " alt="" coords="235,131,481,281"/>
+<area shape="rect" id="node8" href="$class_homo_gebra_1_1_button_base.html" title="Button." alt="" coords="505,153,672,259"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_window_button.html" title=" " alt="" coords="5,344,223,465"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_delete_button.html" title=" " alt="" coords="27,535,201,613"/>
+<area shape="rect" id="node6" href="$class_homo_gebra_1_1_window_button.html" title=" " alt="" coords="255,329,461,480"/>
+<area shape="rect" id="node7" href="$class_homo_gebra_1_1_line_by_two_point_button.html" title=" " alt="" coords="262,528,454,620"/>
+</map>

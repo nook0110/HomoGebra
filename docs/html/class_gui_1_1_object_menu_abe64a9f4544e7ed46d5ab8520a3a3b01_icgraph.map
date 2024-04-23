@@ -1,0 +1,5 @@
+<map id="Gui::ObjectMenu::Construct" name="Gui::ObjectMenu::Construct">
+<area shape="rect" id="node1" title="Constructs widget." alt="" coords="237,35,421,60"/>
+<area shape="rect" id="node2" href="$class_gui_1_1_object_menu.html#aaf10dc52768befccad056f53f1e5a08a" title="Constructs editor of object." alt="" coords="5,5,189,31"/>
+<area shape="rect" id="node3" href="$class_gui_1_1_object_menu.html#a0545ac1c3c728ec4ca804eed8ea6e997" title="Constructs menu to select object by name." alt="" coords="5,55,189,95"/>
+</map>

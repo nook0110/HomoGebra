@@ -1,0 +1,6 @@
+<map id="ConstructionPoint" name="ConstructionPoint">
+<area shape="rect" id="node1" title="Base class for all point constructions." alt="" coords="111,419,272,613"/>
+<area shape="rect" id="node2" href="$class_construction.html" title="Defines how object is created." alt="" coords="24,191,185,356"/>
+<area shape="rect" id="node3" href="$class_geometric_object_observer.html" title="Makes Construction an observer." alt="" coords="5,5,204,141"/>
+<area shape="rect" id="node4" title=" " alt="" coords="210,235,346,312"/>
+</map>

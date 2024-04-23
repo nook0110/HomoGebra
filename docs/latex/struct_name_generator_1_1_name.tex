@@ -1,0 +1,94 @@
+\hypertarget{struct_name_generator_1_1_name}{}\doxysection{Name\+Generator\+::Name Struct Reference}
+\label{struct_name_generator_1_1_name}\index{NameGenerator::Name@{NameGenerator::Name}}
+
+
+Struct to save names.  
+
+
+
+
+{\ttfamily \#include $<$Name\+Generator.\+h$>$}
+
+
+
+Collaboration diagram for Name\+Generator\+::Name\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{struct_name_generator_1_1_name__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_name_generator_1_1_name_1_1_subname}{Subname}}
+\begin{DoxyCompactList}\small\item\em Struct to save subnames. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_name_generator_1_1_parsed_name}{Parsed\+Name}} \mbox{\hyperlink{struct_name_generator_1_1_name_abe4baf1868849b370b92e218722bd5b4}{Parse\+Name}} (const std\+::string \&\mbox{\hyperlink{struct_name_generator_1_1_name_af587a7b760c4a0e6becd99cc7b23362e}{name}})
+\begin{DoxyCompactList}\small\item\em Parse name from string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_name_generator_1_1_name_af587a7b760c4a0e6becd99cc7b23362e}\label{struct_name_generator_1_1_name_af587a7b760c4a0e6becd99cc7b23362e}} 
+std\+::string {\bfseries name} \{\}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_name_generator_1_1_name}{Name}} of name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_name_generator_1_1_name_a2f59dc7bc23eb432b38ce5a6d4104448}\label{struct_name_generator_1_1_name_a2f59dc7bc23eb432b38ce5a6d4104448}} 
+std\+::map$<$ \mbox{\hyperlink{struct_name_generator_1_1_name_1_1_subname}{Subname}}, bool $>$ {\bfseries used\+\_\+subnames\+\_\+}
+\begin{DoxyCompactList}\small\item\em Map of used subnames. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct to save names. 
+
+It contains a name and a map of subnames. \mbox{\hyperlink{struct_name_generator_1_1_name}{Name}} parses into \mbox{[}NAME\mbox{]}\+\_\+\mbox{[}SUBNAME\mbox{]}\mbox{[}NUMBER\mbox{]}
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_name_generator_1_1_name_abe4baf1868849b370b92e218722bd5b4}\label{struct_name_generator_1_1_name_abe4baf1868849b370b92e218722bd5b4}} 
+\index{NameGenerator::Name@{NameGenerator::Name}!ParseName@{ParseName}}
+\index{ParseName@{ParseName}!NameGenerator::Name@{NameGenerator::Name}}
+\doxysubsubsection{\texorpdfstring{ParseName()}{ParseName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_name_generator_1_1_parsed_name}{Name\+Generator\+::\+Parsed\+Name}} Name\+Generator\+::\+Name\+::\+Parse\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parse name from string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \mbox{\hyperlink{struct_name_generator_1_1_name}{Name}} to parse\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Parsed name 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_name_generator_1_1_name_abe4baf1868849b370b92e218722bd5b4_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Name\+Generator.\+h\item 
+Homo\+Gebra/Name\+Generator.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,78 @@
+\hypertarget{_name_generator_8h_source}{}\doxysection{Name\+Generator.\+h}
+\label{_name_generator_8h_source}\index{HomoGebra/NameGenerator.h@{HomoGebra/NameGenerator.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Dictionary.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }HomoGebra}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ }ParsedNumber\ =\ std::optional<size\_t>;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_homo_gebra_1_1_parsed_subname}{ParsedSubname}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ std::string\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_subname_ade5d3cc118f77c4862d2d407abb2498f}{subname}};\ \ }
+\DoxyCodeLine{00022\ \ \ ParsedNumber\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_subname_aadef14a47951ef50595378d984f56bd1}{number}};\ \ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_subname_ac0b21bfcd8c4bb70f0021d1abc3e99a3}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_subname}{ParsedSubname}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_subname_a5287e3d641156e8952f34aef5a6bf534}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_subname}{ParsedSubname}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ std::string()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \ \ std::string\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name_aeb2bb9b6ba0307816ef12de73b6bbc0a}{name}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_subname}{ParsedSubname}}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name_a9d0acae9ced8966ac0f394a3e9955eab}{parsed\_subname}};\ \ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name_a72b384e51d206a80226053b2975865a7}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name_a03c0d287e444f600186e174dbedbe6dc}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ std::string()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_homo_gebra_1_1_dictionary}{NameDictionary}}\ =\ \mbox{\hyperlink{class_homo_gebra_1_1_dictionary}{Dictionary<ParsedName>}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_name_generator}{NameGenerator}}}
+\DoxyCodeLine{00110\ \{}
+\DoxyCodeLine{00111\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00112\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a77ccaac948c06295a6a06e4d457925f7}{kDelimiter}}\ =\ \textcolor{charliteral}{'\_'};\ \ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_aac028f812abbca8f1f9e0b20488f0a82}{NameGenerator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00127\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_aac735721c39b76a2cfcb9f6978b75623}{AddName}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00135\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_aac735721c39b76a2cfcb9f6978b75623}{AddName}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\&\ name);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00144\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a6a16d6c15286b88d6d4df059c2866f37}{DeleteName}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00152\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a6a16d6c15286b88d6d4df059c2866f37}{DeleteName}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\&\ name);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00161\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a6249cddc7cb8e4dc7850f19888cee526}{IsNameUsed}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00170\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a6249cddc7cb8e4dc7850f19888cee526}{IsNameUsed}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00180\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a18ab812c75128c9edecd38f68177013d}{Rename}}(\textcolor{keyword}{const}\ std::string\&\ old\_name,\ \textcolor{keyword}{const}\ std::string\&\ new\_name);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00190\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a18ab812c75128c9edecd38f68177013d}{Rename}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\&\ old\_name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\&\ new\_name);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00200\ \ \ [[nodiscard]]\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_af32a87e9aafb63c76f2d3a5b40aefd44}{GenerateName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00209\ \ \ [[nodiscard]]\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_af32a87e9aafb63c76f2d3a5b40aefd44}{GenerateName}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00218\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_af408517715888405dc49c276eb401779}{ParseName}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00226\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_subname}{ParsedSubname}}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a71caba954fe7d011726c9118fd0eab32}{ParseSubname}}(\textcolor{keyword}{const}\ std::string\&\ subname);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00236\ \ \ [[nodiscard]]\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a8ee94c476a8c39df173275daef24e176}{GenerateSubname}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\&\ parsed\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00244\ \ \ [[nodiscard]]\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_af86aab641f6b97f3e97e48421e53a585}{GenerateNumber}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\&\ parsed\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00253\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a0bfe46cc912236f50396992f659e5fc4}{IsNameEmpty}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{ParsedName}}\&\ parsed\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_dictionary}{NameDictionary}}\ \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a67e7da3e9a3a29617596e1039b250c3f}{used\_names\_}};\ \ }
+\DoxyCodeLine{00256\ \};}
+\DoxyCodeLine{00257\ \}\ \ \textcolor{comment}{//\ namespace\ HomoGebra}}
+
+\end{DoxyCode}

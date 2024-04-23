@@ -1,0 +1,128 @@
+\hypertarget{class_observable_geometric_object}{}\doxysection{Observable\+Geometric\+Object Class Reference}
+\label{class_observable_geometric_object}\index{ObservableGeometricObject@{ObservableGeometricObject}}
+
+
+Makes \mbox{\hyperlink{class_geometric_object_implementation}{Geometric\+Object\+Implementation}} observable.  
+
+
+
+
+{\ttfamily \#include $<$Observer.\+h$>$}
+
+
+
+Inheritance diagram for Observable\+Geometric\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_observable_geometric_object__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Observable\+Geometric\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_observable_geometric_object__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_observable_geometric_object_a470d7362ff467d1a1a7bb6dfb3e77014}\label{class_observable_geometric_object_a470d7362ff467d1a1a7bb6dfb3e77014}} 
+{\bfseries $\sim$\+Observable\+Geometric\+Object} () override=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Event $>$ }\\void \mbox{\hyperlink{class_observable_geometric_object_a97256ef7a4dba562ebc5cc2301d344ea}{Notify}} (const Event \&event) const
+\begin{DoxyCompactList}\small\item\em Notify all observers about event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable}{Observable$<$ Geometric\+Object\+Observer $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_observable_a5f2b7d927c23dc84a936ad208a6227da}\label{class_observable_a5f2b7d927c23dc84a936ad208a6227da}} 
+{\bfseries $\sim$\+Observable} () override=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_a8ba8ec9993265b2a02af443b8fe09d3f}{Attach}} (\mbox{\hyperlink{class_geometric_object_observer}{Geometric\+Object\+Observer}} $\ast$observer) override
+\begin{DoxyCompactList}\small\item\em Subscribe an observer on this object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_a2cf2a349bae1729595ff44ef9b1fe004}{Detach}} (const \mbox{\hyperlink{class_geometric_object_observer}{Geometric\+Object\+Observer}} $\ast$observer) override
+\begin{DoxyCompactList}\small\item\em Unsubscribe an observer on this object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_a3c17caf423ec7c6d08cb197ee4bb526e}{Notify}} (const Event \&event) const
+\begin{DoxyCompactList}\small\item\em Notify all observers about event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable_interface}{Observable\+Interface$<$ Observer $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_observable_interface_a264d2edac170c359a1766bd24efe66be}\label{class_observable_interface_a264d2edac170c359a1766bd24efe66be}} 
+virtual {\bfseries $\sim$\+Observable\+Interface} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_observable_interface_aa087ce193a2a61a8ca02efb1a86144c8}{Attach}} (Observer $\ast$observer)=0
+\begin{DoxyCompactList}\small\item\em Subscribe an observer on this object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_observable_interface_a165f354631b599d81ade095f8b2e4a97}{Detach}} (const Observer $\ast$observer)=0
+\begin{DoxyCompactList}\small\item\em Unsubscribe an observer on this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Makes \mbox{\hyperlink{class_geometric_object_implementation}{Geometric\+Object\+Implementation}} observable. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+Implements pattern called \textquotesingle{}Observer\textquotesingle{}.
+
+\begin{DoxySeeAlso}{See also}
+Construction\+Observer 
+
+\mbox{\hyperlink{class_geometric_object_implementation}{Geometric\+Object\+Implementation}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_observable_geometric_object_a97256ef7a4dba562ebc5cc2301d344ea}\label{class_observable_geometric_object_a97256ef7a4dba562ebc5cc2301d344ea}} 
+\index{ObservableGeometricObject@{ObservableGeometricObject}!Notify@{Notify}}
+\index{Notify@{Notify}!ObservableGeometricObject@{ObservableGeometricObject}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily template$<$class Event $>$ \\
+void Observable\+Geometric\+Object\+::\+Notify (\begin{DoxyParamCaption}\item[{const Event \&}]{event }\end{DoxyParamCaption}) const}
+
+
+
+Notify all observers about event. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Event} & Type of event. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Event to notify about. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_observable_geometric_object_a97256ef7a4dba562ebc5cc2301d344ea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_observable_geometric_object_a97256ef7a4dba562ebc5cc2301d344ea_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Observer.\+h\item 
+Homo\+Gebra/Observer.\+cpp\end{DoxyCompactItemize}

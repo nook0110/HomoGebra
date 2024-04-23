@@ -1,0 +1,185 @@
+\hypertarget{class_homo_gebra_1_1_nearby_object_getter}{}\doxysection{Homo\+Gebra\+::Nearby\+Object\+Getter\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_homo_gebra_1_1_nearby_object_getter}\index{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$@{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$}}
+
+
+Class to get the last object that user clicked on.  
+
+
+
+
+{\ttfamily \#include $<$Input.\+h$>$}
+
+
+
+Inheritance diagram for Homo\+Gebra\+::Nearby\+Object\+Getter\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{class_homo_gebra_1_1_nearby_object_getter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Homo\+Gebra\+::Nearby\+Object\+Getter\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_nearby_object_getter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_homo_gebra_1_1_nearby_object_getter_aa4937e1f265d9165c383f045f62c017f}{Nearby\+Object\+Getter}} (\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}} $\ast$plane, Geometric\+Object\+Type $\ast$last\+\_\+object=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+Geometric\+Object\+Type $\ast$ \mbox{\hyperlink{class_homo_gebra_1_1_nearby_object_getter_a1ead77263ce4404c0d19d27247227e4f}{Get\+Last\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Gets the last object that user clicked on. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_nearby_object_getter_a1355c0862c31aad0994e8bb24681d6d7}\label{class_homo_gebra_1_1_nearby_object_getter_a1355c0862c31aad0994e8bb24681d6d7}} 
+void {\bfseries Reset} ()
+\begin{DoxyCompactList}\small\item\em Rests current object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_nearby_object_getter_adb3b7d1f18e88d40415eba2eb21affa4}{Set\+Object}} (Geometric\+Object\+Type $\ast$object)
+\begin{DoxyCompactList}\small\item\em Sets current object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_nearby_object_getter_acc66aa2beb759a5051d19d67129063df}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_user_event_1_1_click}{User\+Event\+::\+Click}} \&event) override
+\begin{DoxyCompactList}\small\item\em Update, because user clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_homo_gebra_1_1_event_listener}{Homo\+Gebra\+::\+Event\+Listener}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_homo_gebra_1_1_event_listener_a835a9d1471b7f654500934fdff8d3394}{$\sim$\+Event\+Listener}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_homo_gebra_1_1_event_listener_a6df5362bfd217deed8e6c4c16308d7be}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_user_event_1_1_click}{User\+Event\+::\+Click}} \&clicked\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because user clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_nearby_object_getter_a7794b04607935f6bf10c23cc11976bf5}{Find\+Nearest\+Object}} (const sf\+::\+Vector2f \&position)
+\begin{DoxyCompactList}\small\item\em Finds the nearest object to the mouse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_nearby_object_getter_a97917cdd970080598049c5ab5c1dbc53}\label{class_homo_gebra_1_1_nearby_object_getter_a97917cdd970080598049c5ab5c1dbc53}} 
+Geometric\+Object\+Type $\ast$ {\bfseries last\+\_\+object\+\_\+}
+\begin{DoxyCompactList}\small\item\em Last object that user clicked on. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_nearby_object_getter_ab4bc4b25ad39aabb574160c94be3aa82}\label{class_homo_gebra_1_1_nearby_object_getter_ab4bc4b25ad39aabb574160c94be3aa82}} 
+\mbox{\hyperlink{class_homo_gebra_1_1_object_provider}{Object\+Provider}} {\bfseries finder\+\_\+}
+\begin{DoxyCompactList}\small\item\em Helper to find objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Geometric\+Object\+Type$>$\newline
+class Homo\+Gebra\+::\+Nearby\+Object\+Getter$<$ Geometric\+Object\+Type $>$}
+Class to get the last object that user clicked on. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Geometric\+Object\+Type} & Type of the geometric object.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_nearby_object_getter_aa4937e1f265d9165c383f045f62c017f}\label{class_homo_gebra_1_1_nearby_object_getter_aa4937e1f265d9165c383f045f62c017f}} 
+\index{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$@{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$}!NearbyObjectGetter@{NearbyObjectGetter}}
+\index{NearbyObjectGetter@{NearbyObjectGetter}!HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$@{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{NearbyObjectGetter()}{NearbyObjectGetter()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+\mbox{\hyperlink{class_homo_gebra_1_1_nearby_object_getter}{Homo\+Gebra\+::\+Nearby\+Object\+Getter}}$<$ Geometric\+Object\+Type $>$\+::\+Nearby\+Object\+Getter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}} $\ast$}]{plane,  }\item[{Geometric\+Object\+Type $\ast$}]{last\+\_\+object = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plane} & \mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}}, where the object is located. \\
+\hline
+{\em last\+\_\+object} & Last object that user clicked on. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_nearby_object_getter_a7794b04607935f6bf10c23cc11976bf5}\label{class_homo_gebra_1_1_nearby_object_getter_a7794b04607935f6bf10c23cc11976bf5}} 
+\index{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$@{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$}!FindNearestObject@{FindNearestObject}}
+\index{FindNearestObject@{FindNearestObject}!HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$@{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{FindNearestObject()}{FindNearestObject()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_homo_gebra_1_1_nearby_object_getter}{Homo\+Gebra\+::\+Nearby\+Object\+Getter}}$<$ Geometric\+Object\+Type $>$\+::\+Find\+Nearest\+Object (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Finds the nearest object to the mouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the mouse. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_homo_gebra_1_1_nearby_object_getter_a1ead77263ce4404c0d19d27247227e4f}\label{class_homo_gebra_1_1_nearby_object_getter_a1ead77263ce4404c0d19d27247227e4f}} 
+\index{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$@{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$}!GetLastObject@{GetLastObject}}
+\index{GetLastObject@{GetLastObject}!HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$@{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{GetLastObject()}{GetLastObject()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+Geometric\+Object\+Type $\ast$ \mbox{\hyperlink{class_homo_gebra_1_1_nearby_object_getter}{Homo\+Gebra\+::\+Nearby\+Object\+Getter}}$<$ Geometric\+Object\+Type $>$\+::\+Get\+Last\+Object}
+
+
+
+Gets the last object that user clicked on. 
+
+\begin{DoxyReturn}{Returns}
+Last object that user clicked on. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_homo_gebra_1_1_nearby_object_getter_adb3b7d1f18e88d40415eba2eb21affa4}\label{class_homo_gebra_1_1_nearby_object_getter_adb3b7d1f18e88d40415eba2eb21affa4}} 
+\index{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$@{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$}!SetObject@{SetObject}}
+\index{SetObject@{SetObject}!HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$@{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{SetObject()}{SetObject()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_homo_gebra_1_1_nearby_object_getter}{Homo\+Gebra\+::\+Nearby\+Object\+Getter}}$<$ Geometric\+Object\+Type $>$\+::\+Set\+Object (\begin{DoxyParamCaption}\item[{Geometric\+Object\+Type $\ast$}]{object }\end{DoxyParamCaption})}
+
+
+
+Sets current object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Object to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_homo_gebra_1_1_nearby_object_getter_acc66aa2beb759a5051d19d67129063df}\label{class_homo_gebra_1_1_nearby_object_getter_acc66aa2beb759a5051d19d67129063df}} 
+\index{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$@{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$}!Update@{Update}}
+\index{Update@{Update}!HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$@{HomoGebra::NearbyObjectGetter$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_homo_gebra_1_1_nearby_object_getter}{Homo\+Gebra\+::\+Nearby\+Object\+Getter}}$<$ Geometric\+Object\+Type $>$\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_user_event_1_1_click}{User\+Event\+::\+Click}} \&}]{clicked\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update, because user clicked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clicked\+\_\+event} & Tag with some information\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+User\+Event\+::clicked\+\_\+event 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_homo_gebra_1_1_event_listener_a6df5362bfd217deed8e6c4c16308d7be}{Homo\+Gebra\+::\+Event\+Listener}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Input.\+h\item 
+Homo\+Gebra/Input.\+cpp\end{DoxyCompactItemize}

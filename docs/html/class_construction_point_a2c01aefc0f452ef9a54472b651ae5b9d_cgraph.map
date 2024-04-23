@@ -1,0 +1,5 @@
+<map id="ConstructionPoint::GetEquation" name="ConstructionPoint::GetEquation">
+<area shape="rect" id="node1" title="Get equation of point." alt="" coords="5,5,139,45"/>
+<area shape="rect" id="node2" href="$class_point.html#ac45889f34111c0347477f76a303c6677" title="Return current equation of point." alt="" coords="187,13,319,38"/>
+<area shape="rect" id="node3" href="$class_point_implementation.html#acf2070120f5877ed5e73a0aa3eb9cf46" title="Return current equation of point." alt="" coords="367,5,507,45"/>
+</map>

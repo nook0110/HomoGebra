@@ -1,0 +1,8 @@
+<map id="HomoGebra::Observable::Attach" name="HomoGebra::Observable::Attach">
+<area shape="rect" id="node1" title="Subscribe an observer on this object." alt="" coords="455,80,617,120"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_point.html#a81826f18c88752de678a15d2235a0693" title="Subscribe an observer on this object." alt="" coords="230,13,405,38"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_line.html#a556a0ab403e896831b1d8423475c085f" title="Attaches observer to this object." alt="" coords="233,62,402,87"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_conic.html#a6af057be49fca39bfb1d2a7ed42cd6dd" title="Attaches observer to this object." alt="" coords="228,111,407,137"/>
+<area shape="rect" id="node6" href="$class_homo_gebra_1_1_plane.html#a0feb307e9d4407cf079122015dbcd526" title="Subscribe an observer on this object." alt="" coords="228,161,407,186"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_by_two_points.html#ac50ca8544c02b8d77c8c250e367fcc5b" title="Constructs line by two points." alt="" coords="5,5,180,45"/>
+</map>

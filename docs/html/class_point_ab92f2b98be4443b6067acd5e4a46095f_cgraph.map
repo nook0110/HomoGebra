@@ -1,0 +1,5 @@
+<map id="Point::Destroy" name="Point::Destroy">
+<area shape="rect" id="node1" title="Implementation interface." alt="" coords="5,13,111,38"/>
+<area shape="rect" id="node2" href="$class_point.html#a3c155091ab6f0067db0f4688041240e4" title="Notify observers about event." alt="" coords="159,13,252,38"/>
+<area shape="rect" id="node3" href="$class_observable_geometric_object.html#a97256ef7a4dba562ebc5cc2301d344ea" title="Notify all observers about event." alt="" coords="300,5,484,45"/>
+</map>

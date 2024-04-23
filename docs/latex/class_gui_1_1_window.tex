@@ -1,0 +1,148 @@
+\hypertarget{class_gui_1_1_window}{}\doxysection{Gui\+::Window Class Reference}
+\label{class_gui_1_1_window}\index{Gui::Window@{Gui::Window}}
+
+
+Gui window.  
+
+
+
+
+{\ttfamily \#include $<$Window\+Handler.\+h$>$}
+
+
+
+Collaboration diagram for Gui\+::Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{class_gui_1_1_window__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gui_1_1_window_aa833a69eac7e9148647d260799115f8c}{Window}} (std\+::string name, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_gui_1_1_widget}{Widget}} $>$ widget)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_window_a2baaa0af83bbf036ae7d268cba434633}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em Constructs window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gui_1_1_widget}{Widget}} $\ast$ \mbox{\hyperlink{class_gui_1_1_window_abe85e427fe69f07716ae6ef8bb0d788f}{Get\+Widget}} () const
+\begin{DoxyCompactList}\small\item\em Gets object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_gui_1_1_window_a3fc1625125054931291db2f59e29a1f8}{Begin}} () const
+\begin{DoxyCompactList}\small\item\em Starts constructing of Im\+Gui window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_window_a27034841f2ba0aa11a4892ef37b57892}{End}} () const
+\begin{DoxyCompactList}\small\item\em Ends construction of Im\+Gui window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gui_1_1_window_a0bdb55162376d8310e633cf2e1fc808b}\label{class_gui_1_1_window_a0bdb55162376d8310e633cf2e1fc808b}} 
+std\+::string {\bfseries name\+\_\+}
+\begin{DoxyCompactList}\small\item\em Name of the window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_gui_1_1_window_a2a9053d11661c2f7241c24b72bb32a1b}\label{class_gui_1_1_window_a2a9053d11661c2f7241c24b72bb32a1b}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_gui_1_1_widget}{Widget}} $>$ {\bfseries widget\+\_\+}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_gui_1_1_widget}{Widget}} which was wrapped. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gui window. 
+
+Just widget that creates it own window with name.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_gui_1_1_widget}{Gui\+::\+Widget}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gui_1_1_window_aa833a69eac7e9148647d260799115f8c}\label{class_gui_1_1_window_aa833a69eac7e9148647d260799115f8c}} 
+\index{Gui::Window@{Gui::Window}!Window@{Window}}
+\index{Window@{Window}!Gui::Window@{Gui::Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}}
+{\footnotesize\ttfamily Gui\+::\+Window\+::\+Window (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_gui_1_1_widget}{Widget}} $>$}]{widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of window. \\
+\hline
+{\em widget} & \mbox{\hyperlink{class_gui_1_1_widget}{Widget}} to wrap. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gui_1_1_window_a3fc1625125054931291db2f59e29a1f8}\label{class_gui_1_1_window_a3fc1625125054931291db2f59e29a1f8}} 
+\index{Gui::Window@{Gui::Window}!Begin@{Begin}}
+\index{Begin@{Begin}!Gui::Window@{Gui::Window}}
+\doxysubsubsection{\texorpdfstring{Begin()}{Begin()}}
+{\footnotesize\ttfamily void Window\+::\+Begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Starts constructing of Im\+Gui window. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_gui_1_1_window_a3fc1625125054931291db2f59e29a1f8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gui_1_1_window_a2baaa0af83bbf036ae7d268cba434633}\label{class_gui_1_1_window_a2baaa0af83bbf036ae7d268cba434633}} 
+\index{Gui::Window@{Gui::Window}!Draw@{Draw}}
+\index{Draw@{Draw}!Gui::Window@{Gui::Window}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Window\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs window. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_gui_1_1_window_a2baaa0af83bbf036ae7d268cba434633_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gui_1_1_window_a27034841f2ba0aa11a4892ef37b57892}\label{class_gui_1_1_window_a27034841f2ba0aa11a4892ef37b57892}} 
+\index{Gui::Window@{Gui::Window}!End@{End}}
+\index{End@{End}!Gui::Window@{Gui::Window}}
+\doxysubsubsection{\texorpdfstring{End()}{End()}}
+{\footnotesize\ttfamily void Window\+::\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ends construction of Im\+Gui window. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{class_gui_1_1_window_a27034841f2ba0aa11a4892ef37b57892_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gui_1_1_window_abe85e427fe69f07716ae6ef8bb0d788f}\label{class_gui_1_1_window_abe85e427fe69f07716ae6ef8bb0d788f}} 
+\index{Gui::Window@{Gui::Window}!GetWidget@{GetWidget}}
+\index{GetWidget@{GetWidget}!Gui::Window@{Gui::Window}}
+\doxysubsubsection{\texorpdfstring{GetWidget()}{GetWidget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gui_1_1_widget}{Widget}} $\ast$ Window\+::\+Get\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets object. 
+
+\begin{DoxyReturn}{Returns}
+Wrapped widget. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Window\+Handler.\+h\item 
+Homo\+Gebra/Window\+Handler.\+cpp\end{DoxyCompactItemize}

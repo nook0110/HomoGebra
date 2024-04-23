@@ -1,0 +1,151 @@
+\hypertarget{class_homo_gebra_1_1_geometric_object_observer}{}\doxysection{Homo\+Gebra\+::Geometric\+Object\+Observer Class Reference}
+\label{class_homo_gebra_1_1_geometric_object_observer}\index{HomoGebra::GeometricObjectObserver@{HomoGebra::GeometricObjectObserver}}
+
+
+Makes \mbox{\hyperlink{class_homo_gebra_1_1_construction}{Construction}} an observer.  
+
+
+
+
+{\ttfamily \#include $<$Observer.\+h$>$}
+
+
+
+Inheritance diagram for Homo\+Gebra\+::Geometric\+Object\+Observer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_geometric_object_observer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Homo\+Gebra\+::Geometric\+Object\+Observer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{class_homo_gebra_1_1_geometric_object_observer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_observer_aa4786c20dd11bc36ba418c9b42103cd4}{Geometric\+Object\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_geometric_object_observer_a92bc17c60c8f0ada04c5243a3f08dad8}\label{class_homo_gebra_1_1_geometric_object_observer_a92bc17c60c8f0ada04c5243a3f08dad8}} 
+virtual {\bfseries $\sim$\+Geometric\+Object\+Observer} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_observer_ac88683566ca47cb1df83cf981cc6c144}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_moved}{Object\+Event\+::\+Moved}} \&moved\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth moved. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_observer_a89b1162c978283793d4b29e62f12c0da}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_going_to_be_destroyed}{Object\+Event\+::\+Going\+To\+Be\+Destroyed}} \&destroyed\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth was destroyed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_observer_abb9e260b1ea4c6b2b423b50a77211cd8}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} \&renamed\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth was renamed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Makes \mbox{\hyperlink{class_homo_gebra_1_1_construction}{Construction}} an observer. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+Implements pattern called \textquotesingle{}Observer\textquotesingle{}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_homo_gebra_1_1_observable_geometric_object}{Observable\+Geometric\+Object}} 
+
+\mbox{\hyperlink{class_homo_gebra_1_1_construction}{Construction}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_geometric_object_observer_aa4786c20dd11bc36ba418c9b42103cd4}\label{class_homo_gebra_1_1_geometric_object_observer_aa4786c20dd11bc36ba418c9b42103cd4}} 
+\index{HomoGebra::GeometricObjectObserver@{HomoGebra::GeometricObjectObserver}!GeometricObjectObserver@{GeometricObjectObserver}}
+\index{GeometricObjectObserver@{GeometricObjectObserver}!HomoGebra::GeometricObjectObserver@{HomoGebra::GeometricObjectObserver}}
+\doxysubsubsection{\texorpdfstring{GeometricObjectObserver()}{GeometricObjectObserver()}}
+{\footnotesize\ttfamily Homo\+Gebra\+::\+Geometric\+Object\+Observer\+::\+Geometric\+Object\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_geometric_object_observer_a89b1162c978283793d4b29e62f12c0da}\label{class_homo_gebra_1_1_geometric_object_observer_a89b1162c978283793d4b29e62f12c0da}} 
+\index{HomoGebra::GeometricObjectObserver@{HomoGebra::GeometricObjectObserver}!Update@{Update}}
+\index{Update@{Update}!HomoGebra::GeometricObjectObserver@{HomoGebra::GeometricObjectObserver}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void Homo\+Gebra\+::\+Geometric\+Object\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_going_to_be_destroyed}{Object\+Event\+::\+Going\+To\+Be\+Destroyed}} \&}]{destroyed\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update, because sth was destroyed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destroyed\+\_\+event} & Tag with some information\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Object\+Event\+::\+Destroyed 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{class_homo_gebra_1_1_plane_implementation_ab804efb6472aa2e95e43e366e5beece3}{Homo\+Gebra\+::\+Plane\+Implementation}}, \mbox{\hyperlink{class_homo_gebra_1_1_construction_a900ff25e35afce231e03efe92b39d32e}{Homo\+Gebra\+::\+Construction}}, \mbox{\hyperlink{class_homo_gebra_1_1_construction_point_a9c773a29ff6e207557f44511ad2dfa94}{Homo\+Gebra\+::\+Construction\+Point}}, \mbox{\hyperlink{class_homo_gebra_1_1_construction_line_a718e9a6f41c048c5c298a21a6ea1e136}{Homo\+Gebra\+::\+Construction\+Line}}, and \mbox{\hyperlink{class_homo_gebra_1_1_construction_conic_a3e52669b57901da7c426ad258e613294}{Homo\+Gebra\+::\+Construction\+Conic}}.
+
+\mbox{\Hypertarget{class_homo_gebra_1_1_geometric_object_observer_ac88683566ca47cb1df83cf981cc6c144}\label{class_homo_gebra_1_1_geometric_object_observer_ac88683566ca47cb1df83cf981cc6c144}} 
+\index{HomoGebra::GeometricObjectObserver@{HomoGebra::GeometricObjectObserver}!Update@{Update}}
+\index{Update@{Update}!HomoGebra::GeometricObjectObserver@{HomoGebra::GeometricObjectObserver}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void Homo\+Gebra\+::\+Geometric\+Object\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_moved}{Object\+Event\+::\+Moved}} \&}]{moved\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update, because sth moved. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em moved\+\_\+event} & Tag with some information.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_moved}{Object\+Event\+::\+Moved}} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{class_homo_gebra_1_1_construction_a90a087fab527fc7042f5a2ca23cfe8c5}{Homo\+Gebra\+::\+Construction}}, and \mbox{\hyperlink{class_homo_gebra_1_1_plane_implementation_a2dd95b433c0fff96fb937a65cf165b8c}{Homo\+Gebra\+::\+Plane\+Implementation}}.
+
+\mbox{\Hypertarget{class_homo_gebra_1_1_geometric_object_observer_abb9e260b1ea4c6b2b423b50a77211cd8}\label{class_homo_gebra_1_1_geometric_object_observer_abb9e260b1ea4c6b2b423b50a77211cd8}} 
+\index{HomoGebra::GeometricObjectObserver@{HomoGebra::GeometricObjectObserver}!Update@{Update}}
+\index{Update@{Update}!HomoGebra::GeometricObjectObserver@{HomoGebra::GeometricObjectObserver}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual void Homo\+Gebra\+::\+Geometric\+Object\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} \&}]{renamed\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update, because sth was renamed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renamed\+\_\+event} & Tag with some information\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{class_homo_gebra_1_1_construction_line_ad91892831035416b293fd51d814b14a1}{Homo\+Gebra\+::\+Construction\+Line}}, \mbox{\hyperlink{class_homo_gebra_1_1_construction_conic_a64c7a6c6067cbe68f8994fc1b18bce38}{Homo\+Gebra\+::\+Construction\+Conic}}, \mbox{\hyperlink{class_homo_gebra_1_1_construction_point_af2618b62773c21169166096366907c6e}{Homo\+Gebra\+::\+Construction\+Point}}, \mbox{\hyperlink{class_homo_gebra_1_1_plane_implementation_ad3ec6d57f5b90e273b8e31b7976f84d3}{Homo\+Gebra\+::\+Plane\+Implementation}}, and \mbox{\hyperlink{class_homo_gebra_1_1_construction_a534c0faddbd48171f1b23e4875a6b6cc}{Homo\+Gebra\+::\+Construction}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Observer.\+h\end{DoxyCompactItemize}

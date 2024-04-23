@@ -1,0 +1,29 @@
+\hypertarget{_button_8h_source}{}\doxysection{Button.\+h}
+\label{_button_8h_source}\index{HomoGebra/Button.h@{HomoGebra/Button.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}ButtonBody.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ButtonImplementation.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }HomoGebra}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ Elements>}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_button_base}{ButtonBase}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_button_implementation}{ButtonImplementation}}<Elements...>,\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_button_body}{ButtonBody}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_homo_gebra_1_1_button_base_aab3b10653b28fb5f7aeb3f4ccf6fa0b2}{ButtonBase}}(\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}}*\ plane)\ :\ \mbox{\hyperlink{class_homo_gebra_1_1_button_implementation}{ButtonImplementation}}<Elements...>(plane)}
+\DoxyCodeLine{00023\ \ \ \{\}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_button_base_ac1bf4426e6882807743688a8a475566e}{Draw}}()}
+\DoxyCodeLine{00030\ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_button_implementation_a3f36c645259dd67102c95b6c2daa44e5}{ButtonImplementation<Elements...>::Draw}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_homo_gebra_1_1_button_body_a2fbc18aef98e732f6c1af30ade2d4e42}{ButtonBody::Draw}}())}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_button_implementation_aaeec0afdde83f5803048abba4fb5453f}{ButtonImplementation<Elements...>::PassArguments}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \}}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ \}\ \ \textcolor{comment}{//\ namespace\ HomoGebra}}
+
+\end{DoxyCode}

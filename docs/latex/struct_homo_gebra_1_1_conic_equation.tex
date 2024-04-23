@@ -1,0 +1,145 @@
+\hypertarget{struct_homo_gebra_1_1_conic_equation}{}\doxysection{Homo\+Gebra\+::Conic\+Equation Struct Reference}
+\label{struct_homo_gebra_1_1_conic_equation}\index{HomoGebra::ConicEquation@{HomoGebra::ConicEquation}}
+
+
+Struct that defines position of the conic.  
+
+
+
+
+{\ttfamily \#include $<$Equation.\+h$>$}
+
+
+
+Inheritance diagram for Homo\+Gebra\+::Conic\+Equation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{struct_homo_gebra_1_1_conic_equation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Homo\+Gebra\+::Conic\+Equation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_homo_gebra_1_1_conic_equation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_homo_gebra_1_1_conic_equation_a536f8e0340eaca9b12168028b0abd632}{Apply}} (const \mbox{\hyperlink{class_homo_gebra_1_1_transformation}{Transformation}} \&transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to a conic equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{struct_homo_gebra_1_1_equation_base}{Homo\+Gebra\+::\+Equation\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_homo_gebra_1_1_equation_base_ac985e07ed583913780ccfea23053aa13}{$\sim$\+Equation\+Base}} ()=default
+\item 
+virtual void \mbox{\hyperlink{struct_homo_gebra_1_1_equation_base_ae8d66d408367ba94e53b75439bda5326}{Apply}} (const \mbox{\hyperlink{class_homo_gebra_1_1_transformation}{Transformation}} \&transformation)=0
+\begin{DoxyCompactList}\small\item\em Apply transformation to an equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{Indent}\textbf{ Equation}\par
+{\em \mbox{\hyperlink{class_homo_gebra_1_1_conic}{Conic}} equation in $ \mathbb {C}\mathrm {P} ^ 2 $ is  $ a \cdot x^2 + b \cdot y^2 + c \cdot z^2 + d \cdot yz + e \cdot xz + f
+\cdot xy $ }\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_homo_gebra_1_1_conic_equation_a509b1972341c9a80ab04b1e930954fee}\label{struct_homo_gebra_1_1_conic_equation_a509b1972341c9a80ab04b1e930954fee}} 
+std\+::array$<$ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}, 3 $>$ {\bfseries squares}
+\begin{DoxyCompactList}\small\item\em $ a, b, c $ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_homo_gebra_1_1_conic_equation_a081690d47f32f8ea7fc11cd99a3f3a1b}\label{struct_homo_gebra_1_1_conic_equation_a081690d47f32f8ea7fc11cd99a3f3a1b}} 
+std\+::array$<$ \mbox{\hyperlink{class_homo_gebra_1_1_complex}{Complex}}, 3 $>$ {\bfseries pair\+\_\+products}
+\begin{DoxyCompactList}\small\item\em $ d, e, f $ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Public Attributes}
+\begin{Indent}\textbf{ Static arrays to get next o previous vars.}\par
+{\em It is used to get from Equation\+::\+Var next or previous Equation\+::\+Var }\begin{DoxyCompactItemize}
+\item 
+static constexpr std\+::array$<$ Var, 3 $>$ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_equation_a23aebad238d73170ea2b81bd8fa5d66d}{k\+Prev}}
+\begin{DoxyCompactList}\small\item\em Previous var. \end{DoxyCompactList}\item 
+static constexpr std\+::array$<$ Var, 3 $>$ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_equation_aefacd19153b69220bc67bc650daa7f64}{k\+Next}}
+\begin{DoxyCompactList}\small\item\em Next var. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Struct that defines position of the conic. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_homo_gebra_1_1_conic_implementation}{Conic\+Implementation}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_homo_gebra_1_1_conic_equation_a536f8e0340eaca9b12168028b0abd632}\label{struct_homo_gebra_1_1_conic_equation_a536f8e0340eaca9b12168028b0abd632}} 
+\index{HomoGebra::ConicEquation@{HomoGebra::ConicEquation}!Apply@{Apply}}
+\index{Apply@{Apply}!HomoGebra::ConicEquation@{HomoGebra::ConicEquation}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Conic\+Equation\+::\+Apply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_homo_gebra_1_1_transformation}{Transformation}} \&}]{transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to a conic equation. 
+
+\begin{DoxyWarning}{Warning}
+This method is not implemented!
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em transformation} & \mbox{\hyperlink{class_homo_gebra_1_1_transformation}{Transformation}} to apply. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{struct_homo_gebra_1_1_equation_base_ae8d66d408367ba94e53b75439bda5326}{Homo\+Gebra\+::\+Equation\+Base}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_homo_gebra_1_1_conic_equation_aefacd19153b69220bc67bc650daa7f64}\label{struct_homo_gebra_1_1_conic_equation_aefacd19153b69220bc67bc650daa7f64}} 
+\index{HomoGebra::ConicEquation@{HomoGebra::ConicEquation}!kNext@{kNext}}
+\index{kNext@{kNext}!HomoGebra::ConicEquation@{HomoGebra::ConicEquation}}
+\doxysubsubsection{\texorpdfstring{kNext}{kNext}}
+{\footnotesize\ttfamily constexpr std\+::array$<$Var, 3$>$ Homo\+Gebra\+::\+Conic\+Equation\+::k\+Next\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{Var::kY,\ Var::kZ,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Var::kX\}}
+
+\end{DoxyCode}
+
+
+Next var. 
+
+\mbox{\Hypertarget{struct_homo_gebra_1_1_conic_equation_a23aebad238d73170ea2b81bd8fa5d66d}\label{struct_homo_gebra_1_1_conic_equation_a23aebad238d73170ea2b81bd8fa5d66d}} 
+\index{HomoGebra::ConicEquation@{HomoGebra::ConicEquation}!kPrev@{kPrev}}
+\index{kPrev@{kPrev}!HomoGebra::ConicEquation@{HomoGebra::ConicEquation}}
+\doxysubsubsection{\texorpdfstring{kPrev}{kPrev}}
+{\footnotesize\ttfamily constexpr std\+::array$<$Var, 3$>$ Homo\+Gebra\+::\+Conic\+Equation\+::k\+Prev\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{Var::kZ,\ Var::kX,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Var::kY\}}
+
+\end{DoxyCode}
+
+
+Previous var. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Equation.\+h\item 
+Homo\+Gebra/Equation.\+cpp\end{DoxyCompactItemize}

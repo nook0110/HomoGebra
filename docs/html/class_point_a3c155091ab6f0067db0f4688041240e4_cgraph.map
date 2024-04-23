@@ -1,0 +1,5 @@
+<map id="Point::Notify" name="Point::Notify">
+<area shape="rect" id="node1" title="Notify observers about event." alt="" coords="5,13,99,38"/>
+<area shape="rect" id="node2" href="$class_observable_geometric_object.html#a97256ef7a4dba562ebc5cc2301d344ea" title="Notify all observers about event." alt="" coords="147,5,331,45"/>
+<area shape="rect" id="node3" href="$class_observable.html#a3c17caf423ec7c6d08cb197ee4bb526e" title="Notify all observers about event." alt="" coords="379,13,505,38"/>
+</map>

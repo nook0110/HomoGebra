@@ -1,0 +1,4 @@
+<map id="PointBody::draw" name="PointBody::draw">
+<area shape="rect" id="node1" title="Draw the point to a render target." alt="" coords="5,5,123,31"/>
+<area shape="rect" id="node2" href="$class_object_body.html#adad033f7876832f4e823908324c2d530" title="Draw the object body to a render target." alt="" coords="171,5,296,31"/>
+</map>

@@ -1,0 +1,192 @@
+\hypertarget{class_line_body}{}\doxysection{Line\+Body Class Reference}
+\label{class_line_body}\index{LineBody@{LineBody}}
+
+
+Body of a line.  
+
+
+
+
+{\ttfamily \#include $<$Geometric\+Object\+Body.\+h$>$}
+
+
+
+Inheritance diagram for Line\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_line_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Line\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_line_body__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_line_body_1_1_equation}{Equation}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_line_body_1_1_equation}{Equation}} of a line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_line_body_a12f0326b4130b61e421a49d9fca9d666}{Line\+Body}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_line_body_adff44877eb68abb12b5fe08dddde50de}{$\sim$\+Line\+Body}} () override=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_line_body_ae6ae1e8a549ad2382f90c0d5e63c916f}{Update}} (const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \&equation)
+\begin{DoxyCompactList}\small\item\em Updates the line body. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_line_body_a6c422fb7645c1760515180f10d6597c3}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
+\begin{DoxyCompactList}\small\item\em Draw line to a render target. \end{DoxyCompactList}\item 
+Distance \mbox{\hyperlink{class_line_body_a14892ea292677aeb2a293de6699f5f6f}{Get\+Distance}} (const sf\+::\+Vector2f \&position) const override
+\begin{DoxyCompactList}\small\item\em Gets distance from object to position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_object_body}{Object\+Body}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_object_body_a15e86b3f178e1d31574c0fd7e525ee95}{Set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set name of the point. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_object_body_a5617125b2310d79d493cd8a768b548c1}{Get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets name of the point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_body_a4ba61510565da9d2484e32af05fa5ea9}{Set\+Name\+Position}} (const sf\+::\+Vector2f \&position)
+\begin{DoxyCompactList}\small\item\em Sets position of the name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_body_a834064754b9cc1ddccfa76de57825573}{Set\+Name\+Size}} (float size)
+\begin{DoxyCompactList}\small\item\em Sets size of the name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_body_adad033f7876832f4e823908324c2d530}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
+\begin{DoxyCompactList}\small\item\em Draw the object body to a render target. \end{DoxyCompactList}\item 
+virtual Distance \mbox{\hyperlink{class_object_body_a9eded52fd0e326f4837112dda2632df3}{Get\+Distance}} (const sf\+::\+Vector2f \&position) const =0
+\begin{DoxyCompactList}\small\item\em Gets distance from object to position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_line_body_a8a8b104af8dabafaa46bde708b19327a}\label{class_line_body_a8a8b104af8dabafaa46bde708b19327a}} 
+std\+::optional$<$ \mbox{\hyperlink{struct_line_body_1_1_equation}{Equation}} $>$ {\bfseries equation\+\_\+}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_line_body_1_1_equation}{Equation}} of the line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Body of a line. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_line_body_a12f0326b4130b61e421a49d9fca9d666}\label{class_line_body_a12f0326b4130b61e421a49d9fca9d666}} 
+\index{LineBody@{LineBody}!LineBody@{LineBody}}
+\index{LineBody@{LineBody}!LineBody@{LineBody}}
+\doxysubsubsection{\texorpdfstring{LineBody()}{LineBody()}}
+{\footnotesize\ttfamily Line\+Body\+::\+Line\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{class_line_body_adff44877eb68abb12b5fe08dddde50de}\label{class_line_body_adff44877eb68abb12b5fe08dddde50de}} 
+\index{LineBody@{LineBody}!````~LineBody@{$\sim$LineBody}}
+\index{````~LineBody@{$\sim$LineBody}!LineBody@{LineBody}}
+\doxysubsubsection{\texorpdfstring{$\sim$LineBody()}{~LineBody()}}
+{\footnotesize\ttfamily Line\+Body\+::$\sim$\+Line\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_line_body_a6c422fb7645c1760515180f10d6597c3}\label{class_line_body_a6c422fb7645c1760515180f10d6597c3}} 
+\index{LineBody@{LineBody}!draw@{draw}}
+\index{draw@{draw}!LineBody@{LineBody}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Line\+Body\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Draw line to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to. \\
+\hline
+{\em states} & Current render states. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_line_body_a14892ea292677aeb2a293de6699f5f6f}\label{class_line_body_a14892ea292677aeb2a293de6699f5f6f}} 
+\index{LineBody@{LineBody}!GetDistance@{GetDistance}}
+\index{GetDistance@{GetDistance}!LineBody@{LineBody}}
+\doxysubsubsection{\texorpdfstring{GetDistance()}{GetDistance()}}
+{\footnotesize\ttfamily Distance Line\+Body\+::\+Get\+Distance (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets distance from object to position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position to calculate distance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance from object to position. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_object_body_a9eded52fd0e326f4837112dda2632df3}{Object\+Body}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_line_body_a14892ea292677aeb2a293de6699f5f6f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_line_body_ae6ae1e8a549ad2382f90c0d5e63c916f}\label{class_line_body_ae6ae1e8a549ad2382f90c0d5e63c916f}} 
+\index{LineBody@{LineBody}!Update@{Update}}
+\index{Update@{Update}!LineBody@{LineBody}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Line\+Body\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_line_equation}{Line\+Equation}} \&}]{equation }\end{DoxyParamCaption})}
+
+
+
+Updates the line body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em equation} & \mbox{\hyperlink{struct_line_body_1_1_equation}{Equation}} of the line. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_line_body_ae6ae1e8a549ad2382f90c0d5e63c916f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_line_body_ae6ae1e8a549ad2382f90c0d5e63c916f_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Geometric\+Object\+Body.\+h\item 
+Homo\+Gebra/Geometric\+Object\+Body.\+cpp\end{DoxyCompactItemize}

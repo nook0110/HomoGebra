@@ -1,0 +1,51 @@
+\hypertarget{_buttons_implementations_8h_source}{}\doxysection{Buttons\+Implementations.\+h}
+\label{_buttons_implementations_8h_source}\index{HomoGebra/ButtonsImplementations.h@{HomoGebra/ButtonsImplementations.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ButtonElement.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GeometricObjectFactory.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}imgui.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }HomoGebra}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ ButtonClass>}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_window_button}{WindowButton}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_button_class}{ButtonClass}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_homo_gebra_1_1_window_button}{WindowButton}}(std::string\ name,\ \mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}}*\ plane)}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_button_class}{ButtonClass}}(plane),\ name\_(std::move(name))}
+\DoxyCodeLine{00015\ \ \ \{\}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{void}\ Draw()}
+\DoxyCodeLine{00018\ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ ImGui::Begin(name\_.data());}
+\DoxyCodeLine{00020\ \ \ \ \ ButtonClass::Draw();}
+\DoxyCodeLine{00021\ \ \ \ \ ImGui::End();}
+\DoxyCodeLine{00022\ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ std::string\ name\_;}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_line_by_two_point_button}{LineByTwoPointButton}}\ final}
+\DoxyCodeLine{00029\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_window_button}{WindowButton}}<}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ ButtonBase<ObjectSelector<Point>,\ ObjectSelector<Point>,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FactoryWrapper<LineByTwoPointsFactory>>>}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_homo_gebra_1_1_line_by_two_point_button}{LineByTwoPointButton}}(\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}}*\ plane)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_homo_gebra_1_1_window_button}{WindowButton}}(\textcolor{stringliteral}{"{}Line\ by\ two\ points"{}},\ plane)}
+\DoxyCodeLine{00036\ \ \ \{\}}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_delete_button}{DeleteButton}}\ final}
+\DoxyCodeLine{00040\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_window_button}{WindowButton}}<ButtonBase<ObjectSelector<GeometricObject>,\ Deleter>>}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_homo_gebra_1_1_delete_button}{DeleteButton}}(\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}}*\ plane)\ :\ \mbox{\hyperlink{class_homo_gebra_1_1_window_button}{WindowButton}}(\textcolor{stringliteral}{"{}Delete\ button"{}},\ plane)\ \{\}}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ \}\ \ \textcolor{comment}{//\ namespace\ HomoGebra}}
+
+\end{DoxyCode}

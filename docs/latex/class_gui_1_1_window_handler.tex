@@ -1,0 +1,122 @@
+\hypertarget{class_gui_1_1_window_handler}{}\doxysection{Gui\+::Window\+Handler Class Reference}
+\label{class_gui_1_1_window_handler}\index{Gui::WindowHandler@{Gui::WindowHandler}}
+
+
+Class that handles \mbox{\hyperlink{class_gui_1_1_window}{Gui\+::\+Window}}-\/s.  
+
+
+
+
+{\ttfamily \#include $<$Window\+Handler.\+h$>$}
+
+
+
+Collaboration diagram for Gui\+::Window\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{class_gui_1_1_window_handler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gui_1_1_window_handler_ae30672ce6caa49846af58db9ca19877d}{Window\+Handler}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gui_1_1_window_handler_a4b51ca4ed193442345f4cb97f7c6d983}{$\sim$\+Window\+Handler}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_window_handler_ae193d564f98b12988a9d02c2534de108}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Constructs all \mbox{\hyperlink{class_gui_1_1_window}{Gui\+::\+Window}}-\/s. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_window_handler_a408f7f8248ac5cd70226b56324be4dbb}{Add\+Window}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_gui_1_1_window}{Window}} $>$ window)
+\begin{DoxyCompactList}\small\item\em Adds window to list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_window_handler_a8cb14dcbb286eee0f2aee05c80ec00cf}{Delete\+Window}} (\mbox{\hyperlink{class_gui_1_1_window}{Window}} $\ast$window)
+\begin{DoxyCompactList}\small\item\em Deletes window from list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gui_1_1_window_handler_a12dab37e5adf545445283df46650a98f}\label{class_gui_1_1_window_handler_a12dab37e5adf545445283df46650a98f}} 
+std\+::list$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_gui_1_1_window}{Window}} $>$ $>$ {\bfseries windows\+\_\+}
+\begin{DoxyCompactList}\small\item\em All windows to render. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that handles \mbox{\hyperlink{class_gui_1_1_window}{Gui\+::\+Window}}-\/s. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_gui_1_1_window}{Gui\+::\+Window}}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+nook0110 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gui_1_1_window_handler_ae30672ce6caa49846af58db9ca19877d}\label{class_gui_1_1_window_handler_ae30672ce6caa49846af58db9ca19877d}} 
+\index{Gui::WindowHandler@{Gui::WindowHandler}!WindowHandler@{WindowHandler}}
+\index{WindowHandler@{WindowHandler}!Gui::WindowHandler@{Gui::WindowHandler}}
+\doxysubsubsection{\texorpdfstring{WindowHandler()}{WindowHandler()}}
+{\footnotesize\ttfamily Gui\+::\+Window\+Handler\+::\+Window\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{class_gui_1_1_window_handler_a4b51ca4ed193442345f4cb97f7c6d983}\label{class_gui_1_1_window_handler_a4b51ca4ed193442345f4cb97f7c6d983}} 
+\index{Gui::WindowHandler@{Gui::WindowHandler}!````~WindowHandler@{$\sim$WindowHandler}}
+\index{````~WindowHandler@{$\sim$WindowHandler}!Gui::WindowHandler@{Gui::WindowHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$WindowHandler()}{~WindowHandler()}}
+{\footnotesize\ttfamily Gui\+::\+Window\+Handler\+::$\sim$\+Window\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gui_1_1_window_handler_a408f7f8248ac5cd70226b56324be4dbb}\label{class_gui_1_1_window_handler_a408f7f8248ac5cd70226b56324be4dbb}} 
+\index{Gui::WindowHandler@{Gui::WindowHandler}!AddWindow@{AddWindow}}
+\index{AddWindow@{AddWindow}!Gui::WindowHandler@{Gui::WindowHandler}}
+\doxysubsubsection{\texorpdfstring{AddWindow()}{AddWindow()}}
+{\footnotesize\ttfamily void Gui\+::\+Window\+Handler\+::\+Add\+Window (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_gui_1_1_window}{Window}} $>$}]{window }\end{DoxyParamCaption})}
+
+
+
+Adds window to list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \mbox{\hyperlink{class_gui_1_1_window}{Window}} to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gui_1_1_window_handler_ae193d564f98b12988a9d02c2534de108}\label{class_gui_1_1_window_handler_ae193d564f98b12988a9d02c2534de108}} 
+\index{Gui::WindowHandler@{Gui::WindowHandler}!Construct@{Construct}}
+\index{Construct@{Construct}!Gui::WindowHandler@{Gui::WindowHandler}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Window\+Handler\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs all \mbox{\hyperlink{class_gui_1_1_window}{Gui\+::\+Window}}-\/s. 
+
+\mbox{\Hypertarget{class_gui_1_1_window_handler_a8cb14dcbb286eee0f2aee05c80ec00cf}\label{class_gui_1_1_window_handler_a8cb14dcbb286eee0f2aee05c80ec00cf}} 
+\index{Gui::WindowHandler@{Gui::WindowHandler}!DeleteWindow@{DeleteWindow}}
+\index{DeleteWindow@{DeleteWindow}!Gui::WindowHandler@{Gui::WindowHandler}}
+\doxysubsubsection{\texorpdfstring{DeleteWindow()}{DeleteWindow()}}
+{\footnotesize\ttfamily void Window\+Handler\+::\+Delete\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gui_1_1_window}{Window}} $\ast$}]{window }\end{DoxyParamCaption})}
+
+
+
+Deletes window from list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \mbox{\hyperlink{class_gui_1_1_window}{Window}} to delete. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Window\+Handler.\+h\item 
+Homo\+Gebra/Window\+Handler.\+cpp\end{DoxyCompactItemize}

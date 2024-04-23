@@ -1,0 +1,62 @@
+\hypertarget{_geometric_object_implementation_8h_source}{}\doxysection{Geometric\+Object\+Implementation.\+h}
+\label{_geometric_object_implementation_8h_source}\index{HomoGebra/GeometricObjectImplementation.h@{HomoGebra/GeometricObjectImplementation.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Construction.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Equation.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Observer.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }GeometricObject;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }HomoGebra}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_implementation}{GeometricObjectImplementation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_observable_geometric_object}{ObservableGeometricObject}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_implementation_ac3db2d964cf19c773ca46836c0fd35a2}{\string~GeometricObjectImplementation}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ std::unique\_ptr<Construction>\ \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_implementation_ac189ae4cffbe86f3d6a4f16fd6014532}{construction\_}};\ \ }
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_point_implementation}{PointImplementation}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_implementation}{GeometricObjectImplementation}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_homo_gebra_1_1_point_implementation}{PointImplementation}}(\mbox{\hyperlink{struct_homo_gebra_1_1_point_equation}{PointEquation}}\ equation\ =\ \mbox{\hyperlink{struct_homo_gebra_1_1_point_equation}{PointEquation}}());}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_point_implementation_afb3ed68f34d1c90ed3c95bdd92464f8b}{SetEquation}}(\mbox{\hyperlink{struct_homo_gebra_1_1_point_equation}{PointEquation}}\ equation);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_point_equation}{PointEquation}}\&\ \mbox{\hyperlink{class_homo_gebra_1_1_point_implementation_ac77deb118f03a5e00d761231f0282b76}{GetEquation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{struct_homo_gebra_1_1_point_equation}{PointEquation}}\ \mbox{\hyperlink{class_homo_gebra_1_1_point_implementation_a8393b2c2f6f684acbefa9278cc6ac066}{equation\_}};\ \ }
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_line_implementation}{LineImplementation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_implementation}{GeometricObjectImplementation}}}
+\DoxyCodeLine{00090\ \{}
+\DoxyCodeLine{00091\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00097\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_homo_gebra_1_1_line_implementation}{LineImplementation}}(\mbox{\hyperlink{struct_homo_gebra_1_1_line_equation}{LineEquation}}\ equation\ =\ \mbox{\hyperlink{struct_homo_gebra_1_1_line_equation}{LineEquation}}());}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_line_implementation_a0fb2166b441eb2a95aebe0088585aed7}{SetEquation}}(\mbox{\hyperlink{struct_homo_gebra_1_1_line_equation}{LineEquation}}\ equation);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00111\ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_line_equation}{LineEquation}}\&\ \mbox{\hyperlink{class_homo_gebra_1_1_line_implementation_ab619f7194c3053b0829b1ce7e6cfae29}{GetEquation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{struct_homo_gebra_1_1_line_equation}{LineEquation}}\ \mbox{\hyperlink{class_homo_gebra_1_1_line_implementation_aa5fea6202400dcbc5ab09b0b86a77759}{equation\_}};\ \ }
+\DoxyCodeLine{00118\ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_conic_implementation}{ConicImplementation}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_implementation}{GeometricObjectImplementation}}}
+\DoxyCodeLine{00132\ \{}
+\DoxyCodeLine{00133\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00139\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_homo_gebra_1_1_conic_implementation}{ConicImplementation}}(\mbox{\hyperlink{struct_homo_gebra_1_1_conic_equation}{ConicEquation}}\ equation\ =\ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_equation}{ConicEquation}}());}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_conic_implementation_a882863c438344ca7bda65419fa6d62b1}{SetEquation}}(\mbox{\hyperlink{struct_homo_gebra_1_1_conic_equation}{ConicEquation}}\ equation);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00153\ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_equation}{ConicEquation}}\&\ \mbox{\hyperlink{class_homo_gebra_1_1_conic_implementation_a7fc46447c4ef13ba4cffb501282012af}{GetEquation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00159\ \ \ \mbox{\hyperlink{struct_homo_gebra_1_1_conic_equation}{ConicEquation}}\ \mbox{\hyperlink{class_homo_gebra_1_1_conic_implementation_ae5c8487024a42bfa8fc9a09738c1b83e}{equation\_}};\ \ }
+\DoxyCodeLine{00160\ \};}
+\DoxyCodeLine{00161\ \}\ \ \textcolor{comment}{//\ namespace\ HomoGebra}}
+
+\end{DoxyCode}

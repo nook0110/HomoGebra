@@ -1,0 +1,9 @@
+<map id="Point::Notify" name="Point::Notify">
+<area shape="rect" id="node1" title="Notify observers that this objected was destroyed." alt="" coords="851,46,944,71"/>
+<area shape="rect" id="node2" href="$class_point.html#ab92f2b98be4443b6067acd5e4a46095f" title="Implementation interface." alt="" coords="693,17,798,42"/>
+<area shape="rect" id="node4" href="$class_point.html#af524277e47dc92389c924ad0dc6cfd81" title="Sets new name of object." alt="" coords="688,70,803,95"/>
+<area shape="rect" id="node3" href="$class_construction_point.html#a17a4172623768e3f0eaa84ae30ac86e0" title="Update the object, because sth was destroyed." alt="" coords="485,5,618,45"/>
+<area shape="rect" id="node5" href="$class_gui_1_1_editor_1_1_point_submenu.html#a75e8b3169e3f8e311beed43fe664ec0c" title="Render name editor." alt="" coords="463,69,640,109"/>
+<area shape="rect" id="node6" href="$class_gui_1_1_editor_1_1_point_submenu.html#ac92b012249087beb7c795f0b22cf75ee" title="Renders the menu." alt="" coords="237,69,415,109"/>
+<area shape="rect" id="node7" href="$class_gui_1_1_object_menu.html#a7637c226cf849991fb09166f7def6db5" title="Constructs editor of point." alt="" coords="5,77,189,102"/>
+</map>

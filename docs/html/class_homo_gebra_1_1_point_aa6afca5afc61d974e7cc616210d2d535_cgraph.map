@@ -1,0 +1,5 @@
+<map id="HomoGebra::Point::Notify" name="HomoGebra::Point::Notify">
+<area shape="rect" id="node1" title="Notify observers about event." alt="" coords="5,13,176,38"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_observable_geometric_object.html#ac1541842fe032cfbbf39ac2e948f4bf5" title="Notify all observers about event." alt="" coords="224,5,447,45"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable.html#ad6f678443403a9c9e412a73200222147" title="Notify all observers about event." alt="" coords="495,5,657,45"/>
+</map>

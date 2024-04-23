@@ -1,0 +1,185 @@
+\hypertarget{class_nearby_object_getter}{}\doxysection{Nearby\+Object\+Getter\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_nearby_object_getter}\index{NearbyObjectGetter$<$ GeometricObjectType $>$@{NearbyObjectGetter$<$ GeometricObjectType $>$}}
+
+
+Class to get the last object that user clicked on.  
+
+
+
+
+{\ttfamily \#include $<$Input.\+h$>$}
+
+
+
+Inheritance diagram for Nearby\+Object\+Getter\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{class_nearby_object_getter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Nearby\+Object\+Getter\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_nearby_object_getter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_nearby_object_getter_a2f4f0be1566d4063da923f6deb4bc97b}{Nearby\+Object\+Getter}} (\mbox{\hyperlink{class_plane}{Plane}} $\ast$plane, Geometric\+Object\+Type $\ast$last\+\_\+object=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+Geometric\+Object\+Type $\ast$ \mbox{\hyperlink{class_nearby_object_getter_a0f4b1dc1b3fffa266e97286ff732e205}{Get\+Last\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Gets the last object that user clicked on. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nearby_object_getter_afc7857305143f9f912bb53ea8aabf333}\label{class_nearby_object_getter_afc7857305143f9f912bb53ea8aabf333}} 
+void {\bfseries Reset} ()
+\begin{DoxyCompactList}\small\item\em Rests current object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_nearby_object_getter_a19ab5bc9a28fcda9b428b2cd4734c217}{Set\+Object}} (Geometric\+Object\+Type $\ast$object)
+\begin{DoxyCompactList}\small\item\em Sets current object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_nearby_object_getter_ab2f942ba56a6e7f826beb71d95586b5b}{Update}} (const \mbox{\hyperlink{struct_user_event_1_1_click}{User\+Event\+::\+Click}} \&event) override
+\begin{DoxyCompactList}\small\item\em Update, because user clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_event_listener}{Event\+Listener}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_event_listener_a224801ef2f0a3c0ddfd18baf4ca52118}{$\sim$\+Event\+Listener}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_event_listener_a44b18bc65587eb2ed590dff5767adb36}{Update}} (const \mbox{\hyperlink{struct_user_event_1_1_click}{User\+Event\+::\+Click}} \&clicked\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because user clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_nearby_object_getter_ac892ff1f6f8ffd980bde02d595c01ead}{Find\+Nearest\+Object}} (const sf\+::\+Vector2f \&position)
+\begin{DoxyCompactList}\small\item\em Finds the nearest object to the mouse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_nearby_object_getter_ab2e6ed42e07caa23e7ac8fd2697c1794}\label{class_nearby_object_getter_ab2e6ed42e07caa23e7ac8fd2697c1794}} 
+Geometric\+Object\+Type $\ast$ {\bfseries last\+\_\+object\+\_\+}
+\begin{DoxyCompactList}\small\item\em Last object that user clicked on. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nearby_object_getter_aecd4dfad7cc8c0a5516782d4f7df86cf}\label{class_nearby_object_getter_aecd4dfad7cc8c0a5516782d4f7df86cf}} 
+\mbox{\hyperlink{class_object_provider}{Object\+Provider}} {\bfseries finder\+\_\+}
+\begin{DoxyCompactList}\small\item\em Helper to find objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Geometric\+Object\+Type$>$\newline
+class Nearby\+Object\+Getter$<$ Geometric\+Object\+Type $>$}
+Class to get the last object that user clicked on. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Geometric\+Object\+Type} & Type of the geometric object.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_nearby_object_getter_a2f4f0be1566d4063da923f6deb4bc97b}\label{class_nearby_object_getter_a2f4f0be1566d4063da923f6deb4bc97b}} 
+\index{NearbyObjectGetter$<$ GeometricObjectType $>$@{NearbyObjectGetter$<$ GeometricObjectType $>$}!NearbyObjectGetter@{NearbyObjectGetter}}
+\index{NearbyObjectGetter@{NearbyObjectGetter}!NearbyObjectGetter$<$ GeometricObjectType $>$@{NearbyObjectGetter$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{NearbyObjectGetter()}{NearbyObjectGetter()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+\mbox{\hyperlink{class_nearby_object_getter}{Nearby\+Object\+Getter}}$<$ Geometric\+Object\+Type $>$\mbox{\hyperlink{class_nearby_object_getter}{\+::\+Nearby\+Object\+Getter}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plane}{Plane}} $\ast$}]{plane,  }\item[{Geometric\+Object\+Type $\ast$}]{last\+\_\+object = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plane} & \mbox{\hyperlink{class_plane}{Plane}}, where the object is located. \\
+\hline
+{\em last\+\_\+object} & Last object that user clicked on. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_nearby_object_getter_ac892ff1f6f8ffd980bde02d595c01ead}\label{class_nearby_object_getter_ac892ff1f6f8ffd980bde02d595c01ead}} 
+\index{NearbyObjectGetter$<$ GeometricObjectType $>$@{NearbyObjectGetter$<$ GeometricObjectType $>$}!FindNearestObject@{FindNearestObject}}
+\index{FindNearestObject@{FindNearestObject}!NearbyObjectGetter$<$ GeometricObjectType $>$@{NearbyObjectGetter$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{FindNearestObject()}{FindNearestObject()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_nearby_object_getter}{Nearby\+Object\+Getter}}$<$ Geometric\+Object\+Type $>$\+::\+Find\+Nearest\+Object (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Finds the nearest object to the mouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the mouse. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_nearby_object_getter_a0f4b1dc1b3fffa266e97286ff732e205}\label{class_nearby_object_getter_a0f4b1dc1b3fffa266e97286ff732e205}} 
+\index{NearbyObjectGetter$<$ GeometricObjectType $>$@{NearbyObjectGetter$<$ GeometricObjectType $>$}!GetLastObject@{GetLastObject}}
+\index{GetLastObject@{GetLastObject}!NearbyObjectGetter$<$ GeometricObjectType $>$@{NearbyObjectGetter$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{GetLastObject()}{GetLastObject()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+Geometric\+Object\+Type $\ast$ \mbox{\hyperlink{class_nearby_object_getter}{Nearby\+Object\+Getter}}$<$ Geometric\+Object\+Type $>$\+::\+Get\+Last\+Object}
+
+
+
+Gets the last object that user clicked on. 
+
+\begin{DoxyReturn}{Returns}
+Last object that user clicked on. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nearby_object_getter_a19ab5bc9a28fcda9b428b2cd4734c217}\label{class_nearby_object_getter_a19ab5bc9a28fcda9b428b2cd4734c217}} 
+\index{NearbyObjectGetter$<$ GeometricObjectType $>$@{NearbyObjectGetter$<$ GeometricObjectType $>$}!SetObject@{SetObject}}
+\index{SetObject@{SetObject}!NearbyObjectGetter$<$ GeometricObjectType $>$@{NearbyObjectGetter$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{SetObject()}{SetObject()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_nearby_object_getter}{Nearby\+Object\+Getter}}$<$ Geometric\+Object\+Type $>$\+::\+Set\+Object (\begin{DoxyParamCaption}\item[{Geometric\+Object\+Type $\ast$}]{object }\end{DoxyParamCaption})}
+
+
+
+Sets current object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Object to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_nearby_object_getter_ab2f942ba56a6e7f826beb71d95586b5b}\label{class_nearby_object_getter_ab2f942ba56a6e7f826beb71d95586b5b}} 
+\index{NearbyObjectGetter$<$ GeometricObjectType $>$@{NearbyObjectGetter$<$ GeometricObjectType $>$}!Update@{Update}}
+\index{Update@{Update}!NearbyObjectGetter$<$ GeometricObjectType $>$@{NearbyObjectGetter$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_nearby_object_getter}{Nearby\+Object\+Getter}}$<$ Geometric\+Object\+Type $>$\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_user_event_1_1_click}{User\+Event\+::\+Click}} \&}]{clicked\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update, because user clicked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clicked\+\_\+event} & Tag with some information\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+User\+Event\+::clicked\+\_\+event 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_event_listener_a44b18bc65587eb2ed590dff5767adb36}{Event\+Listener}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Input.\+h\item 
+Homo\+Gebra/Input.\+cpp\end{DoxyCompactItemize}

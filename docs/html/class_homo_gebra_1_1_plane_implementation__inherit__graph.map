@@ -1,0 +1,7 @@
+<map id="HomoGebra::PlaneImplementation" name="HomoGebra::PlaneImplementation">
+<area shape="rect" id="node1" title="Implementation of Plane." alt="" coords="105,557,325,781"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_geometric_object_observer.html" title="Makes Construction an observer." alt="" coords="5,359,204,509"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable_plane.html" title=" " alt="" coords="228,388,424,480"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_observable.html" title=" " alt="" coords="245,175,407,311"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_observable_interface.html" title="Interface for observers of geometric objects." alt="" coords="220,5,432,127"/>
+</map>

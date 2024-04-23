@@ -1,0 +1,5 @@
+<map id="HomoGebra::NameGenerator::DeleteName" name="HomoGebra::NameGenerator::DeleteName">
+<area shape="rect" id="node1" title="Deletes name from dictionary." alt="" coords="5,37,196,77"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_dictionary.html#aec962ae338ae7cf7a7373106801ea815" title="Deletes item from dictionary." alt="" coords="261,5,418,45"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_name_generator.html#a0bfe46cc912236f50396992f659e5fc4" title="Checks if name is empty." alt="" coords="244,69,435,109"/>
+</map>

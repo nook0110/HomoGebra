@@ -1,0 +1,5 @@
+<map id="Gui::ObjectMenu::GetObjectsOfType" name="Gui::ObjectMenu::GetObjectsOfType">
+<area shape="rect" id="node1" title="Getter for objects of given type." alt="" coords="5,5,200,45"/>
+<area shape="rect" id="node2" href="$class_plane.html#a63aa7353ef2a3bea5172b0a627e62831" title="Returns objects of GeometricObjectType." alt="" coords="248,13,377,38"/>
+<area shape="rect" id="node3" href="$class_plane_implementation.html#aadc5370b598b23685b72a5818f3564b6" title="Get all objects of GeometricObjectType." alt="" coords="425,5,568,45"/>
+</map>

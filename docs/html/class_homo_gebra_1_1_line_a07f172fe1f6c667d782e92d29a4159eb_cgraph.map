@@ -1,0 +1,6 @@
+<map id="HomoGebra::Line::SetEquation" name="HomoGebra::Line::SetEquation">
+<area shape="rect" id="node1" title="Set new equation of line." alt="" coords="5,13,208,38"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_line_implementation.html#a0fb2166b441eb2a95aebe0088585aed7" title="Sets new equation of line." alt="" coords="256,5,467,45"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable_geometric_object.html#ac1541842fe032cfbbf39ac2e948f4bf5" title="Notify all observers about event." alt="" coords="515,5,737,45"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_observable.html#ad6f678443403a9c9e412a73200222147" title="Notify all observers about event." alt="" coords="785,5,948,45"/>
+</map>

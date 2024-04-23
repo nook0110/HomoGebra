@@ -1,0 +1,7 @@
+<map id="ConicOnPlane" name="ConicOnPlane">
+<area shape="rect" id="node1" title="Construction of a casual conic on a plane." alt="" coords="109,616,271,708"/>
+<area shape="rect" id="node2" href="$class_construction_conic.html" title="Base class for all conic constructions." alt="" coords="24,403,185,568"/>
+<area shape="rect" id="node3" href="$class_construction.html" title="Defines how object is created." alt="" coords="24,189,185,355"/>
+<area shape="rect" id="node4" href="$class_geometric_object_observer.html" title="Makes Construction an observer." alt="" coords="5,5,204,141"/>
+<area shape="rect" id="node5" href="$class_strong_construction.html" title="Construction that does not lose its properties after projective transformation." alt="" coords="210,447,343,524"/>
+</map>

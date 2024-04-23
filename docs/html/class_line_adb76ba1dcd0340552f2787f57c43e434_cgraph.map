@@ -1,0 +1,4 @@
+<map id="Line::Attach" name="Line::Attach">
+<area shape="rect" id="node1" title="Attaches observer to this object." alt="" coords="5,5,97,31"/>
+<area shape="rect" id="node2" href="$class_observable.html#a8ba8ec9993265b2a02af443b8fe09d3f" title="Subscribe an observer on this object." alt="" coords="145,5,277,31"/>
+</map>

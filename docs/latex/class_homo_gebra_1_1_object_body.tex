@@ -1,0 +1,226 @@
+\hypertarget{class_homo_gebra_1_1_object_body}{}\doxysection{Homo\+Gebra\+::Object\+Body Class Reference}
+\label{class_homo_gebra_1_1_object_body}\index{HomoGebra::ObjectBody@{HomoGebra::ObjectBody}}
+
+
+Base class for bodies.  
+
+
+
+
+{\ttfamily \#include $<$Geometric\+Object\+Body.\+h$>$}
+
+
+
+Inheritance diagram for Homo\+Gebra\+::Object\+Body\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Homo\+Gebra\+::Object\+Body\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_body__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_body_af5784fedc9f9166db2bd70a1da21092e}{Set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set name of the point. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_homo_gebra_1_1_object_body_a518fa9b849bee6befeed9b12a1e70532}{Get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets name of the point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_body_a76b2fcbb56db65584508e40247a08a05}{Set\+Name\+Position}} (const sf\+::\+Vector2f \&position)
+\begin{DoxyCompactList}\small\item\em Sets position of the name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_body_ab7efa84f52244be8ddd28a081c1fa544}{Set\+Name\+Size}} (float size)
+\begin{DoxyCompactList}\small\item\em Sets size of the name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_body_a8dd5d0766059c8fd5acbeb62ba442c0c}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
+\begin{DoxyCompactList}\small\item\em Draw the object body to a render target. \end{DoxyCompactList}\item 
+virtual Distance \mbox{\hyperlink{class_homo_gebra_1_1_object_body_ac25010af3d00fede33a4c04317f15ecb}{Get\+Distance}} (const sf\+::\+Vector2f \&position) const =0
+\begin{DoxyCompactList}\small\item\em Gets distance from object to position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_body_a3fb931f6915fd0c7fa777e4fe4b8e6b5}\label{class_homo_gebra_1_1_object_body_a3fb931f6915fd0c7fa777e4fe4b8e6b5}} 
+\mbox{\hyperlink{class_homo_gebra_1_1_object_name}{Object\+Name}} {\bfseries text\+\_\+}
+\begin{DoxyCompactList}\small\item\em Name of the name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for bodies. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+July 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_body_a8dd5d0766059c8fd5acbeb62ba442c0c}\label{class_homo_gebra_1_1_object_body_a8dd5d0766059c8fd5acbeb62ba442c0c}} 
+\index{HomoGebra::ObjectBody@{HomoGebra::ObjectBody}!draw@{draw}}
+\index{draw@{draw}!HomoGebra::ObjectBody@{HomoGebra::ObjectBody}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Object\+Body\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Draw the object body to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to. \\
+\hline
+{\em states} & Current render states. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_body_a8dd5d0766059c8fd5acbeb62ba442c0c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_body_ac25010af3d00fede33a4c04317f15ecb}\label{class_homo_gebra_1_1_object_body_ac25010af3d00fede33a4c04317f15ecb}} 
+\index{HomoGebra::ObjectBody@{HomoGebra::ObjectBody}!GetDistance@{GetDistance}}
+\index{GetDistance@{GetDistance}!HomoGebra::ObjectBody@{HomoGebra::ObjectBody}}
+\doxysubsubsection{\texorpdfstring{GetDistance()}{GetDistance()}}
+{\footnotesize\ttfamily virtual Distance Homo\+Gebra\+::\+Object\+Body\+::\+Get\+Distance (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets distance from object to position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position to calculate distance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance from object to position. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_homo_gebra_1_1_point_body_a02f4b6649dabb2ea5e1b025e3f775a62}{Homo\+Gebra\+::\+Point\+Body}}, \mbox{\hyperlink{class_homo_gebra_1_1_line_body_a58e73da95d790d9f57afcd3b0b288051}{Homo\+Gebra\+::\+Line\+Body}}, and \mbox{\hyperlink{class_homo_gebra_1_1_conic_body_ad4bf572a5c580f30d0d5c2270083c360}{Homo\+Gebra\+::\+Conic\+Body}}.
+
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_body_a518fa9b849bee6befeed9b12a1e70532}\label{class_homo_gebra_1_1_object_body_a518fa9b849bee6befeed9b12a1e70532}} 
+\index{HomoGebra::ObjectBody@{HomoGebra::ObjectBody}!GetName@{GetName}}
+\index{GetName@{GetName}!HomoGebra::ObjectBody@{HomoGebra::ObjectBody}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily const std\+::string \& Homo\+Gebra\+::\+Object\+Body\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets name of the point. 
+
+\begin{DoxyReturn}{Returns}
+Name of the point. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_body_a518fa9b849bee6befeed9b12a1e70532_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_body_a518fa9b849bee6befeed9b12a1e70532_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_body_af5784fedc9f9166db2bd70a1da21092e}\label{class_homo_gebra_1_1_object_body_af5784fedc9f9166db2bd70a1da21092e}} 
+\index{HomoGebra::ObjectBody@{HomoGebra::ObjectBody}!SetName@{SetName}}
+\index{SetName@{SetName}!HomoGebra::ObjectBody@{HomoGebra::ObjectBody}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Object\+Body\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Set name of the point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the point. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_body_af5784fedc9f9166db2bd70a1da21092e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_body_af5784fedc9f9166db2bd70a1da21092e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_body_a76b2fcbb56db65584508e40247a08a05}\label{class_homo_gebra_1_1_object_body_a76b2fcbb56db65584508e40247a08a05}} 
+\index{HomoGebra::ObjectBody@{HomoGebra::ObjectBody}!SetNamePosition@{SetNamePosition}}
+\index{SetNamePosition@{SetNamePosition}!HomoGebra::ObjectBody@{HomoGebra::ObjectBody}}
+\doxysubsubsection{\texorpdfstring{SetNamePosition()}{SetNamePosition()}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Object\+Body\+::\+Set\+Name\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption})}
+
+
+
+Sets position of the name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the name. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_body_a76b2fcbb56db65584508e40247a08a05_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_body_ab7efa84f52244be8ddd28a081c1fa544}\label{class_homo_gebra_1_1_object_body_ab7efa84f52244be8ddd28a081c1fa544}} 
+\index{HomoGebra::ObjectBody@{HomoGebra::ObjectBody}!SetNameSize@{SetNameSize}}
+\index{SetNameSize@{SetNameSize}!HomoGebra::ObjectBody@{HomoGebra::ObjectBody}}
+\doxysubsubsection{\texorpdfstring{SetNameSize()}{SetNameSize()}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Object\+Body\+::\+Set\+Name\+Size (\begin{DoxyParamCaption}\item[{float}]{size }\end{DoxyParamCaption})}
+
+
+
+Sets size of the name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Size of the name. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_body_ab7efa84f52244be8ddd28a081c1fa544_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_body_ab7efa84f52244be8ddd28a081c1fa544_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Geometric\+Object\+Body.\+h\item 
+Homo\+Gebra/Geometric\+Object\+Body.\+cpp\end{DoxyCompactItemize}

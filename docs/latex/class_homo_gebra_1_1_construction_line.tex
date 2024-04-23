@@ -1,0 +1,284 @@
+\hypertarget{class_homo_gebra_1_1_construction_line}{}\doxysection{Homo\+Gebra\+::Construction\+Line Class Reference}
+\label{class_homo_gebra_1_1_construction_line}\index{HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}}
+
+
+Base class for all line constructions.  
+
+
+
+
+{\ttfamily \#include $<$Object\+Construction.\+h$>$}
+
+
+
+Inheritance diagram for Homo\+Gebra\+::Construction\+Line\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_homo_gebra_1_1_construction_line__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Homo\+Gebra\+::Construction\+Line\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_construction_line__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_construction_line_a72eaec90b6bd28e4561d49b2d784923b}\label{class_homo_gebra_1_1_construction_line_a72eaec90b6bd28e4561d49b2d784923b}} 
+{\bfseries $\sim$\+Construction\+Line} () override=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_homo_gebra_1_1_geometric_object}{Geometric\+Object}} $\ast$ \mbox{\hyperlink{class_homo_gebra_1_1_construction_line_a87abd51276ac5fbb2ba525ade8533cbe}{Get\+Object}} () const override
+\begin{DoxyCompactList}\small\item\em Gets object that is constructed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_homo_gebra_1_1_line}{Line}} $\ast$ \mbox{\hyperlink{class_homo_gebra_1_1_construction_line_aed17d0fc564c5a08c6e96c1b2762a004}{Get\+Line}} () const
+\begin{DoxyCompactList}\small\item\em Gets line that is constructed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_construction_line_a51c6677c9f57ea43f8f930c610363bd3}{Recalculate\+Equation}} () override=0
+\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_construction_line_a718e9a6f41c048c5c298a21a6ea1e136}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_going_to_be_destroyed}{Object\+Event\+::\+Going\+To\+Be\+Destroyed}} \&event) override
+\begin{DoxyCompactList}\small\item\em Update, because sth was destroyed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_construction_line_ad91892831035416b293fd51d814b14a1}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} \&event) override
+\begin{DoxyCompactList}\small\item\em Update, because sth was renamed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_homo_gebra_1_1_construction}{Homo\+Gebra\+::\+Construction}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_homo_gebra_1_1_construction_a770926d4b4724e111855e46c6b33668d}{$\sim$\+Construction}} () override=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object}{Geometric\+Object}} $\ast$ \mbox{\hyperlink{class_homo_gebra_1_1_construction_a161834e7c2b3a748481e58e838a01bc0}{Get\+Object}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets object that is constructed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_homo_gebra_1_1_construction_ad5e9003f24a5e0803c6ccc23f3c467c1}{Recalculate\+Equation}} ()=0
+\begin{DoxyCompactList}\small\item\em Recalculates equation of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_construction_a90a087fab527fc7042f5a2ca23cfe8c5}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_moved}{Object\+Event\+::\+Moved}} \&moved\+\_\+event) override
+\begin{DoxyCompactList}\small\item\em Update, because sth moved. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_construction_a900ff25e35afce231e03efe92b39d32e}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_going_to_be_destroyed}{Object\+Event\+::\+Going\+To\+Be\+Destroyed}} \&destroyed\+\_\+event) override=0
+\begin{DoxyCompactList}\small\item\em Update, because sth was destroyed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_construction_a534c0faddbd48171f1b23e4875a6b6cc}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} \&renamed\+\_\+event) override=0
+\begin{DoxyCompactList}\small\item\em Update, because sth was renamed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_observer}{Homo\+Gebra\+::\+Geometric\+Object\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_observer_aa4786c20dd11bc36ba418c9b42103cd4}{Geometric\+Object\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_geometric_object_observer_a92bc17c60c8f0ada04c5243a3f08dad8}\label{class_homo_gebra_1_1_geometric_object_observer_a92bc17c60c8f0ada04c5243a3f08dad8}} 
+virtual {\bfseries $\sim$\+Geometric\+Object\+Observer} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_observer_ac88683566ca47cb1df83cf981cc6c144}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_moved}{Object\+Event\+::\+Moved}} \&moved\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth moved. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_observer_a89b1162c978283793d4b29e62f12c0da}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_going_to_be_destroyed}{Object\+Event\+::\+Going\+To\+Be\+Destroyed}} \&destroyed\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth was destroyed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_observer_abb9e260b1ea4c6b2b423b50a77211cd8}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} \&renamed\+\_\+event)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth was renamed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_homo_gebra_1_1_line_equation}{Line\+Equation}} \& \mbox{\hyperlink{class_homo_gebra_1_1_construction_line_a0b11d04e1154b6a003de0678ec508cb2}{Get\+Equation}} () const
+\begin{DoxyCompactList}\small\item\em Get equation of line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_construction_line_a3d2b693751ef796a15ce03a4d7c35737}{Set\+Equation}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_line_equation}{Line\+Equation}} \&equation) const
+\begin{DoxyCompactList}\small\item\em Set equation of line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_homo_gebra_1_1_construction}{Homo\+Gebra\+::\+Construction}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_homo_gebra_1_1_construction_a21ae2104d9f11f5fccc5b493f92ab20c}{Construction}} ()=default
+\begin{DoxyCompactList}\small\item\em Constructor deleted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_homo_gebra_1_1_line}{Line}} $>$ \mbox{\hyperlink{class_homo_gebra_1_1_construction_line_a51f8249d8df032c147fe408863d157f4}{line\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_homo_gebra_1_1_line}{Line}}, which is created. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all line constructions. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+July 2023
+\end{DoxyDate}
+Updates position of line 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_construction_line_a0b11d04e1154b6a003de0678ec508cb2}\label{class_homo_gebra_1_1_construction_line_a0b11d04e1154b6a003de0678ec508cb2}} 
+\index{HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}!GetEquation@{GetEquation}}
+\index{GetEquation@{GetEquation}!HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}}
+\doxysubsubsection{\texorpdfstring{GetEquation()}{GetEquation()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_homo_gebra_1_1_line_equation}{Line\+Equation}} \& Homo\+Gebra\+::\+Construction\+Line\+::\+Get\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Get equation of line. 
+
+\begin{DoxyReturn}{Returns}
+Equation of line. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_homo_gebra_1_1_construction_line_aed17d0fc564c5a08c6e96c1b2762a004}\label{class_homo_gebra_1_1_construction_line_aed17d0fc564c5a08c6e96c1b2762a004}} 
+\index{HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}!GetLine@{GetLine}}
+\index{GetLine@{GetLine}!HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}}
+\doxysubsubsection{\texorpdfstring{GetLine()}{GetLine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_homo_gebra_1_1_line}{Line}} $\ast$ Homo\+Gebra\+::\+Construction\+Line\+::\+Get\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets line that is constructed. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_homo_gebra_1_1_line}{Line}} that is constructed. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_construction_line_aed17d0fc564c5a08c6e96c1b2762a004_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_construction_line_a87abd51276ac5fbb2ba525ade8533cbe}\label{class_homo_gebra_1_1_construction_line_a87abd51276ac5fbb2ba525ade8533cbe}} 
+\index{HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}!GetObject@{GetObject}}
+\index{GetObject@{GetObject}!HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}}
+\doxysubsubsection{\texorpdfstring{GetObject()}{GetObject()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object}{Geometric\+Object}} $\ast$ Homo\+Gebra\+::\+Construction\+Line\+::\+Get\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets object that is constructed. 
+
+\begin{DoxyReturn}{Returns}
+Object that is constructed. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_homo_gebra_1_1_construction_a161834e7c2b3a748481e58e838a01bc0}{Homo\+Gebra\+::\+Construction}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_construction_line_a87abd51276ac5fbb2ba525ade8533cbe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_construction_line_a87abd51276ac5fbb2ba525ade8533cbe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_construction_line_a51c6677c9f57ea43f8f930c610363bd3}\label{class_homo_gebra_1_1_construction_line_a51c6677c9f57ea43f8f930c610363bd3}} 
+\index{HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}!RecalculateEquation@{RecalculateEquation}}
+\index{RecalculateEquation@{RecalculateEquation}!HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}}
+\doxysubsubsection{\texorpdfstring{RecalculateEquation()}{RecalculateEquation()}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Construction\+Line\+::\+Recalculate\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+Recalculate equation of line. 
+
+Implements \mbox{\hyperlink{class_homo_gebra_1_1_construction_ad5e9003f24a5e0803c6ccc23f3c467c1}{Homo\+Gebra\+::\+Construction}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_homo_gebra_1_1_line_on_plane_aa6712f07622496d0a48ebb546eff23f9}{Homo\+Gebra\+::\+Line\+On\+Plane}}, and \mbox{\hyperlink{class_homo_gebra_1_1_by_two_points_aa70697e002d867ee34d433abcaa26e92}{Homo\+Gebra\+::\+By\+Two\+Points}}.
+
+\mbox{\Hypertarget{class_homo_gebra_1_1_construction_line_a3d2b693751ef796a15ce03a4d7c35737}\label{class_homo_gebra_1_1_construction_line_a3d2b693751ef796a15ce03a4d7c35737}} 
+\index{HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}!SetEquation@{SetEquation}}
+\index{SetEquation@{SetEquation}!HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}}
+\doxysubsubsection{\texorpdfstring{SetEquation()}{SetEquation()}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Construction\+Line\+::\+Set\+Equation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_line_equation}{Line\+Equation}} \&}]{equation }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set equation of line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em equation} & Equation of line. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_construction_line_a3d2b693751ef796a15ce03a4d7c35737_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_construction_line_a718e9a6f41c048c5c298a21a6ea1e136}\label{class_homo_gebra_1_1_construction_line_a718e9a6f41c048c5c298a21a6ea1e136}} 
+\index{HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}!Update@{Update}}
+\index{Update@{Update}!HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Construction\+Line\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_going_to_be_destroyed}{Object\+Event\+::\+Going\+To\+Be\+Destroyed}} \&}]{destroyed\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update, because sth was destroyed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destroyed\+\_\+event} & Tag with some information\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Object\+Event\+::\+Destroyed 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_homo_gebra_1_1_construction_a900ff25e35afce231e03efe92b39d32e}{Homo\+Gebra\+::\+Construction}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_construction_line_a718e9a6f41c048c5c298a21a6ea1e136_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_construction_line_ad91892831035416b293fd51d814b14a1}\label{class_homo_gebra_1_1_construction_line_ad91892831035416b293fd51d814b14a1}} 
+\index{HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}!Update@{Update}}
+\index{Update@{Update}!HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Homo\+Gebra\+::\+Construction\+Line\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} \&}]{renamed\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update, because sth was renamed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renamed\+\_\+event} & Tag with some information\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_renamed}{Object\+Event\+::\+Renamed}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_homo_gebra_1_1_construction_a534c0faddbd48171f1b23e4875a6b6cc}{Homo\+Gebra\+::\+Construction}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_construction_line_a51f8249d8df032c147fe408863d157f4}\label{class_homo_gebra_1_1_construction_line_a51f8249d8df032c147fe408863d157f4}} 
+\index{HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}!line\_@{line\_}}
+\index{line\_@{line\_}!HomoGebra::ConstructionLine@{HomoGebra::ConstructionLine}}
+\doxysubsubsection{\texorpdfstring{line\_}{line\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_homo_gebra_1_1_line}{Line}}$>$ Homo\+Gebra\+::\+Construction\+Line\+::line\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ std::make\_unique<Line>()}
+
+\end{DoxyCode}
+
+
+\mbox{\hyperlink{class_homo_gebra_1_1_line}{Line}}, which is created. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Object\+Construction.\+h\item 
+Homo\+Gebra/Object\+Construction.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,7 @@
+<map id="Gui::Editor::ComplexEditor::GetNumber" name="Gui::Editor::ComplexEditor::GetNumber">
+<area shape="rect" id="node1" title="Returns the current number that was edited." alt="" coords="945,5,1123,45"/>
+<area shape="rect" id="node2" href="$class_gui_1_1_editor_1_1_homogeneous_coordinate_editor.html#a6c23039a56c8455930fed513fd4c3798" title="Returns the current coordinate that was edited." alt="" coords="688,5,897,45"/>
+<area shape="rect" id="node3" href="$class_gui_1_1_editor_1_1_point_submenu.html#a3c2af856437a1f02a89b9fca101b3386" title="Render variables, that can be edited." alt="" coords="463,5,640,45"/>
+<area shape="rect" id="node4" href="$class_gui_1_1_editor_1_1_point_submenu.html#a17fdb8b7b9723ee1ce10eed372c7b6fb" title="Renders the menu." alt="" coords="237,5,415,45"/>
+<area shape="rect" id="node5" href="$class_gui_1_1_object_menu.html#a7637c226cf849991fb09166f7def6db5" title="Constructs editor of point." alt="" coords="5,13,189,38"/>
+</map>

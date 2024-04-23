@@ -1,0 +1,6 @@
+<map id="HomoGebra::Conic::AlertDestruction" name="HomoGebra::Conic::AlertDestruction">
+<area shape="rect" id="node1" title="Destroy this object." alt="" coords="5,13,239,38"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_conic.html#ab5ba44d05cfe3c97cc89f862e102816e" title="Notify observers about event." alt="" coords="287,13,460,38"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable_geometric_object.html#ac1541842fe032cfbbf39ac2e948f4bf5" title="Notify all observers about event." alt="" coords="508,5,731,45"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_observable.html#ad6f678443403a9c9e412a73200222147" title="Notify all observers about event." alt="" coords="779,5,941,45"/>
+</map>

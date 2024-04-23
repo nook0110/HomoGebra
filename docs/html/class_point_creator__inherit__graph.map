@@ -1,0 +1,4 @@
+<map id="PointCreator" name="PointCreator">
+<area shape="rect" id="node1" title="Creator of points." alt="" coords="5,145,123,296"/>
+<area shape="rect" id="node2" href="$class_creator.html" title="Base class for creators of geometric objects using mouse." alt="" coords="18,5,110,97"/>
+</map>

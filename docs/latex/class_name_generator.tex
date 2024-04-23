@@ -1,0 +1,543 @@
+\hypertarget{class_name_generator}{}\doxysection{Name\+Generator Class Reference}
+\label{class_name_generator}\index{NameGenerator@{NameGenerator}}
+
+
+Class to generate new names.  
+
+
+
+
+{\ttfamily \#include $<$Name\+Generator.\+h$>$}
+
+
+
+Collaboration diagram for Name\+Generator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_name_generator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_name_generator_a65286a2e7fa4bb2c1e537b717481bf83}{Name\+Generator}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_name_generator_a5b533fdcf703b4228f51b7414f86f5cf}{Add\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Add name to used names. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_name_generator_aceed9ce745f6119cff95f5f05110078a}{Add\+Name}} (const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&name)
+\begin{DoxyCompactList}\small\item\em Add name to used names. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_name_generator_a5ac6459eec0253511b32e75a4a2db2c5}{Delete\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Deletes name from dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_name_generator_a72e1d8d5e3d7643ccf50032ec5fa84fd}{Delete\+Name}} (const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&name)
+\begin{DoxyCompactList}\small\item\em Deletes name from dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_name_generator_a66cd33de4457d30c98cc1641fdb901ba}{Is\+Name\+Used}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Checks if name is used. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_name_generator_a9d4e858d3cc958bdc901f7e4392fe82e}{Is\+Name\+Used}} (const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&name) const
+\begin{DoxyCompactList}\small\item\em Checks if name is used. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_name_generator_a7a8545f98c8b69b25e398cd90a97db26}{Rename}} (const std\+::string \&old\+\_\+name, const std\+::string \&new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Renames name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_name_generator_ab72dec3e1f9b876e83030f11fbc1dacd}{Rename}} (const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&old\+\_\+name, const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Renames name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \mbox{\hyperlink{class_name_generator_aac7a85f2c6bf9252b4251d45f1ce1f31}{Generate\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Generate new name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \mbox{\hyperlink{class_name_generator_af45fc6a331bc25f2bbf1cef7e0629220}{Generate\+Name}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Generate new name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \mbox{\hyperlink{class_name_generator_a9044e8db372f29bd89167667f1ba5442}{Parse\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Parses name. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} \mbox{\hyperlink{class_name_generator_a55a2dce19f5e88f51a781d3982e46c85}{Parse\+Subname}} (const std\+::string \&subname)
+\begin{DoxyCompactList}\small\item\em Parses subname. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_name_generator_a35774c77cc59801524711af2c731d564}\label{class_name_generator_a35774c77cc59801524711af2c731d564}} 
+static constexpr char {\bfseries k\+Delimiter} = \textquotesingle{}\+\_\+\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Delimiter for subnames. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \mbox{\hyperlink{class_name_generator_a01bdc0ebd4a9a5e7493439851fa982fc}{Generate\+Subname}} (const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&parsed\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Generate new subname. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \mbox{\hyperlink{class_name_generator_a452200c93033d9b7a365aaed9642e3b5}{Generate\+Number}} (const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&parsed\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Generate new subname. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_name_generator_a742676aa06e4d7240dd04d3ab0171848}{Is\+Name\+Empty}} (const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&parsed\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Checks if name is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_name_generator_a018a35ee19025b0e85dab0b439fd9527}\label{class_name_generator_a018a35ee19025b0e85dab0b439fd9527}} 
+\mbox{\hyperlink{class_dictionary}{Name\+Dictionary}} {\bfseries used\+\_\+names\+\_\+}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_dictionary}{Dictionary}} of used names. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to generate new names. 
+
+This class is used to generate new names for objects. Also it can change a lit bit a name to make it unique.
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+3
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_name_generator_a65286a2e7fa4bb2c1e537b717481bf83}\label{class_name_generator_a65286a2e7fa4bb2c1e537b717481bf83}} 
+\index{NameGenerator@{NameGenerator}!NameGenerator@{NameGenerator}}
+\index{NameGenerator@{NameGenerator}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{NameGenerator()}{NameGenerator()}}
+{\footnotesize\ttfamily Name\+Generator\+::\+Name\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_name_generator_aceed9ce745f6119cff95f5f05110078a}\label{class_name_generator_aceed9ce745f6119cff95f5f05110078a}} 
+\index{NameGenerator@{NameGenerator}!AddName@{AddName}}
+\index{AddName@{AddName}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{AddName()}{AddName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Name\+Generator\+::\+Add\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Add name to used names. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was not used, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_aceed9ce745f6119cff95f5f05110078a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_a5b533fdcf703b4228f51b7414f86f5cf}\label{class_name_generator_a5b533fdcf703b4228f51b7414f86f5cf}} 
+\index{NameGenerator@{NameGenerator}!AddName@{AddName}}
+\index{AddName@{AddName}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{AddName()}{AddName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Name\+Generator\+::\+Add\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Add name to used names. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was not used, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a5b533fdcf703b4228f51b7414f86f5cf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a5b533fdcf703b4228f51b7414f86f5cf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_a72e1d8d5e3d7643ccf50032ec5fa84fd}\label{class_name_generator_a72e1d8d5e3d7643ccf50032ec5fa84fd}} 
+\index{NameGenerator@{NameGenerator}!DeleteName@{DeleteName}}
+\index{DeleteName@{DeleteName}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{DeleteName()}{DeleteName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Name\+Generator\+::\+Delete\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Deletes name from dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was deleted, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a72e1d8d5e3d7643ccf50032ec5fa84fd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_a5ac6459eec0253511b32e75a4a2db2c5}\label{class_name_generator_a5ac6459eec0253511b32e75a4a2db2c5}} 
+\index{NameGenerator@{NameGenerator}!DeleteName@{DeleteName}}
+\index{DeleteName@{DeleteName}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{DeleteName()}{DeleteName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Name\+Generator\+::\+Delete\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Deletes name from dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was deleted, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a5ac6459eec0253511b32e75a4a2db2c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a5ac6459eec0253511b32e75a4a2db2c5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_aac7a85f2c6bf9252b4251d45f1ce1f31}\label{class_name_generator_aac7a85f2c6bf9252b4251d45f1ce1f31}} 
+\index{NameGenerator@{NameGenerator}!GenerateName@{GenerateName}}
+\index{GenerateName@{GenerateName}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateName()}{GenerateName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} Name\+Generator\+::\+Generate\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Generate new name. 
+
+Generate name in this pattern\+: Alphabet + Number (if needed) For example\+: A, B, ... , C\+\_\+0, ... , H\+\_\+239, ...
+
+\begin{DoxyReturn}{Returns}
+Generated name. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{class_name_generator_aac7a85f2c6bf9252b4251d45f1ce1f31_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_aac7a85f2c6bf9252b4251d45f1ce1f31_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_af45fc6a331bc25f2bbf1cef7e0629220}\label{class_name_generator_af45fc6a331bc25f2bbf1cef7e0629220}} 
+\index{NameGenerator@{NameGenerator}!GenerateName@{GenerateName}}
+\index{GenerateName@{GenerateName}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateName()}{GenerateName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} Name\+Generator\+::\+Generate\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Generate new name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to adjust (to avoid duplicates).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Adjusted name (to avoid duplicates). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_af45fc6a331bc25f2bbf1cef7e0629220_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_a452200c93033d9b7a365aaed9642e3b5}\label{class_name_generator_a452200c93033d9b7a365aaed9642e3b5}} 
+\index{NameGenerator@{NameGenerator}!GenerateNumber@{GenerateNumber}}
+\index{GenerateNumber@{GenerateNumber}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateNumber()}{GenerateNumber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} Name\+Generator\+::\+Generate\+Number (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&}]{parsed\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generate new subname. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+\_\+name} & Subname to adjust (to avoid duplicates).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Adjusted subname (to avoid duplicates). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a452200c93033d9b7a365aaed9642e3b5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a452200c93033d9b7a365aaed9642e3b5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_a01bdc0ebd4a9a5e7493439851fa982fc}\label{class_name_generator_a01bdc0ebd4a9a5e7493439851fa982fc}} 
+\index{NameGenerator@{NameGenerator}!GenerateSubname@{GenerateSubname}}
+\index{GenerateSubname@{GenerateSubname}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateSubname()}{GenerateSubname()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} Name\+Generator\+::\+Generate\+Subname (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&}]{parsed\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generate new subname. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+\_\+name} & Subname to adjust (to avoid duplicates).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Adjusted subname (to avoid duplicates). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a01bdc0ebd4a9a5e7493439851fa982fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a01bdc0ebd4a9a5e7493439851fa982fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_a742676aa06e4d7240dd04d3ab0171848}\label{class_name_generator_a742676aa06e4d7240dd04d3ab0171848}} 
+\index{NameGenerator@{NameGenerator}!IsNameEmpty@{IsNameEmpty}}
+\index{IsNameEmpty@{IsNameEmpty}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{IsNameEmpty()}{IsNameEmpty()}}
+{\footnotesize\ttfamily bool Name\+Generator\+::\+Is\+Name\+Empty (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&}]{parsed\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if name is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+\_\+name} & Name to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name is empty, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a742676aa06e4d7240dd04d3ab0171848_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_a9d4e858d3cc958bdc901f7e4392fe82e}\label{class_name_generator_a9d4e858d3cc958bdc901f7e4392fe82e}} 
+\index{NameGenerator@{NameGenerator}!IsNameUsed@{IsNameUsed}}
+\index{IsNameUsed@{IsNameUsed}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{IsNameUsed()}{IsNameUsed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Name\+Generator\+::\+Is\+Name\+Used (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Checks if name is used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name is used, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a9d4e858d3cc958bdc901f7e4392fe82e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_a66cd33de4457d30c98cc1641fdb901ba}\label{class_name_generator_a66cd33de4457d30c98cc1641fdb901ba}} 
+\index{NameGenerator@{NameGenerator}!IsNameUsed@{IsNameUsed}}
+\index{IsNameUsed@{IsNameUsed}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{IsNameUsed()}{IsNameUsed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Name\+Generator\+::\+Is\+Name\+Used (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Checks if name is used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name is used, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a66cd33de4457d30c98cc1641fdb901ba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a66cd33de4457d30c98cc1641fdb901ba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_a9044e8db372f29bd89167667f1ba5442}\label{class_name_generator_a9044e8db372f29bd89167667f1ba5442}} 
+\index{NameGenerator@{NameGenerator}!ParseName@{ParseName}}
+\index{ParseName@{ParseName}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{ParseName()}{ParseName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} Name\+Generator\+::\+Parse\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parses name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to parse.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Parsed name. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a9044e8db372f29bd89167667f1ba5442_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a9044e8db372f29bd89167667f1ba5442_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_a55a2dce19f5e88f51a781d3982e46c85}\label{class_name_generator_a55a2dce19f5e88f51a781d3982e46c85}} 
+\index{NameGenerator@{NameGenerator}!ParseSubname@{ParseSubname}}
+\index{ParseSubname@{ParseSubname}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{ParseSubname()}{ParseSubname()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} Name\+Generator\+::\+Parse\+Subname (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{subname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parses subname. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subname} & Subname to parse.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Parsed subname. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a55a2dce19f5e88f51a781d3982e46c85_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_ab72dec3e1f9b876e83030f11fbc1dacd}\label{class_name_generator_ab72dec3e1f9b876e83030f11fbc1dacd}} 
+\index{NameGenerator@{NameGenerator}!Rename@{Rename}}
+\index{Rename@{Rename}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{Rename()}{Rename()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Name\+Generator\+::\+Rename (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&}]{old\+\_\+name,  }\item[{const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&}]{new\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Renames name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+\_\+name} & Old name. \\
+\hline
+{\em new\+\_\+name} & New name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was renamed, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_ab72dec3e1f9b876e83030f11fbc1dacd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_name_generator_a7a8545f98c8b69b25e398cd90a97db26}\label{class_name_generator_a7a8545f98c8b69b25e398cd90a97db26}} 
+\index{NameGenerator@{NameGenerator}!Rename@{Rename}}
+\index{Rename@{Rename}!NameGenerator@{NameGenerator}}
+\doxysubsubsection{\texorpdfstring{Rename()}{Rename()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Name\+Generator\+::\+Rename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{old\+\_\+name,  }\item[{const std\+::string \&}]{new\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Renames name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+\_\+name} & Old name. \\
+\hline
+{\em new\+\_\+name} & New name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was renamed, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_name_generator_a7a8545f98c8b69b25e398cd90a97db26_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{class_name_generator_a7a8545f98c8b69b25e398cd90a97db26_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Name\+Generator.\+h\item 
+Homo\+Gebra/Name\+Generator.\+cpp\end{DoxyCompactItemize}

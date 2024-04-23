@@ -1,0 +1,13 @@
+<map id="ObservableInterface&lt; Observer &gt;" name="ObservableInterface&lt; Observer &gt;">
+<area shape="rect" id="node1" title=" " alt="" coords="415,5,577,127"/>
+<area shape="rect" id="node2" href="$class_observable.html" title=" " alt="" coords="177,175,373,311"/>
+<area shape="rect" id="node8" href="$class_observable.html" title=" " alt="" coords="399,182,593,303"/>
+<area shape="rect" id="node11" href="$class_observable.html" title=" " alt="" coords="618,182,779,303"/>
+<area shape="rect" id="node3" href="$class_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="167,359,379,451"/>
+<area shape="rect" id="node4" href="$class_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="151,572,387,649"/>
+<area shape="rect" id="node5" href="$class_conic_implementation.html" title="Implementation of Conic." alt="" coords="5,771,168,877"/>
+<area shape="rect" id="node6" href="$class_line_implementation.html" title="Implementation of Line." alt="" coords="192,771,347,877"/>
+<area shape="rect" id="node7" href="$class_point_implementation.html" title="Implementation of Point." alt="" coords="371,771,531,877"/>
+<area shape="rect" id="node9" href="$class_observable_plane.html" title=" " alt="" coords="423,359,569,451"/>
+<area shape="rect" id="node10" href="$class_plane_implementation.html" title="Implementation of Plane." alt="" coords="412,499,583,723"/>
+</map>

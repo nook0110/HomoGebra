@@ -1,0 +1,4 @@
+<map id="Gui::ObjectMenu::Construct" name="Gui::ObjectMenu::Construct">
+<area shape="rect" id="node1" title="Constructs the window." alt="" coords="237,5,421,31"/>
+<area shape="rect" id="node2" href="$class_gui_1_1_object_menu.html#a4c6f98e5b079bc256ca51bff6ac76ae1" title="Constructs editor of object." alt="" coords="5,5,189,31"/>
+</map>

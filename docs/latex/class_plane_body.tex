@@ -1,0 +1,163 @@
+\hypertarget{class_plane_body}{}\doxysection{Plane\+Body Class Reference}
+\label{class_plane_body}\index{PlaneBody@{PlaneBody}}
+
+
+Class that represents a plane body.  
+
+
+
+
+{\ttfamily \#include $<$Plane\+Body.\+h$>$}
+
+
+
+Inheritance diagram for Plane\+Body\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_plane_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Plane\+Body\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_plane_body__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_plane_body_ac3b447c1c550e2c4d3cb16c0583a8c1d}\label{class_plane_body_ac3b447c1c550e2c4d3cb16c0583a8c1d}} 
+void {\bfseries Resize} (const sf\+::\+Vector2f \&size)
+\item 
+void \mbox{\hyperlink{class_plane_body_a8bf894e8f3bb247bd9448e5f40202038}{Update}} (const sf\+::\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Update the plane body. \end{DoxyCompactList}\item 
+const sf\+::\+View \& \mbox{\hyperlink{class_plane_body_ad2856afea6c1a95092b409f21e25db31}{Get\+View}} () const
+\begin{DoxyCompactList}\small\item\em Get the view of the plane. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plane_body_ac0a8904a9908d0e0b397ad29e083fed1}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
+\begin{DoxyCompactList}\small\item\em Draw the plane to a render target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_plane_body_abfdc4107a95f04d527485de780323f23}{Update\+Zoom}} (const sf\+::\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Update the plane body with mouse event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_plane_body_a1a812c41b7ece9968c87c5a97e480f26}\label{class_plane_body_a1a812c41b7ece9968c87c5a97e480f26}} 
+sf\+::\+View {\bfseries view\+\_\+}
+\begin{DoxyCompactList}\small\item\em View of the plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that represents a plane body. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_plane_body_ac0a8904a9908d0e0b397ad29e083fed1}\label{class_plane_body_ac0a8904a9908d0e0b397ad29e083fed1}} 
+\index{PlaneBody@{PlaneBody}!draw@{draw}}
+\index{draw@{draw}!PlaneBody@{PlaneBody}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Plane\+Body\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Draw the plane to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to. \\
+\hline
+{\em states} & Current render states. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_plane_body_ad2856afea6c1a95092b409f21e25db31}\label{class_plane_body_ad2856afea6c1a95092b409f21e25db31}} 
+\index{PlaneBody@{PlaneBody}!GetView@{GetView}}
+\index{GetView@{GetView}!PlaneBody@{PlaneBody}}
+\doxysubsubsection{\texorpdfstring{GetView()}{GetView()}}
+{\footnotesize\ttfamily const sf\+::\+View \& Plane\+Body\+::\+Get\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the view of the plane. 
+
+\begin{DoxyReturn}{Returns}
+View of the plane. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{class_plane_body_ad2856afea6c1a95092b409f21e25db31_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_body_a8bf894e8f3bb247bd9448e5f40202038}\label{class_plane_body_a8bf894e8f3bb247bd9448e5f40202038}} 
+\index{PlaneBody@{PlaneBody}!Update@{Update}}
+\index{Update@{Update}!PlaneBody@{PlaneBody}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Plane\+Body\+::\+Update (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})}
+
+
+
+Update the plane body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Event to update the plane body. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_plane_body_a8bf894e8f3bb247bd9448e5f40202038_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{class_plane_body_a8bf894e8f3bb247bd9448e5f40202038_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plane_body_abfdc4107a95f04d527485de780323f23}\label{class_plane_body_abfdc4107a95f04d527485de780323f23}} 
+\index{PlaneBody@{PlaneBody}!UpdateZoom@{UpdateZoom}}
+\index{UpdateZoom@{UpdateZoom}!PlaneBody@{PlaneBody}}
+\doxysubsubsection{\texorpdfstring{UpdateZoom()}{UpdateZoom()}}
+{\footnotesize\ttfamily void Plane\+Body\+::\+Update\+Zoom (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the plane body with mouse event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Mouse event to update the plane body. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plane_body_abfdc4107a95f04d527485de780323f23_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Plane\+Body.\+h\item 
+Homo\+Gebra/Plane\+Body.\+cpp\end{DoxyCompactItemize}

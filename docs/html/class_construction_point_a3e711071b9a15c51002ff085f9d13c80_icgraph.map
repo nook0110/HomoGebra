@@ -1,0 +1,5 @@
+<map id="ConstructionPoint::SetEquation" name="ConstructionPoint::SetEquation">
+<area shape="rect" id="node1" title="Set equation of point." alt="" coords="471,5,604,45"/>
+<area shape="rect" id="node2" href="$class_point_on_plane.html#a12f2b237582a65d064d53b556115e1e6" title="Recalculate equation of point." alt="" coords="244,5,423,45"/>
+<area shape="rect" id="node3" href="$class_point_on_plane.html#a957e3bafd61b3aef0dd9ec06b23fe0b0" title="Constructs point by equation." alt="" coords="5,13,196,38"/>
+</map>

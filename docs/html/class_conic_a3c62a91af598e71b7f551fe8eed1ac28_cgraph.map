@@ -1,0 +1,4 @@
+<map id="Conic::GetDistance" name="Conic::GetDistance">
+<area shape="rect" id="node1" title="Gets distance from object to position." alt="" coords="5,5,140,31"/>
+<area shape="rect" id="node2" href="$class_conic_body.html#ab91ca911b8cdccdcf537b1658877e5de" title="Gets distance from object to position." alt="" coords="188,5,353,31"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="HomoGebra::ObservableGeometricObject::Notify" name="HomoGebra::ObservableGeometricObject::Notify">
+<area shape="rect" id="node1" title="Notify all observers about event." alt="" coords="555,243,777,283"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_point.html#aa6afca5afc61d974e7cc616210d2d535" title="Notify observers about event." alt="" coords="311,55,482,80"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_line.html#a7acb8d15cec8dd3f082052a3fad7a48f" title="Notify observers about event." alt="" coords="315,153,479,179"/>
+<area shape="rect" id="node8" href="$class_homo_gebra_1_1_conic.html#ab5ba44d05cfe3c97cc89f862e102816e" title="Notify observers about event." alt="" coords="310,221,483,247"/>
+<area shape="rect" id="node11" href="$class_homo_gebra_1_1_conic_implementation.html#a882863c438344ca7bda65419fa6d62b1" title="Sets new equation of conic." alt="" coords="287,271,507,311"/>
+<area shape="rect" id="node13" href="$class_homo_gebra_1_1_line_implementation.html#a0fb2166b441eb2a95aebe0088585aed7" title="Sets new equation of line." alt="" coords="291,335,502,375"/>
+<area shape="rect" id="node15" href="$class_homo_gebra_1_1_point_implementation.html#afb3ed68f34d1c90ed3c95bdd92464f8b" title="Sets new equation of point." alt="" coords="288,399,505,439"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_point.html#aeb89911180d3b8089ecd3bf832f855ab" title="Implementation interface." alt="" coords="7,5,237,31"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_point.html#a0deee39b4322072045972f72817151ba" title="Sets new name of object." alt="" coords="27,55,217,80"/>
+<area shape="rect" id="node6" href="$class_homo_gebra_1_1_line.html#a48ed4c75b99ed7db509691886de7004e" title="Destroy this object." alt="" coords="10,104,234,129"/>
+<area shape="rect" id="node7" href="$class_homo_gebra_1_1_line.html#ad4a16d70f2b01dde5d47ba5a4a8618f7" title="Sets new name of object." alt="" coords="29,153,215,179"/>
+<area shape="rect" id="node9" href="$class_homo_gebra_1_1_conic.html#a605bc219c7bad10199d8d00bf417babb" title="Destroy this object." alt="" coords="5,203,239,228"/>
+<area shape="rect" id="node10" href="$class_homo_gebra_1_1_conic.html#af842a88d0157d5ef972866516ee77f4b" title="Sets new name of object." alt="" coords="25,252,219,277"/>
+<area shape="rect" id="node12" href="$class_homo_gebra_1_1_conic.html#a1fb2cae5f5d711e51eeabe367a94c324" title="Set new equation of conic." alt="" coords="17,301,227,327"/>
+<area shape="rect" id="node14" href="$class_homo_gebra_1_1_line.html#a07f172fe1f6c667d782e92d29a4159eb" title="Set new equation of line." alt="" coords="21,351,223,376"/>
+<area shape="rect" id="node16" href="$class_homo_gebra_1_1_point.html#a1343df45b3cf35e6353711d40c8000c0" title="Set new equation of point." alt="" coords="18,407,226,432"/>
+</map>

@@ -1,0 +1,62 @@
+\hypertarget{_window_handler_8h_source}{}\doxysection{Window\+Handler.\+h}
+\label{_window_handler_8h_source}\index{HomoGebra/WindowHandler.h@{HomoGebra/WindowHandler.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Widget.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }Gui}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gui_1_1_global}{Global}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_global_a08ec9a506fb4b9a149227a437e6bb247}{Update}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_global_a78eaed605f99fbf47b0a4fc871ea3ece}{Render}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_global_aa1f482e829751f6113546a10265a532c}{ProcessEvent}}(\textcolor{keyword}{const}\ sf::Event\&\ event);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{static}\ sf::Clock\ \mbox{\hyperlink{class_gui_1_1_global_a2b20f70219852e3b786ab0f4980b4dbb}{delta\_clock\_}};\ \ }
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gui_1_1_window}{Window}}}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{class_gui_1_1_window_aa833a69eac7e9148647d260799115f8c}{Window}}(std::string\ name,\ std::unique\_ptr<Widget>\ widget)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_gui_1_1_window_a0bdb55162376d8310e633cf2e1fc808b}{name\_}}(std::move(name)),\ \mbox{\hyperlink{class_gui_1_1_window_a2a9053d11661c2f7241c24b72bb32a1b}{widget\_}}(std::move(widget))}
+\DoxyCodeLine{00069\ \ \ \{\}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_window_a2baaa0af83bbf036ae7d268cba434633}{Draw}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \ \ [[nodiscard]]\ \mbox{\hyperlink{class_gui_1_1_widget}{Widget}}*\ \mbox{\hyperlink{class_gui_1_1_window_abe85e427fe69f07716ae6ef8bb0d788f}{GetWidget}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_window_a3fc1625125054931291db2f59e29a1f8}{Begin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00096\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_window_a27034841f2ba0aa11a4892ef37b57892}{End}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ std::string\ \mbox{\hyperlink{class_gui_1_1_window_a0bdb55162376d8310e633cf2e1fc808b}{name\_}};\ \ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ std::unique\_ptr<Widget>\ \mbox{\hyperlink{class_gui_1_1_window_a2a9053d11661c2f7241c24b72bb32a1b}{widget\_}};\ \ }
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gui_1_1_window_handler}{WindowHandler}}}
+\DoxyCodeLine{00111\ \{}
+\DoxyCodeLine{00112\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{class_gui_1_1_window_handler_ae30672ce6caa49846af58db9ca19877d}{WindowHandler}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00123\ \ \ \mbox{\hyperlink{class_gui_1_1_window_handler_a4b51ca4ed193442345f4cb97f7c6d983}{\string~WindowHandler}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00129\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_window_handler_ae193d564f98b12988a9d02c2534de108}{Construct}}();}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00136\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_window_handler_a408f7f8248ac5cd70226b56324be4dbb}{AddWindow}}(std::unique\_ptr<Window>\ window);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00143\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gui_1_1_window_handler_a8cb14dcbb286eee0f2aee05c80ec00cf}{DeleteWindow}}(\mbox{\hyperlink{class_gui_1_1_window}{Window}}*\ window);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00146\ \ \ std::list<std::unique\_ptr<Window>>\ \mbox{\hyperlink{class_gui_1_1_window_handler_a12dab37e5adf545445283df46650a98f}{windows\_}};\ \ }
+\DoxyCodeLine{00147\ \};}
+\DoxyCodeLine{00148\ \}\ \ \textcolor{comment}{//\ namespace\ Gui}}
+
+\end{DoxyCode}

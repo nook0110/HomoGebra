@@ -1,0 +1,250 @@
+\hypertarget{class_transformation}{}\doxysection{Transformation Class Reference}
+\label{class_transformation}\index{Transformation@{Transformation}}
+
+
+Class to save and do homography.  
+
+
+
+
+{\ttfamily \#include $<$Coordinate.\+h$>$}
+
+
+
+Collaboration diagram for Transformation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{class_transformation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_transformation_a063b6c06765875368416a3c5f9aac5ca}\label{class_transformation_a063b6c06765875368416a3c5f9aac5ca}} 
+using {\bfseries Row} = \mbox{\hyperlink{class_transformation_matrix_a5432c6a888904bd4b4743d400e4a6d25}{Transformation\+Matrix\+::\+Matrix\+Row}}
+\begin{DoxyCompactList}\small\item\em Row of matrix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_transformation_ab4bfdd238ad1750b0e4dce9afe8b1838}\label{class_transformation_ab4bfdd238ad1750b0e4dce9afe8b1838}} 
+using {\bfseries Column} = \mbox{\hyperlink{class_transformation_matrix_a83a68faedab3909e1fc5739b3df6741c}{Transformation\+Matrix\+::\+Matrix\+Column}}
+\begin{DoxyCompactList}\small\item\em Column of matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transformation_a9a346ba5a77f586cacf6c311d2a683b0}{Transformation}} (\mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}} transformation=\mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}}())
+\begin{DoxyCompactList}\small\item\em Constructs transformation from matrix. For default transformation use identity matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_transformation_a5b23f62e7697c24191cbadede00b875a}{Transformation}} (const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&first\+\_\+preimage, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&second\+\_\+preimage, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&third\+\_\+preimage, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&fourth\+\_\+preimage, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&first\+\_\+image, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&second\+\_\+image, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&third\+\_\+image, const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&fourth\+\_\+image)
+\begin{DoxyCompactList}\small\item\em Construct transformation from movement of 4 points. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{class_transformation}{Transformation}} $>$ \mbox{\hyperlink{class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c}{Get\+Inverse}} () const
+\begin{DoxyCompactList}\small\item\em Calculate inverse of transformation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_transformation}{Transformation}} \& \mbox{\hyperlink{class_transformation_a5fcdcce2c2a0a911b2f038e5825bdebf}{operator$\ast$=}} (const \mbox{\hyperlink{class_transformation}{Transformation}} \&other)
+\begin{DoxyCompactList}\small\item\em Apply transformation to this. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_transformation}{Transformation}} \mbox{\hyperlink{class_transformation_a54de292e266810d6762d532c12f130fa}{operator$\ast$}} (const \mbox{\hyperlink{class_transformation}{Transformation}} \&other) const
+\begin{DoxyCompactList}\small\item\em Combine two transformations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \mbox{\hyperlink{class_transformation_a02f7a95281a83744d6f34a631c8b30a1}{operator()}} (const \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \&coordinate) const
+\begin{DoxyCompactList}\small\item\em Apply transformation to a homogeneous coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}} \mbox{\hyperlink{class_transformation_a411585533799d6bfe14484f2b83bd7a7}{transformation\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Matrix of transformation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \mbox{\hyperlink{class_transformation_ac3c37f13b84f9ad743b12e848f21b94c}{operator$\ast$}} (\mbox{\hyperlink{class_transformation}{Transformation}} transformation, const \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \&coordinate)
+\begin{DoxyCompactList}\small\item\em Overload of operator $\ast$ for homogeneous coordinate and transformation. Transforms coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to save and do homography. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_transformation_a9a346ba5a77f586cacf6c311d2a683b0}\label{class_transformation_a9a346ba5a77f586cacf6c311d2a683b0}} 
+\index{Transformation@{Transformation}!Transformation@{Transformation}}
+\index{Transformation@{Transformation}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{Transformation()}{Transformation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Transformation\+::\+Transformation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}}}]{transformation = {\ttfamily \mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs transformation from matrix. For default transformation use identity matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transformation} & Matrix of transformation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_transformation_a5b23f62e7697c24191cbadede00b875a}\label{class_transformation_a5b23f62e7697c24191cbadede00b875a}} 
+\index{Transformation@{Transformation}!Transformation@{Transformation}}
+\index{Transformation@{Transformation}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{Transformation()}{Transformation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Transformation\+::\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{first\+\_\+preimage,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{second\+\_\+preimage,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{third\+\_\+preimage,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{fourth\+\_\+preimage,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{first\+\_\+image,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{second\+\_\+image,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{third\+\_\+image,  }\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{fourth\+\_\+image }\end{DoxyParamCaption})}
+
+
+
+Construct transformation from movement of 4 points. 
+
+This transformation will do homography (preimage-\/\texorpdfstring{$>$}{>}image) A projective transformation of the plane is defined by specifying four pairs of corresponding mapping points. For correct homography three points of the four images or preimages should not lie on the same line. (Otherwise it will degenerate)
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+\_\+preimage} & First point preimage position \\
+\hline
+{\em second\+\_\+preimage} & Second point preimage position \\
+\hline
+{\em third\+\_\+preimage} & Third point preimage position \\
+\hline
+{\em fourth\+\_\+preimage} & Fourth point preimage position \\
+\hline
+{\em first\+\_\+image} & First point image position \\
+\hline
+{\em second\+\_\+image} & Second point preimage position \\
+\hline
+{\em third\+\_\+image} & Third point preimage position \\
+\hline
+{\em fourth\+\_\+image} & Fourth point preimage position \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transformation_a5b23f62e7697c24191cbadede00b875a_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c}\label{class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c}} 
+\index{Transformation@{Transformation}!GetInverse@{GetInverse}}
+\index{GetInverse@{GetInverse}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{GetInverse()}{GetInverse()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{class_transformation}{Transformation}} $>$ Transformation\+::\+Get\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Calculate inverse of transformation. 
+
+\begin{DoxyReturn}{Returns}
+Return inverse if it exists, otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transformation_ac3d5ded1acd2dfd8f61571c9da49915c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_transformation_a02f7a95281a83744d6f34a631c8b30a1}\label{class_transformation_a02f7a95281a83744d6f34a631c8b30a1}} 
+\index{Transformation@{Transformation}!operator()@{operator()}}
+\index{operator()@{operator()}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} Transformation\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \&}]{coordinate }\end{DoxyParamCaption}) const}
+
+
+
+Apply transformation to a homogeneous coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinate} & A homogeneous coordinate to apply transformation on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Coordinate after transformation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_transformation_a54de292e266810d6762d532c12f130fa}\label{class_transformation_a54de292e266810d6762d532c12f130fa}} 
+\index{Transformation@{Transformation}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transformation}{Transformation}} Transformation\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_transformation}{Transformation}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Combine two transformations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Which transformation to apply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A combined transformation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_transformation_a5fcdcce2c2a0a911b2f038e5825bdebf}\label{class_transformation_a5fcdcce2c2a0a911b2f038e5825bdebf}} 
+\index{Transformation@{Transformation}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transformation}{Transformation}} \& Transformation\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_transformation}{Transformation}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Apply transformation to this. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Which transformation to apply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this transformation. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_transformation_ac3c37f13b84f9ad743b12e848f21b94c}\label{class_transformation_ac3c37f13b84f9ad743b12e848f21b94c}} 
+\index{Transformation@{Transformation}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} operator$\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_transformation}{Transformation}}}]{transformation,  }\item[{const \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \&}]{coordinate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload of operator $\ast$ for homogeneous coordinate and transformation. Transforms coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinate} & Coordinate to transform \\
+\hline
+{\em transformation} & \mbox{\hyperlink{class_transformation}{Transformation}} to apply\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Coordinate after transformation 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_transformation_a411585533799d6bfe14484f2b83bd7a7}\label{class_transformation_a411585533799d6bfe14484f2b83bd7a7}} 
+\index{Transformation@{Transformation}!transformation\_@{transformation\_}}
+\index{transformation\_@{transformation\_}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{transformation\_}{transformation\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transformation_matrix}{Transformation\+Matrix}} Transformation\+::transformation\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Matrix of transformation. 
+
+Member data. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Coordinate.\+h\item 
+Homo\+Gebra/Coordinate.\+cpp\end{DoxyCompactItemize}

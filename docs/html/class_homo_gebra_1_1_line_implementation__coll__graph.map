@@ -1,0 +1,15 @@
+<map id="HomoGebra::LineImplementation" name="HomoGebra::LineImplementation">
+<area shape="rect" id="node1" title="Implementation of Line." alt="" coords="450,917,661,1024"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="324,763,560,855"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="121,571,344,678"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_observable.html" title=" " alt="" coords="135,255,330,391"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_observable_interface.html" title="Interface for observers of geometric objects." alt="" coords="5,5,217,127"/>
+<area shape="rect" id="node6" href="$classstd_1_1list_3_01_geometric_object_observer_01_5_01_4.html" title=" " alt="" coords="242,27,463,105"/>
+<area shape="rect" id="node7" title=" " alt="" coords="369,579,531,671"/>
+<area shape="rect" id="node8" href="$struct_homo_gebra_1_1_line_equation.html" title="Struct that defines position of the line." alt="" coords="584,763,759,855"/>
+<area shape="rect" id="node9" href="$struct_homo_gebra_1_1_equation_base.html" title="Struct that defines position of the objects." alt="" coords="572,579,752,671"/>
+<area shape="rect" id="node10" href="$struct_homo_gebra_1_1_homogeneous_coordinate.html" title="Coordinates in ." alt="" coords="776,549,1020,700"/>
+<area shape="rect" id="node11" href="$class_homo_gebra_1_1_complex.html" title="Wrapper of std::complex." alt="" coords="819,189,977,457"/>
+<area shape="rect" id="node12" title=" " alt="" coords="750,20,883,112"/>
+<area shape="rect" id="node13" title=" " alt="" coords="908,20,1051,112"/>
+</map>

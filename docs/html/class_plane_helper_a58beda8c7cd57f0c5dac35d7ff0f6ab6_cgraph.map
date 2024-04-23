@@ -1,0 +1,5 @@
+<map id="PlaneHelper::GetNearestObject" name="PlaneHelper::GetNearestObject">
+<area shape="rect" id="node1" title="Gets a nearest object." alt="" coords="5,13,209,38"/>
+<area shape="rect" id="node2" href="$class_plane.html#a63a0c4f0805e18e27198e80ee4c8d0a9" title="Returns objects of GeometricObjectType." alt="" coords="257,13,387,38"/>
+<area shape="rect" id="node3" href="$class_plane_implementation.html#a8ccec81cd26877bcd9c0210d333c51ae" title="Get all objects of GeometricObjectType." alt="" coords="435,5,577,45"/>
+</map>

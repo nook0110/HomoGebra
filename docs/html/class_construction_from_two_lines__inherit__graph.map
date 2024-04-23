@@ -1,0 +1,6 @@
+<map id="ConstructionFromTwoLines" name="ConstructionFromTwoLines">
+<area shape="rect" id="node1" title="Construction of a point by intersection of two lines." alt="" coords="15,645,194,723"/>
+<area shape="rect" id="node2" href="$class_construction_point.html" title="Base class for all point constructions." alt="" coords="24,403,185,597"/>
+<area shape="rect" id="node3" href="$class_construction.html" title="Defines how object is created." alt="" coords="24,189,185,355"/>
+<area shape="rect" id="node4" href="$class_geometric_object_observer.html" title="Makes Construction an observer." alt="" coords="5,5,204,141"/>
+</map>

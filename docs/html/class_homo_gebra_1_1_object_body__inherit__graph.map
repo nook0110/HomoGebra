@@ -1,0 +1,7 @@
+<map id="HomoGebra::ObjectBody" name="HomoGebra::ObjectBody">
+<area shape="rect" id="node1" title="Base class for bodies." alt="" coords="186,131,353,281"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_conic_body.html" title="Body of a conic." alt="" coords="5,351,168,487"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_line_body.html" title="Body of a line." alt="" coords="193,351,346,487"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_point_body.html" title="Body of a point." alt="" coords="370,329,529,509"/>
+<area shape="rect" id="node2" title=" " alt="" coords="223,5,316,83"/>
+</map>

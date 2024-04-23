@@ -1,0 +1,112 @@
+\hypertarget{struct_homo_gebra_1_1_parsed_name}{}\doxysection{Homo\+Gebra\+::Parsed\+Name Struct Reference}
+\label{struct_homo_gebra_1_1_parsed_name}\index{HomoGebra::ParsedName@{HomoGebra::ParsedName}}
+
+
+Struct that contains parsed name.  
+
+
+
+
+{\ttfamily \#include $<$Name\+Generator.\+h$>$}
+
+
+
+Collaboration diagram for Homo\+Gebra\+::Parsed\+Name\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{struct_homo_gebra_1_1_parsed_name__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name_a72b384e51d206a80226053b2975865a7}{operator==}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares two parsed names. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name_a03c0d287e444f600186e174dbedbe6dc}{operator$<$}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares two parsed names. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name_a45dd0378b242fac9f667e3d69e15c3a2}{operator std\+::string}} () const
+\begin{DoxyCompactList}\small\item\em Converts parsed name to string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_homo_gebra_1_1_parsed_name_aeb2bb9b6ba0307816ef12de73b6bbc0a}\label{struct_homo_gebra_1_1_parsed_name_aeb2bb9b6ba0307816ef12de73b6bbc0a}} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_homo_gebra_1_1_parsed_name_a9d0acae9ced8966ac0f394a3e9955eab}\label{struct_homo_gebra_1_1_parsed_name_a9d0acae9ced8966ac0f394a3e9955eab}} 
+\mbox{\hyperlink{struct_homo_gebra_1_1_parsed_subname}{Parsed\+Subname}} {\bfseries parsed\+\_\+subname}
+\begin{DoxyCompactList}\small\item\em Parsed subname. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct that contains parsed name. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+3
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_homo_gebra_1_1_parsed_name_a45dd0378b242fac9f667e3d69e15c3a2}\label{struct_homo_gebra_1_1_parsed_name_a45dd0378b242fac9f667e3d69e15c3a2}} 
+\index{HomoGebra::ParsedName@{HomoGebra::ParsedName}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!HomoGebra::ParsedName@{HomoGebra::ParsedName}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily Homo\+Gebra\+::\+Parsed\+Name\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Converts parsed name to string. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{[}NAME\mbox{]}\+\_\+\mbox{[}SUBNAME\mbox{]}\mbox{[}NUMBER\mbox{]} if number is not empty, \mbox{[}NAME\mbox{]}\+\_\+\mbox{[}SUBNAME\mbox{]}, if subname is not empty, \mbox{[}NAME\mbox{]} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_homo_gebra_1_1_parsed_name_a03c0d287e444f600186e174dbedbe6dc}\label{struct_homo_gebra_1_1_parsed_name_a03c0d287e444f600186e174dbedbe6dc}} 
+\index{HomoGebra::ParsedName@{HomoGebra::ParsedName}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!HomoGebra::ParsedName@{HomoGebra::ParsedName}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Homo\+Gebra\+::\+Parsed\+Name\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares two parsed names. 
+
+Compare them by lexicographical order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Other parsed name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this is less than other, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_homo_gebra_1_1_parsed_name_a72b384e51d206a80226053b2975865a7}\label{struct_homo_gebra_1_1_parsed_name_a72b384e51d206a80226053b2975865a7}} 
+\index{HomoGebra::ParsedName@{HomoGebra::ParsedName}!operator==@{operator==}}
+\index{operator==@{operator==}!HomoGebra::ParsedName@{HomoGebra::ParsedName}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Homo\+Gebra\+::\+Parsed\+Name\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares two parsed names. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Other parsed name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if parsed names are equal, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Name\+Generator.\+h\item 
+Homo\+Gebra/Name\+Generator.\+cpp\end{DoxyCompactItemize}

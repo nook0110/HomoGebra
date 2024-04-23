@@ -1,0 +1,144 @@
+\hypertarget{class_dictionary}{}\doxysection{Dictionary\texorpdfstring{$<$}{<} Item \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_dictionary}\index{Dictionary$<$ Item $>$@{Dictionary$<$ Item $>$}}
+
+
+\mbox{\hyperlink{class_dictionary}{Dictionary}} that can store Sub\+Dictionaries.  
+
+
+
+
+{\ttfamily \#include $<$Dictionary.\+h$>$}
+
+
+
+Collaboration diagram for Dictionary\texorpdfstring{$<$}{<} Item \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{class_dictionary__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_dictionary_af4b92174ebcc5f97d188857b4994cc43}{Add\+Item}} (const Item \&item)
+\begin{DoxyCompactList}\small\item\em Adds item to dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dictionary_a789b397c30391149014f5e335db56cf0}{Delete\+Item}} (const Item \&item)
+\begin{DoxyCompactList}\small\item\em Deletes item from dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dictionary_a68f7dc94480a0373f5bd3442e6e19caf}{Is\+Item\+Used}} (const Item \&item) const
+\begin{DoxyCompactList}\small\item\em Checks if item is in dictionary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dictionary_a6f6efdefeb3fc46900cd0e3bc4113e5e}\label{class_dictionary_a6f6efdefeb3fc46900cd0e3bc4113e5e}} 
+std\+::map$<$ Item, bool $>$ {\bfseries used\+\_\+items\+\_\+}
+\begin{DoxyCompactList}\small\item\em Used items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Item$>$\newline
+class Dictionary$<$ Item $>$}
+\mbox{\hyperlink{class_dictionary}{Dictionary}} that can store Sub\+Dictionaries. 
+
+Can be used to have a complicated Name dictionary\+: \mbox{[}Name\mbox{]} -\/\texorpdfstring{$>$}{>} \mbox{[}Subname\mbox{]} -\/\texorpdfstring{$>$}{>} \mbox{[}Number\mbox{]}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Item} & Type of item for dictionary.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+2
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dictionary_af4b92174ebcc5f97d188857b4994cc43}\label{class_dictionary_af4b92174ebcc5f97d188857b4994cc43}} 
+\index{Dictionary$<$ Item $>$@{Dictionary$<$ Item $>$}!AddItem@{AddItem}}
+\index{AddItem@{AddItem}!Dictionary$<$ Item $>$@{Dictionary$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{AddItem()}{AddItem()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+bool \mbox{\hyperlink{class_dictionary}{Dictionary}}$<$ Item $>$\+::\+Add\+Item (\begin{DoxyParamCaption}\item[{const Item \&}]{item }\end{DoxyParamCaption})}
+
+
+
+Adds item to dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & Item to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if item was added, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_dictionary_af4b92174ebcc5f97d188857b4994cc43_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_dictionary_a789b397c30391149014f5e335db56cf0}\label{class_dictionary_a789b397c30391149014f5e335db56cf0}} 
+\index{Dictionary$<$ Item $>$@{Dictionary$<$ Item $>$}!DeleteItem@{DeleteItem}}
+\index{DeleteItem@{DeleteItem}!Dictionary$<$ Item $>$@{Dictionary$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{DeleteItem()}{DeleteItem()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+bool \mbox{\hyperlink{class_dictionary}{Dictionary}}$<$ Item $>$\+::\+Delete\+Item (\begin{DoxyParamCaption}\item[{const Item \&}]{item }\end{DoxyParamCaption})}
+
+
+
+Deletes item from dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & Item to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if item was deleted, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_dictionary_a789b397c30391149014f5e335db56cf0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_dictionary_a68f7dc94480a0373f5bd3442e6e19caf}\label{class_dictionary_a68f7dc94480a0373f5bd3442e6e19caf}} 
+\index{Dictionary$<$ Item $>$@{Dictionary$<$ Item $>$}!IsItemUsed@{IsItemUsed}}
+\index{IsItemUsed@{IsItemUsed}!Dictionary$<$ Item $>$@{Dictionary$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{IsItemUsed()}{IsItemUsed()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+bool \mbox{\hyperlink{class_dictionary}{Dictionary}}$<$ Item $>$\+::\+Is\+Item\+Used (\begin{DoxyParamCaption}\item[{const Item \&}]{item }\end{DoxyParamCaption}) const}
+
+
+
+Checks if item is in dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & Item to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if item is in, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_dictionary_a68f7dc94480a0373f5bd3442e6e19caf_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Dictionary.\+h\end{DoxyCompactItemize}

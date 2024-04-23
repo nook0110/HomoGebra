@@ -1,0 +1,22 @@
+\hypertarget{_plane_helper_8h_source}{}\doxysection{Plane\+Helper.\+h}
+\label{_plane_helper_8h_source}\index{HomoGebra/PlaneHelper.h@{HomoGebra/PlaneHelper.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Plane.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plane_helper}{PlaneHelper}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_plane_helper}{PlaneHelper}}(\mbox{\hyperlink{class_plane}{Plane}}\&\ plane);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ GeometricObjectType>}
+\DoxyCodeLine{00034\ \ \ std::shared\_ptr<GeometricObjectType>\ \mbox{\hyperlink{class_plane_helper_a58beda8c7cd57f0c5dac35d7ff0f6ab6}{GetNearestObject}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{const}\ sf::Vector2f\&\ position,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ max\_distance\ =\ std::numeric\_limits<float>::max());}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{class_plane}{Plane}}\&\ \mbox{\hyperlink{class_plane_helper_ac3c68a294277eee0ef43f2917c17fc7c}{plane\_}};\ \ }
+\DoxyCodeLine{00043\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,144 @@
+\hypertarget{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary}{}\doxysection{Name\+Dictionary\+::Subname\+Dictionary\+::Number\+Dictionary Struct Reference}
+\label{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary}\index{NameDictionary::SubnameDictionary::NumberDictionary@{NameDictionary::SubnameDictionary::NumberDictionary}}
+
+
+Struct to save numbers of subnames.  
+
+
+
+
+{\ttfamily \#include $<$Name\+Generator.\+h$>$}
+
+
+
+Collaboration diagram for Name\+Dictionary\+::Subname\+Dictionary\+::Number\+Dictionary\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_ab13bc14871a621a2cf1e966e9c35ebb4}{Add\+Number}} (const Parsed\+Number \&number)
+\begin{DoxyCompactList}\small\item\em Adds number to dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_a11362b333c62a5fdb49d200bcd82bd2f}{Delete\+Number}} (const Parsed\+Number \&number)
+\begin{DoxyCompactList}\small\item\em Deletes number from dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_a8cafe491f269ec8a609910b401e0cc03}{Is\+Number\+Used}} (const Parsed\+Number \&number) const
+\begin{DoxyCompactList}\small\item\em Checks if number is used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_a8825195ecc859fbcecc0c6aa06809e68}{Parse\+Subname}} (const std\+::string \&subname)
+\begin{DoxyCompactList}\small\item\em Parse subname from string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_a3e8deddbbe2ff5f8d6ab44996460b6ea}\label{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_a3e8deddbbe2ff5f8d6ab44996460b6ea}} 
+std\+::map$<$ Parsed\+Number, bool $>$ {\bfseries used\+\_\+numbers\+\_\+}
+\begin{DoxyCompactList}\small\item\em Map of used numbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct to save numbers of subnames. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_ab13bc14871a621a2cf1e966e9c35ebb4}\label{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_ab13bc14871a621a2cf1e966e9c35ebb4}} 
+\index{NameDictionary::SubnameDictionary::NumberDictionary@{NameDictionary::SubnameDictionary::NumberDictionary}!AddNumber@{AddNumber}}
+\index{AddNumber@{AddNumber}!NameDictionary::SubnameDictionary::NumberDictionary@{NameDictionary::SubnameDictionary::NumberDictionary}}
+\doxysubsubsection{\texorpdfstring{AddNumber()}{AddNumber()}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Subname\+Dictionary\+::\+Number\+Dictionary\+::\+Add\+Number (\begin{DoxyParamCaption}\item[{const Parsed\+Number \&}]{number }\end{DoxyParamCaption})}
+
+
+
+Adds number to dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Number to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if number was added, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_a11362b333c62a5fdb49d200bcd82bd2f}\label{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_a11362b333c62a5fdb49d200bcd82bd2f}} 
+\index{NameDictionary::SubnameDictionary::NumberDictionary@{NameDictionary::SubnameDictionary::NumberDictionary}!DeleteNumber@{DeleteNumber}}
+\index{DeleteNumber@{DeleteNumber}!NameDictionary::SubnameDictionary::NumberDictionary@{NameDictionary::SubnameDictionary::NumberDictionary}}
+\doxysubsubsection{\texorpdfstring{DeleteNumber()}{DeleteNumber()}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Subname\+Dictionary\+::\+Number\+Dictionary\+::\+Delete\+Number (\begin{DoxyParamCaption}\item[{const Parsed\+Number \&}]{number }\end{DoxyParamCaption})}
+
+
+
+Deletes number from dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Number to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if number was deleted, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_a8cafe491f269ec8a609910b401e0cc03}\label{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_a8cafe491f269ec8a609910b401e0cc03}} 
+\index{NameDictionary::SubnameDictionary::NumberDictionary@{NameDictionary::SubnameDictionary::NumberDictionary}!IsNumberUsed@{IsNumberUsed}}
+\index{IsNumberUsed@{IsNumberUsed}!NameDictionary::SubnameDictionary::NumberDictionary@{NameDictionary::SubnameDictionary::NumberDictionary}}
+\doxysubsubsection{\texorpdfstring{IsNumberUsed()}{IsNumberUsed()}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Subname\+Dictionary\+::\+Number\+Dictionary\+::\+Is\+Number\+Used (\begin{DoxyParamCaption}\item[{const Parsed\+Number \&}]{number }\end{DoxyParamCaption}) const}
+
+
+
+Checks if number is used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Number to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if number is used, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_a8825195ecc859fbcecc0c6aa06809e68}\label{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_a8825195ecc859fbcecc0c6aa06809e68}} 
+\index{NameDictionary::SubnameDictionary::NumberDictionary@{NameDictionary::SubnameDictionary::NumberDictionary}!ParseSubname@{ParseSubname}}
+\index{ParseSubname@{ParseSubname}!NameDictionary::SubnameDictionary::NumberDictionary@{NameDictionary::SubnameDictionary::NumberDictionary}}
+\doxysubsubsection{\texorpdfstring{ParseSubname()}{ParseSubname()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_parsed_subname}{Parsed\+Subname}} Name\+Dictionary\+::\+Subname\+Dictionary\+::\+Number\+Dictionary\+::\+Parse\+Subname (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{subname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parse subname from string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subname} & Subname to parse.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Parsed subname. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_name_dictionary_1_1_subname_dictionary_1_1_number_dictionary_a8825195ecc859fbcecc0c6aa06809e68_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Name\+Generator.\+h\item 
+Homo\+Gebra/Name\+Generator.\+cpp\end{DoxyCompactItemize}

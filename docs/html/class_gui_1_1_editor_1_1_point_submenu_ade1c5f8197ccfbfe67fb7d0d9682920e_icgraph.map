@@ -1,0 +1,5 @@
+<map id="Gui::Editor::PointSubmenu::DrawCurrentValues" name="Gui::Editor::PointSubmenu::DrawCurrentValues">
+<area shape="rect" id="node1" title="Render current variables." alt="" coords="463,5,640,45"/>
+<area shape="rect" id="node2" href="$class_gui_1_1_editor_1_1_point_submenu.html#a17fdb8b7b9723ee1ce10eed372c7b6fb" title="Renders the menu." alt="" coords="237,5,415,45"/>
+<area shape="rect" id="node3" href="$class_gui_1_1_object_menu.html#a7637c226cf849991fb09166f7def6db5" title="Constructs editor of point." alt="" coords="5,13,189,38"/>
+</map>

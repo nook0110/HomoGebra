@@ -1,0 +1,182 @@
+\hypertarget{class_homo_gebra_1_1_object_selector_body}{}\doxysection{Homo\+Gebra\+::Object\+Selector\+Body\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_homo_gebra_1_1_object_selector_body}\index{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}}
+
+
+Inheritance diagram for Homo\+Gebra\+::Object\+Selector\+Body\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_homo_gebra_1_1_object_selector_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Homo\+Gebra\+::Object\+Selector\+Body\texorpdfstring{$<$}{<} Geometric\+Object\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_selector_body__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_selector_body_a7dbcd734412185102189f59e986c0c30}\label{class_homo_gebra_1_1_object_selector_body_a7dbcd734412185102189f59e986c0c30}} 
+{\bfseries Object\+Selector\+Body} (\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}} $\ast$plane)
+\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body_a5fb9bc57eba5ed9a4e5979bd5d6d3430}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em Draws the body. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body_acf214f6889dccfe0e268e38bf3d4adea}{Set\+Object}} (Geometric\+Object\+Type $\ast$object)
+\begin{DoxyCompactList}\small\item\em Set selected object. \end{DoxyCompactList}\item 
+Geometric\+Object\+Type $\ast$ \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body_a3e071802addda388eb8ff13aa215b1e4}{Get\+Object}} () const
+\begin{DoxyCompactList}\small\item\em Get selected object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body_a7f8fbc56eb395235e76f6d56ba3e8ec5}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_plane_event_1_1_object_removed}{Plane\+Event\+::\+Object\+Removed}} \&object\+\_\+removed) override
+\begin{DoxyCompactList}\small\item\em Update, because sth was destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_homo_gebra_1_1_plane_observer}{Homo\+Gebra\+::\+Plane\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_homo_gebra_1_1_plane_observer_a73c89b31af05b2fbeeb89fe096b09bc9}{Plane\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_plane_observer_a72d7b3164d7f46dde2fc30e7c7c5f114}\label{class_homo_gebra_1_1_plane_observer_a72d7b3164d7f46dde2fc30e7c7c5f114}} 
+virtual {\bfseries $\sim$\+Plane\+Observer} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_homo_gebra_1_1_plane_observer_a63c18c088087d6520da4fb00a9d7cba7}{Update}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_plane_event_1_1_object_removed}{Plane\+Event\+::\+Object\+Removed}} \&object\+\_\+removed)=0
+\begin{DoxyCompactList}\small\item\em Update, because sth was destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body_abceaaf29b2bf812e02c9f1cfddd54b30}{Draw\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Draws name of selected object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body_a686bc13d4b2823ae1fe47a31a7965d71}{Draw\+List}} ()
+\begin{DoxyCompactList}\small\item\em Draws list to choose object from. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body_a3acadbf3bffb1947cae782ed82938ab5}{Draw\+Setter}} ()
+\begin{DoxyCompactList}\small\item\em Draws setter through last nearest object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_selector_body_a2be77e9977359fa69eb6e5b604f99d83}\label{class_homo_gebra_1_1_object_selector_body_a2be77e9977359fa69eb6e5b604f99d83}} 
+Geometric\+Object\+Type $\ast$ {\bfseries object\+\_\+} \{\}
+\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_selector_body_a49dcfc53e5309a0c69309ab348daef87}\label{class_homo_gebra_1_1_object_selector_body_a49dcfc53e5309a0c69309ab348daef87}} 
+\mbox{\hyperlink{class_homo_gebra_1_1_plane}{Plane}} $\ast$ {\bfseries plane\+\_\+}
+\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_selector_body_ab85f164c5e45d875ca663d3e349da83f}\label{class_homo_gebra_1_1_object_selector_body_ab85f164c5e45d875ca663d3e349da83f}} 
+\mbox{\hyperlink{class_homo_gebra_1_1_nearby_object_getter}{Nearby\+Object\+Getter}}$<$ Geometric\+Object\+Type $>$ {\bfseries object\+\_\+getter\+\_\+}
+\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_selector_body_a1dbb9e027a69ce2ecff86fffb9c8e221}\label{class_homo_gebra_1_1_object_selector_body_a1dbb9e027a69ce2ecff86fffb9c8e221}} 
+int {\bfseries current\+\_\+object\+\_\+} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_selector_body_a5fb9bc57eba5ed9a4e5979bd5d6d3430}\label{class_homo_gebra_1_1_object_selector_body_a5fb9bc57eba5ed9a4e5979bd5d6d3430}} 
+\index{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}!Draw@{Draw}}
+\index{Draw@{Draw}!HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body}{Homo\+Gebra\+::\+Object\+Selector\+Body}}$<$ Geometric\+Object\+Type $>$\+::\+Draw}
+
+
+
+Draws the body. 
+
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_selector_body_a686bc13d4b2823ae1fe47a31a7965d71}\label{class_homo_gebra_1_1_object_selector_body_a686bc13d4b2823ae1fe47a31a7965d71}} 
+\index{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}!DrawList@{DrawList}}
+\index{DrawList@{DrawList}!HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{DrawList()}{DrawList()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body}{Homo\+Gebra\+::\+Object\+Selector\+Body}}$<$ Geometric\+Object\+Type $>$\+::\+Draw\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws list to choose object from. 
+
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_selector_body_abceaaf29b2bf812e02c9f1cfddd54b30}\label{class_homo_gebra_1_1_object_selector_body_abceaaf29b2bf812e02c9f1cfddd54b30}} 
+\index{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}!DrawName@{DrawName}}
+\index{DrawName@{DrawName}!HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{DrawName()}{DrawName()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body}{Homo\+Gebra\+::\+Object\+Selector\+Body}}$<$ Geometric\+Object\+Type $>$\+::\+Draw\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws name of selected object. 
+
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_selector_body_a3acadbf3bffb1947cae782ed82938ab5}\label{class_homo_gebra_1_1_object_selector_body_a3acadbf3bffb1947cae782ed82938ab5}} 
+\index{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}!DrawSetter@{DrawSetter}}
+\index{DrawSetter@{DrawSetter}!HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{DrawSetter()}{DrawSetter()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body}{Homo\+Gebra\+::\+Object\+Selector\+Body}}$<$ Geometric\+Object\+Type $>$\+::\+Draw\+Setter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws setter through last nearest object. 
+
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_selector_body_a3e071802addda388eb8ff13aa215b1e4}\label{class_homo_gebra_1_1_object_selector_body_a3e071802addda388eb8ff13aa215b1e4}} 
+\index{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}!GetObject@{GetObject}}
+\index{GetObject@{GetObject}!HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{GetObject()}{GetObject()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+Geometric\+Object\+Type $\ast$ \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body}{Homo\+Gebra\+::\+Object\+Selector\+Body}}$<$ Geometric\+Object\+Type $>$\+::\+Get\+Object}
+
+
+
+Get selected object. 
+
+\begin{DoxyReturn}{Returns}
+Selected object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_selector_body_acf214f6889dccfe0e268e38bf3d4adea}\label{class_homo_gebra_1_1_object_selector_body_acf214f6889dccfe0e268e38bf3d4adea}} 
+\index{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}!SetObject@{SetObject}}
+\index{SetObject@{SetObject}!HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{SetObject()}{SetObject()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body}{Homo\+Gebra\+::\+Object\+Selector\+Body}}$<$ Geometric\+Object\+Type $>$\+::\+Set\+Object (\begin{DoxyParamCaption}\item[{Geometric\+Object\+Type $\ast$}]{object }\end{DoxyParamCaption})}
+
+
+
+Set selected object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Object to set with. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_object_selector_body_acf214f6889dccfe0e268e38bf3d4adea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_object_selector_body_a7f8fbc56eb395235e76f6d56ba3e8ec5}\label{class_homo_gebra_1_1_object_selector_body_a7f8fbc56eb395235e76f6d56ba3e8ec5}} 
+\index{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}!Update@{Update}}
+\index{Update@{Update}!HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$@{HomoGebra::ObjectSelectorBody$<$ GeometricObjectType $>$}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily template$<$class Geometric\+Object\+Type $>$ \\
+void \mbox{\hyperlink{class_homo_gebra_1_1_object_selector_body}{Homo\+Gebra\+::\+Object\+Selector\+Body}}$<$ Geometric\+Object\+Type $>$\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_plane_event_1_1_object_removed}{Plane\+Event\+::\+Object\+Removed}} \&}]{object\+\_\+removed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update, because sth was destroyed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+\_\+removed} & Tag with some information\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Object\+Event\+::\+Destroyed 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_homo_gebra_1_1_plane_observer_a63c18c088087d6520da4fb00a9d7cba7}{Homo\+Gebra\+::\+Plane\+Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Button\+Element\+Body.\+h\item 
+Homo\+Gebra/Button\+Element\+Body.\+cpp\end{DoxyCompactItemize}

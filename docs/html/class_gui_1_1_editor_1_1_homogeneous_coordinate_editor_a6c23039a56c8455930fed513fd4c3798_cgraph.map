@@ -1,0 +1,4 @@
+<map id="Gui::Editor::HomogeneousCoordinateEditor::GetCoordinate" name="Gui::Editor::HomogeneousCoordinateEditor::GetCoordinate">
+<area shape="rect" id="node1" title="Returns the current coordinate that was edited." alt="" coords="5,5,215,45"/>
+<area shape="rect" id="node2" href="$class_gui_1_1_editor_1_1_complex_editor.html#aef79b79dd5aa615a027ab19f0e3498b8" title="Returns the current number that was edited." alt="" coords="263,5,440,45"/>
+</map>

@@ -1,0 +1,543 @@
+\hypertarget{class_homo_gebra_1_1_name_generator}{}\doxysection{Homo\+Gebra\+::Name\+Generator Class Reference}
+\label{class_homo_gebra_1_1_name_generator}\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+
+
+Class to generate new names.  
+
+
+
+
+{\ttfamily \#include $<$Name\+Generator.\+h$>$}
+
+
+
+Collaboration diagram for Homo\+Gebra\+::Name\+Generator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_homo_gebra_1_1_name_generator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_homo_gebra_1_1_name_generator_aac028f812abbca8f1f9e0b20488f0a82}{Name\+Generator}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_aac735721c39b76a2cfcb9f6978b75623}{Add\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Add name to used names. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_aee5c7cfd3257cfb31c2f8d3bb375f0ff}{Add\+Name}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&name)
+\begin{DoxyCompactList}\small\item\em Add name to used names. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a6a16d6c15286b88d6d4df059c2866f37}{Delete\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Deletes name from dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a99397a1604787f1cb42523b5f1f69fec}{Delete\+Name}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&name)
+\begin{DoxyCompactList}\small\item\em Deletes name from dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a6249cddc7cb8e4dc7850f19888cee526}{Is\+Name\+Used}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Checks if name is used. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a5e53de8fc16accc2a5c62e8647f972a2}{Is\+Name\+Used}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&name) const
+\begin{DoxyCompactList}\small\item\em Checks if name is used. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a18ab812c75128c9edecd38f68177013d}{Rename}} (const std\+::string \&old\+\_\+name, const std\+::string \&new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Renames name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a7c64e8ef45e7b191a845a67c127ba82e}{Rename}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&old\+\_\+name, const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Renames name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_af32a87e9aafb63c76f2d3a5b40aefd44}{Generate\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Generate new name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a61dc9bc322c47324107e5c6606f0a570}{Generate\+Name}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Generate new name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_af408517715888405dc49c276eb401779}{Parse\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Parses name. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_subname}{Parsed\+Subname}} \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a71caba954fe7d011726c9118fd0eab32}{Parse\+Subname}} (const std\+::string \&subname)
+\begin{DoxyCompactList}\small\item\em Parses subname. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_a77ccaac948c06295a6a06e4d457925f7}\label{class_homo_gebra_1_1_name_generator_a77ccaac948c06295a6a06e4d457925f7}} 
+static constexpr char {\bfseries k\+Delimiter} = \textquotesingle{}\+\_\+\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Delimiter for subnames. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a8ee94c476a8c39df173275daef24e176}{Generate\+Subname}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&parsed\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Generate new subname. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_af86aab641f6b97f3e97e48421e53a585}{Generate\+Number}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&parsed\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Generate new subname. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_homo_gebra_1_1_name_generator_a0bfe46cc912236f50396992f659e5fc4}{Is\+Name\+Empty}} (const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&parsed\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Checks if name is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_a67e7da3e9a3a29617596e1039b250c3f}\label{class_homo_gebra_1_1_name_generator_a67e7da3e9a3a29617596e1039b250c3f}} 
+\mbox{\hyperlink{class_homo_gebra_1_1_dictionary}{Name\+Dictionary}} {\bfseries used\+\_\+names\+\_\+}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_homo_gebra_1_1_dictionary}{Dictionary}} of used names. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to generate new names. 
+
+This class is used to generate new names for objects. Also it can change a lit bit a name to make it unique.
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+3
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_aac028f812abbca8f1f9e0b20488f0a82}\label{class_homo_gebra_1_1_name_generator_aac028f812abbca8f1f9e0b20488f0a82}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!NameGenerator@{NameGenerator}}
+\index{NameGenerator@{NameGenerator}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{NameGenerator()}{NameGenerator()}}
+{\footnotesize\ttfamily Homo\+Gebra\+::\+Name\+Generator\+::\+Name\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_aee5c7cfd3257cfb31c2f8d3bb375f0ff}\label{class_homo_gebra_1_1_name_generator_aee5c7cfd3257cfb31c2f8d3bb375f0ff}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!AddName@{AddName}}
+\index{AddName@{AddName}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{AddName()}{AddName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Homo\+Gebra\+::\+Name\+Generator\+::\+Add\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Add name to used names. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was not used, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_aee5c7cfd3257cfb31c2f8d3bb375f0ff_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_aac735721c39b76a2cfcb9f6978b75623}\label{class_homo_gebra_1_1_name_generator_aac735721c39b76a2cfcb9f6978b75623}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!AddName@{AddName}}
+\index{AddName@{AddName}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{AddName()}{AddName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Homo\+Gebra\+::\+Name\+Generator\+::\+Add\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Add name to used names. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was not used, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_aac735721c39b76a2cfcb9f6978b75623_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_aac735721c39b76a2cfcb9f6978b75623_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_a99397a1604787f1cb42523b5f1f69fec}\label{class_homo_gebra_1_1_name_generator_a99397a1604787f1cb42523b5f1f69fec}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!DeleteName@{DeleteName}}
+\index{DeleteName@{DeleteName}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{DeleteName()}{DeleteName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Homo\+Gebra\+::\+Name\+Generator\+::\+Delete\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Deletes name from dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was deleted, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a99397a1604787f1cb42523b5f1f69fec_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_a6a16d6c15286b88d6d4df059c2866f37}\label{class_homo_gebra_1_1_name_generator_a6a16d6c15286b88d6d4df059c2866f37}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!DeleteName@{DeleteName}}
+\index{DeleteName@{DeleteName}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{DeleteName()}{DeleteName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Homo\+Gebra\+::\+Name\+Generator\+::\+Delete\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Deletes name from dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was deleted, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a6a16d6c15286b88d6d4df059c2866f37_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a6a16d6c15286b88d6d4df059c2866f37_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_af32a87e9aafb63c76f2d3a5b40aefd44}\label{class_homo_gebra_1_1_name_generator_af32a87e9aafb63c76f2d3a5b40aefd44}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!GenerateName@{GenerateName}}
+\index{GenerateName@{GenerateName}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateName()}{GenerateName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} Homo\+Gebra\+::\+Name\+Generator\+::\+Generate\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Generate new name. 
+
+Generate name in this pattern\+: Alphabet + Number (if needed) For example\+: A, B, ... , C\+\_\+0, ... , H\+\_\+239, ...
+
+\begin{DoxyReturn}{Returns}
+Generated name. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_homo_gebra_1_1_name_generator_af32a87e9aafb63c76f2d3a5b40aefd44_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_af32a87e9aafb63c76f2d3a5b40aefd44_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_a61dc9bc322c47324107e5c6606f0a570}\label{class_homo_gebra_1_1_name_generator_a61dc9bc322c47324107e5c6606f0a570}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!GenerateName@{GenerateName}}
+\index{GenerateName@{GenerateName}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateName()}{GenerateName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} Homo\+Gebra\+::\+Name\+Generator\+::\+Generate\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Generate new name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to adjust (to avoid duplicates).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Adjusted name (to avoid duplicates). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a61dc9bc322c47324107e5c6606f0a570_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_af86aab641f6b97f3e97e48421e53a585}\label{class_homo_gebra_1_1_name_generator_af86aab641f6b97f3e97e48421e53a585}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!GenerateNumber@{GenerateNumber}}
+\index{GenerateNumber@{GenerateNumber}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateNumber()}{GenerateNumber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} Homo\+Gebra\+::\+Name\+Generator\+::\+Generate\+Number (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&}]{parsed\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generate new subname. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+\_\+name} & Subname to adjust (to avoid duplicates).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Adjusted subname (to avoid duplicates). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_af86aab641f6b97f3e97e48421e53a585_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_af86aab641f6b97f3e97e48421e53a585_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_a8ee94c476a8c39df173275daef24e176}\label{class_homo_gebra_1_1_name_generator_a8ee94c476a8c39df173275daef24e176}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!GenerateSubname@{GenerateSubname}}
+\index{GenerateSubname@{GenerateSubname}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateSubname()}{GenerateSubname()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} Homo\+Gebra\+::\+Name\+Generator\+::\+Generate\+Subname (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&}]{parsed\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generate new subname. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+\_\+name} & Subname to adjust (to avoid duplicates).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Adjusted subname (to avoid duplicates). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a8ee94c476a8c39df173275daef24e176_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a8ee94c476a8c39df173275daef24e176_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_a0bfe46cc912236f50396992f659e5fc4}\label{class_homo_gebra_1_1_name_generator_a0bfe46cc912236f50396992f659e5fc4}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!IsNameEmpty@{IsNameEmpty}}
+\index{IsNameEmpty@{IsNameEmpty}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{IsNameEmpty()}{IsNameEmpty()}}
+{\footnotesize\ttfamily bool Homo\+Gebra\+::\+Name\+Generator\+::\+Is\+Name\+Empty (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&}]{parsed\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if name is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+\_\+name} & Name to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name is empty, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a0bfe46cc912236f50396992f659e5fc4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_a5e53de8fc16accc2a5c62e8647f972a2}\label{class_homo_gebra_1_1_name_generator_a5e53de8fc16accc2a5c62e8647f972a2}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!IsNameUsed@{IsNameUsed}}
+\index{IsNameUsed@{IsNameUsed}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{IsNameUsed()}{IsNameUsed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Homo\+Gebra\+::\+Name\+Generator\+::\+Is\+Name\+Used (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Checks if name is used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name is used, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a5e53de8fc16accc2a5c62e8647f972a2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_a6249cddc7cb8e4dc7850f19888cee526}\label{class_homo_gebra_1_1_name_generator_a6249cddc7cb8e4dc7850f19888cee526}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!IsNameUsed@{IsNameUsed}}
+\index{IsNameUsed@{IsNameUsed}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{IsNameUsed()}{IsNameUsed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Homo\+Gebra\+::\+Name\+Generator\+::\+Is\+Name\+Used (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Checks if name is used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name is used, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a6249cddc7cb8e4dc7850f19888cee526_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a6249cddc7cb8e4dc7850f19888cee526_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_af408517715888405dc49c276eb401779}\label{class_homo_gebra_1_1_name_generator_af408517715888405dc49c276eb401779}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!ParseName@{ParseName}}
+\index{ParseName@{ParseName}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{ParseName()}{ParseName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} Homo\+Gebra\+::\+Name\+Generator\+::\+Parse\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parses name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to parse.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Parsed name. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_af408517715888405dc49c276eb401779_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_af408517715888405dc49c276eb401779_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_a71caba954fe7d011726c9118fd0eab32}\label{class_homo_gebra_1_1_name_generator_a71caba954fe7d011726c9118fd0eab32}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!ParseSubname@{ParseSubname}}
+\index{ParseSubname@{ParseSubname}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{ParseSubname()}{ParseSubname()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_subname}{Parsed\+Subname}} Homo\+Gebra\+::\+Name\+Generator\+::\+Parse\+Subname (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{subname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parses subname. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subname} & Subname to parse.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Parsed subname. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a71caba954fe7d011726c9118fd0eab32_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_a7c64e8ef45e7b191a845a67c127ba82e}\label{class_homo_gebra_1_1_name_generator_a7c64e8ef45e7b191a845a67c127ba82e}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!Rename@{Rename}}
+\index{Rename@{Rename}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{Rename()}{Rename()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Homo\+Gebra\+::\+Name\+Generator\+::\+Rename (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&}]{old\+\_\+name,  }\item[{const \mbox{\hyperlink{struct_homo_gebra_1_1_parsed_name}{Parsed\+Name}} \&}]{new\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Renames name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+\_\+name} & Old name. \\
+\hline
+{\em new\+\_\+name} & New name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was renamed, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a7c64e8ef45e7b191a845a67c127ba82e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_homo_gebra_1_1_name_generator_a18ab812c75128c9edecd38f68177013d}\label{class_homo_gebra_1_1_name_generator_a18ab812c75128c9edecd38f68177013d}} 
+\index{HomoGebra::NameGenerator@{HomoGebra::NameGenerator}!Rename@{Rename}}
+\index{Rename@{Rename}!HomoGebra::NameGenerator@{HomoGebra::NameGenerator}}
+\doxysubsubsection{\texorpdfstring{Rename()}{Rename()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Homo\+Gebra\+::\+Name\+Generator\+::\+Rename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{old\+\_\+name,  }\item[{const std\+::string \&}]{new\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Renames name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+\_\+name} & Old name. \\
+\hline
+{\em new\+\_\+name} & New name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was renamed, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homo_gebra_1_1_name_generator_a18ab812c75128c9edecd38f68177013d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_homo_gebra_1_1_name_generator_a18ab812c75128c9edecd38f68177013d_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Name\+Generator.\+h\item 
+Homo\+Gebra/Name\+Generator.\+cpp\end{DoxyCompactItemize}

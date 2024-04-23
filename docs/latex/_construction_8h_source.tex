@@ -1,0 +1,45 @@
+\hypertarget{_construction_8h_source}{}\doxysection{Construction.\+h}
+\label{_construction_8h_source}\index{HomoGebra/Construction.h@{HomoGebra/Construction.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Coordinate.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Observer.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }HomoGebra}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_week_construction}{WeekConstruction}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_homo_gebra_1_1_transformation}{Transformation}}\&\ \mbox{\hyperlink{class_homo_gebra_1_1_week_construction_a05db3d638b799c07d858ffc27818a862}{GetTransformation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_transformation}{Transformation}}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_week_construction_a0cb34127d1d8ad7af66882de01cc43df}{transformation\_}};\ \ }
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_strong_construction}{StrongConstruction}}}
+\DoxyCodeLine{00047\ \{\};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_homo_gebra_1_1_construction}{Construction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object_observer}{GeometricObjectObserver}}}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_construction_a770926d4b4724e111855e46c6b33668d}{\string~Construction}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_homo_gebra_1_1_geometric_object}{GeometricObject}}*\ \mbox{\hyperlink{class_homo_gebra_1_1_construction_a161834e7c2b3a748481e58e838a01bc0}{GetObject}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_construction_ad5e9003f24a5e0803c6ccc23f3c467c1}{RecalculateEquation}}()\ =\ 0;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_construction_a90a087fab527fc7042f5a2ca23cfe8c5}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_moved}{ObjectEvent::Moved}}\&\ moved\_event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_construction_a900ff25e35afce231e03efe92b39d32e}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_going_to_be_destroyed}{ObjectEvent::GoingToBeDestroyed}}\&\ destroyed\_event)\ \textcolor{keyword}{override}\ =}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ 0;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_homo_gebra_1_1_construction_a534c0faddbd48171f1b23e4875a6b6cc}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_homo_gebra_1_1_object_event_1_1_renamed}{ObjectEvent::Renamed}}\&\ renamed\_event)\ \textcolor{keyword}{override}\ =\ 0;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{class_homo_gebra_1_1_construction_a21ae2104d9f11f5fccc5b493f92ab20c}{Construction}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00096\ \};}
+\DoxyCodeLine{00097\ \}\ \ \textcolor{comment}{//\ namespace\ HomoGebra}}
+
+\end{DoxyCode}

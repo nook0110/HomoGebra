@@ -1,0 +1,184 @@
+\hypertarget{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor}{}\doxysection{Gui\+::Editor\+::Homogeneous\+Coordinate\+Editor Class Reference}
+\label{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor}\index{Gui::Editor::HomogeneousCoordinateEditor@{Gui::Editor::HomogeneousCoordinateEditor}}
+
+
+Class that represents a submenu that allows to edit a homogeneous coordinates.  
+
+
+
+
+{\ttfamily \#include $<$Widget.\+h$>$}
+
+
+
+Inheritance diagram for Gui\+::Editor\+::Homogeneous\+Coordinate\+Editor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Gui\+::Editor\+::Homogeneous\+Coordinate\+Editor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a7b651115f6e8c9d38f7035c5cddb26ae}{Homogeneous\+Coordinate\+Editor}} (const \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \&coordinate=\mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}}\{\})
+\begin{DoxyCompactList}\small\item\em Construct menu with given coordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a33b3ea10ed611369ec21765ea09860ae}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em Draws the menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_ab3d39449778e85c9a7cdb081066ad42f}{Draw}} () const
+\begin{DoxyCompactList}\small\item\em Draws the menu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \mbox{\hyperlink{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a6c23039a56c8455930fed513fd4c3798}{Get\+Coordinate}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current coordinate that was edited. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_gui_1_1_widget}{Gui\+::\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_gui_1_1_widget_aad17178fe1a5582f2ed2e2ce676abcf1}{$\sim$\+Widget}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_gui_1_1_widget_a22ea5c1928b958a0eab5d2dbd80c8c61}{Draw}} ()=0
+\begin{DoxyCompactList}\small\item\em Draws widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gui_1_1_editor_1_1_complex_editor}{Complex\+Editor}} \mbox{\hyperlink{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a674f84d7cacc6d4d5205bb72ad721f17}{x\+\_\+variable\+\_\+editor\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Editor for x variable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_ae7382108976dc70088d74ffc248d6a3b}\label{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_ae7382108976dc70088d74ffc248d6a3b}} 
+\mbox{\hyperlink{class_gui_1_1_editor_1_1_complex_editor}{Complex\+Editor}} {\bfseries y\+\_\+variable\+\_\+editor\+\_\+}
+\begin{DoxyCompactList}\small\item\em Editor for y variable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_aafb5a583b328bacc0506cedc5cecc29d}\label{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_aafb5a583b328bacc0506cedc5cecc29d}} 
+\mbox{\hyperlink{class_gui_1_1_editor_1_1_complex_editor}{Complex\+Editor}} {\bfseries z\+\_\+variable\+\_\+editor\+\_\+}
+\begin{DoxyCompactList}\small\item\em Editor for z variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that represents a submenu that allows to edit a homogeneous coordinates. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a7b651115f6e8c9d38f7035c5cddb26ae}\label{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a7b651115f6e8c9d38f7035c5cddb26ae}} 
+\index{Gui::Editor::HomogeneousCoordinateEditor@{Gui::Editor::HomogeneousCoordinateEditor}!HomogeneousCoordinateEditor@{HomogeneousCoordinateEditor}}
+\index{HomogeneousCoordinateEditor@{HomogeneousCoordinateEditor}!Gui::Editor::HomogeneousCoordinateEditor@{Gui::Editor::HomogeneousCoordinateEditor}}
+\doxysubsubsection{\texorpdfstring{HomogeneousCoordinateEditor()}{HomogeneousCoordinateEditor()}}
+{\footnotesize\ttfamily Homogeneous\+Coordinate\+Editor\+::\+Homogeneous\+Coordinate\+Editor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} \&}]{coordinate = {\ttfamily \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}}\{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct menu with given coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinate} & Coordinate to edit. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_ab3d39449778e85c9a7cdb081066ad42f}\label{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_ab3d39449778e85c9a7cdb081066ad42f}} 
+\index{Gui::Editor::HomogeneousCoordinateEditor@{Gui::Editor::HomogeneousCoordinateEditor}!Draw@{Draw}}
+\index{Draw@{Draw}!Gui::Editor::HomogeneousCoordinateEditor@{Gui::Editor::HomogeneousCoordinateEditor}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Homogeneous\+Coordinate\+Editor\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Draws the menu. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_ab3d39449778e85c9a7cdb081066ad42f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a33b3ea10ed611369ec21765ea09860ae}\label{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a33b3ea10ed611369ec21765ea09860ae}} 
+\index{Gui::Editor::HomogeneousCoordinateEditor@{Gui::Editor::HomogeneousCoordinateEditor}!Draw@{Draw}}
+\index{Draw@{Draw}!Gui::Editor::HomogeneousCoordinateEditor@{Gui::Editor::HomogeneousCoordinateEditor}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Homogeneous\+Coordinate\+Editor\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draws the menu. 
+
+
+
+Implements \mbox{\hyperlink{class_gui_1_1_widget_a22ea5c1928b958a0eab5d2dbd80c8c61}{Gui\+::\+Widget}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a33b3ea10ed611369ec21765ea09860ae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a33b3ea10ed611369ec21765ea09860ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a6c23039a56c8455930fed513fd4c3798}\label{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a6c23039a56c8455930fed513fd4c3798}} 
+\index{Gui::Editor::HomogeneousCoordinateEditor@{Gui::Editor::HomogeneousCoordinateEditor}!GetCoordinate@{GetCoordinate}}
+\index{GetCoordinate@{GetCoordinate}!Gui::Editor::HomogeneousCoordinateEditor@{Gui::Editor::HomogeneousCoordinateEditor}}
+\doxysubsubsection{\texorpdfstring{GetCoordinate()}{GetCoordinate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_homogeneous_coordinate}{Homogeneous\+Coordinate}} Homogeneous\+Coordinate\+Editor\+::\+Get\+Coordinate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the current coordinate that was edited. 
+
+\begin{DoxyReturn}{Returns}
+Current coordinate. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a6c23039a56c8455930fed513fd4c3798_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a6c23039a56c8455930fed513fd4c3798_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a674f84d7cacc6d4d5205bb72ad721f17}\label{class_gui_1_1_editor_1_1_homogeneous_coordinate_editor_a674f84d7cacc6d4d5205bb72ad721f17}} 
+\index{Gui::Editor::HomogeneousCoordinateEditor@{Gui::Editor::HomogeneousCoordinateEditor}!x\_variable\_editor\_@{x\_variable\_editor\_}}
+\index{x\_variable\_editor\_@{x\_variable\_editor\_}!Gui::Editor::HomogeneousCoordinateEditor@{Gui::Editor::HomogeneousCoordinateEditor}}
+\doxysubsubsection{\texorpdfstring{x\_variable\_editor\_}{x\_variable\_editor\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gui_1_1_editor_1_1_complex_editor}{Complex\+Editor}} Gui\+::\+Editor\+::\+Homogeneous\+Coordinate\+Editor\+::x\+\_\+variable\+\_\+editor\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Editor for x variable. 
+
+Member data. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Widget.\+h\item 
+Homo\+Gebra/Widget.\+cpp\end{DoxyCompactItemize}

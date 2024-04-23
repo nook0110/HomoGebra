@@ -1,0 +1,5 @@
+<map id="HomoGebra::ConstructionPoint::Update" name="HomoGebra::ConstructionPoint::Update">
+<area shape="rect" id="node1" title="Update point when something is destroyed." alt="" coords="5,5,208,45"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_construction_point.html#aedccf063a49684a7e68b8d2b80f30ab2" title="Gets object that is constructed." alt="" coords="256,5,459,45"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_construction_point.html#acc4798f0e43b1406e6d27f14e72f1c3b" title="Gets point that is constructed." alt="" coords="507,5,709,45"/>
+</map>

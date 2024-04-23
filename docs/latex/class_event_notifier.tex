@@ -1,0 +1,103 @@
+\hypertarget{class_event_notifier}{}\doxysection{Event\+Notifier Class Reference}
+\label{class_event_notifier}\index{EventNotifier@{EventNotifier}}
+
+
+Class that listens to events and notifies listens.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Notifier.\+h$>$}
+
+
+
+Collaboration diagram for Event\+Notifier\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{class_event_notifier__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_event_notifier_a9d171a83ba7a959252e8500dc4a84f96}{Attach}} (\mbox{\hyperlink{class_event_listener}{Event\+Listener}} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Attach a listener to the notifier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_event_notifier_a2b4cac2390b79de25622a783b662d2fc}{Detach}} (const \mbox{\hyperlink{class_event_listener}{Event\+Listener}} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Detach a listener from the notifier. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Event $>$ }\\void \mbox{\hyperlink{class_event_notifier_ae87bc12ac2e61a677e4e22c5a102ebfd}{Notify}} (const Event \&event) const
+\begin{DoxyCompactList}\small\item\em Notify all listeners. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_event_notifier_a2e8b3ac472d22098a39a8835da7e1863}\label{class_event_notifier_a2e8b3ac472d22098a39a8835da7e1863}} 
+std\+::list$<$ \mbox{\hyperlink{class_event_listener}{Event\+Listener}} $\ast$ $>$ {\bfseries listeners\+\_\+}
+\begin{DoxyCompactList}\small\item\em List of listeners. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that listens to events and notifies listens. 
+
+\begin{DoxyAuthor}{Author}
+nook0110 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_event_notifier_a9d171a83ba7a959252e8500dc4a84f96}\label{class_event_notifier_a9d171a83ba7a959252e8500dc4a84f96}} 
+\index{EventNotifier@{EventNotifier}!Attach@{Attach}}
+\index{Attach@{Attach}!EventNotifier@{EventNotifier}}
+\doxysubsubsection{\texorpdfstring{Attach()}{Attach()}}
+{\footnotesize\ttfamily void Event\+Notifier\+::\+Attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_event_listener}{Event\+Listener}} $\ast$}]{listener }\end{DoxyParamCaption})}
+
+
+
+Attach a listener to the notifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener} & The listener to attach. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_event_notifier_a2b4cac2390b79de25622a783b662d2fc}\label{class_event_notifier_a2b4cac2390b79de25622a783b662d2fc}} 
+\index{EventNotifier@{EventNotifier}!Detach@{Detach}}
+\index{Detach@{Detach}!EventNotifier@{EventNotifier}}
+\doxysubsubsection{\texorpdfstring{Detach()}{Detach()}}
+{\footnotesize\ttfamily void Event\+Notifier\+::\+Detach (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_event_listener}{Event\+Listener}} $\ast$}]{listener }\end{DoxyParamCaption})}
+
+
+
+Detach a listener from the notifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener} & The listener to detach. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_event_notifier_ae87bc12ac2e61a677e4e22c5a102ebfd}\label{class_event_notifier_ae87bc12ac2e61a677e4e22c5a102ebfd}} 
+\index{EventNotifier@{EventNotifier}!Notify@{Notify}}
+\index{Notify@{Notify}!EventNotifier@{EventNotifier}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily template$<$class Event $>$ \\
+void Event\+Notifier\+::\+Notify (\begin{DoxyParamCaption}\item[{const Event \&}]{event }\end{DoxyParamCaption}) const}
+
+
+
+Notify all listeners. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Event} & Type of event. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Event to notify about. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Event\+Notifier.\+h\item 
+Homo\+Gebra/Event\+Notifier.\+cpp\end{DoxyCompactItemize}

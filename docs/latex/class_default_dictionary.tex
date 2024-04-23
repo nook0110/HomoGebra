@@ -1,0 +1,118 @@
+\hypertarget{class_default_dictionary}{}\doxysection{Default\+Dictionary Class Reference}
+\label{class_default_dictionary}\index{DefaultDictionary@{DefaultDictionary}}
+
+
+Default dictionary.  
+
+
+
+
+{\ttfamily \#include $<$Dictionary.\+h$>$}
+
+
+
+Collaboration diagram for Default\+Dictionary\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_default_dictionary__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_default_dictionary_1_1_parsed_item}{Parsed\+Item}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_default_dictionary_a898627b777f99278b652ccd40998c14c}{Add\+Item}} (const \mbox{\hyperlink{struct_default_dictionary_1_1_parsed_item}{Parsed\+Item}} \&item)
+\begin{DoxyCompactList}\small\item\em Adds item to dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_default_dictionary_aedb8c3682869684546d3eee9723d754b}{Delete\+Item}} (const \mbox{\hyperlink{struct_default_dictionary_1_1_parsed_item}{Parsed\+Item}} \&item)
+\begin{DoxyCompactList}\small\item\em Deletes item from dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_default_dictionary_aa09ec680736e56206af195e07895942a}{Is\+Item\+Used}} (const \mbox{\hyperlink{struct_default_dictionary_1_1_parsed_item}{Parsed\+Item}} \&item) const
+\begin{DoxyCompactList}\small\item\em Checks if item is in dictionary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_default_dictionary_a81522d5175f55146f354d53f4d79591f}\label{class_default_dictionary_a81522d5175f55146f354d53f4d79591f}} 
+bool {\bfseries is\+\_\+item\+\_\+used\+\_\+} = true
+\begin{DoxyCompactList}\small\item\em Is item used? \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Default dictionary. 
+
+\mbox{\hyperlink{class_dictionary}{Dictionary}} that can store only one item. Actually just a \textquotesingle{}wrapper\textquotesingle{} around bool.
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_default_dictionary_a898627b777f99278b652ccd40998c14c}\label{class_default_dictionary_a898627b777f99278b652ccd40998c14c}} 
+\index{DefaultDictionary@{DefaultDictionary}!AddItem@{AddItem}}
+\index{AddItem@{AddItem}!DefaultDictionary@{DefaultDictionary}}
+\doxysubsubsection{\texorpdfstring{AddItem()}{AddItem()}}
+{\footnotesize\ttfamily bool Default\+Dictionary\+::\+Add\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_default_dictionary_1_1_parsed_item}{Parsed\+Item}} \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds item to dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & Just a dummy parameter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if item was added, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_default_dictionary_aedb8c3682869684546d3eee9723d754b}\label{class_default_dictionary_aedb8c3682869684546d3eee9723d754b}} 
+\index{DefaultDictionary@{DefaultDictionary}!DeleteItem@{DeleteItem}}
+\index{DeleteItem@{DeleteItem}!DefaultDictionary@{DefaultDictionary}}
+\doxysubsubsection{\texorpdfstring{DeleteItem()}{DeleteItem()}}
+{\footnotesize\ttfamily bool Default\+Dictionary\+::\+Delete\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_default_dictionary_1_1_parsed_item}{Parsed\+Item}} \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deletes item from dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & Just a dummy parameter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if item was deleted, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_default_dictionary_aa09ec680736e56206af195e07895942a}\label{class_default_dictionary_aa09ec680736e56206af195e07895942a}} 
+\index{DefaultDictionary@{DefaultDictionary}!IsItemUsed@{IsItemUsed}}
+\index{IsItemUsed@{IsItemUsed}!DefaultDictionary@{DefaultDictionary}}
+\doxysubsubsection{\texorpdfstring{IsItemUsed()}{IsItemUsed()}}
+{\footnotesize\ttfamily bool Default\+Dictionary\+::\+Is\+Item\+Used (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_default_dictionary_1_1_parsed_item}{Parsed\+Item}} \&}]{item }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if item is in dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & Just a dummy parameter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if item is in, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Dictionary.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="HomoGebra::PlaneEvent::ObjectRemoved" name="HomoGebra::PlaneEvent::ObjectRemoved">
+<area shape="rect" id="node1" title="Tag that shows that object was removed." alt="" coords="58,419,222,511"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_geometric_object.html" title="Base class for geometric objects." alt="" coords="41,176,239,356"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,27,99,105"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_observable_interface.html" title=" " alt="" coords="123,5,335,127"/>
+</map>

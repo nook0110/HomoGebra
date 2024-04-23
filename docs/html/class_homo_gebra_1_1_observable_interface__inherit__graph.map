@@ -1,0 +1,13 @@
+<map id="HomoGebra::ObservableInterface&lt; Observer &gt;" name="HomoGebra::ObservableInterface&lt; Observer &gt;">
+<area shape="rect" id="node1" title="Interface for observers of geometric objects." alt="" coords="484,5,696,127"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_observable.html" title=" " alt="" coords="282,175,477,311"/>
+<area shape="rect" id="node8" href="$class_homo_gebra_1_1_observable.html" title=" " alt="" coords="509,175,671,311"/>
+<area shape="rect" id="node11" href="$class_homo_gebra_1_1_observable.html" title=" " alt="" coords="695,175,858,311"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="253,359,476,465"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_geometric_object_implementation.html" title="Base class for implementations of geometric objects." alt="" coords="237,579,473,671"/>
+<area shape="rect" id="node5" href="$class_homo_gebra_1_1_conic_implementation.html" title="Implementation of Conic." alt="" coords="5,785,225,892"/>
+<area shape="rect" id="node6" href="$class_homo_gebra_1_1_line_implementation.html" title="Implementation of Line." alt="" coords="250,785,461,892"/>
+<area shape="rect" id="node7" href="$class_homo_gebra_1_1_point_implementation.html" title="Implementation of Point." alt="" coords="485,785,703,892"/>
+<area shape="rect" id="node9" href="$class_homo_gebra_1_1_observable_plane.html" title=" " alt="" coords="504,366,700,458"/>
+<area shape="rect" id="node10" href="$class_homo_gebra_1_1_plane_implementation.html" title="Implementation of Plane." alt="" coords="497,513,717,737"/>
+</map>

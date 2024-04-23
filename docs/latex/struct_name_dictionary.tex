@@ -1,0 +1,228 @@
+\hypertarget{struct_name_dictionary}{}\doxysection{Name\+Dictionary Struct Reference}
+\label{struct_name_dictionary}\index{NameDictionary@{NameDictionary}}
+
+
+Struct to save subnames.  
+
+
+
+
+{\ttfamily \#include $<$Name\+Generator.\+h$>$}
+
+
+
+Collaboration diagram for Name\+Dictionary\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{struct_name_dictionary__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary}{Subname\+Dictionary}}
+\begin{DoxyCompactList}\small\item\em Struct to save subnames. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{struct_name_dictionary_a2b2ef4385fb6408de9b8789ea2e70f19}{Add\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Adds name to dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_name_dictionary_a21677c1ad6c7833b9cb418d64aa3b2c1}{Add\+Name}} (const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&parsed\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Adds name to dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_name_dictionary_a0439b9f97e5061cb9297f609c3583b99}{Delete\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Deletes name from dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_name_dictionary_ab5281314659d69766d7e8bc4a186f4c6}{Delete\+Name}} (const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&parsed)
+\begin{DoxyCompactList}\small\item\em Deletes name from dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_name_dictionary_a427cf030b2ffbf8ee31515a8e6cd2d06}{Is\+Name\+Used}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Checks if name is used. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_name_dictionary_a9d3f2320b52f3db880a1f5f158138572}{Is\+Name\+Used}} (const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&parsed\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Checks if name is used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_name_dictionary_ae59d2eb890c93cac5d99eed7aaaad9ac}\label{struct_name_dictionary_ae59d2eb890c93cac5d99eed7aaaad9ac}} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_name_dictionary_1_1_subname_dictionary}{Subname\+Dictionary}} $>$ {\bfseries used\+\_\+names\+\_\+}
+\begin{DoxyCompactList}\small\item\em Map of used names. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct to save subnames. 
+
+Name parses into \mbox{[}NAME\mbox{]}\+\_\+\mbox{[}SUBNAME\mbox{]}\mbox{[}NUMBER\mbox{]}.
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+April 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_name_dictionary_a21677c1ad6c7833b9cb418d64aa3b2c1}\label{struct_name_dictionary_a21677c1ad6c7833b9cb418d64aa3b2c1}} 
+\index{NameDictionary@{NameDictionary}!AddName@{AddName}}
+\index{AddName@{AddName}!NameDictionary@{NameDictionary}}
+\doxysubsubsection{\texorpdfstring{AddName()}{AddName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Add\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&}]{parsed\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Adds name to dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+\_\+name} & Name to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was added, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_name_dictionary_a2b2ef4385fb6408de9b8789ea2e70f19}\label{struct_name_dictionary_a2b2ef4385fb6408de9b8789ea2e70f19}} 
+\index{NameDictionary@{NameDictionary}!AddName@{AddName}}
+\index{AddName@{AddName}!NameDictionary@{NameDictionary}}
+\doxysubsubsection{\texorpdfstring{AddName()}{AddName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Add\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Adds name to dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was added, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{struct_name_dictionary_a2b2ef4385fb6408de9b8789ea2e70f19_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{struct_name_dictionary_a2b2ef4385fb6408de9b8789ea2e70f19_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_name_dictionary_ab5281314659d69766d7e8bc4a186f4c6}\label{struct_name_dictionary_ab5281314659d69766d7e8bc4a186f4c6}} 
+\index{NameDictionary@{NameDictionary}!DeleteName@{DeleteName}}
+\index{DeleteName@{DeleteName}!NameDictionary@{NameDictionary}}
+\doxysubsubsection{\texorpdfstring{DeleteName()}{DeleteName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Delete\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&}]{parsed }\end{DoxyParamCaption})}
+
+
+
+Deletes name from dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed} & Name to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was deleted, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_name_dictionary_a0439b9f97e5061cb9297f609c3583b99}\label{struct_name_dictionary_a0439b9f97e5061cb9297f609c3583b99}} 
+\index{NameDictionary@{NameDictionary}!DeleteName@{DeleteName}}
+\index{DeleteName@{DeleteName}!NameDictionary@{NameDictionary}}
+\doxysubsubsection{\texorpdfstring{DeleteName()}{DeleteName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Delete\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Deletes name from dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name was deleted, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{struct_name_dictionary_a0439b9f97e5061cb9297f609c3583b99_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_name_dictionary_a0439b9f97e5061cb9297f609c3583b99_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_name_dictionary_a9d3f2320b52f3db880a1f5f158138572}\label{struct_name_dictionary_a9d3f2320b52f3db880a1f5f158138572}} 
+\index{NameDictionary@{NameDictionary}!IsNameUsed@{IsNameUsed}}
+\index{IsNameUsed@{IsNameUsed}!NameDictionary@{NameDictionary}}
+\doxysubsubsection{\texorpdfstring{IsNameUsed()}{IsNameUsed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Is\+Name\+Used (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_parsed_name}{Parsed\+Name}} \&}]{parsed\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Checks if name is used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+\_\+name} & Name to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name is used, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_name_dictionary_a427cf030b2ffbf8ee31515a8e6cd2d06}\label{struct_name_dictionary_a427cf030b2ffbf8ee31515a8e6cd2d06}} 
+\index{NameDictionary@{NameDictionary}!IsNameUsed@{IsNameUsed}}
+\index{IsNameUsed@{IsNameUsed}!NameDictionary@{NameDictionary}}
+\doxysubsubsection{\texorpdfstring{IsNameUsed()}{IsNameUsed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Name\+Dictionary\+::\+Is\+Name\+Used (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Checks if name is used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if name is used, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{struct_name_dictionary_a427cf030b2ffbf8ee31515a8e6cd2d06_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{struct_name_dictionary_a427cf030b2ffbf8ee31515a8e6cd2d06_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Name\+Generator.\+h\item 
+Homo\+Gebra/Name\+Generator.\+cpp\end{DoxyCompactItemize}

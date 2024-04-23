@@ -1,0 +1,6 @@
+<map id="HomoGebra::Line::AlertDestruction" name="HomoGebra::Line::AlertDestruction">
+<area shape="rect" id="node1" title="Destroy this object." alt="" coords="5,13,229,38"/>
+<area shape="rect" id="node2" href="$class_homo_gebra_1_1_line.html#a7acb8d15cec8dd3f082052a3fad7a48f" title="Notify observers about event." alt="" coords="277,13,441,38"/>
+<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable_geometric_object.html#ac1541842fe032cfbbf39ac2e948f4bf5" title="Notify all observers about event." alt="" coords="489,5,712,45"/>
+<area shape="rect" id="node4" href="$class_homo_gebra_1_1_observable.html#ad6f678443403a9c9e412a73200222147" title="Notify all observers about event." alt="" coords="760,5,923,45"/>
+</map>

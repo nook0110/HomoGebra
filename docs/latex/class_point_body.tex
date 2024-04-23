@@ -1,0 +1,263 @@
+\hypertarget{class_point_body}{}\doxysection{Point\+Body Class Reference}
+\label{class_point_body}\index{PointBody@{PointBody}}
+
+
+Body of a point.  
+
+
+
+
+{\ttfamily \#include $<$Geometric\+Object\+Body.\+h$>$}
+
+
+
+Inheritance diagram for Point\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_point_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Point\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_body__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_point_body_1_1_projective_position}{Projective\+Position}}
+\begin{DoxyCompactList}\small\item\em Projective position of the point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point_body_a1d5e72d441cf724d516b4a9ace20eba7}{Point\+Body}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point_body_af2a6336e2479b39cd46d330dc6ea6b84}{$\sim$\+Point\+Body}} () override=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_body_a18793feccde9eab2d64dd9249caf73b9}{Update}} (const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&equation, float size=0)
+\begin{DoxyCompactList}\small\item\em Updates the point body. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_body_a43743991369f1ee4a90563cb1d0d854b}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
+\begin{DoxyCompactList}\small\item\em Draw the point to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_body_a02147440e254c7dd83ab781e7d333fa8}{Draw\+Arrow}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const
+\begin{DoxyCompactList}\small\item\em Draw arrow to a render target. \end{DoxyCompactList}\item 
+Distance \mbox{\hyperlink{class_point_body_a8ba1423a831bd85462951a4cc4db07ad}{Get\+Distance}} (const sf\+::\+Vector2f \&position) const override
+\begin{DoxyCompactList}\small\item\em Gets distance from object to position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_object_body}{Object\+Body}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_object_body_a15e86b3f178e1d31574c0fd7e525ee95}{Set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set name of the point. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_object_body_a5617125b2310d79d493cd8a768b548c1}{Get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets name of the point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_body_a4ba61510565da9d2484e32af05fa5ea9}{Set\+Name\+Position}} (const sf\+::\+Vector2f \&position)
+\begin{DoxyCompactList}\small\item\em Sets position of the name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_body_a834064754b9cc1ddccfa76de57825573}{Set\+Name\+Size}} (float size)
+\begin{DoxyCompactList}\small\item\em Sets size of the name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_body_adad033f7876832f4e823908324c2d530}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
+\begin{DoxyCompactList}\small\item\em Draw the object body to a render target. \end{DoxyCompactList}\item 
+virtual Distance \mbox{\hyperlink{class_object_body_a9eded52fd0e326f4837112dda2632df3}{Get\+Distance}} (const sf\+::\+Vector2f \&position) const =0
+\begin{DoxyCompactList}\small\item\em Gets distance from object to position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::optional$<$ \mbox{\hyperlink{struct_point_body_1_1_projective_position}{Projective\+Position}} $>$ \mbox{\hyperlink{class_point_body_a7f1f6a7a61e1de7bcceede30dee02da1}{Calculate\+Position}} (const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&equation)
+\begin{DoxyCompactList}\small\item\em Calculates the projective position of the point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_point_body_a9d1e946c844c7b136ed5bd4c3db6c5ba}\label{class_point_body_a9d1e946c844c7b136ed5bd4c3db6c5ba}} 
+std\+::optional$<$ \mbox{\hyperlink{struct_point_body_1_1_projective_position}{Projective\+Position}} $>$ {\bfseries position\+\_\+}
+\begin{DoxyCompactList}\small\item\em Projective position of the point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_point_body_ae4037e19cd2cfc8ecf9f0cf4985d4037}\label{class_point_body_ae4037e19cd2cfc8ecf9f0cf4985d4037}} 
+sf\+::\+Circle\+Shape {\bfseries body\+\_\+}
+\begin{DoxyCompactList}\small\item\em Body of the point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Body of a point. 
+
+\begin{DoxyAuthor}{Author}
+nook0110
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+February 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_point_body_a1d5e72d441cf724d516b4a9ace20eba7}\label{class_point_body_a1d5e72d441cf724d516b4a9ace20eba7}} 
+\index{PointBody@{PointBody}!PointBody@{PointBody}}
+\index{PointBody@{PointBody}!PointBody@{PointBody}}
+\doxysubsubsection{\texorpdfstring{PointBody()}{PointBody()}}
+{\footnotesize\ttfamily Point\+Body\+::\+Point\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{class_point_body_af2a6336e2479b39cd46d330dc6ea6b84}\label{class_point_body_af2a6336e2479b39cd46d330dc6ea6b84}} 
+\index{PointBody@{PointBody}!````~PointBody@{$\sim$PointBody}}
+\index{````~PointBody@{$\sim$PointBody}!PointBody@{PointBody}}
+\doxysubsubsection{\texorpdfstring{$\sim$PointBody()}{~PointBody()}}
+{\footnotesize\ttfamily Point\+Body\+::$\sim$\+Point\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_point_body_a7f1f6a7a61e1de7bcceede30dee02da1}\label{class_point_body_a7f1f6a7a61e1de7bcceede30dee02da1}} 
+\index{PointBody@{PointBody}!CalculatePosition@{CalculatePosition}}
+\index{CalculatePosition@{CalculatePosition}!PointBody@{PointBody}}
+\doxysubsubsection{\texorpdfstring{CalculatePosition()}{CalculatePosition()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{struct_point_body_1_1_projective_position}{Point\+Body\+::\+Projective\+Position}} $>$ Point\+Body\+::\+Calculate\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{equation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Calculates the projective position of the point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of the point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Projective position of the point. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_body_a7f1f6a7a61e1de7bcceede30dee02da1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_body_a7f1f6a7a61e1de7bcceede30dee02da1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_point_body_a43743991369f1ee4a90563cb1d0d854b}\label{class_point_body_a43743991369f1ee4a90563cb1d0d854b}} 
+\index{PointBody@{PointBody}!draw@{draw}}
+\index{draw@{draw}!PointBody@{PointBody}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Point\+Body\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Draw the point to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to. \\
+\hline
+{\em states} & Current render states. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_point_body_a43743991369f1ee4a90563cb1d0d854b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_point_body_a02147440e254c7dd83ab781e7d333fa8}\label{class_point_body_a02147440e254c7dd83ab781e7d333fa8}} 
+\index{PointBody@{PointBody}!DrawArrow@{DrawArrow}}
+\index{DrawArrow@{DrawArrow}!PointBody@{PointBody}}
+\doxysubsubsection{\texorpdfstring{DrawArrow()}{DrawArrow()}}
+{\footnotesize\ttfamily void Point\+Body\+::\+Draw\+Arrow (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const}
+
+
+
+Draw arrow to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to. \\
+\hline
+{\em states} & Current render states. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_point_body_a8ba1423a831bd85462951a4cc4db07ad}\label{class_point_body_a8ba1423a831bd85462951a4cc4db07ad}} 
+\index{PointBody@{PointBody}!GetDistance@{GetDistance}}
+\index{GetDistance@{GetDistance}!PointBody@{PointBody}}
+\doxysubsubsection{\texorpdfstring{GetDistance()}{GetDistance()}}
+{\footnotesize\ttfamily Distance Point\+Body\+::\+Get\+Distance (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets distance from object to position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position to calculate distance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance from object to position. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_object_body_a9eded52fd0e326f4837112dda2632df3}{Object\+Body}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_point_body_a8ba1423a831bd85462951a4cc4db07ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_point_body_a18793feccde9eab2d64dd9249caf73b9}\label{class_point_body_a18793feccde9eab2d64dd9249caf73b9}} 
+\index{PointBody@{PointBody}!Update@{Update}}
+\index{Update@{Update}!PointBody@{PointBody}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Point\+Body\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point_equation}{Point\+Equation}} \&}]{equation,  }\item[{float}]{size = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Updates the point body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em equation} & \mbox{\hyperlink{struct_equation}{Equation}} of the point. \\
+\hline
+{\em size} & Size of the point. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_body_a18793feccde9eab2d64dd9249caf73b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_point_body_a18793feccde9eab2d64dd9249caf73b9_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Homo\+Gebra/Geometric\+Object\+Body.\+h\item 
+Homo\+Gebra/Geometric\+Object\+Body.\+cpp\end{DoxyCompactItemize}

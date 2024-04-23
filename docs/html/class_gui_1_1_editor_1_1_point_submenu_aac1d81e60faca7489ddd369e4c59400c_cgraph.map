@@ -1,0 +1,4 @@
+<map id="Gui::Editor::PointSubmenu::DrawNameEditor" name="Gui::Editor::PointSubmenu::DrawNameEditor">
+<area shape="rect" id="node1" title="Render name editor." alt="" coords="5,5,183,45"/>
+<area shape="rect" id="node2" href="$class_gui_1_1_editor_1_1_point_submenu.html#a2f50642e893ecc86afa66e22afb4523b" title="Render name suggestions." alt="" coords="231,5,408,45"/>
+</map>

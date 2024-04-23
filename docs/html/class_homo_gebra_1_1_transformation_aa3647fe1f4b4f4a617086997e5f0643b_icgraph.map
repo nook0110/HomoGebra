@@ -1,0 +1,4 @@
+<map id="HomoGebra::Transformation::GetInverse" name="HomoGebra::Transformation::GetInverse">
+<area shape="rect" id="node1" title="Calculate inverse of transformation." alt="" coords="228,5,412,45"/>
+<area shape="rect" id="node2" href="$struct_homo_gebra_1_1_line_equation.html#a0da0d02ed140e6ab3928b5a7f2e0cd5e" title="Apply transformation to a conic equation." alt="" coords="5,5,180,45"/>
+</map>

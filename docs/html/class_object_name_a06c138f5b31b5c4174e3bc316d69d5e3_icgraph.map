@@ -1,0 +1,9 @@
+<map id="ObjectName::SetName" name="ObjectName::SetName">
+<area shape="rect" id="node1" title="Sets name of the object." alt="" coords="1073,31,1229,56"/>
+<area shape="rect" id="node2" href="$class_object_name.html#ab0382a3e60a8966e51c95c27e3901602" title="Constructs an object name." alt="" coords="851,5,1025,31"/>
+<area shape="rect" id="node3" href="$class_point_body.html#a274457fa8f09fc9493fa3453eebf2735" title="Set name of the point." alt="" coords="866,55,1010,80"/>
+<area shape="rect" id="node4" href="$class_point.html#a19088e7bee8ce66b90ef7c8de1fb4100" title="Sets new name of object." alt="" coords="688,55,803,80"/>
+<area shape="rect" id="node5" href="$class_gui_1_1_editor_1_1_point_submenu.html#a75e8b3169e3f8e311beed43fe664ec0c" title="Render name editor." alt="" coords="463,47,640,87"/>
+<area shape="rect" id="node6" href="$class_gui_1_1_editor_1_1_point_submenu.html#ac92b012249087beb7c795f0b22cf75ee" title="Renders the menu." alt="" coords="237,47,415,87"/>
+<area shape="rect" id="node7" href="$class_gui_1_1_object_menu.html#a7637c226cf849991fb09166f7def6db5" title="Constructs editor of point." alt="" coords="5,55,189,80"/>
+</map>
