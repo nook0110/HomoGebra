@@ -15,7 +15,7 @@ using namespace HomoGebra;
 
 namespace HomogebraTest
 {
-inline constexpr auto kEpsilon = 1e-10L;
+inline constexpr auto kEpsilon = 1e-20L;
 namespace HelpFunctions
 {
 // Checks that two complex number are equal with precision [abs_error]
