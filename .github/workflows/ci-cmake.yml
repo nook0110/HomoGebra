@@ -1,0 +1,32 @@
+name: CMake Tests
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    defaults:
+      run:
+        shell: cmd
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Configure CMake
+      run: cmake -S "${{runner.workspace}}\HomoGebra\HomoGebra Tests" -B "${{runner.workspace}}\HomoGebra\HomoGebra Tests\build" -G "Visual Studio 17 2022"
+
+    - name: Build
+      working-directory: ${{runner.workspace}}\HomoGebra\HomoGebra Tests\build
+      run: cmake --build . --config Release
+
+    - name: Test
+      working-directory: ${{runner.workspace}}\HomoGebra\HomoGebra Tests\build
+      run: ctest -V > test_res.xml
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v2
+      if: failure()
+      with:
+        name: test_res_xml
+        path: ${{runner.workspace}}\HomoGebra\HomoGebra Tests\build\test_res.xml

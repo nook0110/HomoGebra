@@ -11,6 +11,8 @@
 #include "../HomoGebra/NameGenerator.h"
 #include "gtest/gtest.h"
 
+using namespace HomoGebra;
+
 namespace HomogebraTest
 {
 inline constexpr auto kEpsilon = 1e-10L;
