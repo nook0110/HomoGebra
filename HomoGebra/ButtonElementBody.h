@@ -62,9 +62,4 @@ class ObjectSelectorBody : public PlaneObserver
 
   int current_object_ = -1;
 };
-
-template ObjectSelectorBody<GeometricObject>;
-template ObjectSelectorBody<Point>;
-template ObjectSelectorBody<Line>;
-template ObjectSelectorBody<Conic>;
 }  // namespace HomoGebra

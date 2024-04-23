@@ -368,8 +368,8 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
   if (!equation_) return;
 
   // Acquire render region center and size
-  const auto render_region_center = target.getView().getCenter();
-  const auto render_region_size = target.getView().getSize();
+  const auto& render_region_center = target.getView().getCenter();
+  const auto& render_region_size = target.getView().getSize();
 
   // Calculate render region corner
   const auto corner = render_region_center - render_region_size / 2.f;
@@ -394,7 +394,7 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
     const auto pos = corner + step_size * static_cast<float>(step);
 
     // Calculate roots of equation
-    // Check if roots are real and add them to points_to_add
+    // Check if roots are real and add them to line
     auto roots_x = equation_.value().Solve(
         Var::kX, Complex{static_cast<long double>(pos.y)});
 
@@ -408,14 +408,15 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
             {static_cast<float>(root.value()), pos.y}, sf::Color::Black));
       }
 
-      if (!(root && root.value().IsReal()) && !lines_x.back().empty())
+      if (!(root && root.value().IsReal()) /*check for discontinuity*/ &&
+          !lines_x.back().empty() /*check if need to resize*/)
       {
         lines_x.resize(lines_x.size() + roots_x.size());
       }
     }
 
     // Calculate roots of equation
-    // Check if roots are real and add them to points_to_add
+    // Check if roots are real and add them to line
     auto roots_y = equation_.value().Solve(
         Var::kY, Complex{static_cast<long double>(pos.x)});
 
@@ -430,7 +431,8 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
             {pos.x, static_cast<float>(root.value())}, sf::Color::Black));
       }
 
-      if (!(root && root.value().IsReal()) && !lines_y.back().empty())
+      if (!(root && root.value().IsReal()) /*check for discontinuity*/ &&
+          !lines_y.back().empty() /*check if need to resize*/)
       {
         lines_y.resize(lines_y.size() + roots_y.size());
       }
@@ -441,14 +443,19 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
   Expect(lines_y.size() <= 4);
 
   // Draw lines
-  for (const auto& line : lines_x)
-  {
-    target.draw(line.data(), line.size(), sf::PrimitiveType::LineStrip, states);
-  }
-  for (auto& line : lines_y)
-  {
-    target.draw(line.data(), line.size(), sf::PrimitiveType::LineStrip, states);
-  }
+  std::ranges::for_each(lines_x,
+                        [&target, &states](const auto& line)
+                        {
+                          target.draw(line.data(), line.size(),
+                                      sf::PrimitiveType::LineStrip, states);
+                        });
+
+  std::ranges::for_each(lines_y,
+                        [&target, &states](const auto& line)
+                        {
+                          target.draw(line.data(), line.size(),
+                                      sf::PrimitiveType::LineStrip, states);
+                        });
 }
 
 Distance ConicBody::GetDistance(const sf::Vector2f& position) const

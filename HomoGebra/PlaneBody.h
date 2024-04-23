@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+#include "EventNotifier.h"
+
 namespace HomoGebra
 {
 /**
@@ -12,7 +14,7 @@ namespace HomoGebra
  *
  * \date April 2023
  */
-class PlaneBody final : public sf::Drawable
+class PlaneBody final : public sf::Drawable, public EventNotifier
 {
  public:
   void Resize(const sf::Vector2f& size);
@@ -46,6 +48,8 @@ class PlaneBody final : public sf::Drawable
    * \param event Mouse event to update the plane body.
    */
   void UpdateZoom(const sf::Event& event);
+
+  void UpdateClick(const sf::Event& event);
 
   sf::View view_;  //!< View of the plane.
 };

@@ -1,4 +1,5 @@
 #pragma once
+#include "DistanceUtilities.h"
 #include "Plane.h"
 
 namespace HomoGebra
@@ -35,7 +36,7 @@ class ObjectProvider
   template <class GeometricObjectType>
   GeometricObjectType* GetNearestObject(
       const sf::Vector2f& position,
-      float max_distance = std::numeric_limits<float>::max());
+      Distance max_distance = std::numeric_limits<Distance>::max());
 
  private:
   /**

@@ -256,7 +256,4 @@ class ObservablePlane : public Observable<PlaneObserver>
   template <class Event>
   void Notify(const Event& event) const;
 };
-
-template Observable<GeometricObjectObserver>;
-template Observable<PlaneObserver>;
 }  // namespace HomoGebra

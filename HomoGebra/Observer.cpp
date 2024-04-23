@@ -1,5 +1,7 @@
 #include "Observer.h"
 
+#include <algorithm>
+
 namespace HomoGebra
 {
 template <class Observer>
@@ -21,7 +23,8 @@ template <class Observer>
 template <class Event>
 void Observable<Observer>::Notify(const Event& event) const
 {
-  for (const auto& observer : observers_) observer->Update(event);
+  std::ranges::for_each(
+      observers_, [&event](const auto& observer) { observer->Update(event); });
 }
 
 template <class Event>
@@ -48,4 +51,7 @@ void ObservablePlane::Notify(const Event& event) const
 
 template void ObservablePlane::Notify<PlaneEvent::ObjectRemoved>(
     const PlaneEvent::ObjectRemoved& event) const;
+
+template Observable<GeometricObjectObserver>;
+template Observable<PlaneObserver>;
 }  // namespace HomoGebra

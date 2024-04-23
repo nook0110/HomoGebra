@@ -1,5 +1,7 @@
 #include "Plane.h"
 
+#include <algorithm>
+
 #include "Construction.h"
 #include "GeometricObject.h"
 
@@ -40,10 +42,9 @@ void Plane::Update(const sf::Event& event)
 void Plane::Update(sf::RenderTarget& target) const
 {
   // Update all objects
-  for (const auto& object : GetObjects<GeometricObject>())
-  {
-    object->UpdateBody(target);
-  }
+  std::ranges::for_each(GetObjects<GeometricObject>(),
+                        [&target](const auto object)
+                        { object->UpdateBody(target); });
 }
 
 void Plane::draw(sf::RenderTarget& target, sf::RenderStates states) const
@@ -54,10 +55,9 @@ void Plane::draw(sf::RenderTarget& target, sf::RenderStates states) const
   target.setView(body_.GetView());
 
   //  Draw all objects
-  for (const auto& object : GetObjects<GeometricObject>())
-  {
-    target.draw(*object, states);
-  }
+  std::ranges::for_each(GetObjects<GeometricObject>(),
+                        [&target, &states](const auto object)
+                        { target.draw(*object, states); });
 }
 
 const NameGenerator& Plane::GetNameGenerator() const

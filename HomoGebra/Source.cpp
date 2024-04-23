@@ -14,8 +14,8 @@ int main()
   settings.antialiasingLevel = 16;
   settings.majorVersion = 3;
   settings.minorVersion = 0;
-  sf::RenderWindow window(sf::VideoMode(1000, 1000), "Window Title",
-                          sf::Style::Titlebar, settings);
+  sf::RenderWindow window(sf::VideoMode(1000, 1000), "HomoGebra",
+                          sf::Style::Titlebar | sf::Style::Close, settings);
 
   if (!ImGui::SFML::Init(window))
   {

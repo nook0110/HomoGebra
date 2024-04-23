@@ -62,9 +62,4 @@ class Deleter
  private:
   Plane* plane_{};
 };
-
-template ObjectSelector<GeometricObject>;
-template ObjectSelector<Point>;
-template ObjectSelector<Line>;
-template ObjectSelector<Conic>;
 }  // namespace HomoGebra

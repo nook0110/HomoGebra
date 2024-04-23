@@ -8,7 +8,7 @@ ObjectProvider::ObjectProvider(Plane* plane) : plane_(plane) {}
 
 template <class GeometricObjectType>
 GeometricObjectType* ObjectProvider::GetNearestObject(
-    const sf::Vector2f& position, const float max_distance)
+    const sf::Vector2f& position, const Distance max_distance)
 {
   // Get all GeometricObjectType objects
   auto objects = plane_->GetObjects<GeometricObjectType>();
@@ -45,11 +45,11 @@ GeometricObjectType* ObjectProvider::GetNearestObject(
 }
 
 template GeometricObject* ObjectProvider::GetNearestObject(
-    const sf::Vector2f& position, float max_distance);
+    const sf::Vector2f& position, Distance max_distance);
 template Point* ObjectProvider::GetNearestObject(const sf::Vector2f& position,
-                                                 float max_distance);
+                                                 Distance max_distance);
 template Line* ObjectProvider::GetNearestObject(const sf::Vector2f& position,
-                                                float max_distance);
+                                                Distance max_distance);
 template Conic* ObjectProvider::GetNearestObject(const sf::Vector2f& position,
-                                                 float max_distance);
+                                                 Distance max_distance);
 }  // namespace HomoGebra

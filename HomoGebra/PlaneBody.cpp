@@ -33,4 +33,13 @@ void PlaneBody::UpdateZoom(const sf::Event& event)
     }
   }
 }
+
+void PlaneBody::UpdateClick(const sf::Event& event)
+{
+  // Check if mouse button was pressed
+  if (event.type == sf::Event::MouseButtonPressed)
+  {
+    // Notify(UserEvent::Click{});
+  }
+}
 }  // namespace HomoGebra

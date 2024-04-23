@@ -7,17 +7,17 @@ namespace HomoGebra
 {
 template <class T>
 concept ButtonElement = requires(T button_part) {
-                          {
-                            T{new Plane{}}
-                          };
-                          {
-                            button_part.Draw()
-                          };
-                        } && requires(const T button_part) {
-                               {
-                                 button_part()
-                               };
-                             };
+  {
+    T{new Plane{}}
+  };
+  {
+    button_part.Draw()
+  };
+} && requires(const T button_part) {
+  {
+    button_part()
+  };
+};
 
 /**
  * \brief Wrapper of element

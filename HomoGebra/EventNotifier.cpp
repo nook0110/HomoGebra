@@ -1,5 +1,7 @@
 #include "EventNotifier.h"
 
+#include <algorithm>
+
 namespace HomoGebra
 {
 void EventNotifier::Attach(EventListener* listener)
@@ -19,7 +21,8 @@ template <class Event>
 void EventNotifier::Notify(const Event& event) const
 {
   // Update all listeners
-  for (const auto& listener : listeners_) listener->Update(event);
+  std::ranges::for_each(
+      listeners_, [&event](const auto& listener) { listener->Update(event); });
 }
 
 template void EventNotifier::Notify<UserEvent::Click>(
