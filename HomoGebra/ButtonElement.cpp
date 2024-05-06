@@ -17,8 +17,8 @@ GeometricObjectType* ObjectSelector<GeometricObjectType>::operator()() const
   return ObjectSelectorBody<GeometricObjectType>::GetObject();
 }
 
-template ObjectSelector<GeometricObject>;
-template ObjectSelector<Point>;
-template ObjectSelector<Line>;
-template ObjectSelector<Conic>;
+template class ObjectSelector<GeometricObject>;
+template class ObjectSelector<Point>;
+template class ObjectSelector<Line>;
+template class ObjectSelector<Conic>;
 }  // namespace HomoGebra

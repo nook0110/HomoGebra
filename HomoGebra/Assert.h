@@ -25,8 +25,9 @@ void Assert(const Assertion& assertion, const Message& message = {},
 
 template <class Assertion, class Message = std::string_view>
   requires AssertSettings::kDebug
-void Expect(const Assertion& assertion, const Message& message,
-            std::ostream& out, std::source_location location)
+void Expect(const Assertion& assertion, const Message& message = {},
+            std::ostream& out = std::cerr,
+            std::source_location location = std::source_location::current())
 {
   if constexpr (AssertSettings::kHardFailDebug)
     Assert(assertion, message, out, std::move(location));

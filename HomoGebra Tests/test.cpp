@@ -67,6 +67,40 @@ testing::AssertionResult check_two_vectors(const std::vector<Complex>& first,
 
 using namespace HelpFunctions;
 
+namespace ComplexTest
+{
+class ComplexTF : public testing::Test
+{
+ protected:
+  const Complex complex1{1.0, 2.0};
+  const Complex complex2{3.0, 4.0};
+};
+
+TEST_F(ComplexTF, Addition)
+{
+  const Complex result = complex1 + complex2;
+  EXPECT_TRUE(check_two_complex(result, Complex{4.0, 6.0}, kEpsilon));
+}
+
+TEST_F(ComplexTF, Subtraction)
+{
+  const Complex result = complex1 - complex2;
+  EXPECT_TRUE(check_two_complex(result, Complex{-2.0, -2.0}, kEpsilon));
+}
+
+TEST_F(ComplexTF, Multiplication)
+{
+  const Complex result = complex1 * complex2;
+  EXPECT_TRUE(check_two_complex(result, Complex{-5.0, 10.0}, kEpsilon));
+}
+
+TEST_F(ComplexTF, Division)
+{
+  const Complex result = complex1 / complex2;
+  EXPECT_TRUE(check_two_complex(result, Complex{0.44, 0.08}, kEpsilon));
+}
+}  // namespace ComplexTest
+
 namespace Matrix
 {
 // Checks that two squared matrix are equal with precision [abs_error]

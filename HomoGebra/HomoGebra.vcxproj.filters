@@ -79,12 +79,6 @@
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_draw.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_tables.cpp">
-      <Filter>imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_demo.cpp">
-      <Filter>imgui</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_stdlib.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
@@ -154,6 +148,9 @@
     </ClCompile>
     <ClCompile Include="EventConverter.cpp">
       <Filter>Sources\Observer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_tables.cpp">
+      <Filter>imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

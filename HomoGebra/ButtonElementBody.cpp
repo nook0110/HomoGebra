@@ -109,8 +109,8 @@ void ObjectSelectorBody<GeometricObjectType>::DrawSetter()
   }
 }
 
-template ObjectSelectorBody<GeometricObject>;
-template ObjectSelectorBody<Point>;
-template ObjectSelectorBody<Line>;
-template ObjectSelectorBody<Conic>;
+template class ObjectSelectorBody<GeometricObject>;
+template class ObjectSelectorBody<Point>;
+template class ObjectSelectorBody<Line>;
+template class ObjectSelectorBody<Conic>;
 }  // namespace HomoGebra

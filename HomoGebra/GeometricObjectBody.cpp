@@ -123,7 +123,7 @@ void PointBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
   }
 }
 
-inline [[nodiscard]] std::optional<sf::Vector2f> IntersectRayWithRectangle(
+[[nodiscard]] inline std::optional<sf::Vector2f> IntersectRayWithRectangle(
     const sf::Vector2f& point, const sf::Vector2f& direction,
     const sf::FloatRect& rectangle)
 {
@@ -500,7 +500,7 @@ void ConicBody::UpdateBodyLines(const sf::RenderTarget& target)
   Expect(lines_y.size() <= 4);
 }
 
-inline [[nodiscard]] std::array<std::optional<Complex>, 2>
+[[nodiscard]] inline std::array<std::optional<Complex>, 2>
 SolveQuadraticEquation(const Complex& quadratic_coefficient,
                        const Complex& linear_coefficient,
                        const Complex& constant_coefficient)

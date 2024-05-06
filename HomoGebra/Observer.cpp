@@ -52,6 +52,6 @@ void ObservablePlane::Notify(const Event& event) const
 template void ObservablePlane::Notify<PlaneEvent::ObjectRemoved>(
     const PlaneEvent::ObjectRemoved& event) const;
 
-template Observable<GeometricObjectObserver>;
-template Observable<PlaneObserver>;
+template class Observable<GeometricObjectObserver>;
+template class Observable<PlaneObserver>;
 }  // namespace HomoGebra
