@@ -1,6 +1,4 @@
 #pragma once
-#include <Thor/Input.hpp>
-
 #include "EventNotifier.h"
 #include "ObjectProvider.h"
 

@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "Assert.h"
+#include "GeometricObject.h"
 #include "Matrix.h"
 
 namespace HomoGebra

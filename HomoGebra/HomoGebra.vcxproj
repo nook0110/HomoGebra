@@ -154,13 +154,13 @@
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_stdlib.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\imgui\imgui_widgets.cpp" />
-    <ClCompile Include="ButtonBody.cpp" />
     <ClCompile Include="ButtonElement.cpp" />
     <ClCompile Include="ButtonElementBody.cpp" />
     <ClCompile Include="Complex.cpp" />
     <ClCompile Include="Construction.cpp" />
     <ClCompile Include="Coordinate.cpp" />
     <ClCompile Include="Equation.cpp" />
+    <ClCompile Include="EventConverter.cpp" />
     <ClCompile Include="EventNotifier.cpp" />
     <ClCompile Include="GeometricObject.cpp" />
     <ClCompile Include="GeometricObjectBody.cpp" />
@@ -174,18 +174,17 @@
     <ClCompile Include="NameGenerator.cpp" />
     <ClCompile Include="Observer.cpp" />
     <ClCompile Include="Plane.cpp" />
-    <ClCompile Include="PlaneBody.cpp" />
     <ClCompile Include="ObjectProvider.cpp" />
     <ClCompile Include="PlaneImplementation.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assert.h" />
-    <ClInclude Include="ButtonBody.h" />
     <ClInclude Include="ButtonElement.h" />
     <ClInclude Include="ButtonElementBody.h" />
     <ClInclude Include="ButtonImplementation.h" />
     <ClInclude Include="DistanceUtilities.h" />
+    <ClInclude Include="EventConverter.h" />
     <ClInclude Include="GuiUtilities.h" />
     <ClInclude Include="HomoGebraWindow.h" />
     <ClInclude Include="ButtonsImplementations.h" />
@@ -207,7 +206,6 @@
     <ClInclude Include="NameGenerator.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="Plane.h" />
-    <ClInclude Include="PlaneBody.h" />
     <ClInclude Include="ObjectProvider.h" />
     <ClInclude Include="PlaneImplementation.h" />
   </ItemGroup>

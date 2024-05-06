@@ -28,18 +28,10 @@ template std::vector<GeometricObject*> Plane::GetObjects<GeometricObject>()
     const;
 
 template std::vector<GeometricObject*> Plane::GetObjects<Point>() const;
-
 template std::vector<GeometricObject*> Plane::GetObjects<Line>() const;
-
 template std::vector<GeometricObject*> Plane::GetObjects<Conic>() const;
 
-void Plane::Update(const sf::Event& event)
-{
-  // Update plane body
-  body_.Update(event);
-}
-
-void Plane::Update(sf::RenderTarget& target) const
+void Plane::UpdateBodies(const sf::RenderTarget& target) const
 {
   // Update all objects
   std::ranges::for_each(GetObjects<GeometricObject>(),
@@ -49,15 +41,15 @@ void Plane::Update(sf::RenderTarget& target) const
 
 void Plane::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-  target.draw(body_, states);
-
-  // Set view
-  target.setView(body_.GetView());
-
   //  Draw all objects
   std::ranges::for_each(GetObjects<GeometricObject>(),
                         [&target, &states](const auto object)
                         { target.draw(*object, states); });
+}
+
+void Plane::Update(const UserEvent::Click& clicked_event)
+{
+  EventNotifier::Notify(clicked_event);
 }
 
 const NameGenerator& Plane::GetNameGenerator() const

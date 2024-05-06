@@ -179,10 +179,10 @@ void PointBody::DrawArrow(sf::RenderTarget& target,
 
 Distance PointBody::GetDistance(const sf::Vector2f& position) const
 {
-  if (!position_) return std::numeric_limits<float>::max();
+  if (!position_) return std::numeric_limits<Distance>::max();
 
   if (position_.value().is_at_infinity)
-    return std::numeric_limits<float>::max();
+    return std::numeric_limits<Distance>::max();
 
   return Length(position_.value().position - position);
 }
@@ -311,7 +311,60 @@ float LineBody::Equation::Solve(const Var var, const float another) const
   return float{};
 }
 
-void ConicBody::Update(const ConicEquation& equation)
+void ConicBody::Update(const sf::RenderTarget& target,
+                       const ConicEquation& equation)
+{
+  UpdateEquation(equation);
+  UpdateBodyLines(target);
+}
+
+void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+  // Draw lines
+  std::ranges::for_each(body_lines.lines_x,
+                        [&target, &states](const auto& line)
+                        {
+                          target.draw(line.data(), line.size(),
+                                      sf::PrimitiveType::LineStrip, states);
+                        });
+
+  std::ranges::for_each(body_lines.lines_y,
+                        [&target, &states](const auto& line)
+                        {
+                          target.draw(line.data(), line.size(),
+                                      sf::PrimitiveType::LineStrip, states);
+                        });
+}
+
+Distance ConicBody::GetDistance(const sf::Vector2f& position) const
+{
+  Distance distance = std::numeric_limits<Distance>::max();
+  std::ranges::for_each(
+      body_lines.lines_x,
+      [&distance, &position](const auto& line)
+      {
+        std::ranges::for_each(
+            line,
+            [&distance, &position](const auto& vertex) {
+              distance = std::min(distance, Length(vertex.position - position));
+            });
+      });
+
+  std::ranges::for_each(
+      body_lines.lines_y,
+      [&distance, &position](const auto& line)
+      {
+        std::ranges::for_each(
+            line,
+            [&distance, &position](const auto& vertex) {
+              distance = std::min(distance, Length(vertex.position - position));
+            });
+      });
+
+  return distance;
+}
+
+void ConicBody::UpdateEquation(const ConicEquation& equation)
 {
   const auto normalizer = Complex{1} / equation.squares.front();
 
@@ -363,9 +416,16 @@ void ConicBody::Update(const ConicEquation& equation)
   equation_ = Equation{squares, pair_product, linears, constant};
 }
 
-void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void ConicBody::UpdateBodyLines(const sf::RenderTarget& target)
 {
-  if (!equation_) return;
+  auto& [lines_x, lines_y] = body_lines;
+  lines_x.clear();
+  lines_y.clear();
+
+  if (!equation_)
+  {
+    return;
+  }
 
   // Acquire render region center and size
   const auto& render_region_center = target.getView().getCenter();
@@ -380,13 +440,10 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
   const size_t steps = std::max(target.getSize().x, target.getSize().y) / 2;
   const auto step_size = render_region_size / static_cast<float>(steps);
 
-  using Line = std::vector<sf::Vertex>;
-  using Lines = std::vector<Line>;
-
-  Lines lines_x(2);
-  Lines lines_y(2);
   lines_x.reserve(4);
   lines_y.reserve(4);
+  lines_x.resize(2);
+  lines_y.resize(2);
 
   for (size_t step = 0; step < steps; ++step)
   {
@@ -441,26 +498,6 @@ void ConicBody::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
   Expect(lines_x.size() <= 4);
   Expect(lines_y.size() <= 4);
-
-  // Draw lines
-  std::ranges::for_each(lines_x,
-                        [&target, &states](const auto& line)
-                        {
-                          target.draw(line.data(), line.size(),
-                                      sf::PrimitiveType::LineStrip, states);
-                        });
-
-  std::ranges::for_each(lines_y,
-                        [&target, &states](const auto& line)
-                        {
-                          target.draw(line.data(), line.size(),
-                                      sf::PrimitiveType::LineStrip, states);
-                        });
-}
-
-Distance ConicBody::GetDistance(const sf::Vector2f& position) const
-{
-  return 0;
 }
 
 inline [[nodiscard]] std::array<std::optional<Complex>, 2>

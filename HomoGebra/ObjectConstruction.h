@@ -1,10 +1,15 @@
 #pragma once
 
 #include "Construction.h"
-#include "GeometricObject.h"
+#include "Equation.h"
 
 namespace HomoGebra
 {
+class GeometricObject;
+class Point;
+class Conic;
+class Line;
+
 /**
  * \brief Base class for all point constructions.
  *

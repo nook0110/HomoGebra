@@ -109,9 +109,6 @@
     <ClCompile Include="Plane.cpp">
       <Filter>Sources\Plane</Filter>
     </ClCompile>
-    <ClCompile Include="PlaneBody.cpp">
-      <Filter>Sources\Plane</Filter>
-    </ClCompile>
     <ClCompile Include="GeometricObject.cpp">
       <Filter>Sources\GeomObject</Filter>
     </ClCompile>
@@ -149,14 +146,14 @@
       <Filter>Sources\Equation</Filter>
     </ClCompile>
     <ClCompile Include="HomoHebraWindow.cpp" />
-    <ClCompile Include="ButtonBody.cpp">
-      <Filter>Sources\GUI\Button</Filter>
-    </ClCompile>
     <ClCompile Include="ButtonElement.cpp">
       <Filter>Sources\GUI\Button</Filter>
     </ClCompile>
     <ClCompile Include="ButtonElementBody.cpp">
       <Filter>Sources\GUI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="EventConverter.cpp">
+      <Filter>Sources\Observer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -176,9 +173,6 @@
       <Filter>Headers\GUI</Filter>
     </ClInclude>
     <ClInclude Include="Plane.h">
-      <Filter>Headers\Plane</Filter>
-    </ClInclude>
-    <ClInclude Include="PlaneBody.h">
       <Filter>Headers\Plane</Filter>
     </ClInclude>
     <ClInclude Include="PlaneImplementation.h">
@@ -232,9 +226,6 @@
     <ClInclude Include="HomoGebraWindow.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="ButtonBody.h">
-      <Filter>Headers\GUI\Button</Filter>
-    </ClInclude>
     <ClInclude Include="ButtonElement.h">
       <Filter>Headers\GUI\Button</Filter>
     </ClInclude>
@@ -249,6 +240,9 @@
     </ClInclude>
     <ClInclude Include="ButtonImplementation.h">
       <Filter>Headers\GUI\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="EventConverter.h">
+      <Filter>Headers\Observer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

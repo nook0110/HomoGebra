@@ -19,15 +19,14 @@ constexpr auto kDebug = false;
 
 template <class Assertion, class Message>
   requires AssertSettings::kDebug
-void Assert(const Assertion& assertion, const Message& message,
-            std::ostream& out, std::source_location location);
+void Assert(const Assertion& assertion, const Message& message = {},
+            std::ostream& out = std::cerr,
+            std::source_location location = std::source_location::current());
 
 template <class Assertion, class Message = std::string_view>
   requires AssertSettings::kDebug
-void Expect(
-    const Assertion& assertion, const Message& message = {},
-    std::ostream& out = std::cerr,
-    const std::source_location location = std::source_location::current())
+void Expect(const Assertion& assertion, const Message& message,
+            std::ostream& out, std::source_location location)
 {
   if constexpr (AssertSettings::kHardFailDebug)
     Assert(assertion, message, out, std::move(location));
@@ -66,10 +65,8 @@ void Expect(
 
 template <class Assertion, class Message = std::string_view>
   requires AssertSettings::kDebug
-void Assert(
-    const Assertion& assertion, const Message& message = {},
-    std::ostream& out = std::cerr,
-    const std::source_location location = std::source_location::current())
+void Assert(const Assertion& assertion, const Message& message,
+            std::ostream& out, const std::source_location location)
 {
   if (!assertion)
   {
@@ -84,10 +81,9 @@ void Assert(
 
 template <class Assertion, class Message = std::string_view>
   requires(!AssertSettings::kDebug)
-void Assert(
-    const Assertion& assertion, const Message& message = {},
-    std::ostream& out = std::cerr,
-    const std::source_location location = std::source_location::current())
+void Assert(const Assertion& assertion, const Message& message = {},
+            std::ostream& out = std::cerr,
+            std::source_location location = std::source_location::current())
 {
   if constexpr (AssertSettings::kAssertAsWarning)
   {

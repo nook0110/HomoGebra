@@ -8,7 +8,9 @@ template <class GeometricObjectType>
 NearbyObjectGetter<GeometricObjectType>::NearbyObjectGetter(
     Plane* plane, GeometricObjectType* last_object)
     : last_object_(std::move(last_object)), finder_(plane)
-{}
+{
+  plane->Attach(this);
+}
 
 template <class GeometricObjectType>
 GeometricObjectType* NearbyObjectGetter<GeometricObjectType>::GetLastObject()

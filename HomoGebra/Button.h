@@ -1,7 +1,7 @@
 #pragma once
-#include "ButtonBody.h"
-#include "ButtonImplementation.h"
+#include <imgui.h>
 
+#include "ButtonImplementation.h"
 namespace HomoGebra
 {
 /**
@@ -12,7 +12,7 @@ namespace HomoGebra
  *
  */
 template <class... Elements>
-class ButtonBase : public ButtonImplementation<Elements...>, public ButtonBody
+class ButtonBase : public ButtonImplementation<Elements...>
 {
  public:
   /**
@@ -29,10 +29,13 @@ class ButtonBase : public ButtonImplementation<Elements...>, public ButtonBody
   void Draw()
   {
     ButtonImplementation<Elements...>::Draw();
-    if (ButtonBody::Draw())
+    if (DrawApplyButton())
     {
       ButtonImplementation<Elements...>::PassArguments();
     }
   }
+
+ private:
+  bool DrawApplyButton() { return ImGui::Button("Apply"); }
 };
 }  // namespace HomoGebra

@@ -1,5 +1,6 @@
 #include "GeometricObject.h"
 
+#include <numbers>
 #include <utility>
 
 #include "Equation.h"
@@ -41,7 +42,7 @@ float Point::CalculateSizeOfBody(const sf::RenderTarget& target)
       std::abs(second_pixel_position.x - first_pixel_position.x);
 
   // Ratio of size of body to size of pixel
-  constexpr float kRatio = 6.28318530718f;
+  constexpr float kRatio = 2 * std::numbers::pi_v<float>;
 
   // Calculate size of body
   const auto size = pixel_size * kRatio;
@@ -81,7 +82,7 @@ void Point::Detach(const GeometricObjectObserver* observer)
   implementation_.Detach(observer);
 }
 
-void Point::UpdateBody(sf::RenderTarget& target)
+void Point::UpdateBody(const sf::RenderTarget& target)
 {
   // Calculate size of body
   const float size = CalculateSizeOfBody(target);
@@ -133,7 +134,7 @@ const LineEquation& Line::GetEquation() const
   return implementation_.GetEquation();
 }
 
-void Line::UpdateBody(sf::RenderTarget& target)
+void Line::UpdateBody(const sf::RenderTarget& target)
 {
   // Update body
   body_.Update(implementation_.GetEquation());
@@ -205,10 +206,10 @@ void Conic::SetEquation(ConicEquation equation)
   implementation_.SetEquation(std::move(equation));
 }
 
-void Conic::UpdateBody(sf::RenderTarget& target)
+void Conic::UpdateBody(const sf::RenderTarget& target)
 {
   // Update body
-  body_.Update(implementation_.GetEquation());
+  body_.Update(target, implementation_.GetEquation());
 }
 
 void Conic::draw(sf::RenderTarget& target, sf::RenderStates states) const

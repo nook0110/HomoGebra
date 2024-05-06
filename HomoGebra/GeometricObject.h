@@ -41,7 +41,7 @@ class GeometricObject : public sf::Drawable,
    *
    * \param target Render target to draw to.
    */
-  virtual void UpdateBody(sf::RenderTarget& target) = 0;
+  virtual void UpdateBody(const sf::RenderTarget& target) = 0;
 
   /**
    * \brief Draw the point.
@@ -156,7 +156,7 @@ class Point final : public GeometricObject
    *
    * \param target Render target to draw to.
    */
-  void UpdateBody(sf::RenderTarget& target) override;
+  void UpdateBody(const sf::RenderTarget& target) override;
 
   /**
    * \brief Draw the point.
@@ -263,7 +263,7 @@ class Line final : public GeometricObject
    *
    * \param target Render target to draw to.
    */
-  void UpdateBody(sf::RenderTarget& target) override;
+  void UpdateBody(const sf::RenderTarget& target) override;
 
   /**
    * \brief Draw the line.
@@ -359,7 +359,7 @@ class Conic final : public GeometricObject
    *
    * \param target Render target to draw to.
    */
-  void UpdateBody(sf::RenderTarget& target) override;
+  void UpdateBody(const sf::RenderTarget& target) override;
 
   /**
    * \brief Draw the conic.

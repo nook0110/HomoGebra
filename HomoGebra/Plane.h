@@ -1,6 +1,8 @@
 #pragma once
+#include <SFML/Graphics.hpp>
+
+#include "EventNotifier.h"
 #include "Observer.h"
-#include "PlaneBody.h"
 #include "PlaneImplementation.h"
 
 namespace HomoGebra
@@ -20,9 +22,14 @@ class Construction;
  * \see PlaneBody
  */
 class Plane final : public sf::Drawable,
-                    public ObservableInterface<PlaneObserver>
+                    public ObservableInterface<PlaneObserver>,
+                    public EventListener,
+                    public EventNotifier
 {
  public:
+  using EventNotifier::Attach;
+  using EventNotifier::Detach;
+
   /**
    * \brief Adds object to plane.
    *
@@ -57,24 +64,9 @@ class Plane final : public sf::Drawable,
   /**
    * \brief Updates plane.
    *
-   * \param event Event to update plane.
-   */
-  void Update(const sf::Event& event);
-
-  /**
-   * \brief Updates plane.
-   *
    * \param target Render target to draw to.
    */
-  void Update(sf::RenderTarget& target) const;
-
-  /**
-   * \brief Draws plane and all objects on it.
-   *
-   * \param target Render target to draw to.
-   * \param states Current render states.
-   */
-  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+  void UpdateBodies(const sf::RenderTarget& target) const;
 
   /**
    * \brief Returns name generator.
@@ -88,7 +80,16 @@ class Plane final : public sf::Drawable,
   void Detach(const PlaneObserver* observer) override;
 
  private:
+  /**
+   * \brief Draws plane and all objects on it.
+   *
+   * \param target Render target to draw to.
+   * \param states Current render states.
+   */
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
+  void Update(const UserEvent::Click& clicked_event) override;
+
   PlaneImplementation implementation_;  //!< Implementation of plane
-  PlaneBody body_;                      //!< Body of plane
 };
 }  // namespace HomoGebra

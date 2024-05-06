@@ -324,7 +324,7 @@ class ConicBody : public ObjectBody
    *
    * \param equation Equation of the conic.
    */
-  void Update(const ConicEquation& equation);
+  void Update(const sf::RenderTarget& target, const ConicEquation& equation);
 
   /**
    * \brief Draw conic to a render target.
@@ -337,6 +337,23 @@ class ConicBody : public ObjectBody
   Distance GetDistance(const sf::Vector2f& position) const override;
 
  private:
+  /**
+   * \brief Body of lines.
+   *   *
+   * \author nook0110
+   *   *
+   * \version 1.0
+   *   *
+   * \date April 2024
+   */
+  struct BodyLines
+  {
+    using Line = std::vector<sf::Vertex>;
+    using Lines = std::vector<Line>;
+    Lines lines_x;  //!< Lines parallel to x-axis.
+    Lines lines_y;  //!< Lines parallel to y-axis.
+  };
+
   /**
    * \brief Equation of a conic that lies on a real plane.
    *
@@ -365,6 +382,10 @@ class ConicBody : public ObjectBody
     std::array<long double, 2> linears;  //!< Coefficient of the variables.
     long double constant;                //!< Constant coefficient.
   };
+
+  void UpdateEquation(const ConicEquation& equation);
+  void UpdateBodyLines(const sf::RenderTarget& target);
+  BodyLines body_lines;  //!< Body of the conic.
 
   std::optional<Equation> equation_;  //!< Equation of the conic.
 };

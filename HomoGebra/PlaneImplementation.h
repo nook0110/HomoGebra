@@ -1,5 +1,6 @@
 #pragma once
 #include <memory>
+#include <set>
 #include <vector>
 
 #include "NameGenerator.h"
@@ -15,19 +16,19 @@ class GarbageObjectCollector
  public:
   [[nodiscard]] bool Empty() const { return objects_.empty(); }
 
-  void Append(const GeometricObject* object) { objects_.emplace_back(object); }
+  void Append(const GeometricObject* object) { objects_.insert(object); }
 
   const GeometricObject* Pop()
   {
-    const auto last = objects_.back();
-    objects_.pop_back();
+    const auto last = *objects_.begin();
+    objects_.erase(objects_.begin());
     return last;
   }
 
   void Clear() { objects_.clear(); }
 
  private:
-  std::vector<const GeometricObject*> objects_;
+  std::set<const GeometricObject*> objects_;
 };
 
 /**
@@ -47,6 +48,11 @@ class PlaneImplementation : public GeometricObjectObserver,
                             public ObservablePlane
 {
  public:
+  /**
+   * \brief Default constructor.
+   */
+  ~PlaneImplementation() override;
+
   /**
    * \brief Adds object
    *
@@ -93,6 +99,7 @@ class PlaneImplementation : public GeometricObjectObserver,
 
  private:
   void RemoveObject(const GeometricObject* object);
+  void ClearGarbage();
 
   /**
    * Member data.
