@@ -1,6 +1,0 @@
-<map id="HomoGebra::Point::AlertDestruction" name="HomoGebra::Point::AlertDestruction">
-<area shape="rect" id="node1" title="Implementation interface." alt="" coords="5,13,236,38"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_point.html#aa6afca5afc61d974e7cc616210d2d535" title="Notify observers about event." alt="" coords="284,13,455,38"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable_geometric_object.html#ac1541842fe032cfbbf39ac2e948f4bf5" title="Notify all observers about event." alt="" coords="503,5,725,45"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_observable.html#ad6f678443403a9c9e412a73200222147" title="Notify all observers about event." alt="" coords="773,5,936,45"/>
-</map>

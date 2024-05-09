@@ -1,5 +1,0 @@
-<map id="Conic::Notify" name="Conic::Notify">
-<area shape="rect" id="node1" title="Notify observers about event." alt="" coords="5,13,101,38"/>
-<area shape="rect" id="node2" href="$class_observable_geometric_object.html#a97256ef7a4dba562ebc5cc2301d344ea" title="Notify all observers about event." alt="" coords="149,5,333,45"/>
-<area shape="rect" id="node3" href="$class_observable.html#a3c17caf423ec7c6d08cb197ee4bb526e" title="Notify all observers about event." alt="" coords="381,13,508,38"/>
-</map>

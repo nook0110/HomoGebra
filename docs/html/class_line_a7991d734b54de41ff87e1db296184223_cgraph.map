@@ -1,8 +1,0 @@
-<map id="Line::UpdateBody" name="Line::UpdateBody">
-<area shape="rect" id="node1" title="Update the body of the line." alt="" coords="5,42,131,67"/>
-<area shape="rect" id="node2" href="$class_line_implementation.html#a99a0e44758035b82214f2d84a739a1d9" title="Return equation of line." alt="" coords="179,5,313,45"/>
-<area shape="rect" id="node3" href="$class_line_body.html#ae6ae1e8a549ad2382f90c0d5e63c916f" title="Updates the line body." alt="" coords="183,70,309,95"/>
-<area shape="rect" id="node4" href="$struct_homogeneous_coordinate.html#ac03f29c6b631bd4309cc8e0f774aa226" title="Normalizes coordinates." alt="" coords="361,63,528,103"/>
-<area shape="rect" id="node5" href="$struct_homogeneous_coordinate.html#ac20e34767f6cb9f6b2e1da0dfe24fb46" title="Normalizes coordinates." alt="" coords="576,63,743,103"/>
-<area shape="rect" id="node6" href="$class_complex.html#ac1a16636807edf8b0271c9b543bdf21c" title="Checks if complex number is zero." alt="" coords="791,70,907,95"/>
-</map>

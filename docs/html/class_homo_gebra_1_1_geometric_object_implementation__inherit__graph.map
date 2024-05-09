@@ -1,9 +1,0 @@
-<map id="HomoGebra::GeometricObjectImplementation" name="HomoGebra::GeometricObjectImplementation">
-<area shape="rect" id="node1" title="Base class for implementations of geometric objects." alt="" coords="237,513,473,605"/>
-<area shape="rect" id="node5" href="$class_homo_gebra_1_1_conic_implementation.html" title="Implementation of Conic." alt="" coords="5,653,225,760"/>
-<area shape="rect" id="node6" href="$class_homo_gebra_1_1_line_implementation.html" title="Implementation of Line." alt="" coords="250,653,461,760"/>
-<area shape="rect" id="node7" href="$class_homo_gebra_1_1_point_implementation.html" title="Implementation of Point." alt="" coords="485,653,703,760"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_observable_geometric_object.html" title="Makes GeometricObjectImplementation observable." alt="" coords="244,359,467,465"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable.html" title=" " alt="" coords="258,175,453,311"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_observable_interface.html" title="Interface for observers of geometric objects." alt="" coords="249,5,461,127"/>
-</map>

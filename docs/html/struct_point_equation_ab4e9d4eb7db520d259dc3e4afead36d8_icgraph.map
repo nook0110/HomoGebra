@@ -1,9 +1,0 @@
-<map id="PointEquation::GetEquation" name="PointEquation::GetEquation">
-<area shape="rect" id="node1" title="Return current equation of point." alt="" coords="653,59,836,84"/>
-<area shape="rect" id="node2" href="$class_point_body.html#a7f1f6a7a61e1de7bcceede30dee02da1" title="Calculates the projective position of the point." alt="" coords="415,29,605,55"/>
-<area shape="rect" id="node6" href="$class_by_two_points.html#a711f1875baa824a46b26966a4f9770b4" title=" " alt="" coords="423,79,597,119"/>
-<area shape="rect" id="node3" href="$class_point_body.html#a18793feccde9eab2d64dd9249caf73b9" title="Updates the point body." alt="" coords="210,29,341,55"/>
-<area shape="rect" id="node4" href="$class_point.html#aced26fabfb342a696916729589d86a39" title="Set new equation of point." alt="" coords="5,5,136,31"/>
-<area shape="rect" id="node5" href="$class_point.html#aec58dc94755612be2e404e56b1a65b02" title="Body interface." alt="" coords="5,55,136,80"/>
-<area shape="rect" id="node7" href="$class_by_two_points.html#a6e7fca79d015afa44e47f58d6d17608f" title="Constructs line by two points." alt="" coords="184,87,367,112"/>
-</map>

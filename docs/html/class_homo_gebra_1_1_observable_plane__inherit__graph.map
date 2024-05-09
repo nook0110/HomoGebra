@@ -1,6 +1,0 @@
-<map id="HomoGebra::ObservablePlane" name="HomoGebra::ObservablePlane">
-<area shape="rect" id="node1" title=" " alt="" coords="17,359,213,451"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_plane_implementation.html" title="Implementation of Plane." alt="" coords="5,499,225,723"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_observable.html" title=" " alt="" coords="34,175,197,311"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable_interface.html" title="Interface for observers of geometric objects." alt="" coords="9,5,221,127"/>
-</map>

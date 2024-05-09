@@ -1,8 +1,0 @@
-<map id="NameGenerator::IsNameEmpty" name="NameGenerator::IsNameEmpty">
-<area shape="rect" id="node1" title="Checks if name is empty." alt="" coords="261,104,464,129"/>
-<area shape="rect" id="node2" href="$class_name_generator.html#aceed9ce745f6119cff95f5f05110078a" title="Add name to used names." alt="" coords="20,5,199,31"/>
-<area shape="rect" id="node3" href="$class_name_generator.html#a72e1d8d5e3d7643ccf50032ec5fa84fd" title="Deletes name from dictionary." alt="" coords="13,55,205,80"/>
-<area shape="rect" id="node4" href="$class_name_generator.html#af45fc6a331bc25f2bbf1cef7e0629220" title="Generate new name." alt="" coords="5,104,213,129"/>
-<area shape="rect" id="node5" href="$class_name_generator.html#a9d4e858d3cc958bdc901f7e4392fe82e" title="Checks if name is used." alt="" coords="12,153,207,179"/>
-<area shape="rect" id="node6" href="$class_name_generator.html#ab72dec3e1f9b876e83030f11fbc1dacd" title="Renames name." alt="" coords="25,203,194,228"/>
-</map>

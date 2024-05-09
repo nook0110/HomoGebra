@@ -1,7 +1,0 @@
-<map id="ByTwoPoints::RecalculateEquation" name="ByTwoPoints::RecalculateEquation">
-<area shape="rect" id="node1" title=" " alt="" coords="5,47,180,87"/>
-<area shape="rect" id="node2" href="$struct_point_equation.html#ab4e9d4eb7db520d259dc3e4afead36d8" title="Return current equation of point." alt="" coords="236,5,419,31"/>
-<area shape="rect" id="node3" href="$class_point.html#ac45889f34111c0347477f76a303c6677" title="Return current equation of point." alt="" coords="261,55,393,80"/>
-<area shape="rect" id="node5" href="$class_construction_line.html#ab029d75f768d7e9d0facc0c5d2197ebf" title="Set equation of line." alt="" coords="228,104,427,129"/>
-<area shape="rect" id="node4" href="$class_point_implementation.html#acf2070120f5877ed5e73a0aa3eb9cf46" title="Return current equation of point." alt="" coords="475,47,615,87"/>
-</map>

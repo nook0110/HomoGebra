@@ -1,7 +1,0 @@
-<map id="PlaneImplementation" name="PlaneImplementation">
-<area shape="rect" id="node1" title="Implementation of Plane." alt="" coords="118,528,289,752"/>
-<area shape="rect" id="node2" href="$class_geometric_object_observer.html" title="Makes Construction an observer." alt="" coords="5,344,204,480"/>
-<area shape="rect" id="node3" href="$class_observable_plane.html" title=" " alt="" coords="229,366,375,458"/>
-<area shape="rect" id="node4" href="$class_observable.html" title=" " alt="" coords="205,175,399,296"/>
-<area shape="rect" id="node5" href="$class_observable_interface.html" title=" " alt="" coords="221,5,383,127"/>
-</map>

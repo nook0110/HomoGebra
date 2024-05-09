@@ -1,4 +1,0 @@
-<map id="Plane::draw" name="Plane::draw">
-<area shape="rect" id="node1" title="Draws plane and all objects on it." alt="" coords="5,5,96,31"/>
-<area shape="rect" id="node2" href="$class_plane_body.html#ad2856afea6c1a95092b409f21e25db31" title="Get the view of the plane." alt="" coords="144,5,287,31"/>
-</map>

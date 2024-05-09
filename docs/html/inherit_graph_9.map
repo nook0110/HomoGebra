@@ -1,6 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$struct_homo_gebra_1_1_equation_base.html" title="Struct that defines position of the objects." alt="" coords="5,55,185,80"/>
-<area shape="rect" id="node2" href="$struct_homo_gebra_1_1_conic_equation.html" title="Struct that defines position of the conic." alt="" coords="233,5,416,31"/>
-<area shape="rect" id="node3" href="$struct_homo_gebra_1_1_line_equation.html" title="Struct that defines position of the line." alt="" coords="237,55,412,80"/>
-<area shape="rect" id="node4" href="$struct_homo_gebra_1_1_point_equation.html" title="Struct that defines position of the point." alt="" coords="235,104,415,129"/>
-</map>

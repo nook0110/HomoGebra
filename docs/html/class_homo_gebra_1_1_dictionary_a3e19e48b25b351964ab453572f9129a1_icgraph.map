@@ -1,7 +1,0 @@
-<map id="HomoGebra::Dictionary::IsItemUsed" name="HomoGebra::Dictionary::IsItemUsed">
-<area shape="rect" id="node1" title="Checks if item is in dictionary." alt="" coords="721,33,879,73"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_name_generator.html#a61dc9bc322c47324107e5c6606f0a570" title="Generate new name." alt="" coords="5,5,196,45"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_name_generator.html#af86aab641f6b97f3e97e48421e53a585" title="Generate new subname." alt="" coords="483,33,673,73"/>
-<area shape="rect" id="node5" href="$class_homo_gebra_1_1_name_generator.html#a5e53de8fc16accc2a5c62e8647f972a2" title="Checks if name is used." alt="" coords="483,97,673,137"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_name_generator.html#a8ee94c476a8c39df173275daef24e176" title="Generate new subname." alt="" coords="244,33,435,73"/>
-</map>

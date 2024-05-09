@@ -1,5 +1,0 @@
-<map id="ObjectProvider::GetNearestObject" name="ObjectProvider::GetNearestObject">
-<area shape="rect" id="node1" title="Gets a nearest object." alt="" coords="5,5,185,45"/>
-<area shape="rect" id="node2" href="$class_plane.html#a63aa7353ef2a3bea5172b0a627e62831" title="Returns objects of GeometricObjectType." alt="" coords="233,13,363,38"/>
-<area shape="rect" id="node3" href="$class_plane_implementation.html#aadc5370b598b23685b72a5818f3564b6" title="Get all objects of GeometricObjectType." alt="" coords="411,5,553,45"/>
-</map>

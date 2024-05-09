@@ -1,6 +1,0 @@
-<map id="HomoGebra::LineBody::Update" name="HomoGebra::LineBody::Update">
-<area shape="rect" id="node1" title="Updates the line body." alt="" coords="5,5,159,45"/>
-<area shape="rect" id="node2" href="$struct_homo_gebra_1_1_homogeneous_coordinate.html#a37ab9d7956eaf156ba7cef5f9916aaed" title="Normalizes coordinates." alt="" coords="207,5,451,45"/>
-<area shape="rect" id="node3" href="$struct_homo_gebra_1_1_homogeneous_coordinate.html#a8b7f938f1ce2e3cf64d453fe42c00af6" title="Normalizes coordinates." alt="" coords="499,5,743,45"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_complex.html#aaa92c40b629f42a0b333e4d7fb13f3b5" title="Checks if complex number is zero." alt="" coords="791,5,941,45"/>
-</map>

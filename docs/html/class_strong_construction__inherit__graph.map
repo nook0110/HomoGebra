@@ -1,6 +1,0 @@
-<map id="StrongConstruction" name="StrongConstruction">
-<area shape="rect" id="node1" title="Construction that does not lose its properties after projective transformation." alt="" coords="205,5,338,83"/>
-<area shape="rect" id="node2" href="$class_by_two_points.html" title="Construction of a line by two points." alt="" coords="5,131,167,252"/>
-<area shape="rect" id="node3" href="$class_conic_on_plane.html" title="Construction of a casual conic on a plane." alt="" coords="191,145,352,237"/>
-<area shape="rect" id="node4" href="$class_point_on_plane.html" title="Construction of a casual point on a plane." alt="" coords="376,138,537,245"/>
-</map>

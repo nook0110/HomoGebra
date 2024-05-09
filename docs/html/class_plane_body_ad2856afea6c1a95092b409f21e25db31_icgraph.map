@@ -1,4 +1,0 @@
-<map id="PlaneBody::GetView" name="PlaneBody::GetView">
-<area shape="rect" id="node1" title="Get the view of the plane." alt="" coords="144,5,287,31"/>
-<area shape="rect" id="node2" href="$class_plane.html#a10f7c8fcc9b97544ea6606ea76c040fc" title="Draws plane and all objects on it." alt="" coords="5,5,96,31"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="HomoGebra::EquationBase" name="HomoGebra::EquationBase">
-<area shape="rect" id="node1" title="Struct that defines position of the objects." alt="" coords="209,5,389,97"/>
-<area shape="rect" id="node2" href="$struct_homo_gebra_1_1_conic_equation.html" title="Struct that defines position of the conic." alt="" coords="5,145,188,325"/>
-<area shape="rect" id="node3" href="$struct_homo_gebra_1_1_line_equation.html" title="Struct that defines position of the line." alt="" coords="212,189,387,281"/>
-<area shape="rect" id="node4" href="$struct_homo_gebra_1_1_point_equation.html" title="Struct that defines position of the point." alt="" coords="411,175,591,296"/>
-</map>

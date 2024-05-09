@@ -1,6 +1,0 @@
-<map id="ObjectSelectorWrapper&lt; ObjectType &gt;" name="ObjectSelectorWrapper&lt; ObjectType &gt;">
-<area shape="rect" id="node1" title="Wrapper of ObjectSelector to rename some functions." alt="" coords="29,432,206,568"/>
-<area shape="rect" id="node2" href="$class_gui_1_1_constructor_1_1_object_selector.html" title=" " alt="" coords="36,145,199,384"/>
-<area shape="rect" id="node3" href="$class_gui_1_1_widget.html" title="Mix&#45;In for widgets." alt="" coords="5,5,96,97"/>
-<area shape="rect" id="node4" href="$class_event_listener.html" title="Class that listens to notifier." alt="" coords="120,5,248,97"/>
-</map>

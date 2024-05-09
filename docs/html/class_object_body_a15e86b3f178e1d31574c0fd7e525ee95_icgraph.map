@@ -1,6 +1,0 @@
-<map id="ObjectBody::SetName" name="ObjectBody::SetName">
-<area shape="rect" id="node1" title="Set name of the point." alt="" coords="171,55,323,80"/>
-<area shape="rect" id="node2" href="$class_point.html#af524277e47dc92389c924ad0dc6cfd81" title="Sets new name of object." alt="" coords="7,5,121,31"/>
-<area shape="rect" id="node3" href="$class_line.html#a04169415270d805b615fa68a4e394191" title="Sets new name of object." alt="" coords="10,55,118,80"/>
-<area shape="rect" id="node4" href="$class_conic.html#adcd87373cfe42bee264b5e21ca05745b" title="Sets new name of object." alt="" coords="5,104,123,129"/>
-</map>

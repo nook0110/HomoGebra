@@ -1,6 +1,0 @@
-<map id="ConstructionPoint::Update" name="ConstructionPoint::Update">
-<area shape="rect" id="node1" title="Update the object, because sth was destroyed." alt="" coords="5,5,139,45"/>
-<area shape="rect" id="node2" href="$class_point.html#ab92f2b98be4443b6067acd5e4a46095f" title="Implementation interface." alt="" coords="187,13,292,38"/>
-<area shape="rect" id="node3" href="$class_point.html#a853df76b6338eff57189585c2adb0b1f" title="Notify observers that this objected was destroyed." alt="" coords="340,13,433,38"/>
-<area shape="rect" id="node4" href="$class_observable_geometric_object.html#abf94b42c7cfec3b868b0d97f56257006" title="Notify all subscribed observers that object was moved." alt="" coords="481,5,665,45"/>
-</map>

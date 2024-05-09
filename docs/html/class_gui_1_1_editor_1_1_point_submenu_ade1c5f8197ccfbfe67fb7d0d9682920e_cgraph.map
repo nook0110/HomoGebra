@@ -1,6 +1,0 @@
-<map id="Gui::Editor::PointSubmenu::DrawCurrentValues" name="Gui::Editor::PointSubmenu::DrawCurrentValues">
-<area shape="rect" id="node1" title="Render current variables." alt="" coords="5,23,183,63"/>
-<area shape="rect" id="node2" href="$struct_point_equation.html#ab4e9d4eb7db520d259dc3e4afead36d8" title="Return current equation of point." alt="" coords="231,5,413,31"/>
-<area shape="rect" id="node3" href="$class_point.html#ac45889f34111c0347477f76a303c6677" title="Return current equation of point." alt="" coords="256,55,388,80"/>
-<area shape="rect" id="node4" href="$class_point_implementation.html#acf2070120f5877ed5e73a0aa3eb9cf46" title="Return current equation of point." alt="" coords="461,47,601,87"/>
-</map>

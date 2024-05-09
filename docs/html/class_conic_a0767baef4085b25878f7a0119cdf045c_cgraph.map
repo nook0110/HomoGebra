@@ -1,5 +1,0 @@
-<map id="Conic::UpdateBody" name="Conic::UpdateBody">
-<area shape="rect" id="node1" title="Update the body of the conic." alt="" coords="5,42,140,67"/>
-<area shape="rect" id="node2" href="$class_conic_implementation.html#afa3c93a6b00844ff71956aeab1e867e3" title="Return equation of conic." alt="" coords="188,5,331,45"/>
-<area shape="rect" id="node3" href="$class_conic_body.html#a5e1ef7336e6f4fb8a52c55c56d7a8ceb" title="Updates the conic body." alt="" coords="192,70,327,95"/>
-</map>

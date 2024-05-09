@@ -1,7 +1,0 @@
-<map id="ObjectBody" name="ObjectBody">
-<area shape="rect" id="node1" title="Base class for bodies." alt="" coords="130,131,273,281"/>
-<area shape="rect" id="node3" href="$class_conic_body.html" title="Body of a conic." alt="" coords="5,351,120,487"/>
-<area shape="rect" id="node4" href="$class_line_body.html" title="Body of a line." alt="" coords="144,351,259,487"/>
-<area shape="rect" id="node5" href="$class_point_body.html" title="Body of a point." alt="" coords="283,329,421,509"/>
-<area shape="rect" id="node2" title=" " alt="" coords="155,5,248,83"/>
-</map>

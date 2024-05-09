@@ -1,6 +1,0 @@
-<map id="Gui::ObjectMenu::Construct" name="Gui::ObjectMenu::Construct">
-<area shape="rect" id="node1" title="Constructs the window." alt="" coords="5,77,189,102"/>
-<area shape="rect" id="node2" href="$class_gui_1_1_editor_window.html#adac25427817a7bae5a5c4f93ff451de8" title="Begins constructing the window." alt="" coords="260,5,399,45"/>
-<area shape="rect" id="node3" href="$class_gui_1_1_object_menu.html#adebcbaf23d681df40b0c98fb9bbc0cdd" title="Constructs menu to select object by name." alt="" coords="237,69,421,109"/>
-<area shape="rect" id="node4" href="$class_gui_1_1_editor_window.html#a7df203905029c8bb16a3195bcc0c9439" title="Ends constructing the window." alt="" coords="249,134,410,159"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="HomoGebra::ConicOnPlaneFactory::operator()" name="HomoGebra::ConicOnPlaneFactory::operator()">
-<area shape="rect" id="node1" title="Constructs a conic with given equation." alt="" coords="5,39,232,79"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_plane.html#a2726b0d90a21efd75c29ac0bd3a7df64" title="Adds object to plane." alt="" coords="280,15,516,41"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_plane.html#a25821e22dc985c697890f3bbb8f46ae2" title="Returns name generator." alt="" coords="301,67,495,107"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_plane_implementation.html#a89562b5170ec50cd21b59f201b3ccbdb" title="Adds object." alt="" coords="564,5,784,45"/>
-<area shape="rect" id="node5" href="$class_homo_gebra_1_1_plane_implementation.html#af75dae912e7e6f2efba0c368a3bc8f8f" title="Get name generator." alt="" coords="564,69,784,109"/>
-</map>

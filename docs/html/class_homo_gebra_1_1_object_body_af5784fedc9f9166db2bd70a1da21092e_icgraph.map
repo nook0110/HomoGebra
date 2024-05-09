@@ -1,6 +1,0 @@
-<map id="HomoGebra::ObjectBody::SetName" name="HomoGebra::ObjectBody::SetName">
-<area shape="rect" id="node1" title="Set name of the point." alt="" coords="248,47,415,87"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_point.html#a0deee39b4322072045972f72817151ba" title="Sets new name of object." alt="" coords="7,5,198,31"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_line.html#ad4a16d70f2b01dde5d47ba5a4a8618f7" title="Sets new name of object." alt="" coords="10,55,195,80"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_conic.html#af842a88d0157d5ef972866516ee77f4b" title="Sets new name of object." alt="" coords="5,104,200,129"/>
-</map>

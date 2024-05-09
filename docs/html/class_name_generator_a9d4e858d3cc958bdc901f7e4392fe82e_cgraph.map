@@ -1,5 +1,0 @@
-<map id="NameGenerator::IsNameUsed" name="NameGenerator::IsNameUsed">
-<area shape="rect" id="node1" title="Checks if name is used." alt="" coords="5,31,200,56"/>
-<area shape="rect" id="node2" href="$class_dictionary.html#a68f7dc94480a0373f5bd3442e6e19caf" title="Checks if item is in dictionary." alt="" coords="273,5,426,31"/>
-<area shape="rect" id="node3" href="$class_name_generator.html#a742676aa06e4d7240dd04d3ab0171848" title="Checks if name is empty." alt="" coords="248,55,451,80"/>
-</map>

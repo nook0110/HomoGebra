@@ -1,4 +1,0 @@
-<map id="Gui::Constructor::ObjectSelector::SetObject" name="Gui::Constructor::ObjectSelector::SetObject">
-<area shape="rect" id="node1" title="Set selected object." alt="" coords="211,5,373,45"/>
-<area shape="rect" id="node2" href="$class_object_selector_wrapper.html#a4a281c98f28c8db2dd53da8c980f5f87" title="Wrap of SetObject." alt="" coords="5,5,163,45"/>
-</map>

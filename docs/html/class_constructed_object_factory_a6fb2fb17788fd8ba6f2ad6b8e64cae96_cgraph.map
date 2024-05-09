@@ -1,5 +1,0 @@
-<map id="ConstructedObjectFactory::GetNearestObject" name="ConstructedObjectFactory::GetNearestObject">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,180,45"/>
-<area shape="rect" id="node2" href="$class_plane.html#a63a0c4f0805e18e27198e80ee4c8d0a9" title="Returns objects of GeometricObjectType." alt="" coords="228,13,357,38"/>
-<area shape="rect" id="node3" href="$class_plane_implementation.html#a8ccec81cd26877bcd9c0210d333c51ae" title="Get all objects of GeometricObjectType." alt="" coords="405,5,548,45"/>
-</map>

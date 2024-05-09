@@ -1,4 +1,0 @@
-<map id="HomoGebra::Line::Attach" name="HomoGebra::Line::Attach">
-<area shape="rect" id="node1" title="Attaches observer to this object." alt="" coords="5,13,175,38"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_observable.html#ad486cfa24c3add4232248c123776e1cd" title="Subscribe an observer on this object." alt="" coords="223,5,385,45"/>
-</map>

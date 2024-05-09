@@ -1,8 +1,0 @@
-<map id="LineFactory::ByTwoPoints" name="LineFactory::ByTwoPoints">
-<area shape="rect" id="node1" title="Constructs line through two given points." alt="" coords="5,62,180,87"/>
-<area shape="rect" id="node2" href="$class_plane.html#aad7e088f5476633ade293dd4ed2f5bf4" title="Adds object to plane." alt="" coords="257,13,381,38"/>
-<area shape="rect" id="node4" href="$struct_point_equation.html#ab4e9d4eb7db520d259dc3e4afead36d8" title="Return current equation of point." alt="" coords="228,62,411,87"/>
-<area shape="rect" id="node5" href="$class_point.html#ac45889f34111c0347477f76a303c6677" title="Return current equation of point." alt="" coords="253,111,385,137"/>
-<area shape="rect" id="node3" href="$class_plane_implementation.html#a7b42800a182b18b67021c8354be99924" title="Adds object." alt="" coords="459,5,601,45"/>
-<area shape="rect" id="node6" href="$class_point_implementation.html#acf2070120f5877ed5e73a0aa3eb9cf46" title="Return current equation of point." alt="" coords="460,104,600,144"/>
-</map>

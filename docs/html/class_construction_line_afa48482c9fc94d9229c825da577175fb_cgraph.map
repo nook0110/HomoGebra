@@ -1,5 +1,0 @@
-<map id="ConstructionLine::GetEquation" name="ConstructionLine::GetEquation">
-<area shape="rect" id="node1" title="Get equation of line." alt="" coords="5,13,204,38"/>
-<area shape="rect" id="node2" href="$class_line.html#a355fed79f6ee957f9dc4f663156ad194" title="Return current equation of point." alt="" coords="252,13,379,38"/>
-<area shape="rect" id="node3" href="$class_line_implementation.html#a99a0e44758035b82214f2d84a739a1d9" title="Return equation of line." alt="" coords="427,5,561,45"/>
-</map>

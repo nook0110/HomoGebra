@@ -1,7 +1,0 @@
-<map id="Dictionary::IsItemUsed" name="Dictionary::IsItemUsed">
-<area shape="rect" id="node1" title="Checks if item is in dictionary." alt="" coords="805,31,959,56"/>
-<area shape="rect" id="node2" href="$class_name_generator.html#af45fc6a331bc25f2bbf1cef7e0629220" title="Generate new name." alt="" coords="5,5,213,31"/>
-<area shape="rect" id="node3" href="$class_name_generator.html#a452200c93033d9b7a365aaed9642e3b5" title="Generate new subname." alt="" coords="539,31,757,56"/>
-<area shape="rect" id="node5" href="$class_name_generator.html#a9d4e858d3cc958bdc901f7e4392fe82e" title="Checks if name is used." alt="" coords="551,80,745,105"/>
-<area shape="rect" id="node4" href="$class_name_generator.html#a01bdc0ebd4a9a5e7493439851fa982fc" title="Generate new subname." alt="" coords="261,31,491,56"/>
-</map>

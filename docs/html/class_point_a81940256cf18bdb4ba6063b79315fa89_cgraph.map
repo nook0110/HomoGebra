@@ -1,6 +1,0 @@
-<map id="Point::AlertDestruction" name="Point::AlertDestruction">
-<area shape="rect" id="node1" title="Implementation interface." alt="" coords="5,13,159,38"/>
-<area shape="rect" id="node2" href="$class_point.html#a3c155091ab6f0067db0f4688041240e4" title="Notify observers about event." alt="" coords="207,13,300,38"/>
-<area shape="rect" id="node3" href="$class_observable_geometric_object.html#a97256ef7a4dba562ebc5cc2301d344ea" title="Notify all observers about event." alt="" coords="348,5,532,45"/>
-<area shape="rect" id="node4" href="$class_observable.html#a3c17caf423ec7c6d08cb197ee4bb526e" title="Notify all observers about event." alt="" coords="580,13,707,38"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="HomoGebra::ObservableGeometricObject" name="HomoGebra::ObservableGeometricObject">
-<area shape="rect" id="node1" title="Makes GeometricObjectImplementation observable." alt="" coords="120,375,343,481"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_observable.html" title=" " alt="" coords="134,189,329,325"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable_interface.html" title="Interface for observers of geometric objects." alt="" coords="5,5,217,127"/>
-<area shape="rect" id="node4" href="$classstd_1_1list_3_01_geometric_object_observer_01_5_01_4.html" title=" " alt="" coords="242,27,463,105"/>
-</map>

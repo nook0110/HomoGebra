@@ -1,5 +1,0 @@
-<map id="Point::Notify" name="Point::Notify">
-<area shape="rect" id="node1" title="Notify observers about event." alt="" coords="207,31,300,56"/>
-<area shape="rect" id="node2" href="$class_point.html#a81940256cf18bdb4ba6063b79315fa89" title="Implementation interface." alt="" coords="5,5,159,31"/>
-<area shape="rect" id="node3" href="$class_point.html#af524277e47dc92389c924ad0dc6cfd81" title="Sets new name of object." alt="" coords="25,55,139,80"/>
-</map>

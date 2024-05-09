@@ -1,4 +1,0 @@
-<map id="LineImplementation::SetEquation" name="LineImplementation::SetEquation">
-<area shape="rect" id="node1" title="Sets new equation of line." alt="" coords="5,5,140,45"/>
-<area shape="rect" id="node2" href="$class_observable_geometric_object.html#abf94b42c7cfec3b868b0d97f56257006" title="Notify all subscribed observers that object was moved." alt="" coords="188,5,372,45"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="Gui::ObjectMenu" name="Gui::ObjectMenu">
-<area shape="rect" id="node1" title="Class that represents a window that allows to edit objects." alt="" coords="5,145,185,384"/>
-<area shape="rect" id="node2" href="$class_gui_1_1_widget.html" title="Mix&#45;In for widgets." alt="" coords="50,5,141,97"/>
-</map>

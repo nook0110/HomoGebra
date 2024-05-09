@@ -1,5 +1,0 @@
-<map id="NameGenerator::IsNameUsed" name="NameGenerator::IsNameUsed">
-<area shape="rect" id="node1" title="Checks if name is used." alt="" coords="5,29,200,55"/>
-<area shape="rect" id="node2" href="$class_name_generator.html#a9044e8db372f29bd89167667f1ba5442" title="Parses name." alt="" coords="248,29,437,55"/>
-<area shape="rect" id="node3" href="$class_name_generator.html#a55a2dce19f5e88f51a781d3982e46c85" title="Parses subname." alt="" coords="485,29,696,55"/>
-</map>

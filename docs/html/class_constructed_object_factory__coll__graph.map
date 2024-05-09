@@ -1,9 +1,0 @@
-<map id="ConstructedObjectFactory" name="ConstructedObjectFactory">
-<area shape="rect" id="node1" title="Class that finds objects." alt="" coords="59,645,253,737"/>
-<area shape="rect" id="node2" href="$class_plane.html" title="Container for all objects, which you can draw." alt="" coords="102,388,210,583"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,13,99,90"/>
-<area shape="rect" id="node6" href="$class_plane_body.html" title=" " alt="" coords="81,182,231,303"/>
-<area shape="rect" id="node4" href="$class_plane_implementation.html" title="Implementation of Plane." alt="" coords="255,160,398,325"/>
-<area shape="rect" id="node5" title=" " alt="" coords="237,5,416,97"/>
-<area shape="rect" id="node7" title=" " alt="" coords="131,13,181,90"/>
-</map>

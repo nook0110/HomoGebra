@@ -1,5 +1,0 @@
-<map id="Plane" name="Plane">
-<area shape="rect" id="node1" title="Container for all objects, which you can draw." alt="" coords="51,175,205,399"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,27,99,105"/>
-<area shape="rect" id="node3" href="$class_observable_interface.html" title=" " alt="" coords="123,5,285,127"/>
-</map>

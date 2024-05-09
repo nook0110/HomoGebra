@@ -1,4 +1,0 @@
-<map id="ConstructionLine::GetObject" name="ConstructionLine::GetObject">
-<area shape="rect" id="node1" title="Gets object that is constructed." alt="" coords="5,5,192,31"/>
-<area shape="rect" id="node2" href="$class_construction_line.html#a9a52718dce6736103790ee15965e6a41" title="Gets line that is constructed." alt="" coords="240,5,412,31"/>
-</map>

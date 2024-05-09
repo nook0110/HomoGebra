@@ -1,7 +1,0 @@
-<map id="Gui::Editor::ComplexEditor::Construct" name="Gui::Editor::ComplexEditor::Construct">
-<area shape="rect" id="node1" title="Renders the menu." alt="" coords="919,5,1096,45"/>
-<area shape="rect" id="node2" href="$class_gui_1_1_editor_1_1_homogeneous_coordinate_editor.html#a1525c230fdb8dde8768f45b3c7459be0" title="Renders the menu." alt="" coords="688,5,871,45"/>
-<area shape="rect" id="node3" href="$class_gui_1_1_editor_1_1_point_submenu.html#adbe829135470c6ca96fb38c77921cb4b" title="Render variables, that can be edited." alt="" coords="463,5,640,45"/>
-<area shape="rect" id="node4" href="$class_gui_1_1_editor_1_1_point_submenu.html#ac92b012249087beb7c795f0b22cf75ee" title="Renders the menu." alt="" coords="237,5,415,45"/>
-<area shape="rect" id="node5" href="$class_gui_1_1_object_menu.html#a7637c226cf849991fb09166f7def6db5" title="Constructs editor of point." alt="" coords="5,13,189,38"/>
-</map>

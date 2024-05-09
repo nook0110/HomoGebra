@@ -1,7 +1,0 @@
-<map id="PointFactory::OnPlane" name="PointFactory::OnPlane">
-<area shape="rect" id="node1" title="Constructs a point with given coordinates." alt="" coords="5,46,160,71"/>
-<area shape="rect" id="node2" href="$class_plane.html#a8c42cc904048e6ff57c57cca0139d1ec" title="Adds object to plane." alt="" coords="216,17,375,42"/>
-<area shape="rect" id="node4" href="$class_plane.html#ae98911299e85a283b89200f1e2607de1" title="Returns name generator." alt="" coords="208,70,383,95"/>
-<area shape="rect" id="node3" href="$class_plane_implementation.html#a0ed78a69679545bea8ed989299805081" title="Adds object." alt="" coords="431,5,573,45"/>
-<area shape="rect" id="node5" href="$class_plane_implementation.html#ad38f67696ba3974ce847cd051e62a64c" title="Get name generator." alt="" coords="431,69,573,109"/>
-</map>

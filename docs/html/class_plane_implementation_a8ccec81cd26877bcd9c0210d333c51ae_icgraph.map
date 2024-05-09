@@ -1,7 +1,0 @@
-<map id="PlaneImplementation::GetObjects" name="PlaneImplementation::GetObjects">
-<area shape="rect" id="node1" title="Get all objects of GeometricObjectType." alt="" coords="435,47,577,87"/>
-<area shape="rect" id="node2" href="$class_plane.html#a10f7c8fcc9b97544ea6606ea76c040fc" title="Draws plane and all objects on it." alt="" coords="277,5,367,31"/>
-<area shape="rect" id="node3" href="$class_plane.html#a63a0c4f0805e18e27198e80ee4c8d0a9" title="Returns objects of GeometricObjectType." alt="" coords="257,55,387,80"/>
-<area shape="rect" id="node5" href="$class_plane.html#a2489b8fc3c209fdca87caa41e4027934" title="Updates plane." alt="" coords="270,104,374,129"/>
-<area shape="rect" id="node4" href="$class_plane_helper.html#a58beda8c7cd57f0c5dac35d7ff0f6ab6" title="Gets a nearest object." alt="" coords="5,55,209,80"/>
-</map>

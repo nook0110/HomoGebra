@@ -1,7 +1,0 @@
-<map id="LineEquation::Apply" name="LineEquation::Apply">
-<area shape="rect" id="node1" title="Apply transformation to a conic equation." alt="" coords="5,45,144,70"/>
-<area shape="rect" id="node2" href="$class_transformation.html#ac3d5ded1acd2dfd8f61571c9da49915c" title="Calculate inverse of transformation." alt="" coords="192,45,368,70"/>
-<area shape="rect" id="node3" href="$class_transformation_matrix.html#a4437f5b19df3a31e85c380c1cbeff3ee" title="Finds inversion of matrix." alt="" coords="416,37,559,77"/>
-<area shape="rect" id="node4" href="$class_transformation_matrix.html#aa188aa955061de541799126a392a56b0" title="Default Constructor. Creates identity matrix." alt="" coords="607,5,757,45"/>
-<area shape="rect" id="node5" href="$class_transformation_matrix.html#ac744f99ddc0b4dc27a443cfffb947f22" title="Calculates determinant." alt="" coords="611,69,753,109"/>
-</map>

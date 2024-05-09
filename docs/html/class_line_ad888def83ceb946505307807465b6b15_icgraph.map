@@ -1,4 +1,0 @@
-<map id="Line::Destroy" name="Line::Destroy">
-<area shape="rect" id="node1" title="Destroy this object." alt="" coords="221,5,320,31"/>
-<area shape="rect" id="node2" href="$class_construction_line.html#a06f6d950fa7712ce468a19d1028fa730" title="Update the object, because sth was destroyed." alt="" coords="5,5,173,31"/>
-</map>

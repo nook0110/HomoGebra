@@ -1,9 +1,0 @@
-<map id="Plane::Rename" name="Plane::Rename">
-<area shape="rect" id="node1" title="Renames object." alt="" coords="5,87,116,112"/>
-<area shape="rect" id="node2" href="$class_plane_implementation.html#abf55b33d9c5ab682b527dea9e0f9c2c1" title="Renames object." alt="" coords="164,79,307,119"/>
-<area shape="rect" id="node3" href="$class_name_generator.html#a5b533fdcf703b4228f51b7414f86f5cf" title="Add name to used names." alt="" coords="355,29,533,55"/>
-<area shape="rect" id="node6" href="$class_plane_implementation.html#ac79057167137e22be8df300b4ec9d75a" title="Check if object is contained." alt="" coords="373,79,515,119"/>
-<area shape="rect" id="node7" href="$class_name_generator.html#a7a8545f98c8b69b25e398cd90a97db26" title="Renames name." alt="" coords="359,168,529,193"/>
-<area shape="rect" id="node4" href="$class_name_generator.html#a9044e8db372f29bd89167667f1ba5442" title="Parses name." alt="" coords="581,99,771,124"/>
-<area shape="rect" id="node5" href="$class_name_generator.html#a55a2dce19f5e88f51a781d3982e46c85" title="Parses subname." alt="" coords="819,99,1029,124"/>
-</map>

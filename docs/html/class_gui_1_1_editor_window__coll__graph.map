@@ -1,4 +1,0 @@
-<map id="Gui::EditorWindow" name="Gui::EditorWindow">
-<area shape="rect" id="node1" title="Interface that represents a window in Dear ImGui." alt="" coords="5,145,136,281"/>
-<area shape="rect" id="node2" title=" " alt="" coords="43,5,98,83"/>
-</map>

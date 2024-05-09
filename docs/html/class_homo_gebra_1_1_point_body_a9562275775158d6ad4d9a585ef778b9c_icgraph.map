@@ -1,6 +1,0 @@
-<map id="HomoGebra::PointBody::CalculatePosition" name="HomoGebra::PointBody::CalculatePosition">
-<area shape="rect" id="node1" title="Calculates the projective position of the point." alt="" coords="468,23,627,63"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_point_body.html#a8879057f8a42f0b3044cb5f1a39d04b0" title="Updates the point body." alt="" coords="261,23,420,63"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_point.html#a1343df45b3cf35e6353711d40c8000c0" title="Set new equation of point." alt="" coords="5,5,213,31"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_point.html#acf17961cf1e121a2d3c6285e521b0aca" title="Body interface." alt="" coords="5,55,213,80"/>
-</map>

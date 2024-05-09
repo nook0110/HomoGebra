@@ -1,5 +1,0 @@
-<map id="NameGenerator::AddName" name="NameGenerator::AddName">
-<area shape="rect" id="node1" title="Add name to used names." alt="" coords="5,31,184,56"/>
-<area shape="rect" id="node2" href="$class_dictionary.html#af4b92174ebcc5f97d188857b4994cc43" title="Adds item to dictionary." alt="" coords="265,5,401,31"/>
-<area shape="rect" id="node3" href="$class_name_generator.html#a742676aa06e4d7240dd04d3ab0171848" title="Checks if name is empty." alt="" coords="232,55,435,80"/>
-</map>

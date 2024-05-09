@@ -1,6 +1,0 @@
-<map id="ConstructionLine::SetEquation" name="ConstructionLine::SetEquation">
-<area shape="rect" id="node1" title="Set equation of line." alt="" coords="5,13,204,38"/>
-<area shape="rect" id="node2" href="$class_line.html#a4694dd112dcb53ed52bac3e785919a43" title="Set new equation of line." alt="" coords="252,13,377,38"/>
-<area shape="rect" id="node3" href="$class_line_implementation.html#ab358022882ad0f0ca06740eedc7554d3" title="Sets new equation of line." alt="" coords="425,5,560,45"/>
-<area shape="rect" id="node4" href="$class_observable_geometric_object.html#abf94b42c7cfec3b868b0d97f56257006" title="Notify all subscribed observers that object was moved." alt="" coords="608,5,792,45"/>
-</map>

@@ -304,7 +304,6 @@ float LineBody::Equation::Solve(const Var var, const float another) const
       return (-c - b * another) / a;
     case Var::kY:
       return (-c - a * another) / b;
-    case Var::kZ:
     default:
       Assert(false, "Invalid variable");
   }

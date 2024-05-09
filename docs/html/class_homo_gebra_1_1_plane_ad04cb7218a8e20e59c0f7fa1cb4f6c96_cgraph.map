@@ -1,5 +1,0 @@
-<map id="HomoGebra::Plane::Update" name="HomoGebra::Plane::Update">
-<area shape="rect" id="node1" title="Updates plane." alt="" coords="5,13,187,38"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_plane_body.html#a7813c523a3191c90135a5c635a4a6999" title="Update the plane body." alt="" coords="235,5,397,45"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_plane_body.html#a29a5ccdc6fca41f472593db578b2a283" title="Update the plane body with mouse event." alt="" coords="445,5,608,45"/>
-</map>

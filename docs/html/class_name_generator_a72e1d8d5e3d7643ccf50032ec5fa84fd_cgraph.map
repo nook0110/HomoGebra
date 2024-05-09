@@ -1,5 +1,0 @@
-<map id="NameGenerator::DeleteName" name="NameGenerator::DeleteName">
-<area shape="rect" id="node1" title="Deletes name from dictionary." alt="" coords="5,31,197,56"/>
-<area shape="rect" id="node2" href="$class_dictionary.html#a789b397c30391149014f5e335db56cf0" title="Deletes item from dictionary." alt="" coords="271,5,422,31"/>
-<area shape="rect" id="node3" href="$class_name_generator.html#a742676aa06e4d7240dd04d3ab0171848" title="Checks if name is empty." alt="" coords="245,55,448,80"/>
-</map>

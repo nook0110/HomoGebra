@@ -1,6 +1,0 @@
-<map id="HomoGebra::Conic::SetEquation" name="HomoGebra::Conic::SetEquation">
-<area shape="rect" id="node1" title="Set new equation of conic." alt="" coords="5,13,216,38"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_conic_implementation.html#a882863c438344ca7bda65419fa6d62b1" title="Sets new equation of conic." alt="" coords="264,5,484,45"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_observable_geometric_object.html#ac1541842fe032cfbbf39ac2e948f4bf5" title="Notify all observers about event." alt="" coords="532,5,755,45"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_observable.html#ad6f678443403a9c9e412a73200222147" title="Notify all observers about event." alt="" coords="803,5,965,45"/>
-</map>

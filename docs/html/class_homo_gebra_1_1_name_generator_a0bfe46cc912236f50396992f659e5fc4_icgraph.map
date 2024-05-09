@@ -1,8 +1,0 @@
-<map id="HomoGebra::NameGenerator::IsNameEmpty" name="HomoGebra::NameGenerator::IsNameEmpty">
-<area shape="rect" id="node1" title="Checks if name is empty." alt="" coords="244,133,435,173"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_name_generator.html#aee5c7cfd3257cfb31c2f8d3bb375f0ff" title="Add name to used names." alt="" coords="5,5,196,45"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_name_generator.html#a99397a1604787f1cb42523b5f1f69fec" title="Deletes name from dictionary." alt="" coords="5,69,196,109"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_name_generator.html#a61dc9bc322c47324107e5c6606f0a570" title="Generate new name." alt="" coords="5,133,196,173"/>
-<area shape="rect" id="node5" href="$class_homo_gebra_1_1_name_generator.html#a5e53de8fc16accc2a5c62e8647f972a2" title="Checks if name is used." alt="" coords="5,197,196,237"/>
-<area shape="rect" id="node6" href="$class_homo_gebra_1_1_name_generator.html#a7c64e8ef45e7b191a845a67c127ba82e" title="Renames name." alt="" coords="5,261,196,301"/>
-</map>

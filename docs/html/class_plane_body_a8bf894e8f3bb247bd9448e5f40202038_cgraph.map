@@ -1,4 +1,0 @@
-<map id="PlaneBody::Update" name="PlaneBody::Update">
-<area shape="rect" id="node1" title="Update the plane body." alt="" coords="5,5,140,31"/>
-<area shape="rect" id="node2" href="$class_plane_body.html#abfdc4107a95f04d527485de780323f23" title="Update the plane body with mouse event." alt="" coords="188,5,355,31"/>
-</map>

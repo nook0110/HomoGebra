@@ -1,9 +1,0 @@
-<map id="HomoGebra::NameGenerator::Rename" name="HomoGebra::NameGenerator::Rename">
-<area shape="rect" id="node1" title="Renames name." alt="" coords="5,149,196,189"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_name_generator.html#aac735721c39b76a2cfcb9f6978b75623" title="Add name to used names." alt="" coords="244,29,435,69"/>
-<area shape="rect" id="node5" href="$class_homo_gebra_1_1_name_generator.html#a6a16d6c15286b88d6d4df059c2866f37" title="Deletes name from dictionary." alt="" coords="244,117,435,157"/>
-<area shape="rect" id="node6" href="$class_homo_gebra_1_1_name_generator.html#a0bfe46cc912236f50396992f659e5fc4" title="Checks if name is empty." alt="" coords="244,181,435,221"/>
-<area shape="rect" id="node7" href="$class_homo_gebra_1_1_name_generator.html#a6249cddc7cb8e4dc7850f19888cee526" title="Checks if name is used." alt="" coords="244,269,435,309"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_name_generator.html#af408517715888405dc49c276eb401779" title="Parses name." alt="" coords="483,117,673,157"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_name_generator.html#a71caba954fe7d011726c9118fd0eab32" title="Parses subname." alt="" coords="721,117,912,157"/>
-</map>

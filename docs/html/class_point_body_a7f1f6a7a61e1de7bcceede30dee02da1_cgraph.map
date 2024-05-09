@@ -1,7 +1,0 @@
-<map id="PointBody::CalculatePosition" name="PointBody::CalculatePosition">
-<area shape="rect" id="node1" title="Calculates the projective position of the point." alt="" coords="5,35,196,60"/>
-<area shape="rect" id="node2" href="$struct_point_equation.html#ab4e9d4eb7db520d259dc3e4afead36d8" title="Return current equation of point." alt="" coords="244,5,427,31"/>
-<area shape="rect" id="node3" href="$struct_homogeneous_coordinate.html#ac03f29c6b631bd4309cc8e0f774aa226" title="Normalizes coordinates." alt="" coords="252,55,419,95"/>
-<area shape="rect" id="node4" href="$struct_homogeneous_coordinate.html#ac20e34767f6cb9f6b2e1da0dfe24fb46" title="Normalizes coordinates." alt="" coords="475,55,641,95"/>
-<area shape="rect" id="node5" href="$class_complex.html#ac1a16636807edf8b0271c9b543bdf21c" title="Checks if complex number is zero." alt="" coords="689,63,805,88"/>
-</map>

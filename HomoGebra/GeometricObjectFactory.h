@@ -5,17 +5,26 @@
 
 namespace HomoGebra
 {
+/**
+ * \class PointOnPlaneFactory
+ * \brief Factory class for constructing points on a plane.
+ */
 class PointOnPlaneFactory
 {
  public:
+  /**
+   * \brief Constructs a PointOnPlaneFactory object with the given plane.
+   *
+   * \param plane The plane on which the points will be constructed.
+   */
   explicit PointOnPlaneFactory(Plane* plane) : plane_(plane) { Assert(plane); }
 
   /**
-   * \brief Constructs a point with given coordinates.
+   * \brief Constructs a point with the given coordinates.
    *
-   * \param equation A place where point will be constructed.
+   * \param equation A place where the point will be constructed.
    *
-   * \return Pointer to a constructed point.
+   * \return Pointer to the constructed point.
    */
   Point* operator()(PointEquation equation) const;
 
@@ -23,20 +32,29 @@ class PointOnPlaneFactory
   Plane* plane_{};
 };
 
+/**
+ * \struct PointProjectionFactory
+ * \brief Factory struct for constructing points projected on a plane.
+ */
 struct PointProjectionFactory
 {
+  /**
+   * \brief Constructs a PointProjectionFactory object with the given plane.
+   *
+   * \param plane The plane on which the points will be projected.
+   */
   explicit PointProjectionFactory(Plane* plane) : plane_(plane)
   {
     Assert(plane);
   }
 
   /**
-   * \brief Constructs point on a plane.
+   * \brief Constructs a point on a plane.
    *
    * \param from The point that is projected.
    * \param to The line that is projected on.
    *
-   * \return Pointer to a constructed point.
+   * \return Pointer to the constructed point.
    */
   Point* operator()(Point* from, Line* to) const;
 
@@ -44,16 +62,25 @@ struct PointProjectionFactory
   Plane* plane_{};
 };
 
+/**
+ * \struct LineOnPlaneFactory
+ * \brief Factory struct for constructing lines on a plane.
+ */
 struct LineOnPlaneFactory
 {
+  /**
+   * \brief Constructs a LineOnPlaneFactory object with the given plane.
+   *
+   * \param plane The plane on which the lines will be constructed.
+   */
   explicit LineOnPlaneFactory(Plane* plane) : plane_(plane) { Assert(plane); }
 
   /**
-   * \brief Constructs a line with given equation.
+   * \brief Constructs a line with the given equation.
    *
-   * \param equation Equation of a line.
+   * \param equation The equation of the line.
    *
-   * \return Pointer to a constructed line.
+   * \return Pointer to the constructed line.
    */
   Line* operator()(LineEquation equation) const;
 
@@ -61,20 +88,29 @@ struct LineOnPlaneFactory
   Plane* plane_{};
 };
 
+/**
+ * \struct LineByTwoPointsFactory
+ * \brief Factory struct for constructing lines through two points on a plane.
+ */
 struct LineByTwoPointsFactory
 {
+  /**
+   * \brief Constructs a LineByTwoPointsFactory object with the given plane.
+   *
+   * \param plane The plane on which the lines will be constructed.
+   */
   explicit LineByTwoPointsFactory(Plane* plane) : plane_(plane)
   {
     Assert(plane);
   }
 
   /**
-   * \brief Constructs line through two given points.
+   * \brief Constructs a line through two given points.
    *
-   * \param first First point to go through.
-   * \param second Second point to go through.
+   * \param first The first point to go through.
+   * \param second The second point to go through.
    *
-   * \return Pointer to a constructed line.
+   * \return Pointer to the constructed line.
    */
   Line* operator()(Point* first, Point* second) const;
 
@@ -82,16 +118,25 @@ struct LineByTwoPointsFactory
   Plane* plane_{};
 };
 
+/**
+ * \struct ConicOnPlaneFactory
+ * \brief Factory struct for constructing conics on a plane.
+ */
 struct ConicOnPlaneFactory
 {
+  /**
+   * \brief Constructs a ConicOnPlaneFactory object with the given plane.
+   *
+   * \param plane The plane on which the conics will be constructed.
+   */
   explicit ConicOnPlaneFactory(Plane* plane) : plane_(plane) { Assert(plane); }
 
   /**
-   * \brief Constructs a conic with given equation.
+   * \brief Constructs a conic with the given equation.
    *
-   * \param equation Equation of a conic.
+   * \param equation The equation of the conic.
    *
-   * \return Pointer to a constructed conic.
+   * \return Pointer to the constructed conic.
    */
   Conic* operator()(ConicEquation equation) const;
 

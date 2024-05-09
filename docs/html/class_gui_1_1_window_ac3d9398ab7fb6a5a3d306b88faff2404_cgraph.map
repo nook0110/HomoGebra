@@ -1,5 +1,0 @@
-<map id="Gui::Window::Construct" name="Gui::Window::Construct">
-<area shape="rect" id="node1" title="Constructs window." alt="" coords="5,31,165,56"/>
-<area shape="rect" id="node2" href="$class_gui_1_1_window.html#a3fc1625125054931291db2f59e29a1f8" title="Starts constructing of ImGui window." alt="" coords="213,5,351,31"/>
-<area shape="rect" id="node3" href="$class_gui_1_1_window.html#a27034841f2ba0aa11a4892ef37b57892" title="Ends construction of ImGui window." alt="" coords="219,55,345,80"/>
-</map>

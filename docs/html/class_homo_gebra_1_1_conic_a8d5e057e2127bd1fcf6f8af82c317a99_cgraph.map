@@ -1,5 +1,0 @@
-<map id="HomoGebra::Conic::UpdateBody" name="HomoGebra::Conic::UpdateBody">
-<area shape="rect" id="node1" title="Update the body of the conic." alt="" coords="5,45,216,70"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_conic_implementation.html#a7fc46447c4ef13ba4cffb501282012af" title="Return equation of conic." alt="" coords="264,5,484,45"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_conic_body.html#a72a3b20523b9599632ea72c6f981f3e1" title="Updates the conic body." alt="" coords="293,69,455,109"/>
-</map>

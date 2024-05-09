@@ -1,7 +1,0 @@
-<map id="HomoGebra::ConstructionPoint" name="HomoGebra::ConstructionPoint">
-<area shape="rect" id="node1" title="Base class for all point constructions." alt="" coords="112,417,315,612"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_construction_from_two_lines.html" title="Construction of a point by intersection of two lines." alt="" coords="5,667,208,759"/>
-<area shape="rect" id="node5" href="$class_homo_gebra_1_1_point_on_plane.html" title="Construction of a casual point on a plane." alt="" coords="232,660,411,767"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_construction.html" title="Defines how object is created." alt="" coords="127,204,299,369"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_geometric_object_observer.html" title="Makes Construction an observer." alt="" coords="114,5,313,156"/>
-</map>

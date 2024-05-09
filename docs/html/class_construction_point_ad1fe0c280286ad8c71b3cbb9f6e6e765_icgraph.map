@@ -1,4 +1,0 @@
-<map id="ConstructionPoint::GetObject" name="ConstructionPoint::GetObject">
-<area shape="rect" id="node1" title="Gets object that is constructed." alt="" coords="187,5,320,45"/>
-<area shape="rect" id="node2" href="$class_construction_point.html#a7b28592e653051614e6a3c05e2fa1dff" title="Update point when something is destroyed." alt="" coords="5,5,139,45"/>
-</map>

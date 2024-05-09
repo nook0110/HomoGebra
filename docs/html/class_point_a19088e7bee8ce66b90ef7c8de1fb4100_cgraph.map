@@ -1,9 +1,0 @@
-<map id="Point::SetName" name="Point::SetName">
-<area shape="rect" id="node1" title="Sets new name of object." alt="" coords="5,63,120,88"/>
-<area shape="rect" id="node2" href="$class_point_body.html#a1f471ca83ac80b724a9ef8dcefbeb176" title="Gets name of the point." alt="" coords="168,9,313,35"/>
-<area shape="rect" id="node4" href="$class_point.html#a853df76b6338eff57189585c2adb0b1f" title="Notify observers that this objected was destroyed." alt="" coords="194,63,287,88"/>
-<area shape="rect" id="node6" href="$class_point_body.html#a274457fa8f09fc9493fa3453eebf2735" title="Set name of the point." alt="" coords="169,116,313,141"/>
-<area shape="rect" id="node3" href="$class_object_name.html#afcc3cc740e7357e418e3748774c3aa65" title="Gets name of the object." alt="" coords="375,5,532,31"/>
-<area shape="rect" id="node5" href="$class_observable_geometric_object.html#abf94b42c7cfec3b868b0d97f56257006" title="Notify all subscribed observers that object was moved." alt="" coords="361,55,545,95"/>
-<area shape="rect" id="node7" href="$class_object_name.html#a06c138f5b31b5c4174e3bc316d69d5e3" title="Sets name of the object." alt="" coords="375,120,531,145"/>
-</map>

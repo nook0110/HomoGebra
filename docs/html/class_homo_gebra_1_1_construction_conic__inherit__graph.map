@@ -1,6 +1,0 @@
-<map id="HomoGebra::ConstructionConic" name="HomoGebra::ConstructionConic">
-<area shape="rect" id="node1" title="Base class for all conic constructions." alt="" coords="5,417,211,583"/>
-<area shape="rect" id="node4" href="$class_homo_gebra_1_1_conic_on_plane.html" title="Construction of a casual conic on a plane." alt="" coords="17,631,199,723"/>
-<area shape="rect" id="node2" href="$class_homo_gebra_1_1_construction.html" title="Defines how object is created." alt="" coords="22,204,194,369"/>
-<area shape="rect" id="node3" href="$class_homo_gebra_1_1_geometric_object_observer.html" title="Makes Construction an observer." alt="" coords="9,5,207,156"/>
-</map>

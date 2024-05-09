@@ -1,6 +1,0 @@
-<map id="Conic::AlertDestruction" name="Conic::AlertDestruction">
-<area shape="rect" id="node1" title="Destroy this object." alt="" coords="5,13,161,38"/>
-<area shape="rect" id="node2" href="$class_conic.html#a0a0dd8f09ebd201914d696013bd897d1" title="Notify observers about event." alt="" coords="209,13,305,38"/>
-<area shape="rect" id="node3" href="$class_observable_geometric_object.html#a97256ef7a4dba562ebc5cc2301d344ea" title="Notify all observers about event." alt="" coords="353,5,537,45"/>
-<area shape="rect" id="node4" href="$class_observable.html#a3c17caf423ec7c6d08cb197ee4bb526e" title="Notify all observers about event." alt="" coords="585,13,712,38"/>
-</map>

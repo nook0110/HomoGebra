@@ -1,8 +1,0 @@
-<map id="PointEquation" name="PointEquation">
-<area shape="rect" id="node1" title="Struct that defines position of the point." alt="" coords="16,733,139,855"/>
-<area shape="rect" id="node2" href="$struct_equation.html" title="Struct that defines position of the objects." alt="" coords="5,549,107,641"/>
-<area shape="rect" id="node3" href="$struct_homogeneous_coordinate.html" title="Coordinates in ." alt="" coords="131,520,317,671"/>
-<area shape="rect" id="node4" href="$class_complex.html" title="Wrapper of std::complex." alt="" coords="145,160,303,428"/>
-<area shape="rect" id="node5" title=" " alt="" coords="76,5,209,97"/>
-<area shape="rect" id="node6" title=" " alt="" coords="234,5,377,97"/>
-</map>

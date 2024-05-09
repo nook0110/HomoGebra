@@ -1,6 +1,0 @@
-<map id="ConstructionLine::Update" name="ConstructionLine::Update">
-<area shape="rect" id="node1" title="Update the object, because sth was destroyed." alt="" coords="5,13,173,38"/>
-<area shape="rect" id="node2" href="$class_line.html#ad888def83ceb946505307807465b6b15" title="Destroy this object." alt="" coords="221,13,320,38"/>
-<area shape="rect" id="node3" href="$class_line.html#a54dbeed3d17564f31a014a9c80aab279" title="Notify observers that this objected is destroyed." alt="" coords="368,13,455,38"/>
-<area shape="rect" id="node4" href="$class_observable_geometric_object.html#abf94b42c7cfec3b868b0d97f56257006" title="Notify all subscribed observers that object was moved." alt="" coords="503,5,687,45"/>
-</map>

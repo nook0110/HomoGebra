@@ -1,5 +1,0 @@
-<map id="Gui::EditorWindow::Begin" name="Gui::EditorWindow::Begin">
-<area shape="rect" id="node1" title="Begins constructing the window." alt="" coords="469,5,608,45"/>
-<area shape="rect" id="node2" href="$class_gui_1_1_object_menu.html#a93024caf97f312b69661eab2fb4dbf5a" title="Constructs the window." alt="" coords="237,13,421,38"/>
-<area shape="rect" id="node3" href="$class_gui_1_1_object_menu.html#a4c6f98e5b079bc256ca51bff6ac76ae1" title="Constructs editor of object." alt="" coords="5,13,189,38"/>
-</map>
