@@ -40,13 +40,6 @@ class Plane final : public sf::Drawable,
   /**
    * \brief Deletes object from plane.
    *
-   * \param construction Pointer to an object.
-   */
-  void DeleteConstruction(Construction* construction);
-
-  /**
-   * \brief Deletes object from plane.
-   *
    * \param object Pointer to an object.
    */
   void DeleteObject(const GeometricObject* object);

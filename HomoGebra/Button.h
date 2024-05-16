@@ -36,6 +36,11 @@ class ButtonBase : public ButtonImplementation<Elements...>
   }
 
  private:
+  /**
+   * \brief Draws the apply button.
+   *
+   * \return True if the apply button is pressed, false otherwise.
+   */
   bool DrawApplyButton() { return ImGui::Button("Apply"); }
 };
 }  // namespace HomoGebra
