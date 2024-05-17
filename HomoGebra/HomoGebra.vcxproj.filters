@@ -241,6 +241,9 @@
     <ClInclude Include="EventConverter.h">
       <Filter>Headers\Observer</Filter>
     </ClInclude>
+    <ClInclude Include="ThickLineDrawer.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

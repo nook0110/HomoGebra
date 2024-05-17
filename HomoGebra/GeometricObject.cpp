@@ -29,35 +29,10 @@ template void Point::Notify<ObjectEvent::GoingToBeDestroyed>(
 template void Point::Notify<ObjectEvent::Renamed>(
     const ObjectEvent::Renamed& event) const;
 
-float Point::CalculateSizeOfBody(const sf::RenderTarget& target)
-{
-  // Calculate position of pixel with coordinate (0, 0)
-  const auto first_pixel_position = target.mapPixelToCoords({0, 0});
-
-  // Calculate position of pixel with coordinate (1, 0)
-  const auto second_pixel_position = target.mapPixelToCoords({1, 0});
-
-  // Calculate size of pixel
-  const auto pixel_size =
-      std::abs(second_pixel_position.x - first_pixel_position.x);
-
-  // Ratio of size of body to size of pixel
-  constexpr float kRatio = 2 * std::numbers::pi_v<float>;
-
-  // Calculate size of body
-  const auto size = pixel_size * kRatio;
-
-  // Return size of body
-  return size;
-}
-
 void Point::SetEquation(PointEquation equation)
 {
   // Set equation in implementation
   implementation_.SetEquation(std::move(equation));
-
-  // Update body
-  body_.Update(implementation_.GetEquation());
 }
 
 const PointEquation& Point::GetEquation() const
@@ -84,11 +59,8 @@ void Point::Detach(const GeometricObjectObserver* observer)
 
 void Point::UpdateBody(const sf::RenderTarget& target)
 {
-  // Calculate size of body
-  const float size = CalculateSizeOfBody(target);
-
   // Update body
-  body_.Update(implementation_.GetEquation(), size);
+  body_.Update(target, implementation_.GetEquation());
 }
 
 void Point::draw(sf::RenderTarget& target, sf::RenderStates states) const

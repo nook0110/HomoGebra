@@ -38,7 +38,7 @@ void Expect(const Assertion& assertion, const Message& message = {},
       out << "WARNING: file: " << location.file_name() << '(' << location.line()
           << ':' << location.column() << ") `" << location.function_name()
           << "`:\n"
-          << "Assertion failed with message: " << message << '\n';
+          << "Expectation failed with message: " << message << '\n';
       std::cout << "Continue executing... \n";
     }
   }
@@ -58,7 +58,7 @@ void Expect(
       out << "WARNING: file: " << location.file_name() << '(' << location.line()
           << ':' << location.column() << ") `" << location.function_name()
           << "`:\n"
-          << "Assertion failed with message: " << message << '\n';
+          << "Expectation failed with message: " << message << '\n';
       std::cout << "Continue executing... \n";
     }
   }

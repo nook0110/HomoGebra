@@ -191,16 +191,6 @@ class Point final : public GeometricObject
   template <class Event>
   void Notify(const Event& event) const;
 
-  /**
-   * \brief Calculates size of a body
-   *
-   * \details Calculates size of pixel and than multiply size on a const
-   *
-   * \param target Render target to draw to.
-   *
-   * \return Size of body.
-   */
-  static float CalculateSizeOfBody(const sf::RenderTarget& target);
   /*
    * Member data
    */

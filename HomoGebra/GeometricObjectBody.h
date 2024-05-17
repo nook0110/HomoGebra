@@ -164,7 +164,7 @@ class PointBody final : public ObjectBody
    * \param equation Equation of the point.
    * \param size Size of the point.
    */
-  void Update(const PointEquation& equation, float size = 0);
+  void Update(const sf::RenderTarget& target, const PointEquation& equation);
 
   /**
    * \brief Draw the point to a render target.
@@ -214,6 +214,17 @@ class PointBody final : public ObjectBody
    */
   static std::optional<ProjectivePosition> CalculatePosition(
       const PointEquation& equation);
+
+  /**
+   * \brief Calculates size of a body
+   *
+   * \details Calculates size of pixel and than multiply size on a const
+   *
+   * \param target Render target to draw to.
+   *
+   * \return Size of body.
+   */
+  static float CalculateSizeOfBody(const sf::RenderTarget& target);
 
   std::optional<ProjectivePosition>
       position_;          //!< Projective position of the point.
@@ -350,8 +361,9 @@ class ConicBody : public ObjectBody
   {
     using Line = std::vector<sf::Vertex>;
     using Lines = std::vector<Line>;
-    Lines lines_x;  //!< Lines parallel to x-axis.
-    Lines lines_y;  //!< Lines parallel to y-axis.
+    Lines lines_x;    //!< Lines parallel to x-axis.
+    Lines lines_y;    //!< Lines parallel to y-axis.
+    float thickness;  //!< Thickness of the lines.
   };
 
   /**
@@ -376,15 +388,27 @@ class ConicBody : public ObjectBody
      */
     [[nodiscard]] Solution Solve(Var var, const Complex& another) const;
 
-    std::array<long double, 2>
-        squares;               //!< Coefficient of the squares of the variables.
-    long double pair_product;  //!< Coefficient of the product of the variables.
-    std::array<long double, 2> linears;  //!< Coefficient of the variables.
-    long double constant;                //!< Constant coefficient.
+    std::array<Complex, 2>
+        squares;           //!< Coefficient of the squares of the variables.
+    Complex pair_product;  //!< Coefficient of the product of the variables.
+    std::array<Complex, 2> linears;  //!< Coefficient of the variables.
+    Complex constant;                //!< Constant coefficient.
   };
 
   void UpdateEquation(const ConicEquation& equation);
   void UpdateBodyLines(const sf::RenderTarget& target);
+
+  /**
+   * \brief Calculates size of a body
+   *
+   * \details Calculates size of pixel and than multiply size on a const
+   *
+   * \param target Render target to draw to.
+   *
+   * \return Size of body.
+   */
+  static float CalculateSizeOfBody(const sf::RenderTarget& target);
+
   BodyLines body_lines;  //!< Body of the conic.
 
   std::optional<Equation> equation_;  //!< Equation of the conic.
